@@ -18,7 +18,7 @@ const PopularList = () => {
       .then((response) => response.json())
       .then((data) => {
         const results = data.results;
-        console.log(results);
+        // console.log(results);
         setMovieList(results);
       })
       .catch((error) => console.error("Error fetching: ", error))
@@ -35,7 +35,8 @@ const PopularList = () => {
   };
   return (
     <div>
-      <h1>Welcome to Popular Movie World</h1>
+      <h1>Welcome to Movie World</h1>
+
       <section className="home-page">
         {movieList.map((movie, index) => {
           return (
