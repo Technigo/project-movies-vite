@@ -14,6 +14,10 @@ const PageNotFound = () => {
         backgroundImage: ` url(${pageNotfound})`,
       }}
     >
+      {/* click the button, then back to movies */}
+      <button className="backbtn" type="button" onClick={clickBackBtn}>
+        🎬 Back to Movies
+      </button>
       <h1>404 Errors</h1>
       <p>
         Oh snap! You did't break the internet, but we can't find what you are
