@@ -8,14 +8,14 @@ const SingleMovie = () => {
   const [singleMovie, setSingleMovie] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    // fetch(
-    //   `https://api.themoviedb.org/3/movie/${id}?api_key=${
-    //     import.meta.env.VITE_API_KEY
-    //   }&language=en-US`
-    // )
     fetch(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=e01b60fa6da2e1ede91bae74e8d84c78&language=en-US`
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${
+        import.meta.env.VITE_API_KEY
+      }&language=en-US`
     )
+      // fetch(
+      //   `https://api.themoviedb.org/3/movie/${id}?api_key=e01b60fa6da2e1ede91bae74e8d84c78&language=en-US`
+      // )
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
