@@ -62,7 +62,7 @@ const PopularList = () => {
           <option value="select one" disabled>
             Please select one:
           </option>
-          <option value={listChoice}>Popular</option>
+          <option value="movie/popular">Popular</option>
           <option value="trending/movie/day">Trending</option>
           <option value="movie/top_rated">Top rated</option>
           <option value="movie/upcoming">Upcoming</option>
