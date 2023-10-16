@@ -17,7 +17,9 @@ const PopularList = () => {
   useEffect(() => {
     setLoading(true);
     fetch(
-      `https://api.themoviedb.org/3/${listChoice}?api_key=e01b60fa6da2e1ede91bae74e8d84c78`
+      `https://api.themoviedb.org/3/${listChoice}?api_key=${
+        import.meta.env.VITE_API_KEY
+      }`
     )
       .then((response) => response.json())
       .then((data) => {
