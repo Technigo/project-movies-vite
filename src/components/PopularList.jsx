@@ -55,7 +55,12 @@ const PopularList = () => {
       <h1>Welcome to Movie World</h1>
       <div className="selector">
         <p className="emojis">🍿🍿🍿🍿🍿🍿</p>
-        <select value={listChoice} onChange={handleListChoice}>
+        <select
+          value={listChoice}
+          onChange={handleListChoice}
+          name="movie-choice"
+          id="movieChoice"
+        >
           <option value="select one" disabled>
             Please select one:
           </option>
