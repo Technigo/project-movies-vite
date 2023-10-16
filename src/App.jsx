@@ -20,8 +20,8 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<PopularList />} />
         <Route path="/movies/:id" element={<SingleMovie />} />
-        <Route path="/*" element={<PageNotFound />} />
-        {/* <Route path="*" element={<Navigate to="/404" replace />} /> */}
+        <Route path="/404" element={<PageNotFound />} />
+        <Route path="*" element={<Navigate to="/404" replace />} />
       </Routes>
     </BrowserRouter>
   );
