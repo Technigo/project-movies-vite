@@ -3,10 +3,16 @@ import { Link } from "react-router-dom";
 import "../styling/popularlist.css";
 import RatingStars from "react-rating-stars-component";
 import Footer from "./Footer";
+import { ColorRing } from "react-loader-spinner"; // spinner, can use Audio or Oval
+
 const PopularList = () => {
   const [movieList, setMovieList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [listChoice, setListChoice] = useState("movie/popular");
+
+  const handleListChoice = (event) => {
+    setListChoice(event.target.value);
+  };
 
   useEffect(() => {
     setLoading(true);
@@ -18,7 +24,7 @@ const PopularList = () => {
       .then((response) => response.json())
       .then((data) => {
         const results = data.results;
-        // console.log(results);
+        console.log(results);
         setMovieList(results);
       })
       .catch((error) => console.error("Error fetching: ", error))
@@ -34,9 +40,32 @@ const PopularList = () => {
     edit: false,
   };
   return (
-    <div>
+    <div className="home-page-container">
+      {loading && (
+        <ColorRing
+          visible={true}
+          height="180"
+          width="200"
+          ariaLabel="blocks-loading"
+          wrapperStyle={{}}
+          wrapperClass="blocks-wrapper"
+          colors={["#916DB3", "#E48586", "#FCBAAD", "#FDE5EC", "#FDE5EC"]}
+        />
+      )}
       <h1>Welcome to Movie World</h1>
-
+      <div className="selector">
+        <p className="emojis">🍿🍿🍿🍿🍿🍿</p>
+        <select value={listChoice} onChange={handleListChoice}>
+          <option value="select one" disabled>
+            Please select one:
+          </option>
+          <option value={listChoice}>Popular</option>
+          <option value="trending/movie/day">Trending</option>
+          <option value="movie/top_rated">Top rated</option>
+          <option value="movie/upcoming">Upcoming</option>
+          <option value="movie/now_playing">Now Playing</option>
+        </select>
+      </div>
       <section className="home-page">
         {movieList.map((movie, index) => {
           return (
