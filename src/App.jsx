@@ -3,6 +3,7 @@ import { HomePage } from "./pages/HomePage"; // Assuming the components are in t
 import { Detail } from "./pages/Detail"; // Assuming the components are in the same directory
 
 function App() {
+  const API_KEY = "fc4247df8698a43e7abf3f62f337adaf";
   return (
     <BrowserRouter>
       <Routes>
