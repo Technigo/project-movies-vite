@@ -3,7 +3,18 @@ import { HomePage } from "./pages/HomePage"; // Assuming the components are in t
 import { Detail } from "./pages/Detail"; // Assuming the components are in the same directory
 
 function App() {
-  const API_KEY = "fc4247df8698a43e7abf3f62f337adaf";
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMzEwNDBiNTAzY2M0MzViNDk0MjU0ODRiMDZlYTc1NSIsInN1YiI6IjY1MmQyODNlNjYxMWI0MDBlMjU1MDMxYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.nzGRkQ839_qWKFn7k3BsxmVqMmHl11yXIf4z6QEk8z4",
+    },
+  };
+  fetch("https://api.themoviedb.org/3/movie/changes?page=1", options)
+    .then((response) => response.json())
+    .then((response) => console.log(response))
+    .catch((err) => console.error(err));
   return (
     <BrowserRouter>
       <Routes>
