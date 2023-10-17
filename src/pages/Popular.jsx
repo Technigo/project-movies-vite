@@ -16,21 +16,27 @@ export const Popular = () => {
   }, []);
 
   return (
-    <div className="popularPage">
+    <div className="popular-section">
+
       {movies.map((movie) => (
+        
         <Link key={movie.id} to={`/movies/${movie.id}`}>
+            <div className="image-box-popular">
           <img
+          className="poster-image-popular"
             src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
             alt={movie.title}
           />
+            </div>
 
-          <div className="details">
-            <h1>{movie.title}</h1>
-            <p>Released {movie.release_date}</p>
+          <div className="popular-text-wrapper">
+
+            <h1 className="popular-movie-title">{movie.title}</h1>
+            <p className="popular-movie-released">Released {movie.release_date}</p>
+
           </div>
         </Link>
       ))}
-        <h1>Hello world</h1>
 
     </div>
   );

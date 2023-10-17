@@ -18,30 +18,33 @@ export const Detail = () => {
   }, [id]);
 
   return (
-    <article className="detailPage">
-      <Link to="/" className="backLink">
+    <article className="detail-section">
+
+      <Link to="/" className="back-button">
         <HomeButton /> Movies
       </Link>
       {movie && (
         <div
-          className="background"
+          className="backdrop-image"
           style={{
             backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0) 70%, rgba(0,0,0,1) 100%), url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path})`,
           }}
         >
-          <div className="summary">
+          <div className="detail-wrapper">
             <img
+            className="detail-poster"
               src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
               alt={movie.title}
             />
-            <div className="details">
-              <h1>
-                <span className="title">{movie.title}</span>{" "}
-                <span className="rating">
+            <div className="detail-text-wrapper">
+              <h1 className="detail-title">{movie.title} </h1>
+
+                <h2 className="rating">
                   {Math.round(movie.vote_average * 10) / 10}
-                </span>
-              </h1>
-              <p>{movie.overview}</p>
+                </h2>
+             
+              <p className="detail-overview">{movie.overview}</p>
+              
             </div>
           </div>
         </div>
