@@ -37,3 +37,7 @@ h3 {
   font-size: 24px;
   text-shadow: var(--text-shadow);
 }
+
+.startpage-ul {
+  list-style-type: none;
+}
