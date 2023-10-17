@@ -1,0 +1,13 @@
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    filter: drop-shadow(2px 3px 4px rgb(0 0 0/.5))
+}
+
+.arrow {
+    width: 30px;
+    height: 30px;
+}
