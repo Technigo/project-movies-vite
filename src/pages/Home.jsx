@@ -11,11 +11,11 @@ import { Link } from "react-router-dom";
 
 export const Home = () => {
   //Our movie API key: 003a2d9ebc845f57f76c3c02dbd08f13
-  //movie API URL:'https://api.themoviedb.org/3/movie/11?api_key=003a2d9ebc845f57f76c3c02dbd08f13'
+  //movie API URL for popular movies in the US:'https://api.themoviedb.org/3/movie/popular?api_key={api_key}&language=en-US&page=1'
 
   const [movies, setMovies] = useState([]);
 
-  const OurMovieAPI = `https://api.themoviedb.org/3/movie/11?api_key=003a2d9ebc845f57f76c3c02dbd08f131`;
+  const OurMovieAPI = `https://api.themoviedb.org/3/movie/popular?api_key=003a2d9ebc845f57f76c3c02dbd08f13&language=en-US&page=1`;
 
   useEffect(() => {
     const fetchMoviesList = async () => {
