@@ -7,7 +7,11 @@ function MovieCard({ movie }) {
   const { id, title, release_date, poster_path: poster } = movie;
   console.log(movie);
   return (
-    <Link to={`/movie/${id}`} style={{ textDecoration: 'none' }}>
+    <Link to={`/movie/${id}?poster_path=${poster}&movie_id=${id}`} style={{ textDecoration: 'none' }}>
+
+    {/*<Link to={`/movie/${id}`} style={{ textDecoration: 'none' }}>
+    // <Link to={`/movie/${id}?poster_path=${poster}`} style={{ textDecoration: 'none' }}>
+  {/* MovieCard component to include a link to the detail page with the poster_path as a URL parameter */}
     <div
       className={styles.card_wrapper}
       onMouseEnter={() => setOnMouse(true)}
