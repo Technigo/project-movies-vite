@@ -35,9 +35,19 @@ export const Home = () => {
     fetchMoviesList();
   }, []);
 
+  console.log(`this is now in the movies array:`, movies);
+
+  //the following maps the movies array to get the title. display a list of titles and make them all links to their own moviedetails pages
+
   return (
     <div>
       <h1>Home Page: Home</h1>
+      {movies.map((movie) => (
+        <Link to={`/movie/${movie.title}`} key={movie.id}>
+          <p>{movie.title}</p>
+        </Link>
+      ))}
+      <p></p>
     </div>
   );
 };
