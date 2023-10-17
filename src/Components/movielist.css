@@ -1,0 +1,31 @@
+
+.movie-list {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+
+}
+
+
+
+
+
+/* Tablet */
+@media (min-width: 667px) and (max-width: 1024px) {
+
+    .movie-list {
+        grid-template-columns: repeat(4, 1fr);
+        
+        }
+      
+
+}
+
+/*Desktop*/
+@media (min-width: 1025px) {
+
+    .movie-list {
+        grid-template-columns: repeat(4, 1fr);
+        
+        }
+
+}
