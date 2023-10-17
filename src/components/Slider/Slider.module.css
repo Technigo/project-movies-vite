@@ -1,0 +1,13 @@
+.slider_outer {
+  overflow: hidden;
+  width: 96vw;
+  margin: 0 auto;
+}
+
+.slider_inner {
+  width: fit-content;
+  display: flex;
+  gap: 50px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}

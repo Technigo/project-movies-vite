@@ -7,7 +7,7 @@
 }
 
 .button:active,
-å button {
+button {
   border: 0;
   outline: 0;
 }
@@ -21,14 +21,14 @@
 
 .right-click {
   position: absolute;
-  right: 50px;
+  right: 0;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translate(42%, -50%);
 }
 
 .left-click {
   position: absolute;
-  left: 70px;
+  left: 0;
   top: 50%;
   transform: translateY(-50%);
 }

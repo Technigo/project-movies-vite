@@ -1,7 +1,6 @@
 .card_wrapper {
+  width: 300px;
   position: relative;
-
-  over-flow: hidden;
 }
 
 .inner_card {

@@ -1,0 +1,83 @@
+.carousel_outer {
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  width: 96%;
+  border-radius: 10px;
+}
+
+.hero_image {
+  height: 30vh;
+  width: 96%;
+  border-radius: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  flex: 1 0 100%;
+  scroll-snap-align: start;
+}
+
+.carousel {
+  display: flex;
+  gap: 30px;
+  width: 96vw;
+  overflow-x: scroll;
+  list-style: none;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .hero_wrapper {
+    margin-bottom: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  .carousel_outer {
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    width: 84vw;
+  }
+
+  .hero_image {
+    height: 30vh;
+    width: 84vw;
+    border-radius: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    flex: 1 0 100%;
+  }
+
+  .carousel {
+    display: flex;
+    gap: 30px;
+    width: 84vw;
+    overflow-x: scroll;
+    list-style: none;
+    scroll-behavior: smooth;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero_image {
+    height: 50vh;
+    width: 84vw;
+    border-radius: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    flex: 1 0 100%;
+  }
+}

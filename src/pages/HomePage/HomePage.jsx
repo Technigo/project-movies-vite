@@ -3,8 +3,10 @@ import styles from "./HomePage.module.css";
 import { Navbar } from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
 import { Slider } from "../../components/Slider";
-import { Button } from "../../components/Button";
+
 import useSWR from "swr";
+
+import { HeroCarousel } from "../../components/HeroCarousel";
 
 const options = {
   method: "GET",
@@ -36,11 +38,7 @@ function getWindowWidth() {
   };
 }
 function HomePage() {
-  const [currentHeroImageIndex, setCurrentHeroImageIndex] = useState(1);
   const [{ width: windowWidth }, setWindowWidth] = useState(getWindowWidth());
-  const currentHeroImageWidth = useMemo(() => {
-    return windowWidth * 0.84 + 50;
-  }, [windowWidth]);
 
   useEffect(() => {
     function handleResize() {
@@ -57,40 +55,12 @@ function HomePage() {
     data !== undefined && data;
   const heroImages = popularMovies && popularMovies.slice(0, 5).map((movie) => movie.backdrop_path);
 
-  function handleClickToRight() {
-    currentHeroImageIndex * currentHeroImageWidth;
-  }
-
-  function handleClickToLeft() {
-    if (currentHeroImageIndex >= 0) setCurrentHeroImageIndex((c) => c - 1);
-  }
-
   return (
     <>
       <Navbar />
       <main className={styles.main}>
         <div className={styles.hero_wrapper}>
-          <Button type="right-click" handleClick={handleClickToRight}>
-            <img src="/arrow.png" />
-          </Button>
-          <Button type="left-click" handleClick={handleClickToLeft}>
-            <img src="/arrow.png" />
-          </Button>
-          <div className={styles.carousel_inner}>
-            <ul className={styles.carousel}>
-              {popularMovies &&
-                heroImages.map((image) => (
-                  <>
-                    <li
-                      style={{
-                        backgroundImage: `url(https://image.tmdb.org/t/p/original${image})`,
-                      }}
-                      className={styles.hero_image}
-                    />
-                  </>
-                ))}
-            </ul>
-          </div>
+          <HeroCarousel images={heroImages} windowWidth={windowWidth} />
         </div>
         <div className={styles.main_inner}>
           <Slider movies={popularMovies} />

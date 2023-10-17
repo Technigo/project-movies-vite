@@ -1,31 +1,6 @@
 .hero_wrapper {
-  margin-bottom: 60px;
+  margin-bottom: 20px;
   width: 100vw;
-  height: 50vh;
-  padding-left: 100px;
-  padding-right: 100px;
-  position: relative;
-}
-
-.carousel {
-  display: flex;
-  gap: 30px;
-  width: fit-content;
-}
-
-.carousel_inner {
-  overflow: hidden;
-  height: 100%;
-  width: 84vw;
-}
-
-.hero_image {
-  height: 50vh;
-  width: 84vw;
-  border-radius: 10px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100%;
 }
 
 .main {
@@ -39,6 +14,7 @@
   padding-bottom: 60px;
 }
 
+/* Main */
 @media (min-width: 370px) {
   .main_inner {
     grid-template-columns: repeat(2, 1fr);
@@ -52,5 +28,30 @@
 @media (min-width: 820px) {
   .main_inner {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* others */
+
+@media (min-width: 640px) {
+  .hero_wrapper {
+    margin-bottom: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero_wrapper {
+    margin-bottom: 60px;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+@media (min-width: 1024px) {
+  .hero_wrapper {
+    margin-bottom: 60px;
+    padding-left: 100px;
+    padding-right: 100px;
   }
 }
