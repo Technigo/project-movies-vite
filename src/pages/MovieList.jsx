@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/";
-const POSTER_SIZE = "w342";
+const POSTER_SIZE = "w500";
 
 function MovieList() {
   const [movies, setMovies] = useState([]);
@@ -17,12 +17,16 @@ function MovieList() {
   }, []);
 
   return (
-    <div>
+    <div className="movie-grid">
       {movies.map(movie => (
-        <Link key={movie.id} to={`/moviedetails/${movie.id}`}>
-          <img src={`${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`} alt={movie.title || "Movie poster"} />
-          <h3>{movie.title}</h3>
-          <p>{movie.release_date}</p>
+        <Link key={movie.id} to={`/moviedetails/${movie.id}`}> 
+          <div className="movie-item">
+            <img src={`${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`} alt={movie.title || "Movie poster"} />
+            <div className="movie-info">
+              <h3>{movie.title}</h3>
+              <p>{movie.release_date}</p>
+            </div>
+          </div>
         </Link>
       ))}
     </div>
@@ -30,4 +34,5 @@ function MovieList() {
 }
 
 export default MovieList;
+
 

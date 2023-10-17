@@ -32,7 +32,7 @@ function MovieDetails() {
       <nav>
         <ul className="app-ul">
           <li className="app-li">
-            <NavLink to="/movielist">Movies</NavLink>
+          <NavLink className="movies-btn" to="/movielist">Movies</NavLink>
           </li>
         </ul>
       </nav>
