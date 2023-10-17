@@ -1,5 +1,10 @@
-import { BrowserRouter, Link, Routes, Navlink } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import { MyRoutes } from "./Components/MyRoutes";
 
 export const App = () => {
-  return <div>I found you!</div>;
+  return (
+    <BrowserRouter>
+      <MyRoutes />
+    </BrowserRouter>
+  )
 };
