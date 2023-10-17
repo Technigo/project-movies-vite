@@ -7,7 +7,6 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-
         <Route path="/movie" element={<Detail />} />
       </Routes>
     </BrowserRouter>

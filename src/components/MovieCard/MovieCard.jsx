@@ -3,7 +3,7 @@ import styles from "./MovieCard.module.css";
 function MovieCard({ movie }) {
   const [onMouse, setOnMouse] = useState(false);
   const { title, release_date, poster_path: poster } = movie;
-  console.log(movie);
+
   return (
     <div
       className={styles.card_wrapper}
