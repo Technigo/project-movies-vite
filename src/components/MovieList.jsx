@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { MovieItem } from "./MovieItem";
 
 
 
@@ -12,17 +12,22 @@ export const MovieList = () => {
       .then(data => setData(data.results))
       .catch(error => console.error('Error fetching data:', error))
   }, []);
-
+// console.log(data)
 return (
     <div>
-        <ul>
-            {data.map(movie => (
-                <li key={movie.id}>{movie.title}</li>
-            ))}
-        </ul>
+      <h1>Popular Movies</h1>
+      <ul>
+        {data.map(movie => (
+          <MovieItem
+            key={movie.id}
+            name={movie.title}
+            photo={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} // Use the correct path
+            releaseDate={movie.release_date}
+          />
+        ))}
+      </ul>
     </div>
-
-)
+  );
 
   // return (
   // )
