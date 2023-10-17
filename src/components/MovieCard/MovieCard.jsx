@@ -1,10 +1,13 @@
+import { Link } from 'react-router-dom';  //wrapping the entire movie card in a Link component so we'll be able to navigate to the movie details page when the movie poster is clicked
 import { useState } from "react";
 import styles from "./MovieCard.module.css";
+
 function MovieCard({ movie }) {
   const [onMouse, setOnMouse] = useState(false);
-  const { title, release_date, poster_path: poster } = movie;
+  const { id, title, release_date, poster_path: poster } = movie;
   console.log(movie);
   return (
+    <Link to={`/movie/${id}`} style={{ textDecoration: 'none' }}>
     <div
       className={styles.card_wrapper}
       onMouseEnter={() => setOnMouse(true)}
@@ -21,6 +24,7 @@ function MovieCard({ movie }) {
         </div>
       </div>
     </div>
+    </Link>
   );
 }
 
