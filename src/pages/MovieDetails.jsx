@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
+const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/";
+const BACKDROP_SIZE = "w780";
+
 function MovieDetails() {
   const [movie, setMovie] = useState({});
   const { id } = useParams();
@@ -14,13 +17,17 @@ function MovieDetails() {
       });
   }, [id]);
 
+  const backdropImageUrl = movie.backdrop_path ? `${IMAGE_BASE_URL}${BACKDROP_SIZE}${movie.backdrop_path}` : "";
+
   return (
     <div>
-      {/* Display movie details. For simplicity, only title is shown here. */}
+      {movie.backdrop_path && <img src={backdropImageUrl} alt={movie.title || "Movie backdrop"} />}
       <h1>{movie.title}</h1>
+      {/* You can display other movie details here as needed. */}
     </div>
   );
 }
 
 export default MovieDetails;
+
 
