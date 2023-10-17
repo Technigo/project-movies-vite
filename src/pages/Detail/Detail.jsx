@@ -190,6 +190,76 @@
 
 // export default Detail;
 
+// import React, { useEffect, useState } from "react";
+// import { useLocation } from "react-router-dom";
+// import styles from "./Detail.module.css";
+
+// const options = {
+//   method: "GET",
+//   headers: {
+//     accept: "application/json",
+//     Authorization:
+//       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMzEwNDBiNT03yXIf4z6QEk8z4",
+//   },
+// };
+
+// function Detail() {
+//   const location = useLocation();
+//   const posterPath = new URLSearchParams(location.search).get("poster_path");
+//   const selectedMovieId = new URLSearchParams(location.search).get("movie_id");
+
+//   const [selectedMovie, setSelectedMovie] = useState();
+//   const [isLoading, setIsLoading] = useState(true);
+
+//   useEffect(() => {
+//     async function fetchMovieDetails() {
+//       try {
+//         const response = await fetch(
+//           `https://api.themoviedb.org/3/movie/${selectedMovieId}?language=en-US`,
+//           options
+//         );
+//         const data = await response.json();
+//         setSelectedMovie(data);
+//         setIsLoading(false);
+//       } catch (err) {
+//         console.error(err);
+//         setIsLoading(false);
+//       }
+//     }
+
+//     if (selectedMovieId) {
+//       fetchMovieDetails();
+//     }
+//   }, [selectedMovieId]);
+
+//   return (
+//     <React.Fragment>
+//     <div className={styles.detail}>
+//       {!isLoading ? (
+//         selectedMovie ? (
+//           <div>
+//             <h1>{selectedMovie.title}</h1>
+            
+//             <img className="detail-poster"
+//               src={`https://image.tmdb.org/t/p/w780${posterPath}`}
+//               alt={selectedMovie.title}
+//             />
+//             <p>{selectedMovie.overview}</p>
+//             <p>Release Date: {selectedMovie.release_date}</p>
+//           </div>
+//         ) : (
+//           <p>No movie details available</p>
+//         )
+//       ) : (
+//         <p>Loading</p>
+//       )}
+//     </div>
+//     </React.Fragment>
+//   );
+// }
+
+// export default Detail;
+
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import styles from "./Detail.module.css";
@@ -198,8 +268,7 @@ const options = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMzEwNDBiNT03yXIf4z6QEk8z4",
+    Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMzEwNDBiNTAzY2M0MzViNDk0MjU0ODRiMDZlYTc1NSIsInN1YiI6IjY1MmQyODNlNjYxMWI0MDBlMjU1MDMxYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.nzGRkQ839_qWKFn7k3BsxmVqMmHl11yXIf4z6QEk8z4", // Replace with your API key
   },
 };
 
@@ -208,8 +277,9 @@ function Detail() {
   const posterPath = new URLSearchParams(location.search).get("poster_path");
   const selectedMovieId = new URLSearchParams(location.search).get("movie_id");
 
-  const [selectedMovie, setSelectedMovie] = useState();
+  const [selectedMovie, setSelectedMovie] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     async function fetchMovieDetails() {
@@ -218,11 +288,18 @@ function Detail() {
           `https://api.themoviedb.org/3/movie/${selectedMovieId}?language=en-US`,
           options
         );
-        const data = await response.json();
-        setSelectedMovie(data);
+        if (response.status === 200) {
+          const data = await response.json();
+          setSelectedMovie(data);
+        } else if (response.status === 401) {
+          setError("Unauthorized: Please check your API key and permissions.");
+        } else {
+          setError(`Error: ${response.status} - ${response.statusText}`);
+        }
         setIsLoading(false);
       } catch (err) {
         console.error(err);
+        setError("An error occurred while fetching data.");
         setIsLoading(false);
       }
     }
@@ -236,19 +313,22 @@ function Detail() {
     <React.Fragment>
     <div className={styles.detail}>
       {!isLoading ? (
-        selectedMovie ? (
-          <div>
-            <h1>{selectedMovie.title}</h1>
-            
-            <img className="detail-poster"
-              src={`https://image.tmdb.org/t/p/w780${posterPath}`}
-              alt={selectedMovie.title}
-            />
-            <p>{selectedMovie.overview}</p>
-            <p>Release Date: {selectedMovie.release_date}</p>
-          </div>
+        !error ? (
+          selectedMovie ? (
+            <div>
+              <h1>{selectedMovie.title}</h1>
+              <img
+                src={`https://image.tmdb.org/t/p/w780${posterPath}`}
+                alt={selectedMovie.title}
+              />
+              <p>{selectedMovie.overview}</p>
+              <p>Release Date: {selectedMovie.release_date}</p>
+            </div>
+          ) : (
+            <p>No movie details available</p>
+          )
         ) : (
-          <p>No movie details available</p>
+          <p>Error: {error}</p>
         )
       ) : (
         <p>Loading</p>
@@ -259,6 +339,7 @@ function Detail() {
 }
 
 export default Detail;
+
 
 
 
