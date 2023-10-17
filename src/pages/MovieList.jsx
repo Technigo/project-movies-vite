@@ -24,7 +24,7 @@ function MovieList() {
             <img src={`${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`} alt={movie.title || "Movie poster"} />
             <div className="movie-info">
               <h3>{movie.title}</h3>
-              <p>{movie.release_date}</p>
+              <p>Released {movie.release_date}</p>
             </div>
           </div>
         </Link>
