@@ -1,0 +1,22 @@
+.main {
+  max-width: 100vw;
+}
+.main_inner {
+  display: grid;
+}
+
+@media (min-width: 370px) {
+  .main_inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 570px) {
+  .main_inner {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 820px) {
+  .main_inner {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
