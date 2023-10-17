@@ -6,18 +6,32 @@ import { Paragraph } from './components/typography/paragraph/Paragraph'
 import { RatingTag } from './components/ratingTag/ratingTag'
 import { MovieCard } from './components/movieCard/MovieCard'
 
+import { BrowserRouter } from "react-router-dom";
+import { Routes } from "react-router-dom";
+import { routes } from "./routes/routes";
+
 
 export const App = () => {
   return (
-    <section>
-    <BackButton/>
-    <HeadingH2 text={"This is heading h2"}/>
-    <HeadingH3 text={"This is heading h3"}/>
-    <DetailImage/>
-    <Paragraph text={"This is an example of a paragraph"}/>
-    <RatingTag/>
-    <MovieCard />
+    <>
+      <BrowserRouter>
+        <Routes>
+          {routes}
+        </Routes>
 
-    </section>
-    )
+        <section>
+          <BackButton />
+          <HeadingH2 text={"This is heading h2"} />
+          <HeadingH3 text={"This is heading h3"} />
+          <DetailImage />
+          <Paragraph text={"This is an example of a paragraph"} />
+          <RatingTag />
+          <MovieCard />
+
+        </section>
+
+      </BrowserRouter>
+    </>
+
+  )
 };
