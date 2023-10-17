@@ -21,7 +21,8 @@ function MovieList() {
       {movies.map(movie => (
         <Link key={movie.id} to={`/moviedetails/${movie.id}`}>
           <img src={`${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`} alt={movie.title || "Movie poster"} />
-          <p>{movie.title}</p>
+          <h3>{movie.title}</h3>
+          <p>{movie.release_date}</p>
         </Link>
       ))}
     </div>
