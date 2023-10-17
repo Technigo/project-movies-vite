@@ -1,7 +1,7 @@
 import './detailImage.css'
 
-export const DetailImage = () => {
+export const DetailImage = ({ url, altText }) => {
   return (
-    <img className="detail-image" src="/little-mermaid.jpeg" alt="" />
+    <img className="detail-image" src={url} alt={altText} />
   )
 }

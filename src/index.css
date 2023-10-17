@@ -2,21 +2,16 @@
 * {
   margin: 0;
   box-sizing: border-box;
+  list-style-type: none;
   --primary: white;
   --secondary: black;
-  --text-shadow: 1px 1px #4d4d4d;
+  --text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 body {
-  background-color: bisque;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  line-height: 1.5;
-}
-
-p {
-  font-size: 16px;
 }
 
 a {
@@ -27,17 +22,11 @@ a {
 
 h2 {
   color: var(--primary);
-  font-size: 32px;
   text-shadow: var(--text-shadow);
 }
 
 
 h3 {
   color: var(--primary);
-  font-size: 24px;
   text-shadow: var(--text-shadow);
-}
-
-.startpage-ul {
-  list-style-type: none;
 }

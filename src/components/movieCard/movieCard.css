@@ -1,0 +1,43 @@
+.movie-card {
+    position: relative;
+    display: flex;
+    max-width: 100%;
+    z-index: 1;
+}
+
+.details {
+    position: absolute;
+    /* Absolute to position details above the card */
+    bottom: -6px;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    /* Padding for readability */
+    z-index: 2;
+    display: none;
+}
+
+.movie-card:hover .details {
+    display: block;
+}
+
+/* ------------ MEDIA QUERIES ------------ */
+@media (max-width: 569px) and (min-width: 369px) {
+    .movie-card {
+        max-width: 50%;
+    }
+}
+
+/* ------------ Tablet ------------ */
+@media (max-width: 819px) and (min-width: 570px) {
+    .movie-card {
+        max-width: 33%;
+    }
+}
+
+/* ------------ Desktop ------------ */
+@media (min-width: 820px) {
+    .movie-card {
+        max-width: 25%;
+    }
+}
