@@ -13,6 +13,8 @@ export const Home = () => {
   //Our movie API key: 003a2d9ebc845f57f76c3c02dbd08f13
   //movie API URL for popular movies in the US:'https://api.themoviedb.org/3/movie/popular?api_key={api_key}&language=en-US&page=1'
 
+  //NOTE we can change the country if we want Norway = NO, Australia = AU
+
   const [movies, setMovies] = useState([]);
 
   const OurMovieAPI = `https://api.themoviedb.org/3/movie/popular?api_key=003a2d9ebc845f57f76c3c02dbd08f13&language=en-US&page=1`;
@@ -47,7 +49,6 @@ export const Home = () => {
           <p>{movie.title}</p>
         </Link>
       ))}
-      <p></p>
     </div>
   );
 };

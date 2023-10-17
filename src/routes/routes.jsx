@@ -6,7 +6,7 @@ const routes = (
   <>
     <Route path="/" element={<Home />} />
 
-    <Route path="/song/:movieDetail" element={<MovieDetails />}></Route>
+    <Route path="/movie/:movieDetail" element={<MovieDetails />}></Route>
   </>
 );
 
