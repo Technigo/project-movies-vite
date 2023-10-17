@@ -1,7 +1,5 @@
-import "./Detail.css"
+import "./Detail.css";
 
 export const Detail = () => {
-    return (
-        <div></div>
-    )
-}
+  return <div></div>;
+};
