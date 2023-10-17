@@ -1,4 +1,4 @@
-import { BrowserRouter, Link, Routes } from "react-router-dom";
+import { BrowserRouter, NavLink, Routes } from "react-router-dom";
 import routes from "./routes/routes";
 import "./index.css";
 
@@ -9,7 +9,7 @@ export const App = () => {
         <nav>
           <ul className="app-ul">
             <li className="app-li">
-              <Link to="/">Home</Link>
+              <NavLink to="/">Home</NavLink>
             </li>
           </ul>
         </nav>
