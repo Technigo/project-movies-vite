@@ -54,4 +54,3 @@ export const Home = ({ movie }) => {
     </div>
   );
 };
-//OBS FORKLAR
