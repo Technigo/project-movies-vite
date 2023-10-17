@@ -1,57 +1,59 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import styles from "./Detail.module.css";
 
-const MovieDetail = ({ movieIds }) => {
-  const [movieDetails, setMovieDetails] = useState([]);
-
-  useEffect(() => {
-    const fetchMovieDetails = async () => {
-      const details = [];
-
-      for (const movieId of movieIds) {
-        const apiUrl = `https://api.themoviedb.org/3/movie/${movieId}?language=en-US`;
-
-        const options = {
-          method: 'GET',
-          headers: {
-            accept: 'application/json',
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMzEwNDBiNTAzY2M0MzViNDk0MjU0ODRiMDZlYTc1NSIsInN1YiI6IjY1MmQyODNlNjYxMWI0MDBlMjU1MDMxYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.nzGRkQ839_qWKFn7k3BsxmVqMmHl11yXIf4z6QEk8z4'
-          }
-        };
-
-        try {
-          const response = await fetch(apiUrl, options);
-          if (response.ok) {
-            const data = await response.json();
-            details.push(data);
-          }
-        } catch (error) {
-          console.error(error);
-        }
-      }
-
-      setMovieDetails(details);
-    };
-
-    fetchMovieDetails();
-  }, [movieIds]);
-
-  return (
-    <React.Fragment>
-      <h1>Movie Details</h1>
-      {movieDetails.length > 0 ? (
-        movieDetails.map((movie, index) => (
-          <div key={index}>
-            <h2>{movie.title}</h2>
-            <p>Overview: {movie.overview}</p>
-            <p>Release Date: {movie.release_date}</p>
-          </div>
-        ))
-      ) : (
-        <p>Loading movie details...</p>
-      )}
-    </React.Fragment>
-  );
+const options = {
+  method: "GET",
+  headers: {
+    accept: "application/json",
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMzEwNDBiNT03yXIf4z6QEk8z4",
+  },
 };
 
-export default MovieDetail;
+function Detail() {
+  const [movie, setMovie] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
+  useEffect(() => {
+    async function fetchMovieDetails() {
+      try {
+        const response = await fetch(
+          "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",
+          options
+        );
+        const data = await response.json();
+        setMovie(data.results[0]); //
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    fetchMovieDetails();
+  }, []);
+
+  return (
+    <div className={styles.detail}>
+      {!isLoading ? (
+        movie ? (
+          <div>
+            <h1>{movie.title}</h1>
+            <img
+              src={`https://image.tmdb.org/t/p/w780${movie.poster_path}`}
+              alt={movie.title}
+            />
+            <p>{movie.overview}</p>
+            {/* Render other movie details here */}
+          </div>
+        ) : (
+          <p>No movie details available</p>
+        )
+      ) : (
+        <p>Loading</p>
+      )}
+    </div>
+  );
+}
+
+export default Detail;
