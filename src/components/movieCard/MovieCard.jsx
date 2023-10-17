@@ -6,13 +6,13 @@ import './movieCard.css'
 export const MovieCard = () => {
   return (
     <div className="movie-card">
-    <a href="">
-        <img src="public/little-mermaid.jpeg" alt=""/>
+      <a href="">
+        <img src="/little-mermaid.jpeg" alt="" />
         <div className="details">
-            <HeadingH2 text={"Movie heading"}/>
-            <Paragraph text={"Release date: 2023-01-01"}/>
+          <HeadingH2 text={"Movie heading"} />
+          <Paragraph text={"Release date: 2023-01-01"} />
         </div>
-    </a>
+      </a>
     </div>
   )
 }
