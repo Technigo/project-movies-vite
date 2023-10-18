@@ -26,7 +26,7 @@ export const PopularList = () => {
             console.error("Something went wrong!") // Log the error to the console
         }
     }
-  };
+  
 
   // Handles the fetch from above
   useEffect(() => {
@@ -38,5 +38,5 @@ export const PopularList = () => {
     <section className="popular-movies">
       {movies ? <MovieCard movieData={movies.results} /> : <p>Loading...</p>}
     </section>
-  );
-};
+  )
+  }
