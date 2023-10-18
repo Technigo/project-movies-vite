@@ -8,7 +8,7 @@ Subsequently, I realized that the API key needed to be added to the .env documen
 
 Upon deployment, I encountered numerous error messages on Netlify, which prompted me to realize that I also needed to add the API key in Netlify and configure the .toml file to adjust the route path for the "404 Not Found" page.
 
-Throughout this process, I thoroughly enjoyed working on this project, even completing it twice: once individually and another time in collaboration with my partner Lisa. You can find our joint project at this GitHub repository and visit the deployed version at this address. Working with different individuals was an enriching experience, making this week truly memorable.
+Throughout this process, I thoroughly enjoyed working on this project, even completing it twice: once individually and another time in collaboration with my partner Lisa. You can find our joint project at this GitHub repository https://github.com/isarobertini/project-movies-vite/tree/main and visit the deployed version https://movie-site-vite.netlify.app/ at this address. Working with different individuals was an enriching experience, making this week truly memorable.
 
 ## Feature
 - Display a "Not Found Page" when a resource is not located.
