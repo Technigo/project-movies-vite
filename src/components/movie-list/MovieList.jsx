@@ -9,15 +9,6 @@ export const MovieList = () => {
 
   const envAPIKey = import.meta.env.VITE_API_KEY;
 
-  const singleMovieAPICall = (movie_id) => {
-    fetch(
-      `https://api.themoviedb.org/3/movie/${movie_id}?api_key=${envAPIKey}&language=en-US`
-    )
-      .then((response) => response.json())
-      .then((response) => console.log(response))
-      .catch((err) => console.error(err));
-  };
-
   const API = async () => {
     await fetch(
       `https://api.themoviedb.org/3/movie/popular?api_key=${envAPIKey}&language=en-US&page=1`
