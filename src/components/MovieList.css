@@ -15,6 +15,7 @@ a{
 .movie-image {
   position: relative; /* Set the position to "relative" to allow for positioning of inner elements */
   overflow: hidden; /* Hide overflow content within the .movie-image container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
 }
 
 
