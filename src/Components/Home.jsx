@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect ,useState } from "react"
 
 export const Home = () => {
   const [data, setData] = useState(null);
@@ -18,7 +18,16 @@ export const Home = () => {
     <div>
     <ul>
       {data.results.map(movie => (
-        <li key={movie.id}>{movie.title}</li>
+        <li key={movie.id}>
+          <h3>{movie.title}</h3>
+          {movie.poster_path && (
+            <img 
+            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+            alt={movie.title}
+            />
+          )}
+           <p>Released: {movie.release_date}</p>
+          </li>
       ))}
     </ul>
     </div>
