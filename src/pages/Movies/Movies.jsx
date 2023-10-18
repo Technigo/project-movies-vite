@@ -11,15 +11,19 @@ const Movies = () => {
     useEffect(() => {
         // Defining an asynchronous function to fetch popular movies
         const getMoviesOnMount = async () => {
-            // Sending a GET request to the popular movies API
-            const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${import.meta.env.VITE_MOVIE_API_KEY}&language=en-US&page=1`);
+            try {
+                // Sending a GET request to the popular movies API
+                const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${import.meta.env.VITE_MOVIE_API_KEY}&language=en-US&page=1`);
 
-            // Checking if the response is successful (status code 200)
-            if (response.ok) {
-                // Parsing the response data as JSON
-                const data = await response.json();
-                // Updating the state with the list of movies
-                setMovies(data.results);
+                // Checking if the response is successful (status code 200)
+                if (response.ok) {
+                    // Parsing the response data as JSON
+                    const data = await response.json();
+                    // Updating the state with the list of movies
+                    setMovies(data.results);
+                }
+            } catch (error) {
+                console.error(error);
             }
         }
 

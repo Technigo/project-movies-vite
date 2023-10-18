@@ -14,15 +14,19 @@ const MovieDetails = () => {
     useEffect(() => {
         // Defining an asynchronous function to fetch movie details
         const getDetailsOnMount = async () => {
-            // Sending a GET request to the movie details API
-            const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${import.meta.env.VITE_MOVIE_API_KEY}&language=en-US`);
+            try {
+                // Sending a GET request to the movie details API
+                const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${import.meta.env.VITE_MOVIE_API_KEY}&language=en-US`);
 
-            // Checking if the response is successful (status code 200)
-            if (response.ok) {
-                // Parsing the response data as JSON
-                const data = await response.json();
-                // Updating the state with the movie details
-                setMovieDetails(data);
+                // Checking if the response is successful (status code 200)
+                if (response.ok) {
+                    // Parsing the response data as JSON
+                    const data = await response.json();
+                    // Updating the state with the movie details
+                    setMovieDetails(data);
+                }
+            } catch (error) {
+                console.error(error);
             }
         }
 
