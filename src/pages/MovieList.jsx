@@ -10,7 +10,7 @@ export const MovieList = () => {
     // State variables to hold data and loading status
     const [imageConfig, setImageConfig] = useState(null);
     const [list, setList] = useState([]);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
 
 
     const api_key = "7d78ddbe7ada309152c07dd3e85ec306";
