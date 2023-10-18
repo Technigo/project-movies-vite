@@ -1,3 +1,9 @@
+import { MovieList } from "./components/movie-list/MovieList";
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  return (
+    <div>
+      <MovieList />
+    </div>
+  );
 };
