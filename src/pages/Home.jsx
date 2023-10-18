@@ -1,7 +1,7 @@
 // This component represents the home page with a list of popular movies.
 import { useEffect, useState } from 'react'
 import { MovieItem } from '../components/MovieItem';
-import { getMovieList } from '../Api';
+import { getMovieList } from '/src/api';
 
 export function Home() {
   const [movies, setMovies] = useState([]);

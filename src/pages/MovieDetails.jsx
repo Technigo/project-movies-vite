@@ -1,9 +1,9 @@
 // This component represents the movie details page.
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getMovieDetails } from '/src/Api';
+import { getMovieDetails } from '/src/api';
 import { BackButton } from '../components/BackButton';
-import { IMAGE_BASE_URL } from '/src/Api'; // Import IMAGE_BASE_URL from your API module
+import { IMAGE_BASE_URL } from '/src/api'; // Import IMAGE_BASE_URL from your API module
 
 
 export function MovieDetails() {
