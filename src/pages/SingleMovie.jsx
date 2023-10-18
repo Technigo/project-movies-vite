@@ -14,6 +14,7 @@ export const SingleMovie = () => {
             .then((res) => res.json()) // Remove extra parentheses here
             .then((json) => {
                 setMovie(json);
+                console.log("data is", json);
             })
             .catch((error) => {
                 console.error("Error fetching data: ", error);
@@ -23,12 +24,17 @@ export const SingleMovie = () => {
     // You should return something here; for example, you can display the movie details in JSX.
     // Replace this return statement with your actual JSX structure for displaying movie details.
     return (
-        <div>
+        <div className="single-movie">
+            {/* // frågetecken bestämmer filmen visas eller inte */}
             {movie ? (
                 <div>
                     <h1>{movie.title}</h1>
                     <p>{movie.overview}</p>
                     {/* Add more movie details here */}
+                    <img
+                        src={`https://image.tmdb.org/t/p/w780/${movie.backdrop_path}`}
+                        alt={movie.title}
+                    />
                 </div>
             ) : (
                 <p>Loading...</p>
@@ -36,6 +42,35 @@ export const SingleMovie = () => {
         </div>
     );
 };
+
+// backgrundsbild + bild
+//back - button (gör en link - path )   <Link to={`/movies/${movieId}`} aria-label={`View details for ${movieTitle}`}> 
+
+//singlemovie card??
+
+//bilder - ta största storleken 
+
+// {
+//     "images": {
+//       "base_url": "http://image.tmdb.org/t/p/",
+//       "secure_base_url": "https://image.tmdb.org/t/p/",
+//       "backdrop_sizes": ["w300", "w780", "w1280", "original"],
+//       "logo_sizes": ["w45", "w92", "w154", "w185", "w300", "w500", "original"],
+//       "poster_sizes": ["w92", "w154", "w185", "w342", "w500", "w780", "original"],
+//       "profile_sizes": ["w45", "w185", "h632", "original"],
+//       "still_sizes": ["w92", "w185", "w300", "original"]
+//     }
+//   }
+
+// https://image.tmdb.org/t/p/w1280${movie.backdrop_path}
+
+
+
+
+{/* <img
+src={`https://image.tmdb.org/t/p/w780/${movie.backdrop_path}`}
+alt={movie.title}
+/> */}
 
 
 
