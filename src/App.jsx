@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MovieList from "./components/MovieList";
-import ShowMovie from "./components/ShowMovie";
+import { ShowMovie } from "./components/ShowMovie";
 
 //export
 export const App = () => {
@@ -9,7 +9,7 @@ export const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MovieList />} />
-          <Route path="/movies/:id " element={<ShowMovie />} />
+          <Route path="/movies/:id" element={<ShowMovie />} />
         </Routes>
       </BrowserRouter>
     </div>
