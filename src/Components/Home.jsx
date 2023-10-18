@@ -2,7 +2,11 @@ import { useEffect ,useState } from "react"
 import { Link } from "react-router-dom";
 import './home.css';
 
+
+
+
 export const Home = () => {
+
   const [data, setData] = useState(null);
   const apiKey = '0c1859339f764c871c4c8225088979ea';
 
