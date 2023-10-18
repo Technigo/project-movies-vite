@@ -7,7 +7,7 @@ const routes = (
   <>
     <Route path="/" element={<Popular />}></Route>
     <Route path="/detail/:id" element={<Detail />}></Route>
-    <Route path="*" element={<NotFoundPage />}></Route>
+    <Route path="/not-found" element={<NotFoundPage />}></Route>
   </>
 );
 

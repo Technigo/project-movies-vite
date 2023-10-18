@@ -2,9 +2,11 @@ import "./Detail.css";
 import { DetailComp } from "../components/detail/DetailComp";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { NotFoundPage } from "./NotFoundPage";
 
 export const Detail = () => {
   const [movie, setMovie] = useState();
+  const [error, setError] = useState(false);
   const { id } = useParams();
 
   const api_key = "7c19dcf9d97858f9497be69f656c349b"; // Change later to pass as a promt instead.
@@ -15,13 +17,20 @@ export const Detail = () => {
     try {
       const response = await fetch(detailApi);
       if (!response.ok) {
-        throw new Error("Failed to fetch movie details");
+        if (response.status === 404) {
+          // Invalid movie ID, show the 'not found' page.
+          setError(true);
+        } else {
+          throw new Error("Failed to fetch movie details");
+        }
+      } else {
+        const data = await response.json();
+        console.log("Movie details fetching data", data);
+        setMovie(data);
       }
-      const data = await response.json();
-      console.log("Movie details fetching data", data);
-      setMovie(data);
     } catch (error) {
       console.error("Error fetching data", error);
+      setError(true);
     }
   };
 
@@ -30,9 +39,9 @@ export const Detail = () => {
     fetchDetails();
   }, [id]);
 
-  return (
-    <>
-      <DetailComp movie={movie} />
-    </>
-  );
+  if (error) {
+    return <NotFoundPage />; // Display 'not found' page.
+  }
+
+  return <>{movie ? <DetailComp movie={movie} /> : <div>Loading...</div>}</>;
 };
