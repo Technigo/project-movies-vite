@@ -10,6 +10,12 @@ Upon deployment, I encountered numerous error messages on Netlify, which prompte
 
 Throughout this process, I thoroughly enjoyed working on this project, even completing it twice: once individually and another time in collaboration with my partner Lisa. You can find our joint project at this GitHub repository and visit the deployed version at this address. Working with different individuals was an enriching experience, making this week truly memorable.
 
+## Feature
+- Display a "Not Found Page" when a resource is not located.
+- Manage loading states effectively.
+- Implement a dropdown on the homepage for selecting different endpoints, allowing seamless toggling between various options.
+  
+
 ### Dependency Installation & Startup Development Server 👩‍💻
 Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
 
