@@ -1,21 +1,51 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import { MovieDetails } from "./MovieDetails";
 
 export const MovieCard = () => {
 
-  const [movieData, setMovieData] = useState([])
-  const api_key = "7a6dc3dad2658fff3044692170b4b00a";
-  const  {movie_id} = useParams()
+  const [movieData, setMovieData] = useState(null)
+  const [isLoading, setIsLoading] =useState(true);
+  const { id } = useParams()
+  // console.log("movie_id:", id);
 
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=${api_key}&language=en-US`)
-      .then(response => response.json())
-      .then(data => setMovieData(data.results))
-      .catch(error => console.error('Error fetching data:', error))
-  }, [movie_id]);
-  console.log(movieData)
+    const api_key = "7a6dc3dad2658fff3044692170b4b00a";
+    const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}&language=en-US`;
+    // console.log("API Request URL:", url);
+
+    const fetchMovies = async () => {
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error("Network response was NOT OK!");
+        }
+
+        const json = await response.json();
+        console.log("Response Status Code:", response.status);
+        setMovieData(json)
+        setIsLoading(false);
+        window.scrollTo({ top: 0, behavior: "smooth"});
+      }
+      catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    const delay =setTimeout(()=> {
+      fetchMovies()
+    }, 500);
+
+    return () => clearTimeout(delay);
+  }, [id])
+
   
   return (
-    <div>MovieCard</div>
+    <>
+      
+      
+    {!isLoading && movieData && <Link to="/">Back</Link>}
+      {!isLoading && movieData && <MovieDetails movie={movieData} />}
+   </>
   )
 }

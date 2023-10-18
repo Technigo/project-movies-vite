@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, } from "react";
 import { MovieItem } from "./MovieItem";
+import { Link } from "react-router-dom";
 
 
 
@@ -17,22 +18,46 @@ return (
     <div>
       <h1>Popular Movies</h1>
       <ul>
-        {data.map(movie => (
-          <MovieItem
-            key={movie.id}
-            name={movie.title}
-            photo={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} // Use the correct path
-            releaseDate={movie.release_date}
-          />
-        ))}
+      {data.map(movie => (
+  <Link to={`/movie/${movie.id}`} key={movie.id}>
+    <MovieItem
+      name={movie.title}
+      photo={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+      releaseDate={movie.release_date}
+    />
+  </Link>
+))}
+
       </ul>
     </div>
   );
-
-  // return (
-  // )
 }
 
+{/* <div>
+<h1>Popular Movies</h1>
+<ul>
+  {data.map(movie => (
+    <MovieItem
+      key={movie.id}
+      name={movie.title}
+      photo={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} // Use the correct path
+      releaseDate={movie.release_date}
+    />
+  ))}
+</ul>
+</div> */}
+
+// <div>
+// <h1>Popular Movies</h1>
+// <ul>
+//   {data.map(movie => (
+//     <li key={movie.id}>
+//       <h2>{movie.title}</h2>
+//       <Link to={`/movie/${movie.id}`}>View Details</Link>
+//     </li>
+//   ))}
+// </ul>
+// </div>
 
 
 // export const Projects = () => {
