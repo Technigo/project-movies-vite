@@ -44,14 +44,20 @@ export const Home = ({ movie }) => {
   return (
     <div>
       <h1 className={styles.moviesHeader}>Latest Movies</h1>
+
       <div className={styles.movielistContainer}>
         {movies &&
           movies.results &&
           movies.results.map((movie) => (
             <Link to={`/movie/${movie.id}`} key={movie.id}>
               <div className={styles.movielistBox}>
-                <p> {movie.title}</p>
-                <p>Release date: {movie.release_date}</p>
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                />
+                <div className={styles.movieText}>
+                  <p> {movie.title}</p>
+                  <p>Release date: {movie.release_date}</p>
+                </div>
               </div>
             </Link>
           ))}

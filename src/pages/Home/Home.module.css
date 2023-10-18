@@ -24,16 +24,21 @@ a:hover {
   display: grid;
   max-width: 100%;
   margin: 0 auto;
-  gap: 1rem;
   overflow: hidden;
 }
 
 .movielistBox {
   /* grid child */
-  background-color: green;
   border: 3px solid red;
-  height: 180px;
   text-align: center;
+}
+
+.movielistBox img {
+  height: 100%;
+  width: 100%;
+}
+
+.movieText {
 }
 
 /* media query for tablet */
