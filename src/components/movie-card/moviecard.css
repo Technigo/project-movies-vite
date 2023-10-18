@@ -1,6 +1,43 @@
 .movie-card {
-  border: 2px solid red;
-
+  border: 2px;
   background-repeat: no-repeat;
   background-size: contain;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.movie-card img {
+  position: relative;
+  display: block;
+}
+
+.movie-data {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.movie-data h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.movie-data h3 {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.movie-card:hover .movie-data {
+  bottom: 0;
+}
+
+.movie-card:hover img {
+  opacity: 0.4;
+  transition: 0.4s;
 }

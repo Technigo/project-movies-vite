@@ -9,6 +9,7 @@
 .container {
   margin: 0 auto;
 }
+
 @media (min-width: 745px) and (max-width: 1049px) {
   .movie-grid {
     grid-template-columns: repeat(2, 1fr);
