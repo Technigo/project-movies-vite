@@ -1,0 +1,48 @@
+a {
+    position: relative;
+    place-content: center;
+}
+
+.poster {
+    width: 25dvw;
+    z-index: -1;
+}
+
+.movie-text-container {
+    position: absolute;
+    bottom: 8px;
+    left: 5px;
+    z-index: 1;
+    /* display:none; */
+}
+
+.movie-title {
+    font-size: 1.8em;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+.movie-release {
+    font-size: 0.8em;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+.a-movie:hover > .movie-text-container {
+    color:red;
+}
+
+/* 
+@media (min-width: 375px) and (max-width: 575px) {
+    .poster {
+        width: 50dvw;
+    }
+}
+
+@media (min-width: 576px) {
+    .poster {
+        width: 25dvw;
+    }
+} */
