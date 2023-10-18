@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./singlemovie.css";
+import { BackIcon } from "../components/BackIcon";
+import { Link } from 'react-router-dom';
+
 
 const API_KEY = "833874c10582aaa2144a7cb70148fbd3";
 // const URL_START = "https://api.themoviedb.org/3/movie/";
@@ -25,12 +28,15 @@ export const SingleMovie = () => {
     // Replace this return statement with your actual JSX structure for displaying movie details.
     return (
         <div className="single-movie">
-            {/* // frågetecken bestämmer filmen visas eller inte */}
+            <Link to="/" className="backLink">
+                <BackIcon />
+            </Link>
+
             {movie ? (
                 <div>
                     <h1>{movie.title}</h1>
                     <p>{movie.overview}</p>
-                    {/* Add more movie details here */}
+
                     <img
                         src={`https://image.tmdb.org/t/p/w780/${movie.backdrop_path}`}
                         alt={movie.title}

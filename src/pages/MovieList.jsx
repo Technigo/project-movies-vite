@@ -81,7 +81,7 @@ export const MovieList = () => {
                     ))}
                 </div>
 
-                {/* Displaying a loading spinner if 'loading' is true */}
+
                 {loading && (
                     <div className="loader-container">
                         <Oval />

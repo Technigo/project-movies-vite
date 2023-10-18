@@ -1,4 +1,10 @@
-
 .single-movie {
     color: white;
+}
+
+
+.backLink svg {
+    width: 40px;
+    height: 40px;
+
 }
