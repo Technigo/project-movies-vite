@@ -1,16 +1,8 @@
-<h1 align="center">
-  <a href="">
-    <img src="/src/assets/movies.svg" alt="Project Banner Image">
-  </a>
-</h1>
-
-# Movie Site Project
-
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+# Movie Site Project🎬🍿
+Welcome to the Movie Site Project! This is a pair programming. The project is aim to create our own movie site. We've built the first multi-page React application and use a fun new API from the database https://developer.themoviedb.org/reference/intro/getting-started.
 
 ## Getting Started with the Project
+Huadan and Isa collaborated on the initial codebase, dividing responsibilities for different sections. Huadan focused on the MovieList component, while Isa took charge of the ShowMovie component. With daily communication and regular morning stand-up meetings, the team effectively coordinated their efforts.
 
 ### Dependency Installation & Startup Development Server
 
@@ -24,14 +16,8 @@ npm i && code . && npm run dev
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+- During the development process, some challenges were encountered, particularly during the pair programming phase. Ensuring seamless collaboration and effective communication was vital. Coordination in managing code integration and addressing conflicting programming approaches were crucial aspects that demanded attention. However, through efficient teamwork and constant communication, these challenges were successfully resolved, resulting in a robust and well-integrated application.
 
 ### View it live
+You can view the live version of the Movie Site Project by visiting https://movie-site-vite.netlify.app/
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
