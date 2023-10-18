@@ -30,31 +30,23 @@ export const Popular = () => {
   }, []);
 
   return (
-    <section className="popular-section">
+    <div className="popular-page">
       {movies.map((movie) => {
         return (
           <Link key={movie.id} to={`/detail/${movie.id}`}>
-            <div className="image-popular">
-              <img
-                src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
-                alt={movie.title}
-              />
+            <img
+              src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
+              alt={movie.title}
+              className="popular-poster"
+            />
+
+            <div className="popular-card-info">
+              <h1 className="title">{movie.title}</h1>
+              <p className="release-date">Released {movie.release_date}</p>
             </div>
           </Link>
         );
       })}
-    </section>
+    </div>
   );
 };
-
-// {movies.map(({movie}) => (
-
-//   // <Link key={movie.id} to={`/detail/${movie.id}`}>
-//   //   <div className="image-popular">
-//   //     <img
-//   //       src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`}
-//   //       alt={movie.title}
-//   //     />
-//   //   </div>
-//   // </Link>
-// ))}

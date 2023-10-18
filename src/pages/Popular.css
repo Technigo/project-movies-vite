@@ -1,5 +1,59 @@
-.popular-section {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+.popular-page {
+  display: grid;
+}
 
+.popular-page a {
+  position: relative;
+  width: 100%;
+  color: #fff;
+  text-decoration: none;
+}
+
+.popular-poster {
+  width: 100%;
+}
+
+.popular-card-info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: none;
+  padding: 20px;
+}
+
+.popular-page a:hover .popular-card-info {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.title {
+  font-weight: 700;
+}
+
+.release-date {
+  margin: 1em 0;
+  font-weight: 300;
+}
+
+@media (min-width: 370px) {
+  .popular-page {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 570px) {
+  .popular-page {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 820px) {
+  .popular-page {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

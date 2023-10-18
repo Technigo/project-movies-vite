@@ -1,40 +1,110 @@
-.girl {
-  width: 200px;
-}
-
-.back-icon {
-  color: white;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-}
-
-.detail-section {
+.movie-detail-wrapper {
+  position: relative;
   color: #fff;
 }
 
-.movie-title {
-  display: flex;
+/*---------- BACK TO MOVIES ----------*/
+
+.back-link {
+  position: absolute;
+  display: inline-flex;
+  color: #fff;
   align-items: center;
-  gap: 10px;
-  text-shadow: 1px 1px #4d4d4d;
+  font-weight: 700;
+  text-decoration: none;
+  left: 3rem;
+  top: 0.6rem;
+  filter: drop-shadow(2px 3px 4px rgb(0 0 0/0.5));
+}
+
+.back-link .back-icon {
+  color: #fff;
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-right: 0.4rem;
+  cursor: pointer;
+  transition: margin-right 0.3s ease-in-out;
+}
+
+.back-link:hover .back-icon {
+  margin-right: 0.8rem;
+}
+/*---------- BACK TO MOVIES END----------*/
+
+.background-image {
+  min-height: 100vh;
+  display: flex;
+  background-size: cover;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.movie-poster {
+  border: 5px solid #fff;
+  width: 200px;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+}
+
+.movie-details {
+  margin-left: 0;
+}
+
+.movie-details h1 {
+  text-shadow: 1px 1px rgb(77, 77, 77);
+  margin: 1.3rem 0;
   font-size: 1.5rem;
 }
 
+.movie-title {
+  margin-right: 0.7rem;
+  font-weight: 700;
+}
+
 .stars-rating {
-  display: flex;
+  display: inline-block;
   align-items: center;
-  gap: 0.5rem;
-  color: black;
+  gap: 0.4rem;
+  color: #000;
   background-color: #fff;
   font-weight: 500;
   padding: 0 5px;
+  text-shadow: none;
 }
 
 .star-icon {
+  width: 1.2rem;
+  height: 1.2rem;
   color: #fac91e;
 }
 
 .text-overview {
   max-width: 400px;
+}
+
+@media (min-width: 577px) {
+  .movie-info {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 1.8rem;
+  }
+
+  .movie-poster {
+    width: 250px;
+  }
+
+  .text-overview {
+    margin: 1em 0;
+  }
+}
+
+@media (min-width: 770px) {
+  .movie-poster {
+    width: initial;
+  }
 }

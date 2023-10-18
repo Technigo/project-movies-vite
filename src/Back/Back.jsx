@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 export const Back = () => (
   <>
-    <Link to="/">
+    <Link to="/" className="back-link">
       <IoIosArrowDropleftCircle className="back-icon" />
+      Movies
     </Link>
-    <span>Movies</span>
   </>
 );

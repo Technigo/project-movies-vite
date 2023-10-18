@@ -2,7 +2,6 @@ import "./Detail.css";
 import { DetailComp } from "../components/detail/DetailComp";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Back } from "../icons/Back";
 
 export const Detail = () => {
   const [movie, setMovie] = useState();
@@ -32,8 +31,8 @@ export const Detail = () => {
   }, [id]);
 
   return (
-    <div className="detail-section">
+    <>
       <DetailComp movie={movie} />
-    </div>
+    </>
   );
 };

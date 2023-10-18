@@ -1,5 +1,5 @@
 import { GrStar } from "react-icons/gr";
-import { Back } from "../../icons/Back";
+import { Back } from "../../Back/Back";
 
 export const DetailComp = ({ movie }) => {
   if (!movie) {
@@ -14,32 +14,32 @@ export const DetailComp = ({ movie }) => {
   }
 
   const imageBackground = {
-    backgroundImage: `url(https://image.tmdb.org/t/p/w1280${backdrop_path})`,
-    backgroundSize: "cover",
-    height: "100vh",
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0) 70%, rgb(0, 0, 0) 100%), url(https://image.tmdb.org/t/p/w1280${backdrop_path})`,
   };
 
   return (
-    <article>
-      <div className="movie-detail-wrapper" style={imageBackground}>
-        <Back />
-        {poster_path && (
-          <img
-            className="girl"
-            src={`https://image.tmdb.org/t/p/w500${poster_path}`}
-            alt={original_title}
-          />
-        )}
-        <h2>
-          <span className="movie-title">
-            {original_title}{" "}
-            <span className="stars-rating">
-              <GrStar className="star-icon" /> {vote_average.toFixed(1)}
-            </span>
-          </span>
-        </h2>
-        <p className="text-overview">{overview}</p>
-      </div>
+    <article className="movie-detail-wrapper">
+      <Back />
+      {movie && (
+        <div className="background-image" style={imageBackground}>
+          <div className="movie-info">
+            <img
+              className="movie-poster"
+              src={`https://image.tmdb.org/t/p/w342${poster_path}`}
+              alt={original_title}
+            />
+            <div className="movie-details">
+              <h1>
+                <span className="movie-title">{original_title} </span>
+                <span className="stars-rating">
+                  <GrStar className="star-icon" /> {vote_average.toFixed(1)}
+                </span>
+              </h1>
+              <p className="text-overview">{overview}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </article>
   );
 };
