@@ -1,6 +1,7 @@
 // Importing necessary hooks and styles
 import { useEffect, useState } from "react"; // Hooks for managing state and side effects
 import styles from "./Movies.module.css"; // CSS module for styling
+import { Link } from "react-router-dom";
 
 // Creating the Movies component
 const Movies = () => {
@@ -33,7 +34,27 @@ const Movies = () => {
 
     // Rendering the number of movies in the state
     return (
-        <p>{movies.length}</p>
+        <div className={styles.wrapper}>
+            {movies.map(movie => (
+                <Link
+                    key={movie.id}
+                    to={`/movies/${movie.id}`}
+                    className={styles.movieWrapper}
+                >
+                    <div className={styles.movieCard}>
+                        <div className={styles.text}>
+                            <h2>{movie.title}</h2>
+                            <p>{`Released ${movie.release_date}`}</p>
+                        </div>
+                    </div>
+                    <img
+                        className={styles.poster}
+                        src={`https://image.tmdb.org/t/p/w1280${movie.poster_path}`}
+                        alt="Movie poster"
+                    />
+                </Link>
+            ))}
+        </div>
     );
 }
 
