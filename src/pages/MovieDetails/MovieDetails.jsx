@@ -81,12 +81,12 @@ export const MovieDetails = () => {
         backgroundImage: `url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path})`,
       }}
     >
-      <h1 className={styles.movieHeader}>Movie Details</h1>
+      {/*
+      <h1 className={styles.movieHeader}>Movie Details</h1>*/}
       {/* Show the "Back" button */}
       <p className={styles.homelink}>
-        <NavLink to="/">Home</NavLink>
+        <NavLink to="/">Movies</NavLink>
       </p>
-
       <MovieCard movie={movie} />
     </div>
   );
