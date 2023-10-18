@@ -1,0 +1,7 @@
+/* Add your styling for the MovieInfo component here */
+.movie-info {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px;
+}
