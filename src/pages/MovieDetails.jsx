@@ -41,12 +41,14 @@ function MovieDetails() {
       <div className="container">
         <img className="movie-poster" src={`${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`} alt={movie.title || "Movie poster"} />
         <div className="text-content">
+        <div className="title-rating-wrapper">
             <h1>{movie.title}</h1>
             <div className="rating-box">
-                <img className="star-icon" src={starIcon} alt="Star Rating" />
-                <span className="rating-value">{movie.vote_average}</span>
+        <img className="star-icon" src={starIcon} alt="Star Rating" />
+        <span className="rating-value">{parseFloat(movie.vote_average).toFixed(1)}</span>
             </div>
-            <p>{movie.overview}</p>
+        </div>
+        <p>{movie.overview}</p>
         </div>
       </div>
     </>
