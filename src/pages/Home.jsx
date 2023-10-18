@@ -1,5 +1,4 @@
-import { MovieList } from "../components/MovieList"
-import './MovieList.css';
+import './Home.css';
 
 export const Home = () => {
 
@@ -7,6 +6,5 @@ export const Home = () => {
         <div>
 
         </div>
-
     )
 }
