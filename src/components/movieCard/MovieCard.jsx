@@ -14,20 +14,27 @@ export const MovieCard = ({ movieData }) => {
   console.log(movieData);
   return (
     <>
-      {
-        movieData.map((movie) => (
-          <article className="movie-card" key={movie.id}>
-            {/* The regex-pattern below replaces all colons and empty spaces for dashes for a nicer url */}
-            <Link to={`/detail/${movie.title.toLowerCase().replace(/[\s:]+/g, '-')}`}>
-              <DetailImage url={`https://image.tmdb.org/t/p/w780/${movie.poster_path}`} altText={`Poster image of ${movie.title}`} />
-              <div className="details">
-                <HeadingH2 text={movie.title} />
-                <Paragraph text={movie.release_date} />
-              </div>
-            </Link>
-          </article>
-        ))
-      }
+      {movieData.map((movie) => (
+        <article className="movie-card" key={movie.id}>
+          {/* The regex-pattern below replaces all colons and empty spaces for dashes for a nicer url */}
+          {/* <Link
+            to={`/details/${movie.title.toLowerCase().replace(/[\s:]+/g, "-")}`}
+          > */}
+
+          {/* We deleted the code above and added the code beneath because we needed the movie id to to another fetch! */}
+
+          <Link to={`/details/${movie.id}`}>
+            <DetailImage
+              url={`https://image.tmdb.org/t/p/w780/${movie.poster_path}`}
+              altText={`Poster image of ${movie.title}`}
+            />
+            <div className="details">
+              <HeadingH2 text={movie.title} />
+              <Paragraph text={movie.release_date} />
+            </div>
+          </Link>
+        </article>
+      ))}
     </>
-  )
-}
+  );
+};
