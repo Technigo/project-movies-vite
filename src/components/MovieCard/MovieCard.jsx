@@ -12,7 +12,7 @@ function MovieCard({ movie }) {
     >
       <img
         src={`https://image.tmdb.org/t/p/w780${poster}`}
-        style={{ filter: onMouse ? "brightness(20%)" : "" }}
+        style={{ filter: onMouse ? "brightness(60%)" : "" }}
       />
       <div className={styles.inner_card}>
         <div className={styles.text_box} style={{ display: onMouse ? "block" : "none" }}>

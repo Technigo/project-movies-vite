@@ -8,15 +8,17 @@ function HeroCarousel({ images, windowWidth }) {
   const currentHeroImageWidth = useMemo(() => {
     return windowWidth * 0.84 + 30;
   }, [windowWidth]);
+
   function handleClickToLeft() {
     if (currentIndex >= 0) setCurrentIndex((prevIndex) => prevIndex - 1);
     carouselRef.current.scrollLeft -= currentHeroImageWidth;
   }
+
   function handleClickToRight() {
     if (currentIndex > images.length) setCurrentIndex((prevIndex) => prevIndex + 1);
     carouselRef.current.scrollLeft += currentHeroImageWidth;
   }
-  console.log(currentIndex);
+
   return (
     <>
       <div className={styles.carousel_outer}>

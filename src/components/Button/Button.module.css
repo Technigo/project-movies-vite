@@ -4,6 +4,7 @@
   height: 50px;
   border-radius: 50%;
   border: none;
+  z-index: 1;
 }
 
 .button:active,

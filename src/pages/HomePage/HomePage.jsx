@@ -63,7 +63,15 @@ function HomePage() {
           <HeroCarousel images={heroImages} windowWidth={windowWidth} />
         </div>
         <div className={styles.main_inner}>
-          <Slider movies={popularMovies} />
+          <div className={styles.slider_wrapper}>
+            <Slider movies={popularMovies} windowWidth={windowWidth} />
+          </div>
+          <div className={styles.slider_wrapper}>
+            <Slider movies={trendingMovies} windowWidth={windowWidth} />
+          </div>
+          <div className={styles.slider_wrapper}>
+            <Slider movies={topRatedMovies} windowWidth={windowWidth} />
+          </div>
         </div>
         <Footer />
       </main>

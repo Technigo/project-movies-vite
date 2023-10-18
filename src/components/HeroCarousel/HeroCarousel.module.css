@@ -75,9 +75,7 @@
     height: 50vh;
     width: 84vw;
     border-radius: 10px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
+    background-position-y: 30%;
     flex: 1 0 100%;
   }
 }
