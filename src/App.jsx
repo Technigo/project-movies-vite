@@ -1,6 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { MovieList } from "./pages/MovieList";
-import { ShowMeMovie } from "./pages/ShowMeMovie";
+import { BrowserRouter, Routes } from "react-router-dom";
+import { routes } from "./routes/routes";
 export const App = () => {
 
   return (
