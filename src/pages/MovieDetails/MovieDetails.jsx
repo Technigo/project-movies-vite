@@ -71,6 +71,9 @@ export const MovieDetails = () => {
   console.log("movieMatched:", movieMatched);*/
   //I dont think we need this part, i get errors? But I dont know why. *Elba
 
+  //const backgroundURL = `https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`;
+  //console.log(`this is in the background:`, backgroundURL);
+
   return (
     <div
       className={styles.movieContainer}
