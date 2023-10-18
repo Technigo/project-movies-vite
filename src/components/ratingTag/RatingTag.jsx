@@ -1,8 +1,12 @@
-import { AiFillStar } from 'react-icons/ai'
-import './ratingTag.css'
+import { AiFillStar } from "react-icons/ai";
+import "./ratingTag.css";
 
-export const RatingTag = () => {
+export const RatingTag = ({ rate }) => {
   return (
-    <span className="rating"> <AiFillStar className="star"/>7.3</span>
-  )
-}
+    <span className="rating">
+      {" "}
+      <AiFillStar className="star" />
+      {rate.toFixed(1)}
+    </span>
+  );
+};
