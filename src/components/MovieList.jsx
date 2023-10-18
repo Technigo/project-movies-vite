@@ -1,6 +1,7 @@
 import { useEffect, useState, } from "react";
 import { MovieItem } from "./MovieItem";
 import { Link } from "react-router-dom";
+import "./MovieList.css"
 
 
 
@@ -13,16 +14,16 @@ export const MovieList = () => {
       .then(data => setData(data.results))
       .catch(error => console.error('Error fetching data:', error))
   }, []);
-// console.log(data)
+ console.log(data)
 return (
-    <div>
+    <div className="movie-list">
       <h1>Popular Movies</h1>
       <ul>
       {data.map(movie => (
   <Link to={`/movie/${movie.id}`} key={movie.id}>
     <MovieItem
       name={movie.title}
-      photo={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+      photo={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
       releaseDate={movie.release_date}
     />
   </Link>
