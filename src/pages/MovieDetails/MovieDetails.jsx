@@ -1,12 +1,13 @@
-import { MovieCard } from '../MovieCard/MovieCard.jsx';
+import { MovieCard } from "../MovieCard/MovieCard.jsx";
+import styles from "./MovieDetails.module.css";
+
+import { NavLink } from "react-router-dom";
 
 // Route: /movies/:id, component: Detail- what did you mean by this?
 
 // This route expects a movie ID in the URL and is responsible for showing more details about a movie after you click on it. It uses useParams from react-router-dom to get the id from the URL and then passes that into an API call (within useEffect) to themoviedb.org to fetch details about a single movie, then puts the response into state using useState and finally renders it onto the page.
 
-
-
-//MAYBE MAKE SOME COMPONENTS FOR the Movie display (like the card)????? 
+//MAYBE MAKE SOME COMPONENTS FOR the Movie display (like the card)?????
 
 /*Update: I made a MovieCard componant. I also moved home into a folder and movie details into folders. I haven't made separate module.css files yet. 
 -I added the release date to the Home page like technigos example displays it. 
@@ -14,7 +15,6 @@ import { MovieCard } from '../MovieCard/MovieCard.jsx';
 -Perhaps we could do a backgroundPoster comonent for the images/posters displayed on homepage and inside the MovieDetails?. 
 -The styling I did is just to separate things a bit. feel free to change anything and everything :) 
 *Elba */
-
 
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -33,11 +33,10 @@ export const MovieDetails = () => {
 
   //******************************/
 
-
   //const OurMovieAPI = `https://api.themoviedb.org/3/movie/popular?api_key=003a2d9ebc845f57f76c3c02dbd08f13&language=en-US&page=1`;
   //we have this in home so i removed it from here and changed OurMovieAPI with OurMovieDetailAPI *Elba
 
-  console.log('Movie ID from params:', id);
+  console.log("Movie ID from params:", id);
   const OurMovieDetailAPI = `https://api.themoviedb.org/3/movie/${id}?api_key=003a2d9ebc845f57f76c3c02dbd08f13&language=en-US`;
   //changed {movie_id} with ${id} as id is displayed in the api. *Elba
 
@@ -74,7 +73,11 @@ export const MovieDetails = () => {
   //I dont think we need this part, i get errors? But I dont know why. *Elba
 
   return (
-    <div>
+    <div className={styles.movieContainer}>
+      <h1 className={styles.movieHeader}>Movie Details</h1>
+      {/* Show the "Back" button */}
+      <NavLink to="/">Home</NavLink>
+
       <MovieCard movie={movie} />
     </div>
   );

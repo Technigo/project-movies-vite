@@ -1,4 +1,4 @@
-// Route: /, component: PopularList 
+// Route: /, component: PopularList
 
 //NOTE: THIS IS THE HOME PAGE
 
@@ -7,6 +7,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import styles from "./Home.module.css";
 
 export const Home = ({ movie }) => {
   //Our movie API key: 003a2d9ebc845f57f76c3c02dbd08f13
@@ -42,15 +43,19 @@ export const Home = ({ movie }) => {
 
   return (
     <div>
-
-      <h1>Home Page: Home/Home.jsx</h1>
-      {movies && movies.results && movies.results.map((movie) => (
-
-        <Link to={`/movie/${movie.id}`} key={movie.id}>
-          <p>Im in home component 💃🏽: {movie.title}</p>
-          <p>Im in home component 💃🏽: Release date: {movie.release_date}</p>
-        </Link>
-      ))}
+      <h1 className={styles.moviesHeader}>Latest Movies</h1>
+      <div className={styles.movielistContainer}>
+        {movies &&
+          movies.results &&
+          movies.results.map((movie) => (
+            <Link to={`/movie/${movie.id}`} key={movie.id}>
+              <div className={styles.movielistBox}>
+                <p> {movie.title}</p>
+                <p>Release date: {movie.release_date}</p>
+              </div>
+            </Link>
+          ))}
+      </div>
     </div>
   );
 };

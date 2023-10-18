@@ -1,0 +1,11 @@
+/*
+CSS for the background image??
+*/
+
+/*could make a header component, if we wnat a header though??? */
+.movieHeader {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}

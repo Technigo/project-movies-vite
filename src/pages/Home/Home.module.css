@@ -1,0 +1,51 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.moviesHeader {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.movielistContainer {
+  /* grid parent - responsive for mobile */
+  display: grid;
+  max-width: 100%;
+  margin: 0 auto;
+  gap: 1rem;
+  overflow: hidden;
+}
+
+.movielistBox {
+  /* grid child */
+  background-color: green;
+  border: 3px solid red;
+  height: 180px;
+  text-align: center;
+}
+
+/* media query for tablet */
+@media screen and (min-width: 580px) and (max-width: 824px) {
+  .movielistContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* media query for desktop */
+@media screen and (min-width: 825px) {
+  .movielistContainer {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
