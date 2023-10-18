@@ -1,5 +1,9 @@
+.container {
+}
+
 .card {
-  color: hotpink;
+  color: black;
+  padding: 1em;
 }
 
 .vote {

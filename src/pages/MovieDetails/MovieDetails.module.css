@@ -1,6 +1,25 @@
-/*
-CSS for the background image??
-*/
+.homelink {
+  size: 20px;
+  color: black;
+  font-weight: bold;
+  background-color: black;
+  max-width: fit-content;
+  margin: 1em;
+}
+
+/* make the background image cover the full body */
+.movieContainer {
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.movieContainer img {
+  object-fit: fit;
+}
 
 /*could make a header component, if we wnat a header though??? */
 .movieHeader {
@@ -8,4 +27,8 @@ CSS for the background image??
   align-items: center;
   text-align: center;
   justify-content: center;
+}
+
+.loading {
+  /* not sure what we need here, styles for loading text, if it appears */
 }

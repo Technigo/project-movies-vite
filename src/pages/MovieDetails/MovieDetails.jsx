@@ -61,9 +61,8 @@ export const MovieDetails = () => {
   }, [id]);
 
   if (!movie) {
-    return <div className="loading">Loading...</div>;
+    return <div className={styles.loading}>Loading...</div>;
   }
-  //loading classname if we want to style the loading. Note to self: change to {style.loading} if we include a MovieDetails.module.css  *Elba
 
   //****************************************** */
   /*const { movieDetail } = useParams();
@@ -73,10 +72,17 @@ export const MovieDetails = () => {
   //I dont think we need this part, i get errors? But I dont know why. *Elba
 
   return (
-    <div className={styles.movieContainer}>
+    <div
+      className={styles.movieContainer}
+      style={{
+        backgroundImage: `url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path})`,
+      }}
+    >
       <h1 className={styles.movieHeader}>Movie Details</h1>
       {/* Show the "Back" button */}
-      <NavLink to="/">Home</NavLink>
+      <p className={styles.homelink}>
+        <NavLink to="/">Home</NavLink>
+      </p>
 
       <MovieCard movie={movie} />
     </div>

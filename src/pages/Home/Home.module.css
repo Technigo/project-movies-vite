@@ -29,7 +29,7 @@ a:hover {
 
 .movielistBox {
   /* grid child */
-  border: 3px solid red;
+  border: 1px solid red;
   text-align: center;
 }
 
@@ -38,7 +38,13 @@ a:hover {
   width: 100%;
 }
 
+.movielistBox img:hover {
+  opacity: 0.3;
+  transition: opacity 0.1s ease-in-out;
+}
+
 .movieText {
+  /* need to center the text in the middle of the image */
 }
 
 /* media query for tablet */
