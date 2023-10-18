@@ -4,7 +4,7 @@ a{
 .movie-list {
   display: grid;
   grid-template-columns: 1fr;
-  gap:0;
+  gap:15px;
   }
 
 .movie-item {
@@ -39,50 +39,40 @@ a{
   color: #fff; 
   opacity: 0; 
   transition: opacity 0.3s; 
+  padding-left: 10px;
 }
 
 
 .image-overlay p {
   padding-left: 10px; 
   padding-bottom: 0;   
-}
-.image-overlay h2 {
-  padding-left: 10px; 
-  padding-top: 0;   
-}
+} 
 
+.image-overlay h2 {
+  text-align: start;
+  padding-left: 10px; 
+  padding-top: 0; 
+}
 
 .movie-image:hover .image-overlay {
   opacity: 1; /* Change overlay opacity to 1 when hovering */
 }
 
-  
+@media (min-width: 417px) {
+  .movie-list {
+    grid-template-columns: repeat(2, 1fr);
+    }
+}
   
   @media (min-width: 768px) {
-    li {
-      width: 50%;
-    } 
     .movie-list {
       grid-template-columns: repeat(3, 1fr);
       }
   }
   
   @media (min-width: 992px) {
-     li {
-      width: 33.33%;
-    } 
     .movie-list {
       grid-template-columns: repeat(4, 1fr);
       }
-  }
-  
-  @media (min-width: 1200px) {
-     li {
-      width: 25%; 
-    }
-    .movie-list {
-      grid-template-columns: repeat(4, 1fr);
-      }
-
   }
   
