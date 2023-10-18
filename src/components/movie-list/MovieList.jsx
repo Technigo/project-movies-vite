@@ -46,7 +46,7 @@ export const MovieList = () => {
               key={movie.id}
               title={movie.title}
               release={movie.release_date}
-              image={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+              image={`https://image.tmdb.org/t/p/w780/${movie.poster_path}`}
               id={movie.id}
             />
           ))
