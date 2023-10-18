@@ -1,4 +1,3 @@
-.hero_wrapper,
 .slider_wrapper {
   margin-bottom: 20px;
   width: 100vw;
@@ -9,25 +8,7 @@
   position: relative;
 }
 
-.main {
-  max-width: 100vw;
-}
-
-.main_inner {
-  display: grid;
-  gap: 20px;
-  padding-top: 60px;
-  padding-bottom: 60px;
-  height: fit-content;
-}
-
 @media (min-width: 640px) {
-  .hero_wrapper {
-    margin-bottom: 60px;
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-
   .slider_wrapper {
     margin-bottom: 60px;
     padding-left: 10px;
@@ -36,11 +17,6 @@
 }
 
 @media (min-width: 768px) {
-  .hero_wrapper {
-    margin-bottom: 60px;
-    padding-left: 60px;
-    padding-right: 60px;
-  }
   .slider_wrapper {
     margin-bottom: 60px;
     padding-left: 30px;
@@ -48,11 +24,6 @@
   }
 }
 @media (min-width: 1024px) {
-  .hero_wrapper {
-    margin-bottom: 60px;
-    padding-left: 100px;
-    padding-right: 100px;
-  }
   .slider_wrapper {
     margin-bottom: 60px;
     padding-left: 50px;
