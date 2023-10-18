@@ -1,22 +1,66 @@
-/*.popular-section {
+/*Kommentar att ta bort senare: Har lagt en bakgrundsfärg i index.css som även syns i detail.jsx. Har flyttat en div i popular.jsx samt ändrat vägen i detail.jsx
 
-} 
+To do:
+- Fick ändra om ett par ggr, så vi kanske kan kika så det inte finns någon onödig kod här nedan som ändå inte aktiveras
+- Styra om texten så den ligger nere till vänster
+- Beroende på design senare (jag började med Technigos), få bort margin */
 
-.image-box-popular {
-
+.popular-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
 }
 
-.poster-image-popular {
+.popular-section a {
+    color: white;
+}
 
+.image-box-popular {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-box-popular:hover img {
+    opacity: 0.4;
+}
+
+.image-box-popular img {
+    /*border-radius: 15%; Prepped :) */
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .popular-text-wrapper {
-
-} 
-
-.popular-movie-title {
-} 
-
-.popular-movie-released {
+    /* Initially hides the text */
+    opacity: 0;
+    /* Smooth transition effect */
+    transition: opacity 0.3s;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
-*/
+
+/*Show text on hover*/
+.image-box-popular:hover .popular-text-wrapper {
+    opacity: 1;
+}
+
+/* ----- Making content responsive ----- */
+/* Tablet*/
+@media (min-width: 667px) {
+    .popular-section {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* Desktops */
+@media (min-width: 1025px) {
+    .popular-section {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}

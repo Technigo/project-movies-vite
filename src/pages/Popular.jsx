@@ -19,22 +19,22 @@ export const Popular = () => {
     <div className="popular-section">
 
       {movies.map((movie) => (
-        
+
         <Link key={movie.id} to={`/movies/${movie.id}`}>
-            <div className="image-box-popular">
-          <img
-          className="poster-image-popular"
-            src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
-            alt={movie.title}
-          />
-            </div>
+          <div className="image-box-popular">
+            <img
+              className="poster-image-popular"
+              src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
+              alt={movie.title}
+            />
 
-          <div className="popular-text-wrapper">
 
-            <h1 className="popular-movie-title">{movie.title}</h1>
-            <p className="popular-movie-released">Released {movie.release_date}</p>
+            <div className="popular-text-wrapper">
 
-          </div>
+              <h1 className="popular-movie-title">{movie.title}</h1>
+              <p className="popular-movie-released">Released {movie.release_date}</p>
+
+            </div></div>
         </Link>
       ))}
 
