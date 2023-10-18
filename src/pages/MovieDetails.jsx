@@ -26,19 +26,23 @@ export function MovieDetails() {
   return (
     <div>
       {movie ? (
-        <div>
+        <div className='movie-details-wrapper'>
           <BackButton />
-          <img
-            src={`${IMAGE_BASE_URL}/w1280${movie.backdrop_path}`}
-            alt={movie.title}
-          />
-          <img
-            src={`${IMAGE_BASE_URL}/w185${movie.poster_path}`}
-            alt={movie.title}
-          />
-          <h1>{movie.title}</h1>
-          <p>Rating: {movie.vote_average}</p>
-          <p>{movie.overview}</p>
+          <div className="movie-details">
+            <img
+              className="large"
+              src={`${IMAGE_BASE_URL}/w1280${movie.backdrop_path}`}
+              alt={movie.title}
+            />
+            <img
+              className="small"
+              src={`${IMAGE_BASE_URL}/w185${movie.poster_path}`}
+              alt={movie.title}
+            />
+            <h1>{movie.title}</h1>
+            <p>Rating: {movie.vote_average}</p>
+            <p>{movie.overview}</p>
+          </div>
         </div>
       ) : (
         <p>Loading...</p>

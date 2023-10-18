@@ -1,5 +1,5 @@
 // This component represents the home page with a list of popular movies.
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 import { MovieItem } from '../components/MovieItem';
 import { getMovieList } from '/src/api';
 
@@ -20,7 +20,7 @@ export function Home() {
   }, []);
 
   return (
-    <div>
+    <div className="popular-movies-wrapper">
       <h1>Popular Movies</h1>
       <div className="movie-list">
         {movies.map((movie) => (
@@ -29,6 +29,6 @@ export function Home() {
       </div>
     </div>
   );
-};
+}
 
 
