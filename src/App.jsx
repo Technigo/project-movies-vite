@@ -1,4 +1,4 @@
-// The main App component sets up routing for your application.
+// The main App component sets up routing for the application.
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { MovieDetails } from './pages/MovieDetails';
