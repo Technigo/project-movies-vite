@@ -9,7 +9,7 @@ export const App = () => {
         <nav>
           <ul>
             <li>
-              <Link to="/">MovieDetails</Link>
+              <Link to="/">MovieList</Link>
             </li>
           </ul>
         </nav>

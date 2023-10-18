@@ -16,7 +16,7 @@ export const MovieList = () => {
                 const response = await fetch(url);
 
                 if (!response.ok) {
-                    throw new Error("Network Response Error");
+                    throw new Error("Network Response Error")
                 }
                 const json = await response.json()
                 setAllmovies(json.results)
