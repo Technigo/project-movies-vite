@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import style from "./moviedetails.module.css"
+import style from "./moviedetails.modules.css"
 
-export const MovieDetails = () => { 
+export const MovieDetails = () => {
 
     return (
         <div></div>
