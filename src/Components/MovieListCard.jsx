@@ -3,14 +3,26 @@ import { Link } from "react-router-dom";
 import "./MovieListCard.css";  // Create a CSS file for styles
 
 export const MovieListCard = ({ movieTitle, releaseDate, movieId, moviePoster }) => {
+
+    // initializes a state variable isHovered with an initial value of false. This state will track whether the component is being hovered over.
     const [isHovered, setIsHovered] = useState(false);
+
+    // This function sets isHovered to true when the mouse enters an element.
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+    };
+
+    //This function sets isHovered to false when the mouse leaves an element.
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+    };
 
     return (
         <Link to={`/movies/${movieId}`}>
             <article
-                className={`movie-list-card ${isHovered ? 'hovered' : ''}`}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
+                className={`movie-list-card `}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
             >
                 <img
                     src={`https://image.tmdb.org/t/p/w780/${moviePoster}`}

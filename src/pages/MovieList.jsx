@@ -81,9 +81,12 @@ export const MovieList = () => {
                         />
                     ))}
                 </div>
-                <div className="loader-container">
-                    <Oval />
-                </div>
+                {loading && (
+                    <div className="loader-container">
+                        <Oval />
+                    </div>
+                )}
+
             </section>
         </>
     )

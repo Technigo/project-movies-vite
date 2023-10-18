@@ -1,8 +1,8 @@
-
+import "./singlemovie.css"
 
 
 export const SingleMovie = () => {
   return (
-    <div>SingleMovie</div>
+    <div className="single-movie">SingleMovie</div>
   )
 }
