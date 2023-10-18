@@ -1,38 +1,16 @@
 import styles from "./HeroCarousel.module.css";
-import { useState, useRef, useMemo } from "react";
-import { Button } from "../../components/Button";
+import { useMemo } from "react";
+import { Slider } from "../Slider";
 
 function HeroCarousel({ images, windowWidth }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const carouselRef = useRef();
   const currentHeroImageWidth = useMemo(() => {
     return windowWidth * 0.84 + 30;
   }, [windowWidth]);
 
-  function handleClickToLeft() {
-    if (currentIndex >= 0) setCurrentIndex((prevIndex) => prevIndex - 1);
-    carouselRef.current.scrollLeft -= currentHeroImageWidth;
-  }
-
-  function handleClickToRight() {
-    if (currentIndex > images.length) setCurrentIndex((prevIndex) => prevIndex + 1);
-    carouselRef.current.scrollLeft += currentHeroImageWidth;
-  }
-
   return (
     <>
       <div className={styles.carousel_outer}>
-        <Button type="right-click" handleClick={handleClickToRight}>
-          <img src="/arrow.png" />
-        </Button>
-
-        {currentIndex <= images.length && (
-          <Button type="left-click" handleClick={handleClickToLeft}>
-            <img src="/arrow.png" />
-          </Button>
-        )}
-
-        <ul className={styles.carousel} ref={carouselRef}>
+        <Slider currentImageWidth={currentHeroImageWidth}>
           {images.map((image) => (
             <>
               <li
@@ -43,7 +21,7 @@ function HeroCarousel({ images, windowWidth }) {
               />
             </>
           ))}
-        </ul>
+        </Slider>
       </div>
     </>
   );

@@ -2,8 +2,8 @@
   width: 100%;
   margin: 0 auto;
   border-radius: 10px;
-  position: relative;
   overflow-x: hidden;
+  z-index: -1;
 }
 
 .slider_inner {
