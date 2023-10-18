@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
+import { MovieCard } from "../movie-card/MovieCard";
+
+import "./movielist.css";
 
 export const MovieList = () => {
   const [movieList, setMovieList] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const envAPIKey = import.meta.env.VITE_API_KEY;
-  console.log(envAPIKey);
 
   const singleMovieAPICall = (movie_id) => {
     fetch(
@@ -36,7 +38,19 @@ export const MovieList = () => {
   return (
     <div>
       <div className="movie-grid">
-        {loading ? console.log("loading...") : console.log(movieList)}
+        {loading ? (
+          <>Loading...</>
+        ) : (
+          movieList.map((movie) => (
+            <MovieCard
+              key={movie.id}
+              title={movie.title}
+              release={movie.release_date}
+              image={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+              id={movie.id}
+            />
+          ))
+        )}
       </div>
     </div>
   );
