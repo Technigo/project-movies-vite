@@ -18,13 +18,14 @@ export const MovieDetails = () => {
 
    console.log(data)
   return (
-    <div className="background-img">
-        <Link to="/"><i className="fa-solid fa-circle-arrow-left"></i> Movies</Link>
+    <div className="background-img" style={{backgroundImage:`url("https://image.tmdb.org/t/p/w1280${data.backdrop_path}")`}}>
+       
+        <Link className="link" to="/"><i className="fa-solid fa-circle-arrow-left"></i> Movies</Link>
         <div className="summary">
-            <img src="" alt="" />
+            <img className="poster-img" src={`https://image.tmdb.org/t/p/w342${data.poster_path}`} alt={data.title} />
             <div className="details">
-                <h1><span className="title"></span><span className="rate"></span></h1>
-                <p></p>
+                <h1><span className="title">{data.original_title}</span> <br />  <span className="rate"><i className="fa-solid fa-star"></i> {Number(data.vote_average).toFixed(1)} </span></h1>
+                <p className="desc">{data.overview}</p>
             </div>
         </div>
         
