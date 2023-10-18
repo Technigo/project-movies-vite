@@ -3,7 +3,7 @@ import "./moviecard.css";
 
 export const MovieCard = ({ title, release, image, id }) => {
   return (
-    <Link to={`/movies/{id}`}>
+    <Link to={`/movies/${id}`}>
       <div className="movie-card">
         <img src={`https://image.tmdb.org/t/p/w300/${image}`} alt={title} />
         <div className="movie-data">

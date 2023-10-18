@@ -28,6 +28,7 @@ export const MovieInfo = () => {
     movieData();
   }, []);
 
+  console.log(movie);
   return (
     <div>
       {loading && <h1>Page is loading...</h1>}
