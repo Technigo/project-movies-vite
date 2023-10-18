@@ -5,3 +5,15 @@
     border-radius: 5px;
     margin: 20px;
 }
+
+
+  
+  .rating {
+    display: flex;
+    align-items: center;
+  }
+  
+  .star-icon {
+    margin-right: 10px; /* Adds some space between the star icon and the rating number */
+  }
+  
