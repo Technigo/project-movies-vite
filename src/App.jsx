@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { MovieList } from "./components/MovieList"
-import { ShowMeMovie } from "./components/ShowMeMovie";
+import { MovieList } from "./pages/MovieList";
+import { ShowMeMovie } from "./pages/ShowMeMovie";
 export const App = () => {
 
   return (
@@ -12,8 +12,7 @@ export const App = () => {
         </ul>
       </nav> */}
       <Routes>
-        <Route path="/" element={<MovieList />} />
-        <Route path="/movie:id" element={<ShowMeMovie />} />
+        {routes}
       </Routes>
     </BrowserRouter>
 
