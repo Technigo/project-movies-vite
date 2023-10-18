@@ -1,22 +1,37 @@
+.movie-list-page {
+    position: relative;
+}
+
+
+.hero-section h1 {
+    padding: 16px 0;
+    margin-left: 5px;
+}
 
 .movie-list {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
+    margin: 5px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:5px;
 
 }
 
 
-
-
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
 /* Tablet */
 @media (min-width: 667px) and (max-width: 1024px) {
 
     .movie-list {
         grid-template-columns: repeat(4, 1fr);
-        
-        }
-      
+
+    }
+
 
 }
 
@@ -25,7 +40,7 @@ grid-template-columns: repeat(2, 1fr);
 
     .movie-list {
         grid-template-columns: repeat(4, 1fr);
-        
-        }
+
+    }
 
 }

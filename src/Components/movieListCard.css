@@ -1,0 +1,40 @@
+.visible {
+    display: block;
+
+}
+
+
+.hidden {
+    display: none;
+}
+
+
+.movie-list-card {
+    width: 100%;
+    position: relative;
+}
+
+.movie-list-card img {
+    max-width: 100%;
+}
+
+.movie-list-card img:hover {
+    opacity: 20%
+}
+
+.info-container {
+    padding: 1em 0;
+    margin-left: 1em;
+    color: white;
+    position: absolute;
+    bottom: 16px;
+    left: 0;
+}
+
+.info-container h1 {
+    font-size: 24px;
+}
+
+.info-container p {
+    font-size: 16px;
+}

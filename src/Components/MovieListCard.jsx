@@ -1,16 +1,30 @@
-// import { useState } from "react"
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "./MovieListCard.css";  // Create a CSS file for styles
 
+export const MovieListCard = ({ movieTitle, releaseDate, movieId, moviePoster }) => {
+    const [isHovered, setIsHovered] = useState(false);
 
-
-
-
-export const MovieListCard = ({movieTitle, releaseDate, movieId}) => {
-
-    // [isHover, setIsHover] = useState(false);
     return (
-        <div>MovieListCard
-            <h1>{movieTitle}</h1>
-            <h2>{releaseDate}</h2>
-        </div>
-    )
-}
+        <Link to={`/movies/${movieId}`}>
+            <article
+                className={`movie-list-card ${isHovered ? 'hovered' : ''}`}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+            >
+                <img
+                    src={`https://image.tmdb.org/t/p/w780/${moviePoster}`}
+                    alt={movieTitle}
+                />
+                <div className="info-container">
+                    <h1 className={`title ${isHovered ? 'visible' : 'hidden'}`}>
+                        {movieTitle}
+                    </h1>
+                    <p className={`release-year ${isHovered ? 'visible' : 'hidden'}`}>
+                        Released {releaseDate}
+                    </p>
+                </div>
+            </article>
+        </Link>
+    );
+};
