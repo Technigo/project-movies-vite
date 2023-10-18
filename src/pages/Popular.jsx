@@ -29,5 +29,34 @@ export const Popular = () => {
     fetchData();
   }, []);
 
-  return <div>Popular</div>;
+  return (
+
+   <div className="popular-section">
+   
+   {movies.map((movie) => (
+    <Link key={movie.id}>
+<div className="image-popular">
+  {/*HÄR MÅSTE VI BESTÄMMA VILKEN SLAGS BILD VI VILL HA, STORLEK OSV*/}
+</div>
+
+    </Link>
+
+  
+   )
+   
+   
+   
+   
+   )}
+   
+   
+   
+   
+   
+   
+   
+   
+   </div>
+
+   )
 };

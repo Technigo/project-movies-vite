@@ -1,5 +1,10 @@
 import "./Detail.css";
+import { DetailComp } from "../components/detail/DetailComp"
 
 export const Detail = () => {
-  return <div></div>;
+  return (
+   <div>
+    <DetailComp />
+  </div>
+  );
 };
