@@ -8,9 +8,10 @@ a {
   color: white;
 }
 
+/*
 a:hover {
   text-decoration: underline;
-}
+}*/
 
 .moviesHeader {
   display: flex;
@@ -28,23 +29,54 @@ a:hover {
 }
 
 .movielistBox {
-  /* grid child */
-  border: 1px solid red;
   text-align: center;
+  position: relative;
 }
 
 .movielistBox img {
   height: 100%;
   width: 100%;
+  transition: 0.3s ease;
 }
 
-.movielistBox img:hover {
-  opacity: 0.3;
-  transition: opacity 0.1s ease-in-out;
+.movielistBox:hover img {
+  opacity: 0.2;
+  /*filter: brightness(20%);*/
 }
 
 .movieText {
-  /* need to center the text in the middle of the image */
+  position: absolute;
+  bottom: 0;
+  /* Moves text to bottom */
+  left: 0;
+  /* Moves text left */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.movielistBox:hover .movieText {
+  opacity: 1;
+  /* will change text to opacity 1 when movielistBox is hovered. Have not tested on netlifylink on mobile */
+}
+
+h1 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  text-align: left;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  text-align: left;
 }
 
 /* media query for tablet */

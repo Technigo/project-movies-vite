@@ -1,22 +1,68 @@
 .card {
   color: white;
   padding: 1em;
-  vertical-align: bottom;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding: 50px;
+  position: absolute;
+  bottom: 0;
 }
+
 
 .card img {
-  float: left;
+  /*float: left;*/
   margin-right: 3em;
   border: 3px solid white;
+  bottom: 0;
+  display: flex;
+  align-items: center;
 }
 
-.card p {
-  padding-left: 1em;
-  vertical-align: bottom;
+.textContainer {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  max-width: 600px;
 }
 
 .vote {
   size: 20px;
   font-weight: bold;
   max-width: fit-content;
+}
+
+.overView {
+  filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.616));
+  font-size: 16px;
+  max-width: 400px;
+}
+
+.title {
+  text-shadow: 1px 1px #4d4d4d8a;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.voteSpan {
+  background-color: white;
+  color: black;
+  font-size: 24px;
+}
+
+/* cant figure out the image for the media: how to move it to the right without padding. Used flexbox :( */
+
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    padding: 25px;
+    margin: 0;
+  }
+
+  .card img {
+    width: 250px;
+    margin: 0 60px 0 0;
+  }
 }
