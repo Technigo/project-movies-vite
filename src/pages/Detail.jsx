@@ -1,7 +1,8 @@
 import "./Detail.css";
 import { DetailComp } from "../components/detail/DetailComp";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Back } from "../icons/Back";
 
 export const Detail = () => {
   const [movie, setMovie] = useState();
@@ -18,8 +19,8 @@ export const Detail = () => {
         throw new Error("Failed to fetch movie details");
       }
       const data = await response.json();
-      console.log("Movie details", data);
-      // setMovie(data.results);
+      console.log("Movie details fetching data", data);
+      setMovie(data);
     } catch (error) {
       console.error("Error fetching data", error);
     }
@@ -31,8 +32,8 @@ export const Detail = () => {
   }, [id]);
 
   return (
-    <div>
-      <DetailComp />
+    <div className="detail-section">
+      <DetailComp movie={movie} />
     </div>
   );
 };

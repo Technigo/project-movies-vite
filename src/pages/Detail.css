@@ -1,0 +1,40 @@
+.girl {
+  width: 200px;
+}
+
+.back-icon {
+  color: white;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.detail-section {
+  color: #fff;
+}
+
+.movie-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-shadow: 1px 1px #4d4d4d;
+  font-size: 1.5rem;
+}
+
+.stars-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: black;
+  background-color: #fff;
+  font-weight: 500;
+  padding: 0 5px;
+}
+
+.star-icon {
+  color: #fac91e;
+}
+
+.text-overview {
+  max-width: 400px;
+}
