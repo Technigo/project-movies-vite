@@ -21,6 +21,7 @@ export const PopularList = () => {
 
             const data = await response.json();
             setMovies(data);
+            
         } catch (error) {
             console.error("Something went wrong!") // Log the error to the console
         }
