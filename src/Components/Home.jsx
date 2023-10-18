@@ -1,4 +1,6 @@
 import { useEffect ,useState } from "react"
+import { Link } from "react-router-dom";
+import './home.css';
 
 export const Home = () => {
   const [data, setData] = useState(null);
@@ -19,14 +21,18 @@ export const Home = () => {
     <ul>
       {data.results.map(movie => (
         <li key={movie.id}>
-          <h3>{movie.title}</h3>
+          <Link to={`/movie-details/${movie.id}`}>
           {movie.poster_path && (
             <img 
             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
             alt={movie.title}
             />
           )}
+          <div className="movie-info">
+           <h3>{movie.title}</h3>
            <p>Released: {movie.release_date}</p>
+           </div>
+           </Link>
           </li>
       ))}
     </ul>
