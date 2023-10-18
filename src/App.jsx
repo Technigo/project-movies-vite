@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { MovieList } from "./Components/MovieList";
+// import { MovieList } from "./Components/MovieList";
 import { SingleMovie } from "./Components/SingleMovie";
 
 
@@ -7,9 +7,10 @@ import { SingleMovie } from "./Components/SingleMovie";
 export const App = () => {
   return (
     <BrowserRouter>
+
       <Routes>
-        <Route path="/" element={<MovieList />} />
-        <Route path="/:id" element={<SingleMovie />} />
+        {/* <Route path="/" element={<MovieList />} /> */}
+        <Route path="movies/:id" element={<SingleMovie />} />
       </Routes>
 
     </BrowserRouter>
