@@ -17,58 +17,16 @@ export const MovieList = () => {
  console.log(data)
 return (
     <div className="movie-list">
-      <h1>Popular Movies</h1>
-      <ul>
       {data.map(movie => (
   <Link to={`/movie/${movie.id}`} key={movie.id}>
-    <MovieItem
+          <MovieItem
       name={movie.title}
-      photo={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+      photo={`https://image.tmdb.org/t/p/w400${movie.poster_path}`}
       releaseDate={movie.release_date}
     />
   </Link>
 ))}
-
-      </ul>
     </div>
   );
 }
 
-{/* <div>
-<h1>Popular Movies</h1>
-<ul>
-  {data.map(movie => (
-    <MovieItem
-      key={movie.id}
-      name={movie.title}
-      photo={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} // Use the correct path
-      releaseDate={movie.release_date}
-    />
-  ))}
-</ul>
-</div> */}
-
-// <div>
-// <h1>Popular Movies</h1>
-// <ul>
-//   {data.map(movie => (
-//     <li key={movie.id}>
-//       <h2>{movie.title}</h2>
-//       <Link to={`/movie/${movie.id}`}>View Details</Link>
-//     </li>
-//   ))}
-// </ul>
-// </div>
-
-
-// export const Projects = () => {
-//     return projects.projects.map((project) => {
-//       return (
-//         <Project
-//           key={project.name}
-//           name={project.name}
-//           photo={project.image}
-//           tags={project.tags} />
-//       )
-//     })
-//   }

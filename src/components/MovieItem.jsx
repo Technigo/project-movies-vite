@@ -1,13 +1,15 @@
-
-
 export const MovieItem = ({name, photo, releaseDate}) => {
-  return (
-    
-        <li>
-          <h2>{name}</h2>
-          <img src={photo} alt={name} />
-          <p>Release Date: {releaseDate}</p>
-        </li>
-      );
-  
+return (
+
+<div className="movie-item">
+  <div className="movie-image">
+    <img src={photo} alt={name} />
+    <div className="image-overlay">
+      <h2>{name}</h2>
+      <p>Release Date: {releaseDate}</p>
+    </div>
+  </div>
+</div>
+);
+
 }
