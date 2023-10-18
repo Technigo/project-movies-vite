@@ -21,7 +21,7 @@ return (
   <Link to={`/movie/${movie.id}`} key={movie.id}>
           <MovieItem
       name={movie.title}
-      photo={`https://image.tmdb.org/t/p/w400${movie.poster_path}`}
+      photo={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
       releaseDate={movie.release_date}
     />
   </Link>
