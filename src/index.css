@@ -6,8 +6,12 @@
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+img {
+  display: block;
+  width: 100%;
+}
+
 .wrapper {
   margin: 0 auto;
-  max-width: 1200px;
   width: 100%;
 }

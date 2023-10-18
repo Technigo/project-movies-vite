@@ -17,8 +17,8 @@ export const Popular = () => {
         throw new Error("Failed to fetch movies");
       }
       const data = await response.json();
-      console.log(data);
-      setMovies(data);
+      console.log("Popular movies data:", data);
+      setMovies(data.results);
     } catch (error) {
       console.error("Error fetching data", error);
     }
@@ -30,33 +30,31 @@ export const Popular = () => {
   }, []);
 
   return (
-
-   <div className="popular-section">
-   
-   {movies.map((movie) => (
-    <Link key={movie.id}>
-<div className="image-popular">
-  {/*HÄR MÅSTE VI BESTÄMMA VILKEN SLAGS BILD VI VILL HA, STORLEK OSV*/}
-</div>
-
-    </Link>
-
-  
-   )
-   
-   
-   
-   
-   )}
-   
-   
-   
-   
-   
-   
-   
-   
-   </div>
-
-   )
+    <section className="popular-section">
+      {movies.map((movie) => {
+        return (
+          <Link key={movie.id} to={`/detail/${movie.id}`}>
+            <div className="image-popular">
+              <img
+                src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
+                alt={movie.title}
+              />
+            </div>
+          </Link>
+        );
+      })}
+    </section>
+  );
 };
+
+// {movies.map(({movie}) => (
+
+//   // <Link key={movie.id} to={`/detail/${movie.id}`}>
+//   //   <div className="image-popular">
+//   //     <img
+//   //       src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`}
+//   //       alt={movie.title}
+//   //     />
+//   //   </div>
+//   // </Link>
+// ))}
