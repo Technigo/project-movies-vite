@@ -35,8 +35,19 @@
 }
 
 .card_wrapper {
-  width: 300px;
+  width: 220px;
   position: relative;
   border-radius: 10px;
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .card_wrapper {
+    width: 260px;
+  }
+}
+@media (min-width: 1024px) {
+  .card_wrapper {
+    width: 300px;
+  }
 }

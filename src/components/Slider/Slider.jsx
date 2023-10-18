@@ -1,5 +1,5 @@
 import { Button } from "../Button";
-import { useRef, useMemo } from "react";
+import { useRef } from "react";
 
 import styles from "./Slider.module.css";
 

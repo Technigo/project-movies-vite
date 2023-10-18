@@ -21,3 +21,7 @@ body {
   background: #333;
   font-family: "Oswald";
 }
+
+html {
+  scroll-behavior: smooth;
+}

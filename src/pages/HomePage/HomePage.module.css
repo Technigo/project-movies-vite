@@ -16,8 +16,8 @@
 .main_inner {
   display: grid;
   gap: 20px;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 10px;
+  padding-bottom: 20px;
   height: fit-content;
 }
 
@@ -32,6 +32,12 @@
     margin-bottom: 60px;
     padding-left: 10px;
     padding-right: 10px;
+  }
+
+  .main_inner {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    height: fit-content;
   }
 }
 
@@ -57,5 +63,9 @@
     margin-bottom: 60px;
     padding-left: 50px;
     padding-right: 50px;
+  }
+
+  .main_inner {
+    padding-top: 60px;
   }
 }
