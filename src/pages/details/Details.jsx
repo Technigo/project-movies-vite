@@ -10,7 +10,7 @@ import { HeadingH3 } from "../../components/typography/headingH3/HeadingH3.jsx";
 import { Paragraph } from "../../components/typography/paragraph/Paragraph.jsx";
 import { BackGroundImage } from "../../components/backGroundImage/BackGroundImage.jsx";
 
-const API_KEY = "8310ae58e125eac683c38e74d6f6a3aa";
+const API_KEY = import.meta.env.VITE_MOVIEDB_KEY;
 const URL_START = "https://api.themoviedb.org/3/movie/";
 
 export const Details = () => {
@@ -44,7 +44,7 @@ export const Details = () => {
     // Call the fetchMovie function when the component mounts or when "id" changes
     // The "id" parameter is included as a dependency in the array to trigger a re-fetch, useEffect will be called when "id" changes.
     fetchMovie();
-  }, [id]);
+  }, [movieDetails]);
 
   if (!isLoading) {
     // If the data has been loaded, render movie details
