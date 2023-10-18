@@ -7,8 +7,6 @@ export const MovieInfo = () => {
   const [movie, setMovie] = useState(null);
   const { id } = useParams();
 
-  console.log("hey " + id);
-
   const movieData = async () => {
     const envAPIKey = import.meta.env.VITE_API_KEY;
     const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${envAPIKey}&language=en-US`;
@@ -30,7 +28,6 @@ export const MovieInfo = () => {
     movieData();
   }, []);
 
-  console.log(movie);
   return (
     <div>
       {loading && <h1>Page is loading...</h1>}

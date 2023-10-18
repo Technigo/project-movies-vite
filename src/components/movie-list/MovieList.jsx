@@ -17,7 +17,6 @@ export const MovieList = () => {
       .then((response) => {
         setMovieList(response.results);
         setLoading(!loading);
-        console.log(movieList);
       })
       .catch((err) => console.error(err));
   };
