@@ -25,9 +25,10 @@ export const Detail = () => {
       </Link>
       {movie && (
         <div
-          className="backdrop-image"
+          className="backdrop"
           style={{
-            backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0) 70%, rgba(0,0,0,1) 100%), url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path})`,
+            // backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0) 70%, rgba(0,0,0,1) 100%), url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path})`,
+            backgroundImage: `linear-gradient(0deg, rgba(255, 255, 255, 0.84) 0%, rgba(255, 255, 255, 0.84) 100%), url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path})`,
           }}
         >
           <div className="detail-wrapper">
@@ -37,11 +38,15 @@ export const Detail = () => {
               alt={movie.title}
             />
             <div className="detail-text-wrapper">
+              <div className="title-rating-wrapper">
               <h1 className="detail-title">{movie.title} </h1>
 
+              <div className="rating-box">
               <h2 className="rating">
                 {Math.round(movie.vote_average * 10) / 10}
               </h2>
+              </div>
+              </div>
 
               <p className="detail-overview">{movie.overview}</p>
 
