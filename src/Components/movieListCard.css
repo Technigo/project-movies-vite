@@ -3,9 +3,14 @@
 
 }
 
+/* Off-screen positioning: visually hide an element while making it accessible to screen readers by moving it out of the viewport using absolute positioning */
 
 .hidden {
-    display: none;
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
 }
 
 
@@ -19,6 +24,11 @@
 }
 
 .movie-list-card:hover img {
+    opacity: 0.3;
+}
+
+/* This pseudo-class targets an element that is currently being activated by the user, often by clicking or tapping. */
+.movie-list-card:active img {
     opacity: 0.3;
 }
 
