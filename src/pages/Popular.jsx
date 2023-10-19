@@ -6,6 +6,7 @@ import "./popular.css";
 export const Popular = () => {
   const [movies, setMovies] = useState([]);
 
+//Hidden API key fetched from .env file
 const apiEnv = import.meta.env.VITE_OPENDB_KEY;
 
   //'useEffect' hook to fetch list of popular movies when the component is mounted.
@@ -17,6 +18,7 @@ useEffect(() => {
       .then((json) => {
         setMovies(json.results);
       });
+  
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
