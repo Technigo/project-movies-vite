@@ -1,13 +1,21 @@
-import { useState, memo } from "react";
+import { useMemo, useState } from "react";
 
 import styles from "./Horizontal.module.css";
 import { Link } from "react-router-dom";
+import { ReadMoreBtn } from "../ReadMoreBtn";
 
-const HorizontalCard = memo(function HorizontalCard({ movie, genres }) {
+function HorizontalCard({ movie, genres }) {
   const [onMouse, setOnMouse] = useState(false);
 
   const { title = null, name = null, backdrop_path: poster, id } = movie;
-  const genre = () => genres.find((obj) => obj.id === movie.genre_ids[0]);
+  const genre = useMemo(
+    () =>
+      genres.find((obj) => {
+        return obj.id === movie.genre_ids[0];
+      }),
+    [genres, movie.genre_ids]
+  );
+
   return (
     <>
       <div className={styles.card_outer}>
@@ -22,6 +30,9 @@ const HorizontalCard = memo(function HorizontalCard({ movie, genres }) {
               style={{ filter: onMouse ? "brightness(60%)" : "" }}
               loading="lazy"
             />
+            <div className={styles.button_box} style={{ display: onMouse ? "block" : "none" }}>
+              <ReadMoreBtn />
+            </div>
           </div>
         </Link>
         <div className={styles.description}>
@@ -31,6 +42,6 @@ const HorizontalCard = memo(function HorizontalCard({ movie, genres }) {
       </div>
     </>
   );
-});
+}
 
 export default HorizontalCard;

@@ -78,8 +78,8 @@ function HomePage() {
     { results: upcomingMovies },
   ] = data !== undefined && data;
 
-  const heroMovies = popularMovies && popularMovies.slice(0, 7);
-  const heroTVs = topRatedTVs && topRatedTVs.slice(0, 7);
+  const heroMovies = popularMovies && popularMovies.slice(7, 14);
+  const heroTVs = topRatedTVs && topRatedTVs.slice(8, -1);
 
   return (
     <>
@@ -101,19 +101,19 @@ function HomePage() {
                 />
                 <MainSlider
                   windowWidth={windowWidth}
-                  movies={trendingMovies}
+                  movies={trendingMovies.slice(7, -1)}
                   title="Trending movies"
                   horizontal={false}
                 />
                 <MainSlider
                   windowWidth={windowWidth}
-                  movies={nowPlayingMovies}
+                  movies={nowPlayingMovies.slice(0, 10)}
                   title="Now playing movies"
                   horizontal={false}
                 />
                 <MainSlider
                   windowWidth={windowWidth}
-                  movies={upcomingMovies}
+                  movies={upcomingMovies.slice(3, 15)}
                   title="upcoming movies"
                 />
               </div>
@@ -123,17 +123,17 @@ function HomePage() {
                 </div>
                 <MainSlider
                   windowWidth={windowWidth}
-                  movies={topRatedTVs}
+                  movies={topRatedTVs.slice(0, 8)}
                   title="Top rated TV shows"
                 />
                 <MainSlider
                   windowWidth={windowWidth}
-                  movies={trendingTVs}
+                  movies={trendingTVs.slice(0, 8)}
                   title="Trending TV shows"
                 />
                 <MainSlider
                   windowWidth={windowWidth}
-                  movies={popularTVs}
+                  movies={popularTVs.slice(5, -1)}
                   title="Popular TV shows"
                 />
               </div>

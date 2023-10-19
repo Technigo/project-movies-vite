@@ -1,5 +1,5 @@
 import styles from "./HeroCarousel.module.css";
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Slider } from "../Slider";
 
 function HeroCarousel({ movies, windowWidth }) {
@@ -30,6 +30,23 @@ function HeroCarousel({ movies, windowWidth }) {
     }
   }
 
+  useEffect(() => {
+    function changeSlide() {
+      if (currentIndex < totalIndex - 1) {
+        setCurrentIndex((prevIndex) => prevIndex + 1);
+        heroRef.current.scrollLeft += currentHeroImageWidth;
+      } else if (currentIndex === totalIndex - 1) {
+        heroRef.current.scrollLeft -= currentHeroImageWidth * totalIndex;
+        setCurrentIndex(0);
+      }
+    }
+
+    const interval = setInterval(changeSlide, 5000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [currentIndex, currentHeroImageWidth, totalIndex]);
+
   return (
     <>
       <div className={styles.carousel_outer}>
@@ -37,11 +54,11 @@ function HeroCarousel({ movies, windowWidth }) {
           {movies.map((movie) => (
             <>
               <li
+                key={movie.id}
                 style={{
                   backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
                 }}
                 className={styles.hero_image}
-                key={movie.id}
               >
                 <div className={styles.inner_image_box}>
                   <h2>{movie.title ? movie.title : movie.name}</h2>
