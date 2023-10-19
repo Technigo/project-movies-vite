@@ -8,7 +8,6 @@ function App() {
     <BrowserRouter>
       <main>
         <Routes>
-          <Route path="/" element={<div>Main Content Here</div>} />  
           <Route path="/movielist" element={<MovieList />} />
           <Route path="/moviedetails/:id" element={<MovieDetails />} />
         </Routes>

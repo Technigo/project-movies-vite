@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useParams, NavLink } from 'react-router-dom';
 import starIcon from '../assets/star.svg';
 
-
-
-
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/";
 const POSTER_SIZE = "w342";
 const BACKDROP_SIZE = "w780";
