@@ -25,12 +25,13 @@
 .movie-data h2 {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .movie-data h3 {
   font-size: 18px;
   font-weight: 300;
+  margin-top: 10px;
 }
 
 .movie-card:hover .movie-data {
