@@ -74,6 +74,11 @@ p {
   text-align: left;
 }
 
+.loading {
+  font-size: 20px;
+  padding: 20px;
+}
+
 /* media query for tablet */
 @media screen and (min-width: 580px) and (max-width: 824px) {
   .movielistContainer {

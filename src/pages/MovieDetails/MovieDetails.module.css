@@ -1,38 +1,35 @@
 .homelink {
-  font-size: 15px;
+  font-size: 20px;
   color: black;
   filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.578));
   font-weight: bold;
   max-width: fit-content;
   margin: 1em;
   background-color: none;
-  position: relative;
   font-weight: 700;
   left: 50px;
   top: 10px;
+  text-align: right;
+  display: inline-block;
 }
 
 .backArrow {
   max-width: 30px;
   float: left;
-}
-
-.homelink {
-  text-align: right;
-  display: inline-block;
-}
-
-.homelink:hover {
-  transform: translateX(5px);
+  filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.578));
 }
 
 .homelink a:hover {
-  /*Color wont change if i change it in .homelink:hover, works only here. transform: translateX(30px); however only works in .homelink:hover {. *Elba*/
+  transform: translateX(5px);
+}
+
+.homelink a {
+  transform-origin: center;
 }
 
 /* make the background image cover the full body */
 .movieContainer {
-  height: 100vh;
+  min-height: 100vh;
   position: absolute;
   top: 0px;
   right: 0px;
@@ -42,10 +39,28 @@
   background-repeat: no-repeat;
 }
 
-.movieContainer img {
-  object-fit: fit;
+.movieContainerMovbtn {
+  margin: 0;
+}
+
+.movieHeader {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 
 .loading {
-  /* not sure what we need here, styles for loading text, if it appears */
+  font-size: 20px;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .movieContainer {
+    position: relative;
+  }
+
+  .homelink {
+    font-size: 15px;
+  }
 }

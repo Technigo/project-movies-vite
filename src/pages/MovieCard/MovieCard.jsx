@@ -6,10 +6,12 @@ export const MovieCard = ({ movie }) => {
   const title = movie.title;
 
   return (
+
     <div className={styles.container}>
       <div className={styles.card}>
         <p className={styles.vote}> </p>
         <img
+          className={styles.moviePoster}
           src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
           alt="Movie poster"
         />
