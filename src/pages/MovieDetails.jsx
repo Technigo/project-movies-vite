@@ -1,4 +1,5 @@
 // This component represents the movie details page.
+import './moviedetails.css';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieDetails } from '/src/api';
@@ -24,9 +25,9 @@ export function MovieDetails() {
   }, [id]);
 
   return (
-    <div>
+    <article className='movie-details'>
       {movie ? (
-        <div className='movie-details-wrapper'>
+        <article className='movie-details-wrapper'>
           <BackButton />
           <div className="movie-details">
             <img
@@ -43,11 +44,11 @@ export function MovieDetails() {
             <p>Rating: {movie.vote_average}</p>
             <p>{movie.overview}</p>
           </div>
-        </div>
+        </article>
       ) : (
         <p>Loading...</p>
       )}
-    </div>
+    </article>
   );
 }
 
