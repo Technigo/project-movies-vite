@@ -10,7 +10,6 @@ import { Loader } from "../../components/loader/Loader.jsx";
 
 import "./details.css";
 
-
 const API_KEY = import.meta.env.VITE_MOVIEDB_KEY;
 const URL_START = "https://api.themoviedb.org/3/movie/";
 
@@ -35,7 +34,6 @@ export const Details = () => {
         }
         // Parse the response JSON data and set it to the "detail" state
         const data = await response.json();
-        console.log(data);
         setDetail(data);
         // Delay for 2 seconds so that the loader can be shown
         setTimeout(() => {
@@ -60,7 +58,7 @@ export const Details = () => {
   } else {
     const backgroundImage = `https://image.tmdb.org/t/p/w1280${detail.backdrop_path}`;
     return (
-      <article className="detail-page">
+      <section className="detail-page">
         <BackButton text={"Movies"} />
         {/* Div that contains the background.image. Url and gradient is dynamically added here */}
         <div
@@ -86,7 +84,7 @@ export const Details = () => {
             </div>
           </div>
         </div>
-      </article>
+      </section>
     );
   }
 };

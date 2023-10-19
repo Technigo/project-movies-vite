@@ -4,25 +4,12 @@ import { Paragraph } from "../typography/paragraph/Paragraph.jsx";
 import "./movieCard.css";
 import { DetailImage } from "../detailImage/DetailImage.jsx";
 
-// Variables global for MovieCard.jsx
-// Helper API to find correct images size, click on it to see the different available sizes
-// const API_KEY = import.meta.env.VITE_MOVIEDB_KEY;
-// const IMAGE_FINDER = "https://api.themoviedb.org/3/configuration?api_key=";
-// console.log(`${IMAGE_FINDER}${API_KEY}`);
-
+// Function for each individual movie card, where we map over the array of movies in movieData and display them using reusable components
 export const MovieCard = ({ movieData }) => {
-  console.log(movieData);
   return (
     <>
       {movieData.map((movie) => (
         <article className="movie-card" key={movie.id}>
-          {/* The regex-pattern below replaces all colons and empty spaces for dashes for a nicer url */}
-          {/* <Link
-            to={`/details/${movie.title.toLowerCase().replace(/[\s:]+/g, "-")}`}
-          > */}
-
-          {/* We deleted the code above and added the code beneath because we needed the movie id to to another fetch! */}
-
           <Link to={`/details/${movie.id}`}>
             <DetailImage
               url={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`}
