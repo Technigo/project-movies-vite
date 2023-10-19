@@ -1,8 +1,8 @@
-
 import { useEffect, useState } from "react";
 import styles from "./HomePage.module.css";
 import { Navbar } from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
+import { ScrollToTop } from "../../components/ScrollToTop";
 
 import useSWR from "swr";
 
@@ -65,7 +65,7 @@ function HomePage() {
   }, []);
 
   const { data, error, isLoading } = useSWR("getMovie", fetcher);
-
+  console.log(data);
   if (isLoading) return <LoadingFullPage />;
   if (error) return <Error />;
 
@@ -87,6 +87,7 @@ function HomePage() {
       {!isLoading && (
         <>
           <Navbar />
+          <ScrollToTop />
           <main className={styles.main}>
             <div className={styles.hero_wrapper}>
               <HeroCarousel movies={heroMovies} windowWidth={windowWidth} />

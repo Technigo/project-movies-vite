@@ -58,7 +58,6 @@
 
 // export default Detail;
 
-
 // import { useEffect, useState } from "react";
 // import { useLocation } from "react-router-dom"; // Import useLocation from react-router-dom
 // import styles from "./Detail.module.css";
@@ -239,7 +238,7 @@
 //         selectedMovie ? (
 //           <div>
 //             <h1>{selectedMovie.title}</h1>
-            
+
 //             <img className="detail-poster"
 //               src={`https://image.tmdb.org/t/p/w780${posterPath}`}
 //               alt={selectedMovie.title}
@@ -261,19 +260,24 @@
 // export default Detail;
 
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./Detail.module.css";
+import { LoadingFullPage } from "../../components/LoaingFullPage";
+import { Navbar } from "../../components/Navbar";
+import { Footer } from "../../components/Footer";
+import { ScrollToTop } from "../../components/ScrollToTop";
 
 const options = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMzEwNDBiNTAzY2M0MzViNDk0MjU0ODRiMDZlYTc1NSIsInN1YiI6IjY1MmQyODNlNjYxMWI0MDBlMjU1MDMxYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.nzGRkQ839_qWKFn7k3BsxmVqMmHl11yXIf4z6QEk8z4", // Replace with your API key
+    Authorization: import.meta.env.VITE_API_KEY, // Replace with your API key
   },
 };
 
 function Detail() {
   const location = useLocation();
+  const navigate = useNavigate();
   const posterPath = new URLSearchParams(location.search).get("poster_path");
   const selectedMovieId = new URLSearchParams(location.search).get("movie_id");
 
@@ -290,6 +294,7 @@ function Detail() {
         );
         if (response.status === 200) {
           const data = await response.json();
+          console.log(data);
           setSelectedMovie(data);
         } else if (response.status === 401) {
           setError("Unauthorized: Please check your API key and permissions.");
@@ -311,19 +316,47 @@ function Detail() {
 
   return (
     <React.Fragment>
-    <div className={styles.detail}>
+      <ScrollToTop />
+      <Navbar />
       {!isLoading ? (
         !error ? (
           selectedMovie ? (
-            <div>
-              <h1>{selectedMovie.title}</h1>
-              <img
-                src={`https://image.tmdb.org/t/p/w780${posterPath}`}
-                alt={selectedMovie.title}
-              />
-              <p>{selectedMovie.overview}</p>
-              <p>Release Date: {selectedMovie.release_date}</p>
-            </div>
+            <section className={styles.detail_wrapper}>
+              <div
+                className={styles.detail}
+                style={{
+                  backgroundImage: `url(https://image.tmdb.org/t/p/original${selectedMovie.backdrop_path})`,
+                }}
+              >
+                <div className={styles.deco_box}></div>
+
+                <div className={styles.deco_box}></div>
+              </div>
+
+              <div className={styles.main_wrapper}>
+                <a onClick={() => navigate(-1)}>
+                  <p> &#x3c; BACK</p>
+                </a>
+
+                <div className={styles.top_detail_box}>
+                  <h1>{selectedMovie.title}</h1>
+                  <p>{selectedMovie.tagline}</p>
+                </div>
+                <div className={styles.details_box}>
+                  <div className={styles.image_box}>
+                    <img
+                      className={styles.poster_img}
+                      src={`https://image.tmdb.org/t/p/w780${posterPath}`}
+                      alt={selectedMovie.title}
+                    />
+                    <p>Release Date: {selectedMovie.release_date}</p>
+                  </div>
+                  <div className={styles.text_box}>
+                    <p>{selectedMovie.overview}</p>
+                  </div>
+                </div>
+              </div>
+            </section>
           ) : (
             <p>No movie details available</p>
           )
@@ -331,18 +364,12 @@ function Detail() {
           <p>Error: {error}</p>
         )
       ) : (
-        <p>Loading</p>
+        <LoadingFullPage />
       )}
-    </div>
+
+      <Footer />
     </React.Fragment>
   );
 }
 
 export default Detail;
-
-
-
-
-
-
-
