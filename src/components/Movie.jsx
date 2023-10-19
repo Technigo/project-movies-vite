@@ -6,7 +6,7 @@ export const Movie = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { movieId } = useParams();
-  const navigate = useNavigate(); // using the hook here
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(
@@ -32,7 +32,7 @@ export const Movie = () => {
 
   return (
     <div>
-      <button onClick={handleBack}>Go Back</button>
+      <button onClick={handleBack}>Back to list</button>
       <h2>{movie.title}</h2>
       <h3>{movie.release_date}</h3>
       <h3>{movie.vote_average}</h3>

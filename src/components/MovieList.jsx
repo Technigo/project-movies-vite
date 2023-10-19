@@ -28,42 +28,20 @@ export const MovieList = () => {
   return (
     <div className="movie-list-container">
       {movies.map((movie) => (
-        <ul key={movie.id}>
-          <Link to={`/movie/${movie.id}`}>
+        <div key={movie.id} className="movie-item">
+          <Link to={`/movie/${movie.id}`} className="movie-link">
             <img
+              className="movie-image"
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               alt={`${movie.title} Poster`}
             />
-            <h2 className="movie-title">{movie.title}</h2>
-            <p className="movie-release-date">({movie.release_date})</p>
+            <div className="movie-details">
+              <h2 className="movie-title">{movie.title}</h2>
+              <p className="movie-release-date">Released: {movie.release_date}</p>
+            </div>
           </Link>
-        </ul>
+        </div>
       ))}
     </div>
   );
-};
-
-{
-  /* <div class="grid-container">
-    <div class="grid-item">1</div>
-    <div class="grid-item">2</div>
-    <div class="grid-item">3</div>
-    <div class="grid-item">4</div>
-    <div class="grid-item">5</div>
-    <div class="grid-item">6</div>
-</div
-
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  padding: 10px;
-  text-align: center;
-
-.grid-item {
-  background-color: #ddd;
-  padding: 20px;
-  border: 1px solid #888;
-} */
 }
