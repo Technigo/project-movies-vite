@@ -41,7 +41,7 @@
 }
 
 .details-page .rating:before {
-    content: url('./star.svg'); /* Update the path to your star.svg file */
+    content: url('./star.svg');
     padding-right: 5px;
 }
 

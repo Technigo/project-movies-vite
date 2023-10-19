@@ -24,7 +24,7 @@ export function MovieDetails() {
     fetchMovieDetails();
   }, [id]);
 
-  const roundedVoteAverage = movie ? Math.round(movie.vote_average) : null;
+  const voteAverage = movie ? movie.vote_average.toFixed(1) : null;
 
 
   return (
@@ -43,7 +43,7 @@ export function MovieDetails() {
               <div className="details">
                 <h1>
                   <span className="title">{movie.title}</span>
-                  <span className="rating">{roundedVoteAverage}</span>
+                  <span className="rating">{voteAverage}</span>
                 </h1>
                 <p>{movie.overview}</p>
               </div>
