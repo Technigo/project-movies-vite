@@ -53,9 +53,19 @@ const Movies = () => {
             />
           </div>
         ))
-      )}
+
+
+        <div className={styles['loading-container']}>
+            <div className={styles['loading-spinner']}></div>
+            <p className={styles['loading-text']}>Loading...</p>
+        
+   
+  
+
     </div>
   );
+
 };
+
 
 export default Movies;
