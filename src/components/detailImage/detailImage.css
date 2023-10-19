@@ -3,8 +3,12 @@
 }
 
 @media (max-width: 576px) {
-  .detail-image {
+  .detail-image-wrapper .detail-image {
     max-width: 200px;
+  }
+
+  .popular-movies .detail-image {
+    max-width: max-content;
   }
 }
 
@@ -15,7 +19,7 @@
 }
 
 @media (min-width: 770px) {
-  .detail-image {
+  .detail-image-wrapper .detail-image {
     width: auto;
     height: auto;
   }
