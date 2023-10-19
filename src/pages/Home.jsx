@@ -2,7 +2,7 @@
 import './home.css';
 import { useEffect, useState } from 'react';
 import { MovieItem } from '../components/MovieItem';
-import { getMovieList } from '/src/api';
+import { getMovieList } from '../api';
 
 export function Home() {
   const [movies, setMovies] = useState([]);
