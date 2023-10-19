@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 export const MoviePreview = ({ movie }) => {
   console.log(movie);
   const { title, backdrop_path, overview, poster_path, vote_average } = movie;

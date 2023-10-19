@@ -11,7 +11,11 @@
   position: relative;
   display: block;
   max-width: 100%;
+<<<<<<< HEAD
   width: auto;
+=======
+  height: auto;
+>>>>>>> 2a9dc1722eb0d0ebc98bf322e4f585177dd0c7bf
 }
 
 .movie-data {
@@ -27,12 +31,13 @@
 .movie-data h2 {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .movie-data h3 {
   font-size: 18px;
   font-weight: 300;
+  margin-top: 10px;
 }
 
 .movie-card:hover .movie-data {
@@ -44,6 +49,7 @@
   transition: 0.4s;
 }
 
+<<<<<<< HEAD
 .movie-info {
   color: white;
 }
@@ -98,3 +104,24 @@
 }
 
 @media (min-width: 745px);
+=======
+@media (min-width: 745px) and (max-width: 1049px) {
+  .movie-data h2 {
+    font-size: 35px;
+  }
+
+  .movie-data h3 {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1050px) {
+  .movie-data h2 {
+    font-size: 30px;
+  }
+
+  .movie-data h3 {
+    font-size: 20px;
+  }
+}
+>>>>>>> 2a9dc1722eb0d0ebc98bf322e4f585177dd0c7bf
