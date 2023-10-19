@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { MovieCard } from "../../components/movieCard/MovieCard";
+import { Loader } from "../../components/loader/Loader";
 import "./popularList.css";
 
 // Variables global for PopularList.jsx
@@ -36,7 +37,7 @@ export const PopularList = () => {
   return (
     // If there is movie-data, then send the results to MovieCard.jsx, otherwise show a loading message. Here we could add a better looking loader.
     <section className="popular-movies">
-      {movies ? <MovieCard movieData={movies.results} /> : <p>Loading...</p>}
+      {movies ? <MovieCard movieData={movies.results} /> : <Loader />}
     </section>
   )
 }

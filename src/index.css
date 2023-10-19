@@ -1,7 +1,7 @@
 /* ------- Style resets and custom properties ------- */
 @font-face {
-  font-family: 'FindingNemo'; 
-  src: url('/LostFish-5DOz.ttf') format('truetype'); 
+  font-family: 'FindingNemo';
+  src: url('/LostFish-5DOz.ttf') format('truetype');
 }
 
 * {
@@ -17,6 +17,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
+  background-color: var(--secondary);
 }
 
 a {

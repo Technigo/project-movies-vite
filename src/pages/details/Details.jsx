@@ -8,6 +8,7 @@ import { Paragraph } from "../../components/typography/paragraph/Paragraph.jsx";
 import { PageNotFound } from "../../pages/404-error/PageNotFound.jsx";
 
 import "./details.css";
+import { Loader } from "../../components/loader/Loader.jsx";
 
 const API_KEY = import.meta.env.VITE_MOVIEDB_KEY;
 const URL_START = "https://api.themoviedb.org/3/movie/";
@@ -35,10 +36,13 @@ export const Details = () => {
         const data = await response.json();
         console.log(data);
         setDetail(data);
-        setIsLoading(false);
+        // Delay for 2 seconds so that the loader can be shown
+        setTimeout(() => {
+          setIsLoading(false); // Hides the loader after the "delay" of two seconds
+        }, 2000);
       } catch (error) {
         console.error("Error fetching movie details:", error);
-        setIsLoading(false);
+        setIsLoading(false);// Hides the loader in case of an error
         setMovieFound(false);
       }
     };
@@ -49,7 +53,7 @@ export const Details = () => {
   }, [movieDetails]);
 
   if (isLoading) {
-    return <h2>Loading...</h2>;
+    return <Loader />;
   } else if (!movieFound) {
     return <PageNotFound />;
   } else {
@@ -57,18 +61,19 @@ export const Details = () => {
     return (
       <article className="detail-page">
         <BackButton text={"Movies"} />
-        {/* Div that contains the background image, url and gradient is dynamically added here */}
+        {/* Div that contains the background.image. Url and gradient is dynamically added here */}
         <div
           className="background"
           style={{
             backgroundImage: `linear-gradient(to bottom, #ffffff00, #000000), url(${backgroundImage})`,
           }}
         >
+          {/* Textdetails */}
           <div className="detail-info-wrapper">
             <div className="detail-image-wrapper">
               <DetailImage
                 url={`https://image.tmdb.org/t/p/w780/${detail.poster_path}`}
-                altText={`Poster image of ${detail.title}`}
+                altText={`Image of ${detail.title}`}
               />
             </div>
             <div className="detail-text-wrapper">
