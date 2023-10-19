@@ -10,6 +10,8 @@
 .movie-card img {
   position: relative;
   display: block;
+  max-width: 100%;
+  width: auto;
 }
 
 .movie-data {
@@ -41,3 +43,58 @@
   opacity: 0.4;
   transition: 0.4s;
 }
+
+.movie-info {
+  color: white;
+}
+
+.movie-info h1 {
+  font-size: 20px;
+}
+.movie-info h2 {
+  font-size: 16px;
+}
+
+.title-and-score {
+  display: flex;
+  gap: 20px;
+}
+.movie-score {
+  align-self: center;
+}
+
+.movie-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 50px 50px;
+  gap: 20px;
+  max-width: 60%;
+}
+
+.movie-summary img {
+  border: 3px solid white;
+  max-width: 100%;
+}
+
+/* .movie-container {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+} */
+.movie-container {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 745px);
