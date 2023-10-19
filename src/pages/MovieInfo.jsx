@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import './MovieInfo.css';
 
 const API_URL = 'https://api.themoviedb.org/3/movie/';
@@ -7,12 +8,12 @@ const API_KEY = 'c7a06bec29a13534747337c34c5c6147';
 
 export const MovieInfo = () => {  // Default movie ID set to 550 for testing
   const [movieDetails, setMovieDetails] = useState(null);
-  
+  const { movieId } = useParams();
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
       try {
-        const response = await fetch(`${API_URL}${movie_id}?api_key=${API_KEY}&language=en-US`);
+        const response = await fetch(`${API_URL}${movieId}?api_key=${API_KEY}&language=en-US`);
 
         const data = await response.json();
 
@@ -23,7 +24,7 @@ export const MovieInfo = () => {  // Default movie ID set to 550 for testing
     };
     
     fetchMovieDetails();
-  }, [movie_id]);
+  }, [movieId]);
 
   return (
     <div 
