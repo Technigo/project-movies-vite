@@ -5,7 +5,7 @@
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #190d05;
+  background-color: black;
 }
 
 code {
@@ -13,6 +13,16 @@ code {
     monospace;
 }
 
-body {
-  padding: 20px;
+* {
+  box-sizing: border-box;
+}
+
+/* Removes margin on all relevant tags. Body for an edge-to-edge look on sections, and headings/paragraphs to easier follow sketch */
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
 }

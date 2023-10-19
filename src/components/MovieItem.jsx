@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { IMAGE_BASE_URL } from '/src/api'; // Import IMAGE_BASE_URL from your API module
 
 export function MovieItem({ movie }) {
-  const imageUrl = `${IMAGE_BASE_URL}/w185${movie.poster_path}`;
+  const imageUrl = `${IMAGE_BASE_URL}/w342${movie.poster_path}`;
 
   return (
     <Link to={`/movie/${movie.id}`}>

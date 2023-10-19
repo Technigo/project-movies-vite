@@ -1,5 +1,5 @@
 // This component represents the movie details page.
-import './moviedetails.css';
+import "./moviedetails.css";
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieDetails } from '/src/api';
@@ -25,26 +25,22 @@ export function MovieDetails() {
   }, [id]);
 
   return (
-    <article className='movie-details'>
+    <div>
       {movie ? (
         <article className='movie-details-wrapper'>
           <BackButton />
-          <div className="movie-details">
-            <img
-              className="large"
-              src={`${IMAGE_BASE_URL}/w1280${movie.backdrop_path}`}
-              alt={movie.title}
-            />
-            <img
-              className="small"
-              src={`${IMAGE_BASE_URL}/w185${movie.poster_path}`}
-              alt={movie.title}
-            />
-            <h1>{movie.title}</h1>
-            <p>Rating: {movie.vote_average}</p>
-            <p>{movie.overview}</p>
-          </div>
-        </article>
+          <img
+            src={`${IMAGE_BASE_URL}/w1280${movie.backdrop_path}`}
+            alt={movie.title}
+          />
+          <img
+            src={`${IMAGE_BASE_URL}/w185${movie.poster_path}`}
+            alt={movie.title}
+          />
+          <h1>{movie.title}</h1>
+          <p>Rating: {movie.vote_average}</p>
+          <p>{movie.overview}</p>
+        </div>
       ) : (
         <p>Loading...</p>
       )}

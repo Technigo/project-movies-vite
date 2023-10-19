@@ -1,5 +1,75 @@
+<<<<<<< HEAD
 
 
 .movie-details-wrapper {
     margin: 0 auto;
+=======
+.details-page .background {
+    min-height: 100vh;
+    display: flex;
+    background-size: cover;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.details-page .summary {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+
+.details-page img {
+    border: 5px solid #fff;
+    width: 200px;
+}
+
+.details-page .details {
+    margin-left: 0;
+}
+
+.details-page .details h1 {
+    text-shadow: 1px 1px #4d4d4d;
+}
+
+.details-page .details .title {
+    margin-right: 10px;
+}
+
+.details-page .rating {
+    color: #000;
+    font-weight: 500;
+    background: #fff;
+    padding: 0 5px;
+    text-shadow: none;
+    display: inline-block;
+}
+
+.details-page .details p {
+    max-width: 400px;
+}
+
+
+
+
+/* MEDIA QUERIAS */
+
+@media (min-width: 577px) {
+    .details-page .details {
+        margin-left: 20px;
+    }
+
+    .details-page .summary {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        padding: 50px;
+    }
+
+}
+
+@media (min-width: 770px) {
+    .details-page img {
+        width: auto;
+    }
+>>>>>>> maria
 }
