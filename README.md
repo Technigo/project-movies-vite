@@ -6,9 +6,9 @@
 
 # Movie Site Project
 
-Replace this readme with your own information about your project.
+We will start of Sprint 3 of this boot camp off by creating your very own movie site. This is our first multi-page React application, using a fun new movie API. Our site utilises themoviedb.org's API to showcase movies and their details. Features fetching popular movies, rendering movie specifics, and managing image URLs. Designed with a focus on responsiveness and accessibility. Enhancements include error handling, loading states, and dynamic movie lists
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Project completed with paired programming by - Elba Cacan & Rebecca Morton.
 
 ## Getting Started with the Project
 
@@ -24,11 +24,20 @@ npm i && code . && npm run dev
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Describe how you approached to problem: We first decided on how to structure our app, using components/pages for our home screen, which displays the list of movies, a movie detail page and a movie cardcomponent. All our components/pages had their own .css files.
+
+We had to experiment with grid/flex box and other css to make our app responsive for mobile and were confident fetching the API details. One issue was how to display the full screen image on the movie page and style the text to fit nicely.
+
+What tools and techniques you used to solve it: We used React Router (Route, Routes, Link, NavLink) as well as useEffect and useState hooks to help fetch and destructure data to render in the app.
+
+What technologies did you use?: HTML5, CSS3, React, React Router, with Editor: VS Code
+
+If you had more time, what would be next?: 
+We were able to create a loading screen as per intermediate stretch goals, with more time we would love to have a menu and display other popular movie lists from other countries.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://wk9-project-movie-site-c05bc5.netlify.app/
 
 ## Instructions
 
