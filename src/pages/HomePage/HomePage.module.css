@@ -1,6 +1,6 @@
 .hero_wrapper,
 .slider_wrapper {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   width: 100vw;
 }
 
@@ -23,13 +23,13 @@
 
 @media (min-width: 640px) {
   .hero_wrapper {
-    margin-bottom: 60px;
-    padding-left: 30px;
-    padding-right: 30px;
+    margin-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .slider_wrapper {
-    margin-bottom: 60px;
+    margin-bottom: 20px;
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -43,24 +43,24 @@
 
 @media (min-width: 768px) {
   .hero_wrapper {
-    margin-bottom: 60px;
-    padding-left: 60px;
-    padding-right: 60px;
+    margin-bottom: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
   .slider_wrapper {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     padding-left: 30px;
     padding-right: 30px;
   }
 }
+
 @media (min-width: 1024px) {
   .hero_wrapper {
-    margin-bottom: 60px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
   }
   .slider_wrapper {
-    margin-bottom: 60px;
+    margin-bottom: 50px;
     padding-left: 50px;
     padding-right: 50px;
   }

@@ -8,7 +8,8 @@
 }
 
 .hero_image {
-  height: 30vh;
+  display: inline-block;
+  height: 20vh;
   width: 96%;
   border-radius: 10px;
   background-position: center;
@@ -16,6 +17,33 @@
   background-size: 100%;
   flex: 1 0 100%;
   scroll-snap-align: start;
+  display: flex;
+  align-items: flex-end;
+}
+
+.inner_image_box {
+  width: 40%;
+  backdrop-filter: blur(10px) invert(30%);
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  display: none;
+}
+
+.inner_image_box p {
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.inner_image_box h2 {
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+@media (min-width: 400px) {
+  .hero_image {
+    height: 30vh;
+  }
 }
 
 @media (min-width: 640px) {
@@ -32,17 +60,21 @@
     overflow: hidden;
     position: relative;
     height: 100%;
-    width: 84vw;
+    width: 90vw;
   }
 
   .hero_image {
-    height: 30vh;
-    width: 84vw;
-    border-radius: 10px;
+    height: 40vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
     flex: 1 0 100%;
+  }
+
+  .inner_image_box {
+    display: block;
+    margin-bottom: 50px;
+    margin-left: 25px;
   }
 }
 
@@ -50,7 +82,6 @@
   .hero_image {
     height: 50vh;
     width: 84vw;
-    border-radius: 10px;
     background-position-y: 30%;
     flex: 1 0 100%;
   }

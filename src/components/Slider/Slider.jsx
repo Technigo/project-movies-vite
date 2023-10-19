@@ -5,7 +5,7 @@ import styles from "./Slider.module.css";
 
 function Slider({ children, currentImageWidth }) {
   const carouselRef = useRef();
-  console.log(currentImageWidth);
+
   function handleClickToLeft() {
     console.log(carouselRef.current);
     carouselRef.current.scrollLeft -= currentImageWidth;
