@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Popular } from "./Pages/Popular.jsx"; 
+import { Popular } from "./pages/Popular.jsx"; 
 import { Detail } from "./pages/Detail.jsx";
 import { ErrorPage } from "./pages/ErrorPage.jsx";
 
