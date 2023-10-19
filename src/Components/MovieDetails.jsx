@@ -24,7 +24,7 @@ export const MovieDetails = () => {
         <div className="summary">
             <img className="poster-img" src={`https://image.tmdb.org/t/p/w342${data.poster_path}`} alt={data.title} />
             <div className="details">
-                <h1><span className="title">{data.original_title}</span> <br />  <span className="rate"><i className="fa-solid fa-star"></i> {Number(data.vote_average).toFixed(1)} </span></h1>
+                <h1><span className="title">{data.original_title}</span> <span className="rate"><i className="fa-solid fa-star"></i> {Number(data.vote_average).toFixed(1)} </span></h1>
                 <p className="desc">{data.overview}</p>
             </div>
         </div>
