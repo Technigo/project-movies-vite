@@ -1,3 +1,16 @@
+.listHeader {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.listHeader h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 10px;
+}
+
 .listContainer {
     display: flex;
     flex-direction: column; 

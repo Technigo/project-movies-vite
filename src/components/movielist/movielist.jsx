@@ -32,8 +32,11 @@ export const MovieList = () => {
 
     // Render the API data to be displayed on the page
     return (
-        <div className={style.listContainer}>
+        <div className={style.listHeader}>
             <h1>Movie List</h1>
+            
+        <div className={style.listContainer}>
+        
             <div className={style.movieList}>
                 {allmovies.map((movie) => (
                     <div key={movie.id }>
@@ -52,6 +55,7 @@ export const MovieList = () => {
                     </div>
                 ))}
             </div>
+        </div>
         </div>
     )
 }
