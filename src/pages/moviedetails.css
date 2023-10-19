@@ -40,9 +40,12 @@
     display: inline-block;
 }
 
-.details-page .rating:before {
-    content: url('./star.svg');
+.details-page .rating img {
+    width: 20px;
     padding-right: 5px;
+    margin: 0;
+    text-align: center;
+    border: none;
 }
 
 .details-page .rating span {

@@ -1,5 +1,6 @@
 // This component represents the movie details page.
 import "./moviedetails.css";
+import star from "./star2.svg";
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieDetails } from "/src/apiFetch.jsx";
@@ -43,7 +44,10 @@ export function MovieDetails() {
               <div className="details">
                 <h1>
                   <span className="title">{movie.title}</span>
-                  <span className="rating">{voteAverage}</span>
+                  <span className="rating">
+                    <img src={star} />
+                    {voteAverage}
+                  </span>
                 </h1>
                 <p>{movie.overview}</p>
               </div>
