@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { MovieDetails } from "./MovieDetails";
+import "./MovieCard.css";
 
 export const MovieCard = () => {
-
-  const [movieData, setMovieData] = useState(null)
-  const [isLoading, setIsLoading] =useState(true);
-  const { id } = useParams()
+  const [movieData, setMovieData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const { id } = useParams();
   // console.log("movie_id:", id);
 
   useEffect(() => {
@@ -23,29 +23,29 @@ export const MovieCard = () => {
 
         const json = await response.json();
         console.log("Response Status Code:", response.status);
-        setMovieData(json)
+        setMovieData(json);
         setIsLoading(false);
-        window.scrollTo({ top: 0, behavior: "smooth"});
-      }
-      catch (error) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
 
-    const delay =setTimeout(()=> {
-      fetchMovies()
+    const delay = setTimeout(() => {
+      fetchMovies();
     }, 500);
 
     return () => clearTimeout(delay);
-  }, [id])
+  }, [id]);
 
-  
   return (
     <>
-      
-      
-    {!isLoading && movieData && <Link to="/">Back</Link>}
+      {!isLoading && movieData && (
+        <Link className="back-arrow" to="/">
+          Movies
+        </Link>
+      )}
       {!isLoading && movieData && <MovieDetails movie={movieData} />}
-   </>
-  )
-}
+    </>
+  );
+};
