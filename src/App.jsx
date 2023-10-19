@@ -12,9 +12,15 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
+
         {/* <Suspense fallback={<LoadingFullPage />}> */}
-        <Route path="/movie/:id" element={<Detail />} />
+       
         {/* </Suspense> */}
+
+
+        <Route path="/movie/:movieId" element={<Detail />} />
+
+
       </Routes>
     </BrowserRouter>
   );
