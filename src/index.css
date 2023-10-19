@@ -141,6 +141,7 @@ body {
   align-items: flex-end;
   padding: 50px;
   color: white;
+  margin-top: 20vh;
 }
 
 .movie-poster {
