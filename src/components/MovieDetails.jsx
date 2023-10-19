@@ -4,6 +4,8 @@ export const MovieDetails = ({ movie }) => {
 
     const { title, poster_path, backdrop_path, overview, vote_average } = movie;
     const affischImage = `https://image.tmdb.org/t/p/w342/${poster_path}`;
+    // const affischImage = `https://image.tmdb.org/t/p/w185/${poster_path}`;
+    // const affischImage = `https://image.tmdb.org/t/p/w154/${poster_path}`;
     const backgroundImage = `https://image.tmdb.org/t/p/w1280/${backdrop_path}`
 
     return (
