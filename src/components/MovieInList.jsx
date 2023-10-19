@@ -9,7 +9,7 @@ export const MovieInList = ({ title, poster, release, id }) => {
     const imageUrl = imageBaseUrl + imageSize + poster
     
     return <div className="a-movie">
-        <Link to={`/movies/${id}`}>
+        <Link to={`/info/${id}`}>
             <img className="poster" src={imageUrl} alt={`Poster for ${title}`} />
             <div className="movie-text-container">
                 <h4 className="movie-title">{title}</h4>
