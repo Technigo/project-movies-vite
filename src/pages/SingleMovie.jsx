@@ -28,20 +28,26 @@ export const SingleMovie = () => {
     // Replace this return statement with your actual JSX structure for displaying movie details.
     return (
         <div className="single-movie">
-            <Link to="/" className="backLink">
-                <BackIcon />
+            <Link to="/" className="backLink" aria-label="button back to home page">
+                <BackIcon /> Movies
             </Link>
 
             {movie ? (
-                <div>
-                    <h1>{movie.title}</h1>
-                    <p>{movie.overview}</p>
+                <>
 
-                    <img
-                        src={`https://image.tmdb.org/t/p/w780/${movie.backdrop_path}`}
-                        alt={movie.title}
-                    />
-                </div>
+                    <div className="back-drop">
+                        <img
+                            src={`https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}`}
+                            alt={movie.title} />
+                    </div>
+                    <div className="movie-info">
+                        <img
+                            src={`https://image.tmdb.org/t/p/w780/${movie.poster_path}`}
+                            alt={movie.title} />
+                        <h1>{movie.title}</h1>
+                        <p>{movie.overview}</p>
+
+                    </div></>
             ) : (
                 <p>Loading...</p>
             )}

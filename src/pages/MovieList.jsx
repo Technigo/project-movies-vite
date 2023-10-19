@@ -65,7 +65,7 @@ export const MovieList = () => {
         <>
             <section className="movie-list-page">
                 <div className="hero-section">
-                    <h1>Movie Zone</h1>
+                    <h1>The Movie Zone</h1>
                 </div>
 
                 <div className="movie-list">
