@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export const Popular = () => {
   const [movies, setMovies] = useState([]);
 
-  const api_key = "7c19dcf9d97858f9497be69f656c349b";
+  const api_key = import.meta.env.VITE_OPENDB_KEY;
   // Get a list of movies ordered by popularity.
   const popularApi = `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1`;
 

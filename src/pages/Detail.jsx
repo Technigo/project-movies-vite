@@ -9,7 +9,7 @@ export const Detail = () => {
   const [error, setError] = useState(false);
   const { id } = useParams();
 
-  const api_key = "7c19dcf9d97858f9497be69f656c349b"; // Change later to pass as a promt instead.
+  const api_key = import.meta.env.VITE_OPENDB_KEY; // Change later to pass as a promt instead.
   const detailApi = `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}&language=en-US`;
 
   // Function to fetch movie details from the API.
