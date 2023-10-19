@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import style from "./moviedetails.modules.css"
+import style from "./moviedetails.module.css"
 import { useParams } from "react-router-dom"
 import { NavLink } from "react-router-dom"
 
@@ -36,13 +36,12 @@ export const MovieDetails = () => {
 
     return (
         <div>
-            <div>
+            <div className={style.backgroundContainer}>
                 <NavLink to={`/`}><h2>Movie List</h2></NavLink>
             </div>
             <h1>Movie Details</h1>
             {movieDetails && (
                 <div>
-
                     <div>
                         {movieDetails.map((movie) => (
                             <div key={movie.id}>
@@ -51,16 +50,10 @@ export const MovieDetails = () => {
                                 <div className={style.movieSummary}>
                                     <img className={style.movieImage}
                                         src={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`} />
-                                    <h2>{movie.title}</h2>
                                     <div className={style.movieInfo}>
-                                        <p>Release Date: {movie.release_date}</p>
-                                        <p>Overview: {movie.overview}</p>
-                                        <p>Popularity: {movie.popularity}</p>
-                                        <p>Vote Average: {movie.vote_average}</p>
-                                        <p>Vote Count: {movie.vote_count}</p>
-                                        <p>Original Language: {movie.original_language}</p>
-                                        <p>Original Title: {movie.original_title}</p>
-                                        <p>Genre: {movie.genre_ids}</p>
+                                        <h2>{movie.title}</h2>
+                                        <p className={style.vote}>Vote Average: {movie.vote_average}</p>
+                                        <p className={style.Overview}>Overview: {movie.overview}</p>
                                     </div>
                                 </div>
                             </div>
