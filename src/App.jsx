@@ -8,8 +8,8 @@ export function App() {
     <BrowserRouter>
       <main>
         <Routes>
-          <Route path="/" element={<MovieList movie={Movie} />} />
-          {/* <Route path="movie/:movie" element={<Movie movie={movie.id} />} /> */}
+          <Route path="/" element={<MovieList />} />
+          <Route path="movie/:movieId" element={<Movie />} />
         </Routes>
       </main>
     </BrowserRouter>

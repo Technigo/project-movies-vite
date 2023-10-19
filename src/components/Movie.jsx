@@ -1,69 +1,52 @@
-// import React from "react";
-
-// export const Movie = ({ name, image }) => {
-//   <div className="movie">
-//     <img src={`/images/${image}`} alt="" />
-//     <h3>{name}</h3>
-//   </div>;
-// };
-
-// import React from "react";
-// import { useParams } from "react-router-dom";
-
-// export const ShowMovie = ({ movies }) => {
-//   const { movieName } = useParams();
-//   const selectedMovie = movies.find((movie) => movie.name === movieName);
-
-//     const url =
-//       "https://api.themoviedb.org/3/movie/popular?api_key=05ee03350103cd5d4cd268dcf88024c0&language=en-US&page=1";
-
-//   if (!selectedMovie) {
-//     // Hantera fallet när den valda filmen inte finns i din data
-//     return <div>Filmen hittades inte</div>;
-//   }
-
-//   return (
-//     <div className="show-movie">
-//       <h1>{selectedMovie.name}</h1>
-//       <p>Regissör: {selectedMovie.director}</p>
-//       <p>År: {selectedMovie.year}</p>
-//       {/* Lägg till fler detaljer om filmen här */}
-//     </div>
-//   );
-// };
-
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 export const Movie = () => {
+  const [movie, setMovie] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const { movieId } = useParams();
-  const [movieData, setMovieData] = useState(null);
+  const navigate = useNavigate(); // using the hook here
 
   useEffect(() => {
     fetch(
-      `https://api.themoviedb.org/3/movie/${movieId}?api_key=05ee03350103cd5d4cd268dcf88024c0&language=en-US`
+      `https://api.themoviedb.org/3/movie/${movieId}?api_key=05ee03350103cd5d4cd268dcf88024c0&language=en-US&page=1`
     )
       .then((response) => response.json())
-      .then((data) => setMovieData(data));
+      .then((data) => {
+        setMovie(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
   }, [movieId]);
 
-  if (!movieData) {
-    return <div>Laddar...</div>;
-  }
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
 
-  const { backdrop_path, poster_path, title, overview, release_date } =
-    movieData;
+  const handleBack = () => {
+    navigate(-1);
+  };
 
   return (
-    <div className="show-movie">
-      <h1>{title}</h1>
-      <p>Release Date: {release_date}</p>
-      <p>{overview}</p>
+    <div>
+      <button onClick={handleBack}>Go Back</button>
+      <h2>{movie.title}</h2>
+      <h3>{movie.release_date}</h3>
+      <h3>{movie.vote_average}</h3>
+      <p>{movie.overview}</p>
       <img
-        src={`https://image.tmdb.org/t/p/w500${backdrop_path}`}
-        alt="Background"
+        className="poster"
+        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+        alt={`${movie.title} Poster`}
       />
-      <img src={`https://image.tmdb.org/t/p/w185${poster_path}`} alt="Poster" />
+      <img
+        className="backdrop"
+        src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+        alt={`${movie.title} Backdrop`}
+      />
     </div>
   );
 };

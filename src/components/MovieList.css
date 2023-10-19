@@ -1,0 +1,20 @@
+.movie-list-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  padding: 10px;
+  text-align: center;
+  background-color: blueviolet;
+}
+
+.movie-list-container img {
+}
+
+.movie-title {
+  background-color: #ddd;
+  padding: 20px;
+  border: 1px solid #888;
+}
+
+.movie-release-date {
+}
