@@ -43,7 +43,7 @@ export function MovieDetails() {
               <div className="details">
                 <h1>
                   <span className="title">{movie.title}</span>
-                  <span className="rating">Rating: {roundedVoteAverage}</span>
+                  <span className="rating">{roundedVoteAverage}</span>
                 </h1>
                 <p>{movie.overview}</p>
               </div>
