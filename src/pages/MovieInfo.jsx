@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from 'react';
-import BackArrow from '../assets/back.svg';
+// import BackArrow from '../assets/back.svg';
 import './MovieInfo.css';
 
 const API_URL = 'https://api.themoviedb.org/3/movie/';
