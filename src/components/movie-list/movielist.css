@@ -1,16 +1,7 @@
 .movie-grid {
   display: grid;
   grid-template-columns: 1fr;
-<<<<<<< HEAD
-  grid-template-rows: auto;
-  gap: 25px;
-}
-
-.container {
-  margin: 0 auto;
-=======
   width: 100%;
->>>>>>> 2a9dc1722eb0d0ebc98bf322e4f585177dd0c7bf
 }
 
 @media (min-width: 745px) and (max-width: 1049px) {

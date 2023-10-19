@@ -11,11 +11,7 @@
   position: relative;
   display: block;
   max-width: 100%;
-<<<<<<< HEAD
-  width: auto;
-=======
   height: auto;
->>>>>>> 2a9dc1722eb0d0ebc98bf322e4f585177dd0c7bf
 }
 
 .movie-data {
@@ -49,7 +45,31 @@
   transition: 0.4s;
 }
 
-<<<<<<< HEAD
+.go-back-btn {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  filter: drop-shadow(2px 3px 4px rgb(0 0 0/0.5));
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  cursor: pointer;
+  -webkit-filter: drop-shadow(2px 3px 4px rgb(0 0 0/0.5));
+}
+
+.go-back-btn p {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.go-back-btn p:hover {
+  margin-left: 5px;
+  transition: 0.3s;
+}
+
 .movie-info {
   color: white;
 }
@@ -65,6 +85,7 @@
   display: flex;
   gap: 20px;
 }
+
 .movie-score {
   align-self: center;
 }
@@ -83,19 +104,10 @@
   max-width: 100%;
 }
 
-/* .movie-container {
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  width: 100%;
-} */
 .movie-container {
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  height: 95vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -103,8 +115,6 @@
   width: 100%;
 }
 
-@media (min-width: 745px);
-=======
 @media (min-width: 745px) and (max-width: 1049px) {
   .movie-data h2 {
     font-size: 35px;
@@ -112,6 +122,16 @@
 
   .movie-data h3 {
     font-size: 20px;
+  }
+
+  .movie-summary {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 0 0 50px 50px;
+    gap: 20px;
+    max-width: 55%;
+    text-shadow: 2px 2px #000;
   }
 }
 
@@ -123,5 +143,35 @@
   .movie-data h3 {
     font-size: 20px;
   }
+
+  .movie-container {
+    flex-direction: row;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+
+  .movie-summary {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 0 0 50px 50px;
+    gap: 20px;
+    width: 50%;
+    text-shadow: 2px 2px #000;
+  }
+
+  .movie-info {
+    align-self: center;
+  }
+
+  .movie-info h1 {
+    font-size: 35px;
+  }
+  .movie-info h2 {
+    font-size: 30px;
+  }
+  .movie-info p {
+    font-size: 20px;
+  }
 }
->>>>>>> 2a9dc1722eb0d0ebc98bf322e4f585177dd0c7bf

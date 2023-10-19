@@ -6,13 +6,13 @@ export const App = () => {
   return (
     <div className="container">
       <BrowserRouter>
-        <nav>
+        {/* <nav>
           <ul className="app-ul">
             <li className="app-li">
               <Link to="/">Home</Link>
             </li>
           </ul>
-        </nav>
+        </nav> */}
 
         <main>
           <Routes>{routes}</Routes>

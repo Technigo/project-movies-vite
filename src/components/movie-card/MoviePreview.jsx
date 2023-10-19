@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
 export const MoviePreview = ({ movie }) => {
   console.log(movie);
   const { title, backdrop_path, overview, poster_path, vote_average } = movie;
@@ -7,14 +8,19 @@ export const MoviePreview = ({ movie }) => {
   return (
     <div
       className="movie-container"
-      style={{ backgroundImage: `url(${backgroundImage}) center center` }}
+      style={{ backgroundImage: `url(${backgroundImage})` }}
     >
+      <Link to="/">
+        <button className="go-back-btn fa fa-chevron-circle-left">
+          <p>Movies</p>
+        </button>
+      </Link>
       <div className="movie-summary">
         <img src={posterImage} alt={title} />
         <div className="movie-info">
           <div className="title-and-score">
             <h1 className="movie-title">{title}</h1>
-            <h2 className="movie-score"> ⭐{vote_average}</h2>
+            <h2 className="movie-score"> ⭐{vote_average.toFixed(1)}</h2>
           </div>
           <p className="movie-overview">{overview}</p>
         </div>
