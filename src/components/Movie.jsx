@@ -32,22 +32,39 @@ export const Movie = () => {
   };
 
   return (
-    <div>
-      <button onClick={handleBack}>Go back</button>
-      <h2>{movie.title}</h2>
-      <h3>{movie.release_date}</h3>
-      <h3>{movie.vote_average}</h3>
-      <p>{movie.overview}</p>
-      <img
-        className="poster"
-        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-        alt={`${movie.title} Poster`}
-      />
-      <img
-        className="backdrop"
-        src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-        alt={`${movie.title} Backdrop`}
-      />
+    <div
+      className="movie-container"
+      style={{
+        backgroundImage: `url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="content-overlay">
+        <div className="button">
+          <button onClick={handleBack}>Back to movies</button>
+        </div>
+        <div className="selected-movie-info">
+          <div className="selected-movie-title">
+            <h2>{movie.title}</h2>
+          </div>
+          <div className="selected-release-date">
+            <h3>{movie.release_date}</h3>
+          </div>
+          <div className="rating">
+            <h3>⭐️{movie.vote_average}</h3>
+          </div>
+          <div className="overview">
+            <p>{movie.overview}</p>
+          </div>
+        </div>
+        <img
+          className="poster"
+          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+          alt={`${movie.title} Poster`}
+        />
+      </div>
     </div>
   );
 };

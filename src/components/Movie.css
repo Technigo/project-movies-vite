@@ -1,0 +1,17 @@
+.movie-container {
+  padding: 20px;
+  color: white;
+}
+
+.content-overlay {
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.button {
+}
+
+.selected-movie-info {
+  margin-bottom: 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
