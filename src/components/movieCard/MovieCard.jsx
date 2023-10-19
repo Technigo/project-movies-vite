@@ -25,7 +25,7 @@ export const MovieCard = ({ movieData }) => {
 
           <Link to={`/details/${movie.id}`}>
             <DetailImage
-              url={`https://image.tmdb.org/t/p/w780/${movie.poster_path}`}
+              url={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`}
               altText={`Poster image of ${movie.title}`}
             />
             <div className="details">

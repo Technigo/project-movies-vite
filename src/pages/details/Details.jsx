@@ -40,7 +40,7 @@ export const Details = () => {
         // Delay for 2 seconds so that the loader can be shown
         setTimeout(() => {
           setIsLoading(false); // Hides the loader after the "delay" of two seconds
-        }, 2000);
+        }, 1000);
       } catch (error) {
         console.error("Error fetching movie details:", error);
         setIsLoading(false);// Hides the loader in case of an error
