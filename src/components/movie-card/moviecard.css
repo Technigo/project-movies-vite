@@ -10,6 +10,8 @@
 .movie-card img {
   position: relative;
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .movie-data {
@@ -41,4 +43,24 @@
 .movie-card:hover img {
   opacity: 0.4;
   transition: 0.4s;
+}
+
+@media (min-width: 745px) and (max-width: 1049px) {
+  .movie-data h2 {
+    font-size: 35px;
+  }
+
+  .movie-data h3 {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1050px) {
+  .movie-data h2 {
+    font-size: 30px;
+  }
+
+  .movie-data h3 {
+    font-size: 20px;
+  }
 }
