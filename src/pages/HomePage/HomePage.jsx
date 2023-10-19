@@ -1,43 +1,149 @@
 
 import { useEffect, useState } from "react";
 import styles from "./HomePage.module.css";
-import MovieCard from "../../components/MovieCard/MovieCard";
+import { Navbar } from "../../components/Navbar";
+import { Footer } from "../../components/Footer";
+
+import useSWR from "swr";
+
+import { HeroCarousel } from "../../components/HeroCarousel";
+import { MainSlider } from "../../components/MainSlider";
+import { Error } from "../../components/Error";
+import { LoadingFullPage } from "../../components/LoaingFullPage";
 
 const options = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMzEwNDBiNTAzY2M0MzViNDk0MjU0ODRiMDZlYTc1NSIsInN1YiI6IjY1MmQyODNlNjYxMWI0MDBlMjU1MDMxYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.nzGRkQ839_qWKFn7k3BsxmVqMmHl11yXIf4z6QEk8z4",
+    Authorization: import.meta.env.VITE_API_KEY, // eslint-disable-line
   },
 };
 
+const fetcher = async () => {
+  const data = await Promise.all([
+    fetch("https://api.themoviedb.org/3/movie/popular?language=en-US&page=1", options).then(
+      (response) => response.json()
+    ),
+    fetch("https://api.themoviedb.org/3/trending/movie/day?language=en-US", options).then(
+      (response) => response.json()
+    ),
+    fetch("https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1", options).then(
+      (response) => response.json()
+    ),
+    fetch("https://api.themoviedb.org/3/tv/popular?language=en-US&page=1", options).then(
+      (response) => response.json()
+    ),
+    fetch("https://api.themoviedb.org/3/trending/tv/day?language=en-US", options).then((response) =>
+      response.json()
+    ),
+    fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1", options).then(
+      (response) => response.json()
+    ),
+    fetch("https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1", options).then(
+      (response) => response.json()
+    ),
+  ]);
+  return data;
+};
+
+function getWindowWidth() {
+  const { innerWidth: width } = window;
+  return {
+    width,
+  };
+}
+
 function HomePage() {
-  const [movies, setMovies] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [{ width: windowWidth }, setWindowWidth] = useState(getWindowWidth());
 
   useEffect(() => {
-    async function getMovies() {
-      setIsLoading(true);
-      await fetch("https://api.themoviedb.org/3/movie/popular?language=en-US&page=1", options)
-        .then((response) => response.json())
-        .then((response) => setMovies(response.results))
-        .catch((err) => console.error(err))
-        .finally(setIsLoading(false));
+    function handleResize() {
+      setWindowWidth(getWindowWidth());
     }
-    getMovies();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const { data, error, isLoading } = useSWR("getMovie", fetcher);
+
+  if (isLoading) return <LoadingFullPage />;
+  if (error) return <Error />;
+
+  const [
+    { results: popularMovies },
+    { results: trendingMovies },
+    { results: topRatedTVs },
+    { results: popularTVs },
+    { results: trendingTVs },
+    { results: nowPlayingMovies },
+    { results: upcomingMovies },
+  ] = data !== undefined && data;
+
+  const heroMovies = popularMovies && popularMovies.slice(7, 14);
+  const heroTVs = topRatedTVs && topRatedTVs.slice(8, -1);
+
   return (
-    <main className={styles.main}>
-      <div className={styles.main_inner}>
-        {!isLoading ? (
-          movies.map((movie) => <MovieCard movie={movie} key={movie.title} />)
-        ) : (
-          <p>Loading</p>
-        )}
-      </div>
-    </main>
+    <>
+      {!isLoading && (
+        <>
+          <Navbar />
+          <main className={styles.main}>
+            <div className={styles.hero_wrapper}>
+              <HeroCarousel movies={heroMovies} windowWidth={windowWidth} />
+            </div>
+
+            <div className={styles.main_inner}>
+              <div className={styles.movies_wrapper}>
+                <MainSlider
+                  windowWidth={windowWidth}
+                  movies={popularMovies}
+                  title="Popular movies"
+                  horizontal={false}
+                />
+                <MainSlider
+                  windowWidth={windowWidth}
+                  movies={trendingMovies.slice(7, -1)}
+                  title="Trending movies"
+                  horizontal={false}
+                />
+                <MainSlider
+                  windowWidth={windowWidth}
+                  movies={nowPlayingMovies.slice(0, 10)}
+                  title="Now playing movies"
+                  horizontal={false}
+                />
+                <MainSlider
+                  windowWidth={windowWidth}
+                  movies={upcomingMovies.slice(3, 15)}
+                  title="upcoming movies"
+                />
+              </div>
+              <div className={styles.tvs_wrapper}>
+                <div className={styles.hero_wrapper}>
+                  <HeroCarousel movies={heroTVs} windowWidth={windowWidth} />
+                </div>
+                <MainSlider
+                  windowWidth={windowWidth}
+                  movies={topRatedTVs.slice(0, 8)}
+                  title="Top rated TV shows"
+                />
+                <MainSlider
+                  windowWidth={windowWidth}
+                  movies={trendingTVs.slice(0, 8)}
+                  title="Trending TV shows"
+                />
+                <MainSlider
+                  windowWidth={windowWidth}
+                  movies={popularTVs.slice(5, -1)}
+                  title="Popular TV shows"
+                />
+              </div>
+            </div>
+            <Footer />
+          </main>
+        </>
+      )}
+    </>
   );
 }
 

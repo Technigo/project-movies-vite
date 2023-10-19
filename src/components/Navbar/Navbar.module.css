@@ -1,0 +1,22 @@
+.nav_container {
+  width: 100vw;
+  height: 80px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  font-family: "Oswald";
+}
+
+.nav_inner {
+  width: 90%;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav_container a {
+  color: #fff;
+  text-decoration: none;
+}

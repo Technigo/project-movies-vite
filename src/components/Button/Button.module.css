@@ -1,0 +1,58 @@
+.button {
+  background-color: rgba(153, 153, 153, 0.5);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  z-index: 1;
+}
+
+.button:active,
+button {
+  border: 0;
+  outline: 0;
+}
+
+.button img {
+  transform: translateX(10px);
+  border-radius: 50%;
+  width: 20px;
+  height: 40px;
+  filter: brightness(100%) invert(100%);
+}
+
+.right-click {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translate(42%, -50%);
+}
+
+.left-click {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.left-click img {
+  transform: rotate(180deg) translateX(-10px);
+}
+
+@media (min-width: 768px) {
+  .button {
+    background-color: transparent;
+    width: 30px;
+    height: 60px;
+  }
+
+  .button img {
+    width: 30px;
+    height: 60px;
+
+    transform: translateX(0);
+  }
+  .left-click img {
+    transform: rotate(180deg);
+  }
+}
