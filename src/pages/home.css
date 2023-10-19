@@ -12,8 +12,8 @@
 }
 
 .movie-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .movie-list a {
@@ -57,20 +57,20 @@
 /* ------------ TABLET VIEW ------------ */
 
 @media (min-width: 370px) {
-    .movie-list a {
-      width: 50%;
+    .movie-list {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
   
   @media (min-width: 570px) {
-    .movie-list a {
-      width: 33.33%;
+    .movie-list {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
   
   @media (min-width: 820px) {
-    .movie-list a {
-      width: 25%;
+    .movie-list {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 
