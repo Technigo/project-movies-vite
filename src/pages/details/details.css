@@ -1,0 +1,51 @@
+.detail-image-wrapper {
+  width: 200px;
+}
+
+.detail-image-wrapper img {
+  border: solid white 5px
+}
+
+.background {
+  display: flex; 
+  height: 100vh;
+  background-size: cover;
+}
+
+.detail-info-wrapper {
+    display: flex; 
+    flex-direction: column;
+    position: absolute; 
+    z-index: 2; 
+    bottom: 0; 
+    padding: 50px;
+    gap: 16px; 
+}
+
+.detail-heading {
+  display: inline; 
+  margin-right: 15px;
+}
+
+.detail-paragraph {
+  margin: 16px 0; 
+  max-width: 400px;
+}
+
+/*OBS - ändra så att movieCard inte är begränsad till 200px!*/
+
+/* ------------ MEDIA QUERIES ------------ */
+@media (max-width: 569px) and (min-width: 369px) {
+   
+}
+
+/* ------------ Tablet ------------ */
+@media (max-width: 819px) and (min-width: 570px) {
+   
+
+}
+
+/* ------------ Desktop ------------ */
+@media (min-width: 820px) {
+  
+}

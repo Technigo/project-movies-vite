@@ -1,6 +1,3 @@
-//API key: 8310ae58e125eac683c38e74d6f6a3aa
-//API start: https://api.themoviedb.org/3/movie/
-// DETAILS PAGE: https://api.themoviedb.org/3/movie/{movie_id}?api_key={api_key}&language=en-US
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { BackButton } from "../../components/backButton/BackButton.jsx";
@@ -8,7 +5,9 @@ import { DetailImage } from "../../components/detailImage/DetailImage.jsx";
 import { RatingTag } from "../../components/ratingTag/RatingTag.jsx";
 import { HeadingH3 } from "../../components/typography/headingH3/HeadingH3.jsx";
 import { Paragraph } from "../../components/typography/paragraph/Paragraph.jsx";
-import { BackGroundImage } from "../../components/backGroundImage/BackGroundImage.jsx";
+import { PageNotFound } from "../../pages/404-error/PageNotFound.jsx";
+
+import "./details.css";
 
 const API_KEY = import.meta.env.VITE_MOVIEDB_KEY;
 const URL_START = "https://api.themoviedb.org/3/movie/";
@@ -16,6 +15,7 @@ const URL_START = "https://api.themoviedb.org/3/movie/";
 export const Details = () => {
   const [detail, setDetail] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [movieFound, setMovieFound] = useState(true);
   // Get the "id" parameter from the URL using the "useParams" hook
   const { id } = useParams();
 
@@ -38,6 +38,8 @@ export const Details = () => {
         setIsLoading(false);
       } catch (error) {
         console.error("Error fetching movie details:", error);
+        setIsLoading(false);
+        setMovieFound(false);
       }
     };
 
@@ -46,25 +48,34 @@ export const Details = () => {
     fetchMovie();
   }, [movieDetails]);
 
-  if (!isLoading) {
-    // If the data has been loaded, render movie details
+  if (isLoading) {
+    return <h2>Loading...</h2>;
+  } else if (!movieFound) {
+    return <PageNotFound />;
+  } else {
+    const backgroundImage = `https://image.tmdb.org/t/p/w1280${detail.backdrop_path}`;
     return (
       <article className="detail-page">
-        <BackGroundImage
-          src={`https://image.tmdb.org/t/p/w1280${detail.backdrop_path}`}
-        />
         <BackButton />
-        <DetailImage
-          url={`https://image.tmdb.org/t/p/w780/${detail.poster_path}`}
-          altText={`Poster image of ${detail.title}`}
-        />
-        <HeadingH3 text={detail.title} />
-        <RatingTag rate={detail.vote_average} />
-        <Paragraph text={detail.overview} />
+        <div
+          className="background"
+          style={{ backgroundImage: `url(${backgroundImage})` }}
+        >
+          <div className="detail-info-wrapper">
+            <div className="detail-image-wrapper">
+              <DetailImage
+                url={`https://image.tmdb.org/t/p/w780/${detail.poster_path}`}
+                altText={`Poster image of ${detail.title}`}
+              />
+            </div>
+            <div className="detail-text-wrapper">
+              <HeadingH3 className="detail-heading" text={detail.title} />
+              <RatingTag rate={detail.vote_average} />
+              <Paragraph className="detail-paragraph" text={detail.overview} />
+            </div>
+          </div>
+        </div>
       </article>
     );
-  } else {
-    // If data is still loading, show a loading message
-    return <p>Loading...</p>;
   }
 };

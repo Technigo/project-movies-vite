@@ -1,8 +1,8 @@
 
 import './paragraph.css'
 
-export const Paragraph = ({text}) => {
+export const Paragraph = ({text, className}) => {
   return (
-    <p>{text}</p>
+    <p className={className}>{text}</p>
   )
 }

@@ -1,8 +1,4 @@
-.detail-image-wrapper {
-  width: 200px;
-}
-/*OBS - ändra så att movieCard inte är begränsad till 200px!*/
-
 .detail-image {
   width: 100%;
 }
+
