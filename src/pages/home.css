@@ -79,9 +79,4 @@ h1, h3 {
     }
   }
 
-  @media (min-width: 666px) {
-    body {
-      padding: 50px;
-    }
-  
-  }
+ 
