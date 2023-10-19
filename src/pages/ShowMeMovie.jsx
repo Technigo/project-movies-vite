@@ -4,11 +4,19 @@ import { useParams, Link } from "react-router-dom";
 import { MovieDetails } from "../components/MovieDetails";
 
 export const ShowMeMovie = () => {
+
+    // Dynamic value passed from route to here is :id
     const { id } = useParams()
-    console.log("The id", id)
+    console.log("The id:", id)
+
     const [movie, setMovie] = useState(null);
     const [loading, setLoading] = useState(true);
+
+    //To be stored later secretly in a dot environment- .env
     const API_KEY = "d702e384b1621c01acd5bc0e04a75981"
+
+    // Do not erase: another (more readable) way of writing fetch() in useEffect()
+
     // useEffect(() => {
     //     fetch(
     //         `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`
@@ -18,6 +26,7 @@ export const ShowMeMovie = () => {
     //         .then((data) => {
     //             console.log(data);
     //             setMovie(data);
+    //             setLoading(false) //When data loading succeeded
     //         })
     //         .catch((error) => console.error("Error fetching single movie: ", error));
     // }, [id]);
@@ -43,12 +52,12 @@ export const ShowMeMovie = () => {
                 // // Scroll to the top of the page when data is loaded
                 // window.scrollTo({ top: 0, behavior: "smooth" });
             } catch (error) {
-                console.error("Error fetching data:", error);
+                console.error("Error fetching data on selected movie:", error);
             }
 
         }
         fetchMovieInfo();
-    }, [id]);
+    }, [id]); // Fires the function only when movie:id is requested
 
 
 
