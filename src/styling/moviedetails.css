@@ -1,5 +1,6 @@
 /* --------Background image--------- */
 .single-movie-background {
+    width: 100vw;
     height: 100vh;
     position: relative;
 }
@@ -90,5 +91,9 @@
         margin: 0;
         overflow: scroll;
         overflow-x: hidden;
+    }
+
+    .single-movie-info span {
+        padding: 0 10px 0 0;
     }
 }
