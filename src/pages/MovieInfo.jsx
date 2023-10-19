@@ -45,7 +45,9 @@ export const MovieInfo = () => {  // Default movie ID set to 550 for testing
               <span>{Number(movieDetails.vote_average).toFixed(1)}</span>
             </div>
           </div>
+          <div className='movie-disciption'>
           <p>{movieDetails.overview}</p>
+          </div>
         </div>
       </div>
     ) : (
