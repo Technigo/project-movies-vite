@@ -1,33 +1,42 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom"; //Lägg till link här om behövs senare
+import { useParams, Link } from "react-router-dom";
 import { HomeButton } from "./HomeButton";
 import "./detail.css";
 
 export const Detail = () => {
+  // State hook to store movie data
   const [movie, setMovie] = useState();
+
+  // Get the 'id' parameter from the route
   const { id } = useParams();
 
+  // Fetch movie data from an external API when the 'id' parameter changes
   useEffect(() => {
+    // Fetch movie data from an external API using the 'id' parameter
     fetch(
       `https://api.themoviedb.org/3/movie/${id}?api_key=6420add5c0a9b0e0b9462a92916c3187&language=en-US`
     )
       .then((res) => res.json())
       .then((json) => {
+        // Update the 'movie' state with the fetched data
         setMovie(json);
       });
   }, [id]);
 
+  // Render the component
   return (
     <article className="detail-section">
 
+      {/* Link back to the home page */}
       <Link to="/" className="back-button">
-        <HomeButton /> Movies
+        <HomeButton /> Back to movies
       </Link>
+      
       {movie && (
         <div
           className="backdrop"
           style={{
-            // backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0) 70%, rgba(0,0,0,1) 100%), url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path})`,
+            // Set the background image using 'movie' data
             backgroundImage: `linear-gradient(0deg, rgba(255, 255, 255, 0.84) 0%, rgba(255, 255, 255, 0.84) 100%), url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path})`,
           }}
         >
@@ -39,17 +48,14 @@ export const Detail = () => {
             />
             <div className="detail-text-wrapper">
               <div className="title-rating-wrapper">
-              <h1 className="detail-title">{movie.title} </h1>
-
-              <div className="rating-box">
-              <h2 className="rating">
-                {Math.round(movie.vote_average * 10) / 10}
-              </h2>
+                <h1 className="detail-title">{movie.title} </h1>
+                <div className="rating-box">
+                  <h2 className="rating">
+                    {Math.round(movie.vote_average * 10) / 10}
+                  </h2>
+                </div>
               </div>
-              </div>
-
               <p className="detail-overview">{movie.overview}</p>
-
             </div>
           </div>
         </div>
@@ -57,3 +63,4 @@ export const Detail = () => {
     </article>
   );
 };
+

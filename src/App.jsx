@@ -1,8 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Popular } from "./Pages/Popular.jsx"; 
-import { Detail } from "./Pages/Detail.jsx"; 
-import { ErrorPage } from "./Pages/ErrorPage.jsx";
+import { Detail } from "./pages/Detail.jsx";
+import { ErrorPage } from "./pages/ErrorPage.jsx";
 
+//Sets up routing. The path with '/movies/:id' displays the 'Detail' page with a dynamic movie ID. ErrorPage displays for any other paths.
 export const App = () => {
   return (
     <BrowserRouter>

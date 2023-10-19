@@ -9,6 +9,7 @@ To do:
     display: grid;
     grid-template-columns: 1fr 1fr;
     place-items: center;
+    background-color: black;
 }
 
 .popular-section a {

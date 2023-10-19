@@ -4,11 +4,11 @@ import "./errorpage.css"
 
 export const ErrorPage = () => {
   return (
-    <>
+    <div className="error-page">
     <p className="error-text">Oops! Something went wrong!</p>
-    <Link to="/" className="error-back-button">
-        <HomeButton />
-    </Link>
-    </>
+    <Link to="/" className="back-button">
+        <HomeButton /> Back to movies
+      </Link>
+    </div>
   )
 }
