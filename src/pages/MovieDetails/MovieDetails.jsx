@@ -33,24 +33,32 @@ export const MovieDetails = () => {
     return <div className={styles.loading}>Loading...</div>;
   }
 
-  return (
+  return (<>
+
+
     <div
       className={styles.movieContainer}
       style={{
         backgroundImage: `url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path})`,
       }}
     >
-      <p className={styles.homelink}>
-        <NavLink to="/">
-          <img
-            className={styles.backArrow}
-            src="/assets/arrow-icon-copy.png"
-            alt="movie back arrow"
-          />
-          Movies
-        </NavLink>
-      </p>
-      <MovieCard movie={movie} />
+      <div
+        className={styles.movieContainerMovbtn}>
+        <p className={styles.homelink}>
+          <NavLink to="/">
+            <img
+              className={styles.backArrow}
+              src="/assets/arrow-icon-copy.png"
+              alt="movie back arrow"
+            />
+            Movies
+          </NavLink>
+        </p></div>
+      <div>
+        <MovieCard movie={movie} />
+      </div>
+
     </div>
+  </>
   );
 };
