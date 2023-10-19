@@ -1,81 +1,76 @@
-/* MOBILE FIRST */
+/*------------ MOBILE FIRST -----------*/
 /* Styling homepage */
-h1, h3 {
-    color: #fdfcf7;
-    text-align: center;
-  }
+
+.homepage-title {
+  text-align: center;
+  padding: 25px; 
+}
   
-  .popular-movie-wrapper {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 370px;
-  }
-  
-  .movie-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  
-  .movie-item {
-    background-color: transparent;
-    width: 100%;
-    border: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
-    color: black;
-    text-align: center;
-  }
-  
-  .movie-item img, .movie-item h3, .movie-item p {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  
-  .movie-list a {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  p {
-    font-size: 16px;
-    color: grey;
-  }
-  
-  .movie-item h3:hover {
-    color: #d11d04;
-  }
-  
-  .movie-item img:hover {
-    opacity: 0.6;
-  }
+.popular-movie-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie-list a {
+  text-decoration: none;
+  width: 100%;
+  position: relative;
+  color: white;
+}
+
+.movie-item img {
+  width: 100%;
+}
+
+.movie-details {
+  position: absolute;
+  top: auto;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  background: transparent;
+  padding: 20px;
+}
+
+.movie-details h1 {
+  margin-bottom: 20px;
+}
+
+.movie-item:hover>img {
+  opacity: 0.3;
+  transition: 0.4s;
+}
+
+.movie-item:hover>.movie-details {
+  opacity: 1;
+  transition: 0.4s;
+}
   
 /* ------------ MEDIA QUERIES ------------ */
 
 /* ------------ TABLET VIEW ------------ */
 
-@media (min-width: 375px) and (max-width: 665px) {
-    .movie-list {
-      grid-template-columns: repeat(2, 1fr);
+@media (min-width: 370px) {
+    .movie-list a {
+      width: 50%;
     }
   }
   
-  @media (min-width: 666px) and (max-width: 966px) {
-    .movie-list {
-      grid-template-columns: repeat(3, 1fr);
+  @media (min-width: 570px) {
+    .movie-list a {
+      width: 33.33%;
     }
   }
   
-  @media (min-width: 966px) {
-    .movie-list {
-      grid-template-columns: repeat(4, 1fr);
+  @media (min-width: 820px) {
+    .movie-list a {
+      width: 25%;
     }
   }
 

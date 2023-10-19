@@ -10,8 +10,10 @@ export function MovieItem({ movie }) {
     <Link to={`/movie/${movie.id}`}>
       <div className="movie-item">
         <img src={imageUrl} alt={movie.title} />
-        <h3>{movie.title}</h3>
-        <p>Released: {movie.release_date}</p>
+        <div className="movie-details">
+          <h1>{movie.title}</h1>
+          <p>Released: {movie.release_date}</p>
+        </div>
       </div>
     </Link>
   );

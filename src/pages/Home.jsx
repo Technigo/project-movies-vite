@@ -22,7 +22,7 @@ export function Home() {
 
   return (
     <div className="popular-movies-wrapper">
-      <h1>Popular Movies</h1>
+      <h1 className="homepage-title">Popular Movies</h1>
       <div className="movie-list">
         {movies.map((movie) => (
           <MovieItem key={movie.id} movie={movie} />
