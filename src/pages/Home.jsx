@@ -35,6 +35,5 @@ export const Home = () => {
                 )) 
                 : <p>Loading...</p>}
         </div>
-
     )
 }
