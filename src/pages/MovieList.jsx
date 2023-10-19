@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import { Oval } from "react-loader-spinner"
+// import { Oval } from "react-loader-spinner"
 export const MovieList = () => {
     const [movieList, setMovieList] = useState([])
     // const [loading, setLoading] = useState(false)
@@ -12,16 +12,17 @@ export const MovieList = () => {
         fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=`)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
-                setMovieList(data)
+                const results = data.results
+                console.log(results)
+                setMovieList(results)
             })
             .catch(err => console.error(err));
-    })
+    }, [])
 
     return (
 
         <div>
-            <Oval
+            {/* <Oval
                 height={80}
                 width={80}
                 color="#4fa94d"
@@ -32,16 +33,21 @@ export const MovieList = () => {
                 secondaryColor="#4fa94d"
                 strokeWidth={2}
                 strokeWidthSecondary={2}
-            />
+            /> */}
+            <div>
+                {movieList.map((movie, index) => {
+                    return (
+                        <Link to={`/movie/${movie.id}`} key={index}>
+                            <img src={`http://image.tmdb.org/t/p/w342/${movie.poster_path}`} alt="" />
+                            <p>{movie.id}</p>
+                        </Link>
 
-            {movieList.map((movie, index) => {
-                <Link to={`/movies/${movie.id}`} key={index}>
-
-                </Link>
-            })}
-
+                    )
+                })}
+            </div>
         </div>
     )
 }
+
 
 // /3/movie/popular
