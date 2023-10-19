@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import "./Movie.css";
 
 export const Movie = () => {
   const [movie, setMovie] = useState(null);
@@ -32,11 +33,13 @@ export const Movie = () => {
 
   return (
     <div>
-      <button onClick={handleBack}>Go Back</button>
-      <h2>{movie.title}</h2>
-      <h3>{movie.release_date}</h3>
-      <h3>{movie.vote_average}</h3>
-      <p>{movie.overview}</p>
+      <button className="Button" onClick={handleBack}>
+        Go Back
+      </button>
+      <h2 className="selected-title">{movie.title}</h2>
+      <h3 className="selected-release-date">{movie.release_date}</h3>
+      <h3 className="rating">{movie.vote_average}</h3>
+      <p className="overview">{movie.overview}</p>
       <img
         className="poster"
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}

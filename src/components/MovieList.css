@@ -1,7 +1,6 @@
 .movie-list-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
   padding: 10px;
   text-align: center;
   background-color: blueviolet;
@@ -17,4 +16,8 @@
 }
 
 .movie-release-date {
+}
+
+img:hover {
+  opacity: 0.7;
 }
