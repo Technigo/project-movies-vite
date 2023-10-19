@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-
-
-.movie-details-wrapper {
-    margin: 0 auto;
-=======
 .details-page .background {
     min-height: 100vh;
     display: flex;
@@ -71,5 +65,4 @@
     .details-page img {
         width: auto;
     }
->>>>>>> maria
 }

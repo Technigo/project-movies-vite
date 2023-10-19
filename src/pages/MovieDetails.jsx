@@ -25,9 +25,9 @@ export function MovieDetails() {
   }, [id]);
 
   return (
-    <div>
+    <article>
       {movie ? (
-        <article className='movie-details-wrapper'>
+        <div className='movie-details-wrapper'>
           <BackButton />
           <img
             src={`${IMAGE_BASE_URL}/w1280${movie.backdrop_path}`}
