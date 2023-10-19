@@ -85,7 +85,14 @@ export const MovieDetails = () => {
       <h1 className={styles.movieHeader}>Movie Details</h1>*/}
       {/* Show the "Back" button */}
       <p className={styles.homelink}>
-        <NavLink to="/">Movies</NavLink>
+        <NavLink to="/">
+          <img
+            className={styles.backArrow}
+            src="/assets/arrow-icon-copy.png"
+            alt="movie back arrow"
+          />
+          Movies
+        </NavLink>
       </p>
       <MovieCard movie={movie} />
     </div>

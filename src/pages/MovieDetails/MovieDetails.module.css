@@ -12,6 +12,16 @@
   top: 10px;
 }
 
+.backArrow {
+  max-width: 30px;
+  float: left;
+}
+
+.homelink {
+  text-align: right;
+  display: inline-block;
+}
+
 .homelink:hover {
   transform: translateX(5px);
 }
