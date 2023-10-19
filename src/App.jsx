@@ -1,12 +1,15 @@
-import React from 'react';
-import { MovieList } from './components/MovieList';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { MovieList } from "./components/MovieList";
 
 export function App() {
   return (
-    <div className="App">
-
-      <MovieList />
-
-    </div>
+    <BrowserRouter>
+      <main>
+        <Routes>
+          <Route path="/" element={<MovieList />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
   );
 }
