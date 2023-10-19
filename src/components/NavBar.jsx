@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-
 import "./Navbar.css"
 
 export const NavBar = () => {
@@ -9,7 +8,7 @@ export const NavBar = () => {
                 <ul>
                     <li>
                         <Link to="/">
-                            Home
+                            Movies
                         </Link>
                     </li>
 
