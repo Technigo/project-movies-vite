@@ -41,6 +41,7 @@ a {
 
 .movieText {
   position: absolute;
+  padding-left: 1em;
   bottom: 0;
   /* Moves text to bottom */
   left: 0;
