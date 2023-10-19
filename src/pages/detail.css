@@ -9,6 +9,14 @@
     position: absolute;
 }
 
+.back-button {
+    color: #ffff;
+    text-decoration: none;
+    background: linear-gradient(90deg, rgba(89,7,7,1) 0%, rgba(198,37,37,1) 59%);
+    border-radius:40px;
+    padding: 5px;
+    }
+
 .detail-section .backdrop {
 background-size: cover;
 min-height: 100vh; /*vh = Relative to 1% of the height of the viewport */
