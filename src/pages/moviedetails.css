@@ -23,11 +23,13 @@
 
 .details-page .details h1 {
     text-shadow: 1px 1px #4d4d4d;
+    text-align: left;
 }
 
 .details-page .details .title {
     margin-right: 10px;
 }
+
 
 .details-page .rating {
     color: #000;
@@ -38,14 +40,22 @@
     display: inline-block;
 }
 
+.details-page .rating:before {
+    content: url('./star.svg'); /* Update the path to your star.svg file */
+    padding-right: 5px;
+}
+
+.details-page .rating span {
+    display: flex;
+    flex-direction: row;
+}
+
 .details-page .details p {
     max-width: 400px;
 }
 
 
-
-
-/* MEDIA QUERIAS */
+/* ------------ MEDIA QUERIES ------------ */
 
 @media (min-width: 577px) {
     .details-page .details {
