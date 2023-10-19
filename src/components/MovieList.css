@@ -5,6 +5,7 @@ a{
   display: grid;
   grid-template-columns: 1fr;
   gap:15px;
+  margin: 10px;
   }
 
 .movie-item {
@@ -41,19 +42,19 @@ a{
   opacity: 0; 
   transition: opacity 0.3s; 
   padding-left: 10px;
+  padding-bottom: 15px;
 
 }
 
 
 .image-overlay p {
-  padding-left: 10px; 
-  padding-bottom: 0;   
+  padding-left: 10px;    
 } 
 
 .image-overlay h2 {
   text-align: start;
   padding-left: 10px; 
-  padding-top: 0; 
+  padding-bottom: 5px; 
 }
 
 .movie-image:hover .image-overlay {
