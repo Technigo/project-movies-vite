@@ -25,21 +25,27 @@ export function MovieDetails() {
   }, [id]);
 
   return (
-    <article>
+    <article className="details-page">
       {movie ? (
-        <div className='movie-details-wrapper'>
+        <div>
           <BackButton />
-          <img
-            src={`${IMAGE_BASE_URL}/w1280${movie.backdrop_path}`}
-            alt={movie.title}
-          />
-          <img
-            src={`${IMAGE_BASE_URL}/w185${movie.poster_path}`}
-            alt={movie.title}
-          />
-          <h1>{movie.title}</h1>
-          <p>Rating: {movie.vote_average}</p>
-          <p>{movie.overview}</p>
+          <div className="background" style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0) 70%, rgb(0, 0, 0) 100%), url('${IMAGE_BASE_URL}/w1280${movie.backdrop_path}')`
+          }}>
+            <div className="summary">
+              <img
+                src={`${IMAGE_BASE_URL}/w342${movie.poster_path}`}
+                alt={movie.title}
+              />
+              <div className="details">
+                <h1>
+                  <span className="title">{movie.title}</span>
+                  <span className="rating">Rating: {movie.vote_average}</span>
+                </h1>
+                <p>{movie.overview}</p>
+              </div>
+            </div>
+          </div>
         </div>
       ) : (
         <p>Loading...</p>
