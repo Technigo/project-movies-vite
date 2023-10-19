@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from 'react';
-import BackArrow from '../assets/back.svg';
 import './MovieInfo.css';
 
 const API_URL = 'https://api.themoviedb.org/3/movie/';
 const API_KEY = 'c7a06bec29a13534747337c34c5c6147';
 
-export const MovieInfo = ({ movie_id = "550" }) => {  // Default movie ID set to 550 for testing
+export const MovieInfo = () => {  // Default movie ID set to 550 for testing
   const [movieDetails, setMovieDetails] = useState(null);
+  
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
