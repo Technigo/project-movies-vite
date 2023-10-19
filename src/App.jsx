@@ -1,3 +1,12 @@
-export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
-};
+import React from 'react';
+import { MovieList } from './components/MovieList';
+
+export function App() {
+  return (
+    <div className="App">
+
+      <MovieList />
+
+    </div>
+  );
+}
