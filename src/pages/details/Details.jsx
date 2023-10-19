@@ -56,10 +56,13 @@ export const Details = () => {
     const backgroundImage = `https://image.tmdb.org/t/p/w1280${detail.backdrop_path}`;
     return (
       <article className="detail-page">
-        <BackButton />
+        <BackButton text={"Movies"} />
+        {/* Div that contains the background image, url and gradient is dynamically added here */}
         <div
           className="background"
-          style={{ backgroundImage: `url(${backgroundImage})` }}
+          style={{
+            backgroundImage: `linear-gradient(to bottom, #ffffff00, #000000), url(${backgroundImage})`,
+          }}
         >
           <div className="detail-info-wrapper">
             <div className="detail-image-wrapper">

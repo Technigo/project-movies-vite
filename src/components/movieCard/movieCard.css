@@ -2,6 +2,7 @@
     position: relative;
     display: flex;
     max-width: 100%;
+    margin-bottom: -4px;
     z-index: 1;
 }
 
@@ -19,6 +20,17 @@
 
 .movie-card:hover .details {
     display: block;
+}
+
+.movie-card:hover .detail-image {
+    filter: brightness(40%);
+    /* Lowers the brightness for a dark hover effect */
+    transition: all 0.35s ease-in-out;
+    /* Makes the transition easier */
+    -webkit-filter: brightness(40%);
+    /* For browser compatibility */
+    -webkit-transition: all 0.35s ease-in-out;
+    /* For browser compatibility */
 }
 
 /* ------------ MEDIA QUERIES ------------ */

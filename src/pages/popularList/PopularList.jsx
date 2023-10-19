@@ -19,14 +19,14 @@ export const PopularList = () => {
         throw new Error("Response was not ok"); // Handle error, show an error-message if something goes wrong.
       }
 
-            const data = await response.json();
-            setMovies(data);
-            
-        } catch (error) {
-            console.error("Something went wrong!") // Log the error to the console
-        }
+      const data = await response.json();
+      setMovies(data);
+
+    } catch (error) {
+      console.error("Something went wrong!") // Log the error to the console
     }
-  
+  }
+
 
   // Handles the fetch from above
   useEffect(() => {
@@ -39,4 +39,4 @@ export const PopularList = () => {
       {movies ? <MovieCard movieData={movies.results} /> : <p>Loading...</p>}
     </section>
   )
-  }
+}
