@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./singlemovie.css";
-import { BackIcon } from "../components/BackIcon";
+import { BackIcon } from "../Components/BackIcon";
 import { Link } from 'react-router-dom';
 
 
@@ -28,7 +28,7 @@ export const SingleMovie = () => {
     // Replace this return statement with your actual JSX structure for displaying movie details.
     return (
         <div className="single-movie">
-            <Link to="/" className="backLink" aria-label="button back to home page">
+            <Link to="/" className="backLink" ariaLabel="button back to home page">
                 <BackIcon /> Movies
             </Link>
 
@@ -44,8 +44,14 @@ export const SingleMovie = () => {
                         <img
                             src={`https://image.tmdb.org/t/p/w780/${movie.poster_path}`}
                             alt={movie.title} />
-                        <h1>{movie.title}</h1>
-                        <p>{movie.overview}</p>
+                        <h1>
+                            <span className="title">{movie.title}</span>
+                            <span className="rating"> {Math.round(movie.vote_average * 10) / 10}</span>
+                            <p>{movie.overview}</p>
+
+                        </h1>
+
+
 
                     </div></>
             ) : (

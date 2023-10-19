@@ -43,7 +43,7 @@ export const MovieListCard = ({ movieTitle, releaseDate, movieId, moviePoster })
     Placing the hover event handlers (onMouseEnter and onMouseLeave) on the article (.movie-list-card) ensures that the hover effect is triggered when the mouse is over any part of the article.
     */
     return (
-        <Link to={`/movies/${movieId}`} aria-label={`View details for ${movieTitle}`}>
+        <Link to={`/movies/${movieId}`} ariaLabel={`View details for ${movieTitle}`}>
             <article
                 className={`movie-list-card `}
                 onMouseEnter={handleMouseEnter}  // When the mouse enters, call handleMouseEnter function
