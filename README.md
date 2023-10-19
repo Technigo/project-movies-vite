@@ -23,12 +23,13 @@ npm i && code . && npm run dev
 ```
 
 ### The Problem
+We started by doing the movielist and then the details. Since there was a specific layout to follow we did it structurally component by component. We used the react router for the first time. If we had more time we would've done the error page and also multiple pages in the start (like a headermenu with different choices)
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://subtle-macaron-96a6c5.netlify.app/moviedetails/926393
 
 ## Instructions
 
