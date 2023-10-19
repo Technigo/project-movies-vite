@@ -20,7 +20,6 @@ export const MovieCard = ({ movie }) => {
               ⭐ {voteAverage.toFixed(1)}&nbsp;
             </span>
           </div>
-          {/*added a new div and class for title and vote cuz i struggeled getting it on the same line. *Elba */}
           <p className={styles.overView}>{overView}</p>
         </div>
       </div>

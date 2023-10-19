@@ -46,14 +46,6 @@
   object-fit: fit;
 }
 
-/*could make a header component, if we wnat a header though??? 
-.movieHeader {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-}*/
-
 .loading {
   /* not sure what we need here, styles for loading text, if it appears */
 }

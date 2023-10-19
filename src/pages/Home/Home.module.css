@@ -8,11 +8,6 @@ a {
   color: white;
 }
 
-/*
-a:hover {
-  text-decoration: underline;
-}*/
-
 .moviesHeader {
   display: flex;
   align-items: center;
@@ -56,7 +51,6 @@ a:hover {
 
 .movielistBox:hover .movieText {
   opacity: 1;
-  /* will change text to opacity 1 when movielistBox is hovered. Have not tested on netlifylink on mobile */
 }
 
 h1 {
