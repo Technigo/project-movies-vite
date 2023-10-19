@@ -5,6 +5,7 @@
   border-radius: 10px;
   overflow: hidden;
   color: #fff;
+  position: relative;
 }
 
 .card_outer {
@@ -30,6 +31,14 @@
   padding-left: 4px;
   letter-spacing: 0.5px;
 }
+
+.button_box {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  transition: all 0.2s ease;
+}
+
 @media (min-width: 768px) {
   .card_wrapper,
   .card_outer {

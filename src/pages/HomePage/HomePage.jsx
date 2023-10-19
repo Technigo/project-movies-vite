@@ -7,6 +7,8 @@ import useSWR from "swr";
 
 import { HeroCarousel } from "../../components/HeroCarousel";
 import { MainSlider } from "../../components/MainSlider";
+import { Error } from "../../components/Error";
+import { LoadingFullPage } from "../../components/LoaingFullPage";
 
 const options = {
   method: "GET",
@@ -39,12 +41,6 @@ const fetcher = async () => {
     fetch("https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1", options).then(
       (response) => response.json()
     ),
-    fetch("https://api.themoviedb.org/3/genre/movie/list?language=en", options).then((response) =>
-      response.json()
-    ),
-    fetch("https://api.themoviedb.org/3/genre/movie/list?language=en", options).then((response) =>
-      response.json()
-    ),
   ]);
   return data;
 };
@@ -68,9 +64,9 @@ function HomePage() {
   }, []);
 
   const { data, error, isLoading } = useSWR("getMovie", fetcher);
-  console.log(data);
 
-  if (isLoading) return <p>Loading</p>;
+  if (isLoading) return <LoadingFullPage />;
+  if (error) return <Error />;
 
   const [
     { results: popularMovies },
@@ -80,74 +76,72 @@ function HomePage() {
     { results: trendingTVs },
     { results: nowPlayingMovies },
     { results: upcomingMovies },
-    { genres },
   ] = data !== undefined && data;
-  console.log(genres);
 
-  const heroImages = popularMovies && popularMovies.slice(0, 7).map((movie) => movie.backdrop_path);
-  const tvScreenImages = topRatedTVs && topRatedTVs.slice(0, 7).map((tv) => tv.backdrop_path);
+  const heroMovies = popularMovies && popularMovies.slice(7, 14);
+  const heroTVs = topRatedTVs && topRatedTVs.slice(8, -1);
 
   return (
     <>
-      <Navbar />
-      <main className={styles.main}>
-        <div className={styles.hero_wrapper}>
-          <HeroCarousel images={heroImages} windowWidth={windowWidth} />
-        </div>
-
-        <div className={styles.main_inner}>
-          <div className={styles.movies_wrapper}>
-            <MainSlider
-              windowWidth={windowWidth}
-              movies={popularMovies}
-              title="Popular movies"
-              horizontal={false}
-            />
-            <MainSlider
-              windowWidth={windowWidth}
-              movies={trendingMovies}
-              title="Trending movies"
-              horizontal={false}
-            />
-            <MainSlider
-              windowWidth={windowWidth}
-              movies={nowPlayingMovies}
-              title="Now playing movies"
-              horizontal={false}
-            />
-            <MainSlider
-              windowWidth={windowWidth}
-              movies={upcomingMovies}
-              title="upcoming movies"
-              genres={genres}
-            />
-          </div>
-          <div className={styles.tvs_wrapper}>
+      {!isLoading && (
+        <>
+          <Navbar />
+          <main className={styles.main}>
             <div className={styles.hero_wrapper}>
-              <HeroCarousel images={tvScreenImages} windowWidth={windowWidth} />
+              <HeroCarousel movies={heroMovies} windowWidth={windowWidth} />
             </div>
-            <MainSlider
-              windowWidth={windowWidth}
-              movies={topRatedTVs}
-              title="Top rated TV shows"
-              genres={genres}
-            />
-            <MainSlider
-              windowWidth={windowWidth}
-              movies={trendingTVs}
-              title="Trending TV shows"
-              genres={genres}
-            />
-            <MainSlider
-              windowWidth={windowWidth}
-              movies={popularTVs}
-              title="Popular TV shows"
-              genres={genres}
-            />
-          </div>
-        </div>
-        <Footer />
-      </main>
+
+            <div className={styles.main_inner}>
+              <div className={styles.movies_wrapper}>
+                <MainSlider
+                  windowWidth={windowWidth}
+                  movies={popularMovies}
+                  title="Popular movies"
+                  horizontal={false}
+                />
+                <MainSlider
+                  windowWidth={windowWidth}
+                  movies={trendingMovies.slice(7, -1)}
+                  title="Trending movies"
+                  horizontal={false}
+                />
+                <MainSlider
+                  windowWidth={windowWidth}
+                  movies={nowPlayingMovies.slice(0, 10)}
+                  title="Now playing movies"
+                  horizontal={false}
+                />
+                <MainSlider
+                  windowWidth={windowWidth}
+                  movies={upcomingMovies.slice(3, 15)}
+                  title="upcoming movies"
+                />
+              </div>
+              <div className={styles.tvs_wrapper}>
+                <div className={styles.hero_wrapper}>
+                  <HeroCarousel movies={heroTVs} windowWidth={windowWidth} />
+                </div>
+                <MainSlider
+                  windowWidth={windowWidth}
+                  movies={topRatedTVs.slice(0, 8)}
+                  title="Top rated TV shows"
+                />
+                <MainSlider
+                  windowWidth={windowWidth}
+                  movies={trendingTVs.slice(0, 8)}
+                  title="Trending TV shows"
+                />
+                <MainSlider
+                  windowWidth={windowWidth}
+                  movies={popularTVs.slice(5, -1)}
+                  title="Popular TV shows"
+                />
+              </div>
+            </div>
+            <Footer />
+          </main>
+        </>
+      )}
     </>
   );
 }
