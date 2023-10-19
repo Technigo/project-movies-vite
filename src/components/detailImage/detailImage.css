@@ -2,3 +2,20 @@
   width: 100%;
 }
 
+@media (max-width: 576px) {
+  .detail-image {
+    max-width: 200px;
+  }
+}
+
+@media (min-width: 770px) {
+  .detail-image {
+    width: auto;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 769px) {
+  .detail-image {
+    max-width: 250px;
+  }
+}

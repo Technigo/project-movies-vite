@@ -6,9 +6,10 @@ import { RatingTag } from "../../components/ratingTag/RatingTag.jsx";
 import { HeadingH3 } from "../../components/typography/headingH3/HeadingH3.jsx";
 import { Paragraph } from "../../components/typography/paragraph/Paragraph.jsx";
 import { PageNotFound } from "../../pages/404-error/PageNotFound.jsx";
+import { Loader } from "../../components/loader/Loader.jsx";
 
 import "./details.css";
-import { Loader } from "../../components/loader/Loader.jsx";
+
 
 const API_KEY = import.meta.env.VITE_MOVIEDB_KEY;
 const URL_START = "https://api.themoviedb.org/3/movie/";
@@ -68,17 +69,19 @@ export const Details = () => {
             backgroundImage: `linear-gradient(to bottom, #ffffff00, #000000), url(${backgroundImage})`,
           }}
         >
-          {/* Textdetails */}
+          {/* Detailed text and image */}
           <div className="detail-info-wrapper">
             <div className="detail-image-wrapper">
               <DetailImage
-                url={`https://image.tmdb.org/t/p/w780/${detail.poster_path}`}
+                url={`https://image.tmdb.org/t/p/w342/${detail.poster_path}`}
                 altText={`Image of ${detail.title}`}
               />
             </div>
             <div className="detail-text-wrapper">
-              <HeadingH3 className="detail-heading" text={detail.title} />
-              <RatingTag rate={detail.vote_average} />
+              <div className="headlines">
+                <HeadingH3 className="detail-heading" text={detail.title} />
+                <RatingTag rate={detail.vote_average} />
+              </div>
               <Paragraph className="detail-paragraph" text={detail.overview} />
             </div>
           </div>
