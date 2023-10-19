@@ -4,6 +4,8 @@ import styles from "./MainSlider.module.css";
 import { Slider } from "../Slider";
 import { MovieCard } from "../MovieCard";
 import HorizontalCard from "../HorizontalCard/HorizontalCard";
+import { Loading } from "../Loading";
+import { Error } from "../Error";
 
 const options = {
   method: "GET",
@@ -27,7 +29,8 @@ function MainSlider({ windowWidth, movies, title, horizontal = true }) {
   }, [windowWidth]);
   const { data, error, isLoading } = useSWR("getGenre", fetcher);
 
-  if (isLoading) return <p>loading</p>;
+  if (isLoading) return <Loading />;
+  if (error) return <Error />;
   const genres = data.genres;
   return (
     <>

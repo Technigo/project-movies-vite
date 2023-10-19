@@ -7,6 +7,8 @@ import useSWR from "swr";
 
 import { HeroCarousel } from "../../components/HeroCarousel";
 import { MainSlider } from "../../components/MainSlider";
+import { Error } from "../../components/Error";
+import { LoadingFullPage } from "../../components/LoaingFullPage";
 
 const options = {
   method: "GET",
@@ -52,7 +54,6 @@ function getWindowWidth() {
 
 function HomePage() {
   const [{ width: windowWidth }, setWindowWidth] = useState(getWindowWidth());
-  const [moviesData, setMoviesData] = useState([]);
 
   useEffect(() => {
     function handleResize() {
@@ -64,7 +65,8 @@ function HomePage() {
 
   const { data, error, isLoading } = useSWR("getMovie", fetcher);
 
-  if (isLoading) return <p>Loading</p>;
+  if (isLoading) return <LoadingFullPage />;
+  if (error) return <Error />;
 
   const [
     { results: popularMovies },
