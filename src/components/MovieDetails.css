@@ -100,12 +100,11 @@
     width: 80%;
   }
   .summary img {
-    max-width: 35%;
+    max-width: 30%;
   }
 
   .details {
     height: 260px;
-    /* border: solid green 3px; */
     display: flex;
     flex-direction: column;
     position: relative;
