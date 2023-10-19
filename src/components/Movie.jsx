@@ -33,7 +33,7 @@ export const Movie = () => {
 
   return (
     <div>
-      <button onClick={handleBack}>Go Back</button>
+      <button onClick={handleBack}>Go back</button>
       <h2>{movie.title}</h2>
       <h3>{movie.release_date}</h3>
       <h3>{movie.vote_average}</h3>
