@@ -10,7 +10,7 @@
 .movie-card img {
   position: relative;
   display: block;
-  max-width: 100%;
+  max-width: 60%;
   height: auto;
 }
 
@@ -54,7 +54,7 @@
   display: flex;
   gap: 10px;
   position: absolute;
-  top: 30px;
+  top: 15px;
   left: 50px;
   cursor: pointer;
   -webkit-filter: drop-shadow(2px 3px 4px rgb(0 0 0/0.5));
@@ -63,6 +63,7 @@
 .go-back-btn p {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-weight: 500;
 }
 
 .go-back-btn p:hover {
@@ -90,29 +91,39 @@
   align-self: center;
 }
 
+.movie-container {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  max-width: 100%;
+  min-height: 100vh;
+}
 .movie-summary {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 0 0 50px 50px;
-  gap: 20px;
-  max-width: 60%;
+  align-items: flex-start;
+  padding: 50px;
+  gap: 40px;
+  max-width: 100%;
 }
 
 .movie-summary img {
   border: 3px solid white;
-  max-width: 100%;
+  width: 200px;
+  height: auto;
 }
 
-.movie-container {
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 95vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+@media (min-width: 540px) {
+  .movie-summary {
+    flex-direction: row;
+  }
+
+  .movie-info {
+    align-self: flex-end;
+  }
 }
 
 @media (min-width: 745px) and (max-width: 1049px) {
@@ -124,14 +135,18 @@
     font-size: 20px;
   }
 
+  .movie-summary img {
+    width: 250px;
+  }
   .movie-summary {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    margin: 0 0 50px 50px;
     gap: 20px;
-    max-width: 55%;
+    max-width: 80%;
+    min-width: 40%;
     text-shadow: 2px 2px #000;
+    border: 2px solid green;
+  }
+  .movie-info {
+    width: 80%;
   }
 }
 
@@ -155,14 +170,19 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    margin: 0 0 50px 50px;
     gap: 20px;
-    width: 50%;
     text-shadow: 2px 2px #000;
   }
 
+  .movie-summary img {
+    width: 350px;
+    height: auto;
+  }
+
   .movie-info {
-    align-self: center;
+    align-self: flex-end;
+    max-width: 30%;
+    padding: 20px;
   }
 
   .movie-info h1 {

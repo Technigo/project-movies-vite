@@ -1,6 +1,5 @@
 import { BrowserRouter, Link, Routes } from "react-router-dom";
 import { routes } from "./routes/routes";
-import { Footer } from "./components/footer/Footer";
 
 export const App = () => {
   return (
@@ -17,7 +16,6 @@ export const App = () => {
         <main>
           <Routes>{routes}</Routes>
         </main>
-        <Footer />
       </BrowserRouter>
     </div>
   );
