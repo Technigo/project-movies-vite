@@ -24,6 +24,7 @@ export const MovieDetails = ({ movie }) => {
                         <p>{overview}</p>
                     </div>
                 </div>
+                <div className="bottom-gradient"></div>
             </div >
         </>
     )
