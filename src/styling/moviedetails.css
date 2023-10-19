@@ -1,8 +1,10 @@
+/* --------Background image--------- */
 .single-movie-background {
     height: 100vh;
     position: relative;
 }
 
+/* ---------Card part with image and movie info---------- */
 .single-movie-card {
     position: absolute;
     bottom: 5%;
@@ -16,21 +18,32 @@
 
 }
 
+/* ------Image part------- */
 .single-movie-card img {
     border-radius: 10px;
     border: 2px solid white;
     box-shadow: 7px 7px 7px rgb(24, 23, 23), 15px 15px 15px grey;
 }
 
-
+/* ----------Info part-------- */
 .single-movie-info h2 {
     text-shadow: black 2px 0 15px, whitesmoke 3px 0 17px;
+}
+
+.single-movie-info span {
+    background-color: whitesmoke;
+    color: black;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(175, 172, 172);
+    margin: 0 10px;
+    padding: 5px 10px 5px 0;
 }
 
 .single-movie-info p {
     text-shadow: black 2px 0 7px;
 }
 
+/* --------Darker gradient at bottom page for contrast----- */
 .bottom-gradient {
     position: absolute;
     bottom: 0;
