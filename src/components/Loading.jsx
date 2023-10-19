@@ -1,11 +1,25 @@
-import { useEffect, useState } from "react"; // Hooks for managing state and side effects
+//import React from "react";
+import styles from "./loading.module.css"; // Correctly import the styles object
+
+const Loading = () => {
+  return (
+    <div className={styles["loading-container"]}>
+      <div className={styles["loading-spinner"]}></div>
+      <p className={styles["loading-text"]}>Loading...</p>
+    </div>
+  );
+};
+
+export default Loading;
+
+/*import { useEffect, useState } from "react"; // Hooks for managing state and side effects
 import styles from "../components/loading.module.css";
 
 import Loading from "./Loading"; // Import your Loading component
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
-  const [isLoading, setIsLoading] = useState(true); // Add a loading state
+  const [isLoading, setIsLoading] = useState(true); // Add a loading state ///
 
   useEffect(() => {
     const getMoviesOnMount = async () => {
@@ -23,7 +37,7 @@ const Movies = () => {
       } catch (error) {
         console.error(error);
       } finally {
-        setIsLoading(false); // Set loading state to false when data is loaded
+        setIsLoading(false); // Set loading state to false when data is loaded //
       }
     };
 
@@ -33,7 +47,7 @@ const Movies = () => {
   return (
     <div className={styles.wrapper}>
       {isLoading ? ( // Check if data is still loading
-        <Loading />
+        <Loading /> //
       ) : (
         movies.map((movie) => (
           <div
@@ -69,3 +83,4 @@ const Movies = () => {
 
 
 export default Movies;
+*/

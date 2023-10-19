@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // Importing page components
 import Movies from "./pages/Movies/Movies";
 import MovieDetails from "./pages/MovieDetails/MovieDetails";
-import Loading from "./components/Loading"; // Import your Loading component
+import { Loading } from "./components/Loading"; // Import your Loading component
 import { useEffect, useState } from "react"; // Hooks for managing state and side effects
 
 // Creating the main App component
