@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from 'react';
+import BackArrow from '../assets/back.svg';
 import './MovieInfo.css';
 
 const API_URL = 'https://api.themoviedb.org/3/movie/';
@@ -25,20 +26,31 @@ export const MovieInfo = ({ movie_id = "550" }) => {  // Default movie ID set to
   }, [movie_id]);
 
   return (
-    <div className="movie-info">
-      {movieDetails ? (
-        <>
-          <h2>{movieDetails.title}</h2>
-          <div className='rating'>
-            <span className='star-icon'>⭐️</span>
-            <span>{Number(movieDetails.vote_average).toFixed(1)}</span>
+    <div 
+    className="movie-info" 
+    style={{ 
+      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0) 70%, rgb(0, 0, 0) 100%), url(https://image.tmdb.org/t/p/w1280${movieDetails?.backdrop_path})`
+    }}
+    
+  >
+    {movieDetails ? (
+      <div className='movie-info-container'>
+        <img className='movie-poster' src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`} alt="Movie poster" />
+        <div className='movie-details'>
+          <div className='movie-title'>
+            <h2>{movieDetails.title}</h2>
+            <div className='rating'>
+              <span className='star-icon'>⭐️</span>
+              <span>{Number(movieDetails.vote_average).toFixed(1)}</span>
+            </div>
           </div>
           <p>{movieDetails.overview}</p>
-          
-        </>
-      ) : (
-        <p>Loading...</p>
-      )}
-    </div>
-  );
-}
+        </div>
+      </div>
+    ) : (
+      <p>Loading...</p>
+    )}
+  </div>
+
+);
+    };

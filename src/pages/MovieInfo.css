@@ -1,12 +1,46 @@
-/* Add your styling for the MovieInfo component here */
+
+
 .movie-info {
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 20px;
-}
+    color: beige;
+    min-height: 100vh;
+    width: 100vh;
+    display: flex;
+   flex-direction: column;
+    justify-content: flex-end;
+    background-size: cover;   
+  }
+  
+   .movie-title {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+   }
+    
+    .rating {
+      display: flex;
+      align-items: center;
+    }
+    
+    
+    
+    .movie-poster {
+      margin-right: 20px;
+    }
+    
+    .movie-details h1 {
+      display: flex;
+      align-items: center;
+    }
+    
+    
 
 
+ .movie-title {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+ }
   
   .rating {
     display: flex;
@@ -14,6 +48,9 @@
   }
   
   .star-icon {
-    margin-right: 10px; /* Adds some space between the star icon and the rating number */
+    margin-right: 10px; 
   }
+  
+  
+  
   
