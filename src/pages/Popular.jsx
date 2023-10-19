@@ -17,17 +17,9 @@ useEffect(() => {
       .then((json) => {
         setMovies(json.results);
       });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // useEffect(() => {
-  //   fetch(
-  //     "https://api.themoviedb.org/3/movie/popular?api_key=6420add5c0a9b0e0b9462a92916c3187&language=en-US&page=1"
-  //   )
-  //     .then((res) => res.json())
-  //     .then((json) => {
-  //       setMovies(json.results);
-  //     });
-  // }, []);
 
   //Return JSC code to render the popular movies. Movies are mapped using the .map() function 
   //to generate a list of '<Link>' elements that link to individual movie pages.

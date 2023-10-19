@@ -1,4 +1,4 @@
-import "./homebutton.css"
+import "./homebutton.css";
 
 export const HomeButton = () => {
   return (
