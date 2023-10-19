@@ -7,7 +7,7 @@ export const Movie = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { movieId } = useParams();
-  const navigate = useNavigate(); // using the hook here
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(
@@ -33,13 +33,11 @@ export const Movie = () => {
 
   return (
     <div>
-      <button className="Button" onClick={handleBack}>
-        Go Back
-      </button>
-      <h2 className="selected-title">{movie.title}</h2>
-      <h3 className="selected-release-date">{movie.release_date}</h3>
-      <h3 className="rating">{movie.vote_average}</h3>
-      <p className="overview">{movie.overview}</p>
+      <button onClick={handleBack}>Go Back</button>
+      <h2>{movie.title}</h2>
+      <h3>{movie.release_date}</h3>
+      <h3>{movie.vote_average}</h3>
+      <p>{movie.overview}</p>
       <img
         className="poster"
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}

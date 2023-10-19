@@ -1,4 +1,4 @@
-.movie-list-container {
+/* .movie-list-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   padding: 10px;
@@ -16,8 +16,4 @@
 }
 
 .movie-release-date {
-}
-
-img:hover {
-  opacity: 0.7;
 }
