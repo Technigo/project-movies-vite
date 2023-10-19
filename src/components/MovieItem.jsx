@@ -1,5 +1,4 @@
 // This component represents an individual movie item in the list. It's a reusable component.
-import './movieitem.css';
 import { Link } from 'react-router-dom';
 import { IMAGE_BASE_URL } from "/src/apiFetch.jsx"; // Import IMAGE_BASE_URL from your API module
 
