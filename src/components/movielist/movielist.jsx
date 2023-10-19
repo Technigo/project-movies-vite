@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import style from "./movielist.modules.css"
+import style from "./movielist.module.css"
 import { NavLink } from "react-router-dom"
 
 // API KEY passed into the API URL
@@ -32,16 +32,23 @@ export const MovieList = () => {
 
     // Render the API data to be displayed on the page
     return (
-        <div>
+        <div className={style.listContainer}>
             <h1>Movie List</h1>
             <div className={style.movieList}>
                 {allmovies.map((movie) => (
                     <div key={movie.id }>
-                        <img src={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`} />
-                        <NavLink to={`/moviedetails/${movie.id}`}><h2>{movie.title}</h2></NavLink>
+                        <NavLink to={`/moviedetails/${movie.id}`}>
+                        <div className=   {style.movieItem}>
+                            <img 
+                             src={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`} />
+                            <div className={style.movieInfo}>
+                            <h2>{movie.title}</h2>
                        
-                        <p>Release Date: {movie.release_date}</p>
+                            {/* <p>Release Date: {movie.release_date}</p> */}
 
+                            </div>
+                        </div>
+                        </NavLink>
                     </div>
                 ))}
             </div>
