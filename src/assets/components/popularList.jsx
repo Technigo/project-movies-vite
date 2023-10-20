@@ -22,7 +22,7 @@ useEffect(() => {
 }, [])
 
 if (!data) return <h2>Loading..</h2>
-
+ 
 return (
     <div>
         <ul>
