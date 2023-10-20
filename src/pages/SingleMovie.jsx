@@ -4,9 +4,7 @@ import "./singlemovie.css";
 import { BackIcon } from "../Components/BackIcon";
 import { Link } from 'react-router-dom';
 
-
 const API_KEY = "833874c10582aaa2144a7cb70148fbd3";
-// const URL_START = "https://api.themoviedb.org/3/movie/";
 
 export const SingleMovie = () => {
     const [movie, setMovie] = useState(null); // Initialize state with null
@@ -14,7 +12,7 @@ export const SingleMovie = () => {
 
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`)
-            .then((res) => res.json()) // Remove extra parentheses here
+            .then((res) => res.json())
             .then((json) => {
                 setMovie(json);
                 console.log("data is", json);
@@ -24,8 +22,6 @@ export const SingleMovie = () => {
             });
     }, [id]);
 
-    // You should return something here; for example, you can display the movie details in JSX.
-    // Replace this return statement with your actual JSX structure for displaying movie details.
     return (
         <div className="single-movie">
             <Link to="/" className="backLink" aria-label="button back to home page">
@@ -34,30 +30,41 @@ export const SingleMovie = () => {
 
             {movie ? (
                 <>
-
                     <div className="back-drop">
-                        <img
-                            src={`https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}`}
-                            alt={movie.title} />
+                        <div className="background-image">
+                            <img
+                                src={`https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}`}
+                                alt={movie.title}
+                            />
+                        </div>
                     </div>
                     <div className="movie-info">
-                        <img
-                            src={`https://image.tmdb.org/t/p/w780/${movie.poster_path}`}
-                            alt={movie.title} />
-                        <h1>
-
-                            <span className="title">{movie.title}</span>
-                            <div className="rating-box">
-                                <span className="rating-number"> {Math.round(movie.vote_average * 10) / 10}</span>
+                        <div className="movie-poster-container">
+                            <img
+                                src={`https://image.tmdb.org/t/p/w780/${movie.poster_path}`}
+                                alt={movie.title}
+                            />
+                        </div>
+                        <div className="movie-info-text">
+                            <div className="movie-info-heading">
+                                <h1>
+                                    <span className="title" style={{ display: 'inline-block', textShadow: '1px 1px 1px rgb(77, 77, 77)' }}>{movie.title}</span>
+                                    <span className="rating-number" style={{ backgroundColor: '#F2C94C', padding: '4px 9px', marginLeft: '10px', borderRadius: '5px' }}>
+                                        {Math.round(movie.vote_average * 10) / 10}
+                                    </span>
+                                </h1>
                             </div>
-                            <p>{movie.overview}</p>
-                        </h1>
-
-                    </div></>
+                            <div className="movie-info-subtext">
+                                <p>{movie.overview}</p>
+                            </div>
+                        </div>
+                    </div>
+                </>
             ) : (
                 <p>Loading...</p>
-            )}
-        </div>
+            )
+            }
+        </div >
     );
 };
 

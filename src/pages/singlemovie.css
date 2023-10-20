@@ -3,6 +3,7 @@
     color: #fff;
 }
 
+/* This is the back button  */
 .backLink {
     position: absolute;
     top: 10px;
@@ -10,9 +11,7 @@
     z-index: 4;
     display: flex;
     align-items: center;
-    /* Vertically center the content */
     justify-content: center;
-    /* Horizontally center the content */
     filter: drop-shadow(2px 3px 4px rgb(0 0 0 / 0.5));
 }
 
@@ -20,6 +19,8 @@
     width: 40px;
     height: 40px;
 }
+
+/* This is the backdrop whit image inside  */
 
 .back-drop {
     min-height: 100vh;
@@ -30,17 +31,18 @@
 
 }
 
-.back-drop img {
+.background-image {
+    position: relative;
+}
+
+.background-image img {
     height: 100vh;
     width: 100%;
-    background-position: center;
-    /* background-attachment: fixed; */
-    /* or background-attachment: fixed; for a fixed background */
     object-fit: cover;
     z-index: 1;
 }
 
-.back-drop img ::before {
+.background-image::before {
     content: "";
     position: absolute;
     top: 0;
@@ -48,13 +50,15 @@
     right: 0;
     bottom: 0;
     background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5424763655462185) 50%, rgba(0, 0, 0, 0) 100%);
-    z-index: 1;
+    z-index: 2;
+
 }
 
 
+/* This is the layout for the movie info and image */
 .movie-info {
     display: flex;
-    flex-direction: column;
+    align-items: flex-end;
     padding: 50px;
     position: absolute;
     z-index: 3;
@@ -64,36 +68,32 @@
 
 .movie-info img {
     border: 5px solid #fff;
-    margin-bottom: 20px;
-    width: 200px;
+    margin-right: 20px;
+    width: 300px;
+
 }
 
-.movie-info p {
-    font-size: 16px;
-    padding-right: 50px;
+.movie-info-text {
+    flex: 1;
+    max-width: 800px;
 }
 
-.title {
-    font-size: 1em;
-    /* Adjust the font size as needed */
-    margin-bottom: 10px;
-    /* Add space below the title */
-    text-shadow: 1px 1px rgb(77, 77, 77);
+.movie-info-heading {
+    max-width: 800px;
+
+}
+
+.movie-info-subtext {
+    padding-top: 20px;
+    max-width: 400px;
+    margin: 0;
+}
+
+p {
+    font-size: 18px;
 }
 
 
-.rating-box {
-    background-color: #F2C94C;
-    color: #fff;
-    padding: 4px 9px;
-    border-radius: 5px;
-    display: inline-block;
-    position: relative;
-    margin-left: 10px;
-    /* Add this line for positioning the pseudo-element */
-}
-
-/* Style for the rating number inside the box */
 .rating-number {
     font-weight: bold;
     font-size: 1em;
@@ -101,7 +101,83 @@
 
 .rating-number::before {
     content: "★";
-    /* Insert a star character as content */
     margin-right: 2px;
-    /* Add some spacing between the star and the number */
+}
+
+/* ------------- Tablet ---------------- */
+
+@media only screen and (max-width: 768px) {
+    .movie-info {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .movie-info img {
+        width: 100%;
+        margin: 0;
+    }
+
+    .movie-info-text {
+        max-width: 100%;
+    }
+
+    .movie-info-heading {
+        max-width: 100%;
+    }
+
+    .movie-info-subtext {
+        max-width: 100%;
+        padding-top: 10px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+/* ------------------ Mobile --------------- */
+
+@media only screen and (max-width: 480px) {
+    .single-movie {
+        text-align: center;
+    }
+
+    .movie-info {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .movie-info img {
+        width: 60%;
+        /* Adjust image width */
+        margin-right: 0;
+        margin-bottom: 20px;
+        /* Add margin between image and text */
+    }
+
+    .movie-info-text {
+        max-width: 100%;
+    }
+
+    .movie-info-heading {
+        max-width: 100%;
+    }
+
+    .movie-info-subtext {
+        max-width: 100%;
+        padding-top: 10px;
+    }
+
+    p {
+        font-size: 14px;
+        /* Adjust font size */
+        text-align: left;
+        /* Align text to the left */
+    }
+
+    .rating-number {
+        margin-top: 10px;
+    }
 }
