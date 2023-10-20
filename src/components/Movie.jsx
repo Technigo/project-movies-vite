@@ -9,6 +9,7 @@ export const Movie = () => {
   const { movieId } = useParams();
   const navigate = useNavigate();
 
+  //Where we get the info from the API to our movie site
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/movie/${movieId}?api_key=05ee03350103cd5d4cd268dcf88024c0&language=en-US&page=1`
@@ -27,10 +28,12 @@ export const Movie = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
 
+  //When the button is clicked, this function kicks in
   const handleBack = () => {
     navigate(-1);
   };
 
+  //The information that will show about the selected movie
   return (
     <div
       className="movie-container"
@@ -42,15 +45,17 @@ export const Movie = () => {
       }}
     >
       <div className="content-overlay">
-        <div className="button">
-          <button onClick={handleBack}>Back to movies</button>
+        <div>
+          <button className="button" onClick={handleBack}>
+            Back to movies
+          </button>
         </div>
         <div className="selected-movie-info">
           <div className="selected-movie-title">
             <h2>{movie.title}</h2>
           </div>
           <div className="selected-release-date">
-            <h3>{movie.release_date}</h3>
+            <h3>🗓 {movie.release_date}</h3>
           </div>
           <div className="rating">
             <h3>⭐️{movie.vote_average}</h3>

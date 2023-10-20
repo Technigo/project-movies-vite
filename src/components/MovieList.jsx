@@ -7,6 +7,7 @@ export const MovieList = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  //Where we get the info from the API to our movie site
   useEffect(() => {
     fetch(
       "https://api.themoviedb.org/3/movie/popular?api_key=05ee03350103cd5d4cd268dcf88024c0&language=en-US&page=1"
@@ -25,6 +26,7 @@ export const MovieList = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error loading movies: {error.message}</p>;
 
+  //The selection of movies that will show on our first page
   return (
     <div className="movie-list-container">
       {movies.map((movie) => (
@@ -37,11 +39,13 @@ export const MovieList = () => {
             />
             <div className="movie-details">
               <h2 className="movie-title">{movie.title}</h2>
-              <p className="movie-release-date">Released: {movie.release_date}</p>
+              <p className="movie-release-date">
+                Released: {movie.release_date}
+              </p>
             </div>
           </Link>
         </div>
       ))}
     </div>
   );
-}
+};

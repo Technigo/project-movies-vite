@@ -1,23 +1,4 @@
-/* .movie-list-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 10px;
-  text-align: center;
-  background-color: blueviolet;
-}
-
-.movie-list-container img {
-}
-
-.movie-title {
-  background-color: #ddd;
-  padding: 20px;
-  border: 1px solid #888;
-}
-
-.movie-release-date {
-} */
-
+/* The basic structure of our first page */
 .movie-list-container {
   display: flex;
   flex-direction: row;
@@ -40,6 +21,7 @@
   transition: transform 0.1s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
+/* Settings for when each movie is hovered */
 .movie-item:hover {
   transform: scale(1.03);
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.2);
@@ -76,6 +58,7 @@
   color: #333;
 }
 
+/* Settings for different screen sizes */
 @media (min-width: 744px) {
   .movie-item {
     width: calc(50% - 4%);
