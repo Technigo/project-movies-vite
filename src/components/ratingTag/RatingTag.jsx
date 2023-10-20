@@ -6,7 +6,7 @@ export const RatingTag = ({ rate }) => {
     <span className="rating">
       {" "}
       <AiFillStar className="star" />
-      {rate.toFixed(1)}
+      {rate.toFixed(1)} {/*Rounds off the rating score to one decimal*/}
     </span>
   );
 };

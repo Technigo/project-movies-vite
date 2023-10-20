@@ -6,34 +6,17 @@
 
 # Movie Site Project
 
------------------> OBS OBS OBS OBS OBS Vid deploy till netlify lägg in värdena från .env till Enviromental Variables!!!!
-
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
-## Getting Started with the Project
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
+For this week the focus was to learn about React Router and make a multi-page application using a movie API.
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+This was a group assignment. Due to different schedules, we have worked in branches but also together using LiveShare. This worked out well for us since we made sure to get everybody up to speed with what work had been done by one another.
+This project has been made by Laura Lyckholm, Emmy Dieden and Anna Robertsson.
+
+We started out with making a plan together for the project and laid out what we wanted to have as components. All those components were then made first so that they could be imported in the PopularList-page and the Details-page as they were created after that. We used the MovieDB-API to fetch both the popular movies and then the chosen movie's details and images. We have also added a "Page not found"-page and a loader.
+
+When encountering problems we have discussed them within the group or with other Team Orange-members. We have also looked back at material provided by Technigo or asked chatGPT for help.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
+Please visit: https://movie-site-laura-anna-emmy.netlify.app/

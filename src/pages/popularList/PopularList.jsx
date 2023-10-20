@@ -22,12 +22,10 @@ export const PopularList = () => {
 
       const data = await response.json();
       setMovies(data);
-
     } catch (error) {
-      console.error("Something went wrong!") // Log the error to the console
+      console.error("Something went wrong!"); // Log the error to the console
     }
-  }
-
+  };
 
   // Handles the fetch from above
   useEffect(() => {
@@ -35,9 +33,9 @@ export const PopularList = () => {
   }, []);
 
   return (
-    // If there is movie-data, then send the results to MovieCard.jsx, otherwise show a loading message. Here we could add a better looking loader.
+    // If there is movie-data, then send the results to MovieCard.jsx, otherwise show a loading message.
     <section className="popular-movies">
       {movies ? <MovieCard movieData={movies.results} /> : <Loader />}
     </section>
-  )
-}
+  );
+};
