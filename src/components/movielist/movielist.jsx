@@ -9,6 +9,7 @@ const url = `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&langu
 // Function to export the component
 export const MovieList = () => {
     const [allmovies, setAllmovies] = useState([]);
+    // error 2 useState []
 
     // Function to fetch the API - MovieList
     useEffect(() => {
@@ -20,6 +21,7 @@ export const MovieList = () => {
                     throw new Error("Network Response Error")
                 }
                 const json = await response.json()
+            //    error3 only json --> json.results
                 setAllmovies(json.results)
                 console.log(json.results)
             } catch (error) {
@@ -40,7 +42,7 @@ export const MovieList = () => {
             <div className={style.movieList}>
                 {allmovies.map((movie) => (
                     <div key={movie.id }>
-                        <NavLink to={`/moviedetails/${movie.id}`}>
+                        <NavLink to={`/movie/${movie.id}`}>
                         <div className=   {style.movieItem}>
                             <img 
                              src={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`} />

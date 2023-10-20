@@ -12,7 +12,9 @@ const routes = (
    
   <>
     <Route path="/" element={<MovieList />} /> {/*// Render the MovieList component when the URL path is "/"*/}
-    <Route path="/:movie/:id" element={<MovieDetails />} />{/*// Render the MovieDetail component when the URL path is "id"*/}
+
+    {/* error 1 */}
+    <Route path="/movie/:id" element={<MovieDetails />} />{/*// Render the MovieDetail component when the URL path is "id"*/}
     </>
   
   // </Router>
