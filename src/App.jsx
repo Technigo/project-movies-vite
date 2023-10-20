@@ -1,10 +1,19 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom"
+import { MyRoutes } from "./assets/components/routeToPopularList";
 import { MainPage } from "./assets/components/popularList";
 
-import { BrowserRouter } from "react-router-dom";
 
-
+//BrowserRouter  needs to wrap it all
 export const App = () => {
-  return <div>popular list here</div>;
+  return (
+    <>
+  <BrowserRouter>  
+
   <MainPage />
+  <MyRoutes />
+  
+  </BrowserRouter>
+</>
+)
 };
