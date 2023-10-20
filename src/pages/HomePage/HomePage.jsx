@@ -1,13 +1,9 @@
-
 import useSWR from "swr";
 import { useEffect, useState } from "react";
 import styles from "./HomePage.module.css";
 import { Navbar } from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
 import { ScrollToTop } from "../../components/ScrollToTop";
-
-
-
 
 import { HeroCarousel } from "../../components/HeroCarousel";
 import { MainSlider } from "../../components/MainSlider";
