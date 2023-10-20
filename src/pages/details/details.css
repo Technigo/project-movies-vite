@@ -32,6 +32,11 @@
   margin: 16px 0;
 }
 
+.detail-text-wrapper {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
 /* ------------ MEDIA QUERIES ------------ */
 @media (min-width: 770px) {
   .detail-info-wrapper {
