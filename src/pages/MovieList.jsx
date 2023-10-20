@@ -4,7 +4,7 @@
 // export const MovieList = () => {
 //     const [movieList, setMovieList] = useState([])
 
-//     const API_KEY = "d702e384b1621c01acd5bc0e04a75981"
+//     const API_KEY = 
 
 
 //     useEffect(() => {
@@ -45,7 +45,7 @@ export const MovieList = () => {
     const [movieList, setMovieList] = useState([]);
     const [loading, setLoading] = useState(false)
     const apiEnv = import.meta.env.VITE_OPENDB_KEY;
-    // const API_KEY = "d702e384b1621c01acd5bc0e04a75981";
+
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiEnv}&language=en-US&page=`)
             .then(response => response.json())
