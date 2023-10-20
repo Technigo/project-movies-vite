@@ -1,0 +1,64 @@
+.a-movie {
+    margin: 0 2px;
+}
+
+.poster {
+    width: 100dvw;
+    z-index: -1;
+}
+.poster:hover {
+    opacity: 0.3;
+}
+
+.movie-text-container {
+    position: absolute;
+    bottom: 8px;
+    left: 5px;
+    z-index: 1;
+    width: 100dvw;
+}
+.a-movie:hover .movie-list-title, .a-movie:hover .movie-list-release{
+    display: block;
+    color: white;
+}
+
+.movie-list-title, .movie-list-release {
+    color: white;
+    padding: 0;
+    margin: 0;
+
+    text-wrap: balance;
+    word-wrap: break-word;
+    display: none;
+}
+
+.movie-list-title {
+    font-size: 2.3em;
+}
+.movie-list-release {
+    font-size: 1.2em;
+}
+
+@media (min-width: 375px) {
+    .poster, .movie-text-container {
+        width: 50dvw;
+    }
+    .movie-list-title {
+        font-size: 1.8em;
+    }
+    .movie-list-release {
+        font-size: 0.8em;
+    }
+}
+
+@media (min-width: 575px) {
+    .poster, .movie-text-container {
+        width: 25dvw;
+    }
+    .movie-list-title {
+        font-size: 1.5em;
+    }
+    .movie-list-release {
+        font-size: 0.8em;
+    }
+}
