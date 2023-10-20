@@ -1,6 +1,7 @@
 import { AiFillStar } from "react-icons/ai";
 import "./ratingTag.css";
 
+// Component for the rating tag
 export const RatingTag = ({ rate }) => {
   return (
     <span className="rating">
