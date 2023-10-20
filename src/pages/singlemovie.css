@@ -23,7 +23,7 @@
 }
 
 
-/* Add this to your CSS */
+
 /* .back-drop {
 
 } */
@@ -50,6 +50,7 @@
 
 .movie-info img {
     border: 5px solid #fff;
+    margin-bottom: 20px;
     width: 200px;
 }
 
@@ -57,24 +58,36 @@
     font-size: 16px;
 }
 
-/* Style for the rating box */
+.title {
+    font-size: 1em;
+    /* Adjust the font size as needed */
+    margin-bottom: 10px;
+    /* Add space below the title */
+}
+
+
 .rating-box {
     background-color: #F2C94C;
-    /* Background color for the box */
     color: #fff;
-    /* Text color inside the box */
-    padding: 5px 10px;
-    /* Padding inside the box to create spacing */
+    padding: 4px 9px;
     border-radius: 5px;
-    /* Rounded corners for the box */
     display: inline-block;
-    /* Keep the box inline with the text */
+    position: relative;
+    margin-left: 10px;
+    /* Add this line for positioning the pseudo-element */
 }
 
 /* Style for the rating number inside the box */
 .rating-number {
     font-weight: bold;
-    /* Make the number bold */
-    font-size: 1.2em;
+    font-size: 1em;
     /* Adjust the font size as needed */
+
+    /* Add the star symbol using a pseudo-element */
+    &::before {
+        content: "★";
+        /* Insert a star character as content */
+        margin-right: 4px;
+        /* Add some spacing between the star and the number */
+    }
 }
