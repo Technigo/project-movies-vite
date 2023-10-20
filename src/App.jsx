@@ -4,12 +4,6 @@ export const App = () => {
 
   return (
     <BrowserRouter>
-      {/* <nav>
-        <ul>
-          <Link to="/">Home</Link>
-          <Link to="/movielist">Movielist</Link>
-        </ul>
-      </nav> */}
       <Routes>
         {routes}
       </Routes>

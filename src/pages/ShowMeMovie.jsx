@@ -15,7 +15,6 @@ export const ShowMeMovie = () => {
     const apiEnv = import.meta.env.VITE_OPENDB_KEY;
     //To be stored later secretly in a dot environment- .env
 
-
     // Do not erase: another (more readable) way of writing fetch() in useEffect()
 
     // useEffect(() => {
@@ -33,7 +32,6 @@ export const ShowMeMovie = () => {
     // }, [id]);
 
     useEffect(() => {
-
 
         const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiEnv}&language=en-US`
 
@@ -55,44 +53,42 @@ export const ShowMeMovie = () => {
             } catch (error) {
                 console.error("Error fetching data on selected movie:", error);
             }
-
         }
         fetchMovieInfo();
     }, [id, apiEnv]); // Fires the function only when movie:id is requested
-
-
 
     return (
         <>
             {loading && (
                 <Oval
-                    height={80}
-                    width={80}
+                    height={100}
+                    width={100}
                     color="#4fa94d"
-                    wrapperStyle={{}}
+                    wrapperStyle={{
+                        display: "flex",
+                        justifyContent: "center",
+                        marginTop: "10%"
+                    }}
                     wrapperClass=""
                     visible={true}
                     ariaLabel='oval-loading'
                     secondaryColor="#4fa94d"
-                    strokeWidth={2}
-                    strokeWidthSecondary={2}
+                    strokeWidth={5}
+                    strokeWidthSecondary={3}
                 />
-
             )
             }
-            {!loading && movie && <Link className="back-to-movies-btn" to="/">
-
-                <div className="arrow">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
-                        <path d="M27 14.5C27 7.596441 21.4035594 2 14.5 2S2 7.596441 2 14.5 7.5964406 27 14.5 27 27 21.403559 27 14.5zm-19.3388348-.353553l7.4852814-7.485282c.1952622-.195262.5118446-.195262.7071068 0l2.1213203 2.121321c.1952622.195262.1952622.511844 0 .707106L12.9644661 14.5l5.0104076 5.010408c.1952622.195262.1952622.511844 0 .707106l-2.1213203 2.121321c-.1952622.195262-.5118446.195262-.7071068 0l-7.4852814-7.485282c-.19799-.19799-.197989-.509117 0-.707106z" fill="rgb(245,245,245)" fillRule="evenodd">
-                        </path>
-                    </svg>
-                </div>
-                <p>Movies</p>
-            </Link>}
+            {!loading && movie &&
+                <Link className="back-to-movies-btn" to="/">
+                    <div className="arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                            <path d="M27 14.5C27 7.596441 21.4035594 2 14.5 2S2 7.596441 2 14.5 7.5964406 27 14.5 27 27 21.403559 27 14.5zm-19.3388348-.353553l7.4852814-7.485282c.1952622-.195262.5118446-.195262.7071068 0l2.1213203 2.121321c.1952622.195262.1952622.511844 0 .707106L12.9644661 14.5l5.0104076 5.010408c.1952622.195262.1952622.511844 0 .707106l-2.1213203 2.121321c-.1952622.195262-.5118446.195262-.7071068 0l-7.4852814-7.485282c-.19799-.19799-.197989-.509117 0-.707106z" fill="rgb(245,245,245)" fillRule="evenodd">
+                            </path>
+                        </svg>
+                    </div>
+                    <p>Movies</p>
+                </Link>}
             {!loading && movie && <MovieDetails movie={movie} />}
-
-
         </>
     )
 }
