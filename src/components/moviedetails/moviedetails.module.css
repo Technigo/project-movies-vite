@@ -86,14 +86,17 @@ h2 {
     .movieSummary {
         display: flex;
         flex-direction: column;
-        padding: 50px;
+        justify-content: left;
+        padding-bottom: 50px;
+        max-height: 80vh;
+        overflow-y: auto;
+        /* Last two rows are scrolling + maximum height for scrolling */
     }
 
     .movieImage {
-        align-items: left;
         margin-left: 0;
         margin-left: 0;
-        max-width: 200px;
+        max-width: 60%;
     }
 
     .movieInfo {
@@ -101,6 +104,4 @@ h2 {
         word-wrap: break-word;
         max-width: 250px;
     }
-
-
 }
