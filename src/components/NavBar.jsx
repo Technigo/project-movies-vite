@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import "./Navbar.css"
-import "/back.svg"
+import BackIcon from "/back.svg";
 
 export const NavBar = () => {
     return(
@@ -9,11 +9,10 @@ export const NavBar = () => {
                 <ul>
                     <li>
                         <Link className="back-to-movies" to="/">
-                            <img className="back-arrow" src="/back.svg" alt="navigation to go bakc" />
+                            <img className="back-arrow" src={BackIcon} alt="navigation to go bakc" />
                             Movies
                         </Link>
                     </li>
-
                 </ul>
             </nav>
         </div>
