@@ -354,7 +354,6 @@ const options = {
     accept: "application/json",
 
     Authorization: import.meta.env.VITE_API_KEY, // eslint-disable-line
-
   },
 };
 
@@ -374,6 +373,7 @@ function Detail() {
 
   const navigate = useNavigate();
   const posterPath = new URLSearchParams(location.search).get("poster_path");
+  console.log(posterPath);
 
   const selectedMovieId = new URLSearchParams(location.search).get("movie_id");
 
@@ -422,7 +422,9 @@ function Detail() {
     if (!isImageLoading) setTriggerMovie(false);
     if (data) {
       const youtube = data.results.map((obj) => Object.values(obj).includes("YouTube"));
+      console.log(data);
       youtube &&
+        data.results.length > 0 &&
         setStartVideo({
           start: true,
           url: ` https://www.youtube.com/embed/${data.results[0].key}?autoplay=1&mute=1&loop=1&playlist=${data.results[0].key}`,
@@ -445,28 +447,15 @@ function Detail() {
       {!isLoading ? (
         !error ? (
           selectedMovie ? (
-
-            <div>
-              <h1>{selectedMovie.title}</h1>
-              {backdropPath ? ( // Check if backdropPath is not null
-                <img
-                  src={`https://image.tmdb.org/t/p/w780${backdropPath}`}
-                  alt={selectedMovie.title}
-                />
-              ) : (
-                <p>No backdrop image available</p>
-              )}
-              <p>{selectedMovie.overview}</p>
-              <p>Release Date: {selectedMovie.release_date}</p>
-            </div>
-
             <section className={styles.detail_wrapper}>
               <div className={styles.detail}>
                 <div
                   onMouseEnter={() => setTriggerMovie({ trigger: true, id: selectedMovie.id })}
                   className={styles.detail_img}
                   style={{
-                    backgroundImage: `url(https://image.tmdb.org/t/p/original${selectedMovie.backdrop_path})`,
+                    backgroundImage: selectedMovie.backdrop_path
+                      ? `url(https://image.tmdb.org/t/p/original${selectedMovie.backdrop_path})`
+                      : `url(https://image.tmdb.org/t/p/original${posterPath})`,
                     display: !startVideo.start ? "flex" : "none",
                   }}
                 >
@@ -509,7 +498,6 @@ function Detail() {
                 </div>
               </div>
             </section>
-
           ) : (
             <p>No movie details available</p>
           )
@@ -526,12 +514,3 @@ function Detail() {
 }
 
 export default Detail;
-
-
-
-
-
-
-
-
-
