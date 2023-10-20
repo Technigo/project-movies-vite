@@ -1,6 +1,7 @@
 import { BackButton } from '../../components/backButton/BackButton'
 import './pageNotFound.css'
 
+// Component for page not found error
 export const PageNotFound = () => {
     const nemoImage = '/finding-dory.jpeg'
     const backgroundStyle = {
