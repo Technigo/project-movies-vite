@@ -58,7 +58,7 @@ export const ShowMeMovie = () => {
 
         }
         fetchMovieInfo();
-    }, [id]); // Fires the function only when movie:id is requested
+    }, [id, apiEnv]); // Fires the function only when movie:id is requested
 
 
 

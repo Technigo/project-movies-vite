@@ -55,7 +55,7 @@ export const MovieList = () => {
                 setLoading(false);
             })
             .catch(err => console.error(err));
-    }, []);
+    }, [apiEnv]);
     return (
         <div>
             <div>
