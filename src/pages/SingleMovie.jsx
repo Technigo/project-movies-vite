@@ -28,7 +28,7 @@ export const SingleMovie = () => {
     // Replace this return statement with your actual JSX structure for displaying movie details.
     return (
         <div className="single-movie">
-            <Link to="/" className="backLink" ariaLabel="button back to home page">
+            <Link to="/" className="backLink" aria-label="button back to home page">
                 <BackIcon /> Movies
             </Link>
 
