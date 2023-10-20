@@ -36,29 +36,26 @@ export const MovieDetails = () => {
 
     return (
         <div>
-            <div className={style.backgroundContainer}>
-                <NavLink to={`/`}><h2>Movie List</h2></NavLink>
-            </div>
-            <h1>Movie Details</h1>
             {movieDetails && (
                 <div>
-                    <div>
-                        {movieDetails.map((movie) => (
-                            <div key={movie.id}>
-                                <img className={style.backgroundImage}
-                                    src={`https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}`} />
-                                <div className={style.movieSummary}>
-                                    <img className={style.movieImage}
-                                        src={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`} />
-                                    <div className={style.movieInfo}>
-                                        <h2>{movie.title}</h2>
-                                        <p className={style.vote}>Vote Average: {movie.vote_average}</p>
-                                        <p className={style.Overview}>Overview: {movie.overview}</p>
-                                    </div>
+                    {movieDetails.map((movie) => (
+                        <div key={movie.id}>
+                            <img className={style.backgroundImage}
+                                src={`https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}`} />
+                            <div className={style.movieSummary}>
+                                <div>
+                                    <NavLink to={`/`} className={style.backButton}>All Movies</NavLink>
+                                </div>
+                                <img className={style.movieImage}
+                                    src={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`} />
+                                <div className={style.movieInfo}>
+                                    <h2>{movie.title}</h2>
+                                    <p className={style.vote}>Vote Average: {movie.vote_average.toFixed(1)}</p>
+                                    <p className={style.Overview}>Overview: {movie.overview}</p>
                                 </div>
                             </div>
-                        ))}
-                    </div>
+                        </div>
+                    ))}
                 </div>
             )
             }
