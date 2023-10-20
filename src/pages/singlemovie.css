@@ -24,15 +24,21 @@
 
 
 
-/* .back-drop {
-
-} */
+.back-drop {
+    min-height: 100vh;
+    display: flex;
+    background-size: cover;
+    flex-direction: column;
+    justify-content: flex-end;
+}
 
 .back-drop img {
     height: 100vh;
-    background-size: cover;
-    background-attachment: fixed;
+    width: 100%;
+    background-position: center;
+    /* background-attachment: fixed; */
     /* or background-attachment: fixed; for a fixed background */
+    object-fit: cover;
     z-index: 1;
 }
 
@@ -63,6 +69,8 @@
     /* Adjust the font size as needed */
     margin-bottom: 10px;
     /* Add space below the title */
+    text-shadow: 1px 1px rgb(77, 77, 77);
+
 }
 
 
