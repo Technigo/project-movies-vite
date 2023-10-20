@@ -3,8 +3,8 @@
   color: #fff;
 }
 
-/*---------- BACK TO MOVIES ----------*/
-
+/*---------- BACK TO MOVIES END----------*/
+/* Back to Movies link styles */
 .back-link {
   position: absolute;
   display: inline-flex;
@@ -17,6 +17,7 @@
   filter: drop-shadow(2px 3px 4px rgb(0 0 0/0.5));
 }
 
+/* Back icon within the Back to Movies link */
 .back-link .back-icon {
   color: #fff;
   width: 1.8rem;
@@ -26,11 +27,13 @@
   transition: margin-right 0.3s ease-in-out;
 }
 
+/* Hover effect for the back icon */
 .back-link:hover .back-icon {
   margin-right: 0.8rem;
 }
 /*---------- BACK TO MOVIES END----------*/
 
+/* Styles for the background image container */
 .background-image {
   min-height: 100vh;
   display: flex;
@@ -44,6 +47,7 @@
   width: 200px;
 }
 
+/* Styles for the container holding movie information */
 .movie-info {
   display: flex;
   flex-direction: column;
@@ -65,6 +69,7 @@
   font-weight: 700;
 }
 
+/* Styles for star rating section */
 .stars-rating {
   display: inline-block;
   align-items: center;
@@ -76,6 +81,7 @@
   text-shadow: none;
 }
 
+/* Styles for the star icon in the rating section */
 .star-icon {
   width: 1.2rem;
   height: 1.2rem;
@@ -86,6 +92,9 @@
   max-width: 400px;
 }
 
+/* ----- Media queries for responsive design ----- */
+
+/* For screens with a minimum width of 577px */
 @media (min-width: 577px) {
   .movie-info {
     display: flex;
@@ -103,6 +112,7 @@
   }
 }
 
+/* For screens with a minimum width of 770px */
 @media (min-width: 770px) {
   .movie-poster {
     width: initial;

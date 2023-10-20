@@ -2,6 +2,7 @@
   display: grid;
 }
 
+/* Style links within .popular-page */
 .popular-page a {
   position: relative;
   width: 100%;
@@ -13,6 +14,7 @@
   width: 100%;
 }
 
+/* Style the information card for each movie */
 .popular-card-info {
   position: absolute;
   top: 0;
@@ -24,6 +26,7 @@
   padding: 20px;
 }
 
+/* Show the movie information card on hover */
 .popular-page a:hover .popular-card-info {
   display: flex;
   flex-wrap: wrap;
@@ -40,18 +43,23 @@
   font-weight: 300;
 }
 
+/* ----- Media queries for responsive grid layout ----- */
+
+/* For screens with a minimum width of 370px */
 @media (min-width: 370px) {
   .popular-page {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* For screens with a minimum width of 570px */
 @media (min-width: 570px) {
   .popular-page {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
+/* For screens with a minimum width of 820px */
 @media (min-width: 820px) {
   .popular-page {
     grid-template-columns: repeat(4, 1fr);

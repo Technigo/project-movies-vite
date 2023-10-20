@@ -1,15 +1,13 @@
 import { GrStar } from "react-icons/gr";
-import { Back } from "../../Back/Back";
+import { Back } from "../BackBtn/Back";
 
 export const DetailComp = ({ movie }) => {
-  if (!movie) {
-    return <div>Loading...</div>;
-  }
-
+  // Destructure movie properties.
   const { original_title, overview, vote_average, poster_path, backdrop_path } =
     movie;
 
-  if (!original_title) {
+  // Check if movie data is available or if 'original_title' is undefined.
+  if (!movie || !movie.original_title) {
     return <div>No movie details available.</div>;
   }
 
@@ -20,7 +18,9 @@ export const DetailComp = ({ movie }) => {
 
   return (
     <article className="movie-detail-wrapper">
+      {/* Render the Back component for navigation */}
       <Back />
+      {/* Check if movie data is available */}
       {movie && (
         <div className="background-image" style={imageBackground}>
           <div className="movie-info">
