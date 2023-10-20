@@ -259,6 +259,86 @@
 
 // export default Detail;
 
+// import React, { useEffect, useState } from "react";
+// import { useLocation } from "react-router-dom";
+// import styles from "./Detail.module.css";
+
+// const options = {
+//   method: "GET",
+//   headers: {
+//     accept: "application/json",
+//     Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMzEwNDBiNTAzY2M0MzViNDk0MjU0ODRiMDZlYTc1NSIsInN1YiI6IjY1MmQyODNlNjYxMWI0MDBlMjU1MDMxYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.nzGRkQ839_qWKFn7k3BsxmVqMmHl11yXIf4z6QEk8z4", // Replace with your API key
+//   },
+// };
+
+// function Detail() {
+//   const location = useLocation();
+//   const posterPath = new URLSearchParams(location.search).get("backdrop_path");
+//   const selectedMovieId = new URLSearchParams(location.search).get("movie_id");
+
+//   const [selectedMovie, setSelectedMovie] = useState(null);
+//   const [isLoading, setIsLoading] = useState(true);
+//   const [error, setError] = useState(null);
+
+//   useEffect(() => {
+//     async function fetchMovieDetails() {
+//       try {
+//         const response = await fetch(
+//           `https://api.themoviedb.org/3/movie/${selectedMovieId}?language=en-US`,
+//           options
+//         );
+//         if (response.status === 200) {
+//           const data = await response.json();
+//           setSelectedMovie(data);
+//         } else if (response.status === 401) {
+//           setError("Unauthorized: Please check your API key and permissions.");
+//         } else {
+//           setError(`Error: ${response.status} - ${response.statusText}`);
+//         }
+//         setIsLoading(false);
+//       } catch (err) {
+//         console.error(err);
+//         setError("An error occurred while fetching data.");
+//         setIsLoading(false);
+//       }
+//     }
+
+//     if (selectedMovieId) {
+//       fetchMovieDetails();
+//     }
+//   }, [selectedMovieId]);
+
+//   return (
+//     <React.Fragment>
+//     <div className={styles.detail}>
+//       {!isLoading ? (
+//         !error ? (
+//           selectedMovie ? (
+//             <div>
+//               <h1>{selectedMovie.title}</h1>
+//               <img
+//                 src={`https://image.tmdb.org/t/p/w780${posterPath}`}
+//                 alt={selectedMovie.title}
+//               />
+//               <p>{selectedMovie.overview}</p>
+//               <p>Release Date: {selectedMovie.release_date}</p>
+//             </div>
+//           ) : (
+//             <p>No movie details available</p>
+//           )
+//         ) : (
+//           <p>Error: {error}</p>
+//         )
+//       ) : (
+//         <p>Loading</p>
+//       )}
+//     </div>
+//     </React.Fragment>
+//   );
+// }
+
+// export default Detail;
+
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./Detail.module.css";
@@ -272,7 +352,9 @@ const options = {
   method: "GET",
   headers: {
     accept: "application/json",
+
     Authorization: import.meta.env.VITE_API_KEY, // eslint-disable-line
+
   },
 };
 
@@ -287,8 +369,12 @@ const fetcher = async (path) => {
 
 function Detail() {
   const location = useLocation();
+
+  const backdropPath = new URLSearchParams(location.search).get("backdrop_path");
+
   const navigate = useNavigate();
   const posterPath = new URLSearchParams(location.search).get("poster_path");
+
   const selectedMovieId = new URLSearchParams(location.search).get("movie_id");
 
   const [selectedMovie, setSelectedMovie] = useState(null);
@@ -359,6 +445,21 @@ function Detail() {
       {!isLoading ? (
         !error ? (
           selectedMovie ? (
+
+            <div>
+              <h1>{selectedMovie.title}</h1>
+              {backdropPath ? ( // Check if backdropPath is not null
+                <img
+                  src={`https://image.tmdb.org/t/p/w780${backdropPath}`}
+                  alt={selectedMovie.title}
+                />
+              ) : (
+                <p>No backdrop image available</p>
+              )}
+              <p>{selectedMovie.overview}</p>
+              <p>Release Date: {selectedMovie.release_date}</p>
+            </div>
+
             <section className={styles.detail_wrapper}>
               <div className={styles.detail}>
                 <div
@@ -408,6 +509,7 @@ function Detail() {
                 </div>
               </div>
             </section>
+
           ) : (
             <p>No movie details available</p>
           )
@@ -424,3 +526,12 @@ function Detail() {
 }
 
 export default Detail;
+
+
+
+
+
+
+
+
+
