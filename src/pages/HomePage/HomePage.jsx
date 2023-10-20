@@ -90,7 +90,7 @@ function HomePage() {
           <ScrollToTop />
           <main className={styles.main}>
             <div className={styles.hero_wrapper}>
-              <HeroCarousel movies={heroMovies} windowWidth={windowWidth} />
+              <HeroCarousel movies={heroMovies} windowWidth={windowWidth} video={true} />
             </div>
 
             <div className={styles.main_inner}>

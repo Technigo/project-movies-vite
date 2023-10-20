@@ -266,13 +266,23 @@ import { LoadingFullPage } from "../../components/LoaingFullPage";
 import { Navbar } from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
 import { ScrollToTop } from "../../components/ScrollToTop";
+import useSWR from "swr";
 
 const options = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization: import.meta.env.VITE_API_KEY, // Replace with your API key
+    Authorization: import.meta.env.VITE_API_KEY, // eslint-disable-line
   },
+};
+
+const fetcher = async (path) => {
+  console.log(path);
+  const data = await fetch(`https://api.themoviedb.org/3/movie/${path}`, options).then((response) =>
+    response.json()
+  );
+
+  return data;
 };
 
 function Detail() {
@@ -284,6 +294,9 @@ function Detail() {
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const [triggerMovie, setTriggerMovie] = useState({ trigger: false, id: null });
+  const [startVideo, setStartVideo] = useState({ start: false, url: "" });
 
   useEffect(() => {
     async function fetchMovieDetails() {
@@ -314,6 +327,23 @@ function Detail() {
     }
   }, [selectedMovieId]);
 
+  const { data, isImageLoading } = useSWR(
+    triggerMovie.trigger ? `${triggerMovie.id}/videos?language=en-US` : null,
+    fetcher
+  );
+
+  useEffect(() => {
+    if (!isImageLoading) setTriggerMovie(false);
+    if (data) {
+      const youtube = data.results.map((obj) => Object.values(obj).includes("YouTube"));
+      youtube &&
+        setStartVideo({
+          start: true,
+          url: ` https://www.youtube.com/embed/${data.results[0].key}`,
+        });
+    }
+  }, [isImageLoading, data]);
+
   return (
     <React.Fragment>
       <ScrollToTop />
@@ -322,20 +352,31 @@ function Detail() {
         !error ? (
           selectedMovie ? (
             <section className={styles.detail_wrapper}>
-              <div
-                className={styles.detail}
-                style={{
-                  backgroundImage: `url(https://image.tmdb.org/t/p/original${selectedMovie.backdrop_path})`,
-                }}
-              >
-                <div className={styles.deco_box}></div>
-
-                <div className={styles.deco_box}></div>
+              <div className={styles.detail}>
+                <div
+                  onMouseEnter={() => setTriggerMovie({ trigger: true, id: selectedMovie.id })}
+                  className={styles.detail_img}
+                  style={{
+                    backgroundImage: `url(https://image.tmdb.org/t/p/original${selectedMovie.backdrop_path})`,
+                    display: !startVideo.start ? "flex" : "none",
+                  }}
+                >
+                  <div className={styles.deco_box}></div>
+                  <div className={styles.deco_box}></div>
+                </div>
+                {startVideo.start && (
+                  <div className={styles.video_box}>
+                    <iframe
+                      className={styles.video}
+                      id="player"
+                      src={`${startVideo.url}?autoplay=1&mute=1&loop=1`}
+                    ></iframe>
+                  </div>
+                )}
               </div>
-
               <div className={styles.main_wrapper}>
                 <a onClick={() => navigate(-1)}>
-                  <p> &#x3c; BACK</p>
+                  <p className={styles.button}> &#x3c; BACK</p>
                 </a>
 
                 <div className={styles.top_detail_box}>
@@ -350,6 +391,12 @@ function Detail() {
                       alt={selectedMovie.title}
                     />
                     <p>Release Date: {selectedMovie.release_date}</p>
+                    <div className={styles.genre_box}>
+                      {selectedMovie.genres.length > 0 &&
+                        selectedMovie.genres.map((genre) => (
+                          <span key={genre.id}>{genre.name}</span>
+                        ))}
+                    </div>
                   </div>
                   <div className={styles.text_box}>
                     <p>{selectedMovie.overview}</p>

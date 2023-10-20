@@ -4,11 +4,30 @@
 }
 .detail {
   height: 30vh;
+}
+
+.detail_img {
+  height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   justify-content: space-between;
+}
+
+.video {
+  width: 140%;
+  height: 140%;
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  z-index: -1;
+}
+
+.video_box {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
 .deco_box {
@@ -45,6 +64,7 @@
 .poster_img {
   width: 200px;
   border: 0.5px solid #fff;
+  margin-bottom: 6px;
 }
 
 .details_box {
@@ -57,6 +77,24 @@
 .image_box {
   width: 200px;
   font-size: 14px;
+}
+
+.genre_box {
+  margin-top: 6px;
+  width: 100%;
+  display: flex;
+  column-gap: 6px;
+  row-gap: 4px;
+  flex-wrap: wrap;
+}
+
+.genre_box span {
+  padding: 0 4px;
+  border: 0.5px solid #fff;
+}
+
+.button {
+  cursor: pointer;
 }
 
 @media (min-width: 500px) {

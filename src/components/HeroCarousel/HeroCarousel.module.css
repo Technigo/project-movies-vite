@@ -9,12 +9,26 @@
 
 .hero_image {
   display: inline-block;
-  height: 26vh;
+  height: 100%;
   width: 96%;
   border-radius: 10px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
+  flex: 1 0 100%;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: flex-end;
+}
+
+.hero_image_wrapper {
+  display: inline-block;
+  height: 26vh;
+  min-height: 300px;
+  width: 96%;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 1000;
   flex: 1 0 100%;
   scroll-snap-align: start;
   display: flex;
