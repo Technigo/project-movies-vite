@@ -65,7 +65,7 @@ function HomePage() {
   }, []);
 
   const { data, error, isLoading } = useSWR("getMovie", fetcher);
-  console.log(data);
+
   if (isLoading) return <LoadingFullPage />;
   if (error) return <Error />;
 

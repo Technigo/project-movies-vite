@@ -344,6 +344,14 @@ function Detail() {
     }
   }, [isImageLoading, data]);
 
+  useEffect(() => {
+    if (!selectedMovie || !selectedMovie.title) return;
+    document.title = `Movie | ${selectedMovie.title}`;
+    return function () {
+      document.title = " S x S MOVIES";
+    };
+  }, [selectedMovie]);
+
   return (
     <React.Fragment>
       <ScrollToTop />
