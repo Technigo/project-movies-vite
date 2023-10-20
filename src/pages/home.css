@@ -56,7 +56,7 @@
 
 /* ------------ TABLET VIEW ------------ */
 
-@media (min-width: 370px) {
+@media (min-width: 380px) {
     .movie-list {
       grid-template-columns: repeat(2, 1fr);
     }
