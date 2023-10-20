@@ -21,7 +21,7 @@ export const MovieList = () => {
                     throw new Error("Network Response Error")
                 }
                 const json = await response.json()
-            //    error3 only json --> json.results
+                //    error3 only json --> json.results
                 setAllmovies(json.results)
                 console.log(json.results)
             } catch (error) {
@@ -36,28 +36,28 @@ export const MovieList = () => {
     return (
         <div className={style.listHeader}>
             <h1>Movie List</h1>
-            
-        <div className={style.listContainer}>
-        
-            <div className={style.movieList}>
-                {allmovies.map((movie) => (
-                    <div key={movie.id }>
-                        <NavLink to={`/movie/${movie.id}`}>
-                        <div className=   {style.movieItem}>
-                            <img 
-                             src={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`} />
-                            <div className={style.movieInfo}>
-                            <h2>{movie.title}</h2>
-                       
-                            {/* <p>Release Date: {movie.release_date}</p> */}
 
-                            </div>
+            <div className={style.listContainer}>
+
+                <div className={style.movieList}>
+                    {allmovies.map((movie) => (
+                        <div key={movie.id}>
+                            <NavLink to={`/movie/${movie.id}`}>
+                                <div className={style.movieItem}>
+                                    <img
+                                        src={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`} />
+                                    <div className={style.movieInfo}>
+                                        <h2>{movie.title}</h2>
+
+                                        {/* <p>Release Date: {movie.release_date}</p> */}
+
+                                    </div>
+                                </div>
+                            </NavLink>
                         </div>
-                        </NavLink>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
-        </div>
         </div>
     )
 }
