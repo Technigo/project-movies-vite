@@ -32,7 +32,7 @@ const Movies = () => {
         getMoviesOnMount();
     }, []); // Empty dependency array ensures this effect runs only on component mount
 
-    // Rendering the number of movies in the state
+    // 
     return (
         <div className={styles.wrapper}>
             {movies.map(movie => (

@@ -37,13 +37,27 @@ const MovieDetails = () => {
     // Conditional rendering based on whether movie details have been loaded
     if (movieDetails === undefined) {
         return (
-            <p>Loading movie details</p>
+            <p>Loading</p>
         );
     }
 
-    // Rendering the original title of the movie
+    // 
     return (
-        <p>{movieDetails.original_title}</p>
+        <>
+            <div className={styles.background}>
+                <img
+                    src={`https://image.tmdb.org/t/p/w1280${movieDetails.backdrop_path}`}
+                    alt="Movie poster as background" />
+            </div>
+
+            <div className={styles.summary}>
+                <div className={styles.details}>
+                    <img
+                        src={`https://image.tmdb.org/t/p/w1280${movieDetails.poster_path}`}
+                        alt={movieDetails.name} />
+                </div>
+            </div>
+        </>
     );
 }
 
