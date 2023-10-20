@@ -1,11 +1,12 @@
 .movie-item {
     position: relative;
     display: inline-block;
-    margin: 10px;
+    margin: 0 auto;
 }
 
 .movie-image-container {
     position: relative;
+    margin: 10px;
 }
 
 .movie-title-overlay {
