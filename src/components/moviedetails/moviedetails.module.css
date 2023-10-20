@@ -1,0 +1,72 @@
+.style.loading {}
+
+.backgroundImage {
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+.movieSummary {
+    grid-area: content;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto 1fr;
+    align-items: start;
+    margin-top: 0px;
+}
+
+.backButton {
+    font-size: 20px;
+    color: #FFFFFF;
+    filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.578));
+    font-weight: bold;
+    max-width: fit-content;
+    margin: 1em;
+    background-color: none;
+    font-weight: 700;
+    text-align: left;
+    display: inline-block;
+}
+
+.movieImage {
+    border: 5px solid rgb(255, 255, 255);
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.movieInfo {
+    color: #FFFFFF;
+    display: block;
+    max-width: 600px;
+    align-self: end;
+    position: relative;
+    margin-top: auto;
+    grid-column: 2;
+    grid-row: 2;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-shadow: 1px 1px #4d4d4d8a;
+}
+
+.overview {
+    filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.616));
+    font-size: 16px;
+    max-width: 200px;
+    word-wrap: break-word;
+}
+
+.vote {
+    font-size: 24px;
+    font-weight: bold;
+    max-width: fit-content;
+}

@@ -6,13 +6,13 @@ export const App = () => {
   return (
     <>
       <BrowserRouter>
-        <nav>
+        {/*<nav>
           <ul>
             <li>
               <Link to="/">MovieList</Link>
             </li>
           </ul>
-        </nav>
+  </nav>*/}
         <main>
           {/* Define the routes from the 'routes' component */}
           <Routes>{routes}</Routes>
