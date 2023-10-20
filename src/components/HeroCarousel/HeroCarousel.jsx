@@ -1,9 +1,11 @@
 import styles from "./HeroCarousel.module.css";
+
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Slider } from "../Slider";
 
 function HeroCarousel({ movies, windowWidth }) {
   const [currentIndex, setCurrentIndex] = useState(0);
+
   const heroRef = useRef();
 
   const { currentHeroImageWidth, totalIndex } = useMemo(() => {
@@ -53,26 +55,30 @@ function HeroCarousel({ movies, windowWidth }) {
         <Slider currentImageWidth={currentHeroImageWidth} heroRef={heroRef} onchange={toggleActive}>
           {movies.map((movie) => (
             <>
-              <li
-                key={movie.id}
-                style={{
-                  backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
-                }}
-                className={styles.hero_image}
-              >
-                <div className={styles.inner_image_box}>
-                  <h2>{movie.title ? movie.title : movie.name}</h2>
-                  <p>{`${movie.overview.split(" ").slice(0, 30).join(" ")} ...`}</p>
-                </div>
-                <div className={styles.pagination_box}>
-                  {Array.from({ length: totalIndex }, (_, i) => (
-                    <div
-                      onClick={() => handeleToggleActive(i)}
-                      key={i}
-                      className={styles.pagination}
-                      style={{ backgroundColor: currentIndex === i ? "rgba(51, 51, 51, 0.5)" : "" }}
-                    ></div>
-                  ))}
+              <li className={styles.hero_image_wrapper}>
+                <div
+                  key={movie.id}
+                  style={{
+                    backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
+                  }}
+                  className={styles.hero_image}
+                >
+                  <div className={styles.inner_image_box}>
+                    <h2>{movie.title ? movie.title : movie.name}</h2>
+                    <p>{`${movie.overview.split(" ").slice(0, 30).join(" ")} ...`}</p>
+                  </div>
+                  <div className={styles.pagination_box}>
+                    {Array.from({ length: totalIndex }, (_, i) => (
+                      <div
+                        onClick={() => handeleToggleActive(i)}
+                        key={i}
+                        className={styles.pagination}
+                        style={{
+                          backgroundColor: currentIndex === i ? "#fff" : "",
+                        }}
+                      ></div>
+                    ))}
+                  </div>
                 </div>
               </li>
             </>
