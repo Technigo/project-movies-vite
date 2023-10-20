@@ -2,7 +2,6 @@
     position: relative;
 }
 
-
 .hero-section h1 {
     padding: 16px 0;
     margin-left: 5px;
@@ -14,10 +13,9 @@
     margin: 5px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap:5px;
+    gap: 5px;
 
 }
-
 
 .loader-container {
     position: fixed;

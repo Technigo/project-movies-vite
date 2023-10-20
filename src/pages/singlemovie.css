@@ -3,12 +3,11 @@
     color: #fff;
 }
 
-
 .backLink {
     position: absolute;
     top: 10px;
     left: 10px;
-    z-index: 3;
+    z-index: 4;
     display: flex;
     align-items: center;
     /* Vertically center the content */
@@ -22,14 +21,13 @@
     height: 40px;
 }
 
-
-
 .back-drop {
     min-height: 100vh;
     display: flex;
     background-size: cover;
     flex-direction: column;
     justify-content: flex-end;
+
 }
 
 .back-drop img {
@@ -42,16 +40,26 @@
     z-index: 1;
 }
 
+.back-drop img ::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5424763655462185) 50%, rgba(0, 0, 0, 0) 100%);
+    z-index: 1;
+}
+
 
 .movie-info {
     display: flex;
     flex-direction: column;
     padding: 50px;
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     bottom: 0;
     left: 0;
-
 }
 
 .movie-info img {
@@ -62,6 +70,7 @@
 
 .movie-info p {
     font-size: 16px;
+    padding-right: 50px;
 }
 
 .title {
@@ -70,7 +79,6 @@
     margin-bottom: 10px;
     /* Add space below the title */
     text-shadow: 1px 1px rgb(77, 77, 77);
-
 }
 
 
@@ -89,13 +97,11 @@
 .rating-number {
     font-weight: bold;
     font-size: 1em;
-    /* Adjust the font size as needed */
+}
 
-    /* Add the star symbol using a pseudo-element */
-    &::before {
-        content: "★";
-        /* Insert a star character as content */
-        margin-right: 4px;
-        /* Add some spacing between the star and the number */
-    }
+.rating-number::before {
+    content: "★";
+    /* Insert a star character as content */
+    margin-right: 2px;
+    /* Add some spacing between the star and the number */
 }
