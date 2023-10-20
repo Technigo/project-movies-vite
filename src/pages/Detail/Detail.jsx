@@ -341,12 +341,13 @@
 
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import useSWR from "swr";
 import styles from "./Detail.module.css";
 import { LoadingFullPage } from "../../components/LoaingFullPage";
 import { Navbar } from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
 import { ScrollToTop } from "../../components/ScrollToTop";
-import useSWR from "swr";
+import { Error } from "../../components/Error";
 
 const options = {
   method: "GET",
@@ -358,7 +359,6 @@ const options = {
 };
 
 const fetcher = async (path) => {
-  console.log(path);
   const data = await fetch(`https://api.themoviedb.org/3/movie/${path}`, options).then((response) =>
     response.json()
   );
@@ -373,7 +373,6 @@ function Detail() {
 
   const navigate = useNavigate();
   const posterPath = new URLSearchParams(location.search).get("poster_path");
-  console.log(posterPath);
 
   const selectedMovieId = new URLSearchParams(location.search).get("movie_id");
 
@@ -393,7 +392,7 @@ function Detail() {
         );
         if (response.status === 200) {
           const data = await response.json();
-          console.log(data);
+
           setSelectedMovie(data);
         } else if (response.status === 401) {
           setError("Unauthorized: Please check your API key and permissions.");
@@ -422,7 +421,6 @@ function Detail() {
     if (!isImageLoading) setTriggerMovie(false);
     if (data) {
       const youtube = data.results.map((obj) => Object.values(obj).includes("YouTube"));
-      console.log(data);
       youtube &&
         data.results.length > 0 &&
         setStartVideo({
@@ -502,12 +500,11 @@ function Detail() {
             <p>No movie details available</p>
           )
         ) : (
-          <p>Error: {error}</p>
+          <Error message={error} />
         )
       ) : (
         <LoadingFullPage />
       )}
-
       <Footer />
     </React.Fragment>
   );
