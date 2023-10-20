@@ -34,7 +34,7 @@ export const Detail = () => {
     }
   };
 
-  // useEffect hook to run fetchDetails.
+  // useEffect hook to run fetchDetails when the 'id' parameter changes..
   useEffect(() => {
     fetchDetails();
   }, [id]);

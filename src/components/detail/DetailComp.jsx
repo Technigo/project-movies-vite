@@ -13,6 +13,7 @@ export const DetailComp = ({ movie }) => {
     return <div>No movie details available.</div>;
   }
 
+  // Define the background image for the movie detail page.
   const imageBackground = {
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0) 70%, rgb(0, 0, 0) 100%), url(https://image.tmdb.org/t/p/w1280${backdrop_path})`,
   };

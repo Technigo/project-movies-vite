@@ -5,8 +5,10 @@ import { Link } from "react-router-dom";
 export const Popular = () => {
   const [movies, setMovies] = useState([]);
 
+  // Get the API key from environment variables.
   const api_key = import.meta.env.VITE_OPENDB_KEY;
-  // Get a list of movies ordered by popularity.
+
+  // API endpoint to fetch a list of popular movies.
   const popularApi = `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1`;
 
   // Function to fetch data from the API.
@@ -31,6 +33,7 @@ export const Popular = () => {
 
   return (
     <div className="popular-page">
+      {/* Map through the list of movies and render each movie as a Link to its detail page. */}
       {movies.map((movie) => {
         return (
           <Link key={movie.id} to={`/detail/${movie.id}`}>
