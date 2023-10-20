@@ -339,7 +339,7 @@ function Detail() {
       youtube &&
         setStartVideo({
           start: true,
-          url: ` https://www.youtube.com/embed/${data.results[0].key}`,
+          url: ` https://www.youtube.com/embed/${data.results[0].key}?autoplay=1&mute=1&loop=1&playlist=${data.results[0].key}`,
         });
     }
   }, [isImageLoading, data]);
@@ -366,11 +366,7 @@ function Detail() {
                 </div>
                 {startVideo.start && (
                   <div className={styles.video_box}>
-                    <iframe
-                      className={styles.video}
-                      id="player"
-                      src={`${startVideo.url}?autoplay=1&mute=1&loop=1`}
-                    ></iframe>
+                    <iframe className={styles.video} id="player" src={`${startVideo.url}`}></iframe>
                   </div>
                 )}
               </div>
