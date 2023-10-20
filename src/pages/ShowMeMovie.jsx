@@ -12,9 +12,9 @@ export const ShowMeMovie = () => {
 
     const [movie, setMovie] = useState(null);
     const [loading, setLoading] = useState(true);
-
+    const apiEnv = import.meta.env.VITE_OPENDB_KEY;
     //To be stored later secretly in a dot environment- .env
-    const API_KEY = "d702e384b1621c01acd5bc0e04a75981"
+    // const API_KEY = "d702e384b1621c01acd5bc0e04a75981"
 
     // Do not erase: another (more readable) way of writing fetch() in useEffect()
 
@@ -35,7 +35,7 @@ export const ShowMeMovie = () => {
     useEffect(() => {
 
 
-        const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`
+        const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiEnv}&language=en-US`
 
         const fetchMovieInfo = async () => {
 
