@@ -48,7 +48,6 @@ function HorizontalCard({ movie }) {
             <img
               src={`https://image.tmdb.org/t/p/w780${poster}`}
               style={{ filter: onMouse ? "brightness(60%)" : "" }}
-              loading="lazy"
             />
             <div className={styles.button_box} style={{ display: onMouse ? "block" : "none" }}>
               <ReadMoreBtn />
