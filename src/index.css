@@ -12,4 +12,92 @@ code {
     monospace;
 }
 
-/* Use grid. 4 desktop, 2 tablet, 1 mobile */
+/*------- MainPage css -------*/
+* {
+  margin: 2px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto" , "Sans-sarif";
+  height: 100vh;
+  color: rgb(245, 245, 245);
+  background-color: black;
+}
+
+.h1-main {
+  font-size: 40px;
+  color: rgb(215, 221, 215);
+  text-align: center;
+  margin: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+li {
+    margin: 5px;
+    position: relative;
+    overflow: hidden; 
+    flex: 0 0 calc(25% - 20px);
+}
+
+/*movie poster*/
+img {
+    width: 100%;
+    border-radius: 15px;
+    height: auto;
+    cursor: pointer; 
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+/*dark filter on hovering movie poster*/
+li:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.2);
+}
+
+/*Releasedate*/
+.movie-info {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  display: none;
+  color: rgb(215, 221, 215);
+}
+
+/*shows the info about the movie om main page when hovered*/
+li:hover .movie-info {
+  display: block;
+}
+
+/*h3 on the movie poster*/
+.movie-info h3 {
+  font-size: 30px;
+  color: rgb(215, 221, 215);
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width:744px) and (max-width: 1279px) {
+  li {
+  flex: 0 0 calc(33.33% - 20px); 
+  }
+}
+
+@media screen and (max-width: 743px) {
+li {
+flex: 0 0 calc(100% - 20px); 
+}}
+
+
+/*------- DetailsPage css -------*/

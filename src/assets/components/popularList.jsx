@@ -3,12 +3,6 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 
 
-/*const routes = (
-    <>
-    <Route path="/" element={<Home />} />
-    </>
-)*/
-
 export const MainPage = () => {
 
 const [data, setData] = useState(null);
@@ -25,6 +19,7 @@ if (!data) return <h2>Loading..</h2>
  
 return (
 <div>
+    <h1 className="h1-main">Popular movies in the US</h1>
     <ul>
      {data.results.map(movie => (
                 <li key={movie.id}>
