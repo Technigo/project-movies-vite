@@ -13,7 +13,7 @@ export const App = () => {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/info" element={<MovieInfo />} />
+            <Route path="/info/:movieId" element={<MovieInfo />} />
             <Route path="/*" element={<ErrorPage />} />
           </Routes>
         </main>
