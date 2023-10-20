@@ -1,5 +1,5 @@
 // Importing necessary hooks and styles
-import { useParams } from "react-router-dom"; // Hook for accessing URL parameters
+import { Link, useParams } from "react-router-dom"; // Hook for accessing URL parameters
 import { useEffect, useState } from "react"; // Hooks for managing state and side effects
 import styles from "./MovieDetails.module.css"; // CSS module for styling
 
@@ -41,23 +41,32 @@ const MovieDetails = () => {
         );
     }
 
-    // 
     return (
-        <>
-            <div className={styles.background}>
-                <img
-                    src={`https://image.tmdb.org/t/p/w1280${movieDetails.backdrop_path}`}
-                    alt="Movie poster as background" />
-            </div>
+        <div
+            className={styles.background}
+            style={{
+                backgroundImage: `url("https://image.tmdb.org/t/p/w1280${movieDetails.backdrop_path}")`
+            }}
+        >
+            <Link
+                to={`/`}
+                className={styles.backlink}
+            >
+                ⇦ Movies
+            </Link>
 
             <div className={styles.summary}>
-                <div className={styles.details}>
-                    <img
-                        src={`https://image.tmdb.org/t/p/w1280${movieDetails.poster_path}`}
-                        alt={movieDetails.name} />
+                <img className={styles.poster}
+                    src={`https://image.tmdb.org/t/p/w1280${movieDetails.poster_path}`}
+                    alt={movieDetails.name}
+                />
+                <div className={styles.text}>
+                    <h1 className={styles.title}>{movieDetails.original_title}</h1>
+                    <h2 className={styles.rating}>{`⭐ ${movieDetails.vote_average.toFixed(1)}`}</h2>
+                    <p>{movieDetails.overview}</p>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 

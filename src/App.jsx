@@ -7,7 +7,7 @@ import MovieDetails from './pages/MovieDetails/MovieDetails';
 // Creating the main App component
 export const App = () => {
     return (
-        <div>
+        <>
             {/* Wrapping the application with BrowserRouter to enable routing */}
             <BrowserRouter>
                 {/* Defining the routes of the application */}
@@ -18,6 +18,6 @@ export const App = () => {
                     <Route path="/movies/:movieId" element={<MovieDetails />} />
                 </Routes>
             </BrowserRouter>
-        </div>
+        </>
     );
 };
