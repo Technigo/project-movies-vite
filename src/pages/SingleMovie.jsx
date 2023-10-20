@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const API_KEY = "833874c10582aaa2144a7cb70148fbd3";
 
 export const SingleMovie = () => {
-    const [movie, setMovie] = useState(null); // Initialize state with null
+    const [movie, setMovie] = useState(null);
     const { id } = useParams();
 
     useEffect(() => {
@@ -68,34 +68,7 @@ export const SingleMovie = () => {
     );
 };
 
-// backgrundsbild + bild
-//back - button (gör en link - path )   <Link to={`/movies/${movieId}`} aria-label={`View details for ${movieTitle}`}> 
 
-//singlemovie card??
-
-//bilder - ta största storleken 
-
-// {
-//     "images": {
-//       "base_url": "http://image.tmdb.org/t/p/",
-//       "secure_base_url": "https://image.tmdb.org/t/p/",
-//       "backdrop_sizes": ["w300", "w780", "w1280", "original"],
-//       "logo_sizes": ["w45", "w92", "w154", "w185", "w300", "w500", "original"],
-//       "poster_sizes": ["w92", "w154", "w185", "w342", "w500", "w780", "original"],
-//       "profile_sizes": ["w45", "w185", "h632", "original"],
-//       "still_sizes": ["w92", "w185", "w300", "original"]
-//     }
-//   }
-
-// https://image.tmdb.org/t/p/w1280${movie.backdrop_path}
-
-
-
-
-{/* <img
-src={`https://image.tmdb.org/t/p/w780/${movie.backdrop_path}`}
-alt={movie.title}
-/> */}
 
 
 

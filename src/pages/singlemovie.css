@@ -75,11 +75,11 @@
 
 .movie-info-text {
     flex: 1;
-    max-width: 800px;
+    max-width: 1280px;
 }
 
 .movie-info-heading {
-    max-width: 800px;
+    max-width: 1280px;
 
 }
 
@@ -105,7 +105,6 @@ p {
 }
 
 /* ------------- Tablet ---------------- */
-
 @media only screen and (max-width: 768px) {
     .movie-info {
         flex-direction: column;
@@ -134,50 +133,62 @@ p {
     p {
         font-size: 16px;
     }
+
+    /* Add margin to the rating box */
+    .rating-number {
+        margin-top: 20px;
+        /* Adjust the margin-top value as needed */
+    }
 }
 
-/* ------------------ Mobile --------------- */
 
+/* ------------- Mobile ---------------- */
 @media only screen and (max-width: 480px) {
-    .single-movie {
-        text-align: center;
-    }
-
     .movie-info {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
+        display: grid;
+        grid-template-areas:
+            "poster"
+            "heading"
+            "rating"
+            "subtext";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
     }
 
     .movie-info img {
+        grid-area: poster;
         width: 60%;
-        /* Adjust image width */
-        margin-right: 0;
+        /* Make the image smaller */
+        margin: 0 auto;
+        /* Center the image horizontally */
         margin-bottom: 20px;
-        /* Add margin between image and text */
+        /* Add space below the image */
     }
 
     .movie-info-text {
-        max-width: 100%;
+        grid-area: heading;
+        /* Move text to the 'heading' grid area */
+        text-align: left;
+        font-size: 16px;
+        /* Adjust font size for the title */
     }
 
     .movie-info-heading {
+        grid-area: subtext;
+        /* Move the original heading to the 'subtext' grid area */
         max-width: 100%;
-    }
-
-    .movie-info-subtext {
-        max-width: 100%;
-        padding-top: 10px;
-    }
-
-    p {
+        /* Adjust the width as needed */
         font-size: 14px;
-        /* Adjust font size */
-        text-align: left;
-        /* Align text to the left */
+        /* Adjust font size for the original heading */
     }
 
     .rating-number {
-        margin-top: 10px;
+        grid-area: rating;
+        /* Move the rating box to the 'rating' grid area */
+        text-align: right;
+        margin-bottom: 10px;
+        /* Specify the margin-bottom value to move the rating box up */
+        font-size: 20px;
+        /* Adjust the font size for the rating box */
     }
 }
