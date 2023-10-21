@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./MovieListCard.css";
+import "./movieListCard.css";
 
 // This is a functional component named MovieListCard. It takes in some properties related to a movie.
 export const MovieListCard = ({ movieTitle, releaseDate, movieId, moviePoster }) => {
