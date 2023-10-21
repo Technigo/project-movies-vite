@@ -134,10 +134,8 @@ p {
         font-size: 16px;
     }
 
-    /* Add margin to the rating box */
     .rating-number {
         margin-top: 20px;
-        /* Adjust the margin-top value as needed */
     }
 }
 
@@ -158,37 +156,27 @@ p {
     .movie-info img {
         grid-area: poster;
         width: 60%;
-        /* Make the image smaller */
         margin: 0 auto;
-        /* Center the image horizontally */
         margin-bottom: 20px;
-        /* Add space below the image */
     }
 
     .movie-info-text {
         grid-area: heading;
-        /* Move text to the 'heading' grid area */
         text-align: left;
         font-size: 16px;
-        /* Adjust font size for the title */
     }
 
     .movie-info-heading {
         grid-area: subtext;
-        /* Move the original heading to the 'subtext' grid area */
         max-width: 100%;
-        /* Adjust the width as needed */
         font-size: 14px;
-        /* Adjust font size for the original heading */
     }
 
     .rating-number {
         grid-area: rating;
-        /* Move the rating box to the 'rating' grid area */
         text-align: right;
         margin-bottom: 10px;
-        /* Specify the margin-bottom value to move the rating box up */
         font-size: 20px;
-        /* Adjust the font size for the rating box */
+
     }
 }
