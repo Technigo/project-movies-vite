@@ -72,6 +72,7 @@
   display: inline-block;
   border: none;
   background-color: rgba(153, 153, 153, 0.515);
+  cursor: pointer;
 }
 
 @media (min-width: 400px) {
