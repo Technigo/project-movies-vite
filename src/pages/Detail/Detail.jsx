@@ -445,6 +445,24 @@ function Detail() {
       {!isLoading ? (
         !error ? (
           selectedMovie ? (
+
+            <div>
+
+            <div>
+              <h1>{selectedMovie.title}</h1>
+              {backdropPath ? ( // Check if backdropPath is not null
+                <img
+                  src={`https://image.tmdb.org/t/p/w780${backdropPath}`}
+                  alt={selectedMovie.title}
+                />
+              ) : (
+                <p>No backdrop image available</p>
+              )}
+              <p>{selectedMovie.overview}</p>
+              <p>Release Date: {selectedMovie.release_date}</p>
+            </div>
+
+
             <section className={styles.detail_wrapper}>
               <div className={styles.detail}>
                 <div
@@ -496,6 +514,11 @@ function Detail() {
                 </div>
               </div>
             </section>
+
+            </div>
+          
+
+
           ) : (
             <p>No movie details available</p>
           )
