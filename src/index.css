@@ -21,7 +21,7 @@ code {
 
 body {
   font-family: "Roboto" , "Sans-sarif";
-  height: 100vh;
+  /* height: 100vh; */
   color: rgb(245, 245, 245);
   background-color: black;
 }
@@ -88,16 +88,64 @@ li:hover .movie-info {
   flex-direction: column;
 }
 
+/* Details page styling */
+
+.movie-details {
+  background-size: cover;
+  display: flex;
+  height: 100vh;    
+  align-items: center;
+}
+
+.info-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 50%;
+  gap: 20px;
+}
+
+.info-container p {
+  background-color: rgba(76, 74, 74, 0.7);
+  padding: 7px;
+  border-radius: 10px;
+}
+
+.info-container h1 {
+  background-color: rgba(76, 74, 74, 0.7);
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.info-container img {
+  border: 5px solid white;
+  border-radius: 0px;
+}
+
+.movie-poster {
+  width: 200px;
+}
+
 @media screen and (min-width:744px) and (max-width: 1279px) {
   li {
   flex: 0 0 calc(33.33% - 20px); 
   }
+
+  .info-container {
+    max-width: 70%;
+  }
 }
 
 @media screen and (max-width: 743px) {
-li {
-flex: 0 0 calc(100% - 20px); 
-}}
+  li {
+  flex: 0 0 calc(100% - 20px); 
+  }
+
+  .info-container {
+  max-width: 90%;
+  }
+}
 
 
 /*------- DetailsPage css -------*/

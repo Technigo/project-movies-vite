@@ -1,19 +1,18 @@
 import React from "react";
-import { BrowserRouter } from "react-router-dom"
-import { MyRoutes } from "./assets/components/routeToPopularList";
-import { MainPage } from "./assets/components/popularList";
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { MainPage } from './assets/components/MainPage.jsx'
+import { Details } from './assets/components/details.jsx'
 
 
-//BrowserRouter  needs to wrap it all
 export const App = () => {
   return (
-    <>
+  <>
   <BrowserRouter>  
-
-  <MainPage />
-  <MyRoutes />
-  
+    <Routes>
+      <Route path="/" element={<MainPage />} />
+      <Route path="/details/:id" element={<Details />} />
+    </Routes>
   </BrowserRouter>
-</>
-)
+  </>
+  )
 };
