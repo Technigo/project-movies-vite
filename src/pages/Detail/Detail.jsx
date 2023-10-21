@@ -445,6 +445,7 @@ function Detail() {
       {!isLoading ? (
         !error ? (
           selectedMovie ? (
+            <div>
 
             <div>
               <h1>{selectedMovie.title}</h1>
@@ -509,6 +510,8 @@ function Detail() {
                 </div>
               </div>
             </section>
+            </div>
+          
 
           ) : (
             <p>No movie details available</p>
