@@ -1,11 +1,9 @@
 import styles from "./HeroCarousel.module.css";
-
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Slider } from "../Slider";
 
 function HeroCarousel({ movies, windowWidth }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-
   const heroRef = useRef();
 
   const { currentHeroImageWidth, totalIndex } = useMemo(() => {
@@ -17,12 +15,14 @@ function HeroCarousel({ movies, windowWidth }) {
     };
   }, [windowWidth, movies.length]);
 
+  // for dots -- checking which one is active
   function toggleActive() {
     setCurrentIndex(
       heroRef.current !== undefined ? Math.round(heroRef.current.scrollLeft / windowWidth) : null
     );
   }
 
+  // for dots --clicking trigger this function changing to another image
   function handeleToggleActive(index) {
     setCurrentIndex(index);
     if (index > currentIndex) {

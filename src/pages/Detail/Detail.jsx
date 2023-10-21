@@ -341,12 +341,13 @@
 
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import useSWR from "swr";
 import styles from "./Detail.module.css";
 import { LoadingFullPage } from "../../components/LoaingFullPage";
 import { Navbar } from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
 import { ScrollToTop } from "../../components/ScrollToTop";
-import useSWR from "swr";
+import { Error } from "../../components/Error";
 
 const options = {
   method: "GET",
@@ -354,12 +355,10 @@ const options = {
     accept: "application/json",
 
     Authorization: import.meta.env.VITE_API_KEY, // eslint-disable-line
-
   },
 };
 
 const fetcher = async (path) => {
-  console.log(path);
   const data = await fetch(`https://api.themoviedb.org/3/movie/${path}`, options).then((response) =>
     response.json()
   );
@@ -393,7 +392,7 @@ function Detail() {
         );
         if (response.status === 200) {
           const data = await response.json();
-          console.log(data);
+
           setSelectedMovie(data);
         } else if (response.status === 401) {
           setError("Unauthorized: Please check your API key and permissions.");
@@ -423,6 +422,7 @@ function Detail() {
     if (data) {
       const youtube = data.results.map((obj) => Object.values(obj).includes("YouTube"));
       youtube &&
+        data.results.length > 0 &&
         setStartVideo({
           start: true,
           url: ` https://www.youtube.com/embed/${data.results[0].key}?autoplay=1&mute=1&loop=1&playlist=${data.results[0].key}`,
@@ -445,6 +445,7 @@ function Detail() {
       {!isLoading ? (
         !error ? (
           selectedMovie ? (
+
             <div>
 
             <div>
@@ -461,13 +462,16 @@ function Detail() {
               <p>Release Date: {selectedMovie.release_date}</p>
             </div>
 
+
             <section className={styles.detail_wrapper}>
               <div className={styles.detail}>
                 <div
                   onMouseEnter={() => setTriggerMovie({ trigger: true, id: selectedMovie.id })}
                   className={styles.detail_img}
                   style={{
-                    backgroundImage: `url(https://image.tmdb.org/t/p/original${selectedMovie.backdrop_path})`,
+                    backgroundImage: selectedMovie.backdrop_path
+                      ? `url(https://image.tmdb.org/t/p/original${selectedMovie.backdrop_path})`
+                      : `url(https://image.tmdb.org/t/p/original${posterPath})`,
                     display: !startVideo.start ? "flex" : "none",
                   }}
                 >
@@ -510,31 +514,23 @@ function Detail() {
                 </div>
               </div>
             </section>
+
             </div>
           
+
 
           ) : (
             <p>No movie details available</p>
           )
         ) : (
-          <p>Error: {error}</p>
+          <Error message={error} />
         )
       ) : (
         <LoadingFullPage />
       )}
-
       <Footer />
     </React.Fragment>
   );
 }
 
 export default Detail;
-
-
-
-
-
-
-
-
-
