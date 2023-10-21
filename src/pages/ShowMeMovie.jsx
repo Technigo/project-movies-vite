@@ -12,8 +12,11 @@ export const ShowMeMovie = () => {
 
     const [movie, setMovie] = useState(null);
     const [loading, setLoading] = useState(true);
-    const apiEnv = import.meta.env.VITE_OPENDB_KEY;
+
     //To be stored later secretly in a dot environment- .env
+    // const API_KEY=
+
+    const apiEnv = import.meta.env.VITE_OPENDB_KEY;
 
     // Do not erase: another (more readable) way of writing fetch() in useEffect()
 
@@ -48,8 +51,10 @@ export const ShowMeMovie = () => {
                 console.log(data);
                 setMovie(data)
                 setLoading(false) //When data loading succeeded
+
                 // // Scroll to the top of the page when data is loaded
                 // window.scrollTo({ top: 0, behavior: "smooth" });
+
             } catch (error) {
                 console.error("Error fetching data on selected movie:", error);
             }
