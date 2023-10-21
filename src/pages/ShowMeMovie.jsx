@@ -54,7 +54,15 @@ export const ShowMeMovie = () => {
                 console.error("Error fetching data on selected movie:", error);
             }
         }
-        fetchMovieInfo();
+
+        // Simulate a 1s delay before fetching data
+        const delay = setTimeout(() => {
+            fetchMovieInfo();
+        }, 1000);
+
+        // Clean up the timeout on unmount
+        return () => clearTimeout(delay);
+
     }, [id, apiEnv]); // Fires the function only when movie:id is requested
 
     return (
