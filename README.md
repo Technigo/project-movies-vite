@@ -1,37 +1,17 @@
-<h1 align="center">
-  <a href="">
-    <img src="/src/assets/movies.svg" alt="Project Banner Image">
-  </a>
-</h1>
-
 # Movie Site Project
 
-Replace this readme with your own information about your project.
+Elin & Olga's Movie Site Project
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
-## Getting Started with the Project
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
+This week our task was to make a site that displays movies with the use of an API. When the user clicks on a movie, they're taken to a page with the specific movie's details using the React Router.
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+We started out by figuring out which components we need for our page and which routes we need for navigating between them. Then we shared the components for each of us to build in our own branches, which we then merged and continued working on the main branch.
+
+For this project we opted for only writing CSS in one file, as we though that there won't be so much of it that we would need more files.
+
+After checking off all the requirements of the project, we decided to build a "go back" button that takes the user back to the main page from the movie details page. If we would've had more time, we would like to have made an error page as well.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
+Find our movie-site here: https://movies-olga-elin.netlify.app/
