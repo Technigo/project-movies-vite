@@ -16,6 +16,8 @@ export const Details = () => {
 
   console.log(movie);
 
+  let voteAverage = parseFloat(movie.vote_average)
+
   return (
     <div className="movie-details" style={{backgroundImage: `url(http://image.tmdb.org/t/p/original/${movie.backdrop_path})`}}>
       <div className="info-container">
@@ -23,7 +25,7 @@ export const Details = () => {
           <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} />
         </div>
         <div className="details-container">
-          <h2>{movie.title} ⭐ {movie.vote_average}</h2>
+          <h2>{movie.title} ⭐ {voteAverage.toFixed(1)}</h2>
           <p>Released: {movie.release_date}</p>
           <p>{movie.overview}</p>
         </div>
