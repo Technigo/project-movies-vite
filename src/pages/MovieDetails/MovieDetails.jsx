@@ -1,15 +1,15 @@
 // Importing necessary hooks and styles
-import { Link, useParams } from "react-router-dom"; // Hook for accessing URL parameters
+import { Link, useParams } from "react-router-dom"; // Hooks for accessing URL parameters and creating links
 import { useEffect, useState } from "react"; // Hooks for managing state and side effects
 import styles from "./MovieDetails.module.css"; // CSS module for styling
-import Loading from "../../components/loading/Loading";
-import Error from "../../components/error/Error";
+import Loading from "../../components/loading/Loading"; // Loading component for displaying loading state
+import Error from "../../components/error/Error"; // Error component for displaying error state
 
 // Creating the MovieDetails component
 const MovieDetails = () => {
     // Using the useParams hook to access the 'movieId' parameter from the URL
     const { movieId } = useParams();
-    // Using the useState hook to create a state variable for storing movie details
+    // Using the useState hook to create state variables for movie details, error flag, and loading flag
     const [movieDetails, setMovieDetails] = useState();
     const [hasError, setHasError] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
@@ -29,12 +29,15 @@ const MovieDetails = () => {
                     // Updating the state with the movie details
                     setMovieDetails(data);
                 } else {
-                    setHasError(true)
+                    // Setting an error flag if response is not ok
+                    setHasError(true);
                 }
             } catch {
-                setHasError(true)
+                // Setting an error flag if an error occurs during the fetch
+                setHasError(true);
             } finally {
-                setIsLoading(false)
+                // Setting loading flag to false after fetch completes (whether successful or not)
+                setIsLoading(false);
             }
         }
 
@@ -42,14 +45,17 @@ const MovieDetails = () => {
         getDetailsOnMount();
     }, [movieId]); // Dependency array ensures this effect runs when 'movieId' changes
 
+    // Conditional rendering based on loading state
     if (isLoading === true) {
         return <Loading />;
     }
 
+    // Conditional rendering based on error state
     if (hasError === true) {
         return <Error message="Uh oh! Could not load movie because of an unknown error. Try refreshing the page to see if the error persists." />;
     }
 
+    // Rendering movie details if loading and error states are false
     return (
         <div
             className={styles.background}

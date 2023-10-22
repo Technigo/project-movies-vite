@@ -1,9 +1,9 @@
 // Importing necessary hooks and styles
 import { useEffect, useState } from "react"; // Hooks for managing state and side effects
 import styles from "./Movies.module.css"; // CSS module for styling
-import { Link } from "react-router-dom";
-import Loading from "../../components/loading/Loading";
-import Error from "../../components/error/Error";
+import { Link } from "react-router-dom"; // Hook for creating links
+import Loading from "../../components/loading/Loading"; // Loading component for displaying loading state
+import Error from "../../components/error/Error"; // Error component for displaying error state
 
 // Creating the Movies component
 const Movies = () => {
