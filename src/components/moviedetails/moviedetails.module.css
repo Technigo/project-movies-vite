@@ -1,4 +1,7 @@
-.style.loading {}
+.style.loading {
+    font-size: 24px;
+    color: black;
+}
 
 .backgroundImage {
     position: absolute;
@@ -11,20 +14,28 @@
     object-fit: cover;
 }
 
-.backButton {
+.iconAndButton {
     display: flex;
+    flex-direction: row;
+    align-items: center;
     position: relative;
     top: 0;
+    margin: 1em;
+    filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.578));
+    max-width: fit-content;
+    background-color: none;
+}
+
+.arrow {
+    width: 40px;
+}
+
+.backButton {
     font-size: 20px;
     color: #FFFFFF;
-    filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.578));
-    font-weight: bold;
-    max-width: fit-content;
-    margin: 1em;
-    background-color: none;
-    font-weight: 700;
     text-align: left;
-    display: inline-block;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 .movieSummary {
@@ -36,6 +47,8 @@
     display: grid;
     grid-template-columns: auto 1fr 2fr;
     grid-template-areas: "movieImage movieInfo movieInfo ";
+    padding-left: 20px;
+    padding-bottom: 20px;
     /*Grid area*/
 }
 
@@ -93,6 +106,7 @@ h2 {
         flex-direction: column;
         justify-content: flex-start;
         top: 120px;
+        padding-left: 0px;
         max-height: 80vh;
         overflow-y: auto;
         /* Last two rows are scrolling + maximum height for scrolling */

@@ -34,6 +34,7 @@ export const MovieDetails = () => {
         return <div className={style.loading}>Loading...</div>;
     }
 
+    // Render movie details //
     return (
         <div>
             {movieDetails && (
@@ -42,7 +43,9 @@ export const MovieDetails = () => {
                         <div key={movie.id}>
                             <img className={style.backgroundImage}
                                 src={`https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}`} />
-                            <div>
+                            <div className={style.iconAndButton}>
+                                <img className={style.arrow}
+                                    src="/src/assets/back-arrow-3095.svg" alt="Arrow" />
                                 <NavLink to={`/`} className={style.backButton}>All Movies</NavLink>
                             </div>
                             <div className={style.movieSummary}>
