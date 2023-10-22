@@ -14,3 +14,5 @@ If we had more time, we could add more features to the site, such as ability to 
 
 Netlify link: 
 
+https://mm-movie-browser.netlify.app/movie/575264
+
