@@ -7,6 +7,7 @@ export const Details = () => {
   const apiKey = 'aea11e511c691453635b1da985972186';
   const { id } = useParams();
 
+  // Fetches the details of a specific movie using the movie's id and the API key
   useEffect(() => {
     fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`)
       .then(res => res.json())
@@ -14,8 +15,7 @@ export const Details = () => {
       .catch(error => alert("Error fetching data:" + error));
   }, [id]);
 
-  console.log(movie);
-
+  // Converting the movie's audience score to an integer, so the decimals could be rounded later with the toFixed method
   let voteAverage = parseFloat(movie.vote_average)
 
   return (
