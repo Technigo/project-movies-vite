@@ -3,6 +3,7 @@ import style from "./moviedetails.module.css"
 import { useParams } from "react-router-dom"
 import { NavLink } from "react-router-dom"
 
+
 export const MovieDetails = () => {
     const [movieDetails, setMovieDetails] = useState([])
     const { id } = useParams()
@@ -45,7 +46,7 @@ export const MovieDetails = () => {
                                 src={`https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}`} />
                             <div className={style.iconAndButton}>
                                 <img className={style.arrow}
-                                    src="./images/back-arrow-3095.svg" alt="Arrow" />
+                                    src="../../images/back-arrow-3095.svg" alt="Arrow" />
                                 <NavLink to={`/`} className={style.backButton}>All Movies</NavLink>
                             </div>
                             <div className={style.movieSummary}>
@@ -54,7 +55,7 @@ export const MovieDetails = () => {
                                 <div className={style.movieInfo}>
                                     <h2>{movie.title}</h2>
                                     <div className={style.starAndVote}>
-                                        <img src="./images/star.svg" alt="Star" />
+                                        <img src="../../images/star.svg" alt="Star" />
                                         <p className={style.vote}>{movie.vote_average.toFixed(1)}</p>
                                     </div>
                                     <p className={style.Overview}>Overview: {movie.overview}</p>
