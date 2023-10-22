@@ -1,0 +1,33 @@
+.page-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 30px;
+}
+
+.go-back-link {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  filter: drop-shadow(2px 3px 4px rgb(0 0 0/0.5));
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  -webkit-filter: drop-shadow(2px 3px 4px rgb(0 0 0/0.5));
+}
+
+a {
+  text-decoration: none;
+}
+
+.go-back-link p {
+  font-weight: 500;
+}
+
+.go-back-link p:hover {
+  margin-left: 5px;
+  transition: 0.3s;
+}
