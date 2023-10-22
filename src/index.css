@@ -90,6 +90,20 @@ li:hover .movie-info {
 
 /* Details page styling */
 
+.back-btn {
+position: absolute;
+display: inline-flex;
+align-items: center;
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    margin: 10px 0 0 50px; 
+    filter: drop-shadow(2px 3px 4px rgb(0 0 0/.5));
+
+
+}
+
+
 .movie-details {
   background-size: cover;
   display: flex;
