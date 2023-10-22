@@ -1,0 +1,72 @@
+.movie-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .movie-title {
+    position: relative;
+    text-align: center;
+  }
+  
+  .movie-title:hover .poster-image {
+    display: block;
+  }
+  
+  .movie-overview {
+    text-align: center;
+  }
+  
+  .release-date {
+    text-align: center;
+  }
+  
+  .images-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .images-title {
+    text-align: center;
+  }
+  
+  .poster-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .poster-title {
+    text-align: center;
+  }
+  
+  .poster-image {
+    display: none;
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  
+  .backdrop-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .backdrop-title {
+    text-align: center;
+  }
+  
+  .backdrop-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+
+/* MEDIA QUERIES */
