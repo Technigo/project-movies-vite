@@ -13,7 +13,22 @@ export const MovieList = () => {
 
     // Function to fetch the API - MovieList
     useEffect(() => {
+
         const fetchMoviesList = async () => {
+
+            const movieItems = document.querySelectorAll('.movieItem'); // hover effect mobile devices
+
+            movieItems.forEach(item => {
+                item.addEventListener('touchstart', () => {
+                    item.classList.add('touch');
+                });
+
+                item.addEventListener('touchend', () => {
+                    item.classList.remove('touch');
+                });
+            });
+
+
             try {
                 const response = await fetch(url);
 
