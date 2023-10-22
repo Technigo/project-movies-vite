@@ -72,7 +72,7 @@ const MovieDetails = () => {
 
             <div className={styles.summary}>
                 <img className={styles.poster}
-                    src={`https://image.tmdb.org/t/p/w1280${movieDetails.poster_path}`}
+                    src={`https://image.tmdb.org/t/p/w300${movieDetails.poster_path}`}
                     alt={movieDetails.name}
                 />
                 <div className={styles.text}>

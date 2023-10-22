@@ -64,7 +64,7 @@ const Movies = () => {
                     </div>
                     <img
                         className={styles.poster}
-                        src={`https://image.tmdb.org/t/p/w1280${movie.poster_path}`}
+                        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                         alt="Movie poster"
                     />
                 </Link>
