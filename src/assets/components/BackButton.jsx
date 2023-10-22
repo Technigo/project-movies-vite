@@ -3,6 +3,6 @@ import "../../index.css"
 
 export const BackButton = () => {
     return (
-    <Link to={"/"} className="back-btn"> Back</Link>
+    <Link to={"/"} className="back-btn">← Movies</Link>
     );
 };

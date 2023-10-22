@@ -20,7 +20,7 @@ code {
 }
 
 body {
-  font-family: "Roboto" , "Sans-sarif";
+  font-family: "Roboto", "Sans-sarif";
   /* height: 100vh; */
   color: rgb(245, 245, 245);
   background-color: black;
@@ -34,27 +34,27 @@ body {
 }
 
 ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 li {
-    margin: 5px;
-    position: relative;
-    overflow: hidden; 
-    flex: 0 0 calc(25% - 20px);
+  margin: 5px;
+  position: relative;
+  overflow: hidden;
+  flex: 0 0 calc(25% - 20px);
 }
 
 /*movie poster*/
 img {
-    width: 100%;
-    border-radius: 15px;
-    height: auto;
-    cursor: pointer; 
-    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+  width: 100%;
+  border-radius: 15px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
 /*dark filter on hovering movie poster*/
@@ -91,27 +91,23 @@ li:hover .movie-info {
 /* Details page styling */
 
 .back-btn {
-position: absolute;
-
-padding: 8px;
-height: 35px;
-width: 80px;
-background-color: rgb(46, 43, 43);
-border-radius: 10px;
-color: white;
-font-weight: 700;
-text-decoration: none;
-margin: 10px 0 0 50px; 
-filter: drop-shadow(2px 3px 4px rgb(0 0 0/.5));
-
-
+  position: absolute;
+  padding: 8px;
+  height: 35px;
+  width: 90px;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  margin: 10px 0 0 50px;
+  text-shadow: 2px 2px 4px black;
+  /* filter: drop-shadow(2px 3px 4px rgb(0 0 0/.5)); */
 }
 
 
 .movie-details {
   background-size: cover;
   display: flex;
-  height: 100vh;    
+  height: 100vh;
 }
 
 .info-container {
@@ -144,7 +140,7 @@ filter: drop-shadow(2px 3px 4px rgb(0 0 0/.5));
 
 @media screen and (min-width:744px) and (max-width: 1279px) {
   li {
-  flex: 0 0 calc(33.33% - 20px); 
+    flex: 0 0 calc(33.33% - 20px);
   }
 
   .info-container {
@@ -177,7 +173,7 @@ filter: drop-shadow(2px 3px 4px rgb(0 0 0/.5));
 
 @media screen and (max-width: 743px) {
   li {
-  flex: 0 0 calc(100% - 20px); 
+    flex: 0 0 calc(100% - 20px);
   }
 
   .info-container {
