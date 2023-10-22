@@ -12,9 +12,6 @@ Start by briefly describing the assignment in a sentence or two. Keep it short a
 
 ## Getting Started with the Project
 
-Isaac: " Page not found", My info
-Namuun: Fetching popular movies, movie list,
-
 ### Dependency Installation & Startup Development Server
 
 Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
