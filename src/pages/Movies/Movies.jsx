@@ -2,11 +2,15 @@
 import { useEffect, useState } from "react"; // Hooks for managing state and side effects
 import styles from "./Movies.module.css"; // CSS module for styling
 import { Link } from "react-router-dom";
+import Loading from "../../components/loading/Loading";
+import Error from "../../components/error/Error";
 
 // Creating the Movies component
 const Movies = () => {
     // Using the useState hook to create a state variable for storing movies
     const [movies, setMovies] = useState([]);
+    const [hasError, setHasError] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     // Using the useEffect hook to perform an action when the component mounts
     useEffect(() => {
@@ -22,9 +26,13 @@ const Movies = () => {
                     const data = await response.json();
                     // Updating the state with the list of movies
                     setMovies(data.results);
+                } else {
+                    setHasError(true)
                 }
-            } catch (error) {
-                console.error(error);
+            } catch {
+                setHasError(true)
+            } finally {
+                setIsLoading(false);
             }
         }
 
@@ -32,7 +40,14 @@ const Movies = () => {
         getMoviesOnMount();
     }, []); // Empty dependency array ensures this effect runs only on component mount
 
-    // 
+    if (isLoading === true) {
+        return <Loading />;
+    }
+
+    if (hasError === true) {
+        return <Error message="Uh oh! Could not load movies because of an unknown error. Try refreshing the page to see if the error persists." />;
+    }
+
     return (
         <div className={styles.wrapper}>
             {movies.map(movie => (

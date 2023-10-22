@@ -2,6 +2,8 @@
 import { Link, useParams } from "react-router-dom"; // Hook for accessing URL parameters
 import { useEffect, useState } from "react"; // Hooks for managing state and side effects
 import styles from "./MovieDetails.module.css"; // CSS module for styling
+import Loading from "../../components/loading/Loading";
+import Error from "../../components/error/Error";
 
 // Creating the MovieDetails component
 const MovieDetails = () => {
@@ -9,6 +11,8 @@ const MovieDetails = () => {
     const { movieId } = useParams();
     // Using the useState hook to create a state variable for storing movie details
     const [movieDetails, setMovieDetails] = useState();
+    const [hasError, setHasError] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     // Using the useEffect hook to perform an action when the component mounts or when 'movieId' changes
     useEffect(() => {
@@ -24,9 +28,13 @@ const MovieDetails = () => {
                     const data = await response.json();
                     // Updating the state with the movie details
                     setMovieDetails(data);
+                } else {
+                    setHasError(true)
                 }
-            } catch (error) {
-                console.error(error);
+            } catch {
+                setHasError(true)
+            } finally {
+                setIsLoading(false)
             }
         }
 
@@ -34,11 +42,12 @@ const MovieDetails = () => {
         getDetailsOnMount();
     }, [movieId]); // Dependency array ensures this effect runs when 'movieId' changes
 
-    // Conditional rendering based on whether movie details have been loaded
-    if (movieDetails === undefined) {
-        return (
-            <p>Loading</p>
-        );
+    if (isLoading === true) {
+        return <Loading />;
+    }
+
+    if (hasError === true) {
+        return <Error message="Uh oh! Could not load movie because of an unknown error. Try refreshing the page to see if the error persists." />;
     }
 
     return (
