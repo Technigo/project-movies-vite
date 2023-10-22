@@ -46,12 +46,14 @@ export const MovieDetails = () => {
                                 <NavLink to={`/`} className={style.backButton}>All Movies</NavLink>
                             </div>
                             <div className={style.movieSummary}>
-
                                 <img className={style.movieImage}
                                     src={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`} />
                                 <div className={style.movieInfo}>
                                     <h2>{movie.title}</h2>
-                                    <p className={style.vote}>Vote Average: {movie.vote_average.toFixed(1)}</p>
+                                    <div className={style.starAndVote}>
+                                        <img src="/src/assets/star.svg" alt="Star" />
+                                        <p className={style.vote}>{movie.vote_average.toFixed(1)}</p>
+                                    </div>
                                     <p className={style.Overview}>Overview: {movie.overview}</p>
                                 </div>
                             </div>
