@@ -55,7 +55,7 @@ export const MovieDetails = () => {
                                 <div className={style.movieInfo}>
                                     <h2>{movie.title}</h2>
                                     <div className={style.starAndVote}>
-                                        <img src="./public/images/star.svg" alt="Star" />
+                                        <img src="../../public/images/star.svg" alt="Star" />
                                         <p className={style.vote}>{movie.vote_average.toFixed(1)}</p>
                                     </div>
                                     <p className={style.Overview}>Overview: {movie.overview}</p>
