@@ -22,11 +22,19 @@ npm i && code . && npm run dev
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+First was reading and watching the material for this week and examining the instructions.
+
+The basic structure was set before we split up the components that was needed in order to make the project work.
+
+The problems we had was how to implement the structure with the error and loading part into the movie- and movieDetails components. To solve this problem we googled a lot and used chatGPT.
+
+I there had been more time, the next step would have been to implement a sorting/filtering function and to add a better and more good looking rating design.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+View it here!
+
+https://project-movies-amanda-hamdi.netlify.app/
 
 ## Instructions
 
