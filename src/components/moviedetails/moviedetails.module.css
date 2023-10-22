@@ -1,27 +1,20 @@
 .style.loading {}
 
 .backgroundImage {
-    object-fit: cover;
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-}
-
-.movieSummary {
-    grid-area: content;
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: auto 1fr;
-    align-items: start;
-    margin-top: 0px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    object-fit: cover;
 }
 
 .backButton {
+    display: flex;
+    position: relative;
+    top: 0;
     font-size: 20px;
     color: #FFFFFF;
     filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.578));
@@ -34,10 +27,23 @@
     display: inline-block;
 }
 
+.movieSummary {
+    position: absolute;
+    /*NB! the position solved the location on the site*/
+    bottom: 0;
+    align-items: end;
+    margin-top: 0px;
+    display: grid;
+    grid-template-columns: auto 1fr 2fr;
+    grid-template-areas: "movieImage movieInfo movieInfo ";
+    /*Grid area*/
+}
+
 .movieImage {
     border: 5px solid rgb(255, 255, 255);
-    grid-column: 1;
-    grid-row: 2;
+    grid-area: movieImage;
+    margin-left: 10px;
+    margin-right: 20px;
 }
 
 .movieInfo {
@@ -48,7 +54,8 @@
     position: relative;
     margin-top: auto;
     grid-column: 2;
-    grid-row: 2;
+    grid-area: movieInfo;
+    max-width: 400px;
 }
 
 h2 {
@@ -58,6 +65,20 @@ h2 {
     text-shadow: 1px 1px #4d4d4d8a;
 }
 
+.vote {
+    font-size: 24px;
+    color: black;
+    font-weight: bold;
+}
+
+.starAndVote {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    max-width: fit-content;
+    max-height: 24px;
+}
+
 .overview {
     filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.616));
     font-size: 16px;
@@ -65,8 +86,27 @@ h2 {
     word-wrap: break-word;
 }
 
-.vote {
-    font-size: 24px;
-    font-weight: bold;
-    max-width: fit-content;
+
+@media (max-width: 620px) {
+    .movieSummary {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        top: 120px;
+        max-height: 80vh;
+        overflow-y: auto;
+        /* Last two rows are scrolling + maximum height for scrolling */
+    }
+
+    .movieImage {
+        margin-right: 100px;
+        max-width: 60%;
+    }
+
+    .movieInfo {
+        font-size: 16px;
+        word-wrap: break-word;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
 }

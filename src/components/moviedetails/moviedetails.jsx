@@ -42,15 +42,18 @@ export const MovieDetails = () => {
                         <div key={movie.id}>
                             <img className={style.backgroundImage}
                                 src={`https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}`} />
+                            <div>
+                                <NavLink to={`/`} className={style.backButton}>All Movies</NavLink>
+                            </div>
                             <div className={style.movieSummary}>
-                                <div>
-                                    <NavLink to={`/`} className={style.backButton}>All Movies</NavLink>
-                                </div>
                                 <img className={style.movieImage}
                                     src={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`} />
                                 <div className={style.movieInfo}>
                                     <h2>{movie.title}</h2>
-                                    <p className={style.vote}>Vote Average: {movie.vote_average.toFixed(1)}</p>
+                                    <div className={style.starAndVote}>
+                                        <img src="/src/assets/star.svg" alt="Star" />
+                                        <p className={style.vote}>{movie.vote_average.toFixed(1)}</p>
+                                    </div>
                                     <p className={style.Overview}>Overview: {movie.overview}</p>
                                 </div>
                             </div>
