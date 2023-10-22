@@ -92,13 +92,17 @@ li:hover .movie-info {
 
 .back-btn {
 position: absolute;
-display: inline-flex;
-align-items: center;
-    color: white;
-    font-weight: 700;
-    text-decoration: none;
-    margin: 10px 0 0 50px; 
-    filter: drop-shadow(2px 3px 4px rgb(0 0 0/.5));
+
+padding: 8px;
+height: 35px;
+width: 80px;
+background-color: rgb(46, 43, 43);
+border-radius: 10px;
+color: white;
+font-weight: 700;
+text-decoration: none;
+margin: 10px 0 0 50px; 
+filter: drop-shadow(2px 3px 4px rgb(0 0 0/.5));
 
 
 }
