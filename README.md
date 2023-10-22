@@ -14,4 +14,4 @@ After checking off all the requirements of the project, we decided to build a "g
 
 ### View it live
 
-Find our movie-site here: https://moviesite-olgaelin.netlify.app/
+Find our movie-site here: https://movies-olga-elin.netlify.app/
