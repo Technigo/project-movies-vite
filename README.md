@@ -6,9 +6,7 @@
 
 # Movie Site Project
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+In this project we are fetching data from an API to showcase popular movies and their details. Designed with at focus on resonsiveness and accessibility.
 
 ## Getting Started with the Project
 
