@@ -1,0 +1,77 @@
+/*------------ MOBILE FIRST -----------*/
+/* Styling homepage */
+
+.homepage-title {
+  text-align: center;
+  padding: 25px; 
+}
+  
+.popular-movie-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-list {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.movie-list a {
+  text-decoration: none;
+  width: 100%;
+  position: relative;
+  color: white;
+}
+
+.movie-item img {
+  width: 100%;
+}
+
+.movie-details {
+  position: absolute;
+  top: auto;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  background: transparent;
+  padding: 20px;
+}
+
+.movie-details h1 {
+  margin-bottom: 20px;
+}
+
+.movie-item:hover>img {
+  opacity: 0.3;
+  transition: 0.4s;
+}
+
+.movie-item:hover>.movie-details {
+  opacity: 1;
+  transition: 0.4s;
+}
+  
+/* ------------ MEDIA QUERIES ------------ */
+
+/* ------------ TABLET VIEW ------------ */
+
+@media (min-width: 380px) {
+    .movie-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 570px) {
+    .movie-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (min-width: 820px) {
+    .movie-list {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+ 
