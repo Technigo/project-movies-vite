@@ -1,9 +1,3 @@
-/*Kommentar att ta bort senare: Har lagt en bakgrundsfärg i index.css som även syns i detail.jsx. Har flyttat en div i popular.jsx samt ändrat vägen i detail.jsx
-
-To do:
-- Fick ändra om ett par ggr, så vi kanske kan kika så det inte finns någon onödig kod här nedan som ändå inte aktiveras
-- Styra om texten så den ligger nere till vänster
-- Beroende på design senare (jag började med Technigos), få bort margin */
 
 .popular-section {
     display: grid;

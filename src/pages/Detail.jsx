@@ -25,18 +25,6 @@ export const Detail = () => {
       });
   }, [id]);
 
-  // // Fetch movie data from an external API when the 'id' parameter changes
-  // useEffect(() => {
-  //   // Fetch movie data from an external API using the 'id' parameter
-  //   fetch(
-  //     `https://api.themoviedb.org/3/movie/${id}?api_key=6420add5c0a9b0e0b9462a92916c3187&language=en-US`
-  //   )
-  //     .then((res) => res.json())
-  //     .then((json) => {
-  //       // Update the 'movie' state with the fetched data
-  //       setMovie(json);
-  //     });
-  // }, [id]);
 
   // Render the component
   return (
