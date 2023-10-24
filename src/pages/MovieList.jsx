@@ -21,7 +21,7 @@ export const MovieList = () => {
     }, [apiEnv]);
 
     return (
-        <div>
+        <>
             <div>
                 {loading && (<Oval
                     height={100}
@@ -43,7 +43,7 @@ export const MovieList = () => {
                 }
             </div>
             {!loading && (
-                <div>
+                <div className="movie-list">
                     {movieList.map((movie, index) => {
                         return (
                             <Link to={`/movie/${movie.id}`} key={index} className="movie-item">
@@ -64,6 +64,6 @@ export const MovieList = () => {
                 </div>
             )
             }
-        </div>
+        </>
     );
 };
