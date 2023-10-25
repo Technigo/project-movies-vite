@@ -1,9 +1,0 @@
-[build]
-command = "npm run build"
-base = "child"
-publish = "dist"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
