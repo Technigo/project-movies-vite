@@ -10,7 +10,7 @@ export const MovieList = () => {
     const apiEnv = import.meta.env.VITE_OPENDB_KEY;
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiEnv}&language=en-US&page=`)
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiEnv}&language=en-US&page=1`)
             .then(response => response.json())
             .then(data => {
                 const results = data.results;
