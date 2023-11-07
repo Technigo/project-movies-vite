@@ -1,3 +1,13 @@
+
+import { BrowserRouter } from "react-router-dom";
+import { NavBar } from "./components/NavBar";
+import routes from "./components/routes";
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  return (
+    <BrowserRouter>
+      <NavBar />
+      {routes}
+    </BrowserRouter>
+  );
 };
