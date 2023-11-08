@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "../css/MovieDetail.css"
 
 const MovieDetail = ({ apiKey }) => {
@@ -39,6 +39,9 @@ const MovieDetail = ({ apiKey }) => {
 
   return (
     <div className="MovieDetail">
+      <Link to="/" className="backLink">
+        Back
+      </Link>
       <h1>{movie.title}</h1>
       <img
         src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`}

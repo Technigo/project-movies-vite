@@ -41,4 +41,22 @@
       font-size: 20px;
     }
   }
+
+  /* CSS for the "Back" button */
+.backLink {
+    display: inline-block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #0073e6; /* Change to your preferred button color */
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .backLink:hover {
+    background-color: #005bb9; /* Change to your preferred button color on hover */
+  }
+  
   
