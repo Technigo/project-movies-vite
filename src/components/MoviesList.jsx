@@ -1,15 +1,23 @@
 
 export const MoviesList = (movies) => {
-
     const moviesListData = movies.data;
-        console.log(moviesListData[0]);
-    // .map((movie) => {
-        // <div key={moviesListData.id}>
-        //     <div>
-        //         <p>{moviesListData.title}</p>
-        //         <p>{moviesListData.release_date}</p>
-        //     </div>
-        // </div>
+    const title = "Complete List";
+    console.log(moviesListData);
 
-  return
+    return(
+        <div>
+            <h1>{title}</h1>
+            <div>
+                {moviesListData.map((movie) => (
+                    <div className="movie-list-container" key={movie.id}>
+                        <div>
+                            <img src=""/>
+                            <p>{movie.title}</p>
+                            <p>{movie.release_date}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    )
 }

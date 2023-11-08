@@ -20,10 +20,12 @@ export const Home = () => {
   return (
     <>
       <div>
-        <h1>Movies List</h1>
+        <h1>Movies List available</h1>
         {/* TODO: Display the list of Movies with links */}
       </div>
+      <div className="all-movies-list-container">
       <MoviesList data={moviesList} />
+      </div>
     </>
   );
 };

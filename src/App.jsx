@@ -38,11 +38,13 @@
 import { BrowserRouter } from "react-router-dom";
 import { NavBar } from "./components/NavBar";
 import routes from "./components/routes";
+import { Home } from "./Pages/Home";
 
 export const App = () => {
   return (
     <BrowserRouter>
       <NavBar />
+      <Home />
       {routes}
     </BrowserRouter>
   );
