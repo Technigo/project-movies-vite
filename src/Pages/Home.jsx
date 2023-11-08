@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-//import { Movielist } from "./components/MoviesList";
+import { MoviesList } from "../components/MoviesList";
 
 export const Home = () => {
-  const [listMovies, setListMovies] = useState([]);
+  const [moviesList, setMoviesList] = useState([]);
   const API_Key = 'b9d9222d037c3b04f41cfe59a1e05d89' ;
   const API = `https://api.themoviedb.org/3/movie/popular?api_key=${API_Key}&language=en-US&page=1`  ;
 
@@ -10,20 +10,20 @@ export const Home = () => {
     const response = await fetch(API);
     const data = await response.json();
     console.log(JSON.stringify(data, null, 2));
-    setListMovies(data.results);
+    setMoviesList(data.results);
   };
 
   useEffect(() => {
     handleFetchData();
   }, []);
+
   return (
     <>
       <div>
         <h1>Movies List</h1>
         {/* TODO: Display the list of Movies with links */}
       </div>
-      <listMovies listMovies={listMovies} />
-      {/* <MoviesList /> */}
+      <MoviesList data={moviesList} />
     </>
   );
 };
