@@ -1,0 +1,57 @@
+.MoviesList {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .MoviesList a {
+    width: 80%;
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  @media (min-width: 370px) {
+    .MoviesList a {
+      width: 50%;
+    }
+  }
+  
+  @media (min-width: 570px) {
+    .MoviesList a {
+      width: 33.33%;
+    }
+  }
+  
+  @media (min-width: 820px) {
+    .MoviesList a {
+      width: 25%;
+    }
+  }
+  
+  .MoviesList a img {
+    width: 100%;
+  }
+  
+  .MoviesList .MovieDetails {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.75);
+    display: none;
+    padding: 20px;
+  }
+  
+  .MoviesList .MovieDetails h1 {
+    margin-top: auto;
+    margin-bottom: 0;
+  }
+  
+  .MoviesList a:hover .MovieDetails {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
