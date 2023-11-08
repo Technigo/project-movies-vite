@@ -40,7 +40,7 @@ const MovieDetail = ({ apiKey }) => {
   return (
     <div className="MovieDetail">
       <Link to="/" className="backLink">
-        Back
+        Back to Movies
       </Link>
       <h1>{movie.title}</h1>
       <img
