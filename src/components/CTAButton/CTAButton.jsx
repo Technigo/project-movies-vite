@@ -5,22 +5,24 @@ import { Link } from "react-router-dom";
 export const CTAButton = ({ btnTarget, movie }) => {
   let link = "";
 
-  switch (btnTarget) {
-    case "movieDetail":
-      link = `/movie/${movie.id}`;
-      break;
-    case "website":
-      link = `/movie/${movie.id}`;
-      break;
-    default:
-      console.log("Something is wrong");
 
-      buttonTarget();
-      console.log(buttonTarget());
+const renderSwitch = (btnTarget) => {
+  switch(btnTarget) {
+     case 'movieDetail':
+      return link = `/movie/${movie.id}`;
+      case 'errorPage':
+        return link = `/`;
+    default:
+      return null;
+  }
+}
+
+ 
+
       return (
-        <Link to={link}>
-          <button>CTAButton</button>
+        <Link to={renderSwitch(btnTarget)}>
+         CTAButton
         </Link>
       );
-  }
+  
 };
