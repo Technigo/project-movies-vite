@@ -3,6 +3,7 @@ import { MovieList } from "./pages/MovieList";
 import { MovieDetail } from "./pages/MovieDetail/MovieDetail";
 import { ErrorPage } from "./pages/ErrorPage";
 import { Header } from "./components/Header";
+import "./index.css";
 
 export const App = () => {
   const routes = (

@@ -10,13 +10,6 @@ export const MovieList = () => {
   const [movies, setMovies] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  const options = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-    },
-  };
-
   const fetchMovieList = () => {
     fetch(url)
       .then((res) => res.json())
@@ -42,36 +35,21 @@ export const MovieList = () => {
   return (
     <>
       <main>
-        <header>
-          <MovieHero />
-        </header>
         {isLoading ? (
           <p>Loading movies...</p>
         ) : (
+          <>
+          <header>
+          <MovieHero movie={movies.results[0]}/>
+          </header>
           <section className="movieListContainer">
-            {movies?.results.map((movie) => {
-              return <MovieCard movie={movie} />;
+            {movies?.results.map((movie, index) => {
+              if(index > 0) return <MovieCard key={movie.id} movie={movie} />;
             })}
           </section>
+          </>
         )}
       </main>
     </>
   );
 };
-
-//   const fetchMovieList = async () => {
-//     setIsLoading(true);
-//     try {
-//       const response = await fetch(url);
-//       if (response.ok) {
-//         const data = await response.json();
-//         setMovies((moviesData) => data);
-//         setIsLoading(false);
-//       }
-//     } catch (error) {
-//       console.log("Error API", error);
-//     } finally {
-//       setIsLoading(false);
-//       console.log(movies);
-//     }
-//   };
