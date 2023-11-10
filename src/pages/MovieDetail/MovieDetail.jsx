@@ -14,6 +14,7 @@ export const MovieDetail = () => {
   const imageUrl = `https://image.tmdb.org/t/p/`;
   const imageMedium = "w1280";
   const imageSmall = "w780";
+  const star = "../src/assets/chevron_left_icon.svg";
 
   const adaptedImage = () => {
     if (viewport < 768) return imageSmall;
@@ -57,7 +58,7 @@ export const MovieDetail = () => {
             <h1>{movieDetails?.title}</h1>
             <div className="wrapper-movie-info">
               <span className="rating">
-                <img src="../../src/assets/star-icon.svg" alt="star icon" />
+                <img src={star} alt="star icon" />
                 <p>{parseFloat(movieDetails?.vote_average).toFixed(1)}</p>
               </span>
               <span className="time">

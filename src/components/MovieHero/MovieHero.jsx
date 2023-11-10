@@ -25,7 +25,7 @@ export const MovieHero = ({ movie }) => {
 
   return (
     <section className="hero" style={backgroundStyle}>
-      <div class="wrapper-hero">
+      <div className="wrapper-hero">
         <MovieInfo title={movie.title} date={movie.release_date} />
         <CTAButton btnTarget={btnTarget} movie={movie} btnText={btnText} />
       </div>
