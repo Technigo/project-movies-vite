@@ -1,16 +1,28 @@
 import { useState, useEffect } from "react";
-import { MoviesList } from "../components/MoviesList";
+import { MoviesList } from "../components/MoviesLists/MoviesList";
 
 export const Home = () => {
   const [moviesList, setMoviesList] = useState([]);
+  const [loading, setLoading] = useState(false); //add loading here;
   const API_Key = 'b9d9222d037c3b04f41cfe59a1e05d89' ;
   const API = `https://api.themoviedb.org/3/movie/popular?api_key=${API_Key}&language=en-US&page=1`  ;
 
   const handleFetchData = async () => {
-    const response = await fetch(API);
+    setLoading(true);
+    try {
+      const response = await fetch(API);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
     const data = await response.json();
-    console.log(JSON.stringify(data, null, 2));
+    // console.log(JSON.stringify(data, null, 2));
     setMoviesList(data.results);
+    } catch (error) {
+      console.log("error", error);
+    }
+    finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -19,9 +31,15 @@ export const Home = () => {
 
   return (
     <>
+      {loading ? (
+        <div className="loading">
+          <div className="lds-dual-ring"></div>
+        </div>
+      ) : (
       <div className="all-movies-list-container">
       <MoviesList data={moviesList} />
       </div>
+      )}
     </>
   );
 };
