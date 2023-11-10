@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ErrorPage } from "../ErrorPage";
 import "./MovieDetail.css";
+import star from "../../assets/star-icon.svg";
 
 export const MovieDetail = () => {
   const [movieDetails, setMovieDetails] = useState(null);
@@ -14,7 +15,6 @@ export const MovieDetail = () => {
   const imageUrl = `https://image.tmdb.org/t/p/`;
   const imageMedium = "w1280";
   const imageSmall = "w780";
-  const star = "../src/assets/chevron_left_icon.svg";
 
   const adaptedImage = () => {
     if (viewport < 768) return imageSmall;
