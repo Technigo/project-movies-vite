@@ -13,7 +13,7 @@ dist-ssr
 *.local
 package-lock.json
 APIcall.json
-.env
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -24,3 +24,4 @@ APIcall.json
 *.njsproj
 *.sln
 *.sw?
+*.env
