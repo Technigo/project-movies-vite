@@ -9,8 +9,8 @@ export const MovieDetail = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [errorState, setErrorState] = useState(false);
   const { movieId } = useParams();
-  const apiKey = "d14980dd8df22d55a4bf4592f082a8c6";
-  const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=en-US`;
+  const apiEnv = import.meta.env.VITE_MOVIE_API_KEY;
+  const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiEnv}&language=en-US`;
   const viewport = window.innerWidth;
   const imageUrl = `https://image.tmdb.org/t/p/`;
   const imageMedium = "w1280";
