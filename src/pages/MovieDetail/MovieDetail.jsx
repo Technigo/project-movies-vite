@@ -70,7 +70,7 @@ export const MovieDetail = () => {
               </span>
             </div>
             <p>{movieDetails?.overview}</p>
-            <button className="movie-detail-cta">
+            <button className="cta-button">
               <a href={movieDetails?.homepage}>
                 <span>Learn More</span>
                 <img
