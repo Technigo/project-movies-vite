@@ -18,7 +18,7 @@ export const MoviesList = (movies) => {
             <div className="movie-list-container">
                 {moviesListData.map((movie) => (
                     <div className="movie-card" key={movie.id}>
-                        <Link className="movie-link" to={`/movie/${movie.title.toLowerCase().replace(/ /g, "-")}`}>
+                        <Link className="movie-link" to={`/movie/${movie.id}`}>
                             <img src={`${imgBaseUrl}${posterSizeS}${movie.poster_path}`} alt={movie.title}/>
                             <div className="movie-list-card-texts">
                                 <p className="movie-title">{movie.title}</p>

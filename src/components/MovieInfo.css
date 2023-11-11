@@ -1,0 +1,45 @@
+.movie-info-container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+@media screen and (max-width: 800px) {
+  .movie-info-container {
+    flex-direction: column;
+  }
+}
+
+.movie-info-container > div {
+  padding: 20px;
+}
+
+.movie-info-container img {
+  max-width: 100%;
+  min-width: 400px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.overview-section,
+.details-section,
+.production-companies-section {
+  margin-bottom: 40px;
+}
+
+.movie-info-container a {
+   color: #fff;
+   text-decoration: none;
+ }
+ 
+ .movie-info-container a:hover {
+  color:#fff;
+   text-decoration: underline;
+ }
+
+.production-companies-section img {
+  max-width: 180px;
+  height: auto;
+  margin-right: 8px;
+  min-width: auto;
+} 
