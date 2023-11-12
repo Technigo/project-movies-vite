@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./MovieInfo.css"
 
@@ -19,7 +20,7 @@ export const MovieInfo = () => {
         throw new Error("Network response was not ok");
       }
     const data = await response.json();
-    console.log(JSON.stringify(data, null, 2));
+    // console.log(JSON.stringify(data, null, 2));
     setMovieInfo(data);
     } catch (error) {
       console.log("error", error);
@@ -83,14 +84,14 @@ export const MovieInfo = () => {
         <div className="production-companies-section">
           <h2>Production Companies</h2>
             {production_companies.map((company) => (
-              <div key={company.id}>
-                {company.logo_path && (
-                  <img
-                    src={`https://image.tmdb.org/t/p/w200${company.logo_path}`}
-                    alt={`${company.name} Logo`}
-                  />
-                )}
-              </div>
+                  company.logo_path && (
+                    <Link className="company-link" to={`/company/${company.id}`}>
+                      <img
+                        src={`https://image.tmdb.org/t/p/w200${company.logo_path}`}
+                        alt={`${company.name} Logo`}
+                      />
+                  </Link>
+                )
             ))}
         </div>
       </div>
