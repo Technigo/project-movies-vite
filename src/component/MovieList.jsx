@@ -42,7 +42,7 @@ const MovieList = () => {
             <div className="movie-details">
               <h2>{movie.title}</h2>
               <p>Relesed: {movie.release_date}</p>
-            </div>{" "}
+            </div>
           </Link>
         ))}
       </div>

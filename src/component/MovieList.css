@@ -12,7 +12,8 @@
 
 .movie-card img {
   max-width: 100%;
-  height: auto;
+  flex: 1;
+  object-fit: cover;
 }
 
 body {
@@ -27,7 +28,8 @@ a {
 
 .movie-card {
   position: relative;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
 }
 
 .movie-card:hover .movie-details {
@@ -44,9 +46,6 @@ a {
   background: rgba(0, 0, 0, 0.7);
   color: white;
   text-align: center;
-  padding: 20px;
-  overflow: hidden;
-  box-sizing: border-box;
 }
 
 /* Media Query - tablet */
