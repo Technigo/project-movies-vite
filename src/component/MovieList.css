@@ -44,6 +44,9 @@ a {
   background: rgba(0, 0, 0, 0.7);
   color: white;
   text-align: center;
+  padding: 20px;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 /* Media Query - tablet */
