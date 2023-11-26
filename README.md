@@ -6,21 +6,9 @@
 
 # Movie Site Project
 
-We will start of Sprint 3 of this boot camp off by creating your very own movie site. This is our first multi-page React application, using a fun new movie API. Our site utilises themoviedb.org's API to showcase movies and their details. Features fetching popular movies, rendering movie specifics, and managing image URLs. Designed with a focus on responsiveness and accessibility. Enhancements include error handling, loading states, and dynamic movie lists
+<ins>Project completed with paired programming by - Elba Cacan & Rebecca Morton.</ins>
 
-Project completed with paired programming by - Elba Cacan & Rebecca Morton.
-
-## Getting Started with the Project
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
+We started off Sprint 3 of the boot camp by creating your very own movie site! This is our first multi-page React application, using a fun new movie API. Our site utilises themoviedb.org's API to showcase movies and their details. Features fetching popular movies, rendering movie specifics, and managing image URLs. Designed with a focus on responsiveness and accessibility. Enhancements include error handling, loading states, and dynamic movie lists
 
 ### The Problem
 
@@ -38,6 +26,14 @@ We were able to create a loading screen as per intermediate stretch goals, with 
 ### View it live
 
 https://wk9-project-movie-site-c05bc5.netlify.app/
+
+### Screenshots
+
+![Uploading Screenshot 2023-11-26 181451.png…]()
+
+![Uploading Screenshot 2023-11-26 181526.png…]()
+
+
 
 ## Instructions
 
