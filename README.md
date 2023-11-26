@@ -29,9 +29,6 @@ https://wk9-project-movie-site-c05bc5.netlify.app/
 
 ### Screenshots
 
-![Uploading Screenshot 2023-11-26 181451.png…]()
-
-![Uploading Screenshot 2023-11-26 181526.png…]()
 
 
 
