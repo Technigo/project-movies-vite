@@ -29,6 +29,9 @@ https://wk9-project-movie-site-c05bc5.netlify.app/
 
 ### Screenshots
 
+![Screenshot of Home page](/public/assets/screenshot1.png?raw=true "Screenshot of Home page")
+
+![Screenshot of Movie details page](/public/assets/screenshot2.png?raw=true "Screenshot of Movie details page")
 
 
 
