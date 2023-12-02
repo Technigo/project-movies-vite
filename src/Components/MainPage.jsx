@@ -41,3 +41,5 @@ export const MainPage = () => {
     </div>
   );
 };
+
+// Maybe add a footer with your name or something when time. There's no headline, but I think having one when going to the mobile/pad-version could be an idea. But it just looked ugly no matter how I did it so let it rest for now
