@@ -10,7 +10,7 @@ export const App = () => {
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/details/:id" element={<FilmDetails />} />
-            {/* <Route path="/" element=//den component du vill ska vara först dvs startsidan tex <Welcome />} />
+            {/* <Route path="/" element=//den component du vill ska vara först dvs startsidan tex{<Welcome />} />
     <Route path="/About" element=//nästa sida} />
     <Route path="/Contact" element=//annan sida} /> */}
           </Routes>
