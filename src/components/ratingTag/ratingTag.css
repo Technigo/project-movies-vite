@@ -1,0 +1,13 @@
+.rating {
+    display: inline-flex;
+    font-size: 24px;
+    font-weight: 500; 
+    color: black; 
+    background-color: white;
+    padding: 0 5px; 
+    align-items: center; 
+}
+
+.star {
+    fill: #fec700; 
+}
