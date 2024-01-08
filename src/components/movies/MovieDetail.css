@@ -100,14 +100,14 @@
     width: 20%;
     height: 60%;
     display: flex;
-    margin-top: 27rem;
+    margin-top: 20rem;
     margin-left: 9rem;
   }
 
   .detail-page {
     display: flex;
     align-items: center;
-    margin: 100px;
+    margin: 0 20px 0 20px;
   }
 
   .movie-title {
