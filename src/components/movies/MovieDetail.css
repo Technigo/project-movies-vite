@@ -1,0 +1,129 @@
+.background-poster {
+  position: relative;
+}
+
+.background-poster img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.detail-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+  position: relative;
+  color: white;
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  color: white;
+  align-items: center;
+}
+
+.summary img {
+  width: 50%;
+  margin: 300px 20px 0 50px;
+  height: 50%;
+  border: solid white 5px;
+}
+
+.movie-title {
+  font-size: 20px;
+  text-shadow: 1px 1px #4d4d4d;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.movie-title::before {
+  margin-left: 5px;
+}
+
+.rating {
+  background-color: white;
+  width: 7%;
+  color: black;
+  font-size: large;
+}
+
+.release-date {
+  font-size: 16px;
+  margin: 16px 0;
+  line-height: 1;
+  color: white;
+}
+
+.movie-overview {
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* Media queries for tablets and above */
+@media (min-width: 768px) {
+  .movie-title {
+    gap: 100px;
+  }
+  .summary img {
+    margin-top: 30rem;
+  }
+
+  .movie-title {
+    font-size: 30px;
+  }
+
+  .rating {
+    font-size: larger;
+  }
+
+  .release-date {
+    font-size: 15px;
+  }
+
+  .movie-overview {
+    font-size: 20px;
+  }
+}
+
+/* Media queries for desktops and above */
+@media (min-width: 1024px) {
+  .summary img {
+    width: 20%;
+    height: 60%;
+    display: flex;
+    margin-top: 20rem;
+    margin-left: 9rem;
+  }
+
+  .detail-page {
+    display: flex;
+    align-items: center;
+    margin: 0 20px 0 20px;
+  }
+
+  .movie-title {
+    font-size: 40px;
+  }
+
+  .rating {
+    font-size: larger;
+  }
+
+  .release-date {
+    font-size: 20px;
+  }
+
+  .movie-overview {
+    font-size: 30px;
+  }
+}
+
