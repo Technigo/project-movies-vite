@@ -2,17 +2,17 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { MovieList } from "./components/MovieList";
 import { Detail } from "./components/Detail";
 
-export const App = () => {
+const routes = () => {
   return (
-    <div className="main-wrapper">
-      <BrowserRouter>
-
+    <BrowserRouter>
+      <div className="main-wrapper">
         <Routes>
           <Route path="/" element={<MovieList />} />
           <Route path="/movie/:id" element={<Detail />} />
         </Routes>
-
-      </BrowserRouter>
-    </div>
+      </div>
+    </BrowserRouter>
   );
 };
+
+export default routes;
