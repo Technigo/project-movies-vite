@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import Navigation from "./Navigation"
+import Navigation from "../components/Navigation"
 import { imageConfig } from "/src/imageConfig"
 import "./movieDetail.css"
 
@@ -25,11 +25,19 @@ function MovieDetail() {
     fetchMovieDetails()
 
     const handleWindowResize = () => {
-      if (window.innerWidth > 820) {
-        setPosterSize(imageConfig.poster_sizes[3])
-      } else {
-        setPosterSize(imageConfig.poster_sizes[1])
-      }
+      const newSize =
+        window.innerWidth > 819
+          ? imageConfig.poster_sizes[3]
+          : imageConfig.poster_sizes[1]
+      setPosterSize(newSize)
+      localStorage.setItem("posterSize", newSize)
+    }
+
+    const storedSize = localStorage.getItem("posterSize")
+    if (storedSize) {
+      setPosterSize(storedSize)
+    } else {
+      handleWindowResize()
     }
 
     window.addEventListener("resize", handleWindowResize)
@@ -47,6 +55,7 @@ function MovieDetail() {
 
   const roundedRating = movie.vote_average.toFixed(1)
 
+  console.log(movie)
   return (
     <>
       <div
@@ -66,15 +75,7 @@ function MovieDetail() {
             alt={movie.title}
           />
           <div className="title-rating-container">
-            <h2
-              style={{
-                textShadow: " 1px 1px #4d4d4d",
-                fontSize: "1.5em",
-                margin: "0",
-              }}
-            >
-              {movie.title}
-            </h2>
+            <h2>{movie.title}</h2>
             <p className="rating"> {roundedRating} ⭐</p>
           </div>
           <p className="info">{movie.overview}</p>

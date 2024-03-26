@@ -2,6 +2,7 @@
   list-style-type: none;
   position: absolute;
   top: 20px;
+  padding-bottom: 10px;
 }
 
 .nav-item {
@@ -10,7 +11,7 @@
 }
 
 .left-arrow {
-  width: 35px;
+  width: 45px;
   height: auto;
   margin-right: 10px;
   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(240deg);
@@ -19,6 +20,29 @@
 .nav-link {
   text-decoration: none;
   color: white;
-  font-size: 18px;
+  font-size: 1.4em;
   font-weight: 700;
+}
+
+@media (max-width: 375px) {
+  .left-arrow {
+    width: 35px;
+    height: auto;
+    margin-right: 10px;
+  }
+}
+
+@media (min-width: 820px) {
+  .left-arrow {
+    width: 60px;
+    height: auto;
+    margin-right: 10px;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 2em;
+    font-weight: 700;
+  }
 }

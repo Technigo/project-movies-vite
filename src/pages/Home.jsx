@@ -1,13 +1,34 @@
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { imageConfig } from "/src/imageConfig"
+import { useMovieContext } from "../components/MovieContext"
 import "./home.css"
 
 function Home() {
-  const [popularMovies, setPopularMovies] = useState([])
+  const { userName, setUserName, handleLike, popularMovies, setPopularMovies } =
+    useMovieContext()
+  const [name, setName] = useState(userName || "")
+  const navigate = useNavigate()
   const [hoveredMovieId, setHoveredMovieId] = useState(null)
   const [movieTrailers, setMovieTrailers] = useState({})
   const [showTrailer, setShowTrailer] = useState(false)
+
+  const handleNameChange = (e) => {
+    setName(e.target.value)
+  }
+
+  const handleNameSubmit = (e) => {
+    e.preventDefault()
+    setUserName(name)
+  }
+
+  const handleLikeClick = (movieId) => {
+    if (!userName) {
+      navigate("/login")
+    } else {
+      handleLike(movieId)
+    }
+  }
 
   useEffect(() => {
     const fetchPopularMovies = async () => {
@@ -21,6 +42,7 @@ function Home() {
         console.error("Error fetching popular movies:", error)
       }
     }
+    console.log(popularMovies)
 
     fetchPopularMovies()
   }, [])
@@ -54,6 +76,26 @@ function Home() {
 
   return (
     <>
+      <div className="login-form-container">
+        <form onSubmit={handleNameSubmit}>
+          <input
+            type="text"
+            placeholder="Enter your name"
+            value={name}
+            onChange={handleNameChange}
+            className="login-input"
+          />
+          <button type="submit" className="login-button">
+            Save Name
+          </button>
+        </form>
+        {userName && (
+          <Link className="liked-movies-link" to="/liked-movies">
+            See your liked movies
+          </Link>
+        )}
+      </div>
+
       <div>
         <div className="popular-movies-container">
           {popularMovies.map((movie) => (
@@ -63,7 +105,7 @@ function Home() {
               onMouseEnter={() => setHoveredMovieId(movie.id)}
               onMouseLeave={() => {
                 setHoveredMovieId(null)
-                setShowTrailer(false) 
+                setShowTrailer(false)
               }}
             >
               <Link to={`/movies/${movie.id}`}>
@@ -76,6 +118,11 @@ function Home() {
               {hoveredMovieId === movie.id && (
                 <div className="movie-options">
                   <button onClick={() => setShowTrailer(true)}>Trailer</button>
+                  {userName && (
+                    <button onClick={() => handleLikeClick(movie.id)}>
+                      Like
+                    </button>
+                  )}
                   <Link to={`/movies/${movie.id}`}>Info</Link>
                 </div>
               )}
