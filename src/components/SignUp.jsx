@@ -1,6 +1,7 @@
 import { useState } from "react"
 import CryptoJS from "crypto-js"
 import { useNavigate } from "react-router-dom"
+import Navigation from "./Navigation"
 
 function SignUp() {
   const [name, setName] = useState("")
@@ -18,6 +19,8 @@ function SignUp() {
     navigate("/")
   }
   return (
+    <>
+    <Navigation />
     <div>
       <h2>Register</h2>
       <form onSubmit={handleSubmit}>
@@ -36,6 +39,7 @@ function SignUp() {
         <button type="submit">Register</button>
       </form>
     </div>
+    </>
   )
 }
 

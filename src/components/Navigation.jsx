@@ -5,7 +5,11 @@ import leftArrow from "/src/assets/left-arrow.png"
 const Navigation = () => {
   const location = useLocation()
 
-  if (location.pathname.includes("/movies/")) {
+  if (
+    location.pathname.includes("/movies/") ||
+    location.pathname.includes("/liked-movies") ||
+    location.pathname.includes("/signup")
+  ) {
     return (
       <nav>
         <ul className="nav-list">
