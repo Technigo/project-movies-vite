@@ -15,6 +15,19 @@ function Home() {
   const [movieTrailers, setMovieTrailers] = useState({})
   const [showTrailer, setShowTrailer] = useState(false)
 
+  useEffect(() => {
+    const storedUser = JSON.parse(localStorage.getItem("user"))
+    if (storedUser) {
+      setName(storedUser.name)
+      setPassword(storedUser.password)
+    }
+  }, [])
+
+  useEffect(() => {
+    setName("")
+    setPassword("")
+  }, [])
+
   const handleNameChange = (e) => {
     setName(e.target.value)
   }
@@ -25,9 +38,9 @@ function Home() {
 
   const handleNameSubmit = (e) => {
     e.preventDefault()
+    const hashedInputPassword = CryptoJS.SHA256(password).toString()
     const storedUser = JSON.parse(localStorage.getItem("user"))
     if (storedUser && storedUser.name === name) {
-      const hashedInputPassword = CryptoJS.SHA256(password).toString()
       if (hashedInputPassword === storedUser.password) {
         setUserName(name)
         navigate("/")
@@ -91,9 +104,19 @@ function Home() {
 
   const posterSize = imageConfig.poster_sizes[4]
 
+  const handleLogout = () => {
+    localStorage.removeItem("user")
+    setUserName(null) // Rensa användarnamnet i MovieContext
+    setName("") // Rensa inputfältet för användarnamn
+    setPassword("") // Rensa inputfältet för lösenord
+    navigate("/")
+  }
+
   return (
     <>
-      <Link to="/signup">Sign Up</Link>
+      <Link className="signup-link" to="/signup">
+        Sign Up
+      </Link>
       <div className="login-form-container">
         <form onSubmit={handleNameSubmit}>
           <input
@@ -115,9 +138,16 @@ function Home() {
           </button>
         </form>
         {userName && (
-          <Link className="liked-movies-link" to="/liked-movies">
-            See your liked movies
-          </Link>
+          <>
+          <div className="movie-logout">
+            <Link className="liked-movies-link" to="/liked-movies">
+              See your liked movies
+            </Link>
+            <button className="logout" onClick={handleLogout}>
+              Logout
+            </button>
+            </div>
+          </>
         )}
       </div>
 
