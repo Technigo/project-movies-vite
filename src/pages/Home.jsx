@@ -3,11 +3,13 @@ import { Link, useNavigate } from "react-router-dom"
 import { imageConfig } from "/src/imageConfig"
 import { useMovieContext } from "../components/MovieContext"
 import "./home.css"
+import CryptoJS from "crypto-js"
 
 function Home() {
   const { userName, setUserName, handleLike, popularMovies, setPopularMovies } =
     useMovieContext()
   const [name, setName] = useState(userName || "")
+  const [password, setPassword] = useState("")
   const navigate = useNavigate()
   const [hoveredMovieId, setHoveredMovieId] = useState(null)
   const [movieTrailers, setMovieTrailers] = useState({})
@@ -17,9 +19,24 @@ function Home() {
     setName(e.target.value)
   }
 
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value)
+  }
+
   const handleNameSubmit = (e) => {
     e.preventDefault()
-    setUserName(name)
+    const storedUser = JSON.parse(localStorage.getItem("user"))
+    if (storedUser && storedUser.name === name) {
+      const hashedInputPassword = CryptoJS.SHA256(password).toString()
+      if (hashedInputPassword === storedUser.password) {
+        setUserName(name)
+        navigate("/")
+      } else {
+        alert("Incorrect password.")
+      }
+    } else {
+      alert("User not found.")
+    }
   }
 
   const handleLikeClick = (movieId) => {
@@ -76,6 +93,7 @@ function Home() {
 
   return (
     <>
+      <Link to="/signup">Sign Up</Link>
       <div className="login-form-container">
         <form onSubmit={handleNameSubmit}>
           <input
@@ -85,8 +103,15 @@ function Home() {
             onChange={handleNameChange}
             className="login-input"
           />
+          <input
+            type="password"
+            placeholder="Enter your password"
+            value={password}
+            onChange={handlePasswordChange}
+            className="login-input"
+          />
           <button type="submit" className="login-button">
-            Save Name
+            Login
           </button>
         </form>
         {userName && (

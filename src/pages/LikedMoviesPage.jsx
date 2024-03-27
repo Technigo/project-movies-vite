@@ -39,6 +39,11 @@ const LikedMoviesPage = () => {
 
   console.log(likedMovieTitles)
 
+  const handleLogout = () => {
+    localStorage.removeItem("user") // Ta bort användarinformationen från localStorage
+    navigate("/") // Omdirigera användaren till inloggningssidan
+  }
+
   return (
     <>
       <Navigation />
@@ -51,6 +56,7 @@ const LikedMoviesPage = () => {
             </li>
           ))}
         </ul>
+        <button onClick={handleLogout}>Logout</button>
       </div>
     </>
   )

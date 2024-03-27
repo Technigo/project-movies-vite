@@ -1,16 +1,23 @@
 import { useState } from "react"
-import { useHistory } from "react-router-dom"
+import { useNavigate } from "react-router-dom" // Använd useNavigate istället för useHistory
 import { useMovieContext } from "./MovieContext"
+import CryptoJS from "crypto-js"
 
 const Login = () => {
   const { setUserName } = useMovieContext()
   const [name, setName] = useState("")
-  const history = useHistory()
+  const [password, setPassword] = useState("")
+  const navigate = useNavigate() // Använd useNavigate
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setUserName(name) 
-    history.push("/liked-movies")
+    const hashedPassword = CryptoJS.SHA256(password).toString()
+    localStorage.setItem(
+      "user",
+      JSON.stringify({ name, password: hashedPassword })
+    )
+    setUserName(name)
+    navigate("/liked-movies")
   }
 
   return (
@@ -20,6 +27,12 @@ const Login = () => {
         placeholder="Enter your name"
         value={name}
         onChange={(e) => setName(e.target.value)}
+      />
+      <input
+        type="password"
+        placeholder="Enter your password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
       />
       <button type="submit">Log in</button>
     </form>
