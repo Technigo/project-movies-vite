@@ -18,7 +18,6 @@ export const Listing = () => {
         }
         const data = await response.json()
         setResults(data.results)
-        console.log(data.results)
       } catch (error) {
         console.error("Error", error)
       }
@@ -27,14 +26,12 @@ export const Listing = () => {
     fetchMovie()
   }, [])
 
-  console.log("Restults", results)
-
   return (
-    <>
+    <section>
       {results && results.map(movie => {
         console.log(movie)
         return <MovieCard key={movie.id} data={movie} />
       })}
-    </>
+    </section>
   )
 }

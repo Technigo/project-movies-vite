@@ -3,6 +3,7 @@ import { Footer } from "./components/footer/Footer"
 import { Header } from "./components/header/Header"
 import { Details } from "./components/details/Details"
 import { Listing } from "./components/listing/Listing"
+import { NotFound } from "./components/404/NotFound"
 
 export const App = () => {
 
@@ -16,10 +17,12 @@ export const App = () => {
             <Route
               path="/"
               element={<Listing />}
+              errorElement={<NotFound/>}
             />
             <Route
-              path="/movies/:slug"
+              path="/movies/:slug/*"
               element={<Details />}
+              errorElement={<NotFound/>}
             />
           </Routes>
         </main>

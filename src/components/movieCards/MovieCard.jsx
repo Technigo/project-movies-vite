@@ -10,7 +10,7 @@ export const MovieCard = ({data}) => {
       <img src={`${POSTER_URL}${data.poster_path}`} alt={data.title} />
       </Link>
       <div className="movie-title"> 
-      MovieCard {data.title} Release date {data.release_date}
+       {data.title} Release date {data.release_date}
       </div>
 
       </div>
