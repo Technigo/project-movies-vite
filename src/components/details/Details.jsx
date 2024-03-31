@@ -32,18 +32,25 @@ export const Details = () => {
     <>
       {results && (
         <section
+          className="details-container"
           style={{
-            backgroundImage: `url(${POSTER_URL}/original${results.backdrop_path})`,
+            background: `linear-gradient(rgba(0, 0, 0, 0) 20%, rgb(0, 0, 0) 100%), url(${POSTER_URL}/original${results.backdrop_path}) center/cover no-repeat`,
           }}>
-          <div>
+          <div className="details">
             <img
+              className="poster"
               src={`${POSTER_URL}/w342${results.poster_path}`}
               alt={results.title}
             />
+            <div className="summary">
+              <h1 className="title">{results.title}</h1>
+              <p className="ranking">
+                {Math.round(results.vote_average * 100) / 100}
+              </p>
+              <p className="desc">{results.overview}</p>
+
+            </div>
           </div>
-          <h1>{results.title}</h1>
-          <p>{results.overview}</p>
-          <p>{results.vote_average}</p>
         </section>
       )}
     </>

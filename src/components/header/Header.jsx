@@ -1,10 +1,13 @@
 import "./Header.css"
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
+import { Listing } from "../listing/Listing.jsx"
 
 export const Header = () => {
   return (
-    <div>
-    <Link to="/movies/test">test</Link>
-  </div>
+    <header>
+      <nav>
+        <NavLink to="/">Movies</NavLink>
+      </nav>
+    </header>
   )
 }

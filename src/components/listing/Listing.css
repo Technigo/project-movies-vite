@@ -1,0 +1,21 @@
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+ }
+ 
+ 
+ 
+ @media all and (min-width: 668px) {
+   .movie-card{
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   }
+ }
+ 
+ @media all and (min-width: 1028px) {
+   .movie-card{
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   }
+ }

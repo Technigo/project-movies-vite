@@ -27,7 +27,7 @@ export const Listing = () => {
   }, [])
 
   return (
-    <section>
+    <section className="movie-card">
       {results && results.map(movie => {
         console.log(movie)
         return <MovieCard key={movie.id} data={movie} />

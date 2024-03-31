@@ -1,4 +1,8 @@
 footer {
   font-style: italic;
   font-size: x-small;
+  position: relative;
+  height: 64px;
+  width: 100%;
+  bottom: 0;
 }
