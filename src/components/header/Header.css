@@ -1,6 +1,6 @@
 header {
 	position: relative;
-	padding: 1rem;
+	padding: 12px;
 	width: 100%;
 	top: 0;
 	color: var(--font-color);
@@ -16,13 +16,13 @@ nav {
 }
 
 .heading {
-	font-size: 24px;
+	font-size: 18px;
 	width: 100%;
 }
 
 .heading > span {
 	font-weight: 900;
-	font-size: 24px;
+	font-size: 20px;
 	display: block;
 	font-family: "Rubik Scribble";
 }
