@@ -26,9 +26,10 @@ export const Listing = ({ genreId }) => {
           uniqueKey: `${movie.id}-${page}`, // Ensure unique key
         }))
         setResults(prevResults => [...prevResults, ...newData])
+      } else {
+        // Otherwise, just take the results
+        setResults(movies)
       }
-      // Otherwise, just take the results
-      setResults(movies)
     } catch (error) {
       console.error("Error", error)
     }
