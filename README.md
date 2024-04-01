@@ -32,7 +32,8 @@ Describe how you approached to problem, and what tools and techniques you used t
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/832d0052-da1e-49ae-9040-74ff2906a5c8/deploy-status)](https://app.netlify.com/sites/nathalies-sofias-project-movies/deploys)
+https://nathalies-sofias-project-movies.netlify.app/
 
 ## Instructions
 

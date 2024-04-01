@@ -1,6 +1,5 @@
 import "./Header.css"
-import { Link, NavLink } from "react-router-dom"
-import { Listing } from "../listing/Listing.jsx"
+import { NavLink } from "react-router-dom"
 
 export const Header = () => {
   return (
