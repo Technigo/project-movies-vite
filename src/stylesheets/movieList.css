@@ -1,0 +1,42 @@
+main {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  justify-content: center;
+}
+/* to change the width in base of mediaquery */
+.cardsWrapper {
+  width: 50%;
+}
+.cardsWrapper a {
+  width: 50%;
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.cardsWrapper a img {
+  width: 100%;
+}
+.cardsWrapper .info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: none;
+  padding: 20px;
+}
+.cardsWrapper a:hover .info {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.cardsWrapper .info h1 {
+  margin-top: auto;
+  margin-bottom: 0;
+}

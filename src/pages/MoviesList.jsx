@@ -1,6 +1,8 @@
 const API_KEY = '29adee7b64b906cf77014bb38ac8dd58'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { FormatDate } from '../utils/FormatDate'
+import '../stylesheets/movieList.css'
 export const MovieList = () => {
   const [list, setList] = useState([])
   useEffect(() => {
@@ -17,7 +19,7 @@ export const MovieList = () => {
   }, [])
 
   return (
-    <>
+    <main>
       {/* display desired data for each movie */}
       {list.map((movie) => {
         return (
@@ -25,17 +27,17 @@ export const MovieList = () => {
             {/* this is like an <a> tag that it's linked to the precised path */}
             <Link to={`/movie/${movie.id}`}>
               <img
-                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
                 alt={movie.title}
               />
               <div className="info">
                 <h1>{movie.title}</h1>
-                <p>Released on: {movie.release_date}</p>
+                <p>Released on: {FormatDate(movie.release_date)}</p>
               </div>
             </Link>
           </div>
         )
       })}
-    </>
+    </main>
   )
 }

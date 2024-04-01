@@ -7,14 +7,12 @@ import { TopRatedMovies } from './pages/TopRatedMovies'
 export const App = () => {
   return (
     <BrowserRouter>
-      <main>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<MovieList />} />
-          <Route path="/movie/:movie_id" element={<MoviesDetails />} />
-          <Route path="/movie/top-rated" element={<TopRatedMovies />} />
-        </Routes>
-      </main>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<MovieList />} />
+        <Route path="/movie/:movie_id" element={<MoviesDetails />} />
+        <Route path="/movie/top-rated" element={<TopRatedMovies />} />
+      </Routes>
     </BrowserRouter>
   )
 }

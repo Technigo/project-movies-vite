@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 const API_KEY = '29adee7b64b906cf77014bb38ac8dd58'
+import { FormatDate } from '../utils/FormatDate'
 export const TopRatedMovies = () => {
   const [topRated, setTopRated] = useState([])
+  //   inside useEffect I fetch from another api
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`
@@ -28,7 +30,7 @@ export const TopRatedMovies = () => {
               />
               <div className="info">
                 <h1>{movie.title}</h1>
-                <p>Released on: {movie.release_date}</p>
+                <p>Released on: {FormatDate(movie.release_date)}</p>
               </div>
             </Link>
           </div>
@@ -37,7 +39,3 @@ export const TopRatedMovies = () => {
     </>
   )
 }
-
-// fetch("
-// https://api.themoviedb.org/3/movie/top_rated?api_key=29adee7b64b906cf77014bb38ac8dd58&language=en-US&page=1")
-// to fetch top rated
