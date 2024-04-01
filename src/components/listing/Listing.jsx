@@ -18,7 +18,13 @@ export const Listing = () => {
 					throw Error("Something wrong with the fetch")
 				}
 				const data = await response.json()
-				setResults((prevResults) => [...prevResults, ...data.results])
+				setResults((prevResults) => [
+					...prevResults,
+					...data.results.map((movie) => ({
+						...movie,
+						uniqueKey: `${movie.id}-${page}`, // Ensure unique key
+					})),
+				])
 			} catch (error) {
 				console.error("Error", error)
 			}
@@ -34,9 +40,9 @@ export const Listing = () => {
 		<>
 			<section className='movie-card'>
 				{results &&
-					results.map((movie) => {
+					results.map((movie, index) => {
 						console.log(movie)
-						return <MovieCard key={movie.id} data={movie} />
+						return <MovieCard key={index} data={movie} />
 					})}
 			</section>
 			<button onClick={loadMore}> Load more </button>
