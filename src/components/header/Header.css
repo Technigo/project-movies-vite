@@ -1,3 +1,28 @@
-header a {
-  color: white;
+header {
+  position: relative;
+  padding: 1rem;
+  width: 100%;
+  top: 0;
+  color: var(--font-color);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+nav {
+  width: 100%;
+}
+
+.heading {
+ font-size: 2rem;
+ width: 100%;
+}
+
+.heading > span {
+  font-weight: 900;
+  font-size: 4rem;
+  display: block;
+  font-family: "Rubik Scribble";
 }

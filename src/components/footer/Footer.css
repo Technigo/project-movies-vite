@@ -11,11 +11,9 @@ footer {
   gap: 1rem;
 }
 
-.contact>*, 
+.contact > *,
 .contact li {
-  display: inline;
   padding: 0 1rem;
-
 }
 
 .contact span {
@@ -24,7 +22,8 @@ footer {
 }
 
 .contact a {
- padding: 2px;
+  display: block;
+  padding: 2px;
 }
 
 .contact span::after {
@@ -44,3 +43,13 @@ footer {
   text-align: center;
 }
 
+@media all and (min-width: 668px) {
+  .contact a {
+    display: inline;
+  }
+
+  .contact > *,
+  .contact li {
+    display: inline-block;
+  }
+}

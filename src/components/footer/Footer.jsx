@@ -15,8 +15,7 @@ export const Footer = () => {
         </ul>
       </div>
       <p className="disclaimer">
-        Disclaimer: This website uses TMDB and the TMDB APIs but is not
-        endorsed, certified, or otherwise approved by TMDB.
+        Disclaimer: This website uses TMDB and the TMDB APIs but is not endorsed, certified, or otherwise approved by TMDB.
       </p>
     </footer>
   )
