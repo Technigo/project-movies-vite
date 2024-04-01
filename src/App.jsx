@@ -1,3 +1,5 @@
+import { MovieList } from "./pages/MovieList";
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  return <MovieList />;
 };
