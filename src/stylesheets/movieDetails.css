@@ -1,0 +1,62 @@
+section {
+  position: relative;
+}
+
+section .posterContainer {
+  min-height: 100vh;
+  display: flex;
+  background-size: cover;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+section .info-container {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}
+section img {
+  border: 5px solid black;
+  width: 200px;
+}
+section .details {
+  margin-left: 0;
+}
+section .details p {
+  max-width: 400px;
+}
+section .details h1 {
+  text-shadow: 1px 1px #4d4d4d;
+}
+section .details .title {
+  margin-right: 10px;
+}
+section .rating {
+  color: #000;
+  font-weight: 500;
+
+  padding: 0 5px;
+  text-shadow: none;
+  display: inline-block;
+}
+
+@media (min-width: 577px) {
+  section .info-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 50px;
+  }
+  section .details {
+    margin-left: 20px;
+  }
+  main img {
+    width: 250px;
+  }
+}
+
+@media (min-width: 770px) {
+  section img {
+    width: 400px;
+  }
+}

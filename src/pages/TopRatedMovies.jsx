@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import '../stylesheets/movieList.css'
 const API_KEY = '29adee7b64b906cf77014bb38ac8dd58'
 import { FormatDate } from '../utils/FormatDate'
 export const TopRatedMovies = () => {
@@ -14,10 +15,11 @@ export const TopRatedMovies = () => {
         setTopRated(data.results)
         console.log(data)
       })
+      .catch((error) => console.log(error))
   }, [])
 
   return (
-    <>
+    <main>
       {/* display desired data for each movie */}
       {topRated.map((movie) => {
         return (
@@ -36,6 +38,6 @@ export const TopRatedMovies = () => {
           </div>
         )
       })}
-    </>
+    </main>
   )
 }

@@ -1,11 +1,9 @@
-import { useNavigate } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-
+import '../stylesheets/movieDetails.css'
 const API_KEY = '29adee7b64b906cf77014bb38ac8dd58'
 
 export const MoviesDetails = () => {
-  const navigate = useNavigate()
   const { movie_id } = useParams()
   const [details, setDetails] = useState(null)
   // fetch inside useEffect , set response to useState()
@@ -19,18 +17,20 @@ export const MoviesDetails = () => {
       })
       .catch((error) => console.log(error))
   }, [movie_id])
-  const handleBack = () => {
-    navigate('/') // Navigate to the home page
-  }
 
   return (
-    <>
+    <section>
       {details && (
-        <div className="posterContainer" key={details.id}>
-          <button onClick={handleBack}>Back</button>
+        <div
+          className="posterContainer"
+          key={details.id}
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0) 70%, rgb(0, 0, 0) 100%), url("https://image.tmdb.org/t/p/w1280${details.backdrop_path}")`,
+          }}
+        >
           <div className="info-container">
             <img
-              src={`https://image.tmdb.org/t/p/w1280${details.backdrop_path}`}
+              src={`https://image.tmdb.org/t/p/w1280${details.poster_path}`}
               alt={details.title}
             />
             <div className="details">
@@ -45,6 +45,6 @@ export const MoviesDetails = () => {
           </div>
         </div>
       )}
-    </>
+    </section>
   )
 }
