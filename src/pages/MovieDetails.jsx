@@ -1,12 +1,14 @@
+/* eslint-disable no-undef */
 //second page
 //background, description, poster, back arrow
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Poster } from "../components/Poster";
+import { Description } from "../components/Description";
 // import { Background } from "../components/Background";
 // import { Poster } from "../components/Poster";
-// import { Description } from "../components/Description";
 
-export const Details = () => {
+export const MovieDetails = () => {
   const [details, setDetails] = useState([]);
   const { movie_id } = useParams();
 
@@ -24,5 +26,14 @@ export const Details = () => {
 
   if (!details) return <p>Loading...</p>;
 
-  return <div> Movie Details</div>;
+  return (
+    <div>
+      <Poster poster_path={details.poster_path} title={details.title} />
+      <Description
+        movieName={details.title}
+        vote={details.vote_average}
+        overview={details.overview}
+      />
+    </div>
+  );
 };
