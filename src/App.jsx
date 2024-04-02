@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { MovieList } from "./pages/MovieList";
 import { MovieDetails } from "./pages/MovieDetails";
+import "./App.css";
 
 export const App = () => {
   return (

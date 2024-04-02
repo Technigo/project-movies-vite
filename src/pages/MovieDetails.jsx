@@ -5,8 +5,10 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Poster } from "../components/Poster";
 import { Description } from "../components/Description";
-// import { Background } from "../components/Background";
-// import { Poster } from "../components/Poster";
+import { Background } from "../components/Background";
+import { BackArrow } from "../components/BackArrow";
+
+import "./movieDetails.css";
 
 export const MovieDetails = () => {
   const [details, setDetails] = useState([]);
@@ -28,12 +30,18 @@ export const MovieDetails = () => {
 
   return (
     <div>
-      <Poster poster_path={details.poster_path} title={details.title} />
+      <BackArrow />
+      <Poster
+        poster_path={details.poster_path}
+        title={details.title}
+        imageClass={"detailImage"}
+      />
       <Description
         movieName={details.title}
         vote={details.vote_average}
         overview={details.overview}
       />
+      <Background backdrop_path={details.backdrop_path} title={details.title} />
     </div>
   );
 };

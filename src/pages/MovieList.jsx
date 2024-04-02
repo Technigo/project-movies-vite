@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 // import { Link } from "react-router-dom";
 import { Card } from "../components/Card";
+import "./movieList.css";
 
 // const API_KEY = "f34e76ca0c4c61e8906dd3e22b0fe2af";
 // const API_LANG = "en-US";
@@ -42,11 +43,11 @@ export const MovieList = () => {
       {loading ? (
         <p> loading...</p>
       ) : (
-        <div>
+        <section className="cardWrapper">
           {movies.map((movie) => {
             return <Card key={movie.id} movie={movie} />;
           })}
-        </div>
+        </section>
       )}
     </div>
   );

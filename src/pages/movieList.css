@@ -1,0 +1,19 @@
+.cardWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  position: relative;
+}
+
+/* .info {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+} */
+
+.mainImage:hover .info {
+  filter: brightness(50%);
+}
