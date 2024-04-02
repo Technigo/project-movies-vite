@@ -8,7 +8,7 @@ export const App = () => {
       <main>
         <Routes>
           <Route path="/" element={<MovieList />} />
-          <Route path="/movie" element={<Movie />} />
+          <Route path="/movie/:id" element={<Movie />} />
         </Routes>
       </main>
     </BrowserRouter>
