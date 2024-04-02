@@ -15,8 +15,8 @@ export const MovieList = () => {
         console.log(movies.results)
         setLoading(false)
       })
-      .catch ((err) => {
-        console.error("Error fetching movies:", err);
+      .catch ((error) => {
+        console.error("Error fetching movies:", error);
         setLoading(false);
       });
   };
@@ -33,14 +33,13 @@ export const MovieList = () => {
       )}
       {!loading && (
         <div className="movies">
-          {movies.results.map((movie, index) => (
-           <ul key={index}>
-            <li>
+          {movies.results.map((movie) => (
+            <div className="each-movie" key={movie.id}>
             <Link to={`movie/:${movie.title.toLowerCase().replace(/ /g, "-")}`}>
               {movie.title}
+              <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} />
             </Link>
-          </li>
-        </ul>
+            </div>
       ))}
     </div>
       )}
