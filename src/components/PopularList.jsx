@@ -53,11 +53,12 @@ export const PopularList = () => {
       {movies.map((movie) => (
         <div className="movie-card" key={movie.id}>
           <div className="hover-text">
-            <p>{movie.title}</p>
-            <p>Released {movie.release_date}</p>
+            <h1 className="title">{movie.title}</h1>
+            <p className="release-date">Released {movie.release_date}</p>
           </div>
-          <div className="poster-img">
+          <div className="poster">
             <img
+              className="poster-img"
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               alt={`Movie poster for ${movie.title}`}></img>
           </div>

@@ -1,3 +1,12 @@
+.title {
+  font-size: 32px;
+}
+
+.release-date {
+  font-size: 16px;
+  margin: 16px 0;
+}
+
 .popular-list {
   display: grid;
   grid-template-columns: 1fr;
@@ -7,19 +16,26 @@
   width: 100%;
 }
 
-.poster-img {
+.movie-card {
   position: relative;
-  display: inline-block;
 }
 
 .hover-text {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
   position: absolute;
-  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
   transition: opacity 0.3s ease;
 }
 
-.poster-img:hover .hover-text {
-  opacity: 1;
+.movie-card:hover .hover-text {
+  display: flex;
 }
 
 /*Media queries*/
