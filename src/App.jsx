@@ -1,3 +1,8 @@
-export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+import React from "react";
+import { Movies } from "./Movies";
+
+const App = () => {
+  return <Movies />;
 };
+
+export default App;
