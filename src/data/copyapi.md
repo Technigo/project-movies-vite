@@ -18,3 +18,6 @@
 "vote_average": 7.092,
 "vote_count": 228
 }
+
+Use--->
+id, original_title, releasedate
