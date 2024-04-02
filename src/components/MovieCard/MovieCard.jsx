@@ -1,14 +1,14 @@
 import React from "react";
-import { MovieCardImage } from "./MovieCardImage";
-import { MovieCardTitle } from "./MovieCardTitle";
-import { MovieCardDetails } from "./MovieCardDetails";
 
-export const MovieCard = () => {
+export const MovieCard = ({ movies }) => {
   return (
     <div>
-      <MovieCardImage />
-      <MovieCardTitle />
-      <MovieCardDetails />
+      {movies.map((movie) => (
+        <div key={movie.id}>
+          <h3>{movie.title}</h3>
+          <p>⭐ {movie.vote_average.toFixed(1)}</p>
+        </div>
+      ))}
     </div>
   );
 };

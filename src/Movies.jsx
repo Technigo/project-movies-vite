@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Home } from "./pages/home";
+import { MovieCard } from "./components/MovieCard/MovieCard";
 
 export const Movies = () => {
-  const API_KEY = "227355c25b5984172934aa93f25e5d05"; // Replace with your actual API key
+  const API_KEY = "227355c25b5984172934aa93f25e5d05";
   const Url = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
 
   const [moviesList, setMoviesList] = useState([]);
@@ -27,7 +27,7 @@ export const Movies = () => {
 
   return (
     <>
-      <Home Movies={moviesList} />
+      <MovieCard movies={moviesList} />
     </>
   );
 };
