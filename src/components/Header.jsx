@@ -1,7 +1,10 @@
-
+import { Link } from "react-router-dom";
+import "./Header.css"
 
 export const Header = () => {
   return (
-    <div>I am a Header</div>
-  )
-}
+    <div className="nav-bar">
+      <Link to="/"> Home </Link>
+    </div>
+  );
+};

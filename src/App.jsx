@@ -1,12 +1,12 @@
-import { BrowserRouter, Link, Routes } from "react-router-dom";
+import { BrowserRouter, Routes } from "react-router-dom";
 import { MovieRoutes } from "./routes/MovieRoutes";
 import { Header } from "./components/Header";
-
 export const App = () => {
+  
   return (
     <>
-      <Header />
       <BrowserRouter>
+        <Header />
         <main>
           <Routes>{MovieRoutes}</Routes>
         </main>
