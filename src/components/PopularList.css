@@ -1,8 +1,42 @@
 .popular-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
 }
 
-.movie-card {
-  border: solid blue;
+.movie-card img {
+  width: 100%;
+}
+
+.poster-img {
+  position: relative;
+  display: inline-block;
+}
+
+.hover-text {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.poster-img:hover .hover-text {
+  opacity: 1;
+}
+
+/*Media queries*/
+@media (min-width: 370px) {
+  .popular-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 570px) {
+  .popular-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 820px) {
+  .popular-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

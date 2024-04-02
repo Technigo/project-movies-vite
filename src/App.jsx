@@ -1,4 +1,5 @@
 import { PopularList } from "./components/PopularList"
+import "./App.css"
 
 export const App = () => {
   return (
