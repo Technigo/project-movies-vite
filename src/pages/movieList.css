@@ -1,9 +1,14 @@
 .cardWrapper {
-  display: flex;
-  flex-wrap: wrap;
+display: flex;
+flex-wrap: wrap;
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 667px;
+  height: auto;
   position: relative;
 }
 
@@ -14,6 +19,30 @@
   opacity: 0;
 } */
 
-.mainImage:hover .info {
-  filter: brightness(50%);
+.card:hover .mainImage{
+  filter: brightness(30%);
+  cursor: pointer;
 }
+
+.info{
+  position: absolute;
+  top: 70%;
+  left: 10%;
+  color: var(--color-main);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+}
+
+.info h1{
+  font-family: "Montserra", sans-serif;
+  font-size:2rem;
+}
+.info p{
+  font-family: "Montserra", sans-serif;
+  font-size: 1rem;
+  padding-top: 1rem;
+}
+
+
