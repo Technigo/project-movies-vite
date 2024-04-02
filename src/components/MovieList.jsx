@@ -1,3 +1,6 @@
+//const key = "e185d0927f85272fbd0fd2526ecf0657";
+
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export const MovieList = () => {
@@ -8,11 +11,12 @@ export const MovieList = () => {
     fetch(
       "https://api.themoviedb.org/3/movie/popular?api_key=e185d0927f85272fbd0fd2526ecf0657&language=en-US&page=1"
     )
-      .then((response) => response.json)
-      .then((movies) => setMovies(movies));
-    console
-      .log(movies)
-
+      .then((response) => response.json())
+      .then((movies) => {
+        console.log(movies);
+        setMovies(movies.results);
+        setLoading(false);
+      })
       .catch((error) => {
         console.log(error);
         setLoading(false);
@@ -22,14 +26,16 @@ export const MovieList = () => {
     fetchApi();
   }, []);
 
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="movies">
       {movies.map((movie) => (
-        <ul key={movie.title}>
+        <ul key={movie.id}>
           <li>
-            <Link to={`movie/:${movie.titletoLowerCase().replace(/ /g, "-")}`}>
-              {movie.title}
-            </Link>
+            <Link to={`movie/${movie.id}`}>{movie.title}</Link>
           </li>
         </ul>
       ))}
