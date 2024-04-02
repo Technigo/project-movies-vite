@@ -1,7 +1,9 @@
 /* eslint-disable no-unreachable */
 //start page (home page)
 import { useState, useEffect } from "react";
-import { Hover } from "../components/Hover";
+// import { Link } from "react-router-dom";
+import { Card } from "../components/Card";
+
 // const API_KEY = "f34e76ca0c4c61e8906dd3e22b0fe2af";
 // const API_LANG = "en-US";
 
@@ -42,13 +44,7 @@ export const MovieList = () => {
       ) : (
         <div>
           {movies.map((movie) => {
-            return (
-              <Hover
-                key={movie.id}
-                title={movie.title}
-                date={movie.release_date}
-              />
-            );
+            return <Card key={movie.id} movie={movie} />;
           })}
         </div>
       )}
