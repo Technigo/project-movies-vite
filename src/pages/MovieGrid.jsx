@@ -33,10 +33,9 @@ export const MovieGrid = () => {
       {data.results.map((movie, index) => (
         <div key={index}>
           <Link
-            to={`/movie/${movie.title.toLowerCase().replace(/ /g, "-")}`}
-            movie={data}
+                  to={{ pathname: `/movie/${movie.title.toLowerCase().replace(/ /g, "-")}`, state: movie}}
           >
-            <Movie movie={movie} />
+                  <Movie />
           </Link>
         </div>
       ))}
