@@ -8,7 +8,6 @@ export const App = () => {
     <BrowserRouter>
       <main>
         <div className="app-container">
-          <h1>Popular Movies</h1>
           <Routes>
             <Route path="/" element={<MovieList />} />
             <Route path="/movies/:slug" element={<MovieDetails />} />

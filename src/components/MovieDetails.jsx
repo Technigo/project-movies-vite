@@ -17,7 +17,10 @@ backdrop: backdrop_path
 */
 
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
+import { IoIosArrowDropleftCircle } from "react-icons/io"
+import { IoStar } from "react-icons/io5"
+import "./MovieDetails.css"
 
 const API_KEY = "2bd2e4cabf6e3176951e947b95e23dd9"
 
@@ -50,8 +53,6 @@ export const MovieDetails = () => {
     fetchMovieDetails()
   }, [movieURL])
 
-  console.log("MovieDetails:", movieDetails)
-
   if (!movieDetails) {
     return <div>Loading...</div>
   }
@@ -64,13 +65,40 @@ backdrop: backdrop_path
 */
 
   return (
-    <div className="movie-details">
-      <h1>{movieDetails.title}</h1>
-      <p>{movieDetails.overview}</p>
-      <img
-        className="poster-img"
-        src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
-        alt={`Movie poster for ${movieDetails.title}`}></img>
+    <div className="detail-page">
+      <Link to={"/"}>
+        <div className="back-arrow">
+          <IoIosArrowDropleftCircle className="back-icon" />
+          Back to all movies
+        </div>
+      </Link>
+      <div
+        className="background"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0,0,0,0) 70%, rgba(0,0,0) 100%), url(https://image.tmdb.org/t/p/w1280${movieDetails.backdrop_path})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}>
+        <div className="details-container">
+          <div className="poster-container">
+            <img
+              className="detail-poster"
+              src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
+              alt={`Movie poster for ${movieDetails.title}`}
+            />
+          </div>
+          <div className="text-container">
+            <h1 className="title-and-rating">
+              <span className="title">{movieDetails.title}</span>
+              <span className="rating">
+                <IoStar className="rating-icon" />
+                {movieDetails.vote_average.toFixed(1)}
+              </span>
+            </h1>
+            <p className="summary">{movieDetails.overview}</p>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

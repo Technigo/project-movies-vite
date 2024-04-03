@@ -41,7 +41,7 @@ export const MovieList = () => {
   console.log("Movies:", movies)
 
   if (!movies.length) {
-    return <div>No movies available</div>
+    return <div>Loading...</div>
   }
   return (
     <div className="popular-list">
