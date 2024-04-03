@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import '../styling/PopularList.css'
-import 
+import { MovieCard } from "./MovieCard.jsx"
+import { Loader } from './Loader.jsx'
 
 //global scope
 
@@ -32,7 +33,10 @@ export const PopularList = () => {
       console.log(error)
     }
   }
-  getMovies()
+  useEffect (() => {
+    getMovies()
+  }, [])
+  
 
   return (
     <section className="popular-list">
