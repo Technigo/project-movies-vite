@@ -15,7 +15,7 @@ export const Movies = () => {
           throw new Error("Failed to fetch movies");
         }
         const data = await response.json();
-        console.log("Fetched movies:", data.results); // Log the fetched data
+        console.log("Fetched movies:", data.results);
         setMoviesList(data.results);
       } catch (error) {
         console.error("Error fetching movies:", error);
@@ -26,8 +26,42 @@ export const Movies = () => {
   }, [Url]);
 
   return (
-    <>
-      <MovieCard movies={moviesList} />
-    </>
+    <div>
+      {moviesList.map((movie) => (
+        <MovieCard
+          key={movie.id}
+          movie={movie}
+          title={movie.title}
+          rating={movie.vote_average}
+        />
+      ))}
+    </div>
   );
 };
+
+//   const [moviesList, setMoviesList] = useState([]);
+
+//   useEffect(() => {
+//     const fetchMovies = async () => {
+//       try {
+//         const response = await fetch(Url);
+//         if (!response.ok) {
+//           throw new Error("Failed to fetch movies");
+//         }
+//         const data = await response.json();
+//         console.log("Fetched movies:", data.results);
+//         setMoviesList(data.results);
+//       } catch (error) {
+//         console.error("Error fetching movies:", error);
+//       }
+//     };
+
+//     fetchMovies();
+//   }, [Url]);
+
+//   return (
+//     <>
+//       <MovieCard movies={moviesList} />
+//     </>
+//   );
+// };

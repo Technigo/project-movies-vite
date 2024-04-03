@@ -1,14 +1,10 @@
 import React from "react";
 
-export const MovieCard = ({ movies }) => {
+export const MovieCard = ({ title, rating }) => {
   return (
     <div>
-      {movies.map((movie) => (
-        <div key={movie.id}>
-          <h3>{movie.title}</h3>
-          <p>⭐ {movie.vote_average.toFixed(1)}</p>
-        </div>
-      ))}
+      <h3>{title}</h3>
+      <p>⭐ {rating.toFixed(1)}</p>
     </div>
   );
 };
