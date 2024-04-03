@@ -1,0 +1,50 @@
+.detail-image-wrapper img {
+  border: solid white 5px;
+}
+
+.background {
+  display: flex;
+  height: 100vh;
+  background-size: cover;
+}
+
+.detail-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  bottom: 0;
+  padding: 50px;
+  gap: 16px;
+}
+
+.detail-heading {
+  display: inline;
+  margin-right: 15px;
+}
+
+/* A separate class/div for the "headlines" to get the ratingtag to position center aligned to the headline */
+.headlines {
+  display: flex;
+  align-items: center;
+}
+
+.detail-paragraph {
+  margin: 16px 0;
+}
+
+.detail-text-wrapper {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* ------------ MEDIA QUERIES ------------ */
+@media (min-width: 770px) {
+  .detail-info-wrapper {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .detail-paragraph {
+    max-width: 400px;
+  }
+}
