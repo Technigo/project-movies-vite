@@ -1,6 +1,6 @@
 .cardWrapper {
-display: flex;
-flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .card {
@@ -19,12 +19,12 @@ flex-wrap: wrap;
   opacity: 0;
 } */
 
-.card:hover .mainImage{
+.card:hover .mainImage {
   filter: brightness(30%);
   cursor: pointer;
 }
 
-.info{
+.info {
   position: absolute;
   top: 70%;
   left: 10%;
@@ -32,17 +32,14 @@ flex-wrap: wrap;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-
 }
 
-.info h1{
-  font-family: "Montserra", sans-serif;
-  font-size:2rem;
+.info h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
 }
-.info p{
-  font-family: "Montserra", sans-serif;
+.info p {
+  font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   padding-top: 1rem;
 }
-
-

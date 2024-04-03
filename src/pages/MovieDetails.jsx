@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
-//second page
-//background, description, poster, back arrow
+
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Poster } from "../components/Poster";
@@ -29,19 +28,23 @@ export const MovieDetails = () => {
   if (!details) return <p>Loading...</p>;
 
   return (
-    <div>
-      <BackArrow />
-      <Poster
-        poster_path={details.poster_path}
-        title={details.title}
-        imageClass={"detailImage"}
-      />
-      <Description
-        movieName={details.title}
-        vote={details.vote_average}
-        overview={details.overview}
-      />
+    <section className="detailContainer">
       <Background backdrop_path={details.backdrop_path} title={details.title} />
-    </div>
+
+      <BackArrow />
+      <div className="summary">
+        <Poster
+          poster_path={details.poster_path}
+          title={details.title}
+          imageClass={"detailImage"}
+        />
+
+        <Description
+          movieName={details.title}
+          vote={details.vote_average}
+          overview={details.overview}
+        />
+      </div>
+    </section>
   );
 };
