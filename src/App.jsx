@@ -1,3 +1,10 @@
+import { BrowserRouter } from "react-router-dom";
+import { MyRoutes } from "./Components/MyRoutes";
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  return (
+    <BrowserRouter>
+      <MyRoutes />
+    </BrowserRouter>
+  )
 };

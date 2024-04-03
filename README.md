@@ -6,9 +6,7 @@
 
 # Movie Site Project
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The assignment was to build a movies site where the user first see different movies on the homepage and then the user can click on a movie and come to a new page with more detailed info. We used React Router Dom for this project to create pages. 
 
 ## Getting Started with the Project
 
@@ -24,11 +22,11 @@ npm i && code . && npm run dev
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+We worked with pair-programming and divided the assignment in smaller tasks and we used an API to fetch data from a movie site and we used React Router to build pages. 
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+minaandmalinmoviesite.netlify.app
 
 ## Instructions
 
