@@ -9,6 +9,19 @@
 	justify-items: center;
 }
 
+.back-btn-wrapper {
+	align-self: flex-start;
+	position: absolute;
+	top: 7%;
+	display: none;
+}
+
+.back-button {
+	width: 35px;
+	height: 35px;
+	filter: drop-shadow(0 0 0.4rem black);
+}
+
 .poster {
 	object-fit: cover;
 	height: 100%;
@@ -79,6 +92,11 @@
 	.details {
 		align-items: flex-end;
 		align-content: flex-end;
+	}
+
+	.back-btn-wrapper {
+		left: 20px;
+		display: block;
 	}
 
 	.summary {

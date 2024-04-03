@@ -1,6 +1,7 @@
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import "./Details.css"
 import { useEffect, useState } from "react"
+import backButton from "../../assets/left-arrows-white.png"
 
 export const Details = () => {
   const movie = useParams()
@@ -38,6 +39,15 @@ export const Details = () => {
             background: `linear-gradient(rgba(0, 0, 0, 0) 20%, rgb(0, 0, 0) 100%), url(${POSTER_URL}/original${results.backdrop_path}) center/cover no-repeat`,
           }}>
           <div className="details">
+            <div className="back-btn-wrapper">
+              <Link to={"/"}>
+                <img
+                  className="back-button"
+                  src={backButton}
+                  alt="white arrow button pointing left"
+                />
+              </Link>
+            </div>
             <img
               className="poster"
               src={`${POSTER_URL}/w500${results.poster_path}`}
