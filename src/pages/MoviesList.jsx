@@ -3,14 +3,14 @@ import { MovieCard } from "../components/MovieCard";
 
 export const MoviesList = () => {
   const API_KEY = "6f6860c6ff83c7fcb911dfaf21a40acc";
-  const url = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
+  const movieUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
 
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const response = await fetch(url);
+        const response = await fetch(movieUrl);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -23,7 +23,7 @@ export const MoviesList = () => {
     };
 
     fetchMovies();
-  }, [url]);
+  }, [movieUrl]);
   return (
     <div className="movie-card-container">
       {movies.map((movie) => (
