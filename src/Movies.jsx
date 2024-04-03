@@ -26,11 +26,11 @@ export const Movies = () => {
   }, [Url]);
 
   return (
-    <div>
+    <div className="movie-card-container">
       {moviesList.map((movie) => (
         <MovieCard
           key={movie.id}
-          movie={movie}
+          // movie={movie}
           title={movie.title}
           rating={movie.vote_average}
           poster_path={movie.poster_path}
