@@ -25,9 +25,12 @@ export const App = () => {
               errorElement={<NotFound />}
             />
             <Route
-              path="/genre/:genreId/*"
+              path="/genre/:genreId/"
               element={<Genres />}
-              errorElement={<NotFound />}
+            />
+            <Route
+              path="*"
+              element={<NotFound />}
             />
           </Routes>
         </main>

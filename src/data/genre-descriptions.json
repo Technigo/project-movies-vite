@@ -1,0 +1,104 @@
+{
+  "genres": [
+    {
+      "id": 28,
+      "name": "Action",
+      "description": "Exciting and fast-paced films focusing on physical feats, stunts, and thrilling sequences."
+    },
+    {
+      "id": 12,
+      "name": "Adventure",
+      "description": "Movies centered around exciting journeys, discoveries, and adventures in foreign worlds."
+    },
+    {
+      "id": 16,
+      "name": "Animation",
+      "description": "Films created with animated images and characters, often targeting a younger audience but also appealing to adults."
+    },
+    {
+      "id": 35,
+      "name": "Comedy",
+      "description": "Movies intended to make the audience laugh, often through humorous situations, dialogues, and characters."
+    },
+    {
+      "id": 80,
+      "name": "Crime",
+      "description": "Engaging films focusing on crimes, investigations, and solving mysteries."
+    },
+    {
+      "id": 99,
+      "name": "Documentary",
+      "description": "Movies documenting real events, people, or subjects, often aiming to inform, educate, or entertain."
+    },
+    {
+      "id": 18,
+      "name": "Drama",
+      "description": "Films focusing on serious themes, emotional storylines, and complex characters."
+    },
+    {
+      "id": 10751,
+      "name": "Family",
+      "description": "Movies suitable for a broad audience, including families with children, often with a positive message and moral lessons."
+    },
+    {
+      "id": 14,
+      "name": "Fantasy",
+      "description": "Movies presenting a magical or fantastical world, often featuring supernatural elements, exotic creatures, and epic battles."
+    },
+    {
+      "id": 36,
+      "name": "History",
+      "description": "Movies exploring historical events, periods, or figures, often based on real facts and historical sources."
+    },
+    {
+      "id": 27,
+      "name": "Horror",
+      "description": "Movies intended to create fear and discomfort, often through supernatural events, monsters, and bloody scenes."
+    },
+    {
+      "id": 10402,
+      "name": "Music",
+      "description": "Movies focusing on music, musicians, or the music industry, often featuring musical performances and emotional themes."
+    },
+    {
+      "id": 9648,
+      "name": "Mystery",
+      "description": "Movies exploring secrets, unsolved puzzles, and unexplained events, often with surprising twists and revelations."
+    },
+    {
+      "id": 10749,
+      "name": "Romance",
+      "description": "Movies focusing on romantic relationships, love, and heartbreak, often with emotional conflicts and happy endings."
+    },
+    {
+      "id": 878,
+      "name": "Science Fiction",
+      "description": "Movies exploring future technology, space travel, alien life, and other scientific concepts."
+    },
+    {
+      "id": 10770,
+      "name": "TV Movie",
+      "description": "Movies specifically produced for television, often with a shorter runtime and smaller budget compared to theatrical films."
+    },
+    {
+      "id": 53,
+      "name": "Thriller",
+      "description": "Movies generating suspense, thrill, and tension, often through unexpected twists, threats, and dangerous situations."
+    },
+    {
+      "id": 10752,
+      "name": "War",
+      "description": "Movies depicting warfare, battles, and the impact of war on people and societies."
+    },
+    {
+      "id": 37,
+      "name": "Western",
+      "description": "Movies set in the American Wild West of the 19th century, often featuring cowboys, outlaws, and gunslingers."
+    },
+    {
+      "id": 0,
+      "name": "Unknown",
+      "description": "Oh, we don't know this genre! Feel free to send us a description 🎬🍿"
+    }
+  ]
+}

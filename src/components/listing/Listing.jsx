@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 import "./Listing.css"
 import { MovieCard } from "../movieCards/MovieCard"
+import { Error } from "../error/error"
 
-export const Listing = ({ genreId }) => {
+export const Listing = ({ genreId, genre }) => {
   const [results, setResults] = useState([])
   const [page, setPage] = useState(1)
   const API_KEY = "581a97ea9ebd9cf581e85b49251999f8"
@@ -17,7 +18,14 @@ export const Listing = ({ genreId }) => {
         throw Error("Something wrong with the fetch")
       }
       const data = await response.json()
-      const movies = data.results
+      let movies = data.results
+
+      // Is there a genre? Filter for match
+      if (genre) {
+        movies = movies.filter(movie =>
+          movie.genre_ids.includes(Number(genreId))
+        )
+      }
 
       // If page is over 1, add new results to previous results
       if (page > 1) {
@@ -47,7 +55,7 @@ export const Listing = ({ genreId }) => {
   return (
     <>
       <section className="movie-card">
-        {results &&
+        {results.length > 0 ? (
           results.map((movie, index) => {
             // console.log(movie)
             return (
@@ -56,7 +64,10 @@ export const Listing = ({ genreId }) => {
                 data={movie}
               />
             )
-          })}
+          })
+        ) : (
+          <Error m={`Couldn't find any ${genre}...`} />
+        )}
       </section>
       <button onClick={loadMore}> Load more </button>
     </>
