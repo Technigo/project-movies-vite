@@ -33,6 +33,7 @@ export const Movies = () => {
           movie={movie}
           title={movie.title}
           rating={movie.vote_average}
+          poster_path={movie.poster_path}
         />
       ))}
     </div>
