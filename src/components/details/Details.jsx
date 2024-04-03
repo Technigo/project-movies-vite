@@ -43,7 +43,7 @@ export const Details = () => {
 								<img
 									className='back-button'
 									src={backButton}
-									alt='Left arrow button'
+									alt='white arrow button pointing left'
 								/>
 							</Link>
 						</div>

@@ -12,8 +12,8 @@
 .back-btn-wrapper {
 	align-self: flex-start;
 	position: absolute;
-	top: 130px;
-	right: 20px;
+	top: 12%;
+	display: none;
 }
 
 .back-button {
@@ -95,8 +95,8 @@
 	}
 
 	.back-btn-wrapper {
-		top: 140px;
 		left: 20px;
+		display: block;
 	}
 
 	.summary {
