@@ -38,30 +38,3 @@ export const Movies = () => {
     </div>
   );
 };
-
-//   const [moviesList, setMoviesList] = useState([]);
-
-//   useEffect(() => {
-//     const fetchMovies = async () => {
-//       try {
-//         const response = await fetch(Url);
-//         if (!response.ok) {
-//           throw new Error("Failed to fetch movies");
-//         }
-//         const data = await response.json();
-//         console.log("Fetched movies:", data.results);
-//         setMoviesList(data.results);
-//       } catch (error) {
-//         console.error("Error fetching movies:", error);
-//       }
-//     };
-
-//     fetchMovies();
-//   }, [Url]);
-
-//   return (
-//     <>
-//       <MovieCard movies={moviesList} />
-//     </>
-//   );
-// };
