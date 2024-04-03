@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 export const Details = () => {
   const movie = useParams()
   const [results, setResults] = useState()
-  const API_KEY = "581a97ea9ebd9cf581e85b49251999f8"
+  const API_KEY = import.meta.env.VITE_DBAPI_KEY
   const API_LANG = "en-US"
   const POSTER_URL = "https://image.tmdb.org/t/p"
 
