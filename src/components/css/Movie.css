@@ -40,8 +40,9 @@
 }
 
 .movie-star {
-  width: 7%;
+  width: 20px;
   height: auto;
+  margin: 0 4px;
 }
 
 .details {
@@ -67,14 +68,15 @@
 .movie-rating {
   font-weight: 600;
   color: black;
-  display: flex;
-  flex-direction: row;
-  padding: 3px;
   align-self: center;
   font-size: 23px;
 }
-.movie-rating span{
+.movie-rating span {
   background-color: white;
+  padding: 2px;
+  display: inline-flex;
+  width: min-content;
+  align-items: center;
 }
 
 .button {
@@ -86,21 +88,20 @@
 }
 
 .button h4 {
- font-weight: 800;
- font-size: 18px;
- margin: 0.1em 0 0 0.3em;
- text-shadow: rgb(0, 0, 0) 3px 3px 10px;
- transition: transform 250ms;
+  font-weight: 800;
+  font-size: 18px;
+  margin: 0.1em 0 0 0.3em;
+  text-shadow: rgb(0, 0, 0) 3px 3px 10px;
+  transition: transform 250ms;
 }
 
 .button h4:hover {
   transform: translateX(+5px);
 }
 
-#go-back{
+#go-back {
   filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
 }
-
 
 @media screen and (min-width: 1024px) {
   .each-movie img {
