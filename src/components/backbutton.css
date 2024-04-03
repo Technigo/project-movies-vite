@@ -1,0 +1,33 @@
+/* backbutton.css */
+
+.button-container {
+    position: absolute;
+    left: 50px;
+    top: 10px;
+  }
+  
+  .button {
+    display: flex;
+    align-items: center;
+    color: #FFF; /* White text */
+    font-weight: 700;
+    text-decoration: none;
+    background: transparent; /* Transparent background */
+    cursor: pointer; /* Add a pointer cursor */
+    transition: transform 0.2s; /* Add a smooth transition effect for hover */
+  }
+  
+  .button:hover {
+    transform: translateX(5px); /* Move text to the right on hover */
+  }
+  
+  .details-page .icon {
+    width: 20px; /* Set the width and height as needed */
+    height: 20px;
+    margin-right: 5px; /* Spacing between icon and text */
+    border: none;
+    filter: invert(1); /* Invert the colors (1 means 100% inversion) */
+  }
+  
+  
+  
