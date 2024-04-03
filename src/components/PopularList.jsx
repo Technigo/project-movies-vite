@@ -8,7 +8,7 @@ const Base_URL = "https://api.themoviedb.org/3/movie/";
 const PopularList = () => {
   const [movies, setMovies] = useState(null);
   // const [endpoint, setEndpoint] = useState("upcoming");
-  const { type = "popular", pageNum = 1 } = useParams();
+  const { type, pageNum } = useParams();
   // const [page, listType] = useOutletContext();
 
   useEffect(() => {

@@ -1,5 +1,5 @@
 import Home from "./pages/Home";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, Navigate } from "react-router-dom";
 import PopularList from "./components/PopularList";
 export const App = () => {
   return (
@@ -13,7 +13,7 @@ export const App = () => {
       </nav>
       <Routes>
         <Route path="/" element={<Home />}>
-          <Route index element={<PopularList />} />
+          <Route index element={<Navigate replace to="now_playing/1" />} />
           <Route path=":type/:pageNum" element={<PopularList />} />
         </Route>
       </Routes>
