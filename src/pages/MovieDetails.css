@@ -9,7 +9,7 @@
   flex-direction: column;
   padding: 100px 50px;
   justify-content: flex-end;
-  box-shadow: inset 0px -100px 100px 0px rgba(0, 0, 0, 0.95)
+  box-shadow: inset 0px -100px 100px 0px rgba(0, 0, 0, 0.95);
 }
 
 .details {
@@ -54,10 +54,9 @@
   padding: 0;
   margin: 16px 0;
   font-size: 15px;
-  
 
-  
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 @media (min-width: 371px) {

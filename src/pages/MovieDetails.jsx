@@ -1,9 +1,18 @@
 import { useParams } from "react-router-dom";
+import { Backbutton } from "../components/Backbutton";
 import PropTypes from "prop-types";
 import "./MovieDetails.css";
 
-export const MovieDetails = ({ data }) => {
+export const MovieDetails = ({ data, setAPI_END }) => {
   const { slug } = useParams();
+  /* const { genre } = useParams();
+
+  console.log("GenreParam", genre);
+  if (genre) {
+    setAPI_END(genre);
+  } else {
+    setAPI_END("popular");
+  }*/
 
   console.log("Slug:", slug);
   console.log("MovieDetails:", data);
@@ -11,10 +20,9 @@ export const MovieDetails = ({ data }) => {
   const matchedMovie = data.results.find(
     (movie) => movie.title.toLowerCase().replace(/ /g, "-") === slug
   );
-  
+
   const backdrop_url = `https://media.themoviedb.org/t/p/w1280_and_h720_multi_faces/${matchedMovie.backdrop_path}`;
   const poster_url = `https://image.tmdb.org/t/p/w342/${matchedMovie.poster_path}`;
-
 
   console.log("MovieDetails matchedMovie:", matchedMovie);
 
@@ -27,6 +35,7 @@ export const MovieDetails = ({ data }) => {
         backgroundSize: "cover",
       }}
     >
+      <Backbutton />
       <img
         className="details-img"
         src={poster_url}

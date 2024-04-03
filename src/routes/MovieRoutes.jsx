@@ -5,8 +5,6 @@ import { NotFound } from "../pages/NotFound";
 import PropTypes from "prop-types";
 
 export const MovieRoutes = ({ data, setAPI_END }) => {
-  console.log("Routes data: ", data);
-
   return (
     <Routes>
       <Route
@@ -17,12 +15,17 @@ export const MovieRoutes = ({ data, setAPI_END }) => {
         path="/:genre"
         element={<MovieGrid data={data} setAPI_END={setAPI_END} />}
       />
-      <Route path="*" element={<NotFound />} />
-      <Route path="/movie/:slug" element={<MovieDetails data={data} />} />
+      <Route
+        path="/:genre/:slug"
+        element={<MovieDetails data={data} setAPI_END={setAPI_END} />}
+      />
+
+      <Route path="/*" element={<NotFound />} />
     </Routes>
   );
 };
 
 MovieRoutes.propTypes = {
   data: PropTypes.object,
+  setAPI_END: PropTypes.any
 };

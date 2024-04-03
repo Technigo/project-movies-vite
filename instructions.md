@@ -123,7 +123,7 @@ This route expects a movie ID in the URL and is responsible for showing more det
 - Handle loading
 - Image loading state
 - Route to different endpoints          CHECK!
-- Reloading on details not fetching right data.
+- Reloading on details not fetching right data. Question aked for Q&A!
 
 
 
