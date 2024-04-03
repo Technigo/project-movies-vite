@@ -43,12 +43,15 @@ const PopularList = () => {
               alt={`A poster of ${movie.title}`}
             ></img>
             <div
+              className={styles.overlay}
               onClick={() => {
                 navigate(`/movies/${movie.id}`);
               }}
             >
               <h2 className={styles.title}>{movie.title}</h2>
-              <p className={styles.releaseDate}>{movie.release_date}</p>
+              <p className={styles.releaseDate}>
+                Released {movie.release_date}
+              </p>
             </div>
             {/* </Link> */}
           </div>
