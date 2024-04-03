@@ -1,13 +1,18 @@
+import styles from "../styling/MovieDetail.module.css";
+
 const MovieDetail = ({ bgImage, poster, rate, descr, name }) => {
   return (
-    <div style={{ backgroundImage: `url(${bgImage})` }}>
-      <div className="details">
-        <img src={poster} alt={name} />
-        <div className="texts">
-          <h1>
-            <span>{name}</span>
-            <span>{rate}</span>
-          </h1>
+    <div
+      className={styles.movie}
+      style={{ backgroundImage: `url(${bgImage})` }}
+    >
+      <div className={styles.details}>
+        <img className={styles.poster} src={poster} alt={name} />
+        <div className={styles.texts}>
+          <h2>
+            <span className={styles.title}>{name}</span>
+            <span className={styles.rating}>{rate.toFixed(1)}</span>
+          </h2>
           <p>{descr}</p>
         </div>
       </div>
