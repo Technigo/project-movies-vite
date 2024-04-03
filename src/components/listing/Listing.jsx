@@ -6,7 +6,7 @@ import { Error } from "../error/Error"
 export const Listing = ({ genreId, genre }) => {
 	const [results, setResults] = useState([])
 	const [page, setPage] = useState(1)
-	const API_KEY = "581a97ea9ebd9cf581e85b49251999f8"
+	const API_KEY = import.meta.env.VITE_DBAPI_KEY
 	const API_LANG = "en-US"
 
 	const fetchMovie = async () => {
@@ -64,7 +64,7 @@ export const Listing = ({ genreId, genre }) => {
 					<Error m={`Couldn't find any ${genre}...`} />
 				)}
 			</section>
-			<div className='load-moar-wrapper'>
+			<div className='load-more-wrapper'>
 				<button id='load-more-btn' onClick={loadMore}>
 					{" "}
 					Load more{" "}
