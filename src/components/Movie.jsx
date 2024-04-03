@@ -1,6 +1,7 @@
 import Lottie from "lottie-react";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import "./css/Movie.css"
 import greenDots from "../assets/animations/greendots.json";
 import star from "/star.svg";
 import arrow from "/arrow.svg"
@@ -47,7 +48,10 @@ export const Movie = () => {
         <div className="movie-component">
          <div className="button">
           <Link to="/">
-            <img src={arrow} id="go-back" /> Movies
+            <img src={arrow} id="go-back" />
+          </Link>
+          <Link to="/">
+            <h4>Movies</h4>
           </Link>
           </div>
           <div className="movie-information">
@@ -59,8 +63,8 @@ export const Movie = () => {
               <div className="movie-heading">
                 <h1 className="movie-title">{movie.title}</h1>
                 <div className="movie-rating">
-                  <span>{Math.round(movie.vote_average * 10) / 10} </span>
-                  <img className="movie-star" src={star} />
+                  <span>{Math.round(movie.vote_average * 10) / 10}
+                  <img className="movie-star" src={star} /></span>
                 </div>
               </div>
               <p>{movie.overview}</p>
