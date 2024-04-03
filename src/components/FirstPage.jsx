@@ -4,7 +4,7 @@ import '../styling/FirstPage.css'
 export const Movies = () => {
   return (
 		<div>
-			<h1>First page showing movies</h1>
+			<h1 className="title">First page showing movies</h1>
 		</div>
 	)
 }
