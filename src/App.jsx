@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { Nav } from './components/Nav'
 import { Movies } from './components/FirstPage'
 import { Details } from './components/SecondPage'
