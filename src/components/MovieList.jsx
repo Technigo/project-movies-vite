@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react'
+import "./css/Movie.css"
 
 export const MovieList = () => {
   const [movies, setMovies] = useState([]);
@@ -36,7 +37,10 @@ export const MovieList = () => {
           {movies.results.map((movie) => (
             <div className="each-movie" key={movie.id}>
             <Link to={`movie/:${movie.title.toLowerCase().replace(/ /g, "-")}`}>
+              <div id="first-info">
               {movie.title}
+              {movie.release_date}
+              </div>
               <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} />
             </Link>
             </div>
