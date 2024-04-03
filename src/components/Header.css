@@ -1,3 +1,17 @@
 .nav-bar {
-background-color: blue;
+  background: linear-gradient(0.25turn, #000, #663399, #f69d3c);
+  border-bottom: 5px solid #000;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 700;
+  font-size: 24px;
+  padding: 1rem;
+  color: white;
+}
+
+.nav-bar a {
+  color: white;
+}
+
+.nav-bar a:hover {
+  color: lightblue;
 }
