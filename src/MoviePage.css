@@ -1,3 +1,14 @@
+.MoviePage-backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
 
 .MoviePage-backLink {
   display: flex;
@@ -9,9 +20,52 @@
   position: absolute;
   top: 20px;
   left: 20px;
+  filter: drop-shadow(0 0 5px black);
 }
 
 .MoviePage-backIcon {
   width: 30px;
+  filter: drop-shadow(0 0 5px black);
+}
 
+.MoviePage-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 50px;
+  row-gap: 20px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.MoviePage-poster {
+  width: 200px;
+  border: 5px solid white;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.MoviePage-heading {
+}
+
+.MoviePage-title {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  text-shadow: 0 0 5px black;
+}
+
+.MoviePage-votes {
+  background: white;
+  padding: 5px;
+  display: inline-flex;
+  column-gap: 4px;
+  font-size: 19px;
+}
+
+.MoviePage-overview {
+  color: white;
 }
