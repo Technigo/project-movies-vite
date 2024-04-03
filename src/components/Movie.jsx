@@ -2,7 +2,8 @@ import Lottie from "lottie-react";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import greenDots from "../assets/animations/greendots.json";
-import star from "../../public/star.svg";
+import star from "/star.svg";
+import arrow from "/arrow.svg"
 
 export const Movie = () => {
   const { id } = useParams();
@@ -44,29 +45,34 @@ export const Movie = () => {
       )}
       {!loading && (
         <div className="movie-component">
+         <div className="button">
           <Link to="/">
-            <button id="go-back" type="button">
-              Movies
-            </button>
+            <img src={arrow} id="go-back" /> Movies
           </Link>
+          </div>
           <div className="movie-information">
             <img
               src={`http://image.tmdb.org/t/p/w500${movie.poster_path}`}
               id="poster"
             />
             <div className="details">
-              <h1>{movie.title}</h1>
-              <div>
-                {Math.round(movie.vote_average * 10) / 10}{" "}
-                <img className="movie-star" src={star} />
+              <div className="movie-heading">
+                <h1 className="movie-title">{movie.title}</h1>
+                <div className="movie-rating">
+                  <span>{Math.round(movie.vote_average * 10) / 10} </span>
+                  <img className="movie-star" src={star} />
+                </div>
               </div>
               <p>{movie.overview}</p>
             </div>
           </div>
+          
+          <div className="movie-gradient"></div>
           <img
             src={`http://image.tmdb.org/t/p/w1280${movie.backdrop_path}`}
             id="backdrop"
           />
+          
         </div>
       )}
     </>

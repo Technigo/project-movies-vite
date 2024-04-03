@@ -10,6 +10,7 @@ import greenDots from "../assets/animations/greendots.json";
 export const MovieList = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
+  
   const fetchMovies = () => {
     fetch(
       "https://api.themoviedb.org/3/movie/popular?api_key=e185d0927f85272fbd0fd2526ecf0657&language=en-US&page=1"
@@ -28,7 +29,7 @@ export const MovieList = () => {
   useEffect(() => {
     setTimeout(() => {
       fetchMovies();
-    }, 2000);
+    }, 1500);
   }, []);
 
   return (
@@ -39,7 +40,7 @@ export const MovieList = () => {
             animationData={greenDots}
             loop
             autoPlay
-            style={{ width: 200, height: 200 }}
+            style={{ width: 160, height: 160 }}
           />
         </div>
       )}
@@ -48,9 +49,11 @@ export const MovieList = () => {
           {movies.results.map((movie) => (
             <div className="each-movie" key={movie.id}>
               <Link to={`movie/:${movie.id}`}>
-                <div id="first-info">
-                  {movie.title}
-                  {movie.release_date}
+                <div id="overlay">
+                  <div id="overlay-text">
+                  <h1>{movie.title}</h1>
+                  <h2>Released: {movie.release_date}</h2>
+                  </div>
                 </div>
                 <img
                   src={`https://image.tmdb.org/t/p/w780${movie.poster_path}`}
