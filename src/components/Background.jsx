@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import "../pages/MovieDetails.css";
+import "../pages/movieDetails.css";
 
 export const Background = ({ backdrop_path, title }) => {
   return (
