@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { MovieCard } from "../components/MovieCard";
+import { MovieCard } from "../components/MovieCard/MovieCard";
 
 export const MoviesList = () => {
   const API_KEY = "6f6860c6ff83c7fcb911dfaf21a40acc";
