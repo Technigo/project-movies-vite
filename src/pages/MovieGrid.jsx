@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Movie } from "../components/Movie"
 import { Link } from "react-router-dom";
+import "./MovieGrid.css"
 
 export const MovieGrid = () => {
     const [loading, setLoading] = useState(true);
@@ -29,13 +30,13 @@ export const MovieGrid = () => {
     console.log(data)
 
   return (
-    <div>
+    <div className="movie-grid">
       {data.results.map((movie, index) => (
-        <div key={index}>
+        <div className="movie-link" key={index}>
           <Link
-                  to={{ pathname: `/movie/${movie.title.toLowerCase().replace(/ /g, "-")}`, state: movie}}
+                  to={{ pathname: `/movie/${movie.title.toLowerCase().replace(/ /g, "-")}`, state: { movie } }}
           >
-                  <Movie />
+                  <Movie movie={movie} />
           </Link>
         </div>
       ))}
