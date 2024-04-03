@@ -4,14 +4,13 @@ import { IoIosArrowDropleftCircle } from "react-icons/io"
 import { IoStar } from "react-icons/io5"
 import "./MovieDetails.css"
 
-const API_KEY = "2bd2e4cabf6e3176951e947b95e23dd9"
-
 export const MovieDetails = () => {
   const [movieDetails, setMovieDetails] = useState()
+  const apiEnv = import.meta.env.VITE_OPENDB_KEY
 
   const params = useParams()
   const movieId = params.slug
-  const movieURL = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=en-US`
+  const movieURL = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiEnv}&language=en-US`
 
   useEffect(() => {
     const fetchMovieDetails = () => {

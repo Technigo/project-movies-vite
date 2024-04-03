@@ -2,15 +2,15 @@ import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 import "./MovieList.css"
 
-const API_KEY = "2bd2e4cabf6e3176951e947b95e23dd9"
-const BASE_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`
-
 export const MovieList = () => {
   const [movies, setMovies] = useState([])
 
   useEffect(() => {
+    const apiEnv = import.meta.env.VITE_OPENDB_KEY
     const fetchMovies = () => {
-      fetch(BASE_URL)
+      fetch(
+        `https://api.themoviedb.org/3/movie/popular?api_key=${apiEnv}&language=en-US&page=1`
+      )
         .then((response) => {
           if (!response.ok) {
             if (response.status === 404) {
