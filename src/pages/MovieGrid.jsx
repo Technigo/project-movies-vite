@@ -32,4 +32,5 @@ export const MovieGrid = ({ data, setAPI_END }) => {
 
 MovieGrid.propTypes = {
   data: PropTypes.object,
+  setAPI_END: PropTypes.any
 };

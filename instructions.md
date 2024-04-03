@@ -116,13 +116,14 @@ This route expects a movie ID in the URL and is responsible for showing more det
 ### Roadmap
 
 - Not found for /movie/*
-- Style the Not found
-- Style header              - Martin
+- Style the Not found   
+- Style header              - Martin    CHECK!
 - Style Grid                - Martin    CHECK!
 - Style Details             - Linda     CHECK!
 - Handle loading
 - Image loading state
-- 
+- Route to different endpoints          CHECK!
+- Reloading on details not fetching right data.
 
 
 
