@@ -1,40 +1,21 @@
-import { useEffect, useState } from "react"
+
 import { Movie } from "../components/Movie"
 import { Link } from "react-router-dom";
 import "./MovieGrid.css"
+import PropTypes from "prop-types";
 
-export const MovieGrid = () => {
-    const [loading, setLoading] = useState(true);
-    const [data, setData] = useState();
-    const [API_END, setAPI_END] = useState("popular")
-    const API_KEY = "5ebb37047349cdb54acf91b06e7b7839"
-    const API_URL = `https://api.themoviedb.org/3/movie/${API_END}?api_key=${API_KEY}&language=en-US&page=1`
+export const MovieGrid = ({data} ) => {
+    
 
-    useEffect(() => {
-      fetch(API_URL)
-      .then ((result) => result.json())
-      .then ((json) => {
-        setData(json)
-        setLoading(false)
-      })
-      .catch ((error) => {
-        console.error(error)
-        setLoading(false)
-      }) 
-    }, [])
-
-    if (loading) {
-      return <p>Loading...</p>
-    }
-
-    console.log(data)
+    const fetchedData  = data;
+    console.log("Fetched data: ", fetchedData)
 
   return (
     <div className="movie-grid">
       {data.results.map((movie, index) => (
         <div className="movie-link" key={index}>
           <Link
-                  to={{ pathname: `/movie/${movie.title.toLowerCase().replace(/ /g, "-")}`, state: { movie } }}
+                  to={ `/movie/${movie.title.toLowerCase().replace(/ /g, "-")}`}
           >
                   <Movie movie={movie} />
           </Link>
@@ -43,3 +24,7 @@ export const MovieGrid = () => {
     </div>
   );
 }
+
+MovieGrid.propTypes = {
+  data: PropTypes.object,
+};
