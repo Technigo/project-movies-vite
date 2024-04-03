@@ -1,11 +1,3 @@
-/*Route: /, component: PopularList
-This route is responsible for the home page. 
-It uses useEffect to run an API request to 
-themoviedb.org and fetch popular films in the US, 
-puts them into state using useState, and then renders 
-them wrapped in a Link from react-router-dom to link 
-to the detail page.*/
-
 import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 import "./MovieList.css"
@@ -37,8 +29,6 @@ export const MovieList = () => {
 
     fetchMovies()
   }, [])
-
-  console.log("Movies:", movies)
 
   if (!movies.length) {
     return <div>Loading...</div>
