@@ -3,7 +3,7 @@
 
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./css/Movie.css";
+import "./css/movielist.css";
 import Lottie from "lottie-react";
 import greenDots from "../assets/animations/greendots.json";
 
