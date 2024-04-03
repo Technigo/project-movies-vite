@@ -1,5 +1,10 @@
 import React from "react";
+import { MovieDetails } from "../components/MovieDetails";
 
 export const MovieDetalisPage = () => {
-  return <div>MovieDetalisPage</div>;
+  return (
+    <>
+      <MovieDetails />
+    </>
+  );
 };
