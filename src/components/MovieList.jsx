@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styles from "../styling/MovieList.module.css";
 
@@ -8,6 +8,7 @@ const Access_Token =
 const Base_URL = "https://api.themoviedb.org/3/movie/";
 
 const PopularList = () => {
+  const navigate = useNavigate();
   const [movies, setMovies] = useState(null);
   // const [endpoint, setEndpoint] = useState("upcoming");
   const { type, pageNum } = useParams();
@@ -41,7 +42,11 @@ const PopularList = () => {
               src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
               alt={`A poster of ${movie.title}`}
             ></img>
-            <div>
+            <div
+              onClick={() => {
+                navigate(`/movies/${movie.id}`);
+              }}
+            >
               <h2 className={styles.title}>{movie.title}</h2>
               <p className={styles.releaseDate}>{movie.release_date}</p>
             </div>
