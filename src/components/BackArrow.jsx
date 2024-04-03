@@ -7,7 +7,7 @@ export const BackArrow = () => {
     <Link to={`/`}>
       <div className="arrow">
         <img className="arrowIcon" src={Arrow} alt="arrow back to main site" />
-        <p className="arrowTitle">Movies</p>
+        <h3 className="arrowTitle">Movies</h3>
       </div>
     </Link>
   );

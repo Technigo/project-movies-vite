@@ -12,13 +12,6 @@
   position: relative;
 }
 
-/* .info {
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  transition: opacity 0.3s ease;
-  opacity: 0;
-} */
-
 .card:hover .mainImage {
   filter: brightness(30%);
   cursor: pointer;

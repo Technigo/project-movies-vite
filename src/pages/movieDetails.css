@@ -11,9 +11,9 @@
   padding: 50px;
   justify-content: space-between;
   background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.7) 0%,
-    rgba(0, 0, 0, 0) 100%
+    to bottom,
+    rgba(0, 0, 0, 0) 70%,
+    rgba(0, 0, 0) 100%
   );
 }
 
@@ -29,21 +29,18 @@
   object-position: left top;
 }
 
-/* .summary {
-  border: 5px solid red;
-} */
-
 h2 {
   color: white;
   margin: 20px 0;
   font-family: "Montserrat", sans-serif;
   font-size: 1.5rem;
+  text-shadow: 1px 1px #4d4d4d;
 }
 
-.rating {
-  background-color: white;
-  color: black;
-  padding: 0 10px;
+h3 {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
 }
 
 p {
@@ -52,9 +49,16 @@ p {
   font-size: 1rem;
 }
 
+.rating {
+  background-color: white;
+  color: black;
+  padding: 0 10px;
+}
+
 .arrow {
   position: relative;
   display: inline-flex;
+  filter: drop-shadow(2px 3px 4px rgb(0 0 0 / 0.5));
 }
 
 .arrowIcon {
@@ -63,7 +67,33 @@ p {
 }
 
 .arrowTitle {
-  font-size: 1.2rem;
-  font-style: 600;
-  padding-left: 10px;
+  padding-left: 5px;
+  transition: transform 0.2s ease-in-out;
+  /* text-shadow: 1px 1px 5px black; */
+}
+
+.arrow:hover .arrowTitle {
+  transform: translateX(5px);
+}
+
+@media all and (min-width: 668px) {
+  .summary {
+    display: flex;
+  }
+
+  .detailImage {
+    width: 250px;
+  }
+
+  .details {
+    align-self: end;
+    max-width: 400px;
+    margin: 20px;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .detailImage {
+    width: auto;
+  }
 }
