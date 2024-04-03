@@ -30,7 +30,6 @@ export const Movies = () => {
       {moviesList.map((movie) => (
         <MovieCard
           key={movie.id}
-          // movie={movie}
           title={movie.title}
           rating={movie.vote_average}
           poster_path={movie.poster_path}
