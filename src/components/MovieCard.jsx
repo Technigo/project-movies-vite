@@ -7,7 +7,7 @@ export const MovieCard = ({ title, rating, poster_path }) => {
       <img src={`https://image.tmdb.org/t/p/w300/${poster_path}`} alt={title} />
       <div className="movie-card-info">
         <h2>{title}</h2>
-        <p>⭐ {rating.toFixed(1)}</p>
+        <p>⭐ {rating}</p>
       </div>
     </div>
   );
