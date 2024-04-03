@@ -5,6 +5,7 @@ export const HomePage = () => {
     <div className="homepage">
       <NavBar />
       <h1>Movies Galore</h1>
+      
     </div>
   );
 };
