@@ -6,7 +6,7 @@
     flex-wrap: wrap;
     gap: 1em;
     justify-content: center;
-    padding-top: 5em;
+    padding: 5em 0;
 }
 
 .each-movie img{
@@ -23,5 +23,6 @@
 
 @media screen and (min-width: 1024px){
     .each-movie img{
-    width: 500px;
+    width: 400px;
+}
 }
