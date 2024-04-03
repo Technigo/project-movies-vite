@@ -57,7 +57,6 @@ export const Listing = ({ genreId, genre }) => {
 			<section className='movie-card'>
 				{results.length > 0 ? (
 					results.map((movie, index) => {
-						// console.log(movie)
 						return <MovieCard key={index} data={movie} />
 					})
 				) : (
