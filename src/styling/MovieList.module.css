@@ -1,0 +1,17 @@
+.movieList {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movieItem {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  text-wrap: wrap;
+  padding: 0 20px;
+}

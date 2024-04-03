@@ -1,5 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import styles from "../styling/MovieList.module.css";
+
 const Access_Token =
   "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhNWIxM2M3MzY1ZTNlNTRmY2JjNWQ1NzE1MTE3NjdmOSIsInN1YiI6IjY1NTkzNzIyYjU0MDAyMTRkM2NhZTQ2NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.hUP5w6KFCmMshYAaFwy15nfUVAcySBTGUGuOYxWo1M0";
 
@@ -29,17 +31,20 @@ const PopularList = () => {
   }, [type, pageNum]);
 
   return (
-    <div>
+    <div className={styles.movieList}>
       {movies &&
         movies.map(movie => (
-          <div key={movie.id}>
+          <div key={movie.id} className={styles.movieItem}>
             {/* <Link to="/"> */}
             <img
+              className={styles.poster}
               src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
               alt={`A poster of ${movie.title}`}
             ></img>
-            <h2>{movie.title}</h2>
-            <p>{movie.release_date}</p>
+            <div>
+              <h2 className={styles.title}>{movie.title}</h2>
+              <p className={styles.releaseDate}>{movie.release_date}</p>
+            </div>
             {/* </Link> */}
           </div>
         ))}

@@ -1,8 +1,8 @@
-import PopularList from "../components/PopularList";
 import { useState } from "react";
-import { Link, Outlet, useSearchParams } from "react-router-dom";
+import { Outlet, useSearchParams } from "react-router-dom";
 import Category from "../components/Category";
 import Pagination from "../components/Pagination";
+import styles from "../styling/Home.module.css";
 
 const Home = () => {
   const [page, setPage] = useState(1);
@@ -19,9 +19,10 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <h1>Wen&apos;s movie site</h1>
+    <div className={styles.home}>
+      <h1 className={styles.headline}>Wen&apos;s movie site</h1>
       <Category onClick={changeListType} />
+
       <Outlet />
       <Pagination type={listType} onClick={changePage} />
     </div>
