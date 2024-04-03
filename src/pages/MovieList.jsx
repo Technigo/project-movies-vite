@@ -1,12 +1,7 @@
 /* eslint-disable no-unreachable */
-//start page (home page)
 import { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
 import { Card } from "../components/Card";
 import "./movieList.css";
-
-// const API_KEY = "f34e76ca0c4c61e8906dd3e22b0fe2af";
-// const API_LANG = "en-US";
 
 export const MovieList = () => {
   const [loading, setLoading] = useState(false);
@@ -14,8 +9,6 @@ export const MovieList = () => {
 
   const API_KEY = "f34e76ca0c4c61e8906dd3e22b0fe2af";
   const API_LANG = "en-US";
-
-  // const movies = data;
 
   useEffect(() => {
     const fetchMovies = async () => {

@@ -3,12 +3,19 @@
   flex-wrap: wrap;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
+/* img {
+  object-fit: cover;
+} */
+
+a {
   width: 100%;
-  max-width: 667px;
-  height: auto;
+}
+
+.cardWrapper a img {
+  width: 100%;
+}
+
+.card {
   position: relative;
 }
 
@@ -19,12 +26,12 @@
 
 .info {
   position: absolute;
-  top: 70%;
+  bottom: 10%;
   left: 10%;
   color: var(--color-main);
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: flex-end;
 }
 
 .info h1 {
@@ -35,4 +42,22 @@
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   padding-top: 1rem;
+}
+
+@media (min-width: 370px) {
+  .cardWrapper a {
+    width: 50%;
+  }
+}
+
+@media (min-width: 570px) {
+  .cardWrapper a {
+    width: 33.33%;
+  }
+}
+
+@media (min-width: 820px) {
+  .cardWrapper a {
+    width: 25%;
+  }
 }
