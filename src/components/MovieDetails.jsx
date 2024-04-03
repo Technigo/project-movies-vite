@@ -53,7 +53,7 @@ export const MovieDetails = () => {
           backgroundImage: `linear-gradient(rgba(0,0,0,0) 70%, rgba(0,0,0) 100%), url(https://image.tmdb.org/t/p/w1280${movieDetails.backdrop_path})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
-          minWidth: "100vw"
+          minWidth: "100vw",
         }}>
         <div className="details-container">
           <div className="poster-container">
@@ -64,12 +64,14 @@ export const MovieDetails = () => {
             />
           </div>
           <div className="text-container">
-            <h1 className="title-and-rating">
+            <h1>
               <span className="title">{movieDetails.title}</span>
-              <span className="rating">
-                <IoStar className="rating-icon" />
-                {movieDetails.vote_average.toFixed(1)}
-              </span>
+              <div className="rating-container">
+                <span className="rating">
+                  <IoStar className="rating-icon" />
+                  {movieDetails.vote_average.toFixed(1)}
+                </span>
+              </div>
             </h1>
             <p className="summary">{movieDetails.overview}</p>
           </div>
