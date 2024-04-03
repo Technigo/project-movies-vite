@@ -117,9 +117,9 @@ This route expects a movie ID in the URL and is responsible for showing more det
 
 - Not found for /movie/*
 - Style the Not found
-- Style header
-- Style Grid
-- Style Details
+- Style header              - Martin
+- Style Grid                - Martin    CHECK!
+- Style Details             - Linda     CHECK!
 - Handle loading
 - Image loading state
 - 

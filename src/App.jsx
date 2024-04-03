@@ -29,8 +29,8 @@ export const App = () => {
   return (
     <>
       <BrowserRouter>
-        <Header />
         <main>
+          <Header />
           <MovieRoutes data={data} />
         </main>
       </BrowserRouter>

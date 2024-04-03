@@ -1,9 +1,29 @@
+/* Phone */
 .movie-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+  background-color: black;
 }
 
+/* Tablet */
+@media (min-width: 370px) {
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
-/*to 370 1 row
-to 570 2 rows
-to 820 3 rows*/
+/* Desktop */
+@media (min-width: 570px) {
+  .movie-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Desktop */
+@media (min-width: 820px) {
+  .movie-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+

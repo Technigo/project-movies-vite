@@ -2,7 +2,7 @@ import { PropTypes } from "prop-types";
 import "./Movie.css"
 
 export const Movie = ({ movie }) => {
-  const poster_url = `https://media.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`;
+  const poster_url = `https://image.tmdb.org/t/p/w342/${movie.poster_path}`;
 
   return (
     <div className="movie-card">
@@ -11,9 +11,9 @@ export const Movie = ({ movie }) => {
         alt={`movie poster from the movie: ${movie.title}`}
       />
       <div className="movie-card-info">
-        <h1>{movie.title}</h1>
-        <h2>{movie.original_title}</h2>
-        <p>{movie.release_date}</p>
+        <h2 className="english-title">{movie.title}</h2>
+        <h2 className="original-title">{movie.original_title}</h2>
+        <p className="release">{movie.release_date}</p>
       </div>
     </div>
   );
