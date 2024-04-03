@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import "./Listing.css"
 import { MovieCard } from "../movieCards/MovieCard"
-import { Error } from "../error/error"
+import { Error } from "../error/Error"
 
 export const Listing = ({ genreId, genre }) => {
   const [results, setResults] = useState([])
