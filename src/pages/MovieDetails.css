@@ -9,11 +9,11 @@
   flex-direction: column;
   padding: 100px 50px;
   justify-content: flex-end;
+  box-shadow: inset 0px -100px 100px 0px rgba(0, 0, 0, 0.95)
 }
 
 .details {
   margin: 20px 0;
-  background: rgba(0,0,0,0.5);
 }
 
 .details-img {
@@ -31,6 +31,7 @@
 .details-org-title {
   color: #fff;
   text-shadow: 1px 1px #4d4d4d;
+  padding: 0;
 }
 
 .details-rating {

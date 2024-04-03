@@ -10,7 +10,7 @@
 }
 
 .movie-card-info h1,
-h2,
+h2, h3,
 p {
   font-family: "Poppins";
   color: white;
@@ -38,7 +38,7 @@ p {
   top: 0;
   z-index: 1;
   background: rgba(0, 0, 0, 0.7);
-  opacity: 1;
+  opacity: 0;
 
   display: flex;
   flex-direction: column;
