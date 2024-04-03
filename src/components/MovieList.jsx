@@ -41,7 +41,7 @@ export const MovieList = () => {
               {movie.title}
               {movie.release_date}
               </div>
-              <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} />
+              <img src={`https://image.tmdb.org/t/p/w780${movie.poster_path}`} />
             </Link>
             </div>
       ))}
