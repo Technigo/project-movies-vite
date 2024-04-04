@@ -1,15 +1,18 @@
 .movie-details-page {
-  background-color: grey;
-  position: relative;
+  /* background-color: grey; */
+  /* position: relative; */
+  background-color: black;
 }
 
-.movie-details-page img {
+.backdrop {
   width: 100%;
   height: auto;
   display: block;
 }
 
 .movie-details-info {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -17,5 +20,33 @@
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
   padding: 20px;
-  text-align: center;
+  /* text-align: center; */
+  width: 300px;
+}
+
+.movie-details-info img {
+  width: 50%;
+  margin: 0px 0 10px 0;
+}
+
+.movie-genre-list {
+  /* background-color: pink; */
+}
+
+.movie-genre-list ul {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  /* justify-content: center; */
+}
+
+.movie-genre-list li {
+  list-style-type: none;
+  font-size: small;
+  margin: 5px 5px 20px 0;
+}
+
+.release-date {
+  font-size: small;
+  margin: 20px 0 0px 0;
 }

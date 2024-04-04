@@ -40,6 +40,7 @@ export const MovieDetailsPage = () => {
             tagline={movieDetails.tagline}
             poster_path={movieDetails.poster_path}
             genres={movieDetails.genres}
+            homepage={movieDetails.homepage}
           />
         </div>
       ) : (
