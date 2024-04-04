@@ -27,15 +27,17 @@ export const Movies = () => {
   }, []);
 
   return (
-    (movies.length && (
+    (movies && (
       <div>
         <h1>Popular Movies</h1>
         <div className="movies">
           {movies.map((movie) => (
             <div className="movie" key={movie.id}>
-              <h2 className="movie-title">{movie.title}</h2>
-              <div className="release-date">Released {movie.release_date}</div>
-              <Link to={`/movies/${movie.id}`}>
+              <Link to={`/movie/${movie.id}`}>
+                <h2 className="movie-title">{movie.title}</h2>
+                <div className="release-date">
+                  Released {movie.release_date}
+                </div>
                 <img
                   src={`https://image.tmdb.org/t/p/w300${movie.backdrop_path}`}
                   alt={`Picture from movie ${movie.title}`}
