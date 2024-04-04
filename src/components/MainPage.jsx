@@ -2,6 +2,7 @@ import { BrowserRouter } from "react-router-dom";
 import { RouteList } from "./RouteList";
 import { useState, useEffect } from "react";
 import { NavBar } from "./NavBar";
+import "./MainPage.css"
 
 export const MainPage = () => {
   
@@ -22,8 +23,9 @@ export const MainPage = () => {
 
   return (
     <BrowserRouter>
-      <NavBar />
-      <main>
+      {/* <NavBar /> had to move this so bg-img doesnt render on every page*/}
+      <main className="main">
+
         <RouteList movies={movies} />
       </main>
     </BrowserRouter>

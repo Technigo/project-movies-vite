@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.homepage {
+  background-image: url("/public/popcorn.jpg");
+  background-position: left; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-size: cover; /* Scale the image to cover the entire viewport */
+  background-attachment: fixed;
+  font-family: var(--main-font);
+  height: 100vh;
+}
