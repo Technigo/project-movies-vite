@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { MovieDetails } from "../components/MovieDetails";
 
 export const MovieDetailsPage = () => {
   const { id } = useParams(); // Get id from URL params
@@ -29,9 +30,14 @@ export const MovieDetailsPage = () => {
   return (
     <div>
       {movieDetails ? (
-        <div>
-          <h2>{movieDetails.title}</h2>
-          <p>{movieDetails.overview}</p>
+        <div className="movie-details-page">
+          <MovieDetails
+            rating={movieDetails.rating}
+            title={movieDetails.title}
+            overview={movieDetails.overview}
+            backdrop={movieDetails.backdrop_path}
+            release_date={movieDetails.release_date}
+          />
         </div>
       ) : (
         <p>Loading...</p>
@@ -40,8 +46,4 @@ export const MovieDetailsPage = () => {
   );
 };
 
-// import React from "react";
-
-// export const MovieDetailsPage = () => {
-//   return <div>MovieDetailsPage</div>;
-// };
+// Backdrop path: "/sR0SpCrXamlIkYMdfz83sFn5JS6.jpg",
