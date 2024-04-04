@@ -53,16 +53,17 @@ header{
   text-align: justify;
 }
 
-.genres {
+.banner-genre {
   display: flex;
   flex-direction: row;
 }
 
-.genres h3 {
-  background-color: black;
-  color: rgb(255, 254, 243);
+.banner-genre h3 {
+  background-color: red;
+  color: black;
   margin-right: 0.5em;
   padding: 0.3em;
+  border-radius: 10px;
   border-left: 1px solid;
   border-top: 1px solid;
 }

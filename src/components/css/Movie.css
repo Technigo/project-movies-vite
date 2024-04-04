@@ -89,12 +89,12 @@
 }
 
 .banner-genre h3 {
-  background-color: black;
-  color: rgb(255, 254, 243);
+  background-color: rgb(255, 254, 243);
+  color: black;
   margin-right: 0.5em;
   padding: 0.3em;
-  border-left: 1px solid;
-  border-top: 1px solid;
+  border-radius: 10px;
+  border: none;
 }
 
 .button {

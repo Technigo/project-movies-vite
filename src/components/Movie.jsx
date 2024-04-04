@@ -70,7 +70,7 @@ export const Movie = () => {
               </div>
               <p>{movie.overview}</p>
               <p>{movie.runtime} min</p>
-              <div className="genres">
+              <div className="banner-genre">
                 {movie.genres.map((genre, index) => (
                   <h3 key={index}>{genre.name}</h3>
                 ))}
