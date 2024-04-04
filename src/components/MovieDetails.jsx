@@ -15,6 +15,7 @@ export const MovieDetails = () => {
 
   useEffect(() => {
     const fetchMovieDetails = () => {
+      setLoading(true)
       fetch(movieURL)
         .then((response) => {
           if (!response.ok) {
