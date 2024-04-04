@@ -10,7 +10,10 @@ const Base_URL = "https://api.themoviedb.org/3/movie/";
 const Movie = () => {
   const { movieID } = useParams();
   const [movie, setMovie] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
+    setIsLoading(true);
     const options = {
       method: "GET",
       headers: {
@@ -24,11 +27,13 @@ const Movie = () => {
         console.log(response);
         setMovie(response);
       })
-      .catch(err => console.error(err));
+      .catch(err => console.error(err))
+      .finally(() => setIsLoading(false));
   }, [movieID]);
 
   return (
     <article>
+      {isLoading && <p style={{ color: "white", font: "45px" }}>Loading</p>}
       {movie && (
         <MovieDetail
           bgImage={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`}

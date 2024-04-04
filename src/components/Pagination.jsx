@@ -22,7 +22,6 @@ const Pagination = ({ type, page, onClick }) => {
             className={({ isActive }) =>
               isActive && page == 2 ? "page-link active" : "page-link"
             }
-            exact
             name="2"
             onClick={onClick}
           >

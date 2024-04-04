@@ -12,6 +12,7 @@ const Base_URL = "https://api.themoviedb.org/3/movie/";
 const PopularList = () => {
   const navigate = useNavigate();
   const [movies, setMovies] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
   // const [endpoint, setEndpoint] = useState("upcoming");
   // const { type, pageNum } = useParams();
   const [searchParams, setSearchParams] = useSearchParams({
@@ -21,6 +22,7 @@ const PopularList = () => {
   console.log(typeof searchParams.get("page"));
 
   useEffect(() => {
+    setIsLoading(true);
     const options = {
       method: "GET",
       headers: {
@@ -28,7 +30,6 @@ const PopularList = () => {
         Authorization: `Bearer ${Access_Token}`,
       },
     };
-    // console.log("UE:", type, pageNum);
     fetch(
       `${Base_URL}${searchParams.get(
         "category"
@@ -40,8 +41,10 @@ const PopularList = () => {
         console.log(response);
         setMovies(response.results);
       })
-      .catch(err => console.error(err));
+      .catch(err => console.error(err))
+      .finally(() => setIsLoading(false));
   }, [searchParams]);
+
   const changePage = e => {
     const pageNum = Number(e.target.name);
     setSearchParams({ ...searchParams, page: pageNum });
@@ -54,11 +57,12 @@ const PopularList = () => {
 
   return (
     <>
+      {isLoading && <p style={{ color: "white", font: "45px" }}>Loading</p>}
+
       <Category
         category={searchParams.get("category")}
         onClick={changeListType}
       />
-
       <div className={styles.movieList}>
         {movies &&
           movies.map(movie => (
