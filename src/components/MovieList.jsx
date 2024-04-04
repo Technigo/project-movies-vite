@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import './css/movielist.css'
 import Lottie from 'lottie-react'
 import animation from '../assets/animations/loading.json'
+import { Carousel } from './carousel.jsx' 
 
 export const MovieList = () => {
   const [movies, setMovies] = useState([])
@@ -42,6 +43,10 @@ export const MovieList = () => {
         </div>
       )}
       {!loading && (
+        <>
+        <header>
+          < Carousel movies={movies.results}/>
+            </header>
         <div className="movie-list">
           {movies.results.map((movie) => (
             <div className="each-movie" key={movie.id}>
@@ -54,12 +59,16 @@ export const MovieList = () => {
                 </div>
                 <img
                   src={`https://image.tmdb.org/t/p/w780${movie.poster_path}`}
+                  alt={movie.title}
                 />
               </Link>
             </div>
           ))}
         </div>
+        </>
       )}
     </>
   )
 }
+
+

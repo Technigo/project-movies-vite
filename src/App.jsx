@@ -3,6 +3,8 @@ import { MovieList } from "./components/MovieList";
 import { Movie } from "./components/Movie";
 import "./app.css";
 import { NotFound } from "./components/NotFound";
+import { MovieUpcoming } from "./components/MovieUpcoming";
+import { MovieClassics } from "./components/MovieClassics";
 
 export const App = () => {
   return (
@@ -11,6 +13,8 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<MovieList />} />
           <Route path="/movie/:id" element={<Movie />} />
+          <Route path="/upcoming" element={<MovieUpcoming />} />
+          <Route path="/classics" element={<MovieClassics />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
