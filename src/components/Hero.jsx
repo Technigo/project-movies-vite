@@ -1,10 +1,9 @@
-import { NavLink } from 'react-router-dom'
-import '../stylesheets/navBar.css'
+import '../stylesheets/hero.css'
 import { useEffect, useState } from 'react'
 import { FormatDate } from '../utils/FormatDate'
 const API_KEY = '29adee7b64b906cf77014bb38ac8dd58'
 // https://api.themoviedb.org/3/movie/upcoming
-export const NavBar = () => {
+export const Hero = () => {
   const [comingsoon, setComingSoon] = useState([])
   const [randomMovie, setRandomMovie] = useState(null)
 
@@ -46,10 +45,7 @@ export const NavBar = () => {
             backgroundSize: 'cover',
           }}
         >
-          <nav>
-            <NavLink to={'/'}>Home</NavLink>
-            <NavLink to={'/movie/top-rated'}>Top Rated</NavLink>
-          </nav>
+          <img className="logoImg" src="../log-noback.png" alt="logo" />
 
           <div className="summary">
             <h2>Coming soon</h2>

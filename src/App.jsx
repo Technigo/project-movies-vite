@@ -1,17 +1,19 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { NavBar } from './components/NavBar'
 import { MovieList } from './pages/MoviesList'
 import { MoviesDetails } from './pages/MoviesDetails'
-import { TopRatedMovies } from './pages/TopRatedMovies'
+import { Sidebar } from './components/Sidebar'
+import { SeriesDetails } from './pages/SeriesDetails'
 
 export const App = () => {
   return (
     <BrowserRouter>
-      <NavBar />
+      <Sidebar />
       <Routes>
         <Route path="/" element={<MovieList />} />
+        <Route path="/movie/top-rated" element={<MovieList />} />
+        <Route path="/tv/popular" element={<MovieList />} />
         <Route path="/movie/:movie_id" element={<MoviesDetails />} />
-        <Route path="/movie/top-rated" element={<TopRatedMovies />} />
+        <Route path="/tv/:series_id" element={<SeriesDetails />} />
       </Routes>
     </BrowserRouter>
   )

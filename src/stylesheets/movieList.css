@@ -37,7 +37,7 @@ main {
   flex-direction: column;
   justify-content: flex-end;
 }
-.cardsWrapper .info h1 {
+.cardsWrapper .info h2 {
   margin-top: auto;
   margin-bottom: 0;
 }
