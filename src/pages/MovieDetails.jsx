@@ -4,6 +4,7 @@ import { Backbutton } from "../components/Backbutton";
 import { Loading } from "./Loading";
 import PropTypes from "prop-types";
 import "./MovieDetails.css";
+import { NotFound } from "./NotFound";
 
 export const MovieDetails = () => {
   const { id } = useParams();
@@ -15,7 +16,6 @@ export const MovieDetails = () => {
     fetch(API_DETAILS_URL)
       .then((result) => result.json())
       .then((json) => {
-        console.log("JSON", json);
         setDetailsData(json);
       })
       .catch((error) => {
@@ -23,10 +23,12 @@ export const MovieDetails = () => {
       });
   }, [API_DETAILS_URL]);
 
-  console.log("Fetched Data inside MovieDetails:", detailsData);
-
   if (!detailsData || detailsData === undefined) {
-    return <Loading />; 
+    return <Loading />;
+  }
+
+  if (detailsData.success === false) {
+    return <NotFound />;
   }
 
   return (

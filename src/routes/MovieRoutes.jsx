@@ -34,7 +34,7 @@ export const MovieRoutes = ({ data, setAPI_END, loading, setLoading }) => {
         }
       />
 
-      <Route path="/*" element={<NotFound />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };

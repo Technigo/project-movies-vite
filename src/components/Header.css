@@ -3,13 +3,26 @@
   background: linear-gradient(0.25turn, #000, #663399, #f69d3c);
   border-bottom: 3px solid #000;
   display: flex;
-  place-content: center;
-  justify-content: end;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .navbar svg {
   width: 32px;
   color: white;
+}
+
+header .nav-button {
+  padding: 5px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  visibility: hidden;
+  opacity: 0;
+  color: white;
+  font-size: 2rem;
+  display: none;
 }
 
 .controls {
@@ -36,6 +49,34 @@
 
 .active:hover {
   color: rgba(255, 255, 255, 0.1);
+}
+
+@media only screen and (max-width: 768px){
+  header .nav-button{
+    visibility: visible;
+    opacity: 1;
+    display:block;
+  }
+
+  header .controls {
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background: linear-gradient(0.25turn, #000, #663399, #f69d3c);
+    transition: 1s;
+    transform: translateY(-100vh);
+  }
+
+  header .responsive-navbar{
+    transform: none;
+    z-index:2;
+  }
 }
 
 /* Tablet */
