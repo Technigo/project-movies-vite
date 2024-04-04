@@ -7,3 +7,7 @@
   padding: 3rem;
   font-size: clamp(1rem, 2.5vw, 3rem);
 }
+
+.cta-text {
+  font-size: clamp(0.5rem, 2vw, 2rem);
+}

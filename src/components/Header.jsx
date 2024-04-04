@@ -37,6 +37,7 @@ export const Header = () => {
       </div>
       <button
         ref={btnRef}
+        aria-label="Menu button"
         className="nav-button nav-burger-button"
         onClick={showNavbar}
       >
