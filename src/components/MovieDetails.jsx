@@ -6,14 +6,18 @@ import "./MovieDetails.css"
 
 export const MovieDetails = () => {
   const [movieDetails, setMovieDetails] = useState()
-  const apiEnv = import.meta.env.VITE_OPENDB_KEY
+  const [loading, setLoading] = useState(true) // New state variable for loading
+  const [error, setError] = useState(false) // New state variable for error
 
+  const apiEnv = import.meta.env.VITE_OPENDB_KEY
   const params = useParams()
   const movieId = params.slug
   const movieURL = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiEnv}&language=en-US`
 
   useEffect(() => {
     const fetchMovieDetails = () => {
+      setLoading(true)
+      setError(false)
       fetch(movieURL)
         .then((response) => {
           if (!response.ok) {
@@ -28,14 +32,28 @@ export const MovieDetails = () => {
         .then((json) => {
           setMovieDetails(json)
         })
-        .catch((error) => console.error("Error fetching movies:", error))
+        .catch((error) => {
+          console.error("Error fetching movies:", error)
+          setError(true)
+        })
+        .finally(() => {
+          setLoading(false)
+        })
     }
 
     fetchMovieDetails()
   }, [movieURL])
 
-  if (!movieDetails) {
+  if (loading) {
     return <div>Loading...</div>
+  }
+
+  if (error) {
+    return <div>Movie not found</div>
+  }
+
+  if (!movieDetails) {
+    return <div>There is an error fetching movies</div>
   }
 
   return (
