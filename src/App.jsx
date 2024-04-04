@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Movies } from "./Movies";
 // import { MovieCard } from "./components/MovieCard";
 import { MovieDetails } from "./components/MovieDetails";
+import { MoviesPage } from "./MoviesPage";
 
 const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Movies />} />
+      <Route path="/" element={<MoviesPage />} />
       {/* <MovieCard /> */}
       <Route path="/movie" element={<MovieDetails />} />
     </Routes>
