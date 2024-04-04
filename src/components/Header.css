@@ -13,6 +13,14 @@
   color: white;
 }
 
+header .film-logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: rgba(255, 255, 255, 1);
+  font-size: 2rem;
+}
+
 header .nav-button {
   padding: 5px;
   cursor: pointer;
@@ -42,6 +50,7 @@ header .nav-button {
 
 .active {
   color: rgba(255, 255, 255, 0.1);
+  cursor: default;
 }
 
 .nav-link:hover {
@@ -70,7 +79,12 @@ header .nav-button {
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
-    background: linear-gradient(0.25turn, rgba(0, 0, 0, 0.8), rgba(102, 51, 15, 0.9), rgba(246, 157, 60, 0.4));
+    background: linear-gradient(
+      0.25turn,
+      rgba(0, 0, 0, 0.8),
+      rgba(102, 51, 15, 0.9),
+      rgba(246, 157, 60, 0.4)
+    );
     transition: 0.5s;
     transform: translateY(-100vh);
   }
@@ -81,13 +95,21 @@ header .nav-button {
 
   header .nav-close-button {
     position: absolute;
-    top: 0;
+    top: 0.5rem;
     right: 0;
   }
 
   header .responsive-navbar {
-    transition: 0.5s;
     transform: none;
+  }
+
+  header .nav-burger-button {
+    transition: 1.2s;
+  }
+
+  header .hide-button {
+    opacity: 0;
+    transition: 0.5s;
   }
 }
 
