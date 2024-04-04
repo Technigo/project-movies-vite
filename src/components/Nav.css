@@ -1,0 +1,30 @@
+.navbar {
+  background-color: #cc0028;
+  margin: 20px 20px 50px;
+  padding: 15px 30px;
+  border-radius: 0.75rem;
+  font-family: "Oswald", sans-serif;
+}
+
+header {
+  display: flex;
+  gap: 20px;
+  align-items: baseline;
+}
+
+.popcorn-icon {
+  height: 45px;
+  width: 45px;
+}
+.popcorn-icon img {
+  height: 100%;
+}
+.header {
+  font-size: 45px;
+  font-weight: 600;
+}
+
+.subheader {
+  font-size: 20pt;
+  font-weight: 200;
+}

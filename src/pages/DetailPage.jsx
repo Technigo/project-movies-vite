@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { apiKey } from "../config.json";
+import "./DetailPage.css";
 
 export const DetailPage = () => {
   const { id } = useParams();

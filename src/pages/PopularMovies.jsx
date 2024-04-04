@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { MovieCard } from "../components/MovieCard";
 import { apiKey } from "../config.json";
+import "./PopularMovies.css";
 
 // const API_KEY = "83ae1909d9454a12587fc31178454612";
 
