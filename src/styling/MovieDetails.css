@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: "Montserrat";
+}
+
+.details-container {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  padding: 10px 16px 0 16px;
+  margin: 0;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px;
+}
+
+.details-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movie-image {
+  width: 200px;
+  border: solid 5px white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-bottom: 20px;
+}
+
+.movie-text {
+  text-shadow: 1px 1px #4d4d4d;
+  background-color: rgb(0, 0, 0, 0.5);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.movie-text p {
+  margin-bottom: 0;
+}
+
+.movie-title {
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.original-title {
+  font-size: 16px;
+  margin: 0;
+}
+
+.movie-ranking {
+  font-weight: 600;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+}
+
+.genre-list {
+  display: flex;
+  margin-top: 0;
+  padding: 0;
+  justify-content: left;
+  list-style-type: none;
+  flex-wrap: wrap;
+}
+
+.genre-list li {
+  padding: 5px;
+  font-weight: 700;
+}
+
+.back-link {
+  font-weight: 700;
+  color: white;
+  text-shadow: 1px 1px #4d4d4d;
+  padding-bottom: 3px;
+}
