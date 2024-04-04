@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 export const Movie = () => {
   const [movieList, setMovieList] = useState([]);
 
+
   const getMovie = async () => {
     try {
       const response = await fetch(
