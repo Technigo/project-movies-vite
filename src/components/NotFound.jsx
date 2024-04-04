@@ -14,19 +14,9 @@ export const NotFound = () => {
         </Link>
       </div>
       <div className="gif">
-      <h2>Page not found</h2>
-      <iframe
-        src="https://giphy.com/embed/g01ZnwAUvutuK8GIQn"
-        width="550"
-
-    </video>
-
-      <iframe
-        src="https:y.com/embed/g01ZnwAUvutuK8GIQn"
-        width="550"
-        height="340"
-        frameBorder="0"
-        id="giphy-embed"
-        allowFullScreen
-      ></iframe>
-      */</div>
+        <h1>Ooopss..</h1>
+          <h2>Page not found</h2>
+        <img src="/gif-not-found1.gif" alt="page not found John Travolta" />
+      </div>
+    </div>
+  )}

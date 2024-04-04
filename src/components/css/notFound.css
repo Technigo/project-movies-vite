@@ -1,11 +1,18 @@
-.not-found{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.not-found {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.giphy-embed{
-    
+.not-found h1 {
+  color: white;
+  margin: 0;
+}
+
+.not-found h2 {
+  font-size: 28px;
+  margin: 0.5em 0 2em 0;
 }
