@@ -32,11 +32,12 @@ export const MovieDetailsPage = () => {
       {movieDetails ? (
         <div className="movie-details-page">
           <MovieDetails
-            rating={movieDetails.rating}
+            rating={movieDetails.vote_average}
             title={movieDetails.title}
             overview={movieDetails.overview}
             backdrop={movieDetails.backdrop_path}
             release_date={movieDetails.release_date}
+            tagline={movieDetails.tagline}
           />
         </div>
       ) : (
@@ -45,5 +46,3 @@ export const MovieDetailsPage = () => {
     </div>
   );
 };
-
-// Backdrop path: "/sR0SpCrXamlIkYMdfz83sFn5JS6.jpg",
