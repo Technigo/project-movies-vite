@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react"
-import { useParams, Link } from "react-router-dom"
+import { Link, Navigate, useParams } from "react-router-dom"
 import { IoIosArrowDropleftCircle } from "react-icons/io"
 import { IoStar } from "react-icons/io5"
 import "./MovieDetails.css"
 
 export const MovieDetails = () => {
   const [movieDetails, setMovieDetails] = useState()
-  const [loading, setLoading] = useState(true) // New state variable for loading
-  const [error, setError] = useState(false) // New state variable for error
+  const [loading, setLoading] = useState(true)
 
   const apiEnv = import.meta.env.VITE_OPENDB_KEY
   const params = useParams()
@@ -16,8 +15,6 @@ export const MovieDetails = () => {
 
   useEffect(() => {
     const fetchMovieDetails = () => {
-      setLoading(true)
-      setError(false)
       fetch(movieURL)
         .then((response) => {
           if (!response.ok) {
@@ -34,7 +31,7 @@ export const MovieDetails = () => {
         })
         .catch((error) => {
           console.error("Error fetching movies:", error)
-          setError(true)
+          setLoading(false)
         })
         .finally(() => {
           setLoading(false)
@@ -48,12 +45,8 @@ export const MovieDetails = () => {
     return <div>Loading...</div>
   }
 
-  if (error) {
-    return <div>Movie not found</div>
-  }
-
   if (!movieDetails) {
-    return <div>There is an error fetching movies</div>
+    return <Navigate to="/not-found" />
   }
 
   return (
