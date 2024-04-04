@@ -8,14 +8,10 @@ export const MovieCard = ({ movies }) => {
         <div key={movie.id} className="movie-card">
           <img
             src={`https://image.tmdb.org/t/p/w300${movie.backdrop_path}`}
-            alt={`${movie.original_title} poster`}
+            alt={`${movie.title} poster`}
           />
-          <Link
-            to={`/movies/${movie.original_title
-              .toLowerCase()
-              .replace(/ /g, "-")}`}
-          >
-            <h2>{movie.original_title}</h2>
+          <Link to={`/movies/${movie.title.toLowerCase().replace(/ /g, "-")}`}>
+            <h2>{movie.title}</h2>
           </Link>
         </div>
       ))}
