@@ -5,7 +5,7 @@ import "./MovieGrid.css";
 import PropTypes from "prop-types";
 import { NotFound } from "./NotFound";
 
-export const MovieGrid = ({ data, setAPI_END }) => {
+export const MovieGrid = ({ data, setAPI_END, loading, setLoading }) => {
   const { genre } = useParams();
   console.log("App slug:", genre);
 
@@ -17,8 +17,7 @@ export const MovieGrid = ({ data, setAPI_END }) => {
   ) {
     setAPI_END(genre);
   } else {
-    alert("Woops!");
-    <NotFound />
+    <NotFound />;
   }
 
   // let fetchedData = false;
@@ -31,7 +30,25 @@ export const MovieGrid = ({ data, setAPI_END }) => {
   //   console.log("Fetched ifstatement: ", fetchedData);
   // }
 
-  return (
+ /* if (loading) {
+    return (
+      <div>
+        <Header />
+        <div className="movie-grid">
+          <p>Loading...</p>;
+        </div>
+      </div>
+    );
+  }*/
+
+  return loading ? (
+    <div>
+      <Header />
+      <div className="movie-grid fetching">
+        <p>Fetching Movies...</p>;
+      </div>
+    </div>
+  ) : (
     <div>
       <Header />
       <div className="movie-grid">

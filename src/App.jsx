@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter, useParams, useLocation} from "react-router-dom";
+import { BrowserRouter, useParams, useLocation } from "react-router-dom";
 import { MovieRoutes } from "./routes/MovieRoutes";
-
 
 export const App = () => {
   const [loading, setLoading] = useState(true);
@@ -10,16 +9,8 @@ export const App = () => {
   const API_KEY = import.meta.env.VITE_MOVIEDB_KEY;
   const API_URL = `https://api.themoviedb.org/3/movie/${API_END}?api_key=${API_KEY}&language=en-US&page=1`;
 
-  //const check = useLocation()
-
-  console.log("App API_END: ", API_END)
-  // if (genre) {
-  //   setAPI_END(genre);
-  // } else {
-  //   setAPI_END("popular");
-  // }
-
   useEffect(() => {
+    setLoading(true);
     fetch(API_URL)
       .then((result) => result.json())
       .then((json) => {
@@ -32,17 +23,48 @@ export const App = () => {
       });
   }, [API_URL]);
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
-  return (
+  return loading ? (
+    <div>
+      <h1>LOADING!</h1>
+    </div>
+  ) : (
     <>
       <BrowserRouter>
         <main>
-          <MovieRoutes data={data} setAPI_END={setAPI_END} />
+          <MovieRoutes
+            data={data}
+            setAPI_END={setAPI_END}
+            loading={loading}
+            setLoading={setLoading}
+          />
         </main>
       </BrowserRouter>
     </>
   );
 };
+
+
+
+/*function PageWithLoadingPlaceholder() {
+  const { state } = useNavigation();
+  
+  if (state === "loading") {
+    return <Placeholder />;
+  }
+
+  return <Outlet />;
+}
+
+function App() {
+  return (
+    <DataBrowserRouter>
+      <Route path="/" element={<Layout />}>
+        <Route element={<PageWithLoadingPlaceholder />}>
+          <Route index loader={loader} element={<Page />} />
+          <Route path="/a" loader={aLoader} element={<PageA />} />
+          <Route path="/b" loader={bLoader} element={<PageB />} />
+        </Route>
+      </Route>
+    </DataBrowserRouter>
+  );
+}*/
