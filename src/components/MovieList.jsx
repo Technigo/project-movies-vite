@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import styles from "../styling/MovieList.module.css";
 import Category from "./Category";
 import Pagination from "./Pagination";
+import Lottie from "lottie-react";
+import loading from "../assets/loading.json";
 
 const Access_Token =
   "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhNWIxM2M3MzY1ZTNlNTRmY2JjNWQ1NzE1MTE3NjdmOSIsInN1YiI6IjY1NTkzNzIyYjU0MDAyMTRkM2NhZTQ2NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.hUP5w6KFCmMshYAaFwy15nfUVAcySBTGUGuOYxWo1M0";
@@ -19,7 +21,9 @@ const PopularList = () => {
   });
 
   useEffect(() => {
+    setMovies(null);
     setIsLoading(true);
+
     const options = {
       method: "GET",
       headers: {
@@ -57,15 +61,22 @@ const PopularList = () => {
 
   return (
     <>
-      {isLoading && <p style={{ color: "white", font: "45px" }}>Loading</p>}
-
       <Category
         category={searchParams.get("category")}
         onClick={changeListType}
       />
-      <div className={styles.movieList}>
-        {movies &&
-          movies.map(movie => (
+      {isLoading ? (
+        <div className="loading">
+          <Lottie
+            className="loading-animation"
+            animationData={loading}
+            loop={true}
+          />
+          <p className="loading-text">Movies on the way...</p>
+        </div>
+      ) : (
+        <div className={styles.movieList}>
+          {movies.map(movie => (
             <div key={movie.id} className={styles.movieItem}>
               <img
                 className={styles.poster}
@@ -85,14 +96,20 @@ const PopularList = () => {
               </div>
             </div>
           ))}
-      </div>
-      {!isLoading && (
+          <Pagination
+            type={searchParams.get("category")}
+            page={searchParams.get("page")}
+            onClick={changePage}
+          />
+        </div>
+      )}
+      {/* {!isLoading && (
         <Pagination
           type={searchParams.get("category")}
           page={searchParams.get("page")}
           onClick={changePage}
         />
-      )}
+      )} */}
     </>
   );
 };
