@@ -9,8 +9,8 @@ export const MoviesList = () => {
   const movieUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiEnv}&language=en-US&page=1`;
 
   const [moviesList, setMoviesList] = useState([]);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(null);
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchMoviesList = async () => {
@@ -28,7 +28,10 @@ export const MoviesList = () => {
         console.log("Fetched movieslist:", data.results);
         // Update movies-state with results from the data
         setMoviesList(data.results);
-        setLoading(false);
+        // After delay of 500 milliseconds, set setLoading to false
+        setTimeout(() => {
+          setLoading(false);
+        }, 500);
       } catch (error) {
         setLoading(false);
         setError(error.message);

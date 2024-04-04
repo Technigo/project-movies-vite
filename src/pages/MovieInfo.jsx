@@ -38,10 +38,10 @@ export const MovieInfo = () => {
         console.log("Movie info fetching data", data);
         // Set the movieInfo-state to fetch movie data
         setMovieInfo(data);
-        // After delay of 1000 milliseconds, set setLoading to false
+        // After delay of 500 milliseconds, set setLoading to false
         setTimeout(() => {
-          setLoading(false), 1000;
-        });
+          setLoading(false);
+        }, 500);
       } catch (error) {
         console.error("Error fetching data", error);
         //Set loadingState to false and error to true
