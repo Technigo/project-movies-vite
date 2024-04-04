@@ -1,0 +1,17 @@
+.the-app {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100vw;
+}
+
+@media (min-width: 375px) {
+    .the-app{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 575px) {
+    .the-app{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
