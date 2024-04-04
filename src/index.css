@@ -24,6 +24,16 @@ code {
 .page-item .page-link.active {
   background-color: aqua;
 }
+.category-link {
+  margin: 0 10px;
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+  cursor: pointer;
+}
+.category-link.active {
+  background-color: blueviolet;
+}
 
 * {
   padding: 0;

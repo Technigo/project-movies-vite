@@ -54,7 +54,10 @@ const PopularList = () => {
 
   return (
     <>
-      <Category onClick={changeListType} />
+      <Category
+        category={searchParams.get("category")}
+        onClick={changeListType}
+      />
 
       <div className={styles.movieList}>
         {movies &&

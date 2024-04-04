@@ -1,17 +1,44 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-const Category = ({ onClick }) => {
+const Category = ({ category, onClick }) => {
   return (
     <div>
-      <Link to="?category=upcoming&page=1" name="upcoming" onClick={onClick}>
+      <NavLink
+        to="?category=upcoming&page=1"
+        className={({ isActive }) =>
+          isActive && category === "upcoming"
+            ? "category-link active"
+            : "category-link"
+        }
+        name="upcoming"
+        onClick={onClick}
+      >
         Upcoming
-      </Link>
-      <Link to="?category=popular&page=1" name="popular" onClick={onClick}>
+      </NavLink>
+      <NavLink
+        to="?category=popular&page=1"
+        className={({ isActive }) =>
+          isActive && category == "popular"
+            ? "category-link active"
+            : "category-link"
+        }
+        name="popular"
+        onClick={onClick}
+      >
         Popular
-      </Link>
-      <Link to="?category=top_rated&page=1" name="top_rated" onClick={onClick}>
+      </NavLink>
+      <NavLink
+        to="?category=top_rated&page=1"
+        className={({ isActive }) =>
+          isActive && category == "top_rated"
+            ? "category-link active"
+            : "category-link"
+        }
+        name="top_rated"
+        onClick={onClick}
+      >
         Top rated
-      </Link>
+      </NavLink>
     </div>
   );
 };
