@@ -2,31 +2,38 @@ import { useEffect, useState } from "react";
 import { MovieCard } from "../components/MovieCard/MovieCard";
 
 export const MoviesList = () => {
-  const API_KEY = "6f6860c6ff83c7fcb911dfaf21a40acc";
-  const movieUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
+  // Get api-key(apiEnv) from .env file
+  const apiEnv = import.meta.env.VITE_OPENDB_KEY;
+  // API endpoint to fetch list of movie
+  const movieUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiEnv}&language=en-US&page=1`;
 
-  const [movies, setMovies] = useState([]);
+  const [moviesList, setMoviesList] = useState([]);
 
   useEffect(() => {
-    const fetchMovies = async () => {
+    const fetchMoviesList = async () => {
       try {
+        // Sen Get request to movieUrl and await the response
         const response = await fetch(movieUrl);
         if (!response.ok) {
-          throw new Error("Network response was not ok");
+          // If error is detected, throw an error
+          throw new Error("Failed to fetch movies");
         }
+        // If all is good, store the JSON-data in the data-variable
         const data = await response.json();
-        console.log("Fetched movies:", data.results);
-        setMovies(data.results);
+        console.log("Fetched movieslist:", data.results);
+        // Update movies-state with results from the data
+        setMoviesList(data.results);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error("Error fetching movies:", error);
       }
     };
 
-    fetchMovies();
+    fetchMoviesList();
   }, [movieUrl]);
   return (
-    <div className="movie-card-container">
-      {movies.map((movie) => (
+    <div className="movieslist-container">
+      {/* Map through list of movies and render each movie with props */}
+      {moviesList.map((movie) => (
         <MovieCard
           key={movie.id}
           id={movie.id}
