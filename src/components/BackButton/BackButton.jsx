@@ -1,7 +1,16 @@
-import React from 'react'
+import { Link } from "react-router-dom";
+import { IoChevronBackCircleOutline } from "react-icons/io5";
 
 export const BackButton = () => {
   return (
-    <div>BackButton</div>
-  )
-}
+    /* Link that navigates back to home */
+    <Link to="/">
+      {/* Imported back arrow-icon using react icons */}
+      <IoChevronBackCircleOutline
+        className="back-icon"
+        aria-label="Go back to popular movies"
+      />
+      Movies
+    </Link>
+  );
+};

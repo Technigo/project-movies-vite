@@ -8,10 +8,10 @@ export const routes = () => {
   return (
     <>
       <Route path="/" element={<HomePage />} />
+      <Route path="/movie/:id" element={<MovieInfo />} />
+      <Route path="/movies" element={<MoviesList />} />
       {/* Any time a user clicks on a page that is not  found */}
       <Route path="*" element={<NotFoundPage />} />
-      <Route path="/movies" element={<MoviesList />} />
-      <Route path="/movieinfo/:id" element={<MovieInfo />} />
     </>
   );
 };

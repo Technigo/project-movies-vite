@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const MovieCard = ({ id, title, release_date, poster_path }) => {
   return (
     /* Link to the moviesinfo-page for each movie */
-    <Link to={`/movieinfo/${id}`}>
+    <Link to={`/movie/${id}`}>
       <article className="movie-card">
         {/* image-size should be w300 */}
         <img

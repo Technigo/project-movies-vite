@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { MovieCard } from "../components/MovieCard/MovieCard";
+import { Loadingspinner } from "../components/LoadingSpinner/Loadingspinner";
 
 export const MoviesList = () => {
   // Get api-key(apiEnv) from .env file
@@ -8,6 +9,8 @@ export const MoviesList = () => {
   const movieUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiEnv}&language=en-US&page=1`;
 
   const [moviesList, setMoviesList] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(null);
 
   useEffect(() => {
     const fetchMoviesList = async () => {
@@ -16,21 +19,29 @@ export const MoviesList = () => {
         const response = await fetch(movieUrl);
         if (!response.ok) {
           // If error is detected, throw an error
-          throw new Error("Failed to fetch movies");
+          throw new Error(
+            "Failed to fetch movies. Check the url or try again later"
+          );
         }
         // If all is good, store the JSON-data in the data-variable
         const data = await response.json();
         console.log("Fetched movieslist:", data.results);
         // Update movies-state with results from the data
         setMoviesList(data.results);
+        setLoading(false);
       } catch (error) {
-        console.error("Error fetching movies:", error);
+        setLoading(false);
+        setError(error.message);
       }
     };
 
     fetchMoviesList();
   }, [movieUrl]);
-  return (
+  return loading ? (
+    <Loadingspinner />
+  ) : error ? (
+    <div>{error}</div>
+  ) : (
     <div className="movieslist-container">
       {/* Map through list of movies and render each movie with props */}
       {moviesList.map((movie) => (

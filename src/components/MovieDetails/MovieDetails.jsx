@@ -1,4 +1,5 @@
 import "./MovieDetails.css";
+import { BackButton } from "../BackButton/BackButton";
 
 export const MovieDetails = ({ movieDetails }) => {
   console.log("Movie Details showing", movieDetails);
@@ -15,7 +16,13 @@ export const MovieDetails = ({ movieDetails }) => {
 
   const backgroundImage = `https://image.tmdb.org/t/p/w1280/${backdrop_path}`;
 
-  return <article className="movie-details">MovieDetails</article>;
+  return (
+    <article className="movie-details">
+      {/* Render the Back component for navigation */}
+      <BackButton />
+      MovieDetails
+    </article>
+  );
 };
 
 //You need to construct a URL using the secure_base_url + size + path from the API response.
