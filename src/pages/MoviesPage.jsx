@@ -30,6 +30,7 @@ export const MoviesPage = () => {
       {moviesList.map((movie) => (
         <MovieCard
           key={movie.id}
+          id={movie.id}
           title={movie.title}
           rating={movie.vote_average}
           poster_path={movie.poster_path}
