@@ -39,14 +39,21 @@ body {
 }
 
 .rating p {
-	width: 100%;
+	max-width: 100%;
 	font-size: 20px;
 	height: 20px;
-	font-weight: 500;
-	color: black;
 	display: inline-block;
 	padding: 5px 5px;
 	margin-left: 10px;
+}
+
+.average {
+	font-weight: 500;
+	color: black;
+	background-color: #fff;
+	padding: 0 5px;
+	text-shadow: none;
+	display: inline-block;
 }
 
 .movie-description {

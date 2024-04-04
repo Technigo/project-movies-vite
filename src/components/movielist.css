@@ -6,13 +6,13 @@
 
 .options-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     margin-bottom: 20px;
 }
 
 .option-button {
-    background-color: #fff;
-    border: 1px solid #ccc;
+    background-color: black;
+    color: #fff;
     border-radius: 5px;
     padding: 10px 20px;
     margin: 0 10px;
@@ -21,13 +21,12 @@
 }
 
 .option-button.active {
-    background-color: #007bff;
     color: #fff;
-    border-color: #007bff;
+    border-color: #474e56;
 }
 
 .option-button:hover {
-    background-color: #f8f8f8;
+    background-color: #393d41;
 }
 
 /* Styling the movie card */
