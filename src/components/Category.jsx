@@ -2,7 +2,19 @@ import { NavLink } from "react-router-dom";
 
 const Category = ({ category, onClick }) => {
   return (
-    <div>
+    <div className="category">
+      <NavLink
+        to="?category=now_playing&page=1"
+        className={({ isActive }) =>
+          isActive && category === "now_playing"
+            ? "category-link active"
+            : "category-link"
+        }
+        name="upcoming"
+        onClick={onClick}
+      >
+        Now Playing
+      </NavLink>
       <NavLink
         to="?category=upcoming&page=1"
         className={({ isActive }) =>
