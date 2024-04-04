@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import { MovieCard } from "../components/MovieCard";
+import { apiKey } from "../config.json";
+
+// const API_KEY = "83ae1909d9454a12587fc31178454612";
 
 export const PopularMovies = () => {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
-  const API_KEY = "83ae1909d9454a12587fc31178454612";
 
   useEffect(() => {
     fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`
+      `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`
     )
       .then((response) => {
         if (!response.ok) {
@@ -18,9 +20,9 @@ export const PopularMovies = () => {
         }
         return response.json();
       })
-      .then((response) => {
-        setMovies(response);
-        console.log(response);
+      .then((json) => {
+        setMovies(json.results);
+        console.log(json);
       })
       .catch((error) => {
         setError(error.message);
