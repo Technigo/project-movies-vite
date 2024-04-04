@@ -83,12 +83,12 @@
   align-items: center;
 }
 
-.genres {
+.banner-genre {
   display: flex;
   flex-direction: row;
 }
 
-.genres h3 {
+.banner-genre h3 {
   background-color: black;
   color: rgb(255, 254, 243);
   margin-right: 0.5em;

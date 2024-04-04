@@ -45,7 +45,7 @@ export const MovieList = () => {
       {!loading && (
         <>
         <header>
-          < Carousel movies={movies.results}/>
+          < Carousel />
             </header>
         <div className="movie-list">
           {movies.results.map((movie) => (
