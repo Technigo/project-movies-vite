@@ -1,29 +1,15 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Backbutton } from "../components/Backbutton";
+import { Loading } from "./Loading";
 import PropTypes from "prop-types";
 import "./MovieDetails.css";
 
-export const MovieDetails = ({ data, setAPI_END }) => {
-  const { slug, id } = useParams();
+export const MovieDetails = () => {
+  const { id } = useParams();
   const [detailsData, setDetailsData] = useState();
-  const [loading, setLoading] = useState(true);
-  //const [movieId, setMovieId] = useState();
   const API_KEY = import.meta.env.VITE_MOVIEDB_KEY;
-
-  // const matchedMovie = data.results.find(
-  //   (movie) => movie.title.toLowerCase().replace(/ /g, "-") === slug
-  // );
-
-  // const matchedMovie = "823464";
   const API_DETAILS_URL = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`;
-
-    console.log("Matched movie URL: ", API_DETAILS_URL);
-  // console.log("Matched movie id: ", matchedMovie.id);
-  console.log("Matched movie id param below: ", id);
-  // console.log("Passed Data from props: ", data);
-
-  //setMovieId(slug);
 
   useEffect(() => {
     fetch(API_DETAILS_URL)
@@ -39,11 +25,8 @@ export const MovieDetails = ({ data, setAPI_END }) => {
 
   console.log("Fetched Data inside MovieDetails:", detailsData);
 
-  // const backdrop_url = `https://media.themoviedb.org/t/p/w1280_and_h720_multi_faces/${detailsData.backdrop_path}`;
-  // const poster_url = `https://image.tmdb.org/t/p/w342/${detailsData.poster_path}`;
-
   if (!detailsData || detailsData === undefined) {
-    return <div>Loading...</div>; // Or any other loading indicator
+    return <Loading />; 
   }
 
   return (

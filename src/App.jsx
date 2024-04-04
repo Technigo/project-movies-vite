@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter, useParams, useLocation } from "react-router-dom";
 import { MovieRoutes } from "./routes/MovieRoutes";
-import { Loading } from "./pages/Loading";
 
 export const App = () => {
   const [loading, setLoading] = useState(true);
@@ -24,46 +22,19 @@ export const App = () => {
       });
   }, [API_URL]);
 
-  return loading ? (
+
+
+  return (
     <>
-      <Loading />
-    </>
-  ) : (
-    <>
-      <BrowserRouter>
-        <main>
-          <MovieRoutes
-            data={data}
-            setAPI_END={setAPI_END}
-            loading={loading}
-            setLoading={setLoading}
-          />
-        </main>
-      </BrowserRouter>
+      <main>
+        <MovieRoutes
+          data={data}
+          setAPI_END={setAPI_END}
+          loading={loading}
+          setLoading={setLoading}
+        />
+      </main>
     </>
   );
 };
 
-/*function PageWithLoadingPlaceholder() {
-  const { state } = useNavigation();
-  
-  if (state === "loading") {
-    return <Placeholder />;
-  }
-
-  return <Outlet />;
-}
-
-function App() {
-  return (
-    <DataBrowserRouter>
-      <Route path="/" element={<Layout />}>
-        <Route element={<PageWithLoadingPlaceholder />}>
-          <Route index loader={loader} element={<Page />} />
-          <Route path="/a" loader={aLoader} element={<PageA />} />
-          <Route path="/b" loader={bLoader} element={<PageB />} />
-        </Route>
-      </Route>
-    </DataBrowserRouter>
-  );
-}*/

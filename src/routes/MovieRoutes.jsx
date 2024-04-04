@@ -1,14 +1,10 @@
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { MovieGrid } from "../pages/MovieGrid";
 import { MovieDetails } from "../pages/MovieDetails";
 import { NotFound } from "../pages/NotFound";
 import PropTypes from "prop-types";
 
 export const MovieRoutes = ({ data, setAPI_END, loading, setLoading }) => {
-  const check = useLocation();
-
-  console.log("App Location: ", check.pathname);
-
   return (
     <Routes>
       <Route
@@ -23,8 +19,8 @@ export const MovieRoutes = ({ data, setAPI_END, loading, setLoading }) => {
         }
       />
       <Route
-        path="/:genre/:slug/:id"
-        element={<MovieDetails data={data} setAPI_END={setAPI_END} />}
+        path="/:genre/:id"
+        element={<MovieDetails />}
       />
       <Route
         path="/:genre"
