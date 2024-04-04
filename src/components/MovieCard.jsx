@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
-import { PopularList } from './PopularList'
 
-export const MovieCard = ({ movieData }) => {
+export const MovieCard = ({ jsonMovies, results }) => {
+console.log('id',results )
 
 	return (
 		<>
-			{movieData.map((movie) => (
+			{jsonMovies.map((movie) => (
 				<article className="movie-card" key={movie.id}>
 					<Link to={`/details/${movie.id}`}></Link>
 				</article>
@@ -13,6 +13,7 @@ export const MovieCard = ({ movieData }) => {
 		</>
 	)
 }
+
 
 // {movieData.map((movie) => (
 //   console.log('movie', movie)

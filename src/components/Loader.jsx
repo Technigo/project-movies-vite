@@ -4,14 +4,14 @@ import Lottie from 'react-lottie'
 import animationData from '../lotties/animation.json'
 
 export const Loader = () => {
-	const [loading, setLoading] = useState(false)
+	const [isLoading, setIsLoading] = useState(false)
 
 	const defaultOptions = {
 		loop: true,
 		autoplay: true,
 		animationData: animationData,
 		rendererSettings: {
-			preserveAspectRatio: 'xMidYMid slice',
+		preserveAspectRatio: 'xMidYMid slice',
 		},
 	}
 

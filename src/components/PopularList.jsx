@@ -10,10 +10,10 @@ const API_KEY = '23ace2b0c27910f5cec13f5bdb014044'
 const urlMovies = `${BASE_URL}popular?api_key=${API_KEY}&language=en-US&page=1`
 
 
-
 //functional component  
 export const PopularList = () => {
   const [movies, setMovies] = useState (null)
+ 
 
 //function to fetch movies from API with async/await
   const getMovies = async () => {
@@ -40,7 +40,7 @@ export const PopularList = () => {
 
   return (
     <section className="popular-list">
-      {movies ? <MovieCard movieData={movies.result} /> : <Loader /> }
+      {movies ? <MovieCard jsonMovies={movies.results} /> : <Loader /> }
     </section>
   )
 }
