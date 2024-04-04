@@ -13,13 +13,10 @@ const PopularList = () => {
   const navigate = useNavigate();
   const [movies, setMovies] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  // const [endpoint, setEndpoint] = useState("upcoming");
-  // const { type, pageNum } = useParams();
   const [searchParams, setSearchParams] = useSearchParams({
     category: "now_playing",
     page: 1,
   });
-  console.log(typeof searchParams.get("page"));
 
   useEffect(() => {
     setIsLoading(true);
@@ -48,6 +45,9 @@ const PopularList = () => {
   const changePage = e => {
     const pageNum = Number(e.target.name);
     setSearchParams({ ...searchParams, page: pageNum });
+    window.scrollTo(0, 0);
+    const scrollPosition = window.scrollY;
+    console.log("Scroll position:", scrollPosition);
   };
 
   const changeListType = e => {
@@ -86,11 +86,13 @@ const PopularList = () => {
             </div>
           ))}
       </div>
-      <Pagination
-        type={searchParams.get("category")}
-        page={searchParams.get("page")}
-        onClick={changePage}
-      />
+      {!isLoading && (
+        <Pagination
+          type={searchParams.get("category")}
+          page={searchParams.get("page")}
+          onClick={changePage}
+        />
+      )}
     </>
   );
 };
