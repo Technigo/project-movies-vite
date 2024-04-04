@@ -64,6 +64,9 @@
 }
 
 .more-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 120px;
   border-radius: 40px;
   padding: 10px;
@@ -71,6 +74,10 @@
   cursor: pointer;
   border: 0;
   margin: 25px 0;
+}
+
+.more-text {
+  padding-right: 5px;
 }
 
 /*Media queries*/

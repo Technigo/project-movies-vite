@@ -1,8 +1,7 @@
-2. Make loading page look nicer
-3. make buttons look nicer
+1. Make loading page look nicer
+2. make buttons look nicer
 
 "Bugs":
-
 - scrolls up to top when clicking "more"
 - go back to the page that the user left, not to home page
 

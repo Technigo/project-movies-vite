@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
+import { IoIosArrowDown } from "react-icons/io"
 import "./MovieList.css"
 
 export const MovieList = () => {
@@ -7,6 +8,7 @@ export const MovieList = () => {
   const [movies, setMovies] = useState([])
   const [selectedEndpoint, setSelectedEndpoint] = useState("top_rated")
   const [page, setPage] = useState(1)
+  const [scrollPosition, setScrollPosition] = useState(0)
 
   useEffect(() => {
     const fetchMovies = () => {
@@ -50,14 +52,15 @@ export const MovieList = () => {
     setPage(1)
   }
 
-  const handleLoadMore = (event) => {
-    event.preventDefault()
+  const handleLoadMore = () => {
+    setScrollPosition(window.scrollY) // added this to prevent scrolling to top when loading more movies
     setPage((prevPage) => prevPage + 1)
   }
 
   useEffect(() => {
-    console.log("Component re-rendered")
-  })
+    console.log("Page re-rendered")
+    window.scrollTo(0, scrollPosition)
+  }, [loading])
 
   if (loading) {
     return <div>Loading...</div>
@@ -97,8 +100,8 @@ export const MovieList = () => {
         ))}
       </div>
       <div className="button-container">
-        <button className="more-button" onClick={handleLoadMore}>
-          More
+        <button type="button" className="more-button" onClick={handleLoadMore}>
+          <p className="more-text">More</p> <IoIosArrowDown />
         </button>
       </div>
     </div>
