@@ -38,16 +38,17 @@ const Movie = () => {
 
   return (
     <article className={styles.moviePage}>
-      {isLoading && <p style={{ color: "white", font: "45px" }}>Loading</p>}
-      <BackHome />
+      <div className={styles.backNav}>
+        <BackHome />
+      </div>
       {isLoading ? (
-        <div className="loading">
+        <div className={styles.loading}>
           <Lottie
             className="loading-animation"
             animationData={loading}
             loop={true}
           />
-          <p className="loading-text">Movies on the way...</p>
+          <p className={styles.loadingText}>Movies on the way...</p>
         </div>
       ) : (
         <MovieDetail

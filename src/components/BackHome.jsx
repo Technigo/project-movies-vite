@@ -5,7 +5,11 @@ import back from "../../public/back.svg";
 const BackHome = () => {
   return (
     <Link to="/" className={styles.back}>
-      <img src={back} alt="Go back to movies list"></img>
+      <img
+        className={styles.backIcon}
+        src={back}
+        alt="Go back to movies list"
+      ></img>
       Movies
     </Link>
   );
