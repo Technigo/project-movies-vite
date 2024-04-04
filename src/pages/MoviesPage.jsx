@@ -3,14 +3,14 @@ import { MovieCard } from "../components/MovieCard";
 
 export const MoviesPage = () => {
   const API_KEY = "227355c25b5984172934aa93f25e5d05";
-  const Url = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
+  const moviesUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
 
   const [moviesList, setMoviesList] = useState([]);
 
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const response = await fetch(Url);
+        const response = await fetch(moviesUrl);
         if (!response.ok) {
           throw new Error("Failed to fetch movies");
         }
@@ -23,7 +23,7 @@ export const MoviesPage = () => {
     };
 
     fetchMovies();
-  }, [Url]);
+  }, [moviesUrl]);
 
   return (
     <div className="movie-card-container">
