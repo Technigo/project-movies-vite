@@ -37,7 +37,7 @@ export const MovieList = () => {
             animationData={animation}
             loop
             autoPlay
-            style={{ width: 200, height: 200 }}
+            style={{ width: 250, height: 250 }}
           />
         </div>
       )}
@@ -45,7 +45,7 @@ export const MovieList = () => {
         <div className="movie-list">
           {movies.results.map((movie) => (
             <div className="each-movie" key={movie.id}>
-              <Link to={`movie/:${movie.id}`}>
+              <Link to={`movie/${movie.id}`}>
                 <div id="overlay">
                   <div id="overlay-text">
                     <h1>{movie.title}</h1>

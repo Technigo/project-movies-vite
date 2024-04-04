@@ -53,9 +53,9 @@
 #overlay-text {
   padding: 1.5em;
 }
-.movie-list h1,
+h1,
 h2 {
-  color: rgb(255, 254, 234);
+  color: rgb(255, 254, 243);
   word-wrap: break-word;
   line-height: 1;
 }

@@ -75,11 +75,24 @@
   font-size: 23px;
 }
 .movie-rating span {
-  background-color: white;
+  background-color: rgb(255, 254, 243);
+  border-radius: 10px;
   padding: 2px 4px 2px 2px;
   display: inline-flex;
   width: min-content;
   align-items: center;
+}
+
+.genres {
+  display: flex;
+  flex-direction: row;
+}
+
+.genres h3 {
+  background-color: black;
+  color: rgb(255, 254, 243);
+  margin-right: 0.5em;
+  padding: 0.2em;
 }
 
 .button {

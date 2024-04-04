@@ -1,36 +1,34 @@
-import Lottie from "lottie-react";
-import { useEffect, useState } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
-import "./css/Movie.css";
+import Lottie from 'lottie-react'
+import { useEffect, useState } from 'react'
+import { Link, useParams, useNavigate } from 'react-router-dom'
+import './css/Movie.css'
 import animation from '../assets/animations/loading.json'
-import star from "/star.svg";
-import arrow from "/arrow.svg";
+import star from '/star.svg'
+import arrow from '/arrow.svg'
 
 export const Movie = () => {
-  const { id } = useParams();
-  const navigate = useNavigate();
-  const [loading, setLoading] = useState(true);
-  const [movie, setMovie] = useState();
-  const cleanedId = id.replace(":", "");
-  console.log(id, cleanedId);
+  const { id } = useParams()
+  const navigate = useNavigate()
+  const [loading, setLoading] = useState(true)
+  const [movie, setMovie] = useState()
 
   const fetchApi = () => {
     fetch(
-      `https://api.themoviedb.org/3/movie/${cleanedId}?api_key=e185d0927f85272fbd0fd2526ecf0657&language=en-US`
+      `https://api.themoviedb.org/3/movie/${id}?api_key=e185d0927f85272fbd0fd2526ecf0657&language=en-US`
     )
       .then((response) => response.json())
       .then((movie) => {
-        console.log("response:", movie);
+        console.log('response:', movie)
         if (movie.success === false) {
-          navigate("*");
+          navigate('*')
         }
-        setMovie(movie);
-        setLoading(false);
-      });
-  };
+        setMovie(movie)
+        setLoading(false)
+      })
+  }
   useEffect(() => {
-    fetchApi();
-  }, []);
+    fetchApi()
+  }, [])
 
   return (
     <>
@@ -40,7 +38,7 @@ export const Movie = () => {
             animationData={animation}
             loop
             autoPlay
-            style={{ width: 200, height: 200 }}
+            style={{ width: 250, height: 250 }}
           />
         </div>
       )}
@@ -70,6 +68,12 @@ export const Movie = () => {
                 </div>
               </div>
               <p>{movie.overview}</p>
+              <p>{movie.runtime} min</p>
+              <div className="genres">
+                {movie.genres.map((genre, index) => (
+                  <h3 key={index}>{genre.name}</h3>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -81,5 +85,5 @@ export const Movie = () => {
         </div>
       )}
     </>
-  );
-};
+  )
+}
