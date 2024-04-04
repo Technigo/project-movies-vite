@@ -81,6 +81,7 @@ h1 {
   margin: 16px 0;
 }
 
+/*Media queries*/
 @media (min-width: 577px) {
   .detail-poster {
     width: 250px;

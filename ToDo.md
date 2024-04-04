@@ -1,7 +1,10 @@
-1. MAke the 404 page look nicer
 2. Make loading page look nicer
 3. make buttons look nicer
-4. make user stay at "More"
+
+"Bugs":
+
+- scrolls up to top when clicking "more"
+- go back to the page that the user left, not to home page
 
 Intermediate stretch goals
 
