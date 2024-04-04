@@ -22,7 +22,7 @@ export const Movie = () => {
       .then((movie) => {
         console.log("response:", movie);
         if (movie.success === false) {
-          navigate("/not-found");
+          navigate("*");
         }
         setMovie(movie);
         setLoading(false);

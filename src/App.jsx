@@ -11,7 +11,7 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<MovieList />} />
           <Route path="/movie/:id" element={<Movie />} />
-          <Route path="/not-found" element={<NotFound />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
     </BrowserRouter>
