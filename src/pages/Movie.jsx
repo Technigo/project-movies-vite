@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import MovieDetail from "../components/MovieDetail";
 import BackHome from "../components/BackHome";
 import styles from "../styling/Movie.module.css";
+import Lottie from "lottie-react";
+import loading from "../assets/film.json";
 
 const Access_Token =
   "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhNWIxM2M3MzY1ZTNlNTRmY2JjNWQ1NzE1MTE3NjdmOSIsInN1YiI6IjY1NTkzNzIyYjU0MDAyMTRkM2NhZTQ2NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.hUP5w6KFCmMshYAaFwy15nfUVAcySBTGUGuOYxWo1M0";
@@ -16,6 +18,7 @@ const Movie = () => {
 
   useEffect(() => {
     setIsLoading(true);
+    setMovie(null);
     const options = {
       method: "GET",
       headers: {
@@ -37,7 +40,16 @@ const Movie = () => {
     <article className={styles.moviePage}>
       {isLoading && <p style={{ color: "white", font: "45px" }}>Loading</p>}
       <BackHome />
-      {movie && (
+      {isLoading ? (
+        <div className="loading">
+          <Lottie
+            className="loading-animation"
+            animationData={loading}
+            loop={true}
+          />
+          <p className="loading-text">Movies on the way...</p>
+        </div>
+      ) : (
         <MovieDetail
           bgImage={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`}
           rate={movie.vote_average}
