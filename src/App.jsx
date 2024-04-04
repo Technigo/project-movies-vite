@@ -7,7 +7,7 @@ export const App = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState();
   const [API_END, setAPI_END] = useState("popular");
-  const API_KEY = "5ebb37047349cdb54acf91b06e7b7839";
+  const API_KEY = import.meta.env.VITE_MOVIEDB_KEY;
   const API_URL = `https://api.themoviedb.org/3/movie/${API_END}?api_key=${API_KEY}&language=en-US&page=1`;
 
   //const check = useLocation()
