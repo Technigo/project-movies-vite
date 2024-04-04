@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 export const MovieDetails = ({ movies }) => {
   const { movieTitle } = useParams();
+  const [genres, setGenres] = useState(null);
 
   // Check if the movies data has been fetched
   if (!movies) {
@@ -16,6 +18,22 @@ export const MovieDetails = ({ movies }) => {
   if (!movieInfo) {
     return <div>Movie not found!</div>;
   }
+
+  const fetchGenres = () => {
+    const genreUrl = `https://api.themoviedb.org/3/movie/${movieInfo.id}?api_key=555122904f9aa5a9df5e76f87cb061f7`;
+    fetch(genreUrl)
+      .then((response) => response.json())
+      .then((data) => setGenres(data.genres))
+      .catch((error) => console.error("Error fetching genres", error));
+  };
+
+  fetchGenres();
+
+  // Check if the genres exists
+  if (!genres) {
+    return <div>Genre not found!</div>;
+  }
+
   return (
     <>
       <div className="detailsContainer">
@@ -28,7 +46,11 @@ export const MovieDetails = ({ movies }) => {
           <h3>Original title: {movieInfo.original_title}</h3>
         ) : null}
         <h2 className="movieRating">{movieInfo.vote_average.toFixed(1)}</h2>
-        <h3 className="movieGenre">Movie Genre Ids: {movieInfo.genre_ids}</h3>
+        {genres.map((genre) => (
+          <ul key={genre.id}>
+            <li>{genre.name}</li>
+          </ul>
+        ))}
         <p className="movieSummary">{movieInfo.overview}</p>
       </div>
       <Link to="/movies">Back to Movies</Link>
