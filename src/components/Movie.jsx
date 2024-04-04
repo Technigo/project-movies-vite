@@ -6,6 +6,7 @@ import animation from '../assets/animations/loading.json'
 import star from '/star.svg'
 import arrow from '/arrow.svg'
 
+
 export const Movie = () => {
   const { id } = useParams()
   const navigate = useNavigate()
