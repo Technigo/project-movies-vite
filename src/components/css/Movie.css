@@ -83,18 +83,22 @@
   align-items: center;
 }
 
-.banner-genre {
+.genres{
   display: flex;
   flex-direction: row;
 }
 
-.banner-genre h3 {
+.genres h3 {
   background-color: rgb(255, 254, 243);
   color: black;
   margin-right: 0.5em;
   padding: 0.3em;
   border-radius: 10px;
   border: none;
+}
+
+.detail h3{
+  background-color: #ffffff8c;
 }
 
 .button {

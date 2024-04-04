@@ -42,7 +42,7 @@ export const Carousel = () => {
                 <div className="content">
                     <h1>{movie.title}</h1>
                     <p>{movie.description}</p>
-                    <div className="banner-genre">
+                    <div className="genres">
                     {movie.genres.map((genre, index) => (
                   <h3 key={index}>{genre.name}</h3>
                 ))}
