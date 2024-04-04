@@ -28,15 +28,13 @@ export const MovieGrid = ({ data, setAPI_END, loading }) => {
     );
   }
 
-  return  (
+  return (
     <div>
       <Header />
       <div className="movie-grid">
         {data.results.map((movie, index) => (
           <div className="movie-link" key={index}>
-            <Link
-              to={`/${genre}/${movie.id}`}
-            >
+            <Link to={`/${genre}/${movie.id}`}>
               <Movie movie={movie} />
             </Link>
           </div>

@@ -2,8 +2,6 @@
 .movie-grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  z-index: 1;
-
   background-color: black;
 }
 
@@ -27,4 +25,3 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
-
