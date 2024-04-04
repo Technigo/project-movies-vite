@@ -27,7 +27,7 @@ export const PopularList = () => {
 //parse json response
   const jsonMovies = await response.json()
   setMovies(jsonMovies)
-  console.log(jsonMovies)
+  console.log('show data from json', jsonMovies)
     }
     catch(error){
       console.log(error)
