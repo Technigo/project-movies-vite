@@ -6,11 +6,13 @@ import { NotFound } from "./components/NotFound";
 import { MovieUpcoming } from "./components/MovieUpcoming";
 import { MovieClassics } from "./components/MovieClassics";
 
+
 export const App = () => {
   return (
     <BrowserRouter>
       <main>
         <Routes>
+          
           <Route path="/" element={<MovieList />} />
           <Route path="/movie/:id" element={<Movie />} />
           <Route path="/upcoming" element={<MovieUpcoming />} />

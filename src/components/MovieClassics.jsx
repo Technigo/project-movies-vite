@@ -1,12 +1,13 @@
-import { Link } from 'react-router-dom'
-import { useState, useEffect } from 'react'
-import Lottie from 'lottie-react'
-import animation from '../assets/animations/loading.json'
-import './css/movielist.css'
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import Lottie from "lottie-react";
+import animation from "../assets/animations/loading.json";
+import "./css/movielist.css";
+import arrow from "/arrow.svg";
 
 export const MovieClassics = () => {
-  const [loading, setLoading] = useState(true)
-  const [movies, setMovies] = useState([])
+  const [loading, setLoading] = useState(true);
+  const [movies, setMovies] = useState([]);
 
   const fetchApi = () => {
     fetch(
@@ -14,20 +15,20 @@ export const MovieClassics = () => {
     )
       .then((response) => response.json())
       .then((movies) => {
-        setMovies(movies)
-        console.log(movies.results)
-        setLoading(false)
+        setMovies(movies);
+        console.log(movies.results);
+        setLoading(false);
       })
       .catch((error) => {
-        console.error('Error fetching movies:', error)
-        setLoading(false)
-      })
-  }
+        console.error("Error fetching movies:", error);
+        setLoading(false);
+      });
+  };
   useEffect(() => {
     setTimeout(() => {
-      fetchApi()
-    }, 1500)
-  }, [])
+      fetchApi();
+    }, 1500);
+  }, []);
 
   return (
     <>
@@ -43,6 +44,14 @@ export const MovieClassics = () => {
       )}
       {!loading && (
         <>
+          <div className="button">
+            <Link to="/">
+              <img src={arrow} id="go-back" />
+            </Link>
+            <Link to="/">
+              <h4>Movies</h4>
+            </Link>
+          </div>
           <div className="movie-list">
             {movies.results.map((movie) => (
               <Link
@@ -66,5 +75,5 @@ export const MovieClassics = () => {
         </>
       )}
     </>
-  )
-}
+  );
+};

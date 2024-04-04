@@ -1,0 +1,19 @@
+.button-container {
+  position: absolute;
+  top: 55%;
+  left: 43%;
+  margin-top: -50px;
+  margin-left: -50px;
+  font-weight: bold;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.button-upcoming {
+  padding-right: 60px;
+}
+
+.button-classic,
+.button-upcoming :hover {
+  cursor: pointer;
+}
