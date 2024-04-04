@@ -38,6 +38,8 @@ export const MovieDetailsPage = () => {
             backdrop={movieDetails.backdrop_path}
             release_date={movieDetails.release_date}
             tagline={movieDetails.tagline}
+            poster_path={movieDetails.poster_path}
+            genres={movieDetails.genres}
           />
         </div>
       ) : (
