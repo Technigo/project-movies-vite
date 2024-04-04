@@ -27,7 +27,7 @@
   margin: 16px 0;
 }
 
-.popular-list {
+.movie-list {
   display: grid;
   grid-template-columns: 1fr;
 }
@@ -75,13 +75,13 @@
 
 /*Media queries*/
 @media (min-width: 370px) {
-  .popular-list {
+  .movie-list {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 570px) {
-  .popular-list {
+  .movie-list {
     grid-template-columns: repeat(3, 1fr);
   }
   .category-name {
@@ -90,7 +90,7 @@
 }
 
 @media (min-width: 820px) {
-  .popular-list {
+  .movie-list {
     grid-template-columns: repeat(4, 1fr);
   }
 }

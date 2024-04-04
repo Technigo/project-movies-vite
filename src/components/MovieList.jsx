@@ -3,9 +3,9 @@ import { useEffect, useState } from "react"
 import "./MovieList.css"
 
 export const MovieList = () => {
+  const [loading, setLoading] = useState(true)
   const [movies, setMovies] = useState([])
   const [selectedEndpoint, setSelectedEndpoint] = useState("top_rated")
-  const [loading, setLoading] = useState(true)
   const [page, setPage] = useState(1)
 
   useEffect(() => {
@@ -50,9 +50,14 @@ export const MovieList = () => {
     setPage(1)
   }
 
-  const handleLoadMore = () => {
+  const handleLoadMore = (event) => {
+    event.preventDefault()
     setPage((prevPage) => prevPage + 1)
   }
+
+  useEffect(() => {
+    console.log("Component re-rendered")
+  })
 
   if (loading) {
     return <div>Loading...</div>
@@ -73,7 +78,7 @@ export const MovieList = () => {
           <option value="upcoming">Upcoming</option>
         </select>
       </div>
-      <div className="popular-list">
+      <div className="movie-list">
         {movies.map((movie) => (
           <Link key={movie.id} to={`/movies/${movie.id}`}>
             <div className="movie-card">
