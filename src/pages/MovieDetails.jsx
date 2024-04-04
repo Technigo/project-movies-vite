@@ -4,6 +4,7 @@ import { Backbutton } from "../components/Backbutton";
 import { Loading } from "./Loading";
 import PropTypes from "prop-types";
 import "./MovieDetails.css";
+import "./Flip.css"
 import { NotFound } from "./NotFound";
 
 export const MovieDetails = () => {
@@ -31,6 +32,8 @@ export const MovieDetails = () => {
     return <NotFound />;
   }
 
+  console.log(detailsData)
+
   return (
     <div
       className="movie-details"
@@ -41,11 +44,23 @@ export const MovieDetails = () => {
       }}
     >
       <Backbutton />
-      <img
-        className="details-img"
-        src={`https://image.tmdb.org/t/p/w342/${detailsData.poster_path}`}
-        alt={detailsData.title}
-      ></img>
+      <div className="poster-flip">
+        <div className="flip-inner">
+          <div className="poster-front">
+            <img
+              className="details-img"
+              src={`https://image.tmdb.org/t/p/w342/${detailsData.poster_path}`}
+              alt={detailsData.title}
+            ></img>
+          </div>
+          <div className="poster-back">
+            <h3>Budget: ${detailsData.budget}</h3>
+            <h3>Revenue: ${detailsData.revenue}</h3>
+            <h3>Runtime: {detailsData.runtime}min</h3>
+            <h3>Vote avg: {detailsData.vote_average} out of { detailsData.vote_count} votes</h3>
+          </div>
+        </div>
+      </div>
       <div className="details">
         <div className="title-box">
           <div>
