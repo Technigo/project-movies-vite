@@ -98,7 +98,6 @@ This route expects a movie ID in the URL and is responsible for showing more det
 - You should follow the design from our example (but it's ok to change things - just try to make it look nice).
 - Make your app responsive (it should look good on devices from 320px width up to 1600px)
 
-
 ## Stretch Goals
 
 ### Intermediate stretch goals
@@ -110,21 +109,19 @@ This route expects a movie ID in the URL and is responsible for showing more det
   - You could also investigate how to handle the loading of images - or show plain text by default and then use CSS to place the image over the text (using absolute positioning). This way, if the images take a long time to load, the user still sees something relevant.
 
 ### Advanced stretch goals
+
 - On the homepage where you list popular movies, you could add a dropdown to change the list. For example, you could toggle between popular, upcoming, and new releases.
 - When you load a movie, you get a lot of information in the API response, such as a collection it belongs to, genres it has, or the companies involved with producing the film. Each of these has an API endpoint that can be used to fetch more information about that entity. You could use this data to make links from your movie page to another page. Take a look through the documentation and be creative!
 
 ### Roadmap
 
-- Not found for /movie/*
-- Style the Not found   
-- Style header              - Martin    CHECK!
-- Style Grid                - Martin    CHECK!
-- Style Details             - Linda     CHECK!
+- Not found for /movie/\* CHECK!
+- Style the Not found CHECK!
+- Style header - Martin CHECK!
+- Style Grid - Martin CHECK!
+- Style Details - Linda CHECK!
 - Handle loading
 - Image loading state
-- Route to different endpoints          CHECK!
-- Reloading on details not fetching right data. Question aked for Q&A!
-
-
-
-
+- Route to different endpoints CHECK!
+- Reloading on details not fetching right data. Question aked for Q&A! CHECK!
+- Code check in the end

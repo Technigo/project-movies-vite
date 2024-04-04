@@ -7,7 +7,7 @@ import { NotFound } from "./NotFound";
 
 export const MovieGrid = ({ data, setAPI_END, loading, setLoading }) => {
   const { genre } = useParams();
-  console.log("App slug:", genre);
+  console.log("App genre slug:", genre);
 
   if (
     genre === "popular" ||
@@ -55,7 +55,7 @@ export const MovieGrid = ({ data, setAPI_END, loading, setLoading }) => {
         {data.results.map((movie, index) => (
           <div className="movie-link" key={index}>
             <Link
-              to={`/${genre}/${movie.title.toLowerCase().replace(/ /g, "-")}`}
+              to={`/${genre}/${movie.title.toLowerCase().replace(/ /g, "-")}/${movie.id}`}
             >
               <Movie movie={movie} />
             </Link>

@@ -5,7 +5,6 @@ import { NotFound } from "../pages/NotFound";
 import PropTypes from "prop-types";
 
 export const MovieRoutes = ({ data, setAPI_END, loading, setLoading }) => {
-
   const check = useLocation();
 
   console.log("App Location: ", check.pathname);
@@ -24,6 +23,10 @@ export const MovieRoutes = ({ data, setAPI_END, loading, setLoading }) => {
         }
       />
       <Route
+        path="/:genre/:slug/:id"
+        element={<MovieDetails data={data} setAPI_END={setAPI_END} />}
+      />
+      <Route
         path="/:genre"
         element={
           <MovieGrid
@@ -34,10 +37,6 @@ export const MovieRoutes = ({ data, setAPI_END, loading, setLoading }) => {
           />
         }
       />
-      <Route
-        path="/:genre/:slug"
-        element={<MovieDetails data={data} setAPI_END={setAPI_END} />}
-      />
 
       <Route path="/*" element={<NotFound />} />
     </Routes>
@@ -46,5 +45,7 @@ export const MovieRoutes = ({ data, setAPI_END, loading, setLoading }) => {
 
 MovieRoutes.propTypes = {
   data: PropTypes.object,
-  setAPI_END: PropTypes.any
+  setAPI_END: PropTypes.any,
+  loading: PropTypes.any,
+  setLoading: PropTypes.any
 };

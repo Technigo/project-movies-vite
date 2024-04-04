@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, useParams, useLocation } from "react-router-dom";
 import { MovieRoutes } from "./routes/MovieRoutes";
+import { Loading } from "./pages/Loading";
 
 export const App = () => {
   const [loading, setLoading] = useState(true);
@@ -24,9 +25,9 @@ export const App = () => {
   }, [API_URL]);
 
   return loading ? (
-    <div>
-      <h1>LOADING!</h1>
-    </div>
+    <>
+      <Loading />
+    </>
   ) : (
     <>
       <BrowserRouter>
@@ -42,8 +43,6 @@ export const App = () => {
     </>
   );
 };
-
-
 
 /*function PageWithLoadingPlaceholder() {
   const { state } = useNavigation();
