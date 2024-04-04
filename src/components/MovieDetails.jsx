@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { NotFound } from "./NotFound";
 
 export const MovieDetails = ({ movies }) => {
   const { movieTitle } = useParams();
@@ -16,7 +17,11 @@ export const MovieDetails = ({ movies }) => {
 
   // Check if the movie exists
   if (!movieInfo) {
-    return <div>Movie not found!</div>;
+    return (
+      <div>
+        <NotFound />
+      </div>
+    );
   }
 
   const fetchGenres = () => {
