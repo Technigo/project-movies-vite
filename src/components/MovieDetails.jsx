@@ -42,7 +42,7 @@ export const MovieDetails = () => {
   }, [movieURL])
 
   if (loading) {
-    return <div>Loading...</div>
+    return <div>Loading movie details...</div>
   }
 
   if (!movieDetails) {
