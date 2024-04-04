@@ -6,13 +6,11 @@ import { MovieDetails } from "./components/MovieDetails";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Movies />} />
-        {/* <MovieCard /> */}
-        <Route path="/movie" element={<MovieDetails />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Movies />} />
+      {/* <MovieCard /> */}
+      <Route path="/movie" element={<MovieDetails />} />
+    </Routes>
   );
 };
 
