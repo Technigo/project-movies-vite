@@ -1,6 +1,8 @@
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import MovieDetail from "../components/MovieDetail";
+import BackHome from "../components/BackHome";
+import styles from "../styling/Movie.module.css";
 
 const Access_Token =
   "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhNWIxM2M3MzY1ZTNlNTRmY2JjNWQ1NzE1MTE3NjdmOSIsInN1YiI6IjY1NTkzNzIyYjU0MDAyMTRkM2NhZTQ2NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.hUP5w6KFCmMshYAaFwy15nfUVAcySBTGUGuOYxWo1M0";
@@ -32,8 +34,9 @@ const Movie = () => {
   }, [movieID]);
 
   return (
-    <article>
+    <article className={styles.moviePage}>
       {isLoading && <p style={{ color: "white", font: "45px" }}>Loading</p>}
+      <BackHome />
       {movie && (
         <MovieDetail
           bgImage={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`}

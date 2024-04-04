@@ -6,13 +6,6 @@ import Movie from "./pages/Movie";
 export const App = () => {
   return (
     <BrowserRouter>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-        </ul>
-      </nav>
       <Routes>
         <Route path="/" element={<Home />}>
           <Route index element={<Navigate replace to="browser" />} />
