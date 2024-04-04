@@ -58,7 +58,7 @@
 .movie-title {
   font-size: 28px;
   letter-spacing: 0.02em;
-  margin-right: 15px;
+  margin: 0 15px 0 0;
 }
 
 .movie-heading {

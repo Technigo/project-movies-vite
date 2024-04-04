@@ -2,7 +2,7 @@ import Lottie from "lottie-react";
 import { useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import "./css/Movie.css";
-import greenDots from "../assets/animations/greendots.json";
+import animation from '../assets/animations/loading.json'
 import star from "/star.svg";
 import arrow from "/arrow.svg";
 
@@ -37,7 +37,7 @@ export const Movie = () => {
       {loading && (
         <div className="loading">
           <Lottie
-            animationData={greenDots}
+            animationData={animation}
             loop
             autoPlay
             style={{ width: 200, height: 200 }}

@@ -1,73 +1,74 @@
 .loading {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .movie-list {
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1em;
-    justify-content: center;
-    padding: 5em 0;
-  }
-  
-  .each-movie {
-    position: relative;
-  }
-  
-  .each-movie:hover {
-    cursor: pointer;
-  
-    #overlay {
-      display: flex;
-      flex-direction: column;
-      background-image: linear-gradient(to top, rgb(192, 0, 0), transparent);
-      transition: 0.3s;
-      width: 100%;
-    }
-  }
-  
-  .each-movie img {
-    position: relative;
-    width: 100%;
-    top: 0;
-    left: 0;
-  }
-  
-  #overlay {
-    display: none;
-    z-index: 1;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    justify-content: flex-end;
-    align-items: flex-start;
-  }
-  
-  #overlay-text {
-    padding: 1.5em;
-  }
-  .movie-list h1,
-  h2 {
-    color: white;
-    word-wrap: break-word;
-    line-height: 1;
-  }
-  
-  h1 {
-    font-size: 2.5em;
-    word-wrap: wrap;
-    font-family: "Anton";
-    letter-spacing: 0.02em;
-  }
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  h2{
-    font-family: "Quicksand";
-    font-size: 1em;
+.movie-list {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+  padding: 5em 0;
+}
+
+.each-movie {
+  position: relative;
+}
+
+.each-movie:hover {
+  cursor: pointer;
+
+  #overlay {
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to top, rgb(192, 0, 0), transparent);
+    transition: 0.3s;
+    width: 100%;
   }
+}
+
+.each-movie img {
+  position: relative;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+#overlay {
+  display: none;
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+#overlay-text {
+  padding: 1.5em;
+}
+.movie-list h1,
+h2 {
+  color: rgb(255, 254, 234);
+  word-wrap: break-word;
+  line-height: 1;
+}
+
+h1 {
+  font-size: 2.5em;
+  word-wrap: wrap;
+  font-family: 'Anton';
+  letter-spacing: 0.02em;
+  text-shadow: 2px 2px 2px black;
+}
+
+h2 {
+  font-family: 'Quicksand';
+  font-size: 1em;
+}
