@@ -15,8 +15,8 @@ export const App = () => {
       </nav>
       <Routes>
         <Route path="/" element={<Home />}>
-          <Route index element={<Navigate replace to="now_playing/1" />} />
-          <Route path=":type/:pageNum" element={<MovieList />} />
+          <Route index element={<Navigate replace to="browser" />} />
+          <Route path="browser" element={<MovieList />} />
         </Route>
         <Route path="/movies/:movieID" element={<Movie />} />
       </Routes>

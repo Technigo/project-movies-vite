@@ -21,6 +21,9 @@ code {
   text-decoration: none;
   color: black;
 }
+.page-item .page-link.active {
+  background-color: aqua;
+}
 
 * {
   padding: 0;
