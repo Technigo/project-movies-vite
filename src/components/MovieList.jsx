@@ -50,7 +50,7 @@ const MovieList = () => {
 								<img
 									src={`http://image.tmdb.org/t/p/w342/${movie.poster_path}`}
 									alt="movie-image"
-									className="movie-poster"
+									className="movie-cover"
 								/>
 								<div className="overlay">
 									<div className="description">

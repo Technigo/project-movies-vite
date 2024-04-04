@@ -14,3 +14,5 @@ export const App = () => {
     </>
   )
 };
+/* MovieList component responsible for rendering a list of movies.
+ <Routes>: This component is used to define the routes of the application. It can contain one or more Route components.*/
