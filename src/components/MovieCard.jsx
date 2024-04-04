@@ -1,7 +1,14 @@
+import { Link } from "react-router-dom";
 
-
-export const MovieCard = () => {
+export const MovieCard = ({ id, title, releaseDate, posterPath }) => {
   return (
-    <div>MovieCard</div>
-  )
-}
+    <Link to={`/movie/${id}`}>
+      <article className="movie-card">
+        <img
+          src={`https://image.tmdb.org/t/p/w300/${posterPath}`}
+          alt={title}
+        ></img>
+      </article>
+    </Link>
+  );
+};
