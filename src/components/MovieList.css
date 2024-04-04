@@ -1,14 +1,21 @@
 .top-section {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 20px;
 }
 
 .dropdown {
   border-radius: 40px;
-  padding: 5px;
+  padding: 10px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  height: fit-content;
+}
+
+.category-name {
+  font-size: 24px;
+  font-family: "Chakra Petch", sans-serif;
 }
 
 .title {
@@ -76,6 +83,9 @@
 @media (min-width: 570px) {
   .popular-list {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .category-name {
+    font-size: 36px;
   }
 }
 

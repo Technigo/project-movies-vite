@@ -60,14 +60,16 @@ export const MovieList = () => {
   return (
     <div>
       <div className="top-section">
-        <h1>{selectedEndpoint.toUpperCase().replace("_", " ")}</h1>
+        <h1 className="category-name">
+          {selectedEndpoint.toUpperCase().replace("_", " ")}
+        </h1>
         <select
           value={selectedEndpoint}
           onChange={handleEndpointChange}
           className="dropdown">
           <option value="top_rated">Top Rated</option>
           <option value="popular">Popular</option>
-          <option value="now_playing">In theaters</option>
+          <option value="now_playing">Now Playing</option>
           <option value="upcoming">Upcoming</option>
         </select>
       </div>
