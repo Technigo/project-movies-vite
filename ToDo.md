@@ -1,3 +1,8 @@
+1. MAke the 404 page look nicer
+2. Make loading page look nicer
+3. make buttons look nicer
+4. make user stay at "More"
+
 Intermediate stretch goals
 
 ✅ Show a 'not found' page if you try to visit a movie detail page with an invalid movie ID (so the user has tried to enter an ID themselves, most likely).
@@ -8,30 +13,6 @@ You could also investigate how to handle the loading of images - or show plain t
 
 Advanced stretch goals
 
-- On the homepage where you list popular movies, you could add a dropdown to change the list. For example, you could toggle between popular, upcoming, and new releases.
-
+✅- On the homepage where you list popular movies, you could add a dropdown to change the list. For example, you could toggle between popular, upcoming, and new releases.
 
 - When you load a movie, you get a lot of information in the API response, such as a collection it belongs to, genres it has, or the companies involved with producing the film. Each of these has an API endpoint that can be used to fetch more information about that entity. You could use this data to make links from your movie page to another page. Take a look through the documentation and be creative!
-
-{
-"page": 1,
-"results": [
-{
-"adult": false,
-"backdrop_path": "/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg",
-"genre_ids": [
-18,
-80
-],
-"id": 278,
-"original_language": "en",
-"original_title": "The Shawshank Redemption",
-"overview": "Framed in the 1940s for the double murder of his wife and her lover, upstanding banker Andy Dufresne begins a new life at the Shawshank prison, where he puts his accounting skills to work for an amoral warden. During his long stretch in prison, Dufresne comes to be admired by the other inmates -- including an older prisoner named Red -- for his integrity and unquenchable sense of hope.",
-"popularity": 139.838,
-"poster_path": "/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg",
-"release_date": "1994-09-23",
-"title": "The Shawshank Redemption",
-"video": false,
-"vote_average": 8.704,
-"vote_count": 25919
-}]}
