@@ -63,6 +63,8 @@ export const MovieDetails = ({ movies }) => {
     return <div>Genre not found!</div>;
   }
 
+  // Maybe add to backgroundImage: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1))
+
   return (
     <div
       className="details-container"
@@ -73,13 +75,23 @@ export const MovieDetails = ({ movies }) => {
       <div className="details-card">
         <img
           className="movie-image"
+          srcSet={`
+    https://image.tmdb.org/t/p/w300${movieInfo.poster_path} 300w,
+    https://image.tmdb.org/t/p/w780${movieInfo.poster_path} 745w,
+    https://image.tmdb.org/t/p/w1280${movieInfo.poster_path} 1024w
+  `}
+          sizes="(max-width: 745px) 300px,
+         (max-width: 1024px) 745px,
+         1024px"
           src={`https://image.tmdb.org/t/p/w300${movieInfo.poster_path}`}
           alt={`${movieInfo.title} poster`}
         />
         <div className="movie-text">
-          <h2 className="movie-title">{movieInfo.title}</h2>
+          <h2 className="movie-title">{movieInfo.title} </h2>
           {movieInfo.title !== movieInfo.original_title ? (
-            <h3 className="original-title">{movieInfo.original_title}</h3>
+            <h3 className="original-title">
+              Original Title: {movieInfo.original_title}
+            </h3>
           ) : null}
           <h2 className="movie-ranking">
             ⭐{movieInfo.vote_average.toFixed(1)}
@@ -89,7 +101,7 @@ export const MovieDetails = ({ movies }) => {
               <li key={genre.id}>{genre.name}</li>
             ))}
           </ul>
-          <p className="movieSummary">{movieInfo.overview}</p>
+          <p>{movieInfo.overview}</p>
         </div>
       </div>
       <Link to="/movies" className="back-link">
