@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from "react";
+import { MovieDetails } from "./MovieDetails";
 
 export const MovieList = () => {
   const [movies, setMovies] = useState([]);
+  const [selectedMovie, setSelectedMovie] = useState(null);
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -23,7 +25,6 @@ export const MovieList = () => {
     fetchMovies();
   }, []);
 
-  // Function to scroll movie container to the left & right
   const scrollLeft = () => {
     containerRef.current.scrollLeft -= 30;
   };
@@ -43,11 +44,23 @@ export const MovieList = () => {
     }
   };
 
+  const handleMovieClick = (movie) => {
+    setSelectedMovie(movie);
+  };
+
+  const handleCloseMovieDetails = () => {
+    setSelectedMovie(null);
+  };
+
   return (
     <div className="movie-container-wrapper" onMouseMove={handleMouseMove}>
       <div className="movie-container" ref={containerRef}>
         {movies.map((movie) => (
-          <div key={movie.id} className="movie-card">
+          <div
+            key={movie.id}
+            className="movie-card"
+            onClick={() => handleMovieClick(movie)}
+          >
             <img
               src={`http://image.tmdb.org/t/p/w500/${movie.poster_path}`}
               alt={movie.title}
@@ -55,10 +68,16 @@ export const MovieList = () => {
           </div>
         ))}
       </div>
+      {selectedMovie && <MovieDetails movieInfo={selectedMovie} />}
       <div className="credit-box">
+        <p>
+          <span className="bold">Credits:</span>
+        </p>
         <p>Photo from Unsplash by Felix Mooneeram</p>
         <p>Design inspired by Lora Staneva from dribbble</p>
-        <p>Project by Cornelia Dahlin</p>
+        <p>
+          <span className="bold">Project by</span></p>
+        <p>Cornelia Dahlin for Technigo bootcamp</p>
       </div>
     </div>
   );

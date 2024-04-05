@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap");
 
 body {
   margin: 0;
@@ -66,9 +67,75 @@ body {
   text-align: center;
 }
 
-/* Media queries */
+/* MovieDetails.jsx */
+.movie-box {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.406);
+  width: 450px;
+  padding: 0 15px;
+  padding-bottom: 15px;
+  border-radius: 15px;
+}
+
+.movie-details {
+  font-family: "Quicksand", sans-serif;
+  color: rgb(255, 255, 255);
+}
+
+.movie-details h2 {
+  font-family: "Merriweather", serif;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.movie-details p {
+  font-size: 12px;
+  margin: 5px 0;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/* Media queries for MovieList.jsx */
 @media (max-width: 1000px) {
   .credit-box {
     display: none;
+  }
+}
+
+/* Media queries for MovieDetails.jsx */
+@media (max-width: 480px) {
+  .movie-box {
+    width: 300px;
+    padding: 0 10px;
+    padding-bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 1000px) {
+  .movie-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+  }
+
+  .movie-card img {
+    width: 200px;
+    height: auto;
+  }
+
+  .movie-box {
+    width: 500px;
+    padding: 0 10px;
+    padding-bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
