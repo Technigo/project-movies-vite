@@ -1,19 +1,16 @@
 .button-container {
-  position: absolute;
-  top: 55%;
-  left: 43%;
-  margin-top: -50px;
-  margin-left: -50px;
+  display: flex;
+  margin: 20px auto 0 auto;
+  justify-content: center;
+  width: 100%;
   font-weight: bold;
   font-weight: 800;
   font-size: 18px;
-}
-
-.button-upcoming {
-  padding-right: 60px;
-}
-
-.button-classic,
-.button-upcoming :hover {
-  cursor: pointer;
+  a {
+    margin: 0 10px;
+    transition: transform 250ms;
+  }
+  a:hover {
+    transform: translateX(+5px);
+  }
 }

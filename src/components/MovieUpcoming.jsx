@@ -55,7 +55,7 @@ export const MovieUpcoming = () => {
           <div className="movie-list">
             {movies.results.map((movie) => (
               <Link
-                to={`movie/${movie.id}`}
+                to={`/movie/${movie.id}`}
                 className="each-movie"
                 key={movie.id}
               >

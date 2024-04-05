@@ -14,7 +14,7 @@
   flex-wrap: wrap;
   gap: 1em;
   justify-content: center;
-  padding: 5em 0;
+  padding: 4em 0;
 }
 
 .each-movie {
@@ -63,12 +63,12 @@ h2 {
 h1 {
   font-size: 2.5em;
   word-wrap: wrap;
-  font-family: 'Anton';
+  font-family: "Anton";
   letter-spacing: 0.02em;
   text-shadow: 2px 2px 2px black;
 }
 
 h2 {
-  font-family: 'Quicksand';
+  font-family: "Quicksand";
   font-size: 1em;
 }
