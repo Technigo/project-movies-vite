@@ -17,6 +17,7 @@
   color: white;
   padding: 20px;
   width: 90%;
+  /* height: auto; */
 }
 
 .movie-details-content img {
@@ -37,23 +38,31 @@
   font-size: small;
 }
 
+.release-date {
+  font-size: small;
+  margin: 20px 0 0px 0;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  /* margin-top: 200px; */
+  /* align-items: center; */
+}
+
 .read-more-button {
   margin-top: 15px;
   padding: 6px 11px;
   border: none;
+  background-color: white;
 }
 
 .read-more-button:hover {
   background-color: #e1e1e1;
 }
 
-.release-date {
-  font-size: small;
-  margin: 20px 0 0px 0;
-}
-
 .back-button {
-  position: absolute;
+  /* position: absolute; */
 }
 
 /* Media Queries for tablet */

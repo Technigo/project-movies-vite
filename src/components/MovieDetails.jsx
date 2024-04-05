@@ -1,6 +1,7 @@
 import React from "react";
 import "./MovieDetails.css";
 import { Link } from "react-router-dom";
+import arrowIcon from "../assets/arrow-icon.png";
 
 export const MovieDetails = ({
   title,
@@ -38,17 +39,19 @@ export const MovieDetails = ({
             </ul>
           </div>
           <p>{overview}</p>
-          <a
-            href={`https://www.imdb.com/title/${imdb}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className="read-more-button">Read more</button>
-          </a>
           <p className="release-date">Released {release_date}</p>
-          <Link to={`/movie`}>
-            <button className="back-button">Go back</button>
-          </Link>
+          <div className="buttons">
+            <a
+              href={`https://www.imdb.com/title/${imdb}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="read-more-button">Read more</button>
+            </a>
+            <Link to={`/movie`}>
+              <img src={arrowIcon} alt="Go back" />
+            </Link>
+          </div>
         </div>
       </div>
     </div>
