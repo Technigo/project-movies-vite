@@ -1,5 +1,4 @@
-1. make buttons look nicer
-2. go back to the page that the user left, not to home page
+1. go back to the page that the user left, not to home page
 
 Intermediate stretch goals
 
