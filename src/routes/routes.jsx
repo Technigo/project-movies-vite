@@ -7,8 +7,8 @@ export const routes = () => {
   return (
     <Routes>
       <Route path="/" element={<MoviesPage />} />
-      <Route path="/movie/:id" element={<MovieDetailsPage />} />{" "}
-      {/* Include :id parameter */}
+      <Route path="/movie/:id" element={<MovieDetailsPage />} />
+      <Route path="/movie/" element={<MoviesPage />} />
     </Routes>
   );
 };
