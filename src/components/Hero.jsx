@@ -48,7 +48,11 @@ export const Hero = () => {
           <img className="logoImg" src="../log-noback.png" alt="logo" />
 
           <div className="summary">
-            <h2>Coming soon</h2>
+            <div className="comingSoonWrapper">
+              <h2>Coming soon</h2>
+              <img src="coming-soon.png" className="comingSoonIcon" />
+            </div>
+
             <h1>{randomMovie.title}</h1>
             <span> First Release {FormatDate(randomMovie.release_date)}</span>
             <p>{randomMovie.overview}</p>

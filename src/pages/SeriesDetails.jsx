@@ -1,7 +1,8 @@
-import { useParams } from 'react-router-dom'
+import { useParams, NavLink } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import '../stylesheets/movieDetails.css'
 const API_KEY = '29adee7b64b906cf77014bb38ac8dd58'
+import { SeasonList } from './SeasonList'
 
 export const SeriesDetails = () => {
   const { series_id } = useParams()
@@ -39,9 +40,12 @@ export const SeriesDetails = () => {
                 <span className="rating">
                   ⭐{details.vote_average.toFixed(1)}
                 </span>
-                <h5 className="seasonsCount">
-                  {details.seasons.length} Seasons
-                </h5>
+
+                <NavLink to={`/tv/${series_id}/seasons`}>
+                  <h5 className="seasonsCount">
+                    {details.seasons.length} Seasons →
+                  </h5>
+                </NavLink>
               </h2>
               <p>{details.overview}</p>
             </div>
