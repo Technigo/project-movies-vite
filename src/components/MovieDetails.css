@@ -59,7 +59,9 @@
 }
 
 .read-more-button:hover {
-  background-color: #e1e1e1;
+  /* background-color: black;
+  opacity: 50%; */
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .back-button {
@@ -68,6 +70,12 @@
 
 .back-button img {
   width: 50px;
+  border-radius: 50%;
+}
+
+.back-button:hover img {
+  background-color: rgba(0, 0, 0, 0.2);
+  /* border-radius: 50%; */
 }
 
 /* Media Queries for tablet */
