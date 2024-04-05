@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { BackButton } from "./BackButton";
 
 export const MovieDetails = () => {
   const [movieDetail, setMovieDetail] = useState(null);
@@ -44,6 +45,7 @@ export const MovieDetails = () => {
         backgroundImage: `url(http://image.tmdb.org/t/p/original/${backdrop_path})`,
       }}
     >
+      <BackButton />
       <div className="info-container">
         <div className="movie-poster">
           <img
