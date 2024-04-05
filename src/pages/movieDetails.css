@@ -8,7 +8,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 50px;
+  padding: 30px;
   justify-content: space-between;
   background: linear-gradient(
     to bottom,
@@ -50,9 +50,11 @@ p {
 }
 
 .rating {
+  display: inline-block;
   background-color: white;
   color: black;
   padding: 0 10px;
+  overflow-wrap: anywhere;
 }
 
 .arrow {
@@ -89,6 +91,10 @@ p {
     align-self: end;
     max-width: 400px;
     margin: 20px;
+  }
+
+  .detailContainer {
+    padding: 50px;
   }
 }
 
