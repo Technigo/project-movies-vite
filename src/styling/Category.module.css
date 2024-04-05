@@ -42,7 +42,7 @@
   }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 648px) {
   .category {
     grid-template-rows: 1fr;
     grid-template-columns: repeat(4, max-content);
@@ -50,6 +50,6 @@
   }
   .categoryLink {
     width: 100%;
-    font-size: 24px;
+    font-size: 22px;
   }
 }

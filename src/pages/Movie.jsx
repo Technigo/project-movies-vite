@@ -14,6 +14,7 @@ const Base_URL = "https://api.themoviedb.org/3/movie/";
 
 const Movie = () => {
   const { movieID } = useParams();
+  console.log(movieID);
   const [movie, setMovie] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
