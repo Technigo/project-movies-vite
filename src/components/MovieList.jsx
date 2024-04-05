@@ -46,8 +46,9 @@ export const MovieList = () => {
       )}
       {!loading && (
         <>
+
           <header>
-            <Carousel movies={movies.results} />
+            <Carousel />
             <ButtonsMenu />
           </header>
           <div className="movie-list">
