@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { apiKey } from "../config.json";
+import arrow from "../assets/arrow.png";
 import "./DetailPage.css";
 
 export const DetailPage = () => {
@@ -37,10 +38,10 @@ export const DetailPage = () => {
           alt={movie.title}
           className="backdrop"
         ></img>
+        <div className="gradient"></div>
         <div className="go-back-container">
           <Link to="/" className="link">
-            <img src="" alt="back-arrow" className="arrow" />
-            <span> Go back</span>
+            <img src={arrow} alt="Go back" className="arrow" />
           </Link>
         </div>
         <div className="summary">
@@ -48,13 +49,13 @@ export const DetailPage = () => {
             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
             className="summary-poster"
           ></img>
-          <div className="summary-detail">
-            <h1 className="heading">
-              <span className="title">{movie.title}</span>
-              <span className="rating">{movie.vote_average}</span>
-            </h1>
-            <p className="plot">{movie.overview}</p>
-          </div>
+          <h1 className="heading">
+            <span className="title">{movie.title}</span>
+            <span className="rating"><span>⭐️ </span>
+              {Math.round(movie.vote_average * 10) / 10}
+            </span>
+          </h1>
+          <p className="plot">{movie.overview}</p>
         </div>
       </section>
     )) ||

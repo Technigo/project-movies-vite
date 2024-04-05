@@ -1,30 +1,29 @@
 .navbar {
-  background-color: #cc0028;
-  margin: 20px 20px 50px;
-  padding: 15px 30px;
-  border-radius: 0.75rem;
-  font-family: "Oswald", sans-serif;
+  background-color: black;
+  position: absolute;
+  width: 100vw;
+  overflow: hidden;
 }
 
 header {
   display: flex;
-  gap: 20px;
-  align-items: baseline;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
 }
 
-.popcorn-icon {
-  height: 45px;
-  width: 45px;
-}
-.popcorn-icon img {
-  height: 100%;
+.header img {
+  height: 22px;
 }
 .header {
-  font-size: 45px;
-  font-weight: 600;
+  height: 22px;
+  font-size: 22px;
+  font-weight: 400;
 }
 
 .subheader {
-  font-size: 20pt;
+  font-size: 12px;
   font-weight: 200;
 }
