@@ -1,0 +1,113 @@
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+}
+
+.dropdown {
+  border: none;
+  color: black;
+  border-radius: 40px;
+  padding: 10px;
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  height: fit-content;
+}
+
+.category-name {
+  font-size: 22px;
+  font-family: "Chakra Petch", sans-serif;
+}
+
+.title {
+  font-size: 32px;
+}
+
+.release-date {
+  font-size: 16px;
+  margin: 16px 0;
+}
+
+.movie-list {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.movie-card img {
+  width: 100%;
+}
+
+.movie-card {
+  position: relative;
+}
+
+.hover-text {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: opacity 0.3s ease;
+}
+
+.movie-card:hover .hover-text {
+  display: flex;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.more-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  cursor: pointer;
+  border: 0;
+  margin: 30px 0;
+  background-color: black;
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.more-text {
+  padding-right: 5px;
+}
+
+/*Media queries*/
+@media (min-width: 370px) {
+  .movie-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .category-name {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 570px) {
+  .movie-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .category-name {
+    font-size: 36px;
+  }
+}
+
+@media (min-width: 820px) {
+  .movie-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
