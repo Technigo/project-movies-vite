@@ -1,7 +1,106 @@
+.movie-details-card {
+  position: relative;
+}
+
+.back-button {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 700;
+  left: 50px;
+  top: 10px;
+  filter: drop-shadow(2px 3px 4px rgb(0 0 0 / 0.5));
+}
+
+/* Back-icon going back to movies */
+.back-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: margin-right 0.3s ease-in-out;
+}
+
+/* Hover-effect for back-icon */
+.back-button:hover .back-icon {
+  margin-right: 10px;
+}
+
+/* Styling background-image */
 .background-image {
   min-height: 100vh;
   display: flex;
   background-size: cover;
   flex-direction: column;
   justify-content: flex-end;
+}
+
+/* Styling the container containing movie information  */
+.movie-details-summary {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  gap: 20px;
+}
+
+/* Styling movie-poster-image */
+.movie-poster {
+  border: 5px solid #fff;
+  width: 200px;
+}
+
+.movie-details {
+  margin-left: 0;
+}
+
+.movie-details h1 {
+  text-shadow: 1px 1px #4d4d4d;
+}
+
+.movie-title {
+  margin-right: 10px;
+  font-weight: 700;
+}
+
+.overview-text {
+  margin: 20px 0;
+}
+
+.movie-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: black;
+  background-color: white;
+  padding: 0 5px;
+  text-shadow: none;
+}
+
+.star-icon {
+  color: #fac91e;
+}
+
+.overview-text {
+  max-width: 400px;
+}
+
+/* --- Media Queries for responsive design */
+
+/* For screens with a minimum width of 577px */
+@media (min-width: 577px) {
+  .movie-details-summary {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .movie-poster {
+    width: 250px;
+  }
+}
+
+/* For screens with a minimum width of 770px */
+@media (min-width: 770px) {
+  .movie-poster {
+    width: auto;
+  }
 }

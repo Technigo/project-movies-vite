@@ -59,8 +59,6 @@ export const MovieInfo = () => {
   ) : loading ? (
     <Loadingspinner />
   ) : (
-    <div className="movieinfo-container">
-      <MovieDetails movieDetails={movieInfo} />
-    </div>
+    <MovieDetails movieDetails={movieInfo} />
   );
 };

@@ -1,4 +1,3 @@
-import "./MovieDetails.css";
 import { BackButton } from "../BackButton/BackButton";
 import { IoIosStar } from "react-icons/io";
 import PropTypes from "prop-types";
