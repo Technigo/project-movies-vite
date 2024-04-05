@@ -6,7 +6,7 @@
 }
 
 .movieItem {
-  width: 25%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -44,4 +44,22 @@
 
 .releaseDate {
   font-size: 18px;
+}
+
+@media screen and (min-width: 400px) {
+  .movieItem {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .movieItem {
+    width: 33.3%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .movieItem {
+    width: 25%;
+  }
 }

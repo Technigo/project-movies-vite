@@ -50,33 +50,6 @@ h1 {
   /* font-weight: 400; */
   /* font-style: normal; */
 }
-.category {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-
-.category-link {
-  color: #f4bebe;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-size: 24px;
-  cursor: pointer;
-  text-decoration: none;
-}
-.category-link::before {
-  content: " 🍿 ";
-  opacity: 0;
-}
-
-.category-link:hover:before {
-  opacity: 1;
-}
-
-.category-link.active:before {
-  opacity: 1;
-}
 
 .pagination {
   margin: 2rem 0 4rem 0;

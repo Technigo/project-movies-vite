@@ -1,16 +1,39 @@
 import { NavLink } from "react-router-dom";
+import styles from "../styling/Category.module.css";
+
+const ListTypes = [
+  { endpoint: "now_playing", name: "Now playing" },
+  { endpoint: "upcoming", name: "Upcoming" },
+  { endpoint: "popular", name: "Popular" },
+  { endpoint: "top_rated", name: "Top rated" },
+];
 
 const Category = ({ category, onClick }) => {
   return (
-    <div className="category">
-      <NavLink
+    <div className={styles.category}>
+      {ListTypes.map(listType => (
+        <NavLink
+          to={`?category=${listType.endpoint}&page=1`}
+          className={({ isActive }) =>
+            isActive && category === listType.endpoint
+              ? `${styles.categoryLink} ${styles.active}`
+              : styles.categoryLink
+          }
+          name={listType.endpoint}
+          key={listType.endpoint}
+          onClick={onClick}
+        >
+          {listType.name}
+        </NavLink>
+      ))}
+      {/* <NavLink
         to="?category=now_playing&page=1"
         className={({ isActive }) =>
           isActive && category === "now_playing"
-            ? "category-link active"
-            : "category-link"
+            ? `${styles.categoryLink} ${styles.active}`
+            : styles.categoryLink
         }
-        name="upcoming"
+        name="now_playing"
         onClick={onClick}
       >
         Now Playing
@@ -50,7 +73,7 @@ const Category = ({ category, onClick }) => {
         onClick={onClick}
       >
         Top rated
-      </NavLink>
+      </NavLink> */}
     </div>
   );
 };
