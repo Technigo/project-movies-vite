@@ -24,11 +24,11 @@
 }
 
 .title {
-  color: pink;
+  color: #ffc0cb;
 }
 
 .release-date{
-  color: pink;
+  color: #ffc0cb;
 }
 
 .movie-list {
@@ -38,7 +38,6 @@
 
 .movie-card {
   position: relative;
-  border: red 1px solid;
 }
 
 .poster {

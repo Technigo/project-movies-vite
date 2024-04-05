@@ -14,27 +14,27 @@ export const DetailList = ({ detailData }) => {
 					</div>
 				</Link>
 				<div
-					className="movie-details"
+					className="movie-background"
 					style={{
-						backgroundImage: `url(https://media.themoviedb.org/t/p/w1280${detailData.backdrop_path})`,
+						backgroundImage: `url(https://media.themoviedb.org/t/p/w780${detailData.backdrop_path})`,
 						backgroundRepeat: 'no-repeat',
 						backgroundSize: 'cover',
-            minWidth: "100VW",
+						minWidth: '100VW',
 					}}>
 					<div className="details-card">
-							 <img
-              className="poster-image"
-              src={`https://image.tmdb.org/t/p/w342${detailData.poster_path}`}
-              alt={`Movie poster for ${detailData.title}`}
-            />
-						</div>
-						<div className="poster-text">
-							<h1>{detailData.title}</h1>
-							<h1>{detailData.vote_average.toFixed(1)}</h1>
-							<h2>{detailData.overview}</h2>
-						</div>
+						<img
+							className="poster-image"
+							src={`https://image.tmdb.org/t/p/w342${detailData.poster_path}`}
+							alt={`Movie poster for ${detailData.title}`}
+						/>
+					</div>
+					<div className="poster-text">
+						<span>{detailData.title}</span>
+						<span>⭐ {detailData.vote_average.toFixed(1)}</span>
+						<span>{detailData.overview}</span>
 					</div>
 				</div>
+			</div>
 		</>
 	)
 }

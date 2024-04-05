@@ -1,14 +1,45 @@
-.movie-details {
-  display: flex;
-  align-items: flex-end;
-  min-height:100vw;
-  }
+.movie-background {
+	display: flex;
+	align-items: flex-end;
+	min-height: 100vw;
+}
 
-  .poster-image {
-    border: 4px solid pink;
-    margin: 0 20px 50px 20px;
-  }
+.poster-image {
+	border: 5px solid pink;
+	margin: 0 20px 50px 20px;
+}
 
-  .poster-text {
-    margin-bottom: 50px;
-  }
+.poster-text {
+	margin-bottom: 50px;
+	color: #8e1c2f;
+	font-size: 16px;
+}
+
+/*Media queries*/
+@media (min-width: 577px) {
+	.detail-poster {
+		width: 250px;
+		margin-bottom: 0;
+	}
+
+	.details-card {
+		flex-direction: row;
+		align-items: flex-end;
+	}
+
+	.text-.poster-text {
+		margin-left: 20px;
+	}
+}
+
+.poster-text {
+	margin-bottom: 50px;
+	color: #8e1c2f;
+}
+
+@media (min-width: 770px) {
+	.detail-poster {
+		max-height: 523px;
+		width: auto;
+	}
+}
