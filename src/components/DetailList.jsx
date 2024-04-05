@@ -10,7 +10,7 @@ export const DetailList = ({ detailData }) => {
 			<div className="detail-wrapper">
 				<Link to={'/'}>
 					<div className="back-btn">
-						<div>Placeholder for back icon</div>
+						<button>Placeholder back icon</button>
 					</div>
 				</Link>
 				<div
