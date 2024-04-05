@@ -49,7 +49,9 @@ export const MovieDetails = ({ movies }) => {
   }
 
   const fetchGenres = () => {
-    const genreUrl = `https://api.themoviedb.org/3/movie/${movieInfo.id}?api_key=555122904f9aa5a9df5e76f87cb061f7`;
+    const apiEnv = import.meta.env.VITE_OPENDB_KEY;
+
+    const genreUrl = `https://api.themoviedb.org/3/movie/${movieInfo.id}?api_key=${apiEnv}`;
     fetch(genreUrl)
       .then((response) => response.json())
       .then((data) => setGenres(data.genres))
@@ -63,13 +65,11 @@ export const MovieDetails = ({ movies }) => {
     return <div>Genre not found!</div>;
   }
 
-  // Maybe add to backgroundImage: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1))
-
   return (
     <div
       className="details-container"
       style={{
-        backgroundImage: `url(https://image.tmdb.org/t/p/${imageSize}${movieInfo.backdrop_path})`,
+        backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1)), url(https://image.tmdb.org/t/p/${imageSize}${movieInfo.backdrop_path})`,
       }}
     >
       <div className="details-card">

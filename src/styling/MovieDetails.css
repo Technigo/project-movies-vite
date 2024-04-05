@@ -11,7 +11,7 @@ body {
 
 .details-container {
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   height: 100vh;
   padding: 10px 16px 0 16px;
   margin: 0;
@@ -74,7 +74,7 @@ body {
 }
 
 .genre-list li {
-  padding: 5px;
+  padding: 0px 10px 10px 0;
   font-weight: 700;
 }
 
@@ -82,7 +82,7 @@ body {
   font-weight: 700;
   color: white;
   text-shadow: 1px 1px #4d4d4d;
-  padding-bottom: 3px;
+  padding-bottom: 10px;
 }
 
 /***** Tablet *****/
@@ -107,6 +107,7 @@ body {
   .movie-text {
     max-width: 350px;
   }
+
 }
 
 /***** Desktop *****/
@@ -123,4 +124,17 @@ body {
   .movie-text {
     max-width: 450px;
   }
+
+  .movie-text p {
+    font-size: 18px
+  }
+
+  .movie-title {
+    font-size: 32px;
+  }
+
+  .back-btn {
+    font-size: 18px;
+  }
+
 }
