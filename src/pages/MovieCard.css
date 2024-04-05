@@ -1,0 +1,9 @@
+.background {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-width: 100vw;
+}

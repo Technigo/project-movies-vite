@@ -4,17 +4,17 @@
   flex-wrap: wrap;
 }
 
-.movie-card {
+.movie-list-card {
   display: flex;
   flex-direction: column;
   position: relative;
 }
 
-.movie-card:hover .movie-card-text-box {
+.movie-list-card:hover .movie-list-card-text-box {
   display: flex;
 }
 
-.movie-card-text-box {
+.movie-list-card-text-box {
   display: none;
   flex-direction: column;
   justify-content: flex-end;
@@ -28,12 +28,12 @@
   padding: 35px 25px;
 }
 
-.movie-card-text-box h1 {
+.movie-list-card-text-box h1 {
   font-size: 32px;
   padding: 15px 0;
 }
 
-.movie-card-text-box p {
+.movie-list-card-text-box p {
   font-size: 16px;
 }
 
