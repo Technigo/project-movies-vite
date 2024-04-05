@@ -20,15 +20,13 @@ export const MovieDetails = ({
         src={`https://image.tmdb.org/t/p/w1280${backdrop}`}
         alt={title}
       />
-      <Link to={`/movie`}>
-        <button className="back-button">Go back</button>
-      </Link>
+      {/* <div className="movie-details-content"> */}
       <div className="movie-details-info">
         <img
           className="poster"
           src={`https://image.tmdb.org/t/p/w1280${poster_path}`}
         />
-        <p>⭐ {rating}</p>
+        <p className="rating">⭐ {rating}</p>
         <h2>{title}</h2>
         <h3>{tagline}</h3>
         <div className="movie-genre-list">
@@ -47,7 +45,11 @@ export const MovieDetails = ({
           <button className="read-more-button">Read more</button>
         </a>
         <p className="release-date">Released {release_date}</p>
+        <Link to={`/movie`}>
+          <button className="back-button">Go back</button>
+        </Link>
       </div>
     </div>
+    // </div>
   );
 };
