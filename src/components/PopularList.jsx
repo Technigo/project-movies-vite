@@ -9,25 +9,27 @@ export const PopularList = ({ movieData }) => {
 		<>
 			{movieData &&
 				movieData.results.map((movie) => (
-          <Link key={movie.id} to= {`/details/${movie.id}`}>
-					<div className="movie-wrapper">
-						<div className="movie-list">
-							<div className="movie-card" key={movie.id}>
-								<div className="movie-image">
-									<img
-										className="detail-poster"
-										src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-										alt={`Movie poster for ${movie.title}`}
-									/>
-								</div>
-								<div className="movie-text">
-									<h1 className='title'>{movie.title}</h1>
-									<h2 className='release-date'>{movie.release_date}</h2>
+					<Link key={movie.id} to={`/details/${movie.id}`}>
+						<div className="movie-wrapper">
+							<div className="movie-list">
+								<div className="movie-card" key={movie.id}>
+									<div className="hover-text">
+										<h1 className="title">{movie.title}</h1>
+										<h2 className="release-date">
+											Released {movie.release_date}
+										</h2>
+									</div>
+									<div className="poster">
+										<img
+											className="movie-image"
+											src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
+											alt={`Movie poster for ${movie.title}`}
+										/>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-          </Link>
+					</Link>
 				))}
 		</>
 	)

@@ -2,6 +2,25 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.hover-text{
+  display: none;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: opacity 0.3s ease;
+}
+
+.movie-card:hover .hover-text {
+  display: flex;
 }
 
 .title {
@@ -22,7 +41,11 @@
   border: red 1px solid;
 }
 
-.movie-image {
+.poster {
+  width: 100%;
+}
+
+.movie-image{
   width: 100%;
 }
 
