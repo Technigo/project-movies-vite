@@ -4,10 +4,8 @@ import { Link } from "react-router-dom";
 export const NotFoundPage = () => {
   return (
     <div>
-      <Link to="/">Go home</Link>
-      <h1>
-        Oh Uh, it seems that the page you are trying to access does nto exist.{" "}
-      </h1>
+      <Link to="/">Go back</Link>
+      <h1>It looks like the page your are trying to reach doesn't exist. </h1>
     </div>
   );
 };
