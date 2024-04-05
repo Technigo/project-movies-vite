@@ -1,7 +1,6 @@
 .movie-wrapper {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   align-items: flex-end;
 }
 
@@ -48,19 +47,19 @@
   width: 100%;
 }
 
-@media (min-width: 370px) {
+@media (min-width: 500px) {
   .movie-list {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 570px) {
+@media (min-width: 690) {
   .movie-list {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (min-width: 870px) {
+@media (min-width: 1025) {
   .movie-list {
     grid-template-columns: repeat(4, 1fr);
   }
