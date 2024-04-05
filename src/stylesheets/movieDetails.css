@@ -38,6 +38,14 @@ section .rating {
   text-shadow: none;
   display: inline-block;
 }
+section .details a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+section .details a:hover {
+  color: black;
+}
 
 @media (min-width: 577px) {
   section .info-container {

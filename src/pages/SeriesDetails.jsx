@@ -1,12 +1,13 @@
 import { useParams, NavLink } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import '../stylesheets/movieDetails.css'
+import { FormatDate } from '../utils/FormatDate'
 const API_KEY = '29adee7b64b906cf77014bb38ac8dd58'
-import { SeasonList } from './SeasonList'
 
 export const SeriesDetails = () => {
   const { series_id } = useParams()
   const [details, setDetails] = useState(null)
+  const [reviews, setReviews] = useState([])
   // fetch inside useEffect , set response to useState()
   useEffect(() => {
     fetch(
@@ -18,6 +19,14 @@ export const SeriesDetails = () => {
       })
       .catch((error) => console.log(error))
   }, [])
+
+  useEffect(() => {
+    fetch(
+      `https://api.themoviedb.org/3/tv/${series_id}/reviews?api_key=${API_KEY}&language=en-US`
+    )
+      .then((res) => res.json())
+      .then((review) => setReviews(review.results))
+  }, [series_id])
 
   return (
     <section>
@@ -49,6 +58,18 @@ export const SeriesDetails = () => {
               </h2>
               <p>{details.overview}</p>
             </div>
+          </div>
+          <div className="Reviews">
+            <h2>Reviews</h2>
+            {reviews.map((item) => {
+              return (
+                <div className="reviewsWrapper" key={item.id}>
+                  <h5>{item.author} </h5>
+                  <p>{item.content}</p>
+                  <span>{FormatDate(item.created_at)}</span>
+                </div>
+              )
+            })}
           </div>
         </div>
       )}
