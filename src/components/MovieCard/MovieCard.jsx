@@ -1,5 +1,6 @@
 import "./MovieCard.css";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 export const MovieCard = ({ id, title, release_date, poster_path }) => {
   return (
@@ -19,4 +20,11 @@ export const MovieCard = ({ id, title, release_date, poster_path }) => {
       </article>
     </Link>
   );
+};
+
+MovieCard.propTypes = {
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  release_date: PropTypes.string.isRequired,
+  poster_path: PropTypes.string.isRequired,
 };

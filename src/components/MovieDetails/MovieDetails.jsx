@@ -1,6 +1,7 @@
 import "./MovieDetails.css";
 import { BackButton } from "../BackButton/BackButton";
 import { IoIosStar } from "react-icons/io";
+import PropTypes from "prop-types";
 
 export const MovieDetails = ({ movieDetails }) => {
   console.log("Movie Details showing", movieDetails);
@@ -30,11 +31,11 @@ export const MovieDetails = ({ movieDetails }) => {
               <span className="movie-title">{title}</span>
               <span className="movie-rating">
                 {/* Import star from react icons-library */}
-                <IoIosStar />
-                {vote_average}
+                <IoIosStar className="star-icon" />
+                {Math.round(vote_average * 10) / 10}
               </span>
             </h1>
-            <p>{overview}</p>
+            <p className="overview-text">{overview}</p>
           </div>
         </div>
       </div>
@@ -42,11 +43,12 @@ export const MovieDetails = ({ movieDetails }) => {
   );
 };
 
-//You need to construct a URL using the secure_base_url + size + path from the API response.
-
-//https://image.tmdb.org/t/p/w300/`${poster_path}`
-
-/*
-Inne på ett kort är det följande: 
-div class=background, w1280:
-För summary-div:en är det image size 342 https://image.tmdb.org/t/p/w1280${movie.backdrop_path}, för summary-bilden: w342*/
+MovieDetails.propTypes = {
+  movieDetails: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    overview: PropTypes.string.isRequired,
+    vote_average: PropTypes.number.isRequired,
+    backdrop_path: PropTypes.string.isRequired,
+    poster_path: PropTypes.string.isRequired,
+  }).isRequired,
+};
