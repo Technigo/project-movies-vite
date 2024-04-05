@@ -1,6 +1,6 @@
 <h1 align="center">
   <a href="">
-    <img src="/overview.png" alt="Project Banner Image">
+    <img src="./src/assets/overview.png" alt="Project Banner Image">
   </a>
 </h1>
 
