@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "./Movie.css";
 
 export const Movie = () => {
   const [movieList, setMovieList] = useState([]);
-
 
   const getMovie = async () => {
     try {
@@ -25,7 +25,7 @@ export const Movie = () => {
   }, []);
 
   return (
-    <>
+    <div className="movie-wrapper">
       <h1>🍿 Popular movies 🍿</h1>
       <ul>
         {movieList.map((movie) => (
@@ -44,6 +44,6 @@ export const Movie = () => {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 };
