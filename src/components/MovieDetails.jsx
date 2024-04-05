@@ -1,5 +1,6 @@
 import React from "react";
 import "./MovieDetails.css";
+import { Link } from "react-router-dom";
 
 export const MovieDetails = ({
   title,
@@ -14,6 +15,9 @@ export const MovieDetails = ({
 }) => {
   return (
     <div className="movie-details-page">
+      <Link to={`/movie`}>
+        <button className="back-button">Go back</button>
+      </Link>
       <img
         className="backdrop"
         src={`https://image.tmdb.org/t/p/w1280${backdrop}`}
@@ -40,7 +44,7 @@ export const MovieDetails = ({
           target="_blank"
           rel="noopener noreferrer"
         >
-          <button>Read more</button>
+          <button className="read-more-button">Read more</button>
         </a>
         <p className="release-date">Released {release_date}</p>
       </div>
