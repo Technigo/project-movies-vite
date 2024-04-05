@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import dayjs from "dayjs";
 import "./HomePage.css";
 
@@ -14,14 +15,13 @@ export const HomePage = () => {
 
   return (
     <div className="HomePage">
-      <h1 className="HomePage-title">movies list</h1>
       {/* created this early to help sketch out the structure of the page before fetching  */}
       <div className="HomePage-movies">
         {movies.map((movie) => (
-          <a
+          <Link
             key={movie.id}
             className="HomePage-movie"
-            href={`/movies/${movie.id}`}
+            to={`/movies/${movie.id}`}
           >
             {/* <a href={`/movies/${movie.id}`}>{movie.title}</a> */}
 
@@ -39,7 +39,7 @@ export const HomePage = () => {
                 {dayjs(movie.release_date).format("MMMM D, YYYY")}
               </p>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
     </div>

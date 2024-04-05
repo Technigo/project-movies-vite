@@ -39,13 +39,36 @@
   justify-content: flex-end;
   padding: 50px;
   row-gap: 20px;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+@media (min-width: 700px) {
+  .MoviePage-info {
+    flex-direction: row;
+    align-items: flex-end;
+    column-gap: 32px;
+    justify-content: flex-start;
+  }
+
+  .MoviePage-overview {
+    max-width: 400px;
+  }
 }
 
 .MoviePage-poster {
   width: 200px;
   border: 5px solid white;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.MoviePage-textInfo {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
 }
 
 .MoviePage-heading {

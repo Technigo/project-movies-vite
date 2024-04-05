@@ -17,6 +17,18 @@
   position: relative;
 }
 
+@media (min-width: 500px) {
+  .HomePage-movie {
+    width: 33.3333%;
+  }
+}
+
+@media (min-width: 700px) {
+  .HomePage-movie {
+    width: 25%;
+  }
+}
+
 .HomePage-movie:hover .HomePage-movieInfo {
   display: flex;
 }

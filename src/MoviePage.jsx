@@ -1,6 +1,7 @@
 import "./MoviePage.css";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 // here we fetch each movie details by its ID
 export const MoviePage = () => {
   const { id } = useParams();
@@ -31,19 +32,20 @@ export const MoviePage = () => {
           src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
           alt=""
         />
+        <div className="MoviePage-textInfo">
+          <div className="MoviePage-heading">
+            <span className="MoviePage-title">{movie.title}</span>{" "}
+            <span className="MoviePage-votes">
+              <img src="/star.svg" alt="" />
+              {movie.vote_average.toFixed(1)}
+            </span>
+          </div>
 
-        <div className="MoviePage-heading">
-          <span className="MoviePage-title">{movie.title}</span>{" "}
-          <span className="MoviePage-votes">
-            <img src="/star.svg" alt="" />
-            {movie.vote_average.toFixed(1)}
-          </span>
+          <div className="MoviePage-overview">{movie.overview}</div>
         </div>
-
-        <div className="MoviePage-overview">{movie.overview}</div>
       </div>
 
-      <a className="MoviePage-backLink" href="/">
+      <Link className="MoviePage-backLink" to="/">
         <svg
           className="MoviePage-backIcon"
           xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +58,7 @@ export const MoviePage = () => {
           ></path>
         </svg>
         Movies
-      </a>
+      </Link>
     </div>
   );
 };
