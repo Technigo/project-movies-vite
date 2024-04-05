@@ -2,6 +2,7 @@ import Home from "./pages/Home";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import MovieList from "./components/MovieList";
 import Movie from "./pages/Movie";
+import PageNotFound from "./pages/PageNotFound";
 
 export const App = () => {
   return (
@@ -12,6 +13,7 @@ export const App = () => {
           <Route path="browser" element={<MovieList />} />
         </Route>
         <Route path="/movies/:movieID" element={<Movie />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   );

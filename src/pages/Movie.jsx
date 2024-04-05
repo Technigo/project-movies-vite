@@ -5,6 +5,7 @@ import BackHome from "../components/BackHome";
 import styles from "../styling/Movie.module.css";
 import Lottie from "lottie-react";
 import loading from "../assets/film.json";
+import DataNotFound from "../components/DataNotFound";
 
 const Access_Token =
   "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhNWIxM2M3MzY1ZTNlNTRmY2JjNWQ1NzE1MTE3NjdmOSIsInN1YiI6IjY1NTkzNzIyYjU0MDAyMTRkM2NhZTQ2NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.hUP5w6KFCmMshYAaFwy15nfUVAcySBTGUGuOYxWo1M0";
@@ -15,10 +16,12 @@ const Movie = () => {
   const { movieID } = useParams();
   const [movie, setMovie] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     setIsLoading(true);
     setMovie(null);
+    setError("");
     const options = {
       method: "GET",
       headers: {
@@ -27,12 +30,17 @@ const Movie = () => {
       },
     };
     fetch(`${Base_URL}${movieID}?language=en-US`, options)
-      .then(response => response.json())
-      .then(response => {
-        console.log(response);
-        setMovie(response);
+      .then(res => {
+        if (!res.ok) {
+          throw new Error("Movie is not found");
+        }
+        return res.json();
       })
-      .catch(err => console.error(err))
+      .then(res => {
+        console.log(res);
+        setMovie(res);
+      })
+      .catch(err => setError(err.message))
       .finally(() => setIsLoading(false));
   }, [movieID]);
 
@@ -48,9 +56,9 @@ const Movie = () => {
             animationData={loading}
             loop={true}
           />
-          <p className={styles.loadingText}>Movies on the way...</p>
+          <p className={styles.loadingText}>Loading...</p>
         </div>
-      ) : (
+      ) : movie ? (
         <MovieDetail
           bgImage={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`}
           rate={movie.vote_average}
@@ -58,6 +66,8 @@ const Movie = () => {
           descr={movie.overview}
           poster={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
         />
+      ) : (
+        error && <DataNotFound error={error} />
       )}
     </article>
   );

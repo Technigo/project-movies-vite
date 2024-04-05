@@ -25,6 +25,25 @@ code {
 /* body {
   background-color: black;
 } */
+/* #root,
+body {
+  min-height: 100vh;
+} */
+html {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  flex-grow: 1;
+}
 h1 {
   color: #f4bebe;
   font-family: "Rubik Doodle Shadow", system-ui;
