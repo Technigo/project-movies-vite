@@ -5,15 +5,12 @@ import "./MovieList.css"
 
 export const MovieList = () => {
   const [initialLoading, setInitialLoading] = useState(true)
-  // const [loading, setLoading] = useState(true)
   const [movies, setMovies] = useState([])
   const [selectedEndpoint, setSelectedEndpoint] = useState("top_rated")
   const [page, setPage] = useState(1)
-  //const [scrollPosition, setScrollPosition] = useState(0)
 
   useEffect(() => {
     const fetchMovies = () => {
-      //setLoading(true)
       const apiEnv = import.meta.env.VITE_OPENDB_KEY
       fetchMoviesFromEndpoint(selectedEndpoint, page, apiEnv)
     }
@@ -55,19 +52,13 @@ export const MovieList = () => {
   }
 
   const handleLoadMore = () => {
-    //setScrollPosition(window.scrollY) // added this to prevent scrolling to top when loading more movies
     setPage((prevPage) => prevPage + 1)
   }
-
-  // useEffect(() => {
-  //   console.log("Page re-rendered")
-  //   window.scrollTo(0, scrollPosition)
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [loading])
 
   if (initialLoading) {
     return <div>Loading...</div>
   }
+  
   return (
     <div>
       <div className="top-section">
