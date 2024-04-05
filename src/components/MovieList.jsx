@@ -36,9 +36,9 @@ export const MovieList = () => {
     const container = containerRef.current;
     const containerRect = container.getBoundingClientRect();
     const mouseX = e.clientX;
-    if (mouseX < containerRect.left + 50) {
+    if (mouseX < containerRect.left + 80) {
       scrollLeft();
-    } else if (mouseX > containerRect.right - 50) {
+    } else if (mouseX > containerRect.right - 80) {
       scrollRight();
     }
   };
@@ -54,6 +54,11 @@ export const MovieList = () => {
             />
           </div>
         ))}
+      </div>
+      <div className="credit-box">
+        <p>Photo from Unsplash by Felix Mooneeram</p>
+        <p>Design inspired by Lora Staneva from dribbble</p>
+        <p>Project by Cornelia Dahlin</p>
       </div>
     </div>
   );

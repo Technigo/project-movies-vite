@@ -1,10 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+
 body {
   margin: 0;
   padding: 0;
   background-image: url("src/assets/background.jpg");
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 100vh;
 }
 
@@ -36,18 +38,37 @@ body {
 }
 
 .movie-card img {
-  width: 130px;
-  height: auto;
-  border-radius: 20px;
-}
-
-.movie-card img {
-  width: 130px;
-  height: auto;
+  width: 140px;
+  height: 200px;
   border-radius: 20px;
   transition: transform 0.3s ease;
 }
 
 .movie-card:hover img {
   transform: scale(1.1);
+}
+
+.credit-box {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.406);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  display: block;
+}
+
+.credit-box p {
+  margin: 3px 0;
+  font-family: "Quicksand", sans-serif;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* Media queries */
+@media (max-width: 1000px) {
+  .credit-box {
+    display: none;
+  }
 }
