@@ -10,7 +10,7 @@ export const MovieDetails = ({
   tagline,
   poster_path,
   genres,
-  homepage,
+  imdb,
 }) => {
   return (
     <div className="movie-details-page">
@@ -35,7 +35,11 @@ export const MovieDetails = ({
           </ul>
         </div>
         <p>{overview}</p>
-        <a href={homepage} target="_blank" rel="noopener noreferrer">
+        <a
+          href={`https://www.imdb.com/title/${imdb}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <button>Read more</button>
         </a>
         <p className="release-date">Released {release_date}</p>

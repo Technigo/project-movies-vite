@@ -31,6 +31,7 @@ export const MovieDetailsPage = () => {
     <div>
       {movieDetails ? (
         <div className="movie-details-page">
+          {console.log("Imdb-id:", movieDetails.imdb_id)}
           <MovieDetails
             rating={movieDetails.vote_average}
             title={movieDetails.title}
@@ -40,7 +41,7 @@ export const MovieDetailsPage = () => {
             tagline={movieDetails.tagline}
             poster_path={movieDetails.poster_path}
             genres={movieDetails.genres}
-            homepage={movieDetails.homepage}
+            imdb={movieDetails.imdb_id}
           />
         </div>
       ) : (
