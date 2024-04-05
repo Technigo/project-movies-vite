@@ -1,6 +1,7 @@
 import '../styling/SecondPage.css'
 import { useState, useEffect } from 'react'
 import { Loader } from './Loader'
+import {NotFound} from './NotFound'
 import {Link, useParams} from 'react-router-dom'
 import { DetailList } from './DetailList'
 
@@ -25,8 +26,16 @@ export const Details = () => {
 			.catch((error) => {
 				console.error(error)
 			})
-	}, [])
-	console.log('listdata secondpage', detailData)
+	}, [listUrl])
+
+	if (!detailData || detailData === undefined) {
+		return <Loader />
+	}
+
+	if (detailData.success === false) {
+		return <NotFound />
+	}
+	console.log('detailtdata secondpage', detailData)
 	return (
 		<>
 			{isLoading && <Loader />}

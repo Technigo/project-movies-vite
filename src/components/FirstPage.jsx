@@ -24,7 +24,7 @@ export const Movies = () => {
 			.catch((error) => {
 				console.error(error)
 			})
-	}, [])
+	}, [testUrl])
 	console.log('moviedata firstpage', movieData)
 	return (
 		<>
