@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react'
 import '../styling/PopularList.css'
-import { MovieCard } from './MovieCard.jsx'
-import { Loader } from './Loader.jsx'
+import { Link } from 'react-router-dom'
+
+
 
 //functional component
 export const PopularList = ({ movieData }) => {
@@ -11,19 +11,31 @@ export const PopularList = ({ movieData }) => {
 		<>
 			{movieData &&
 				movieData.results.map((movie) => (
-					<div className="movie-card" key={movie.id}>
-						<div className="movie-image">
-							<img src="" alt=""></img>
-						</div>
-						<div className="movie-text">
-							<h2>Titel</h2>
-							<h3>Släppdatum</h3>
+          <Link key={movie.id} to= {`/details/${movie.id}`}>
+					<div className="movie-wrapper">
+						<div className="movie-list">
+							<div className="movie-card" key={movie.id}>
+								<div className="movie-image">
+									<img
+										className="detail-poster"
+										src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+										alt={`Movie poster for ${movie.title}`}
+									/>
+								</div>
+								<div className="movie-text">
+									<h1 className='title'>{movie.title}</h1>
+									<h2 className='release-date'>{movie.release_date}</h2>
+								</div>
+							</div>
 						</div>
 					</div>
+          </Link>
 				))}
 		</>
 	)
 }
+
+
 
 // 	return (
 // 		<>

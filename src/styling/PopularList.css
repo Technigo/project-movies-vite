@@ -1,0 +1,45 @@
+.movie-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.title {
+  color: pink;
+}
+
+.release-date{
+  color: pink;
+}
+
+.movie-list {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.movie-card {
+  position: relative;
+  border: red 1px solid;
+}
+
+.movie-image {
+  width: 100%;
+}
+
+@media (min-width: 370px) {
+  .movie-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 570px) {
+  .movie-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 870px) {
+  .movie-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
