@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { MovieCard } from "../components/MovieCard/MovieCard";
-import { Loadingspinner } from "../components/LoadingSpinner/Loadingspinner";
+import { MovieCard } from "../../components/MovieCard/MovieCard";
+import { Loadingspinner } from "../../components/LoadingSpinner/Loadingspinner";
+import "./MoviesList.css";
 
 export const MoviesList = () => {
   // Get api-key(apiEnv) from .env file

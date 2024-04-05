@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { MovieDetails } from "../components/MovieDetails/MovieDetails";
-import { NotFoundPage } from "./NotFoundPage";
-import { Loadingspinner } from "../components/LoadingSpinner/Loadingspinner";
+import { MovieDetails } from "../../components/MovieDetails/MovieDetails";
+import { NotFoundPage } from "../NotFoundPage/NotFoundPage";
+import { Loadingspinner } from "../../components/LoadingSpinner/Loadingspinner";
+import "./MovieInfo.css";
 
 export const MovieInfo = () => {
   //State variables to manage movie data, errors and loading-state
