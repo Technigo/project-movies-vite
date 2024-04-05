@@ -9,8 +9,11 @@ For this project, the approach involved building a React application with multip
 If more time were available, the following improvements could be made:
 
 -Implementing additional features such as a dropdown menu or a nav bar to toggle between different lists of movies (e.g., popular, upcoming, new releases).
+
 -Enhancing the loading states with loading spinners or placeholders to provide better user feedback during data fetching.
+
 -Adding a style sheet to the 404-page for better user experience.
+
 -Adding a feature to load more movies in the movies list.
 
 ### View it live
