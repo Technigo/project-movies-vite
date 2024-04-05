@@ -11,6 +11,7 @@ export const App = () => {
         <Route path="/" element={<MovieList />} />
         <Route path="/movie/:movie_id" element={<MovieDetails />} />
         <Route path="/not-found" element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
