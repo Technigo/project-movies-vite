@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { MovieDetails } from "../components/MovieDetails";
+import { NotFoundPage } from "./NotFoundPage";
 
 export const MovieDetailsPage = () => {
   const { id } = useParams(); // Get id from URL params
@@ -45,7 +46,7 @@ export const MovieDetailsPage = () => {
           />
         </div>
       ) : (
-        <p>Loading...</p>
+        <NotFoundPage />
       )}
     </div>
   );
