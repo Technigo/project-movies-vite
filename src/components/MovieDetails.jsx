@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { Link, Navigate, useParams } from "react-router-dom"
 import { IoIosArrowDropleftCircle } from "react-icons/io"
 import { IoStar } from "react-icons/io5"
+import Lottie from "lottie-react"
+import animationData from "../assets/lottie.json"
 import "./MovieDetails.css"
 
 export const MovieDetails = () => {
@@ -43,7 +45,11 @@ export const MovieDetails = () => {
   }, [movieURL])
 
   if (loading) {
-    return <div>Loading movie details...</div>
+    return (
+      <div>
+        <Lottie animationData={animationData} />
+      </div>
+    )
   }
 
   if (!movieDetails) {

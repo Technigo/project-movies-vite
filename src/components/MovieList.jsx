@@ -68,6 +68,7 @@ export const MovieList = () => {
           {selectedEndpoint.toUpperCase().replace("_", " ")}
         </h1>
         <select
+          aria-label="Select list of movies to display"
           value={selectedEndpoint}
           onChange={handleEndpointChange}
           className="dropdown">
@@ -97,7 +98,7 @@ export const MovieList = () => {
       </div>
       <div className="button-container">
         <button type="button" className="more-button" onClick={handleLoadMore}>
-          <p className="more-text">More</p> <IoIosArrowDown />
+          <p className="more-text">Show more</p> <IoIosArrowDown />
         </button>
       </div>
     </div>
