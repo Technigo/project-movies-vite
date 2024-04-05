@@ -2,7 +2,6 @@
   display: flex;
   list-style-type: none;
   justify-content: flex-end;
-
 }
 
 .nav-bar-links {
@@ -11,7 +10,25 @@
   display: block;
   margin: 10px;
   color: var(--green);
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
+}
 
+.nav-bar-links.active {
+  text-decoration: underline;
+}
+
+@media (min-width: 745px) {
+  .nav-bar-links {
+    font-size: 20px;
+    margin: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-bar-links {
+    font-size: 30px;
+    padding-right: 10px;
+    text-shadow: 2px 2px 8px whites;
+  }
 }
