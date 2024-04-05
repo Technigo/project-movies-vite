@@ -4,18 +4,13 @@ import { MovieDetails } from "../pages/MovieDetails";
 import { NotFound } from "../pages/NotFound";
 import PropTypes from "prop-types";
 
-export const MovieRoutes = ({ data, setAPI_END, loading, setLoading }) => {
+export const MovieRoutes = () => {
   return (
     <Routes>
       <Route
         path="/"
         element={
-          <MovieGrid
-            data={data}
-            setAPI_END={setAPI_END}
-            loading={loading}
-            setLoading={setLoading}
-          />
+          <MovieGrid />
         }
       />
       <Route
@@ -25,12 +20,7 @@ export const MovieRoutes = ({ data, setAPI_END, loading, setLoading }) => {
       <Route
         path="/:genre"
         element={
-          <MovieGrid
-            data={data}
-            setAPI_END={setAPI_END}
-            loading={loading}
-            setLoading={setLoading}
-          />
+          <MovieGrid />
         }
       />
 
