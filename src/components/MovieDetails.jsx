@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ErrorPage } from "./ErrorPage";
+import backButton from "../assets/backButton.png";
 import "./MovieDetails.css";
 
 export const MovieDetails = () => {
@@ -28,18 +29,21 @@ export const MovieDetails = () => {
 
   return (
     (movie && (
-      <div className="movieContainer">
-        <Link to="/" className="back">
-          Go back
+      <div className="movie-container">
+        <Link to="/">
+          <img src={backButton} alt="Link to go back" />
         </Link>
-        <div className="movieDetails">
+        <div className="movie-details">
           <img
             src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
             alt={`Picture from movie ${movie.title}`}
+            className="details-image"
           />
-          <h1 className="movieTitle">{movie.title}</h1>
-          <div className="vote">⭐️ {movie.vote_average}</div>
-          <div className="movieOverview">{movie.overview}</div>
+          <h1 className="movie-title">{movie.title}</h1>
+          <div className="rating">
+            ⭐️ {Math.round(movie.vote_average * 10) / 10}
+          </div>
+          <div className="movie-overview">{movie.overview}</div>
         </div>
       </div>
     )) ||

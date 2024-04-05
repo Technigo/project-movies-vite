@@ -1,0 +1,9 @@
+.movie-container {
+  background-color: black;
+  color: white;
+}
+
+.details-image {
+  object-fit: cover;
+  width: ;
+}
