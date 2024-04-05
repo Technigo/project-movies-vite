@@ -2,15 +2,30 @@
   display: flex;
   margin: 20px auto 0 auto;
   justify-content: center;
-  width: 100%;
-  font-weight: bold;
-  font-weight: 800;
-  font-size: 18px;
+  width: 90%;
+}
+
+.options-button {
+  margin: 0 0 0 10px;
+  transition: transform 250ms;
+  background-color: #ffffffcb;
+  padding: 0.5em;
+  border-radius: 8px;
+  border: none;
   a {
-    margin: 0 10px;
-    transition: transform 250ms;
+    color: black;
+    font-size: 18px;
+    
   }
-  a:hover {
-    transform: translateX(+5px);
+}
+
+.options-button:hover {
+  transform: translateY(-3px);
+}
+
+@media screen and (min-width: 768px) {
+  .button-container {
+    width: 86%;
+    justify-content: end;
   }
 }

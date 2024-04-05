@@ -5,7 +5,7 @@ import "./css/notFound.css"
 export const NotFound = () => {
   return (
     <div className="not-found">
-      <div className="button">
+      <div className="back-button">
         <Link to="/">
           <img src={arrow} id="go-back" />
         </Link>

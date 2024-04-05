@@ -58,7 +58,7 @@ export const MovieList = () => {
                   <div id="overlay">
                     <div id="overlay-text">
                       <h1>{movie.title}</h1>
-                      <h2>Released: {movie.release_date}</h2>
+                      
                     </div>
                   </div>
                   <img

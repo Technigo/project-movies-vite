@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import { useState, useEffect } from "react";
 import Lottie from "lottie-react";
 import animation from "../assets/animations/loading.json";
@@ -8,6 +8,7 @@ import arrow from "/arrow.svg";
 export const MovieClassics = () => {
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
+  const navigate = useNavigate();
 
   const fetchApi = () => {
     fetch(
@@ -44,13 +45,13 @@ export const MovieClassics = () => {
       )}
       {!loading && (
         <>
-          <div className="button">
-            <Link to="/">
-              <img src={arrow} id="go-back" />
-            </Link>
-            <Link to="/">
-              <h4>Movies</h4>
-            </Link>
+     <div className="back-button">
+     <img src={arrow} 
+            id="go-back" 
+            onClick={() => 
+            navigate(-1)} 
+            alt="go back"/>
+            <h4 onClick={() => navigate(-1)}>Movies</h4>
           </div>
           <div className="movie-list">
             {movies.results.map((movie) => (
@@ -62,7 +63,6 @@ export const MovieClassics = () => {
                 <div id="overlay">
                   <div id="overlay-text">
                     <h1>{movie.title}</h1>
-                    <h2>Released: {movie.release_date}</h2>
                   </div>
                 </div>
                 <img
