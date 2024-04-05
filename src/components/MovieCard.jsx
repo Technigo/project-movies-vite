@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
 export const MovieCard = ({jsonMovies}) => {
-	console.log('movies', jsonMovies)
+	console.log('json in movieCard', jsonMovies)
 
 	return (
 		<>

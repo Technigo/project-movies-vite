@@ -1,50 +1,37 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from 'react'
 import '../styling/PopularList.css'
-import { MovieCard } from "./MovieCard.jsx"
+import { MovieCard } from './MovieCard.jsx'
 import { Loader } from './Loader.jsx'
 
-//global scope
+//functional component
+export const PopularList = ({ movieData }) => {
+	console.log('moviedata popularLIst', movieData)
 
-const BASE_URL = 'https://api.themoviedb.org/3/movie/'
-const API_KEY = '23ace2b0c27910f5cec13f5bdb014044'
-const urlMovies = `${BASE_URL}popular?api_key=${API_KEY}&language=en-US&page=1`
-
-
-//functional component  
-export const PopularList = () => {
-  const [movies, setMovies] = useState (null)
- 
-
-//function to fetch movies from API with async/await
-  const getMovies = async () => {
-    try{
-      const response = await fetch (urlMovies)
-
-//if something is wrong with the fetch
-      if (!response.ok) {
-        throw new Error ('data not found')
-      }
-//parse json response
-  const jsonMovies = await response.json()
-  console.log('show data from json', jsonMovies)
-  setMovies(jsonMovies)
-  console.log('json',jsonMovies)
-  console.log('movies', movies)
-    }
-    catch(error){
-      console.log(error)
-    }
-  }
-  useEffect (() => {
-    getMovies()
-  }, [])
-  
-
-  return (
-		<section className="popular-list">
-			{movies ? <MovieCard jsonMovies={movies.results} /> : <Loader />}
-		</section>
+	return (
+		<>
+			{movieData &&
+				movieData.results.map((movie) => (
+					<div className="movie-card" key={movie.id}>
+						<div className="movie-image">
+							<img src="" alt=""></img>
+						</div>
+						<div className="movie-text">
+							<h2>Titel</h2>
+							<h3>Släppdatum</h3>
+						</div>
+					</div>
+				))}
+		</>
 	)
-  
 }
 
+// 	return (
+// 		<>
+// 			{jsonMovies.map((movie) => (
+// 				<article className="movie-card" key={movie.id}>
+// 					<Link to={`/details/${movie.id}`}></Link>
+// 				</article>
+// 			))}
+// 		</>
+// 	)
+// }

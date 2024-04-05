@@ -1,10 +1,8 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
 import Lottie from 'react-lottie'
 import animationData from '../lotties/animation.json'
 
 export const Loader = () => {
-	const [isLoading, setIsLoading] = useState(false)
+	
 
 	const defaultOptions = {
 		loop: true,
