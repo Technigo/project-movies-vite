@@ -28,8 +28,3 @@ https://image.tmdb.org/t/p/w1280${movie.poster_path} 1024w
     </div>
   );
 };
-
-/*
- src={`https://image.tmdb.org/t/p/w300${movie.backdrop_path}`}
-              alt={`${movie.title} poster`}
-*/
