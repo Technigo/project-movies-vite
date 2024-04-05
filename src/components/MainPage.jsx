@@ -1,7 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
 import { RouteList } from "./RouteList";
 import { useState, useEffect } from "react";
-import "./MainPage.css";
+import "../styling/MainPage.css";
 
 export const MainPage = () => {
   const [movies, setMovies] = useState(null);

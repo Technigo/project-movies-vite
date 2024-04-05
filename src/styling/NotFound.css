@@ -1,10 +1,9 @@
 .not-found-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   height: 100vh;
-  margin-top: 100px;
-  gap: 20px;
 }
 
 .not-found-container p {
@@ -14,9 +13,22 @@
 .not-found-to-home {
   text-decoration: none;
   color: white;
-  background-color: var(--red);
+  background-color: var(--green);
   padding: 10px 10px;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+}
 
+@media (min-width: 668px) {
+  .not-found-to-home {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .not-found-to-home {
+    font-size: 24px;
+  }
 }

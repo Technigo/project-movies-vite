@@ -61,7 +61,7 @@
 }
 
 /*** Tablet ***/
-@media (min-width: 745px) {
+@media (min-width: 668px) {
   .movie-card-container {
     grid-template-columns: repeat(3, 1fr);
   }

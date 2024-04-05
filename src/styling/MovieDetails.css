@@ -86,7 +86,7 @@ body {
 }
 
 /***** Tablet *****/
-@media (min-width: 745px) {
+@media (min-width: 668px) {
   .details-container {
     align-content: center;
     justify-content: center;

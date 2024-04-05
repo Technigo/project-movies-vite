@@ -1,3 +1,17 @@
+.homepage {
+  background-image: url("/popcorn.jpg");
+  background-position: left; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  background-attachment: fixed;
+  font-family: var(--main-font);
+  height: 100vh;
+}
+
+.homepage h1 {
+  color: var(--red);
+}
+
 .title-wrapper {
   display: flex;
   flex-direction: column;
@@ -23,7 +37,7 @@
   border-radius: 5px;
 }
 
-@media (min-width: 745px) {
+@media (min-width: 668px) {
   .title-wrapper {
     gap: 20px;
   }

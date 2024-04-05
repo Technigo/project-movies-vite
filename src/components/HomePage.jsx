@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { NavBar } from "./NavBar";
-import "./HomePage.css";
+import "../styling/HomePage.css"
 
 export const HomePage = () => {
   return (
