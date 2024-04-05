@@ -9,6 +9,7 @@ We used a Figjam board to plan the project then we created the components and fu
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://silver-heliotrope-48765e.netlify.app/
+
 
 
