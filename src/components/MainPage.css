@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-font: "Montserrat", sans-serif;
+  --red: #631e16;
+  --green: #165b63;
+}
+
+.homepage {
+  background-image: url("/public/popcorn.jpg");
+  background-position: left; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  background-attachment: fixed;
+  font-family: var(--main-font);
+  height: 100vh;
+}
+
+.homepage h1 {
+  color: var(--red);
+}
