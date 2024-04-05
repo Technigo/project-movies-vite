@@ -69,18 +69,30 @@ body {
 
 /* MovieDetails.jsx */
 .movie-box {
-  position: fixed;
-  bottom: 10px;
-  left: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.406);
-  width: 450px;
-  padding: 0 15px;
-  padding-bottom: 15px;
+  width: 80%;
+  height: auto;
+  padding-block: 20px;
+  padding-inline: 20px;
   border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.movie-box img {
+  width: 50vh;
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  margin-right: 25px;
 }
 
 .movie-details {
-  font-family: "Quicksand", sans-serif;
   color: rgb(255, 255, 255);
 }
 
@@ -91,8 +103,8 @@ body {
 }
 
 .movie-details p {
-  font-size: 12px;
-  margin: 5px 0;
+  font-family: "Quicksand", sans-serif;
+  font-size: 14px;
 }
 
 .bold {
@@ -100,42 +112,60 @@ body {
 }
 
 /* Media queries for MovieList.jsx */
+@media (max-width: 480px) {
+  .movie-container {
+    height: 45vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .movie-card img {
+    width: 160px;
+    height: 240px;
+  }
+}
+
 @media (max-width: 1000px) {
+  .movie-container {
+    height: 45vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .movie-card img {
+    width: 220px;
+    height: 340px;
+  }
+
   .credit-box {
     display: none;
   }
 }
 
 /* Media queries for MovieDetails.jsx */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .movie-box {
-    width: 300px;
-    padding: 0 10px;
-    padding-bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 90%;
+    height: auto;
+    padding: 10px;
+    flex-direction: column;
+  }
+
+  .movie-details p.overview {
+    display: none;
+  }
+
+  .movie-box img {
+    margin: auto;
+    margin-bottom: 15px;
   }
 }
 
 @media (max-width: 1000px) {
-  .movie-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 400px;
-  }
-
-  .movie-card img {
-    width: 200px;
-    height: auto;
-  }
-
   .movie-box {
-    width: 500px;
-    padding: 0 10px;
-    padding-bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 90%;
+    height: auto;
   }
 }

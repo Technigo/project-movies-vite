@@ -1,13 +1,15 @@
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-export const MovieDetails = ({ movieInfo }) => {
+export const MovieDetails = () => {
+  const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
       try {
         const response = await fetch(
-          `https://api.themoviedb.org/3/movie/${movieInfo.id}?api_key=16acb76adef1d58ee25a3967ffcab15d&append_to_response=credits`
+          `https://api.themoviedb.org/3/movie/${id}?api_key=16acb76adef1d58ee25a3967ffcab15d&append_to_response=credits`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch movie details");
@@ -20,17 +22,25 @@ export const MovieDetails = ({ movieInfo }) => {
     };
 
     fetchMovieDetails();
-  }, [movieInfo.id]);
+  }, [id]);
 
   if (!movieDetails) {
     return <div>Loading...</div>;
   }
 
-  const { title, overview, vote_average, genres, credits, release_date } =
-    movieDetails;
+  const {
+    title,
+    overview,
+    vote_average,
+    genres,
+    credits,
+    release_date,
+    poster_path,
+  } = movieDetails;
 
   return (
     <div className="movie-box">
+      <img src={`http://image.tmdb.org/t/p/w500/${poster_path}`} alt={title} />
       <div className="movie-details">
         <h2>{title}</h2>
         <p>
@@ -54,7 +64,7 @@ export const MovieDetails = ({ movieInfo }) => {
         <p>
           <span className="bold">Release:</span> {release_date}
         </p>
-        <p>{overview}</p>
+        <p className="overview">{overview}</p>
       </div>
     </div>
   );

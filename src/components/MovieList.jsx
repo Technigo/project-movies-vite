@@ -1,9 +1,8 @@
 import { useState, useEffect, useRef } from "react";
-import { MovieDetails } from "./MovieDetails";
+import { Link } from "react-router-dom";
 
 export const MovieList = () => {
   const [movies, setMovies] = useState([]);
-  const [selectedMovie, setSelectedMovie] = useState(null);
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -44,31 +43,20 @@ export const MovieList = () => {
     }
   };
 
-  const handleMovieClick = (movie) => {
-    setSelectedMovie(movie);
-  };
-
-  const handleCloseMovieDetails = () => {
-    setSelectedMovie(null);
-  };
-
   return (
     <div className="movie-container-wrapper" onMouseMove={handleMouseMove}>
       <div className="movie-container" ref={containerRef}>
         {movies.map((movie) => (
-          <div
-            key={movie.id}
-            className="movie-card"
-            onClick={() => handleMovieClick(movie)}
-          >
-            <img
-              src={`http://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-              alt={movie.title}
-            />
-          </div>
+          <Link key={movie.id} to={`/movie/${movie.id}`}>
+            <div className="movie-card">
+              <img
+                src={`http://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                alt={movie.title}
+              />
+            </div>
+          </Link>
         ))}
       </div>
-      {selectedMovie && <MovieDetails movieInfo={selectedMovie} />}
       <div className="credit-box">
         <p>
           <span className="bold">Credits:</span>
@@ -76,7 +64,8 @@ export const MovieList = () => {
         <p>Photo from Unsplash by Felix Mooneeram</p>
         <p>Design inspired by Lora Staneva from dribbble</p>
         <p>
-          <span className="bold">Project by</span></p>
+          <span className="bold">Project by</span>
+        </p>
         <p>Cornelia Dahlin for Technigo bootcamp</p>
       </div>
     </div>
