@@ -45,6 +45,7 @@ a {
 	color: var(--font-color);
 	text-decoration: none;
 	transition: all 0.2s ease-in;
+	cursor: pointer;
 }
 
 a:hover {

@@ -1,43 +1,45 @@
 header {
-	position: relative;
-	padding: 12px;
-	width: 100%;
-	top: 0;
-	color: var(--font-color);
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
-	gap: 1rem;
+  position: relative;
+  padding: 12px;
+  width: 100%;
+  top: 0;
+  color: var(--font-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 nav {
-	width: 100%;
+  width: 100%;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .heading {
-	font-size: 18px;
-	width: 100%;
+  font-size: 18px;
+  width: 100%;
 }
 
 .heading > span {
-	font-weight: 900;
-	font-size: 20px;
-	display: block;
-	font-family: "Rubik Scribble";
+  font-weight: 900;
+  font-size: 20px;
+  display: block;
+  font-family: "Rubik Scribble";
 }
 
 @media all and (min-width: 668px) {
-	.heading {
-		font-size: 1.2rem;
-	}
-	.heading > span {
-		font-size: 2rem;
-	}
+  .heading {
+    font-size: 1.2rem;
+  }
+  .heading > span {
+    font-size: 2rem;
+  }
 }
 
 @media all and (min-width: 1028px) {
-	.heading > span {
-		font-size: 4rem;
-	}
+  .heading > span {
+    font-size: 4rem;
+  }
 }

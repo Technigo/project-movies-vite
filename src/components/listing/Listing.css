@@ -40,15 +40,15 @@
 }
 
 #load-more-btn:hover {
-	border-color: #06f;
-	color: #06f;
-	fill: #06f;
+	border-color: var(--decor-color);
+	color: var(--decor-color);
+	fill: var(--decor-color);
 }
 
 #load-more-btn:active {
-	border-color: #06f;
-	color: #06f;
-	fill: #06f;
+	border-color: var(--decor-color);
+	color: var(--decor-color);
+	fill: var(--decor-color);
 }
 
 @media (min-width: 768px) {

@@ -1,0 +1,21 @@
+
+.genre-list {
+  display: flex;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.genre {
+  display: inline;
+}
+
+.genre:not(:last-of-type):after {
+  content: " • ";
+  display: inline;
+  padding: 1rem;
+}
+
+.genre > a::after {
+  content: " ›";
+  display: inline;
+}
