@@ -4,16 +4,16 @@ import "./MovieCard.css";
 export const MovieCard = ({ id, title, releaseDate, posterPath }) => {
   return (
     <Link to={`/movie/${id}`}>
-      <article className="movie-card">
-        <p>
-          {title}
-          {releaseDate}
-        </p>
+      <div className="movie-card">
+        <div className="overlay">
+          <h1>{title}</h1>
+          <p>Released {releaseDate}</p>
+        </div>
         <img
-          src={`https://image.tmdb.org/t/p/w300/${posterPath}`}
+          src={`https://image.tmdb.org/t/p/w500/${posterPath}`}
           alt={title}
         ></img>
-      </article>
+      </div>
     </Link>
   );
 };

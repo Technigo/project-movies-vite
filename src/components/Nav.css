@@ -1,7 +1,11 @@
 .navbar {
   background-color: black;
-  position: absolute;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
+  height: 64px;
   overflow: hidden;
 }
 
@@ -11,7 +15,6 @@ header {
   justify-content: center;
   align-items: center;
   gap: 5px;
-  padding: 10px;
 }
 
 .header img {
