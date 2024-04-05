@@ -1,8 +1,6 @@
 import '../styling/PopularList.css'
 import { Link } from 'react-router-dom'
 
-
-
 //functional component
 export const PopularList = ({ movieData }) => {
 	console.log('moviedata popularLIst', movieData)
