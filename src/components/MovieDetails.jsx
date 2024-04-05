@@ -61,7 +61,7 @@ export const MovieDetails = () => {
       <Link to={"/"}>
         <div className="back-arrow">
           <IoIosArrowDropleftCircle className="back-icon" />
-          <p className="back-text">Back to all movies</p>
+          <p className="back-text">Back home</p>
         </div>
       </Link>
       <div
