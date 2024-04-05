@@ -7,9 +7,17 @@ export const MovieCard = ({ movies }) => {
         <div key={movie.id} className="movie-card">
           <div className="movie-card-image-container">
             <img
-              src={`https://image.tmdb.org/t/p/w300${movie.backdrop_path}`}
-              alt={`${movie.title} poster`}
               className="movie-card-image"
+              srcSet={`
+https://image.tmdb.org/t/p/w300${movie.poster_path} 300w,
+https://image.tmdb.org/t/p/w780${movie.poster_path} 745w,
+https://image.tmdb.org/t/p/w1280${movie.poster_path} 1024w
+`}
+              sizes="(max-width: 745px) 300px,
+         (max-width: 1024px) 745px,
+         1024px"
+              src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
+              alt={`${movie.title} poster`}
             />
           </div>
           <Link to={`/movies/${movie.title.toLowerCase().replace(/ /g, "-")}`}>
@@ -20,3 +28,8 @@ export const MovieCard = ({ movies }) => {
     </div>
   );
 };
+
+/*
+ src={`https://image.tmdb.org/t/p/w300${movie.backdrop_path}`}
+              alt={`${movie.title} poster`}
+*/
