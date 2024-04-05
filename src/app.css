@@ -11,6 +11,9 @@ a {
   margin: 0;
   font-family: "Fjalla One";
 }
+h1{
+  font-family: "Anton";
+}
 
 @font-face {
   font-family: "Anton";
