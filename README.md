@@ -1,42 +1,23 @@
 <h1 align="center">
   <a href="">
-    <img src="/src/assets/movies.svg" alt="Project Banner Image">
+    <img src="/overview.png" alt="Project Banner Image">
   </a>
 </h1>
 
 # Movie Site Project
 
-Replace this readme with your own information about your project.
+Creating a engaging webpage, by fetching differents APIs from themoviedb.org, where the user can see recent movies as well as providing other movies selection filters.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
-## Getting Started with the Project
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
 
 ### The Problem
 
 Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
 
+One problem we faced, was not knowing how to navigate back from specific movie page to the previous page instead of the home page; we solved it by adding "-1" to the useNavigate function. 
+We started using the given desing, breaking down the components we needed to use, after that we added some desing elements of our own and went from some Streach goals.   
+
+If we had more time, we will add a "show more" function/button to display more movies. 
+
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
-
-// TO-DO List //
--Responsivness on the movie page
--Adding the carusel 
--
+https://cinema-movielist.netlify.app/
