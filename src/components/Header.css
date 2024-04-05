@@ -105,8 +105,6 @@ header .nav-button {
     transition: 0.5s;
   }
 
-  header .responsive-close
-
   header .nav-burger-button {
     transition: 1.2s;
   }
@@ -117,7 +115,7 @@ header .nav-button {
   }
 }
 
-/* Tablet */
+/* Making navstuff "rowy" */
 @media (min-width: 370px) {
   .controls {
     flex-direction: row;

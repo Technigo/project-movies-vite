@@ -1,28 +1,31 @@
 import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import { Movie } from "../components/Movie";
 import { Header } from "../components/Header";
-import { Link, useParams } from "react-router-dom";
-import "./MovieGrid.css";
-import PropTypes from "prop-types";
 import { NotFound } from "./NotFound";
 import { Loading } from "./Loading";
+import "./MovieGrid.css";
 
 export const MovieGrid = () => {
   const { genre } = useParams();
+
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState();
   const [API_END, setAPI_END] = useState("popular");
 
- 
- useEffect(() => {
-  if (genre === 'popular' || genre === 'top_rated' || genre === 'upcoming' || genre === 'now_playing') {
-    setAPI_END(genre);
-  } else {
-    console.error('Invalid genre:', genre);
-    <NotFound />;
-  }
-}, [genre]);
-
+  useEffect(() => {
+    if (
+      genre === "popular" ||
+      genre === "top_rated" ||
+      genre === "upcoming" ||
+      genre === "now_playing"
+    ) {
+      setAPI_END(genre);
+    } else {
+      console.error("Invalid genre:", genre);
+      <NotFound />;
+    }
+  }, [genre]);
 
   const API_KEY = import.meta.env.VITE_MOVIEDB_KEY;
   const API_URL = `https://api.themoviedb.org/3/movie/${API_END}?api_key=${API_KEY}&language=en-US&page=1`;
@@ -65,8 +68,3 @@ export const MovieGrid = () => {
   );
 };
 
-MovieGrid.propTypes = {
-  data: PropTypes.object,
-  setAPI_END: PropTypes.any,
-  loading: PropTypes.bool,
-};

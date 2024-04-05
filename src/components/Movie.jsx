@@ -1,5 +1,5 @@
 import { PropTypes } from "prop-types";
-import "./Movie.css"
+import "./Movie.css";
 
 export const Movie = ({ movie }) => {
   const poster_url = `https://image.tmdb.org/t/p/w342/${movie.poster_path}`;

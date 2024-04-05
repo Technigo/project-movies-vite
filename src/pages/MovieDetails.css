@@ -19,6 +19,11 @@
 .details-img {
   border: 5px solid #fff;
   width: 200px;
+  height: 295px;
+}
+
+.poster-flip {
+  width: 200px;
 }
 
 .details-title {
@@ -69,7 +74,8 @@
     align-items: flex-end;
     padding: 100px 50px;
   }
-  .details-img {
+  .details-img,
+  .poster-flip {
     height: 370px;
     width: 250px;
   }
@@ -94,7 +100,8 @@
 }
 
 @media (min-width: 771px) {
-  .details-img {
+  .details-img,
+  .poster-flip {
     height: 523px;
     width: 352px;
   }
