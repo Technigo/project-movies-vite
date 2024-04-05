@@ -4,14 +4,14 @@ import { MovieDetails } from "../components/MovieDetails";
 import { NotFoundPage } from "./NotFoundPage";
 
 export const MovieDetailsPage = () => {
-  const { id } = useParams(); // Get id from URL params
+  const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
+  const apiEnv = import.meta.env.VITE_OPENDB_KEY;
+  const movieDetailsUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiEnv}&language=en-US`;
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
-      if (!id) return; // Ensure id is valid before making the API call
-      const API_KEY = "227355c25b5984172934aa93f25e5d05";
-      const movieDetailsUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`;
+      if (!id) return;
 
       try {
         const response = await fetch(movieDetailsUrl);
@@ -26,7 +26,7 @@ export const MovieDetailsPage = () => {
     };
 
     fetchMovieDetails();
-  }, [id]);
+  }, [id, movieDetailsUrl]);
 
   return (
     <div>
@@ -45,9 +45,7 @@ export const MovieDetailsPage = () => {
             imdb={movieDetails.imdb_id}
           />
         </div>
-      ) : (
-        <NotFoundPage />
-      )}
+      ) : null}
     </div>
   );
 };
