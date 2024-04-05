@@ -1,10 +1,34 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { NotFound } from "./NotFound";
+import "../styling/MovieDetails.css";
 
 export const MovieDetails = ({ movies }) => {
   const { movieTitle } = useParams();
   const [genres, setGenres] = useState(null);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [imageSize, setImageSize] = useState("w780");
+
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (windowWidth > 1499) {
+      setImageSize("original");
+    } else if (windowWidth > 1023) {
+      setImageSize("w1280");
+    } else {
+      setImageSize("w780");
+    }
+  }, [windowWidth]);
 
   // Check if the movies data has been fetched
   if (!movies) {
@@ -39,26 +63,50 @@ export const MovieDetails = ({ movies }) => {
     return <div>Genre not found!</div>;
   }
 
+  // Maybe add to backgroundImage: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1))
+
   return (
-    <>
-      <div className="detailsContainer">
+    <div
+      className="details-container"
+      style={{
+        backgroundImage: `url(https://image.tmdb.org/t/p/${imageSize}${movieInfo.backdrop_path})`,
+      }}
+    >
+      <div className="details-card">
         <img
-          src={`https://image.tmdb.org/t/p/w300${movieInfo.backdrop_path}`}
+          className="movie-image"
+          srcSet={`
+    https://image.tmdb.org/t/p/w300${movieInfo.poster_path} 300w,
+    https://image.tmdb.org/t/p/w780${movieInfo.poster_path} 745w,
+    https://image.tmdb.org/t/p/w1280${movieInfo.poster_path} 1024w
+  `}
+          sizes="(max-width: 745px) 300px,
+         (max-width: 1024px) 745px,
+         1024px"
+          src={`https://image.tmdb.org/t/p/w300${movieInfo.poster_path}`}
           alt={`${movieInfo.title} poster`}
         />
-        <h2 className="movieTitle">{movieInfo.title}</h2>
-        {movieInfo.title !== movieInfo.original_title ? (
-          <h3>Original title: {movieInfo.original_title}</h3>
-        ) : null}
-        <h2 className="movieRating">{movieInfo.vote_average.toFixed(1)}</h2>
-        {genres.map((genre) => (
-          <ul key={genre.id}>
-            <li>{genre.name}</li>
+        <div className="movie-text">
+          <h2 className="movie-title">{movieInfo.title} </h2>
+          {movieInfo.title !== movieInfo.original_title ? (
+            <h3 className="original-title">
+              Original Title: {movieInfo.original_title}
+            </h3>
+          ) : null}
+          <h2 className="movie-ranking">
+            ⭐{movieInfo.vote_average.toFixed(1)}
+          </h2>
+          <ul className="genre-list">
+            {genres.map((genre) => (
+              <li key={genre.id}>{genre.name}</li>
+            ))}
           </ul>
-        ))}
-        <p className="movieSummary">{movieInfo.overview}</p>
+          <p>{movieInfo.overview}</p>
+        </div>
       </div>
-      <Link to="/movies">Back to Movies</Link>
-    </>
+      <Link to="/movies" className="back-link">
+        Back to Movies
+      </Link>
+    </div>
   );
 };
