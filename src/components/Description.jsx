@@ -6,8 +6,10 @@ export const Description = ({ movieName, vote, overview }) => {
   return (
     <div className="details">
       <h2>
-        <span className="title">{movieName}</span>
-        <span className="rating">⭐️ {formatVote}</span>
+        <span className="title">{movieName}</span>{" "}
+        <span className="rating">
+          <span>⭐️</span> <span>{formatVote}</span>
+        </span>
       </h2>
       <p>{overview}</p>
     </div>

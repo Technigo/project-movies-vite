@@ -1,0 +1,41 @@
+.errorPage {
+  padding: 50px; /* Adjust padding as needed */
+  background-image: url(../assets/space.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Align vertically */
+  justify-content: center; /* Align horizontally */
+}
+
+.backLink {
+  display: flex;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  padding: 50px 30px;
+  justify-content: center;
+}
+
+.backText:hover {
+  background-color: white;
+  color: black;
+}
+
+h4 {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 4rem;
+  padding-bottom: 30px;
+}
+
+#errorP {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+}
