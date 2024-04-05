@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
-export const MovieCard = ({ jsonMovies, results }) => {
-console.log('id',results )
+export const MovieCard = ({jsonMovies}) => {
+	console.log('movies', jsonMovies)
 
 	return (
 		<>
@@ -13,6 +13,7 @@ console.log('id',results )
 		</>
 	)
 }
+
 
 
 // {movieData.map((movie) => (

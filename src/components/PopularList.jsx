@@ -26,8 +26,10 @@ export const PopularList = () => {
       }
 //parse json response
   const jsonMovies = await response.json()
-  setMovies(jsonMovies)
   console.log('show data from json', jsonMovies)
+  setMovies(jsonMovies)
+  console.log('json',jsonMovies)
+  console.log('movies', movies)
     }
     catch(error){
       console.log(error)
@@ -39,9 +41,10 @@ export const PopularList = () => {
   
 
   return (
-    <section className="popular-list">
-      {movies ? <MovieCard jsonMovies={movies.results} /> : <Loader /> }
-    </section>
-  )
+		<section className="popular-list">
+			{movies ? <MovieCard jsonMovies={movies.results} /> : <Loader />}
+		</section>
+	)
+  
 }
 
