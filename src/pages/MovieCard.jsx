@@ -26,16 +26,21 @@ export const MovieCard = () => {
     <section
       className="background"
       style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0) 70%, rgba(0,0,0) 100%), url(https://image.tmdb.org/t/p/w1280${movieDetails.backdrop_path})`,
+        backgroundImage: `url(https://image.tmdb.org/t/p/w1280${movieDetails.backdrop_path})`,
       }}>
       <div className="movie-content-box">
-        <img src={`${imageBaseUrl}w342${movieDetails.poster_path}`} />
+        <img src={`${imageBaseUrl}w342${movieDetails.poster_path}`} alt={`a movie poster of ${movieDetails.title}`} />
         <div className="movie-info-box">
-          <h1>{movieDetails.title}</h1>
-          <p>{movieDetails.genres && movieDetails.genres.map((genre) => genre.name).join(", ")}</p>
-          <p>{movieDetails.vote_average}</p>
+          <div>
+            <h1>{movieDetails.title}</h1>
+            <p>{movieDetails.genres && movieDetails.genres.map((genre) => genre.name).join(", ")}</p>
+          </div>
+          <div className="star-time-box">
+            <p>⭐️ {movieDetails.vote_average}</p>
+            <p>{movieDetails.runtime} min</p>
+          </div>
           <p>{movieDetails.overview}</p>
-          <p>{movieDetails.release_date}</p>
+          <p>Released {movieDetails.release_date}</p>
         </div>
       </div>
     </section>

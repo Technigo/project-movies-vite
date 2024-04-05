@@ -26,8 +26,8 @@ export const PopularMovieList = () => {
         <Link className="movie-list-card" key={movie.id} to={`/movie/${movie.id}`}>
           <img src={`${imageBaseUrl}w342${movie.poster_path}`} alt={movie.title} />
           <div className="movie-list-card-text-box">
+            <p>⭐️ {movie.vote_average}</p>
             <h1>{movie.title}</h1>
-            <p>Released {movie.release_date}</p>
           </div>
         </Link>
       ))}

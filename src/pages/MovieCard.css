@@ -7,3 +7,38 @@
   background-repeat: no-repeat;
   min-width: 100vw;
 }
+
+.movie-content-box {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(26, 30, 35, 0.7), rgba(235, 235, 234, 0));
+
+  gap: 20px;
+}
+
+.movie-content-box img {
+  border: 5px solid #fff;
+  width: 200px;
+}
+
+.movie-info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.star-time-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 254px;
+}
+
+.movie-info-box h1 {
+  font-size: 29px;
+}
+
+.movie-info-box p {
+  font-size: 18px;
+}
