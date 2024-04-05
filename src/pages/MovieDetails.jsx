@@ -7,7 +7,7 @@ import { Description } from "../components/Description";
 import { Background } from "../components/Background";
 import { BackArrow } from "../components/BackArrow";
 
-import "./movieDetails.css";
+import "./MovieDetails.css";
 
 export const MovieDetails = () => {
   const [details, setDetails] = useState([]);

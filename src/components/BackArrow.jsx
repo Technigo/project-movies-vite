@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "../pages/movieDetails.css";
+import "../pages/MovieDetails.css";
 import Arrow from "./arrow.svg";
 
 export const BackArrow = () => {
