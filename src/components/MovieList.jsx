@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { IoIosArrowDown } from "react-icons/io"
+import Lottie from "lottie-react"
+import animationData from "../assets/lottie.json"
 import "./MovieList.css"
 
 export const MovieList = () => {
@@ -14,7 +16,6 @@ export const MovieList = () => {
       const apiEnv = import.meta.env.VITE_OPENDB_KEY
       fetchMoviesFromEndpoint(selectedEndpoint, page, apiEnv)
     }
-
     fetchMovies()
   }, [selectedEndpoint, page])
 
@@ -41,9 +42,6 @@ export const MovieList = () => {
         }
       })
       .catch((error) => console.error("Error fetching movies:", error))
-      .finally(() => {
-        setInitialLoading(false)
-      })
   }
 
   const handleEndpointChange = (event) => {
@@ -56,9 +54,13 @@ export const MovieList = () => {
   }
 
   if (initialLoading) {
-    return <div>Loading...</div>
+    return (
+      <div>
+        <Lottie animationData={animationData} />
+      </div>
+    )
   }
-  
+
   return (
     <div>
       <div className="top-section">

@@ -1,9 +1,6 @@
 1. Make loading page look nicer
 2. make buttons look nicer
-
-"Bugs":
-- scrolls up to top when clicking "more"
-- go back to the page that the user left, not to home page
+3. go back to the page that the user left, not to home page
 
 Intermediate stretch goals
 
