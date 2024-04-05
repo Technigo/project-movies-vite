@@ -2,15 +2,14 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Movies.css";
 
-const api_key = "443eaf63934ffe55e1c1d35c6ebf46e8";
-
 export const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    const apiEnv = import.meta.env.VITE_OPENDB_KEY;
     fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1`
+      `https://api.themoviedb.org/3/movie/popular?api_key=${apiEnv}&language=en-US&page=1`
     )
       .then((res) => {
         if (!res.ok) {
@@ -29,7 +28,6 @@ export const Movies = () => {
   return (
     (movies && (
       <div>
-        <h1>Popular Movies</h1>
         <div className="movies">
           {movies.map((movie) => (
             <div className="movie-card" key={movie.id}>

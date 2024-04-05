@@ -1,9 +1,118 @@
 .movie-container {
   background-color: black;
+  color: #ffff;
+}
+
+.background-image {
+  width: 100%;
+  min-height: 100%;
+}
+
+.back-button-link {
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.icon {
+  margin: 16px 0 0 40px;
+}
+
+.back-button-text {
+  font-size: 18px;
   color: white;
+  font-weight: 600;
+  margin: 36px 0px 0px 8px;
 }
 
 .details-image {
+  width: 200px;
+  height: 290px;
   object-fit: cover;
-  width: ;
+  margin: 40px 20px 0px 40px;
+  border: 4px solid white;
+}
+
+.movie-details-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 40px;
+}
+
+.movie-title-details {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 28px;
+  justify-content: flex-start;
+}
+
+.rating {
+  font-size: 20px;
+  background-color: rgb(255, 255, 255);
+  width: 60px;
+  max-width: 80px;
+  color: black;
+  border-radius: 4px;
+  margin-top: 16px;
+  text-align: center;
+}
+
+.movie-overview {
+  margin-bottom: 60px;
+  max-width: 560px;
+  margin-top: 16px;
+}
+
+@media (min-width: 580px) and (max-width: 780px) {
+  .background-image {
+    position: fixed;
+  }
+
+  .movie-overview {
+    margin: 16px 20px 0 0;
+  }
+
+  .movie-details {
+    margin: 0px;
+  }
+
+  .movie-details-container {
+    flex-direction: row;
+    margin-top: 200px;
+  }
+
+  .movie-title-details {
+    flex-direction: row;
+  }
+
+  .rating {
+    margin-left: 16px;
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 781px) {
+  .background-image {
+    position: fixed;
+  }
+
+  .details-image {
+    width: 350px;
+    height: 500px;
+  }
+
+  .movie-details-container {
+    flex-direction: row;
+  }
+
+  .movie-overview {
+    margin: 20px 0 0 0;
+  }
 }
