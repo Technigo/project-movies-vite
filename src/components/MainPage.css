@@ -5,12 +5,22 @@
   box-sizing: border-box;
 }
 
+:root {
+  --main-font: "Montserrat", sans-serif;
+  --red: #631e16;
+  --green: #165b63;
+}
+
 .homepage {
   background-image: url("/public/popcorn.jpg");
-  background-position: left; /* Center the image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-size: cover; /* Scale the image to cover the entire viewport */
+  background-position: left; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
   background-attachment: fixed;
   font-family: var(--main-font);
   height: 100vh;
+}
+
+.homepage h1 {
+  color: var(--red);
 }
