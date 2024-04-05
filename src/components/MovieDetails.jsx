@@ -11,7 +11,9 @@ export const MovieDetails = () => {
   useEffect(() => {
     const fetchDetails = async () => {
       try {
-        const data = await fetchMovieDetails(movieId);
+        /* e.g. 123456-dune-part-2 => [123456, dune, part, 2] => 123456 (as a 0 in index) */
+        const movieIdWithoutSlug = movieId.split("-")[0];
+        const data = await fetchMovieDetails(movieIdWithoutSlug);
         setMovie(data);
       } catch (error) {
         console.error(error);
