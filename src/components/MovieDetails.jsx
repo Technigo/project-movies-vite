@@ -15,14 +15,14 @@ export const MovieDetails = ({
 }) => {
   return (
     <div className="movie-details-page">
-      <Link to={`/movie`}>
-        <button className="back-button">Go back</button>
-      </Link>
       <img
         className="backdrop"
         src={`https://image.tmdb.org/t/p/w1280${backdrop}`}
         alt={title}
       />
+      <Link to={`/movie`}>
+        <button className="back-button">Go back</button>
+      </Link>
       <div className="movie-details-info">
         <img
           className="poster"

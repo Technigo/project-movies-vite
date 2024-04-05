@@ -1,27 +1,37 @@
 .movie-details-page {
   /* background-color: grey; */
   /* position: relative; */
-  background-color: black;
+  /* background-color: black; */
+  max-width: 300px;
+}
+
+.back-button {
+  margin: 20px;
+  position: absolute;
+  display: block;
 }
 
 .backdrop {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
+  position: absolute;
+  object-fit: cover;
 }
 
 .movie-details-info {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 50%;
+  /* top: 50%; */
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
   padding: 20px;
   /* text-align: center; */
-  width: 300px;
+  width: 90%;
 }
 
 .movie-details-info img {
@@ -60,4 +70,16 @@
 .release-date {
   font-size: small;
   margin: 20px 0 0px 0;
+}
+
+/* Media Queries for tablet */
+@media screen and (min-width: 667px) {
+}
+
+/* Media Queries for desktop */
+@media screen and (min-width: 1024px) {
+}
+
+/* Media Queries for deskto - large screens */
+@media screen and (min-width: 1800px) {
 }
