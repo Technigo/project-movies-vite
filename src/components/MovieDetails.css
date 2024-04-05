@@ -20,7 +20,7 @@
   /* height: auto; */
 }
 
-.movie-details-content img {
+.poster {
   width: 50%;
   margin: 0px 0 10px 0;
 }
@@ -43,26 +43,22 @@
   margin: 20px 0 0px 0;
 }
 
-.buttons {
-  display: flex;
-  flex-direction: column;
-  /* margin-top: 200px; */
-  /* align-items: center; */
-}
-
 .read-more-button {
-  margin-top: 15px;
+  margin-top: 20px;
   padding: 6px 11px;
-  border: none;
-  background-color: white;
+  border: 1px solid white;
+  /* background-color: white; */
+  background-color: transparent;
+  color: white;
 }
 
 .read-more-button:hover {
   background-color: #e1e1e1;
 }
 
-.back-button {
-  /* position: absolute; */
+.back-button img {
+  width: 50px;
+  margin: 40px 0 0 0;
 }
 
 /* Media Queries for tablet */
@@ -76,9 +72,8 @@
   }
   .read-more-button {
     margin-top: 20px;
-
-    border: none;
   }
+
   .movie-genre-list ul {
     margin: 10px 5px 20px 0;
   }
@@ -89,28 +84,33 @@
   .movie-details-content {
     display: flex;
     flex-direction: row;
-    width: 80%;
+    width: 70%;
+    height: auto;
     padding: 20px 20px 20px 20px;
   }
 
-  .movie-details-content img {
-    width: 25%;
-    margin: 0px 0 10px 0;
+  .poster {
+    /* height: 5%; */
+    width: 300px;
+    margin: 0 0 0 0;
   }
 
   .movie-details-text {
     padding-left: 20px;
-    max-width: 650px;
   }
 
   .rating {
     margin: 0px 0px 10px 0;
+  }
+
+  .back-button img {
+    margin: 40px 0 5px 0;
   }
 }
 
 /* Media Queries for deskto - large screens */
 @media screen and (min-width: 1800px) {
   .movie-details-content {
-    width: 50%;
+    width: 60%;
   }
 }

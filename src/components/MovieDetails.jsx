@@ -21,7 +21,6 @@ export const MovieDetails = ({
         src={`https://image.tmdb.org/t/p/w1280${backdrop}`}
         alt={title}
       />
-      {/* <div className="movie-details-content"> */}
       <div className="movie-details-content">
         <img
           className="poster"
@@ -48,9 +47,11 @@ export const MovieDetails = ({
             >
               <button className="read-more-button">Read more</button>
             </a>
-            <Link to={`/movie`}>
-              <img src={arrowIcon} alt="Go back" />
-            </Link>
+            <div className="back-button">
+              <Link to={`/movie`}>
+                <img src={arrowIcon} alt="Go back" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
