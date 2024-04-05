@@ -54,10 +54,14 @@ export const MovieDetails = () => {
             ></img>
           </div>
           <div className="poster-back">
+            <h3>Original title: {detailsData.original_title}</h3>
             <h3>Budget: ${detailsData.budget}</h3>
             <h3>Revenue: ${detailsData.revenue}</h3>
             <h3>Runtime: {detailsData.runtime}min</h3>
-            <h3>Vote avg: {detailsData.vote_average} out of { detailsData.vote_count} votes</h3>
+            <h3>
+              Vote avg: {detailsData.vote_average} out of{" "}
+              {detailsData.vote_count} votes
+            </h3>
           </div>
         </div>
       </div>
@@ -65,7 +69,6 @@ export const MovieDetails = () => {
         <div className="title-box">
           <div>
             <h2 className="details-title">{detailsData.title}</h2>
-            <h3 className="details-org-title">{detailsData.original_title}</h3>
           </div>
           <p className="details-rating">
             <span className="rating-star">⭐</span>

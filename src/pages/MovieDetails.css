@@ -7,7 +7,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 100px 50px;
+  padding: 100px 50px 25px 50px;
   justify-content: flex-end;
   box-shadow: inset 0px -100px 100px 0px rgba(0, 0, 0, 0.95);
 }
@@ -26,12 +26,6 @@
   color: #fff;
   padding: 0;
   text-shadow: 1px 1px #4d4d4d;
-}
-
-.details-org-title {
-  color: #fff;
-  text-shadow: 1px 1px #4d4d4d;
-  padding: 0;
 }
 
 .details-rating {
@@ -73,6 +67,7 @@
   .movie-details {
     flex-direction: row;
     align-items: flex-end;
+    padding: 100px 50px;
   }
   .details-img {
     height: 370px;
