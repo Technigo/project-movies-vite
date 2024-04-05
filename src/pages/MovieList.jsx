@@ -1,7 +1,7 @@
 /* eslint-disable no-unreachable */
 import { useState, useEffect } from "react";
 import { Card } from "../components/Card";
-import "./movieList.css";
+import "./MovieList.css";
 
 export const MovieList = () => {
   const [loading, setLoading] = useState(false);
