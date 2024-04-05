@@ -27,7 +27,7 @@ export const MovieDetails = ({
           src={`https://image.tmdb.org/t/p/w1280${poster_path}`}
         />
         <div className="movie-details-text">
-          <p className="rating">⭐ {rating}</p>
+          <p className="rating">⭐ {Math.round(rating * 10) / 10}</p>
           <h2>{title}</h2>
           <h3>{tagline}</h3>
           <div className="movie-genre-list">

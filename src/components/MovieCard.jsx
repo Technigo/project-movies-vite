@@ -13,7 +13,7 @@ export const MovieCard = ({ id, title, rating, poster_path }) => {
         />
         <div className="movie-card-info">
           <h2>{title}</h2>
-          <p>⭐ {rating}</p>
+          <p className="rating">⭐ {Math.round(rating * 10) / 10}</p>
         </div>
       </div>
     </Link>
