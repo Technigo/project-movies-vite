@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import { Poster } from "../components/Poster";
-import "../pages/MovieList.css";
+import "../pages/movieList.css";
 import { useState } from "react";
 
 export const Card = ({ movie }) => {

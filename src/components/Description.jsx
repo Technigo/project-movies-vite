@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import "../pages/MovieDetails.css";
+import "../pages/movieDetails.css";
 
 export const Description = ({ movieName, vote, overview }) => {
   const formatVote = Math.round(vote * 10) / 10;
