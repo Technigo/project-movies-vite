@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./PopularMovieList.css";
 
 export const PopularMovieList = () => {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -22,13 +23,13 @@ export const PopularMovieList = () => {
   return (
     <section className="movie-list">
       {popularMovies.map((movie) => (
-        <div key={movie.id}>
-          <img src={`${imageBaseUrl}w342${movie.poster_path}`} />
-          <div>
-            <p>{movie.title}</p>
-            <p>{movie.release_date}</p>
+        <a className="movie-card" key={movie.id}>
+          <img src={`${imageBaseUrl}w342${movie.poster_path}`} alt={movie.title} />
+          <div className="movie-card-text-box">
+            <h1>{movie.title}</h1>
+            <p>Released {movie.release_date}</p>
           </div>
-        </div>
+        </a>
       ))}
     </section>
   );
