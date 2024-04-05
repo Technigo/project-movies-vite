@@ -21,7 +21,7 @@ export const MovieList = () => {
     <div>
       {movies.map((movie) => (
         <div key={movie.id}>
-          <Link to={`/movies/${movie.id}`}>
+          <Link to={`/movies/${movie.title.toLowerCase().replace(/ /g, "-")}`}>
             <img
               srcSet={`
               https://image.tmdb.org/t/p/w300${movie.poster_path} 300w,
