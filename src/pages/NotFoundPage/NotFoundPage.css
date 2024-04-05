@@ -1,0 +1,27 @@
+/* Centering the error-message  */
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.not-found-container h2 {
+  text-align: center;
+}
+/* Styling the  */
+.not-found-container a {
+  background-color: white;
+  color: black;
+  padding: 15px 30px;
+  border-radius: 20px;
+  font-weight: 700;
+  transition: ease 0.3s;
+}
+
+.not-found-container a:hover {
+  padding: 20px 35px;
+  font-size: 1.2em;
+}
