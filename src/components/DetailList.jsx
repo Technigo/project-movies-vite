@@ -22,18 +22,19 @@ export const DetailList = ({ detailData }) => {
             minWidth: "100VW",
 					}}>
 					<div className="details-card">
-						<div className="details-image">
-							<img src="" alt=""></img>
+							 <img
+              className="poster-image"
+              src={`https://image.tmdb.org/t/p/w342${detailData.poster_path}`}
+              alt={`Movie poster for ${detailData.title}`}
+            />
 						</div>
-						<div>
-							<h1>titel</h1>
-							<h1>rating</h1>
-							<h2>infotext</h2>
+						<div className="poster-text">
+							<h1>{detailData.title}</h1>
+							<h1>{detailData.vote_average.toFixed(1)}</h1>
+							<h2>{detailData.overview}</h2>
 						</div>
 					</div>
 				</div>
-			</div>
-			{/* ))} */}
 		</>
 	)
 }

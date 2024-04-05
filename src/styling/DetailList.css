@@ -1,5 +1,14 @@
 .movie-details {
-  min-height: 100vw;
   display: flex;
   align-items: flex-end;
-}
+  min-height:100vw;
+  }
+
+  .poster-image {
+    border: 4px solid pink;
+    margin: 0 20px 50px 20px;
+  }
+
+  .poster-text {
+    margin-bottom: 50px;
+  }
