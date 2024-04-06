@@ -14,9 +14,9 @@ export const MovieDetails = () => {
   const [details, setDetails] = useState([]);
   const [notFound, setNotFound] = useState(false);
   const { movie_id } = useParams();
-
   const apiEnv = import.meta.env.VITE_OPENDB_KEY;
   const API_LANG = "en-US";
+
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/movie/${movie_id}?api_key=${apiEnv}&language=${API_LANG}`
