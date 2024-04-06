@@ -1,28 +1,27 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import "./Movie.css";
 
 export const Movie = () => {
   const [movieList, setMovieList] = useState([]);
-
-  const getMovie = async () => {
+  const apiEnv = import.meta.env.VITE_OPENDB_KEY;
+const API = `https://api.themoviedb.org/3/movie/popular?api_key=${apiEnv}&language=en-US&page=1`
+  const getMovie = useCallback(async () => {
     try {
-      const response = await fetch(
-        "https://api.themoviedb.org/3/movie/popular?api_key=b4648009c1cb0a7e8f565388d787eb75&language=en-US&page=1"
-      );
+      const response = await fetch(API);
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
       const json = await response.json();
       setMovieList(json.results);
     } catch (error) {
-      alert("Error fetching data: " + error);
+      alert("Failed fetching movies - make some 🍿 and try again" + error);
     }
-  };
+  }, [API]);
 
   useEffect(() => {
     getMovie();
-  }, []);
+  }, [getMovie]);
 
   return (
     <div className="movie-wrapper">
@@ -39,7 +38,7 @@ export const Movie = () => {
 
             <div className="movie-info">
               <h2>{movie.title}</h2>
-              <p>Released: {movie.release_date}</p>
+              <p className="released">Released: {movie.release_date.split("-").reverse().join("/")}</p>
             </div>
           </li>
         ))}

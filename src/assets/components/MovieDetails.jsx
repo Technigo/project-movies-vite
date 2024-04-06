@@ -5,13 +5,13 @@ import { BackButton } from "./BackButton";
 export const MovieDetails = () => {
   const [movieDetail, setMovieDetail] = useState(null);
   const { id } = useParams(); // Get 'id' from URL params
+  const apiEnv = import.meta.env.VITE_OPENDB_KEY;
+  const API = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiEnv}&language=en-US&page=1`
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
       try {
-        const response = await fetch(
-          `https://api.themoviedb.org/3/movie/${id}?api_key=b4648009c1cb0a7e8f565388d787eb75&language=en-US`
-        );
+        const response = await fetch(API);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -23,7 +23,7 @@ export const MovieDetails = () => {
     };
 
     fetchMovieDetails();
-  }, [id]);
+  }, [API,id]);
 
   if (!movieDetail) {
     return <div>Loading...</div>;
@@ -54,10 +54,10 @@ export const MovieDetails = () => {
           />
         </div>
         <div className="details-container">
-          <h2>
-            {title} ⭐ {vote_average.toFixed(1)}
-          </h2>
-          <p>Released: {release_date}</p>
+         <span> <h2>
+            {title}</h2> <h2 className="score">⭐ {vote_average.toFixed(1)}
+          </h2></span>
+          <p className="released">Released: {release_date.split("-").reverse().join("/")}</p>
           <p>{overview}</p>
         </div>
       </div>
