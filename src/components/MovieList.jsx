@@ -5,13 +5,14 @@ import Category from "./Category";
 import Pagination from "./Pagination";
 import Lottie from "lottie-react";
 import loading from "../assets/loading.json";
+import LoadImage from "./LoadImage";
 
 const Access_Token =
   "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhNWIxM2M3MzY1ZTNlNTRmY2JjNWQ1NzE1MTE3NjdmOSIsInN1YiI6IjY1NTkzNzIyYjU0MDAyMTRkM2NhZTQ2NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.hUP5w6KFCmMshYAaFwy15nfUVAcySBTGUGuOYxWo1M0";
 
 const Base_URL = "https://api.themoviedb.org/3/movie/";
 
-const PopularList = () => {
+const MovieList = () => {
   const navigate = useNavigate();
   const [movies, setMovies] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -50,8 +51,6 @@ const PopularList = () => {
     const pageNum = Number(e.target.name);
     setSearchParams({ ...searchParams, page: pageNum });
     window.scrollTo(0, 0);
-    const scrollPosition = window.scrollY;
-    console.log("Scroll position:", scrollPosition);
   };
 
   const changeListType = e => {
@@ -65,7 +64,7 @@ const PopularList = () => {
         category={searchParams.get("category")}
         onClick={changeListType}
       />
-      {isLoading ? (
+      {isLoading && (
         <div className={styles.loading}>
           <Lottie
             className={styles.animation}
@@ -74,15 +73,16 @@ const PopularList = () => {
           />
           <p className={styles.loadingText}>Movies on the way...</p>
         </div>
-      ) : (
+      )}
+      {movies && (
         <div className={styles.movieList}>
           {movies.map(movie => (
             <div key={movie.id} className={styles.movieItem}>
-              <img
+              <LoadImage
                 className={styles.poster}
                 src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
                 alt={`A poster of ${movie.title}`}
-              ></img>
+              />
               <div
                 className={styles.overlay}
                 onClick={() => {
@@ -109,4 +109,4 @@ const PopularList = () => {
   );
 };
 
-export default PopularList;
+export default MovieList;
