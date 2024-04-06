@@ -1,0 +1,12 @@
+.error-container {
+  display: flex;
+}
+
+.error-content {
+  text-align: center;
+  justify-content: center;
+}
+
+.back-button {
+  margin: 16px 80px 0 40px;
+}

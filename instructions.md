@@ -48,7 +48,7 @@ Each movie comes with a 'poster', which looks like a cover you'd find in a DVD, 
 
 That path to the image is incomplete - it needs a full URL.
 
-To get the full URL, we need to decide what size of the image we'd like, and the API has a bunch of options for that. You can find the full list of sizes by loading the API endpoint https://api.themoviedb.org/3/configuration?api_key={api_key} (don't forget to put your API key in place of {api_key}). That response looks something like this:
+To get the full URL, we need to decide what size of the image we'd like, and the API has a bunch of options for that. You can find the full list of sizes by loading the API endpoint https://api.themoviedb.org/3/configuration?api_key=443eaf63934ffe55e1c1d35c6ebf46e8 (don't forget to put your API key in place of {api_key}). That response looks something like this:
 
 ```json
 {
@@ -94,10 +94,10 @@ This route expects a movie ID in the URL and is responsible for showing more det
 
 ## Requirements
 
-- Your app should have at least two pages - one showing a list of movies and one showing details
-- You should follow the design from our example (but it's ok to change things - just try to make it look nice)
-- Make your app responsive (it should look good on devices from 320px width up to 1600px)
-- Your project should be following accessibility guidelines to ensure your website is usable by a diverse range of users
+- Your app should have at least two pages - one showing a list of movies and one showing details ✅
+- You should follow the design from our example (but it's ok to change things - just try to make it look nice) ✅
+- Make your app responsive (it should look good on devices from 320px width up to 1600px) ✅
+- Your project should be following accessibility guidelines to ensure your website is usable by a diverse range of users ✅
 
 ## Stretch Goals
 
@@ -110,11 +110,6 @@ This route expects a movie ID in the URL and is responsible for showing more det
   - You could also investigate how to handle the loading of images - or show plain text by default and then use CSS to place the image over the text (using absolute positioning). This way, if the images take a long time to load, the user still sees something relevant.
 
 ### Advanced stretch goals
+
 - On the homepage where you list popular movies, you could add a dropdown to change the list. For example, you could toggle between popular, upcoming, and new releases.
 - When you load a movie, you get a lot of information in the API response, such as a collection it belongs to, genres it has, or the companies involved with producing the film. Each of these has an API endpoint that can be used to fetch more information about that entity. You could use this data to make links from your movie page to another page. Take a look through the documentation and be creative!
-
-
-
-
-
-
