@@ -1,7 +1,8 @@
 .background {
   min-height: 100vh;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: space-between;
   color: white;
   background-size: cover;
   background-repeat: no-repeat;
@@ -13,8 +14,33 @@
   flex-direction: column;
   padding: 20px;
   background: linear-gradient(to top, rgba(26, 30, 35, 0.7), rgba(235, 235, 234, 0));
-
   gap: 20px;
+}
+
+.arrow-box {
+  display: flex;
+  gap: 10px;
+  align-self: flex-start;
+  align-items: center;
+  margin: 20px;
+}
+
+.arrow-box:hover {
+  gap: 15px;
+  cursor: pointer;
+}
+
+.arrow-box p {
+  font-size: 22px;
+  font-weight: 700;
+  text-shadow: 2px 2px 15px rgba(26, 30, 35, 1);
+}
+
+.arrow-icon {
+  font-size: 32px;
+  background-color: rgba(26, 30, 35, 0.3);
+  box-shadow: 2px 2px 15px rgba(26, 30, 35, 1);
+  border-radius: 100%;
 }
 
 .movie-content-box img {
@@ -28,11 +54,29 @@
   gap: 20px;
 }
 
-.star-time-box {
+.rating-time-box {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 254px;
+}
+
+.rating {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background-color: #fff;
+  padding: 3px 5px;
+}
+
+.rating p {
+  color: #000;
+  font-family: Muli;
+  font-weight: 700;
+}
+
+.star-icon {
+  color: #e9ba20;
 }
 
 .movie-info-box h1 {

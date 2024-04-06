@@ -41,7 +41,7 @@ export const MovieCard = () => {
         backgroundImage: `url(https://image.tmdb.org/t/p/w1280${movieDetails.backdrop_path})`,
       }}>
       <div className="arrow-box" onClick={() => navigate(-1)}>
-        <IoIosArrowDropleftCircle className="arrow-icon" /> <p>Movies</p>
+        <IoIosArrowDropleftCircle className="arrow-icon" /> <p>Back to movies</p>
       </div>
       <div className="movie-content-box">
         <img src={`${imageBaseUrl}w342${movieDetails.poster_path}`} alt={`a movie poster of ${movieDetails.title}`} />
