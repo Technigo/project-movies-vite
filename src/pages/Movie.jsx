@@ -7,8 +7,7 @@ import Lottie from "lottie-react";
 import loading from "../assets/film.json";
 import DataNotFound from "../components/DataNotFound";
 
-const Access_Token =
-  "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhNWIxM2M3MzY1ZTNlNTRmY2JjNWQ1NzE1MTE3NjdmOSIsInN1YiI6IjY1NTkzNzIyYjU0MDAyMTRkM2NhZTQ2NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.hUP5w6KFCmMshYAaFwy15nfUVAcySBTGUGuOYxWo1M0";
+const Access_Token = import.meta.env.VITE_OPENDB_TOKEN;
 
 const Base_URL = "https://api.themoviedb.org/3/movie/";
 
