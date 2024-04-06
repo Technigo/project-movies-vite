@@ -1,0 +1,107 @@
+.backdrop {
+  height: 100vh;
+  width: 100vw;
+  object-position: left;
+  object-fit: cover;
+  position: absolute;
+  z-index: -2;
+}
+
+.gradient {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0) 100%);
+}
+
+.go-back-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 2;
+  top: 18px;
+  left: 16px;
+  color: white;
+}
+
+.go-back-text {
+  transition: all 0.2s ease-out;
+  opacity: 0;
+  margin-left: -15px;
+}
+
+.go-back-container:hover > .go-back-text {
+  opacity: 1;
+  margin-left: 0;
+}
+
+.summary {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  bottom: 50px;
+  left: 50px;
+  right: 50px;
+}
+
+.summary-poster {
+  width: 180px;
+  border: 4px solid white;
+  box-shadow: 1px 1px 3px black;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 10px;
+  max-width: 400px;
+}
+
+.heading {
+  font-size: 28px;
+  font-weight: 200;
+  line-height: 90%;
+}
+
+.title {
+  vertical-align: middle;
+  text-shadow: 1px 1px 3px black;
+}
+
+.rating {
+  font-size: 14px;
+  background-color: rgb(37, 37, 37);
+  border-radius: 3px;
+  padding: 3px 5px;
+  margin-left: 10px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.plot {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 0.3px;
+}
+
+@media (min-width: 570px) {
+  .summary {
+    flex-direction: row;
+  }
+
+  .summary-poster {
+    width: 250px;
+  }
+}
+
+@media (min-width: 768px) {
+  .summary-poster {
+    width: 350px;
+  }
+}

@@ -1,0 +1,34 @@
+.navbar {
+  background-color: black;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 64px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.header img {
+  height: 22px;
+}
+.header {
+  height: 22px;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.subheader {
+  font-size: 12px;
+  font-weight: 200;
+}
+
