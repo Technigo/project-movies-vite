@@ -33,6 +33,14 @@ header h2 {
   text-align: center;
 }
 
+.menu-link.active {
+  border-bottom: 2px solid #ead4ae;
+}
+
+.mobile-menu-link.active {
+  text-decoration: 2px solid underline;
+}
+
 /* ------------ Dropdown menu on mobile screen ------------ */
 
 .mobile-menu {

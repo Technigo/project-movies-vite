@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Header } from "./components/Header";
 import { MovieList } from "./pages/MovieList";
 import { MovieCard } from "./pages/MovieCard";
+import { PageNotFound } from "./pages/PageNotFound";
 
 export const App = () => {
   return (
@@ -35,6 +36,7 @@ export const App = () => {
           }
         />
         <Route path="/movie/:id" element={<MovieCard />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   );

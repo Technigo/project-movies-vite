@@ -1,6 +1,7 @@
 import { PropTypes } from "prop-types";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { IoStar } from "react-icons/io5";
 import "./MovieList.css";
 
 export const MovieList = ({ movieCategory }) => {
@@ -15,7 +16,7 @@ export const MovieList = ({ movieCategory }) => {
     fetch(movieListUrl)
       .then((response) => response.json())
       .then((data) => setPopularMovies(data.results))
-      .catch((err) => console.error(err));
+      .catch((error) => console.error(error));
   };
 
   useEffect(() => {
@@ -27,8 +28,12 @@ export const MovieList = ({ movieCategory }) => {
       {popularMovies.map((movie) => (
         <Link className="movie-list-card" key={movie.id} to={`/movie/${movie.id}`}>
           <img src={`${imageBaseUrl}w342${movie.poster_path}`} alt={movie.title} />
+
           <div className="movie-list-card-text-box">
-            <p>⭐️ {movie.vote_average}</p>
+            <div className="rating-box">
+              <IoStar className="star-icon" />
+              <p>{movie.vote_average}</p>
+            </div>
             <h1>{movie.title}</h1>
           </div>
         </Link>

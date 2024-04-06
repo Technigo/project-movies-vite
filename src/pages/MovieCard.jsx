@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import { IoIosArrowDropleftCircle } from "react-icons/io";
+import { IoStar } from "react-icons/io5";
 import "./MovieCard.css";
 
 export const MovieCard = () => {
   const [movieDetails, setMovieDetails] = useState({});
   const params = useParams();
+  const navigate = useNavigate();
 
   const apiKey = "76898be6bb8657c4eadeb40367146dec";
   const movieDetailsUrl = `https://api.themoviedb.org/3/movie/${params.id}?api_key=${apiKey}&language=en-US&page=1`;
@@ -13,9 +16,18 @@ export const MovieCard = () => {
 
   const fetchMovieDetails = () => {
     fetch(movieDetailsUrl)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("404 Page not found");
+        }
+        return response.json();
+      })
       .then((movieData) => setMovieDetails(movieData))
-      .catch((err) => console.error(err));
+      .catch((error) => {
+        if (error.message === "404 Page not found") {
+          navigate("/notfound");
+        }
+      });
   };
 
   useEffect(() => {
@@ -28,6 +40,9 @@ export const MovieCard = () => {
       style={{
         backgroundImage: `url(https://image.tmdb.org/t/p/w1280${movieDetails.backdrop_path})`,
       }}>
+      <div className="arrow-box" onClick={() => navigate(-1)}>
+        <IoIosArrowDropleftCircle className="arrow-icon" /> <p>Movies</p>
+      </div>
       <div className="movie-content-box">
         <img src={`${imageBaseUrl}w342${movieDetails.poster_path}`} alt={`a movie poster of ${movieDetails.title}`} />
         <div className="movie-info-box">
@@ -35,8 +50,11 @@ export const MovieCard = () => {
             <h1>{movieDetails.title}</h1>
             <p>{movieDetails.genres && movieDetails.genres.map((genre) => genre.name).join(", ")}</p>
           </div>
-          <div className="star-time-box">
-            <p>⭐️ {movieDetails.vote_average}</p>
+          <div className="rating-time-box">
+            <div className="rating">
+              <IoStar className="star-icon" />
+              <p>{movieDetails.vote_average}</p>
+            </div>
             <p>{movieDetails.runtime} min</p>
           </div>
           <p>{movieDetails.overview}</p>
