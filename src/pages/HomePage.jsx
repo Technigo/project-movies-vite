@@ -5,9 +5,10 @@ import "./HomePage.css"
 export const HomePage = () => {
   const [movies, setMovies] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
-
-  const API_KEY = "84d51ec61f17921d3880ccaddc60a0c3"
-  const API_URL_TMDB = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US`
+  // Get api-key(apiEnv) from .env file
+  const apiEnv = import.meta.env.VITE_OPENDB_KEY
+  // API endpoint to fetch list of movie
+  const API_URL_TMDB = `https://api.themoviedb.org/3/movie/popular?api_key=${apiEnv}&language=en-US`
 
   const fetchMovies = async (page) => {
     try {
