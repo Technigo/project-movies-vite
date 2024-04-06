@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import MovieDetail from "../components/MovieDetail";
 import BackHome from "../components/BackHome";
@@ -14,7 +14,6 @@ const Base_URL = "https://api.themoviedb.org/3/movie/";
 
 const Movie = () => {
   const { movieID } = useParams();
-  console.log(movieID);
   const [movie, setMovie] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
@@ -68,7 +67,7 @@ const Movie = () => {
           poster={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
         />
       ) : (
-        error && <DataNotFound error={error} />
+        error && <DataNotFound error={error} color="black" />
       )}
     </article>
   );

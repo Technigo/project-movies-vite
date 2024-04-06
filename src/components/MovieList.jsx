@@ -6,7 +6,7 @@ import Pagination from "./Pagination";
 import Lottie from "lottie-react";
 import loading from "../assets/loading.json";
 import LoadImage from "./LoadImage";
-// import placeholderImg from "../assets/film.jpg";
+import DataNotFound from "./DataNotFound";
 
 const Access_Token =
   "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhNWIxM2M3MzY1ZTNlNTRmY2JjNWQ1NzE1MTE3NjdmOSIsInN1YiI6IjY1NTkzNzIyYjU0MDAyMTRkM2NhZTQ2NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.hUP5w6KFCmMshYAaFwy15nfUVAcySBTGUGuOYxWo1M0";
@@ -17,6 +17,8 @@ const MovieList = () => {
   const navigate = useNavigate();
   const [movies, setMovies] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState("");
+
   const [searchParams, setSearchParams] = useSearchParams({
     category: "now_playing",
     page: 1,
@@ -25,7 +27,7 @@ const MovieList = () => {
   useEffect(() => {
     setMovies(null);
     setIsLoading(true);
-
+    setError("");
     const options = {
       method: "GET",
       headers: {
@@ -39,12 +41,16 @@ const MovieList = () => {
       )}?language=en-US&page=${searchParams.get("page")}`,
       options
     )
-      .then(response => response.json())
-      .then(response => {
-        console.log(response);
-        setMovies(response.results);
+      .then(res => {
+        if (!res.ok) {
+          throw new Error("MovieList is unavailable.");
+        }
+        return res.json();
       })
-      .catch(err => console.error(err))
+      .then(res => {
+        setMovies(res.results);
+      })
+      .catch(err => setError(err.message))
       .finally(() => setIsLoading(false));
   }, [searchParams]);
 
@@ -99,6 +105,7 @@ const MovieList = () => {
           ))}
         </div>
       )}
+      {!movies && error && <DataNotFound error={error} color="pink" />}
       {movies && (
         <Pagination
           type={searchParams.get("category")}
