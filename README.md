@@ -6,9 +6,7 @@
 
 # Movie Site Project
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Movie single page application (SPA) project,by using the API from https://www.themoviedb.org/. Learned how to use BrowserRouter, Routes, Route and useParams().
 
 ## Getting Started with the Project
 
@@ -24,9 +22,11 @@ npm i && code . && npm run dev
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+We started to layout what components we need and want to create. We also looked into the API what data we'd like to use. At first we code together and tried doing pair-programming for the BrowserRouter, Routes, etc. After a while we split up the work and code in different branches.
 
-#### Next
+We mostly gathered our information from the bootcamp material or the lovely internet. If we had more creativity and time, we would have done de styling different and might have fetched other data from TMDB.
+
+#### Additional
 
 - Add disclamer: "This [website, program, service, application, product] uses TMDB and the TMDB APIs but is not endorsed, certified, or otherwise approved by TMDB."
 

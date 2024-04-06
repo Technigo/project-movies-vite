@@ -13,7 +13,7 @@ export const MovieCard = ({ data }) => {
 				/>
 				<div className='movie-title'>
 					<h2>{data.title} </h2>
-					<p>Release date {data.release_date}</p>
+					<p>Released {data.release_date}</p>
 				</div>
 			</Link>
 		</div>
