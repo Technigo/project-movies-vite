@@ -4,7 +4,21 @@
 /*   grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
  */}
 
+.pagination{
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
 
+.pagination>button{
+  display: block;
+  border-radius: 30px;
+  width: 100px;
+  background-color: #373a47;
+}
 
 /* SCREENS MAX 744px  ----------------------------------------------------------------------*/
 @media (max-width: 744px) {

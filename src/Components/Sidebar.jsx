@@ -1,5 +1,5 @@
-import { slide as Menu } from 'react-burger-menu';
-import './Sidebar.css';
+import { slide as Menu } from 'react-burger-menu'
+import './Sidebar.css'
 
 
 export default props => {
@@ -15,5 +15,5 @@ export default props => {
         Login
       </a>
     </Menu>
-  );
-};
+  )
+}
