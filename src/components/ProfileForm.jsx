@@ -17,13 +17,13 @@ export default function ProfileForm({ show, showDispatcher }) {
       const hashedPassword = CryptoJS.SHA256(password).toString()
       const userData = JSON.parse(localStorage.getItem(username))
       if (!userData) {
-        setErrorMessage("Felaktigt användarnamn eller lösenord.")
+        setErrorMessage("Wrong username or password.")
       }
       if (userData.password === hashedPassword) {
         setUserName(username)
         showDispatcher(false)
       } else {
-        setErrorMessage("Felaktigt användarnamn eller lösenord.")
+        setErrorMessage("Wrong username or password.")
       }
     } else if (e.nativeEvent.submitter.name == "signup") {
       const hashedPassword = CryptoJS.SHA256(password).toString()
