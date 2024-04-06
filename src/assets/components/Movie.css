@@ -26,3 +26,15 @@ li {
 }
 
 
+img {
+  width: 100%;
+  border-radius: 15px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+li:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.2);
+}
