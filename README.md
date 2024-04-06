@@ -10,4 +10,4 @@ Given more time, I would have added some sorting buttons, improved loading visua
 
 ### View it live
 
-[here](https://arnaus-film-project.netlify.app/)
+[here](https://arnaus-films-project.netlify.app/)
