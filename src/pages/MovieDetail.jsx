@@ -7,6 +7,9 @@ export const MovieDetail = () => {
   const movieId = useParams();
   const apiKey = "195790d926bf4d38c02251685a7c5f5e";
   const [movieDetails, setMovieDetails] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(false);
+
   const fetchMovieDetails = async () => {
     try {
       const response = await fetch(
@@ -20,12 +23,16 @@ export const MovieDetail = () => {
       }
     } catch (error) {
       console.error(error);
+      setError(true);
+    } finally {
+      setIsLoading(false);
     }
   };
+
   useEffect(() => {
     fetchMovieDetails();
   }, []);
-  console.log(movieId);
+
   return (
     <section
       className="detail-section"
@@ -33,11 +40,26 @@ export const MovieDetail = () => {
         backgroundImage: `url(http://image.tmdb.org/t/p//w1280${movieDetails.backdrop_path})`,
       }}
     >
-      <Link to="/">
-        <img src="/arrow.svg" alt="arrow-icon" />
-        Movies
-      </Link>
-      {movieDetails && <MovieDetailSection movieDetails={movieDetails} />}
+      <nav className="top-menu">
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/movie/popular">Popular Now</Link>
+          </li>
+          <li>
+            <Link to="/movie/top_rated">Top rated</Link>
+          </li>
+        </ul>
+      </nav>
+      {isLoading ? (
+        <p className="loading-text">Loading...</p>
+      ) : error ? (
+        <p className="detail-error-message">Oops, the movie is not found...</p>
+      ) : (
+        <MovieDetailSection movieDetails={movieDetails} />
+      )}
     </section>
   );
 };
