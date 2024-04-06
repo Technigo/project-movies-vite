@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Header } from "./components/Header";
-import { PopularMovieList } from "./pages/PopularMovieList";
+import { MovieList } from "./pages/MovieList";
 import { MovieCard } from "./pages/MovieCard";
 
 export const App = () => {
@@ -12,7 +12,7 @@ export const App = () => {
           element={
             <>
               <Header />
-              <PopularMovieList />
+              <MovieList />
             </>
           }
         />

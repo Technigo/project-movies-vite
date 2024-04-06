@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 100%;
   flex-wrap: wrap;
+  background-color: #000;
 }
 
 .movie-list-card {
@@ -26,6 +27,19 @@
   bottom: 0;
   left: 0;
   padding: 35px 25px;
+}
+.black-background {
+  background-color: #000;
+}
+
+.movie-list-title {
+  background-image: linear-gradient(to right, #eec784, #e2e2df, #eec784);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  text-align: center;
+  padding: 30px 0;
+  text-transform: uppercase;
+  width: 320px;
 }
 
 .movie-list-card-text-box h1 {

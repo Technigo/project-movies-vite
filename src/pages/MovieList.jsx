@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import "./PopularMovieList.css";
+import "./MovieList.css";
 
-export const PopularMovieList = () => {
+export const MovieList = () => {
   const [popularMovies, setPopularMovies] = useState([]);
   const apiKey = "76898be6bb8657c4eadeb40367146dec";
-  const popularMovieUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`;
+  const movieListUrl = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&language=en-US&page=1`;
 
   const imageBaseUrl = "http://image.tmdb.org/t/p/";
 
   const fetchPopularMovies = () => {
-    fetch(popularMovieUrl)
+    fetch(movieListUrl)
       .then((response) => response.json())
       .then((data) => setPopularMovies(data.results))
       .catch((err) => console.error(err));
