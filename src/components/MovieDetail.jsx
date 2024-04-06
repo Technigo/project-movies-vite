@@ -1,4 +1,5 @@
 import styles from "../styling/MovieDetail.module.css";
+import LoadImage from "./LoadImage";
 
 const MovieDetail = ({ bgImage, poster, rate, descr, name }) => {
   return (
@@ -7,7 +8,7 @@ const MovieDetail = ({ bgImage, poster, rate, descr, name }) => {
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className={styles.details}>
-        <img className={styles.poster} src={poster} alt={name} />
+        <LoadImage className={styles.poster} src={poster} alt={name} />
         <div className={styles.texts}>
           <p>
             <span className={styles.title}>{name}</span>

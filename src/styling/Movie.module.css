@@ -1,11 +1,8 @@
 .moviePage {
-  /* position: relative; */
   background-color: #f4bebe;
   height: 100%;
-  /* display: flex; */
   display: grid;
   grid-template-rows: 90px auto;
-  /* overflow-y: hidden; */
 }
 
 .loading {
@@ -14,7 +11,6 @@
   align-items: center;
   justify-content: center;
   align-self: center;
-  /* margin-top: 10rem; */
 }
 
 .loadingText {
@@ -26,6 +22,5 @@
 .backNav {
   background-color: black;
   width: 100%;
-  /* position: absolute; */
   padding: 1rem;
 }

@@ -13,8 +13,6 @@ const LoadImage = ({ src, alt, className }) => {
 
           img.setAttribute("src", src);
 
-          // img.classList.add("fade");
-
           observer.disconnect();
         }
       });

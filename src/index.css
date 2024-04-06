@@ -1,19 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Rubik+Doodle+Shadow&display=swap");
 
-/* :root {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-} */
-
 * {
   padding: 0;
   margin: 0;
@@ -22,33 +8,12 @@ code {
   font-weight: 400;
 }
 
-/* body {
-  background-color: black;
-} */
-/* #root,
-body {
-  min-height: 100vh;
-} */
-/* html {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-body {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-} */
 html,
 body,
 #root {
   height: 100%;
 }
-/* #root {
-  flex-grow: 1;
-  overflow-y: hidden;
-} */
+
 h1 {
   color: #f4bebe;
   font-family: "Rubik Doodle Shadow", system-ui;
