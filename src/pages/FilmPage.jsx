@@ -46,6 +46,9 @@ export const FilmPage = () => {
             />
             <div className="content-text">
               <h1>{FilmPage.title}</h1>
+              <div className="rating">
+                 {Math.round(FilmPage.vote_average * 10) / 10} ⭐️
+              </div>
               <p>{FilmPage.overview}</p>
               <p className="release">Release: {FilmPage.release_date}</p>
             </div>

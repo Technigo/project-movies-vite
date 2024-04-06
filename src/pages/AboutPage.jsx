@@ -15,7 +15,7 @@ export const AboutPage = () => {
           <li>User-friendly navigation</li>
         </ul>
         <p>We hope you enjoy exploring our film collection!</p>
-        <p>In this project we puted in practice react-router-dom implementation, usage and it's main methods. </p>
+        <p>In this project, we put into practice the implementation and usage of react-router-dom, along with its main methods.</p>
       </div>
     </div>
   );
