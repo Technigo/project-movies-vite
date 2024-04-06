@@ -28,25 +28,27 @@ export const Movies = () => {
   return (
     (movies && (
       <div>
-        <div className="movies">
-          {movies.map((movie) => (
-            <div className="movie-card" key={movie.id}>
-              <Link to={`/movie/${movie.id}`}>
-                <div className="image-container">
-                  <img
-                    src={`https://image.tmdb.org/t/p/w780${movie.poster_path}`}
-                    alt={`Picture from movie ${movie.title}`}
-                  />
-                  <div className="text-container-overlay">
-                    <h2 className="movie-title">{movie.title}</h2>
-                    <div className="release-date">
-                      Released {movie.release_date}
+        <div className="movies-container">
+          <div className="movies-box">
+            {movies.map((movie) => (
+              <div className="movie-card" key={movie.id}>
+                <Link to={`/movie/${movie.id}`}>
+                  <div className="image-container">
+                    <img
+                      src={`https://image.tmdb.org/t/p/w780${movie.poster_path}`}
+                      alt={`Picture from movie ${movie.title}`}
+                    />
+                    <div className="text-container-overlay">
+                      <h2 className="movie-title">{movie.title}</h2>
+                      <div className="release-date">
+                        Released {movie.release_date}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Link>
-            </div>
-          ))}
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     )) ||
