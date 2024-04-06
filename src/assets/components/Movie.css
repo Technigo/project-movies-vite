@@ -1,24 +1,24 @@
-html, body{
+html,
+body {
   background-color: #000;
 }
 
-
 .movie-info {
-  position: absolute;
+  position: relative;
   bottom: 2px;
   left: 0;
   width: 100%;
-  text-align: center;
+  text-align: left;
   padding: 10px;
-  display: none;
-  color: rgb(215, 221, 215);
+  color: rgb(215, 221, 215, 1);
 }
-
 
 .movie-wrapper {
   background-color: black;
   width: 100%;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
@@ -34,12 +34,13 @@ ul {
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-gap: 20px;
 }
 
 li {
   text-align: center;
+  z-index: 0;
 }
 
 img {
@@ -86,7 +87,7 @@ button {
 
 .movie-details {
   padding-top: 20px;
-  }
+}
 
 .details-container {
   display: flex;
@@ -112,12 +113,25 @@ button {
 .info-container {
 
   padding: 20px 5vw 50px 5vw;
-align-items:flex-end;
-background: linear-gradient(0deg, #000000, rgba(0, 0, 0, 0.86), #00000080, #00000000);
+  align-items: flex-end;
+  background: linear-gradient(0deg, #000000, rgba(0, 0, 0, 0.86), #00000080, #00000000);
 }
 
 
 @media screen and (min-width: 768px) {
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+
+
+
   .movie-poster {
 
     padding: 30px 5vw 0px 5vw;
@@ -158,13 +172,52 @@ background: linear-gradient(0deg, #000000, rgba(0, 0, 0, 0.86), #00000080, #0000
     display: flex;
     flex-direction: row;
     padding: 20px 0px 0px 0px;
-align-items:flex-end;
-background: linear-gradient(0deg, #000000, rgba(0, 0, 0, 0.86), #00000080, #00000000);
+    align-items: flex-end;
+    background: linear-gradient(0deg, #000000, rgba(0, 0, 0, 0.86), #00000080, #00000000);
   }
 
 }
 
 @media screen and (min-width: 1200px) {
+
+  .movie-info {
+    position: relative;
+    top: -150px;
+    left: 2px;
+    text-align: center;
+    height: 200px;
+    margin: -200px 0 50px 0;
+    color: rgb(215, 221, 215, 0);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .movie-info:hover,
+  :focus,
+  :active,
+  :focus-visible {
+    position: relative;
+    z-index: 2;
+    color: rgb(215, 221, 215, 1);
+    background: radial-gradient(ellipse at 50% 50%, #000000, #00000080, #00000000, rgba(0, 0, 0, 0));
+  }
+
+
+  .movie-wrapper {
+    z-index: 0;
+  }
+
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+  }
+
+
+
   .movie-poster {
     max-width: 600px;
     padding: 50px 0 0 50px;
@@ -213,7 +266,7 @@ background: linear-gradient(0deg, #000000, rgba(0, 0, 0, 0.86), #00000080, #0000
     display: flex;
     flex-direction: row;
     padding: 20px 50px 50px 50px;
-align-items:flex-end;
-background: linear-gradient(0deg, #000000, rgba(0, 0, 0, 0.86), #00000080, #00000000);
+    align-items: flex-end;
+    background: linear-gradient(0deg, #000000, rgba(0, 0, 0, 0.86), #00000080, #00000000);
   }
 }
