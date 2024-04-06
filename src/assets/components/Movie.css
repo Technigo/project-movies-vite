@@ -38,4 +38,17 @@ li:hover img {
   filter: brightness(0.2);
 }
 
+.movie-info {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  display: none;
+  color: rgb(215, 221, 215);
+}
 
+li:hover .movie-info {
+  display: block;
+}
