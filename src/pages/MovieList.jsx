@@ -1,15 +1,17 @@
-import { Link } from "react-router-dom";
+import { PropTypes } from "prop-types";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./MovieList.css";
 
-export const MovieList = () => {
+export const MovieList = ({ movieCategory }) => {
   const [popularMovies, setPopularMovies] = useState([]);
+  const location = useLocation();
   const apiKey = "76898be6bb8657c4eadeb40367146dec";
-  const movieListUrl = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&language=en-US&page=1`;
+  const movieListUrl = `https://api.themoviedb.org/3/movie/${movieCategory}?api_key=${apiKey}&language=en-US&page=1`;
 
   const imageBaseUrl = "http://image.tmdb.org/t/p/";
 
-  const fetchPopularMovies = () => {
+  const fetchMovieList = () => {
     fetch(movieListUrl)
       .then((response) => response.json())
       .then((data) => setPopularMovies(data.results))
@@ -17,8 +19,8 @@ export const MovieList = () => {
   };
 
   useEffect(() => {
-    fetchPopularMovies();
-  }, []);
+    fetchMovieList();
+  }, [location]);
 
   return (
     <section className="movie-list">
@@ -33,4 +35,8 @@ export const MovieList = () => {
       ))}
     </section>
   );
+};
+
+MovieList.propTypes = {
+  movieCategory: PropTypes.string,
 };

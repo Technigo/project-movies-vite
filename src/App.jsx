@@ -12,7 +12,25 @@ export const App = () => {
           element={
             <>
               <Header />
-              <MovieList />
+              <MovieList movieCategory="upcoming" />
+            </>
+          }
+        />
+        <Route
+          path="/top-rated"
+          element={
+            <>
+              <Header />
+              <MovieList movieCategory="top_rated" />
+            </>
+          }
+        />
+        <Route
+          path="/popular"
+          element={
+            <>
+              <Header />
+              <MovieList movieCategory="popular" />
             </>
           }
         />
