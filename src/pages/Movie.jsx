@@ -36,7 +36,6 @@ const Movie = () => {
         return res.json();
       })
       .then(res => {
-        console.log(res);
         setMovie(res);
       })
       .catch(err => setError(err.message))
