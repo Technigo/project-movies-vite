@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { MovieDetailSection } from "../components/MovieDetailSection";
 
 export const MovieDetail = () => {
   const movieId = useParams();
@@ -36,24 +37,7 @@ export const MovieDetail = () => {
         <img src="/arrow.svg" alt="arrow-icon" />
         Movies
       </Link>
-      <div className="movie-details">
-        <img
-          src={`http://image.tmdb.org/t/p//w342${movieDetails.poster_path}`}
-          alt=""
-        />
-        <div className="detail-text">
-          <h3>{movieDetails.title}</h3>
-
-          <div className="rating">
-            <p className="rating-score">
-              <img src="/star.svg" alt="star-icon" />
-              {movieDetails && movieDetails.vote_average.toFixed(1)}
-            </p>
-          </div>
-
-          <p className="movie-overview">{movieDetails.overview}</p>
-        </div>
-      </div>
+      {movieDetails && <MovieDetailSection movieDetails={movieDetails} />}
     </section>
   );
 };
