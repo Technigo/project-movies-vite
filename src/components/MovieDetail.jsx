@@ -1,5 +1,6 @@
 import styles from "../styling/MovieDetail.module.css";
 import LoadImage from "./LoadImage";
+import PropTypes from "prop-types";
 
 const MovieDetail = ({ bgImage, poster, rate, descr, name }) => {
   return (
@@ -22,3 +23,11 @@ const MovieDetail = ({ bgImage, poster, rate, descr, name }) => {
 };
 
 export default MovieDetail;
+
+MovieDetail.propTypes = {
+  bgImage: PropTypes.string.isRequired,
+  poster: PropTypes.string.isRequired,
+  rate: PropTypes.number.isRequired,
+  descr: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+};

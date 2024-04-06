@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import PropTypes from "prop-types";
 
 const LoadImage = ({ src, alt, className }) => {
   const imgRef = useRef();
@@ -36,3 +37,9 @@ const LoadImage = ({ src, alt, className }) => {
 };
 
 export default LoadImage;
+
+LoadImage.propTypes = {
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
+};

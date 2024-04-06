@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styles from "../styling/Pagination.module.css";
+import PropTypes from "prop-types";
+
 const PageNums = [1, 2, 3, 4, 5];
 
 const Pagination = ({ type, page, onClick }) => {
@@ -25,3 +27,9 @@ const Pagination = ({ type, page, onClick }) => {
 };
 
 export default Pagination;
+
+Pagination.propTypes = {
+  type: PropTypes.string.isRequired,
+  page: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+};

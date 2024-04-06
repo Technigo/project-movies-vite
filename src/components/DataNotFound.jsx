@@ -2,6 +2,7 @@ import Lottie from "lottie-react";
 import errorPink from "../assets/error-pink.json";
 import errorBlack from "../assets/error-black.json";
 import styles from "../styling/DataNotFound.module.css";
+import PropTypes from "prop-types";
 
 const DataNotFound = ({ error, color }) => {
   return (
@@ -22,3 +23,8 @@ const DataNotFound = ({ error, color }) => {
 };
 
 export default DataNotFound;
+
+DataNotFound.propTypes = {
+  error: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+};

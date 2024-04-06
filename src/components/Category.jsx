@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styles from "../styling/Category.module.css";
+import PropTypes from "prop-types";
 
 const ListTypes = [
   { endpoint: "now_playing", name: "Now playing" },
@@ -31,3 +32,8 @@ const Category = ({ category, onClick }) => {
 };
 
 export default Category;
+
+Category.propTypes = {
+  category: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
