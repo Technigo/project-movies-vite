@@ -23,7 +23,6 @@ export const PopularMovies = () => {
       })
       .then((json) => {
         setMovies(json.results);
-        console.log(json);
       })
       .catch((error) => {
         setError(error.message);

@@ -4,3 +4,19 @@
   column-gap: 5px;
   padding-top: 64px;
 }
+
+
+
+@media (min-width: 570px) {
+  .movie-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 820px) {
+  .movie-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
