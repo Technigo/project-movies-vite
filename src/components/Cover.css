@@ -1,0 +1,19 @@
+.coverContainer{
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+a{
+  width: calc(25% - 1px); 
+  margin: 0;
+  height: auto;
+}
+
+.cover{
+  width: 100%;
+  margin: 0;
+  height: 100%;
+  object-fit: cover;
+}

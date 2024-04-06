@@ -34,6 +34,9 @@ With your freshly minted API key, you're now ready to start making API requests.
 
 https://api.themoviedb.org/3/movie/popular?api_key={api_key}&language=en-US&page=1 <br />
 !!! Don't forget to replace {api_key} with your API key if you copy and paste this.
+https://api.themoviedb.org/3/movie/popular?api_key=b8e637d215af7c581df59754b1cd501e&language=en-US&page=1
+
+api_key = b8e637d215af7c581df59754b1cd501e
 
 ### Fetching a movie's details
 
@@ -49,6 +52,8 @@ Each movie comes with a 'poster', which looks like a cover you'd find in a DVD, 
 That path to the image is incomplete - it needs a full URL.
 
 To get the full URL, we need to decide what size of the image we'd like, and the API has a bunch of options for that. You can find the full list of sizes by loading the API endpoint https://api.themoviedb.org/3/configuration?api_key={api_key} (don't forget to put your API key in place of {api_key}). That response looks something like this:
+
+https://api.themoviedb.org/3/configuration?api_key=b8e637d215af7c581df59754b1cd501e
 
 ```json
 {
@@ -110,11 +115,6 @@ This route expects a movie ID in the URL and is responsible for showing more det
   - You could also investigate how to handle the loading of images - or show plain text by default and then use CSS to place the image over the text (using absolute positioning). This way, if the images take a long time to load, the user still sees something relevant.
 
 ### Advanced stretch goals
+
 - On the homepage where you list popular movies, you could add a dropdown to change the list. For example, you could toggle between popular, upcoming, and new releases.
 - When you load a movie, you get a lot of information in the API response, such as a collection it belongs to, genres it has, or the companies involved with producing the film. Each of these has an API endpoint that can be used to fetch more information about that entity. You could use this data to make links from your movie page to another page. Take a look through the documentation and be creative!
-
-
-
-
-
-
