@@ -1,0 +1,164 @@
+.movie-page {
+	margin: 0;
+}
+
+/* Styles for the menu container */
+
+.menu {
+	display: flex;
+	text-align: left;
+	padding-left: 10px;
+	margin: 10px 10px;
+}
+
+/* Styling the options buttons */
+
+.options-container {
+	display: flex;
+	margin-bottom: 20px;
+	padding: 10px;
+}
+
+.hidden {
+	display: none;
+}
+
+.option-button {
+	background-color: black;
+	color: #fff;
+	border-radius: 5px;
+	padding: 10px 20px;
+	margin: 0 80px;
+	cursor: pointer;
+	transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.option-button.active {
+	color: #fff;
+	border-color: #474e56;
+}
+
+.option-button:hover {
+	background-color: #393d41;
+}
+
+/* Styling the movie cards */
+
+.movie-list {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(4, minmax(200px, 1fr));
+}
+
+.movie-card {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	transition: transform 0.3s, box-shadow 0.3s;
+	position: relative;
+}
+
+.movie-card:hover {
+	transform: scale(1.05);
+	z-index: 2;
+}
+
+.image-container {
+	position: relative;
+	overflow: hidden;
+}
+
+.movie-cover {
+	width: 100%;
+	height: auto;
+	transition: filter 0.3, tranform 0.3s;
+}
+
+a {
+	height: auto;
+	text-align: center;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.75);
+	opacity: 0;
+	transition: opacity 0.3s;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: 10px;
+}
+
+.movie-card:hover .overlay {
+	opacity: 1;
+}
+
+.description {
+	padding: 20px;
+	color: #fff;
+	margin-top: auto;
+	margin-bottom: 0;
+}
+
+/* ---- Media Queries ---- */
+
+@media (min-width: 768px) and (max-width: 992px) {
+	.movie-list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+	.menu {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.options-container {
+		flex-direction: column;
+	}
+
+	.option-button {
+		margin: 5px 0;
+	}
+
+	/* Hamburger menu icon */
+	.hamburger-menu {
+		margin: 0 auto;
+		margin-bottom: 10px;
+	}
+
+	.movie-list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 576px) {
+	.menu {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.options-container {
+		flex-direction: column;
+		margin-bottom: 10px;
+		/* Reduce margin for smaller screens */
+		padding: 0;
+	}
+
+	.option-button {
+		margin: 5px 0;
+	}
+
+	.movie-list {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
