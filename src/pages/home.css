@@ -1,0 +1,225 @@
+.popular-movies-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie-link {
+  flex-grow: 1;
+  flex-basis: calc(40% - 20px);
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%;
+  overflow: hidden;
+}
+
+.movie-trailer-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.movie-poster {
+  width: 100%;
+  height: auto;
+}
+
+.movie-options {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  color: white;
+}
+
+.movie-options button,
+.movie-options a {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding-right: 25px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.movie-options button:hover,
+.movie-options button:active,
+.movie-options a:hover,
+.movie-options a:active {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.liked {
+  color: aliceblue;
+}
+
+.login-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-input {
+  width: 150px;
+  padding: 5px;
+  margin: 20px 10px;
+  border: 1px solid #8e0606;
+  font-size: 16px;
+}
+
+.login-button {
+  padding: 5px 30px;
+  background-color: #8e0606;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+.login-button:hover,
+.login-button:active {
+  background-color: #a50808;
+}
+
+.liked-movies-link {
+  color: white;
+  text-decoration: none;
+  margin: 10px;
+  font-size: 16px;
+  padding: 5px 20px;
+  background-color: #8e0606;
+  cursor: pointer;
+}
+
+.liked-movies-link:hover,
+.liked-movies-link:active {
+  background-color: #a50808;
+}
+
+.signup-link {
+  padding: 5px 20px;
+  background-color: #8e0606;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.signup-link:hover,
+.signup-link:active {
+  background-color: #a50808;
+}
+
+.logout {
+  color: white;
+  text-decoration: none;
+  margin: 10px;
+  font-size: 16px;
+  padding: 5px 20px;
+  background-color: #8e0606;
+  border: none;
+  cursor: pointer;
+}
+
+.logout:hover,
+.logout:active {
+  background-color: #a50808;
+}
+
+.movie-logout {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 431px) {
+  .movie-link {
+    flex-grow: 1;
+    flex-basis: calc(60% - 20px);
+    padding-bottom: 150%;
+  }
+
+  .login-form-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+}
+
+@media (min-width: 570px) and (max-width: 819px) {
+  .movie-link {
+    flex-grow: 1;
+    flex-basis: calc(30% - 20px);
+    padding-bottom: 50%;
+  }
+
+  .movie-options button,
+  .movie-options a {
+    font-size: 15px;
+  }
+
+  .login-form-container {
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 820px) {
+  .movie-link {
+    flex-grow: 1;
+    flex-basis: calc(25% - 20px);
+    padding-bottom: 37.5%;
+  }
+
+  .movie-options button,
+  .movie-options a {
+    font-size: 20px;
+  }
+
+  .login-button {
+    width: 200px;
+    height: 30px;
+    margin-top: 22px;
+  }
+
+  .login-input {
+    width: 250px;
+    padding: 7px;
+  }
+
+  .login-form-container {
+    justify-content: flex-start;
+  }
+}
+
+.login-form-container form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (min-width: 1125px) {
+
+  .login-button {
+    width: 300px;
+    height: 30px;
+    margin-top: 22px;
+  }
+
+  .login-input {
+    width: 300px;
+    padding: 7px;
+  }
+}
