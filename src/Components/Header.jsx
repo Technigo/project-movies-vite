@@ -1,5 +1,4 @@
 import Sidebar from "./Sidebar"
-import "./header.css"
 
 export const Header = () => {
   return (
