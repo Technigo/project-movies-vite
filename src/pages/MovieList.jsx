@@ -7,7 +7,6 @@ export const MovieList = () => {
   const [loading, setLoading] = useState(false);
   const [movies, setMovies] = useState([]);
   const apiEnv = import.meta.env.VITE_OPENDB_KEY;
-  // const API_KEY = "f34e76ca0c4c61e8906dd3e22b0fe2af";
   const API_LANG = "en-US";
 
   useEffect(() => {

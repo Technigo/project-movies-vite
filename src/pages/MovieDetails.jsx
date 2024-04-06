@@ -15,11 +15,11 @@ export const MovieDetails = () => {
   const [notFound, setNotFound] = useState(false);
   const { movie_id } = useParams();
 
-  const API_KEY = "f34e76ca0c4c61e8906dd3e22b0fe2af";
+  const apiEnv = import.meta.env.VITE_OPENDB_KEY;
   const API_LANG = "en-US";
   useEffect(() => {
     fetch(
-      `https://api.themoviedb.org/3/movie/${movie_id}?api_key=${API_KEY}&language=${API_LANG}`
+      `https://api.themoviedb.org/3/movie/${movie_id}?api_key=${apiEnv}&language=${API_LANG}`
     )
       .then((res) => {
         if (res.ok) {
@@ -33,6 +33,7 @@ export const MovieDetails = () => {
         console.error("Error fetching details:", error);
         setNotFound(true); // Set notFound state to true
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [movie_id]);
 
   // If details are not found, return notFound page
