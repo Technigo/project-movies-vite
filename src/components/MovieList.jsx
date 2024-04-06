@@ -6,6 +6,7 @@ import Pagination from "./Pagination";
 import Lottie from "lottie-react";
 import loading from "../assets/loading.json";
 import LoadImage from "./LoadImage";
+// import placeholderImg from "../assets/film.jpg";
 
 const Access_Token =
   "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhNWIxM2M3MzY1ZTNlNTRmY2JjNWQ1NzE1MTE3NjdmOSIsInN1YiI6IjY1NTkzNzIyYjU0MDAyMTRkM2NhZTQ2NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.hUP5w6KFCmMshYAaFwy15nfUVAcySBTGUGuOYxWo1M0";
