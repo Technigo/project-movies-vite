@@ -15,7 +15,6 @@ export const Home = () => {
       if (response.ok) {
         const data = await response.json();
         setMovieListData(data);
-        console.log(movieListData);
       } else {
         throw new Error("Failed at fetch the movie list");
       }
@@ -41,7 +40,7 @@ export const Home = () => {
           {movieListData &&
             movieListData.results.map((movie) => (
               <li key={movie.id} className="each-movie">
-                <Link to={`/movie/${movie.title}`}>
+                <Link to={`/movie/${movie.id}`}>
                   <MovieList movie={movie} />
                 </Link>
               </li>

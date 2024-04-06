@@ -8,7 +8,7 @@ export const MovieList = ({ movie }) => {
         alt={movie.title}
       />
       <section className="hover-menu">
-        <p className="movie-title">{movie.title}</p>
+        <h2 className="movie-title">{movie.title}</h2>
         <p className="movie-release-date">Released {movie.release_date}</p>
       </section>
     </>
