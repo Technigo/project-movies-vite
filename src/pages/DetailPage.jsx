@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { apiKey } from "../config.json";
 import arrow from "../assets/arrow.svg";
 import "./DetailPage.css";
 
@@ -10,8 +9,10 @@ export const DetailPage = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    const apiEnv = import.meta.env.VITE_OPENDB_KEY;
+
     fetch(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${apiEnv}&language=en-US`
     )
       .then((response) => {
         if (!response.ok) {

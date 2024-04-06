@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { MovieCard } from "../components/MovieCard";
-import { apiKey } from "../config.json";
 import "./PopularMovies.css";
 
 // const API_KEY = "83ae1909d9454a12587fc31178454612";
@@ -10,8 +9,9 @@ export const PopularMovies = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    const apiEnv = import.meta.env.VITE_OPENDB_KEY;
     fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`
+      `https://api.themoviedb.org/3/movie/popular?api_key=${apiEnv}&language=en-US&page=1`
     )
       .then((response) => {
         if (!response.ok) {
