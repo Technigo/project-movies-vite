@@ -23,7 +23,6 @@
   font-size: 1.5em;
   font-weight: 500;
   color: black;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .title-rating-container {
@@ -34,13 +33,13 @@
 .title-rating-container h2 {
   font-weight: 800;
   text-shadow: 1px 1px #4d4d4d;
-  font-size: 1.8em;
+  font-size: 1.4em;
   margin: 0;
 }
 
 .info {
   max-width: 500px;
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-weight: 500;
   text-shadow: 1px 1px #4d4d4d;
   margin: 0%;
@@ -54,20 +53,21 @@
   }
 
   .movie-detail-content {
-    margin-bottom: 0;
+    margin-bottom: 30px;
     margin-top: 40px;
   }
 
   .title-rating-container h2 {
-    font-weight: 800;
+    font-weight: 600;
     text-shadow: 1px 1px #4d4d4d;
-    font-size: 1.5em;
+    font-size: 1.2em;
     margin: 0;
   }
 
   .rating {
     font-size: 1em;
     font-weight: 500;
+    margin: 0;
   }
 
   .info {
@@ -80,31 +80,33 @@
 @media (min-width: 820px) and (max-width: 1124px) {
   .info {
     max-width: 500px;
-    font-size: 2em;
+    font-size: 1.2em;
+  }
+
+  .all-info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    margin-bottom: 30px;
   }
 
   .movie-detail-content {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .movie-detail-content {
-    margin-left: 50px;
-    margin-right: 50px;
+    flex-direction: row;
+    align-items: flex-end;
+    margin: 0 50px 50px;
   }
 
   .title-rating-container h2 {
-    font-weight: 800;
-    text-shadow: 1px 1px #4d4d4d;
-    font-size: 3em;
+    font-weight: 700;
+    text-shadow: 1px 2px #4d4d4d;
+    font-size: 1.5em;
     margin: 0;
   }
 
   .rating {
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 500;
-    padding: 15px;
   }
 
   .movie-detail-content img {
@@ -115,32 +117,33 @@
 @media (min-width: 1125px) {
   .info {
     max-width: 500px;
-    font-size: 2em;
-    margin: 0 30px;
+    font-size: 1.2em;
+  }
+
+  .all-info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    margin-bottom: 30px;
   }
 
   .movie-detail-content {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .movie-detail-content {
-    margin-left: 50px;
-    margin-right: 50px;
+    flex-direction: row;
+    align-items: flex-end;
+    margin: 0 50px 50px;
   }
 
   .title-rating-container h2 {
-    font-weight: 800;
-    text-shadow: 1px 1px #4d4d4d;
-    font-size: 3em;
+    font-weight: 700;
+    text-shadow: 1px 2px #4d4d4d;
+    font-size: 1.5em;
     margin: 0;
   }
 
   .rating {
-    font-size: 2.5em;
+    font-size: 1.5em;
     font-weight: 500;
-    padding: 15px;
   }
 
   .movie-detail-content img {

@@ -28,7 +28,7 @@ function MovieDetail() {
       const newSize =
         window.innerWidth > 819
           ? imageConfig.poster_sizes[3]
-          : imageConfig.poster_sizes[1]
+          : imageConfig.poster_sizes[2]
       setPosterSize(newSize)
       localStorage.setItem("posterSize", newSize)
     }
@@ -74,11 +74,13 @@ function MovieDetail() {
             src={`${imageConfig.secure_base_url}${posterSize}${movie.poster_path}`}
             alt={movie.title}
           />
-          <div className="title-rating-container">
-            <h2>{movie.title}</h2>
-            <p className="rating"> {roundedRating} ⭐</p>
+          <div className="all-info">
+            <div className="title-rating-container">
+              <h2>{movie.title}</h2>
+              <p className="rating"> {roundedRating}⭐</p>
+            </div>
+            <p className="info">{movie.overview}</p>
           </div>
-          <p className="info">{movie.overview}</p>
         </div>
       </div>
     </>

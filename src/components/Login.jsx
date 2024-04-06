@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useNavigate } from "react-router-dom" // Använd useNavigate istället för useHistory
+import { useNavigate } from "react-router-dom" 
 import { useMovieContext } from "./MovieContext"
 import CryptoJS from "crypto-js"
 
@@ -7,7 +7,7 @@ const Login = () => {
   const { setUserName } = useMovieContext()
   const [name, setName] = useState("")
   const [password, setPassword] = useState("")
-  const navigate = useNavigate() // Använd useNavigate
+  const navigate = useNavigate() 
 
   const handleSubmit = (e) => {
     e.preventDefault()

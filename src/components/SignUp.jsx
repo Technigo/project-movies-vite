@@ -2,7 +2,7 @@ import { useState } from "react"
 import CryptoJS from "crypto-js"
 import { useNavigate } from "react-router-dom"
 import Navigation from "./Navigation"
-import "./signup.css"
+// import "./signup.css"
 
 function SignUp() {
   const [name, setName] = useState("")
@@ -16,7 +16,7 @@ function SignUp() {
       "user",
       JSON.stringify({ name, password: hashedPassword })
     )
-    // Omdirigera användaren till inloggningssidan eller startsidan efter registrering
+
     navigate("/")
   }
   return (

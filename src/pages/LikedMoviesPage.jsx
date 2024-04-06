@@ -18,7 +18,7 @@ const LikedMoviesPage = () => {
     setLocalLikedMovies(savedLikedMovies)
 
     if (!userName) {
-      navigate("/login")
+      navigate("/")
     }
   }, [userName, likedMovies, navigate])
 
@@ -46,7 +46,7 @@ const LikedMoviesPage = () => {
         <h2>Your Liked Movies:</h2>
         <ul>
           {likedMovieTitles.map((title, index) => (
-            <li style={{ color: "white" }} key={index}>
+            <li style={{ color: "white", fontSize: "30px" }} key={index}>
               {title}
             </li>
           ))}

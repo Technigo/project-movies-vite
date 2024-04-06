@@ -1,60 +1,22 @@
 import { useState, useEffect } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { imageConfig } from "/src/imageConfig"
-import { useMovieContext } from "../components/MovieContext"
+import { useMovieContext } from "/src/components/MovieContext"
+import ProfileForm from "/src/components/ProfileForm"
 import "./home.css"
-import CryptoJS from "crypto-js"
 
 function Home() {
   const { userName, setUserName, handleLike, popularMovies, setPopularMovies } =
     useMovieContext()
-  const [name, setName] = useState(userName || "")
-  const [password, setPassword] = useState("")
   const navigate = useNavigate()
   const [hoveredMovieId, setHoveredMovieId] = useState(null)
   const [movieTrailers, setMovieTrailers] = useState({})
   const [showTrailer, setShowTrailer] = useState(false)
-
-  useEffect(() => {
-    const storedUser = JSON.parse(localStorage.getItem("user"))
-    if (storedUser) {
-      setName(storedUser.name)
-      setPassword(storedUser.password)
-    }
-  }, [])
-
-  useEffect(() => {
-    setName("")
-    setPassword("")
-  }, [])
-
-  const handleNameChange = (e) => {
-    setName(e.target.value)
-  }
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value)
-  }
-
-  const handleNameSubmit = (e) => {
-    e.preventDefault()
-    const hashedInputPassword = CryptoJS.SHA256(password).toString()
-    const storedUser = JSON.parse(localStorage.getItem("user"))
-    if (storedUser && storedUser.name === name) {
-      if (hashedInputPassword === storedUser.password) {
-        setUserName(name)
-        navigate("/")
-      } else {
-        alert("Incorrect password.")
-      }
-    } else {
-      alert("User not found.")
-    }
-  }
+  const [showProfileForm, setShowProfileForm] = useState(false)
 
   const handleLikeClick = (movieId) => {
     if (!userName) {
-      navigate("/login")
+      navigate("/")
     } else {
       handleLike(movieId)
     }
@@ -106,47 +68,35 @@ function Home() {
 
   const handleLogout = () => {
     localStorage.removeItem("user")
-    setUserName(null) // Rensa användarnamnet i MovieContext
-    setName("") // Rensa inputfältet för användarnamn
-    setPassword("") // Rensa inputfältet för lösenord
+    setUserName(null)
     navigate("/")
   }
 
   return (
     <>
-      <Link className="signup-link" to="/signup">
-        Sign Up
-      </Link>
+      {}
       <div className="login-form-container">
-        <form onSubmit={handleNameSubmit}>
-          <input
-            type="text"
-            placeholder="Enter your name"
-            value={name}
-            onChange={handleNameChange}
-            className="login-input"
-          />
-          <input
-            type="password"
-            placeholder="Enter your password"
-            value={password}
-            onChange={handlePasswordChange}
-            className="login-input"
-          />
-          <button type="submit" className="login-button">
-            Login
-          </button>
-        </form>
+        <button
+          className="signup-link"
+          onClick={() => setShowProfileForm(true)}
+        >
+          Profile
+        </button>
+        <ProfileForm
+          show={showProfileForm}
+          showDispatcher={setShowProfileForm}
+        />
+
         {userName && (
           <>
-          <div className="movie-logout">
-            <Link className="liked-movies-link" to="/liked-movies">
-              See your liked movies
-            </Link>
-            <button className="logout" onClick={handleLogout}>
-              Logout
-            </button>
-            </div>
+          
+              <Link className="liked-movies-link" to="/liked-movies">
+                See your liked movies
+              </Link>
+              <button className="logout" onClick={handleLogout}>
+                Logout
+              </button>
+            
           </>
         )}
       </div>

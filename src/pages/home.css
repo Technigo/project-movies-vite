@@ -53,7 +53,9 @@
 }
 
 .movie-options button:hover,
-.movie-options a:hover {
+.movie-options button:active,
+.movie-options a:hover,
+.movie-options a:active {
   background: rgba(255, 255, 255, 0.1);
 }
 
@@ -61,10 +63,10 @@
   color: aliceblue;
 }
 
-.login-form-container form {
+.login-form-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
 }
 
 .login-input {
@@ -86,42 +88,55 @@
   text-decoration: underline;
 }
 
-.login-button:hover {
+.login-button:hover,
+.login-button:active {
   background-color: #a50808;
 }
 
 .liked-movies-link {
   color: white;
   text-decoration: none;
-  margin: 1px 0 10px;
+  margin: 10px;
   font-size: 16px;
   padding: 5px 20px;
   background-color: #8e0606;
-  border: solid 2px;
+  cursor: pointer;
+}
+
+.liked-movies-link:hover,
+.liked-movies-link:active {
+  background-color: #a50808;
 }
 
 .signup-link {
-  padding: 5px 30px;
+  padding: 5px 20px;
   background-color: #8e0606;
   color: white;
   border: none;
   font-size: 16px;
   cursor: pointer;
-  margin: 15px;
+  margin: 10px;
 }
 
-.signup-link:hover {
+.signup-link:hover,
+.signup-link:active {
   background-color: #a50808;
 }
 
 .logout {
   color: white;
   text-decoration: none;
-  margin: 1px 0 10px;
+  margin: 10px;
   font-size: 16px;
   padding: 5px 20px;
   background-color: #8e0606;
-  border: solid 2px;
+  border: none;
+  cursor: pointer;
+}
+
+.logout:hover,
+.logout:active {
+  background-color: #a50808;
 }
 
 .movie-logout {
@@ -129,11 +144,17 @@
   justify-content: center;
 }
 
-@media (max-width: 370px) {
+@media (max-width: 431px) {
   .movie-link {
     flex-grow: 1;
     flex-basis: calc(60% - 20px);
     padding-bottom: 150%;
+  }
+
+  .login-form-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
 }
@@ -147,30 +168,24 @@
 
   .movie-options button,
   .movie-options a {
-    font-size: 20px;
+    font-size: 15px;
   }
 
-  .login-button {
-    width: 200px;
+  .login-form-container {
+    justify-content: flex-start;
   }
-
-  .login-input {
-    width: 250px;
-    padding: 7px;
-  }
-
 }
 
 @media (min-width: 820px) {
   .movie-link {
     flex-grow: 1;
     flex-basis: calc(25% - 20px);
-    padding-bottom: 35%;
+    padding-bottom: 37.5%;
   }
 
   .movie-options button,
   .movie-options a {
-    font-size: 25px;
+    font-size: 20px;
   }
 
   .login-button {
@@ -181,6 +196,30 @@
 
   .login-input {
     width: 250px;
+    padding: 7px;
+  }
+
+  .login-form-container {
+    justify-content: flex-start;
+  }
+}
+
+.login-form-container form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (min-width: 1125px) {
+
+  .login-button {
+    width: 300px;
+    height: 30px;
+    margin-top: 22px;
+  }
+
+  .login-input {
+    width: 300px;
     padding: 7px;
   }
 }
