@@ -6,15 +6,15 @@ import "./MovieList.css";
 export const MovieList = () => {
   const [loading, setLoading] = useState(false);
   const [movies, setMovies] = useState([]);
-
-  const API_KEY = "f34e76ca0c4c61e8906dd3e22b0fe2af";
+  const apiEnv = import.meta.env.VITE_OPENDB_KEY;
+  // const API_KEY = "f34e76ca0c4c61e8906dd3e22b0fe2af";
   const API_LANG = "en-US";
 
   useEffect(() => {
     const fetchMovies = async () => {
       try {
         const response = await fetch(
-          `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=${API_LANG}page=1`
+          `https://api.themoviedb.org/3/movie/popular?api_key=${apiEnv}&language=${API_LANG}page=1`
         );
         if (!response.ok) {
           throw new Error("Couldn't fetch data!");
@@ -29,7 +29,7 @@ export const MovieList = () => {
       }
     };
     fetchMovies();
-  }, []);
+  }, [apiEnv]);
 
   return (
     <div>
