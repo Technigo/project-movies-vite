@@ -1,5 +1,5 @@
 
-import "./Aboutpage.css"
+import "./AboutPage.css"
 
 export const AboutPage = () => {
   return (
