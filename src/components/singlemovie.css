@@ -3,63 +3,6 @@ body {
 	color: white;
 }
 
-.background {
-	min-height: 100vh;
-	display: flex;
-	background-size: cover;
-	flex-direction: column;
-	justify-content: flex-end;
-}
-
-.summary {
-	display: flex;
-	height: 500px;
-	margin-bottom: 100px;
-}
-
-.movie-poster {
-	border: 5px solid #fff;
-	width: 200px;
-	margin-right: 10px;
-}
-
-.details {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	margin-top: auto;
-}
-
-/* ---- Style rating ---- */
-
-.rating {
-	width: 100%;
-	font-size: 10px;
-	display: flex;
-}
-
-.rating p {
-	max-width: 100%;
-	font-size: 20px;
-	height: 20px;
-	display: inline-block;
-	padding: 5px 5px;
-	margin-left: 10px;
-}
-
-.average {
-	font-weight: 500;
-	color: black;
-	background-color: #fff;
-	padding: 0 5px;
-	text-shadow: none;
-	display: inline-block;
-}
-
-.movie-description {
-	width: 50%;
-}
-
 /* ---- Style back-button ---- */
 
 .back-button {
@@ -72,7 +15,7 @@ body {
 	position: absolute;
 	top: 5%;
 	left: 5%;
-	transition: left 0.2s;
+	transition: margin-left 0.2s ease-in-out;
 }
 
 .back-button .back-text {
@@ -90,17 +33,99 @@ body {
 	border-radius: 50%;
 }
 
+.back-button:hover .back-text {
+	margin-left: 15px;
+}
+
+.background {
+	min-height: 100vh;
+	display: flex;
+	background-size: cover;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.summary {
+	display: flex;
+	flex-direction: column;
+	padding: 50px;
+}
+
+.movie-poster {
+	border: 5px solid #fff;
+	margin-right: 10px;
+	width: 200px;
+}
+
+.details {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	margin-left: 0;
+}
+
+/* ---- Style rating ---- */
+
+.rating {
+	width: 100%;
+	font-size: 10px;
+	display: flex;
+	align-items: baseline;
+}
+
+.rating h1 {
+	font-weight: bold;
+	font-size: 24px;
+	margin-right: 10px;
+}
+
+.rating p {
+	max-width: 100%;
+	font-size: 24px;
+	font-weight: 600;
+	padding: 2px 5px;
+	margin-left: 10px;
+	margin-top: 0;
+}
+
+.average {
+	color: black;
+	background-color: #fff;
+	padding: 0 5px;
+	text-shadow: none;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.movie-description {
+	width: 50%;
+	margin-top: 20px;
+}
+
+@media (max-width: 1024px) {
+	.summary {
+		height: auto;
+	}
+
+	.movie-description {
+		width: fit-content;
+	}
+}
+
 @media (min-width: 770px) {
 	.movie-poster {
 		width: auto;
 	}
+
+	.average {
+		display: flex;
+		flex-direction: row;
+		align-items: end;
+	}
 }
 
 @media (min-width: 577px) {
-	.movie-poster {
-		width: 250px;
-	}
-
 	.summary {
 		display: flex;
 		flex-direction: row;

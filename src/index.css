@@ -13,9 +13,6 @@ code {
 }
 
 body {
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 0;
-  box-sizing: border-box;
   background-color: #222;
 }

@@ -5,17 +5,22 @@
 /* Styles for the menu container */
 
 .menu {
+	display: flex;
 	text-align: left;
-	padding-top: 10px;
+	padding-left: 10px;
+	margin: 10px 10px;
 }
 
 /* Styling the options buttons */
 
 .options-container {
 	display: flex;
-	justify-content: space-between;
 	margin-bottom: 20px;
 	padding: 10px;
+}
+
+.hidden {
+	display: none;
 }
 
 .option-button {
@@ -23,7 +28,7 @@
 	color: #fff;
 	border-radius: 5px;
 	padding: 10px 20px;
-	margin: 5px 0;
+	margin: 0 80px;
 	cursor: pointer;
 	transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
@@ -40,9 +45,10 @@
 /* Styling the movie cards */
 
 .movie-list {
-	margin-top: 50px;
-	display: flex;
-	flex-wrap: wrap;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	justify-self: center;
 }
 
 .movie-card {
@@ -94,6 +100,7 @@ a {
 }
 
 .description {
+	padding: 20px;
 	color: #fff;
 	margin-top: auto;
 	margin-bottom: 0;
@@ -101,10 +108,21 @@ a {
 
 /* ---- Media Queries ---- */
 
-@media (max-width: 767px) {
-	.options-container {
+@media (min-width: 768px) and (max-width: 992px) {
+	.movie-list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+	.menu {
 		flex-direction: column;
 		align-items: center;
+	}
+
+	.options-container {
+		flex-direction: column;
 	}
 
 	.option-button {
@@ -113,68 +131,35 @@ a {
 
 	/* Hamburger menu icon */
 	.hamburger-menu {
-		display: block;
 		margin: 0 auto;
 		margin-bottom: 10px;
 	}
+
+	.movie-list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
 
-@media (max-width: 480px) {
-	.options-container {
+@media (max-width: 576px) {
+	.menu {
 		flex-direction: column;
 		align-items: center;
+	}
+
+	.options-container {
+		flex-direction: column;
 		margin-bottom: 10px;
 		/* Reduce margin for smaller screens */
+		padding: 0;
 	}
 
 	.option-button {
 		margin: 5px 0;
 	}
-}
 
-/* 
-@media (min-width: 370px) {
-  .popularPage a {
-    width: 50%;
-  }
+	.movie-list {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+	}
 }
-
-@media (min-width: 570px) {
-  .popularPage a {
-    width: 33.33%;
-  }
-}
-
-@media (min-width: 820px) {
-  .popularPage a {
-    width: 25%;
-  }
-}
-
-.popularPage a img {
-  width: 100%;
-}
-
-.popularPage .details {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba(0,0,0,0.75);
-  display: none;
-  padding: 20px;
-}
-
-.popularPage .details h1 {
-  margin-top: auto;
-  margin-bottom: 0;
-}
-
-.popularPage a:hover .details {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: flex-end;
-}
- */
