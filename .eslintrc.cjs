@@ -1,6 +1,7 @@
 module.exports = {
   root: true,
   env: { browser: true, es2020: true },
+  globals: { process: true }, // for React Refresh
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
