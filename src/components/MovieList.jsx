@@ -3,9 +3,9 @@ export const MovieList = ({ movie }) => {
     <>
       <img
         className="movie-poster"
-        src={`http://image.tmdb.org/t/p//w780${movie.poster_path}`}
-        loading="lazy"
+        src={`http://image.tmdb.org/t/p//w342${movie.poster_path}`}
         alt={movie.title}
+        loading="lazy"
       />
       <section className="hover-menu">
         <h2 className="movie-title">{movie.title}</h2>

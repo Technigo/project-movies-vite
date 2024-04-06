@@ -2,6 +2,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { MovieDetailSection } from "../components/MovieDetailSection";
+import { TopMenu } from "../components/TopMenu";
 
 export const MovieDetail = () => {
   const movieId = useParams();
@@ -33,6 +34,8 @@ export const MovieDetail = () => {
     fetchMovieDetails();
   }, []);
 
+  console.log(movieId.id);
+
   return (
     <section
       className="detail-section"
@@ -40,25 +43,16 @@ export const MovieDetail = () => {
         backgroundImage: `url(http://image.tmdb.org/t/p//w1280${movieDetails.backdrop_path})`,
       }}
     >
-      <nav className="top-menu">
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/movie/popular">Popular Now</Link>
-          </li>
-          <li>
-            <Link to="/movie/top_rated">Top rated</Link>
-          </li>
-        </ul>
-      </nav>
+      <TopMenu />
       {isLoading ? (
         <p className="loading-text">Loading...</p>
       ) : error ? (
         <p className="detail-error-message">Oops, the movie is not found...</p>
       ) : (
-        <MovieDetailSection movieDetails={movieDetails} />
+        <div>
+          <MovieDetailSection movieDetails={movieDetails} />
+          <Link to={`/movie/${movieId.id}/similar`}>Similar Movies</Link>
+        </div>
       )}
     </section>
   );

@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { TopMenu } from "../components/TopMenu";
 
 export const Home = () => {
   const apiKey = "195790d926bf4d38c02251685a7c5f5e";
@@ -66,19 +66,7 @@ export const Home = () => {
   };
   return (
     <>
-      <nav className="top-menu">
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/movie/popular">Popular Now</Link>
-          </li>
-          <li>
-            <Link to="/movie/top_rated">Top rated</Link>
-          </li>
-        </ul>
-      </nav>
+      <TopMenu />
       <section className="home-section">
         <div className="search-movie-container">
           <form className="search-bar">

@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { MovieList } from "../components/MovieList";
+import { TopMenu } from "../components/TopMenu";
 
 export const Genre = ({ genre }) => {
   const movieGenre = useParams();
@@ -34,19 +35,7 @@ export const Genre = ({ genre }) => {
   console.log(movieGenre);
   return (
     <>
-      <nav className="top-menu">
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/movie/popular">Popular Now</Link>
-          </li>
-          <li>
-            <Link to="/movie/top_rated">Top rated</Link>
-          </li>
-        </ul>
-      </nav>
+      <TopMenu />
       {isLoading ? (
         <p className="loading-text">Loading...</p>
       ) : (
