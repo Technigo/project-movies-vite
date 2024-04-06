@@ -1,0 +1,60 @@
+.film-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  cursor: pointer;
+}
+
+.film-card:hover::after{
+  z-index: 2;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.title{
+  display: none;
+}
+
+.film-card p {
+  display: none;
+}
+
+.film-img{
+  height: 100%;
+  width: 100%;
+}
+
+.film-card:hover .title{
+  display: block;
+  color: white;
+}
+
+.film-card:hover .overview{
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  color: white;
+}
+
+.film-card-text-wrap{
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+  position: absolute;
+  padding: 10px;
+}
+
+.overview-container p{
+  display: none;
+}
+
+
+
