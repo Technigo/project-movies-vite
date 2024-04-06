@@ -43,25 +43,9 @@ body {
 
 #root {
   flex-grow: 1;
+  overflow-y: hidden;
 }
 h1 {
   color: #f4bebe;
   font-family: "Rubik Doodle Shadow", system-ui;
-}
-
-.loading {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10rem;
-}
-
-.loading-animation {
-  width: 300px;
-}
-
-.loading-text {
-  color: white;
-  font-size: 32px;
 }

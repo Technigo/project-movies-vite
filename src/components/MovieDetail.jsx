@@ -9,10 +9,10 @@ const MovieDetail = ({ bgImage, poster, rate, descr, name }) => {
       <div className={styles.details}>
         <img className={styles.poster} src={poster} alt={name} />
         <div className={styles.texts}>
-          <h2>
+          <p>
             <span className={styles.title}>{name}</span>
-            <span className={styles.rating}>{rate.toFixed(1)}</span>
-          </h2>
+            <span className={styles.rating}>⭐ {rate.toFixed(1)}</span>
+          </p>
           <p>{descr}</p>
         </div>
       </div>

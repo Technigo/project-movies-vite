@@ -60,19 +60,19 @@ const PopularList = () => {
   };
 
   return (
-    <>
+    <div className={styles.container}>
       <Category
         category={searchParams.get("category")}
         onClick={changeListType}
       />
       {isLoading ? (
-        <div className="loading">
+        <div className={styles.loading}>
           <Lottie
-            className="loading-animation"
+            className={styles.animation}
             animationData={loading}
             loop={true}
           />
-          <p className="loading-text">Movies on the way...</p>
+          <p className={styles.loadingText}>Movies on the way...</p>
         </div>
       ) : (
         <div className={styles.movieList}>
@@ -96,21 +96,16 @@ const PopularList = () => {
               </div>
             </div>
           ))}
-          <Pagination
-            type={searchParams.get("category")}
-            page={searchParams.get("page")}
-            onClick={changePage}
-          />
         </div>
       )}
-      {/* {!isLoading && (
+      {movies && (
         <Pagination
           type={searchParams.get("category")}
           page={searchParams.get("page")}
           onClick={changePage}
         />
-      )} */}
-    </>
+      )}
+    </div>
   );
 };
 
