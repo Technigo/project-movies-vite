@@ -15,7 +15,8 @@ export const NavBarLink = () => {
         <ul className="app-ul">
           {links.map(({to, text}) => (
             <li className="app-li" key={to}>
-              <Link to={to}>{text}</Link>          </li>
+              <Link to={to}>{text}</Link>
+            </li>
           ))}
         </ul>
       </nav>

@@ -16,13 +16,22 @@
 .pagination>button{
   display: block;
   border-radius: 30px;
-  width: 100px;
+  width: 70px;
+  border-color: 2px solid white;
   background-color: #373a47;
 }
 
+.pagination>button:hover{
+  background-color: #a9000099;
+}
+
+
 /* SCREENS MAX 744px  ----------------------------------------------------------------------*/
 @media (max-width: 744px) {
-  
+  .film-collection{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  } 
 }
 
 /* SCREENS 745px to 1280----------------------------------------------------------------------*/

@@ -19,6 +19,7 @@
 
 .title{
   display: none;
+  margin:0;
 }
 
 .film-card p {
@@ -56,5 +57,61 @@
   display: none;
 }
 
+.link-film-card{
+  display: none;
+}
 
+.film-card:hover .link-film-card{
+  display: flex;
+  color: white;
+}
 
+/* in this link I found some help from Fd-Web-desingn on how to do the arrows animation
+https://www.youtube.com/watch?app=desktop&v=hubxcpovlC4 */
+.arrows{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom: 5px;
+}
+
+.link-film-card {
+  position: relative;
+  width:  20px;
+  height: 20px;
+  border-bottom: 4px solid #fff;
+  border-right: 4px solid #fff;
+  transform: rotate(-45deg);
+  animation: arrow-load 3s ease infinite;
+}
+
+.link-film-card:nth-child(1){
+  left: 30px;
+  animation-delay: -0.4s;
+}
+
+.link-film-card:nth-child(2){
+  animation-delay: -0.2s;
+}
+
+.link-film-card:nth-child(3){
+  right: 30px;
+}
+
+@keyframes arrow-load
+{
+  0%
+  {
+    opacity: 0;
+    transform: rotate(-45deg) translate(-60px, -60px)
+  }
+  50%
+  {
+    opacity: 1;
+  }
+  100%
+  {
+    opacity: 0;
+    transform: rotate(-45deg) translate(60px, 60px)
+  }
+}
