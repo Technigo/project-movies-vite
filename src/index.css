@@ -114,7 +114,7 @@ body {
 /* Media queries for MovieList.jsx */
 @media (max-width: 480px) {
   .movie-container {
-    height: 45vh;
+    height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -122,25 +122,25 @@ body {
 
   .movie-card img {
     width: 160px;
-    height: 240px;
+    height: auto;
+  }
+
+  .credit-box {
+    display: none;
   }
 }
 
-  .movie-details p.overview {
-    display: none;
-  }
-
-@media (max-width: 1000px) {
+@media (min-width: 481px) and (max-width: 1000px) {
   .movie-container {
-    height: 45vh;
+    height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   .movie-card img {
-    width: 220px;
-    height: 340px;
+    width: 200px;
+    height: auto;
   }
 
   .credit-box {
@@ -159,20 +159,16 @@ body {
 
   .movie-box img {
     width: 160px;
-    height: 200px;
-  }
-}
-
-@media (max-width: 768px) {
-  .movie-box img {
-    width: 160px;
-    height: 200px;
-  }
-}
-
-@media (max-width: 1000px) {
-  .movie-box {
-    width: 90%;
     height: auto;
+  }
+
+  .movie-details p.overview {
+    display: none;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1000px) {
+  .movie-details p.overview {
+    display: none;
   }
 }
