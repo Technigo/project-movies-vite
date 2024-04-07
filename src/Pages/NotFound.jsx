@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "../components/Movie.css";
+import "../assets/components/Movie.css";
 
 export const NotFound = () => {
 
