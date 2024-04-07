@@ -14,7 +14,7 @@ export const MovieCard = () => {
 
   const imageBaseUrl = "http://image.tmdb.org/t/p/";
 
-  const fetchMovieDetails = () => {
+  useEffect(() => {
     fetch(movieDetailsUrl)
       .then((response) => {
         if (!response.ok) {
@@ -28,11 +28,7 @@ export const MovieCard = () => {
           navigate("/notfound");
         }
       });
-  };
-
-  useEffect(() => {
-    fetchMovieDetails();
-  }, []);
+  }, [movieDetailsUrl, navigate]);
 
   return (
     <section

@@ -13,16 +13,12 @@ export const MovieList = ({ movieCategory }) => {
 
   const imageBaseUrl = "http://image.tmdb.org/t/p/";
 
-  const fetchMovieList = () => {
+  useEffect(() => {
     fetch(movieListUrl)
       .then((response) => response.json())
       .then((data) => setPopularMovies(data.results))
       .catch((error) => console.error(error));
-  };
-
-  useEffect(() => {
-    fetchMovieList();
-  }, [location]);
+  }, [location, movieListUrl]);
 
   return (
     <section className="movie-list">

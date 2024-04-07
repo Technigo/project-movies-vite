@@ -87,6 +87,8 @@
   font-size: 18px;
 }
 
+/* --------------- //RESPONSIVE DESIGN // --------------- */
+
 @media (min-width: 576px) {
   .movie-content-box {
     flex-direction: row;
