@@ -2,7 +2,7 @@ import { Route } from "react-router-dom";
 import { Home } from "../pages/home/Home";
 import { MovieDetail } from "../pages/movie-detail/MovieDetail";
 import { Genre } from "../pages/genre/Genre";
-import { SimilarMovie } from "../pages/SimilarMovie";
+import { SimilarMovie } from "../pages/similar-movie.css/SimilarMovie";
 
 const routes = (
   <>

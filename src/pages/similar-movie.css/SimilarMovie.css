@@ -1,0 +1,23 @@
+.similar-movie-section {
+  color: var(--text-color);
+}
+
+.similar-movie-note {
+  width: 15%;
+  margin: 1rem auto;
+  padding: 8px 8px;
+  text-align: center;
+  background-color: #85001a;
+  border: #85001a 3px solid;
+  border-radius: 35px;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  transition: all 0.2s;
+}
+
+.similar-movie-list {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}

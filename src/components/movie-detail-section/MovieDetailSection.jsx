@@ -3,11 +3,16 @@ import "./MovieDetailSection.css";
 export const MovieDetailSection = ({ movieDetails }) => {
   return (
     <div className="movie-details">
-      <img
-        className="movie-detail-img"
-        src={`http://image.tmdb.org/t/p//w342${movieDetails.poster_path}`}
-        alt={movieDetails.id}
-      />
+      {movieDetails.poster_path ? (
+        <img
+          className="movie-detail-img"
+          src={`http://image.tmdb.org/t/p//w342${movieDetails.poster_path}`}
+          alt={movieDetails.id}
+        />
+      ) : (
+        <p className="detail-poster-error">No poster available</p>
+      )}
+
       <div className="detail-text">
         <h3 className="movie-detail-title">{movieDetails.title}</h3>
 

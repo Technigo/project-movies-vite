@@ -4,11 +4,19 @@
   padding-bottom: 2.5rem;
   display: flex;
   justify-content: flex-start;
-  align-items: flex-end;
+  align-items: center;
+  background-color: rgba(78, 4, 4, 0.433);
+  border-radius: 5px;
 }
 
 .movie-detail-img {
+  margin: 15px;
   border: white 5px solid;
+}
+
+.detail-poster-error {
+  border: grey 5px solid;
+  color: grey;
 }
 
 .detail-text {

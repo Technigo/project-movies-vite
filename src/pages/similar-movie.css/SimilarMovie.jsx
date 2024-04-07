@@ -1,7 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { TopMenu } from "../components/top-menu/TopMenu";
+import { useParams, Link } from "react-router-dom";
+import { TopMenu } from "../../components/top-menu/TopMenu";
+import { MovieList } from "../../components/movie-list/MovieList";
+import "./SimilarMovie.css";
 
 export const SimilarMovie = () => {
   const movieId = useParams();
@@ -32,19 +34,30 @@ export const SimilarMovie = () => {
   }, []);
 
   return (
-    <>
+    <section className="similar-movie-section">
       <TopMenu />
       {isLoading ? (
         <p className="loading-text">Loading...</p>
-      ) : similarMovie ? ( // Check if similarMovie is not null
+      ) : similarMovie ? (
         <div>
-          {similarMovie.results.map((movie) => (
-            <p key={movie.id}>{movie.title}</p>
-          ))}
+          <h3 className="similar-movie-note">Similar Movies</h3>
+          <ul className="similar-movie-list">
+            {similarMovie.results.map((movie) => (
+              <Link
+                key={movie.id}
+                to={`/movie/${movie.id}`}
+                className="each-movie"
+              >
+                <li>
+                  <MovieList movie={movie} />
+                </li>
+              </Link>
+            ))}
+          </ul>
         </div>
       ) : (
         <p>No similar movies found.</p>
       )}
-    </>
+    </section>
   );
 };
