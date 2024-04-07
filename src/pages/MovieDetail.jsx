@@ -2,7 +2,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { MovieDetailSection } from "../components/MovieDetailSection";
-import { TopMenu } from "../components/TopMenu";
+import { TopMenu } from "../components/top-menu/TopMenu";
 
 export const MovieDetail = () => {
   const movieId = useParams();

@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { MovieList } from "../components/MovieList";
-import { TopMenu } from "../components/TopMenu";
+import { TopMenu } from "../components/top-menu/TopMenu";
 
 export const Genre = ({ genre }) => {
   const movieGenre = useParams();

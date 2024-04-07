@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
-import { TopMenu } from "../components/TopMenu";
+import { TopMenu } from "../../components/top-menu/TopMenu";
+import "./Home.css";
 
 export const Home = () => {
   const apiKey = "195790d926bf4d38c02251685a7c5f5e";

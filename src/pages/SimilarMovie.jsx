@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { TopMenu } from "../components/TopMenu";
+import { TopMenu } from "../components/top-menu/TopMenu";
 
 export const SimilarMovie = () => {
   const movieId = useParams();
