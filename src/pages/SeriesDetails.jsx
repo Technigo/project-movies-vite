@@ -1,13 +1,14 @@
 import { useParams, NavLink } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import '../stylesheets/movieDetails.css'
-import { FormatDate } from '../utils/FormatDate'
+import { Reviews } from '../components/Reviews'
 const API_KEY = '29adee7b64b906cf77014bb38ac8dd58'
 
 export const SeriesDetails = () => {
   const { series_id } = useParams()
   const [details, setDetails] = useState(null)
   const [reviews, setReviews] = useState([])
+
   // fetch inside useEffect , set response to useState()
   useEffect(() => {
     fetch(
@@ -63,11 +64,12 @@ export const SeriesDetails = () => {
             <h2>Reviews⭐</h2>
             {reviews.length > 0 ? (
               reviews.map((item) => (
-                <div className="reviewsWrapper" key={item.id}>
-                  <h5>Author: {item.author} </h5>
-                  <p>{item.content}</p>
-                  <span>Date: {FormatDate(item.created_at)}</span>
-                </div>
+                <Reviews
+                  key={item.id}
+                  author={item.author}
+                  content={item.content}
+                  created_at={item.created_at}
+                />
               ))
             ) : (
               <h2>No reviews yet!</h2>

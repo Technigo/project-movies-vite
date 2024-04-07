@@ -1,11 +1,13 @@
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import { Reviews } from '../components/Reviews'
 import '../stylesheets/movieDetails.css'
 const API_KEY = '29adee7b64b906cf77014bb38ac8dd58'
 
 export const MoviesDetails = () => {
   const { movie_id } = useParams()
   const [details, setDetails] = useState(null)
+  const [reviews, setReviews] = useState([])
   // fetch inside useEffect , set response to useState()
   useEffect(() => {
     fetch(
@@ -17,6 +19,13 @@ export const MoviesDetails = () => {
       })
       .catch((error) => console.log(error))
   }, [])
+  useEffect(() => {
+    fetch(
+      `https://api.themoviedb.org/3/movie/${movie_id}/reviews?api_key=${API_KEY}&language=en-US`
+    )
+      .then((res) => res.json())
+      .then((review) => setReviews(review.results))
+  }, [movie_id])
 
   return (
     <section>
@@ -42,6 +51,21 @@ export const MoviesDetails = () => {
               </h2>
               <p>{details.overview}</p>
             </div>
+          </div>
+          <div className="reviews">
+            <h2>Reviews⭐</h2>
+            {reviews.length > 0 ? (
+              reviews.map((item) => (
+                <Reviews
+                  key={item.id}
+                  author={item.author}
+                  content={item.content}
+                  created_at={item.created_at}
+                />
+              ))
+            ) : (
+              <h2>No reviews yet!</h2>
+            )}
           </div>
         </div>
       )}

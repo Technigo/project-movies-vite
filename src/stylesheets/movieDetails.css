@@ -54,6 +54,19 @@ section .reviews {
 section .reviews p {
   max-width: 400px;
 }
+section .reviews button {
+  cursor: pointer;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 70px;
+  color: black;
+  font-weight: bold;
+  background-color: rgb(240, 201, 29);
+}
+section .reviews button:hover {
+  color: white;
+  background-color: black;
+}
 
 @media (min-width: 577px) {
   section .info-container {
