@@ -18,7 +18,7 @@ export const MovieDetails = ({
     <div>
       <img
         className="backdrop"
-        src={`https://image.tmdb.org/t/p/w1280${backdrop}`}
+        src={`https://image.tmdb.org/t/p/original${backdrop}`}
         alt={title}
       />
       <div className="movie-details-content">
