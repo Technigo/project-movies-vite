@@ -6,7 +6,15 @@
 
 # Movie Site Project
 
-### The Problem
+A movie website constructed using **React.js** offers users a seamless browsing experience through the implementation of **React Router** for efficient client-side routing. This feature enables effortless navigation across various pages and components of the website.
+
+By leveraging The Movie Database (TMDb) API, the website fetches comprehensive movie data, encompassing essential details such as titles, posters, release dates, and descriptions. This integration ensures that users have access to up-to-date information about their favorite movies.
+
+Users can explore movie details through distinct sections like **On screen**, **Popular**, and \*_Top rated_. Each section provides curated lists of movies, facilitating quick access to relevant information.
+
+Upon landing on the website, users encounter an engaging interface comprising **a slider** and **a search bar**. These interactive elements enhance user experience by offering dynamic content and facilitating efficient movie searches.
+
+Overall, the website combines the power of React.js, React Router, and TMDb API to deliver a user-friendly platform for discovering and exploring movies.
 
 ### View it live
 
