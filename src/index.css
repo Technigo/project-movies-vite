@@ -54,7 +54,7 @@ body {
   bottom: 10px;
   right: 10px;
   background-color: rgba(0, 0, 0, 0.406);
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 5px 10px;
   border-radius: 15px;
   display: block;
@@ -111,6 +111,25 @@ body {
   font-weight: bold;
 }
 
+.go-back-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: rgb(96, 0, 0);
+  font-family: "Quicksand", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.go-back-button:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
 /* Media queries for MovieList.jsx */
 @media (max-width: 480px) {
   .movie-container {
@@ -157,13 +176,13 @@ body {
     flex-direction: column;
   }
 
-  .movie-box img {
-    width: 160px;
-    height: auto;
-  }
-
   .movie-details p.overview {
     display: none;
+  }
+
+  .movie-box img {
+    margin: auto;
+    margin-bottom: 15px;
   }
 }
 
