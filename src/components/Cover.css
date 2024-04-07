@@ -48,18 +48,10 @@ a:hover .movieInfo {
   color: white;
 }
 
-
-@media (min-width:667px) and (max-width:1024px){
- 
-}
-
 @media (min-width:1025px){
   a{
     width: calc(25% - 1px); 
     margin: 0;
     height: auto;
-  
   }
-
-
 }

@@ -1,5 +1,5 @@
 import './MovieList.css'
-import { Title } from '../components/Title'
+
 import { Cover } from '../components/Cover'
 
 
