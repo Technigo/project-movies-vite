@@ -1,9 +1,22 @@
-.animationContainer {
-  text-align: center;
-  margin-top: 50px;
+.notFoundContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.notFoundAnimationContainer {
+  max-height: 80vh;
+  max-width: 80vw;
+  margin: auto; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .notFoundMessage {
   color: #000;
-  font-size: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
 }
