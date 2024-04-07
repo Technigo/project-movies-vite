@@ -5,8 +5,8 @@ import "./Movie.css";
 export const Movie = () => {
   const [movieList, setMovieList] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const apiEnv = import.meta.env.VITE_OPENDB_KEY;
-
+  const apiEnv = "b4648009c1cb0a7e8f565388d787eb75";
+  // const apiEnv = import.meta.env.VITE_OPENDB_KEY; try to hide api key
   const getMovie = useCallback(async () => {
     const API = `https://api.themoviedb.org/3/movie/popular?api_key=${apiEnv}&language=en-US&page=${currentPage}`;
     try {
