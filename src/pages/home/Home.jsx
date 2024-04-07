@@ -62,12 +62,13 @@ export const Home = () => {
     if (event.key === "Enter") {
       event.preventDefault();
       const movieLink = await searchMovie();
+      console.log(movieLink);
       if (movieLink) {
-        console.log(movieLink);
         window.location.href = movieLink;
       }
     }
   };
+
   return (
     <>
       <TopMenu />
