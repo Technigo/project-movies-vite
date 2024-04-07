@@ -6,8 +6,8 @@ import "./MoiveDetails.css";
 export const MovieDetails = () => {
   const [movieDetail, setMovieDetail] = useState(null);
   const { id } = useParams(); // Get 'id' from URL params
-  const apiEnv = import.meta.env.VITE_OPENDB_KEY;
-  const API = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiEnv}&language=en-US&page=1`
+  const apiEnv = "b4648009c1cb0a7e8f565388d787eb75";
+  const API = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiEnv}&language=en-US&page=1`;
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
@@ -55,10 +55,14 @@ export const MovieDetails = () => {
           />
         </div>
         <div className="details-container">
-          <span> <h2>
-            {title}</h2> <h2 className="score">⭐ {vote_average.toFixed(1)}
-            </h2></span>
-          <p className="released">Released: {release_date.split("-").reverse().join("/")}</p>
+          <span>
+            {" "}
+            <h2>{title}</h2>{" "}
+            <h2 className="score">⭐ {vote_average.toFixed(1)}</h2>
+          </span>
+          <p className="released">
+            Released: {release_date.split("-").reverse().join("/")}
+          </p>
           <p>{overview}</p>
         </div>
       </div>
