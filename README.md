@@ -9,7 +9,7 @@ This week's task involves fetching a list of movies from the themoviedb.org API 
 
 Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next? 
 
-I honestly thought this weeks project design looked exactly like the music library we did a few weeks ago. My improvements was to do something different, modern and fun the user! At the same time learn how to structure the website using new methods/functions.
+I honestly thought this weeks project design looked exactly like the music library we did a few weeks ago. My improvements was to do something different, modern and fun for the user! At the same time learn how to structure the website using new functions and design methods.
 
 I used useEffect to fetch data from an external API (fetchMovies function in MovieList and fetchMovieDetails function in MovieDetails).
 
@@ -18,6 +18,8 @@ Both components handle user interactions/events. MovieList handles mouse movemen
 The "go back-button" is link components from React Router which are used for navigation between different routes (MovieList to MovieDetails and vice versa), that's how you can go back to the main site (MovieList). 
 
 Responsiveness design was a pain in my ass. Had to remove the movie description from phone views because everything was going outside the screen view. Would have wanted to add a "view more" button to resolve the issue but had no time for this.
+
+The keyboard navigation needs improvements.
 
 ### View it live
 
