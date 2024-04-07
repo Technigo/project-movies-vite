@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { BackButton } from "./BackButton";
+import "./MoiveDetails.css";
 
 export const MovieDetails = () => {
   const [movieDetail, setMovieDetail] = useState(null);
