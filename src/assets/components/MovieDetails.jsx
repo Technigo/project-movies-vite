@@ -23,7 +23,7 @@ export const MovieDetails = () => {
     };
 
     fetchMovieDetails();
-  }, [API,id]);
+  }, [API, id]);
 
   if (!movieDetail) {
     return <div>Loading...</div>;
@@ -54,9 +54,9 @@ export const MovieDetails = () => {
           />
         </div>
         <div className="details-container">
-         <span> <h2>
+          <span> <h2>
             {title}</h2> <h2 className="score">⭐ {vote_average.toFixed(1)}
-          </h2></span>
+            </h2></span>
           <p className="released">Released: {release_date.split("-").reverse().join("/")}</p>
           <p>{overview}</p>
         </div>

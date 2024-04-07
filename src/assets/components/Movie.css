@@ -3,50 +3,11 @@ body {
   background-color: #000;
 }
 
-/* 404 */
-
-.go-home-btn {
-  background-image: url(../back-btn.svg);
-  filter: url(../back-btn.svg);
-  filter: none;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin-top: 5vh;
-  transition: all 0.3s ease-in-out;
-  filter: invert(100%);
-}
 
 
-.go-home-btn:hover  {
-  transform: scale(1.5);
-  filter: url(../back-btn.svg);
-  filter: invert(100%);
-}
-
-.go-home h1, h2{
-  color:white;
-  margin: 2vw;
-  padding-top: 5vh;
-}
-
-.go-home h1{
-  font-size: 2.5em;
-  text-align: left;
-}
-
-.go-home h2{
-  font-size: 1.5em;
-  text-align: right;
-}
-
-/**********/
-
-.released{
+.released {
   font-weight: bold;
-  margin:10px 0;
+  margin: 10px 0;
 }
 
 .movie-info {
@@ -202,7 +163,7 @@ button {
   .back-btn:hover {
     transform: scale(1.05);
     filter: url(../back-btn.svg);
-    filter: invert(0%) drop-shadow(0px 5px 5px rgba(198, 197, 197, 0.521));
+    filter: invert(100%) drop-shadow(0px 5px 5px rgba(198, 197, 197, 0.521));
     filter: blur(0.5px);
 
   }
@@ -232,10 +193,26 @@ button {
 
 @media screen and (min-width: 1200px) {
 
-  .details-container .released{
+  .details-container .released {
     font-weight: bold;
-    margin:10px 0;
+    margin: 10px 0;
   }
+
+
+  .movie-info h2,
+  p {
+    margin: 15px 0;
+    filter: drop-shadow(0px 4px 4px rgba(57, 57, 57, 0.878));
+  }
+
+  .movie-info.title h2 {
+    font-size: 48px;
+  }
+
+  .released p {
+    font-size: 20px;
+  }
+
 
   .movie-info {
     position: relative;
@@ -255,21 +232,9 @@ button {
     position: relative;
     z-index: 2;
     color: rgb(215, 221, 215, 1);
+
   }
 
-  .movie-info h2,
-  p {
-    margin: 15px 0;
-    filter: drop-shadow(0px 4px 4px rgba(57, 57, 57, 0.878));
-  }
-
-  .movie-info h2 {
-    font-size: 48px;
-  }
-
-  .movie-info p {
-    font-size: 20px;
-  }
 
   .movie-wrapper {
     z-index: 0;
@@ -305,9 +270,7 @@ button {
   .back-btn:hover {
     transform: scale(1.5);
     filter: url(../back-btn.svg);
-    filter: invert(0%) drop-shadow(4px 10px 10px rgb(255, 255, 255));
-    filter: blur(0.1px);
-
+    filter: invert(100%) drop-shadow(0px 2px 5px rgba(198, 197, 197, 0.521));
   }
 
   .movie-details {
@@ -339,14 +302,52 @@ button {
     background: linear-gradient(0deg, #000000, rgba(0, 0, 0, 0.86), #00000080, #00000000);
   }
 
-.go-home{
-  margin: 5vh 5vw;
-padding-top:20px;
-}
-
-
-
-
+  .go-home {
+    margin: 5vh 5vw;
+    padding-top: 20px;
+  }
 
 
 }
+
+
+/* 404 */
+
+.go-home-btn {
+  background-image: url(../back-btn.svg);
+  filter: url(../back-btn.svg);
+  filter: none;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 5vh;
+  transition: all 0.3s ease-in-out;
+  filter: invert(100%);
+}
+
+
+.go-home-btn:hover {
+  transform: scale(1.5);
+  filter: url(../back-btn.svg);
+  filter: invert(100%);
+}
+
+.go-home {
+  color: white;
+  margin: 2vw;
+  padding-top: 5vh;
+}
+
+.go-home h1 {
+  font-size: 2.5em;
+  text-align: left;
+}
+
+.go-home h2 {
+  font-size: 1.5em;
+  text-align: right;
+}
+
+/**********/

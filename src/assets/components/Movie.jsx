@@ -5,7 +5,7 @@ import "./Movie.css";
 export const Movie = () => {
   const [movieList, setMovieList] = useState([]);
   const apiEnv = import.meta.env.VITE_OPENDB_KEY;
-const API = `https://api.themoviedb.org/3/movie/popular?api_key=${apiEnv}&language=en-US&page=1`
+  const API = `https://api.themoviedb.org/3/movie/popular?api_key=${apiEnv}&language=en-US&page=1`
   const getMovie = useCallback(async () => {
     try {
       const response = await fetch(API);
@@ -37,7 +37,7 @@ const API = `https://api.themoviedb.org/3/movie/popular?api_key=${apiEnv}&langua
             </Link>
 
             <div className="movie-info">
-              <h2>{movie.title}</h2>
+              <h2 className="title">{movie.title}</h2>
               <p className="released">Released: {movie.release_date.split("-").reverse().join("/")}</p>
             </div>
           </li>
