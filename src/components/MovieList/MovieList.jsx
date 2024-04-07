@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { fetchPopularMovies } from "../api";
+import { fetchPopularMovies } from "../../api";
 
 export const MovieList = () => {
   const [movies, setMovies] = useState([]);
