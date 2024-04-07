@@ -89,7 +89,7 @@ export const Home = () => {
                 value={searchQuery}
                 onChange={handleSearch}
                 onKeyDown={handleSearchEnter}
-                placeholder="Search for a movie by name..."
+                placeholder="Search by name..."
               />
               <div className="search-error-message-container">
                 {searchError && (

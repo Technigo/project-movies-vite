@@ -23,7 +23,7 @@ export const TopMenu = () => {
         </li>
         <div className="top-menu-genre-list ">
           <Link to="/movie/now_playing" className="top-menu-link">
-            <li>Now in cinema </li>
+            <li>On srceen </li>
           </Link>
 
           <Link to="/movie/popular" className="top-menu-link">

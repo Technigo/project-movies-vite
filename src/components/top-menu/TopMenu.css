@@ -56,3 +56,43 @@
   color: var(--text-color);
   background-color: #85001b7e;
 }
+
+@media screen and (max-width: 768px) {
+  .top-menu {
+    width: 90%;
+    padding: 8px 8px;
+  }
+  .home-link {
+    font-weight: 500;
+    font-size: 1.4rem;
+  }
+
+  .home-text {
+    font-size: 1.2rem;
+  }
+
+  .top-menu-genre-list li {
+    margin-left: 0.3rem;
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 425px) {
+  .top-menu {
+    width: 100%;
+    padding: 8px 8px;
+  }
+
+  .home-link {
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+
+  .home-text {
+    font-size: 0.8rem;
+  }
+
+  .top-menu-genre-list li {
+    margin-left: 0.1rem;
+    font-size: 0.7rem;
+  }
+}

@@ -5,7 +5,7 @@
 .similar-movie-note {
   width: 15%;
   margin: 1rem auto;
-  padding: 8px 8px;
+  padding: 8px;
   text-align: center;
   background-color: #85001a;
   border: #85001a 3px solid;
@@ -20,4 +20,27 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+}
+
+@media screen and (max-width: 768px) {
+  .similar-movie-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .similar-movie-note {
+    width: 24%;
+    padding: 4px;
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 425px) {
+  .similar-movie-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .similar-movie-note {
+    width: 32%;
+    padding: 2px;
+    font-size: 0.7rem;
+  }
 }
