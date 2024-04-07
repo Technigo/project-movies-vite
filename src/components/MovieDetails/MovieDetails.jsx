@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchMovieDetails } from "../../api";
+import styles from "./MovieDetails.module.css";
 
 export const MovieDetails = () => {
   const { movieId } = useParams();
@@ -46,12 +47,27 @@ export const MovieDetails = () => {
   if (!movie) return <div>Loading...</div>;
 
   return (
-    <div>
-      <h2>{movie.title}</h2>
+    <div className={styles.movieDetails}>
       <img
-        src={`https://image.tmdb.org/t/p/${imageSize}${movie.backdrop_path}`}
+        className={styles.poster}
+        src={`https://image.tmdb.org/t/p/${imageSize}${movie.poster_path}`}
         alt={movie.title}
       />
+      <div className={styles.detailsOverlay}>
+        <h2 className={styles.title}>{movie.title}</h2>
+        <p className={styles.releaseDate}>
+          Release Date: {new Date(movie.release_date).toLocaleDateString()}
+        </p>
+        <div className={styles.rating}>⭐ {movie.vote_average}</div>
+        <p className={styles.description}>{movie.overview}</p>
+        <div className={styles.genreTags}>
+          {movie.genres.map((genre) => (
+            <span key={genre.id} className={styles.genreTag}>
+              {genre.name}
+            </span>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
