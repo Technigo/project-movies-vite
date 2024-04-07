@@ -28,20 +28,22 @@ img {
 }
 
 /****navbuttons ***/
-.paginate{
+.paginate {
   display: flex;
   justify-content: center;
   margin: 1vh 0;
 
 }
-.page-number{
+
+.page-number {
   display: flex;
   justify-content: center;
   color: white;
   font-size: 1.5em;
 
 }
-.previous-btn{
+
+.previous-btn {
   background-image: url(../../../public/back-btn.svg);
   filter: url(../../../public/back-btn.svg);
   filter: none;
@@ -51,11 +53,10 @@ img {
   background-size: cover;
   background-repeat: no-repeat;
   margin: 5vh 1vw;
-  transition: all 0.3s ease-in-out;
   filter: invert(100%);
 }
 
-.next-btn{
+.next-btn {
   background-image: url(../../../public/back-btn.svg);
   filter: url(../../../public/back-btn.svg);
   filter: none;
@@ -65,10 +66,10 @@ img {
   background-size: cover;
   background-repeat: no-repeat;
   margin: 5vh 1vw;
-  transition: all 0.3s ease-in-out;
   filter: invert(100%);
-  transform:rotate(180deg);
+  transform: rotate(180deg);
 }
+
 
 
 /***** main page *****/
