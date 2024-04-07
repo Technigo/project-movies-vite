@@ -6,13 +6,12 @@
 
 # Movie Site Project
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Assignment: Create a movie website that allows users to browse and view details about movies.I've added some extra to my projects, browsing even tv series and displaying reviews.
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I defined the scope of the project, including the specific functionalities required for browsing movies and TV series, as well as displaying reviews.Integrated with movie and TV series APIs to fetch data including titles, posters, ratings,release dates. Additionally, integrated with a review API and TopRatedMovies API.
+Considering additional features that could be implemented in the future, such as browsing within a search-bar, add trailers and streaming providers links.
 
 ### View it live
 

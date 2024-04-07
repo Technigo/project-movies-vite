@@ -59,17 +59,19 @@ export const SeriesDetails = () => {
               <p>{details.overview}</p>
             </div>
           </div>
-          <div className="Reviews">
-            <h2>Reviews</h2>
-            {reviews.map((item) => {
-              return (
+          <div className="reviews">
+            <h2>Reviews⭐</h2>
+            {reviews.length > 0 ? (
+              reviews.map((item) => (
                 <div className="reviewsWrapper" key={item.id}>
-                  <h5>{item.author} </h5>
+                  <h5>Author: {item.author} </h5>
                   <p>{item.content}</p>
-                  <span>{FormatDate(item.created_at)}</span>
+                  <span>Date: {FormatDate(item.created_at)}</span>
                 </div>
-              )
-            })}
+              ))
+            ) : (
+              <h2>No reviews yet!</h2>
+            )}
           </div>
         </div>
       )}

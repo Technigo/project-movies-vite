@@ -5,6 +5,7 @@ import { Sidebar } from './components/Sidebar'
 import { SeriesDetails } from './pages/SeriesDetails'
 import { SeasonList } from './pages/SeasonList'
 import { EpisodesList } from './pages/EpisodesList'
+import { NotFoundPage } from './pages/NotFoundPage'
 
 export const App = () => {
   return (
@@ -21,6 +22,7 @@ export const App = () => {
         />
         <Route path="/movie/:movie_id" element={<MoviesDetails />} />
         <Route path="/tv/:series_id" element={<SeriesDetails />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   )

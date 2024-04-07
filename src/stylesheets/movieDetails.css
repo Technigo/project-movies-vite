@@ -46,6 +46,14 @@ section .details a {
 section .details a:hover {
   color: black;
 }
+section .reviews {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+}
+section .reviews p {
+  max-width: 400px;
+}
 
 @media (min-width: 577px) {
   section .info-container {
@@ -60,10 +68,22 @@ section .details a:hover {
   main img {
     width: 250px;
   }
+  section .details p {
+    max-width: 500px;
+  }
+  section .reviews p {
+    max-width: 500px;
+  }
 }
 
 @media (min-width: 770px) {
   section img {
     width: 400px;
+  }
+  section .details p {
+    max-width: 600px;
+  }
+  section .reviews p {
+    max-width: 800px;
   }
 }

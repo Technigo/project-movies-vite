@@ -10,6 +10,17 @@
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 18px;
+  overflow-x: hidden;
+}
+:root h1 {
+  font-size: 20px;
+}
+:root h2 {
+  font-size: 18px;
+}
+:root p {
+  font-size: 15px;
 }
 body {
   margin: 0;
@@ -18,4 +29,28 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@media (min-width: 669px) and (max-width: 1022px) {
+  :root h1 {
+    font-size: 25px;
+  }
+  :root h2 {
+    font-size: 20px;
+  }
+  :root p {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1022px) {
+  :root h1 {
+    font-size: 30px;
+  }
+  :root h2 {
+    font-size: 25px;
+  }
+  :root p {
+    font-size: 20px;
+  }
 }
