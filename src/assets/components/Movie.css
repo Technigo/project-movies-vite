@@ -27,6 +27,49 @@ img {
   transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
+/****navbuttons ***/
+.paginate{
+  display: flex;
+  justify-content: center;
+  margin: 1vh 0;
+
+}
+.page-number{
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 1.5em;
+
+}
+.previous-btn{
+  background-image: url(../../../public/back-btn.svg);
+  filter: url(../../../public/back-btn.svg);
+  filter: none;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 5vh 1vw;
+  transition: all 0.3s ease-in-out;
+  filter: invert(100%);
+}
+
+.next-btn{
+  background-image: url(../../../public/back-btn.svg);
+  filter: url(../../../public/back-btn.svg);
+  filter: none;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 5vh 1vw;
+  transition: all 0.3s ease-in-out;
+  filter: invert(100%);
+  transform:rotate(180deg);
+}
+
 
 /***** main page *****/
 ul {
