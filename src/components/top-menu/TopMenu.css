@@ -42,12 +42,16 @@
   border-radius: 35px;
   font-size: var(--top-menu-font-size);
   line-height: 20px;
+  transition: background-color 0.2s;
 }
 
 .top-menu-link,
-.top-menu-link:hover,
 .top-menu-link:visited,
 .top-menu-link:focus {
   text-decoration: none;
   color: var(--text-color);
+}
+.top-menu-link li:hover {
+  color: var(--text-color);
+  background-color: #85001b7e;
 }

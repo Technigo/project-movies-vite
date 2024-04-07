@@ -1,0 +1,41 @@
+.movie-details {
+  width: 80%;
+  margin: 20px auto;
+  padding-bottom: 2.5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.movie-detail-img {
+  border: white 5px solid;
+}
+
+.detail-text {
+  margin: 0 0 1rem 1rem;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: var(--text-color);
+}
+
+.movie-detail-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.462);
+}
+
+.star-icon {
+  fill: #ffc800;
+}
+
+.rating-score,
+.movie-overview {
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.462);
+}
+
+.rating-score {
+  font-size: 1.5rem;
+}

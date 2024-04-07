@@ -15,7 +15,8 @@ body {
   background-color: black;
 }
 
-.loading-text {
+.loading-text,
+.detail-error-message {
   color: var(--text-color);
   font-size: 1.5rem;
   text-align: center;

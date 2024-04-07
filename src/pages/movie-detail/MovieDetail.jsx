@@ -1,8 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { MovieDetailSection } from "../components/MovieDetailSection";
-import { TopMenu } from "../components/top-menu/TopMenu";
+import { MovieDetailSection } from "../../components/movie-detail-section/MovieDetailSection";
+import { TopMenu } from "../../components/top-menu/TopMenu";
+import "./MovieDetail.css";
 
 export const MovieDetail = () => {
   const movieId = useParams();
@@ -49,7 +50,7 @@ export const MovieDetail = () => {
       ) : error ? (
         <p className="detail-error-message">Oops, the movie is not found...</p>
       ) : (
-        <div>
+        <div className="detail-content">
           <MovieDetailSection movieDetails={movieDetails} />
           <Link to={`/movie/${movieId.id}/similar`}>Similar Movies</Link>
         </div>
