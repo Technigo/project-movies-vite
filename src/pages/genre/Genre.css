@@ -1,0 +1,53 @@
+.movie-section {
+  margin: 0 auto;
+}
+
+.movie-poster {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.each-movie {
+  list-style-type: none;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.each-movie:visited,
+.each-movie:focus,
+.each-movie:active {
+  color: var(--text-color);
+}
+
+.each-movie li {
+  position: relative;
+}
+.movie-list {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.hover-menu {
+  position: absolute;
+  top: 0;
+  padding: 110% 0 0 5%;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.hover-menu:hover {
+  background-color: rgba(0, 0, 0, 0.521);
+  opacity: 1;
+}
+
+.movie-title {
+  font-size: 2rem;
+}
+
+.movie-release-date {
+  font-size: 1rem;
+}

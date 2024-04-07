@@ -1,9 +1,10 @@
+import "./MovieList.css";
 export const MovieList = ({ movie }) => {
   return (
     <>
       <img
         className="movie-poster"
-        src={`http://image.tmdb.org/t/p//w342${movie.poster_path}`}
+        src={`http://image.tmdb.org/t/p//w500${movie.poster_path}`}
         alt={movie.title}
         loading="lazy"
       />

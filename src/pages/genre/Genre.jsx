@@ -1,8 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { MovieList } from "../components/MovieList";
-import { TopMenu } from "../components/top-menu/TopMenu";
+import { MovieList } from "../../components/movie-list/MovieList";
+import { TopMenu } from "../../components/top-menu/TopMenu";
+import "./Genre.css";
 
 export const Genre = ({ genre }) => {
   const movieGenre = useParams();
@@ -43,11 +44,15 @@ export const Genre = ({ genre }) => {
           <ul className="movie-list">
             {movieListData &&
               movieListData.results.map((movie) => (
-                <li key={movie.id} className="each-movie">
-                  <Link to={`/movie/${movie.id}`}>
+                <Link
+                  key={movie.id}
+                  to={`/movie/${movie.id}`}
+                  className="each-movie"
+                >
+                  <li>
                     <MovieList movie={movie} />
-                  </Link>
-                </li>
+                  </li>
+                </Link>
               ))}
           </ul>
         </section>

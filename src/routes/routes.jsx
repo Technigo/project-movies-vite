@@ -1,7 +1,7 @@
 import { Route } from "react-router-dom";
 import { Home } from "../pages/home/Home";
 import { MovieDetail } from "../pages/MovieDetail";
-import { Genre } from "../pages/Genre";
+import { Genre } from "../pages/genre/Genre";
 import { SimilarMovie } from "../pages/SimilarMovie";
 
 const routes = (
