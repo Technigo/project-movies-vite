@@ -5,14 +5,14 @@
   margin: 20px auto;
   padding: 8px 18px;
   border-radius: 10px;
-}
-
-.top-menu-list {
-  list-style-type: none;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+.top-menu-list {
+  list-style-type: none;
 }
 
 .home-link {
@@ -29,6 +29,7 @@
 }
 
 .top-menu-genre-list {
+  list-style-type: none;
   display: flex;
   flex-direction: row;
   justify-content: center;

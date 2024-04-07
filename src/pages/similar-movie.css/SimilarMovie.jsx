@@ -43,15 +43,11 @@ export const SimilarMovie = () => {
           <h3 className="similar-movie-note">Similar Movies</h3>
           <ul className="similar-movie-list">
             {similarMovie.results.map((movie) => (
-              <Link
-                key={movie.id}
-                to={`/movie/${movie.id}`}
-                className="each-movie"
-              >
-                <li>
+              <li key={movie.id}>
+                <Link to={`/movie/${movie.id}`} className="each-movie">
                   <MovieList movie={movie} />
-                </li>
-              </Link>
+                </Link>
+              </li>
             ))}
           </ul>
         </div>

@@ -44,15 +44,11 @@ export const Genre = ({ genre }) => {
           <ul className="movie-list">
             {movieListData &&
               movieListData.results.map((movie) => (
-                <Link
-                  key={movie.id}
-                  to={`/movie/${movie.id}`}
-                  className="each-movie"
-                >
-                  <li>
+                <li key={movie.id}>
+                  <Link to={`/movie/${movie.id}`} className="each-movie">
                     <MovieList movie={movie} />
-                  </li>
-                </Link>
+                  </Link>
+                </li>
               ))}
           </ul>
         </section>

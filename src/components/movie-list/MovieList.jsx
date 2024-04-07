@@ -1,7 +1,7 @@
 import "./MovieList.css";
 export const MovieList = ({ movie }) => {
   return (
-    <>
+    <section>
       {movie.poster_path ? (
         <img
           className="movie-poster"
@@ -10,13 +10,17 @@ export const MovieList = ({ movie }) => {
           loading="lazy"
         />
       ) : (
-        <p className="poster-error">No poster available</p>
+        <div className="poster-error-container">
+          <p className="poster-error">No poster available</p>
+        </div>
       )}
 
-      <section className="hover-menu">
-        <h2 className="movie-title">{movie.title}</h2>
-        <p className="movie-release-date">Released {movie.release_date}</p>
-      </section>
-    </>
+      <div className="hover-menu">
+        <div className="hover-menu-text">
+          <h2 className="movie-title">{movie.title}</h2>
+          <p className="movie-release-date">Released {movie.release_date}</p>
+        </div>
+      </div>
+    </section>
   );
 };

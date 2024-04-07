@@ -14,7 +14,7 @@
   color: var(--text-color);
 }
 
-.each-movie li {
+.each-movie {
   position: relative;
 }
 
