@@ -8,7 +8,7 @@ export const MovieList=()=> {
   return (
     <div className='container'>
       <Cover />
-      <Title />
+      
     </div>
   )
 }

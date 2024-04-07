@@ -5,10 +5,28 @@
   flex-wrap: wrap;
 }
 
+.movie:hover .movieInfo{
+  opacity: 0.8;
+}
+
 a{
-  width: calc(25% - 1px); 
+  width: 50%; 
   margin: 0;
   height: auto;
+  text-decoration: none;
+  position: relative;
+}
+
+a img {
+  width: 100%;
+  display: flex;
+}
+
+a:hover .movieInfo {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .cover{
@@ -16,4 +34,32 @@ a{
   margin: 0;
   height: 100%;
   object-fit: cover;
+}
+
+.movieInfo{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: none;
+  padding: 20px;
+  color: white;
+}
+
+
+@media (min-width:667px) and (max-width:1024px){
+ 
+}
+
+@media (min-width:1025px){
+  a{
+    width: calc(25% - 1px); 
+    margin: 0;
+    height: auto;
+  
+  }
+
+
 }
