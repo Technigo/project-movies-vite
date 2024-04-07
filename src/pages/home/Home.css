@@ -1,5 +1,5 @@
 .search-movie-container {
-  margin: 8rem auto 4rem;
+  margin: 8rem auto 1.5rem;
 }
 .search-bar {
   display: flex;
@@ -41,6 +41,17 @@
 
 .search-bar-input:focus {
   outline: white 5px solid;
+}
+
+.search-error-message-container {
+  margin-top: 0.5rem;
+  height: 2rem;
+}
+
+.search-error-message {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: rgba(128, 128, 128, 0.867);
 }
 
 .scoller {
