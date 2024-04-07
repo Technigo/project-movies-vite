@@ -2,9 +2,14 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 export const MovieList = () => {
+  // State to store the list of movies
   const [movies, setMovies] = useState([]);
+  // Reference to the container div to enable scrolling
   const containerRef = useRef(null);
+  // State to track the index of the currently focused movie card
+  const [focusedIndex, setFocusedIndex] = useState(-1);
 
+  // Fetch movies from the API when the component mounts
   useEffect(() => {
     const fetchMovies = async () => {
       try {
@@ -24,6 +29,7 @@ export const MovieList = () => {
     fetchMovies();
   }, []);
 
+  // Scroll the container left or right by 30 pixels
   const scrollLeft = () => {
     containerRef.current.scrollLeft -= 30;
   };
@@ -32,6 +38,7 @@ export const MovieList = () => {
     containerRef.current.scrollLeft += 30;
   };
 
+  // Handle mouse movement to scroll the container horizontally
   const handleMouseMove = (e) => {
     const container = containerRef.current;
     const containerRect = container.getBoundingClientRect();
@@ -43,12 +50,40 @@ export const MovieList = () => {
     }
   };
 
+  // Handle keyboard navigation
+  const handleKeyDown = (e) => {
+    switch (e.key) {
+      case "ArrowLeft":
+        setFocusedIndex((prevIndex) => Math.max(prevIndex - 1, 0));
+        break;
+      case "ArrowRight":
+        setFocusedIndex((prevIndex) =>
+          Math.min(prevIndex + 1, movies.length - 1)
+        );
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
-    <div className="movie-container-wrapper" onMouseMove={handleMouseMove}>
+    <div
+      className="movie-container-wrapper"
+      onMouseMove={handleMouseMove}
+      onKeyDown={handleKeyDown} // Add keydown event listener
+      tabIndex={0} // Allow the div to receive focus
+    >
       <div className="movie-container" ref={containerRef}>
-        {movies.map((movie) => (
+        {/* Render movie cards */}
+        {movies.map((movie, index) => (
           <Link key={movie.id} to={`/movie/${movie.id}`}>
-            <div className="movie-card">
+            <div
+              className={`movie-card ${
+                index === focusedIndex ? "focused" : ""
+              }`}
+              tabIndex={index} // Allow the movie card to receive focus
+              onFocus={() => setFocusedIndex(index)}
+            >
               <img
                 src={`http://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                 alt={movie.title}
@@ -57,6 +92,7 @@ export const MovieList = () => {
           </Link>
         ))}
       </div>
+      {/* Credits section */}
       <div className="credit-box">
         <p>
           <span className="bold">Credits:</span>
