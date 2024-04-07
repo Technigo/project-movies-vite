@@ -72,7 +72,7 @@
 .rating p {
   color: #000;
   font-family: Muli;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .star-icon {
@@ -85,4 +85,43 @@
 
 .movie-info-box p {
   font-size: 18px;
+}
+
+@media (min-width: 576px) {
+  .movie-content-box {
+    flex-direction: row;
+    background: linear-gradient(
+      to top,
+      rgba(26, 30, 35, 0.7),
+      rgba(26, 30, 35, 0.7),
+      rgba(26, 30, 35, 0.7),
+      rgba(26, 30, 35, 0.7),
+      rgba(235, 235, 234, 0)
+    );
+    padding: 10;
+  }
+
+  .movie-content-box img {
+    width: 250px;
+  }
+
+  .movie-info-box {
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 767px) {
+  .movie-content-box {
+    background: linear-gradient(to top, rgba(26, 30, 35, 0.7), rgba(235, 235, 234, 0));
+  }
+
+  .movie-content-box img {
+    width: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .movie-info-box {
+    width: 579px;
+  }
 }

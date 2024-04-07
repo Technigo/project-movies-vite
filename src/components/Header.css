@@ -28,7 +28,7 @@ header h2 {
   font-family: Muli;
   font-weight: 400;
   font-size: 16px;
-  color: #ead4ae;
+  color: #f1e3cb;
   margin-top: 5px;
   text-align: center;
 }
@@ -138,7 +138,7 @@ header h2 {
 
   .desktop-menu a {
     text-decoration: none;
-    color: #ead4ae;
+    color: #f1e3cb;
     font-family: Muli;
     margin: 20px 25px 20px 0;
     font-size: 24px;

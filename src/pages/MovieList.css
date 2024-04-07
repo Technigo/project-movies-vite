@@ -51,6 +51,20 @@
   font-size: 18px;
 }
 
+.rating-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rating-box p {
+  font-size: 20px;
+}
+
+.star-icon {
+  font-size: 20px;
+}
+
 @media (min-width: 576px) {
   .movie-list {
     grid-template-columns: repeat(2, 50%);

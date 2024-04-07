@@ -53,7 +53,7 @@ export const MovieCard = () => {
           <div className="rating-time-box">
             <div className="rating">
               <IoStar className="star-icon" />
-              <p>{movieDetails.vote_average}</p>
+              <p>{parseFloat(movieDetails.vote_average).toFixed(1)}</p>
             </div>
             <p>{movieDetails.runtime} min</p>
           </div>

@@ -7,6 +7,7 @@ import "./MovieList.css";
 export const MovieList = ({ movieCategory }) => {
   const [popularMovies, setPopularMovies] = useState([]);
   const location = useLocation();
+
   const apiKey = "76898be6bb8657c4eadeb40367146dec";
   const movieListUrl = `https://api.themoviedb.org/3/movie/${movieCategory}?api_key=${apiKey}&language=en-US&page=1`;
 
@@ -32,7 +33,7 @@ export const MovieList = ({ movieCategory }) => {
           <div className="movie-list-card-text-box">
             <div className="rating-box">
               <IoStar className="star-icon" />
-              <p>{movie.vote_average}</p>
+              <p>{parseFloat(movie.vote_average).toFixed(1)}</p>
             </div>
             <h1>{movie.title}</h1>
           </div>
