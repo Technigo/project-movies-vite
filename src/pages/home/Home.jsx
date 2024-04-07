@@ -71,18 +71,24 @@ export const Home = () => {
       <section className="home-section">
         <div className="search-movie-container">
           <form className="search-bar">
-            <label htmlFor="movie-search">
+            <label htmlFor="movie-search" className="search-bar-label">
               Which movie do you want to see?
             </label>
-            <input
-              type="text"
-              id="movie-search"
-              name="movie-search"
-              value={searchQuery}
-              onChange={handleSearch}
-              onKeyDown={handleSearchEnter}
-              placeholder="Search for a movie by name..."
-            />
+            <div className="input-container">
+              <span className="search-icon">
+                <img src="./search.svg" alt="search-icon" />
+              </span>
+              <input
+                className="search-bar-input"
+                type="text"
+                id="movie-search"
+                name="movie-search"
+                value={searchQuery}
+                onChange={handleSearch}
+                onKeyDown={handleSearchEnter}
+                placeholder="Search for a movie by name..."
+              />
+            </div>
           </form>
         </div>
         {isLoading ? (

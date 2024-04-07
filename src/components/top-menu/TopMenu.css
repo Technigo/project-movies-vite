@@ -19,12 +19,13 @@
   display: flex;
   align-items: center;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .home-text {
   transform: translateY(-2px);
   margin-left: 4px;
+  font-size: 1.3rem;
 }
 
 .top-menu-genre-list {

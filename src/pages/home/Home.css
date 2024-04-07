@@ -1,0 +1,46 @@
+.search-movie-container {
+  margin: 3rem auto;
+}
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar-label {
+  margin: 10px auto;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.search-icon {
+  padding-left: 10px;
+  position: absolute;
+  top: 30%;
+}
+
+.search-bar-input {
+  width: 50%;
+  height: 3rem;
+  border-radius: 10px;
+}
+
+.search-bar-input::placeholder {
+  padding-left: 2rem;
+  font-size: 1rem;
+}
+.search-bar-input:focus {
+  outline: white 5px solid;
+}
+
+.search-bar-input::before {
+  content: "aaaaaaaaaaaaaaa";
+}
