@@ -36,6 +36,7 @@ export const MovieDetails = () => {
     release_date,
     overview,
     vote_average,
+    vote_count,
   } = movieDetail;
 
   return (
@@ -55,8 +56,9 @@ export const MovieDetails = () => {
         </div>
         <div className="details-container">
           <span> <h2>
-            {title}</h2> <h2 className="score">⭐ {vote_average.toFixed(1)}
-            </h2></span>
+            {title}</h2> <h3 className="score">⭐ {vote_average.toFixed(1)}
+            </h3><p className="number-of-votes">Total votes:{vote_count}</p>
+         </span>
           <p className="released">Released: {release_date.split("-").reverse().join("/")}</p>
           <p>{overview}</p>
         </div>

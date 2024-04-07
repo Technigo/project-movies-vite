@@ -7,7 +7,7 @@ export const NotFound = () => {
     <div className="go-home">
 
       <Link to={"/"} className="go-home-btn" >
-        <button alt="← Back to Movies"></button>
+        <button alt="Go home"></button>
       </Link>
       <h1>
         Oh Uh, These are not the droids you are looking for...</h1>
