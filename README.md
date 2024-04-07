@@ -13,7 +13,7 @@ A movie website constructed using **React.js** offers users a seamless browsing 
 
 By leveraging The Movie Database (TMDb) API, the website fetches comprehensive movie data, encompassing essential details such as titles, posters, release dates, and descriptions. This integration ensures that users have access to up-to-date information about their favorite movies.
 
-Users can explore movie details through distinct sections like **On screen**, **Popular**, and **Top rated**. Each section provides curated lists of movies, facilitating quick access to relevant information. By selecting the Similar Movie button, users can access a list of recommended movies based on the selected film.
+Users can explore movie details through distinct sections like **On screen**, **Popular**, and **Top rated**. Each section provides curated lists of movies, facilitating quick access to relevant information. By selecting the **Similar Movie** button, users can access a list of recommended movies based on the selected film.
 
 Upon landing on the website, users encounter an engaging interface comprising **a slider** and **a search bar**. These interactive elements enhance user experience by offering dynamic content and facilitating efficient movie searches.
 
