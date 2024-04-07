@@ -176,13 +176,15 @@ body {
     flex-direction: column;
   }
 
-  .movie-details p.overview {
-    display: none;
-  }
-
   .movie-box img {
+    width: 25vh;
+    height: 35vh;
     margin: auto;
     margin-bottom: 15px;
+  }
+
+  .movie-details p.overview {
+    display: none;
   }
 }
 
