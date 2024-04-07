@@ -1,0 +1,9 @@
+.animationContainer {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.notFoundMessage {
+  color: #000
+  font-size: 20px;
+}
