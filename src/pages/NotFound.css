@@ -1,5 +1,5 @@
 .errorPage {
-  padding: 50px; /* Adjust padding as needed */
+  padding: 50px;
   background-image: url(../assets/space.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -7,8 +7,8 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Align vertically */
-  justify-content: center; /* Align horizontally */
+  align-items: center;
+  justify-content: center;
 }
 
 .backLink {

@@ -36,12 +36,12 @@ export const MovieDetails = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [movie_id]);
 
-  // If details are not found, return notFound page
+  // if details are not found, return notFound page
   if (notFound) {
     return <NotFound />;
   }
 
-  // If details are not loaded yet, show loading message
+  // if details are not loaded yet, show loading message
   if (!details || Object.keys(details).length === 0) {
     return <p>Loading...</p>;
   }

@@ -1,30 +1,23 @@
-export const Header = () => {};
+/* eslint-disable react/prop-types */
+import "../pages/MovieList.css";
 
-// import { useState } from "react";
-// import { MovieList } from "../pages/MovieList";
-// import { SeriesList } from "../pages/SeriesList";
+export const Header = ({ onEndpointChange }) => {
+  const handleClick = (endpoint) => {
+    onEndpointChange(endpoint);
+  };
 
-// export const Header = () => {
-//   const [active, setActive] = useState("movies");
-//   const handleChange = (change) => {
-//     setActive(change);
-//   };
+  return (
+    <section className="headerSection">
+      <div className="headerTitle">
+        <h1>Movie Space</h1>
+      </div>
 
-//   return (
-//     <div>
-//       <button
-//         onClick={() => handleChange("movies")}
-//         disabled={active === "movies"}
-//       >
-//         Movies
-//       </button>
-//       <button
-//         onClick={() => handleChange("tvSeries")}
-//         disabled={active === "tvSeries"}
-//       >
-//         TV Series
-//       </button>
-//       {active === "movies" ? <MovieList /> : <SeriesList />}
-//     </div>
-//   );
-// };
+      <div className="headerButtons">
+        <button onClick={() => handleClick("nowplaying")}>Now Playing</button>
+        <button onClick={() => handleClick("popular")}>Popular</button>
+        <button onClick={() => handleClick("toprated")}>Top Rated</button>
+        <button onClick={() => handleClick("upcoming")}>Upcoming</button>
+      </div>
+    </section>
+  );
+};
