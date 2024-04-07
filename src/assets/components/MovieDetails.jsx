@@ -6,9 +6,8 @@ export const MovieDetails = () => {
   const [movieDetail, setMovieDetail] = useState(null);
   const { id } = useParams(); // Get 'id' from URL params
   const apiEnv = "b4648009c1cb0a7e8f565388d787eb75";
-  // const apiEnv = import.meta.env.VITE_OPENDB_KEY;
-
-  const API = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiEnv}&language=en-US&page=1`;
+  // const apiEnv = import.meta.env.VITE_OPENDB_KEY; try to hide api key
+  const API = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiEnv}&language=en-US&page=1`
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
@@ -38,6 +37,7 @@ export const MovieDetails = () => {
     release_date,
     overview,
     vote_average,
+    vote_count,
   } = movieDetail;
 
   return (
@@ -56,14 +56,11 @@ export const MovieDetails = () => {
           />
         </div>
         <div className="details-container">
-          <span>
-            {" "}
-            <h2>{title}</h2>{" "}
-            <h2 className="score">⭐ {vote_average.toFixed(1)}</h2>
-          </span>
-          <p className="released">
-            Released: {release_date.split("-").reverse().join("/")}
-          </p>
+          <span> <h2>
+            {title}</h2> <h3 className="score">⭐ {vote_average.toFixed(1)}
+            </h3><p className="number-of-votes">Total votes:{vote_count}</p>
+         </span>
+          <p className="released">Released: {release_date.split("-").reverse().join("/")}</p>
           <p>{overview}</p>
         </div>
       </div>
