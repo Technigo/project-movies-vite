@@ -3,6 +3,47 @@ body {
   background-color: #000;
 }
 
+/* 404 */
+
+.go-home-btn {
+  background-image: url(../back-btn.svg);
+  filter: url(../back-btn.svg);
+  filter: none;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 5vh;
+  transition: all 0.3s ease-in-out;
+  filter: invert(100%);
+}
+
+
+.go-home-btn:hover  {
+  transform: scale(1.5);
+  filter: url(../back-btn.svg);
+  filter: invert(100%);
+}
+
+.go-home h1, h2{
+  color:white;
+  margin: 2vw;
+  padding-top: 5vh;
+}
+
+.go-home h1{
+  font-size: 2.5em;
+  text-align: left;
+}
+
+.go-home h2{
+  font-size: 1.5em;
+  text-align: right;
+}
+
+/**********/
+
 .released{
   font-weight: bold;
   margin:10px 0;
@@ -128,6 +169,8 @@ button {
 }
 
 
+
+
 @media screen and (min-width: 768px) {
 
   ul {
@@ -143,7 +186,6 @@ button {
 
 
   .movie-poster {
-
     padding: 30px 5vw 0px 5vw;
     filter: drop-shadow(6px 6px 20px rgba(0, 0, 0, 0.453));
   }
@@ -296,4 +338,15 @@ button {
     align-items: flex-end;
     background: linear-gradient(0deg, #000000, rgba(0, 0, 0, 0.86), #00000080, #00000000);
   }
+
+.go-home{
+  margin: 5vh 5vw;
+padding-top:20px;
+}
+
+
+
+
+
+
 }
