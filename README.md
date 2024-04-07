@@ -1,5 +1,8 @@
 <h1 align="center">
   <a href="">
+    <img src="/src/assets/launch-page.png" alt="Project Banner Image">
+  </a>
+  <a href="">
     <img src="/src/assets/preview.png" alt="Project Banner Image">
   </a>
 </h1>
