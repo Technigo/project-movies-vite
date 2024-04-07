@@ -6,9 +6,6 @@ export const Cover = () => {
   const api_key = "b8e637d215af7c581df59754b1cd501e";
   const [coverImages, setCoverImages] = useState([]);
   const [movieIds, setMovieIds] = useState([]);
-  const [movieTitles, setMovieTitles] = useState([]);
-  const [movieDates, setMovieDates] = useState([]);
-  
   const [movies, setMovies] = useState([]);
 
   const movieUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1`;
@@ -23,10 +20,6 @@ export const Cover = () => {
         setMovieIds(json.results.map(movie=>movie.id));
         
         setCoverImages(json.results.map(movie => movie.poster_path));
-
-        setMovieTitles(json.results.map(movie => movie.original_title));
-
-        setMovieDates(json.results.map(movie => movie.release_date));
       })
       .catch(error => {
         console.error('Error fetching data:', error);
