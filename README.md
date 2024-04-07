@@ -9,7 +9,7 @@
 
 # Movie Site Project
 
-A movie website constructed using **React.js** offers users a seamless browsing experience through the implementation of **React Router** for efficient client-side routing. This feature enables effortless navigation across various pages and components of the website.
+A movie website constructed using **React.js** offers users a seamless browsing experience through the implementation of **React Router** for efficient client-side routing. This feature enables effortless navigation across various pages and components of the website. The UI design is inspired by Filmstaden website.
 
 By leveraging The Movie Database (TMDb) API, the website fetches comprehensive movie data, encompassing essential details such as titles, posters, release dates, and descriptions. This integration ensures that users have access to up-to-date information about their favorite movies.
 
