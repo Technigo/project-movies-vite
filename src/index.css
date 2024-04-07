@@ -126,6 +126,10 @@ body {
   }
 }
 
+  .movie-details p.overview {
+    display: none;
+  }
+
 @media (max-width: 1000px) {
   .movie-container {
     height: 45vh;
