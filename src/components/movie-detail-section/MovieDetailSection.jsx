@@ -6,7 +6,7 @@ export const MovieDetailSection = ({ movieDetails }) => {
       {movieDetails.poster_path ? (
         <img
           className="movie-detail-img"
-          src={`http://image.tmdb.org/t/p//w342${movieDetails.poster_path}`}
+          src={`http://image.tmdb.org/t/p//w185${movieDetails.poster_path}`}
           alt={movieDetails.id}
         />
       ) : (
