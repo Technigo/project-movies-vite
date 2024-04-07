@@ -43,7 +43,6 @@ export const MovieList = () => {
       {movies.map((movie) => (
         <div key={movie.id} className={styles.movieItem}>
           <Link to={`/movies/${movie.id}-${slugify(movie.title)}`}>
-            {/* ここでimageSizeステートを使ってURLを動的に変更 */}
             <img
               className={styles.movieItemImage}
               srcSet={`
@@ -56,12 +55,14 @@ export const MovieList = () => {
                      (max-width: 1024px) 780px,
                      (max-width: 1920px) 1280px,
                      1920px"
-              src={`https://image.tmdb.org/t/p/${imageSize}${movie.poster_path}`} // fallback image
+              src={`https://image.tmdb.org/t/p/${imageSize}${movie.poster_path}`}
               alt={movie.title}
             />
-            <div className={styles.movieTitle}>
-              <h3>{movie.title}</h3>
-              {/* ジャンルタグをここに配置 */}
+            <div className={styles.movieOverlay}>
+              <h3 className={styles.movieOverlayTitle}>{movie.title}</h3>
+              <p className={styles.movieOverlayReleaseDate}>
+                Released {movie.release_date}
+              </p>
             </div>
           </Link>
         </div>
