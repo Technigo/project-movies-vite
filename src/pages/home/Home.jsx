@@ -41,7 +41,7 @@ export const Home = () => {
   const searchMovie = async () => {
     try {
       const response = await fetch(
-        `https://api.themoviedb.org/3/search/movie?query=${searchQuery}&api_key=${apiKey}&include_adult=false&language=en-US&page=1`
+        `https://api.themoviedb.org/3/search/movie?query=${searchQuery}&api_key=${apiKey}&include_adult=false&language=en-US&page=2`
       );
       if (response.ok) {
         const data = await response.json();
@@ -94,17 +94,19 @@ export const Home = () => {
         {isLoading ? (
           <p className="loading-text">Loading...</p>
         ) : (
-          <ul className="home-carousel-list">
-            {movieHomeData.results.map((movie) => (
-              <li key={movie.id}>
-                <img
-                  src={`http://image.tmdb.org/t/p//w154${movie.poster_path}`}
-                  alt={movie.title}
-                  loading="lazy"
-                />
-              </li>
-            ))}
-          </ul>
+          <div className="scoller">
+            <ul className="home-carousel-list scoller-inner">
+              {movieHomeData.results.map((movie) => (
+                <li key={movie.id}>
+                  <img
+                    src={`http://image.tmdb.org/t/p//w185${movie.poster_path}`}
+                    alt={movie.title}
+                    loading="lazy"
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
         )}
       </section>
     </>

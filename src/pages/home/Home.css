@@ -1,5 +1,5 @@
 .search-movie-container {
-  margin: 3rem auto;
+  margin: 8rem auto 5rem;
 }
 .search-bar {
   display: flex;
@@ -37,10 +37,39 @@
   padding-left: 2rem;
   font-size: 1rem;
 }
+
 .search-bar-input:focus {
   outline: white 5px solid;
 }
 
-.search-bar-input::before {
-  content: "aaaaaaaaaaaaaaa";
+.scoller {
+  background-color: rgba(128, 128, 128, 0.389);
+  margin: 0 auto;
+  max-width: 80%;
+  overflow: hidden;
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.home-carousel-list {
+  width: fit-content;
+  padding-block: 2rem;
+  padding-left: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  animation: scroll 180s linear infinite;
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(-100%);
+  }
 }
