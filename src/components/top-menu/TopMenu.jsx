@@ -22,21 +22,17 @@ export const TopMenu = () => {
           </Link>
         </li>
         <div className="top-menu-genre-list ">
-          <li>
-            <Link to="/movie/now_playing" className="top-menu-link">
-              Now in cinema
-            </Link>
-          </li>
-          <li>
-            <Link to="/movie/popular" className="top-menu-link">
-              Popular
-            </Link>
-          </li>
-          <li>
-            <Link to="/movie/top_rated" className="top-menu-link">
-              Top rated
-            </Link>
-          </li>
+          <Link to="/movie/now_playing" className="top-menu-link">
+            <li>Now in cinema </li>
+          </Link>
+
+          <Link to="/movie/popular" className="top-menu-link">
+            <li>Popular</li>
+          </Link>
+
+          <Link to="/movie/top_rated" className="top-menu-link">
+            <li>Top rated</li>
+          </Link>
         </div>
       </ul>
     </nav>

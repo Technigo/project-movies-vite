@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { TopMenu } from "../../components/top-menu/TopMenu";
 import "./Home.css";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
   const apiKey = "195790d926bf4d38c02251685a7c5f5e";
@@ -94,19 +95,21 @@ export const Home = () => {
         {isLoading ? (
           <p className="loading-text">Loading...</p>
         ) : (
-          <div className="scoller">
-            <ul className="home-carousel-list scoller-inner">
-              {movieHomeData.results.map((movie) => (
-                <li key={movie.id}>
-                  <img
-                    src={`http://image.tmdb.org/t/p//w185${movie.poster_path}`}
-                    alt={movie.title}
-                    loading="lazy"
-                  />
-                </li>
-              ))}
-            </ul>
-          </div>
+          <Link to="/movie/now_playing">
+            <div className="scoller">
+              <ul className="home-carousel-list scoller-inner">
+                {movieHomeData.results.map((movie) => (
+                  <li key={movie.id}>
+                    <img
+                      src={`http://image.tmdb.org/t/p//w185${movie.poster_path}`}
+                      alt={movie.title}
+                      loading="lazy"
+                    />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Link>
         )}
       </section>
     </>
