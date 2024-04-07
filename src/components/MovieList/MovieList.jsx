@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { fetchPopularMovies } from "../../api";
+import styles from "./MovieList.module.css";
 
 export const MovieList = () => {
   const [movies, setMovies] = useState([]);
+  const [imageSize, setImageSize] = useState("w300");
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -17,22 +19,50 @@ export const MovieList = () => {
     fetchMovies();
   }, []);
 
+  useEffect(() => {
+    const updateImageSize = () => {
+      if (window.innerWidth > 1499) {
+        setImageSize("original");
+      } else if (window.innerWidth > 1023) {
+        setImageSize("w1280");
+      } else {
+        setImageSize("w780");
+      }
+    };
+
+    window.addEventListener("resize", updateImageSize);
+    updateImageSize();
+
+    return () => {
+      window.removeEventListener("resize", updateImageSize);
+    };
+  }, []);
+
   return (
-    <div>
+    <div className={styles.movieListContainer}>
       {movies.map((movie) => (
-        <div key={movie.id}>
+        <div key={movie.id} className={styles.movieItem}>
           <Link to={`/movies/${movie.id}-${slugify(movie.title)}`}>
+            {/* ここでimageSizeステートを使ってURLを動的に変更 */}
             <img
+              className={styles.movieItemImage}
               srcSet={`
-              https://image.tmdb.org/t/p/w300${movie.poster_path} 300w,
-              https://image.tmdb.org/t/p/w780${movie.poster_path} 780w,
-              https://image.tmdb.org/t/p/w1280${movie.poster_path} 1280w
+                https://image.tmdb.org/t/p/w300${movie.poster_path} 300w,
+                https://image.tmdb.org/t/p/w780${movie.poster_path} 780w,
+                https://image.tmdb.org/t/p/w1280${movie.poster_path} 1280w,
+                https://image.tmdb.org/t/p/original${movie.poster_path} 1920w
               `}
-              sizes="(max-width: 768px) 300px, (max-width: 1024px) 780px, 1280px"
-              src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
+              sizes="(max-width: 768px) 300px,
+                     (max-width: 1024px) 780px,
+                     (max-width: 1920px) 1280px,
+                     1920px"
+              src={`https://image.tmdb.org/t/p/${imageSize}${movie.poster_path}`} // fallback image
               alt={movie.title}
             />
-            <h3>{movie.title}</h3>
+            <div className={styles.movieTitle}>
+              <h3>{movie.title}</h3>
+              {/* ジャンルタグをここに配置 */}
+            </div>
           </Link>
         </div>
       ))}
