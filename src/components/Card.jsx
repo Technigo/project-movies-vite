@@ -9,14 +9,14 @@ export const Card = ({ movie }) => {
   const handleMouseOver = () => {
     setIsHovered(true);
   };
-  const hanldeMouseLeave = () => {
+  const handldeMouseLeave = () => {
     setIsHovered(false);
   };
   return (
     <Link to={`/movie/${movie.id}`}>
       <div
         onMouseOver={handleMouseOver}
-        onMouseLeave={hanldeMouseLeave}
+        onMouseLeave={handldeMouseLeave}
         className="card"
       >
         <Poster

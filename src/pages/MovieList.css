@@ -1,11 +1,8 @@
 .cardWrapper {
   display: flex;
   flex-wrap: wrap;
+  background: black;
 }
-
-/* img {
-  object-fit: cover;
-} */
 
 a {
   width: 100%;
@@ -39,10 +36,49 @@ a {
   font-family: "Montserrat", sans-serif;
   font-size: 2rem;
 }
+
 .info p {
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   padding-top: 1rem;
+}
+
+.headerTitle h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  color: white;
+  padding: 10px 0;
+  margin: 0 10px;
+}
+
+.headerSection {
+  padding: 30px;
+  background-image: url(../assets/space.jpg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.headerButtons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+button {
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+}
+
+button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px 0 white inset, 0 0 10px 2px white;
 }
 
 @media (min-width: 370px) {
@@ -60,5 +96,9 @@ a {
 @media (min-width: 820px) {
   .cardWrapper a {
     width: 25%;
+  }
+
+  .headerSection {
+    flex-direction: row;
   }
 }

@@ -6,7 +6,7 @@ export const NotFound = () => {
   return (
     <div className="errorPage">
       <h4>ERROR 404</h4>
-      <p id="errorP">Ooops, you got lost in data space</p>
+      <p id="errorP">Ooops, you got lost in movie space</p>
 
       <Link className="backLink" to={`/`}>
         <p>
