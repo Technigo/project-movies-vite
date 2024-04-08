@@ -15,10 +15,6 @@ body {
   color: white;
 }
 
-h1 {
-  font-size: 2em;
-}
-
 a {
   color: inherit;
 }
@@ -29,4 +25,11 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+/* For screens with a minimum width of 570px */
+@media (min-width: 570px) {
+  h1 {
+    font-size: 2em;
+  }
 }
