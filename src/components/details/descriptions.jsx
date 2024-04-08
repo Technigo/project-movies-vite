@@ -1,4 +1,4 @@
-import './Description.css'
+import './Descriptions.css'
 
 export const Descriptions=({movieDetail})=> {
   return (
