@@ -118,11 +118,12 @@ h2 {
 }
 
   .each-movie:hover {
+      transform: scale(1.01);
     #overlay {
       display: flex;
       flex-direction: column;
       background-image: linear-gradient(to top, rgb(192, 0, 0), transparent);
-      transition: 0.3s;
+      transition: 0.5s;
     }
   }
 }
