@@ -58,8 +58,9 @@
 }
 
 .movie-heading {
-  width: max-content;
+  
   display: flex;
+  flex-wrap: wrap;
 }
 
 .movie-rating {
@@ -100,10 +101,11 @@
 
 .back-button {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   top: 2em;
   left: 2em;
   display: flex;
+
 }
 .back-button:hover {
   cursor: pointer;
@@ -151,7 +153,7 @@
 
   .details {
     width: 400px;
-    margin: 20em 0 0 0;
+    margin: 18em 0 0 0;
   }
 
   #first-info {

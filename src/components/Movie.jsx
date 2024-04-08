@@ -44,13 +44,12 @@ export const Movie = () => {
       )}
       {!loading && (
         <div className="movie-component">
-          <div className="back-button">
+          <div className="back-button" onClick={() => 
+            navigate(-1)}>
             <img src={arrow} 
-            id="go-back" 
-            onClick={() => 
-            navigate(-1)} 
+            id="go-back"  
             alt="go back"/>
-            <h4 onClick={() => navigate(-1)}>Movies</h4>
+            <h4>Movies</h4>
           </div>
           <div className="movie-information">
             <img
