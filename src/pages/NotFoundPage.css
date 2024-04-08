@@ -1,0 +1,43 @@
+.not-found-page {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+}
+
+.camera-icon {
+  display: flex;
+  font-size: 70px;
+  background-color: white;
+  width: 150px;
+  height: 150px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.not-found-page h1 {
+  margin-bottom: 20px;
+}
+
+.not-found-page p {
+  margin-bottom: 40px;
+}
+
+.error-back-button img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.error-back-button:hover img {
+  background-color: rgba(0, 0, 0, 0.2);
+}
