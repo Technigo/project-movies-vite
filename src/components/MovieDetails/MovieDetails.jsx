@@ -48,24 +48,37 @@ export const MovieDetails = () => {
 
   return (
     <div className={styles.movieDetails}>
-      <img
-        className={styles.poster}
-        src={`https://image.tmdb.org/t/p/${imageSize}${movie.poster_path}`}
-        alt={movie.title}
-      />
-      <div className={styles.detailsOverlay}>
-        <h2 className={styles.title}>{movie.title}</h2>
-        <p className={styles.releaseDate}>
-          Release Date: {new Date(movie.release_date).toLocaleDateString()}
-        </p>
-        <div className={styles.rating}>⭐ {movie.vote_average}</div>
-        <p className={styles.description}>{movie.overview}</p>
-        <div className={styles.genreTags}>
-          {movie.genres.map((genre) => (
-            <span key={genre.id} className={styles.genreTag}>
-              {genre.name}
-            </span>
-          ))}
+      {/* 映画の詳細コンテンツ */}
+      <div className={styles.detailsContainer}>
+        {/* ポスター画像 */}
+        <img
+          className={styles.poster}
+          src={`https://image.tmdb.org/t/p/${imageSize}${movie.poster_path}`}
+          alt={movie.title}
+        />
+        <div className={styles.details}>
+          <div className={styles.movieHeading}>
+            <h2 className={styles.title}>{movie.title}</h2>
+            <div className={styles.rating}>⭐ {movie.vote_average}</div>
+          </div>
+
+          <p className={styles.releaseDate}>
+            Release Date: {new Date(movie.release_date).toLocaleDateString()}
+          </p>
+          <p className={styles.description}>{movie.overview}</p>
+          <div className={styles.genres}>
+            {movie.genres.map((genre) => (
+              <span key={genre.id} className={styles.genre}>
+                {genre.name}
+              </span>
+            ))}
+          </div>
+          <div
+            className={styles.backgroundImage}
+            style={{
+              backgroundImage: `url(https://image.tmdb.org/t/p/${imageSize}${movie.backdrop_path})`,
+            }}
+          />
         </div>
       </div>
     </div>
