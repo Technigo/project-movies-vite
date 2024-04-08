@@ -5,6 +5,7 @@ import Lottie from "lottie-react";
 import animation from "../assets/animations/loading.json";
 import { Carousel } from "./carousel.jsx";
 import { Menu } from "./Menu.jsx";
+import logo from "/cine-movies.svg"
 
 
 export const MovieList = () => {
@@ -48,6 +49,7 @@ export const MovieList = () => {
         <>
 
           <header>
+          <img src={logo} alt="logo of cine movies" id="logo"/>
             <Carousel />
             <Menu />
           </header>

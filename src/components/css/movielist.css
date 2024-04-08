@@ -6,14 +6,17 @@
   align-items: center;
 }
 
-.header{
-  width: 90%;
-  margin: 0 auto;
-  padding-top: 5em;
+header{
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 }
 
+#logo{
+  width: 40px;
+  height: 40px;
+  align-self: end;
+  margin: 0.7em;
+}
 
 .movie-list {
   width: 90%;
@@ -78,12 +81,25 @@ h2 {
   .movie-list{
     grid-template-columns: 1fr 1fr 1fr;
   }
-  
+  header{
+    width: 90%;
+    margin: 0 auto;
+  }
+  #logo{
+    width: 60px;
+    height: 60px;
+    margin: 1em 0;
+}
+
 }
 @media screen and (min-width: 1200px){
   .movie-list{
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
+  #logo{
+    width: 80px;
+    height: 80px;
+}
 
   .each-movie:hover {
     #overlay {

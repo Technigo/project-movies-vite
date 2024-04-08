@@ -1,9 +1,5 @@
-header{
-  margin-top: 2em;
-}
-
 .carousel {
-  width: 90%;
+  width: 100%;
   height: 200px;
   position: relative;
   overflow: hidden;
@@ -79,6 +75,7 @@ header{
   .overlay-slide{
     padding: 1.5em;
   }
+
 }
 
 @media screen and (min-width: 1200px){

@@ -2,7 +2,8 @@ import './css/carousel.css'
 import { useState, useEffect } from 'react'
 import { PropTypes } from 'prop-types'
 import { movieBanners } from '../movieBanners.json'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom' 
+
 
 export const Carousel = () => {
 
@@ -30,6 +31,7 @@ export const Carousel = () => {
 
     return(
         <div className="carousel">
+            
           {movieBanners.map((movie , index) => {
                 return (
                 <div className={currentSlide === index ? "slide current" : "slide"} key={index}>
