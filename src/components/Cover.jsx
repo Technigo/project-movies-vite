@@ -3,12 +3,13 @@ import "./Cover.css"
 import { Link} from "react-router-dom";
 
 export const Cover = () => {
-  const api_key = "b8e637d215af7c581df59754b1cd501e";
+  const apiEnv = import.meta.env.VITE_OPENDB_KEY;
+  //const api_key = "b8e637d215af7c581df59754b1cd501e";
   const [coverImages, setCoverImages] = useState([]);
   const [movieIds, setMovieIds] = useState([]);
   const [movies, setMovies] = useState([]);
 
-  const movieUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1`;
+  const movieUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiEnv}&language=en-US&page=1`;
 
   useEffect(() => {
     fetch(movieUrl)

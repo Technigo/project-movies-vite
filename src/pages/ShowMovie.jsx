@@ -6,13 +6,14 @@ import { useEffect, useState } from 'react';
 import { FrontImage } from '../components/details/FrontImage';
 import { Nav } from '../components/details/Nav';
 
-const api_key = "b8e637d215af7c581df59754b1cd501e";
+//const api_key = "b8e637d215af7c581df59754b1cd501e";
+const apiEnv = import.meta.env.VITE_OPENDB_KEY;
 
 export const ShowMovie=()=> {
   const params = useParams();
   const [movieDetail, setMovieDetail] = useState(null);
 
-  const movieDetailUrl = `https://api.themoviedb.org/3/movie/${params.id}?api_key=${api_key}&language=en-US`;
+  const movieDetailUrl = `https://api.themoviedb.org/3/movie/${params.id}?api_key=${apiEnv}&language=en-US`;
 
   useEffect(() => {
     fetch(movieDetailUrl)
