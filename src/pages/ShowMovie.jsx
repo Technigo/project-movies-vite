@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
 import { Background } from '../components/details/Background';
 import { FrontImage } from '../components/details/FrontImage';
-import { Descriptions } from '../components/details/Descriptions';
+import { Description } from '../components/details/Description';
 import { Nav } from '../components/details/Nav';
 import './ShowMovie.css'
 
@@ -31,7 +31,7 @@ export const ShowMovie=()=> {
       <Nav />
       <div className='summary'>
         <FrontImage movieDetail={movieDetail} />
-        <Descriptions movieDetail={movieDetail} />
+        <Description movieDetail={movieDetail} />
       </div>
     </div>
   )
