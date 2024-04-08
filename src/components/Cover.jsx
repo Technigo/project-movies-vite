@@ -4,7 +4,6 @@ import { Link} from "react-router-dom";
 
 export const Cover = () => {
   const apiEnv = import.meta.env.VITE_OPENDB_KEY;
-  //const api_key = "b8e637d215af7c581df59754b1cd501e";
   const [coverImages, setCoverImages] = useState([]);
   const [movieIds, setMovieIds] = useState([]);
   const [movies, setMovies] = useState([]);

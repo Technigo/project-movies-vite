@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react';
 import { FrontImage } from '../components/details/FrontImage';
 import { Nav } from '../components/details/Nav';
 
-//const api_key = "b8e637d215af7c581df59754b1cd501e";
 const apiEnv = import.meta.env.VITE_OPENDB_KEY;
 
 export const ShowMovie=()=> {
