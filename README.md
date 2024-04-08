@@ -4,4 +4,5 @@ A movie website to show a list of popular movies and details about each movie by
 
 ### View it live
 
+https://jingmovierelease.netlify.app/
 [jingh999]
