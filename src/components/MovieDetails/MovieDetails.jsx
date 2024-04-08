@@ -73,14 +73,14 @@ export const MovieDetails = () => {
               </span>
             ))}
           </div>
-          <div
-            className={styles.backgroundImage}
-            style={{
-              backgroundImage: `url(https://image.tmdb.org/t/p/${imageSize}${movie.backdrop_path})`,
-            }}
-          />
         </div>
       </div>
+      <div
+        className={styles.backgroundImage}
+        style={{
+          backgroundImage: `url(https://image.tmdb.org/t/p/${imageSize}${movie.backdrop_path})`,
+        }}
+      />
     </div>
   );
 };
