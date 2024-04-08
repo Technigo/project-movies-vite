@@ -64,9 +64,14 @@ h2 {
   font-size: 1em;
 }
 
-.separate-list{
+.header{
+  width: 90%;
+  margin: 0 auto;
   padding-top: 5em;
+  display: flex;
+  justify-content: center;
 }
+
 
 @media screen and (min-width: 768px){
   .movie-list{

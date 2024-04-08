@@ -51,7 +51,10 @@ export const MovieClassics = () => {
             alt="go back"/>
             <h4 onClick={() => navigate(-1)}>Movies</h4>
           </div>
-          <div className="movie-list separate-list">
+          <div className="header">
+           <h1>Classic Movies</h1>
+           </div>
+          <div className="movie-list">
             {movies.results.map((movie) => (
               <Link
                 to={`/movie/${movie.id}`}
