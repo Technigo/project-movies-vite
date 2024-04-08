@@ -102,8 +102,8 @@
 .back-button {
   position: absolute;
   z-index: 3;
-  top: 2em;
-  left: 2em;
+  top: 1em;
+  left: 1em;
   display: flex;
   transition: transform 250ms;
 
@@ -135,6 +135,9 @@
   #poster {
     width: 50%;
   }
+  .back-button {
+    top: 2em;
+    left: 2em;
 }
 
 @media screen and (min-width: 1200px) {

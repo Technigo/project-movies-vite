@@ -51,7 +51,7 @@ export const MovieUpcoming = () => {
             alt="go back"/>
             <h4 onClick={() => navigate(-1)}>Movies</h4>
           </div>
-          <div className="header">
+          <div className="category">
            <h1>Upcoming Movies</h1>
            </div>
           <div className="movie-list">
