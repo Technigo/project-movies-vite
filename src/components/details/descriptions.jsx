@@ -1,6 +1,6 @@
 import './Descriptions.css'
 
-export const Descriptions=({movieDetail})=> {
+export const Descriptions = ({movieDetail}) => {
   return (
     <div className='descriptionContainer'>
       <h1 className='titleContainer'>

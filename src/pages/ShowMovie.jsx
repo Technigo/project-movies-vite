@@ -1,10 +1,10 @@
-import { useParams } from 'react-router-dom'
-import './ShowMovie.css'
-import { Background } from '../components/details/Background';
-import { Descriptions } from '../components/details/Descriptions';
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom'
+import { Background } from '../components/details/Background';
 import { FrontImage } from '../components/details/FrontImage';
+import { Descriptions } from '../components/details/Descriptions';
 import { Nav } from '../components/details/Nav';
+import './ShowMovie.css'
 
 const apiEnv = import.meta.env.VITE_OPENDB_KEY;
 
