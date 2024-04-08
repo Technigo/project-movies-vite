@@ -31,6 +31,7 @@
 
 .not-found-page p {
   margin-bottom: 40px;
+  max-width: 300px;
 }
 
 .error-back-button img {

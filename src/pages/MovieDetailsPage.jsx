@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { MovieDetails } from "../components/MovieDetails";
 import { NotFoundPage } from "./NotFoundPage";
+import { FailedFetch } from "./FailedFetch";
 
 export const MovieDetailsPage = () => {
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
+  const [fetchError, setFetchError] = useState(false);
   const apiEnv = import.meta.env.VITE_OPENDB_KEY;
   const movieDetailsUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiEnv}&language=en-US`;
 
@@ -22,11 +24,16 @@ export const MovieDetailsPage = () => {
         setMovieDetails(data);
       } catch (error) {
         console.error("Error fetching movie details:", error);
+        setFetchError(true);
       }
     };
 
     fetchMovieDetails();
   }, [id, movieDetailsUrl]);
+
+  if (fetchError) {
+    return <FailedFetch />;
+  }
 
   return (
     <div>
