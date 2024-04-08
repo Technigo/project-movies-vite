@@ -6,6 +6,15 @@
   align-items: center;
 }
 
+.header{
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 5em;
+  display: flex;
+  justify-content: center;
+}
+
+
 .movie-list {
   width: 90%;
   margin: 0 auto;
@@ -13,7 +22,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 1em;
   justify-content: center;
-  padding: 1em 0;
+  padding-bottom: 5em
 }
 
 .each-movie {
@@ -62,14 +71,6 @@ h1 {
 h2 {
   font-family: "Fjalla One";
   font-size: 1em;
-}
-
-.header{
-  width: 90%;
-  margin: 0 auto;
-  padding-top: 5em;
-  display: flex;
-  justify-content: center;
 }
 
 
