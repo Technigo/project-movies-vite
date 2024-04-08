@@ -1,12 +1,24 @@
+.menu{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2em;
+
+  h1{
+    font-size: 1.5em;
+  }
+}
+
 .button-container {
   display: flex;
-  margin: 20px auto 0 auto;
-  justify-content: center;
-  width: 90%;
+  justify-content: end;
+  align-items: center;
 }
 
 .options-button {
   margin: 0 0 0 10px;
+  height: 50px;
   transition: transform 250ms;
   background-color: #ffffffcb;
   padding: 0.5em;
@@ -24,8 +36,9 @@
 }
 
 @media screen and (min-width: 768px) {
-  .button-container {
-    width: 86%;
-    justify-content: end;
+  .menu {
+    h1{
+      font-size: 2.5em;
+    }
   }
 }

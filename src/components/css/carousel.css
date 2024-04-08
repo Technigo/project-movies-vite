@@ -83,7 +83,6 @@ header{
 
 @media screen and (min-width: 1200px){
   .carousel {
-    width: 86%;
     height: 400px;
   }
   .content{

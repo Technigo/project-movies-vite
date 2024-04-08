@@ -26,9 +26,7 @@ export const MovieUpcoming = () => {
       });
   };
   useEffect(() => {
-    setTimeout(() => {
       fetchApi();
-    }, 1500);
   }, []);
 
   return (
@@ -53,7 +51,7 @@ export const MovieUpcoming = () => {
             alt="go back"/>
             <h4 onClick={() => navigate(-1)}>Movies</h4>
           </div>
-          <div className="movie-list">
+          <div className="movie-list separate-list">
             {movies.results.map((movie) => (
               <Link
                 to={`/movie/${movie.id}`}

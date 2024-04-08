@@ -4,8 +4,8 @@ import "./css/movielist.css";
 import Lottie from "lottie-react";
 import animation from "../assets/animations/loading.json";
 import { Carousel } from "./carousel.jsx";
-import { ButtonsMenu } from "./ButtonsMenu";
-import "./css/ButtonsMenu.css";
+import { Menu } from "./Menu.jsx";
+
 
 export const MovieList = () => {
   const [movies, setMovies] = useState([]);
@@ -49,7 +49,7 @@ export const MovieList = () => {
 
           <header>
             <Carousel />
-            <ButtonsMenu />
+            <Menu />
           </header>
           <div className="movie-list">
             {movies.results.map((movie) => (
