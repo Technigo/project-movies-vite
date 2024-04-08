@@ -105,6 +105,7 @@
   top: 2em;
   left: 2em;
   display: flex;
+  transition: transform 250ms;
 
 }
 .back-button:hover {
@@ -120,13 +121,15 @@
   color: white;
 }
 
-.back-button h4:hover {
-  transform: translateX(+5px);
-}
 
 #go-back {
   filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+
 }
+.back-button:hover{
+    transform: translateX(-3px);
+  }
+
 
 @media screen and (min-width: 768px) {
   #poster {
