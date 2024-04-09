@@ -1,0 +1,63 @@
+.movieslist-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movieslist-container a {
+  width: 100%;
+  position: relative;
+}
+
+.movie-card-image {
+  width: 100%;
+}
+
+/* Style each moviecard in the movielist */
+.movie-card-info {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 20px;
+  display: none;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+/* Show movie information when card is hovered */
+.movieslist-container a:hover .movie-card-info {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.title {
+  font-weight: 700;
+}
+
+.release-date {
+  margin: 20px 0;
+}
+
+/* --- Media queries ---  */
+/* For screens with a minimum width of 370px */
+@media (min-width: 370px) {
+  .movieslist-container a {
+    width: 50%;
+  }
+}
+
+/* For screens with a minimum width of 570px */
+@media (min-width: 570px) {
+  .movieslist-container a {
+    width: 33.33%;
+  }
+}
+
+/* For screens with a minimum width of 820px */
+@media (min-width: 820px) {
+  .movieslist-container a {
+    width: 25%;
+  }
+}
