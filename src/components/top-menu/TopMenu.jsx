@@ -26,7 +26,7 @@ export const TopMenu = () => {
       <ul className="top-menu-genre-list ">
         <li>
           <Link to="/movie/now_playing" className="top-menu-link">
-            On srceen
+            On screen
           </Link>
         </li>
 

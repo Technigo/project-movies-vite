@@ -1,12 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { MovieList } from "../../components/movie-list/MovieList";
 import { TopMenu } from "../../components/top-menu/TopMenu";
 import "./Genre.css";
 
 export const Genre = ({ genre }) => {
-  const movieGenre = useParams();
   const apiKey = "195790d926bf4d38c02251685a7c5f5e";
   const [movieListData, setMovieListData] = useState("");
   const [isLoading, setIsLoading] = useState(true);
@@ -33,7 +32,6 @@ export const Genre = ({ genre }) => {
     fetchMovieData();
   }, [genre]);
 
-  console.log(movieGenre);
   return (
     <>
       <TopMenu />

@@ -22,6 +22,10 @@
   grid-template-columns: repeat(4, 1fr);
 }
 
+.similar-movie-list li {
+  list-style-type: none;
+}
+
 @media screen and (max-width: 768px) {
   .similar-movie-list {
     grid-template-columns: repeat(3, 1fr);

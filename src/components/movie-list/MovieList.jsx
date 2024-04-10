@@ -1,4 +1,5 @@
 import "./MovieList.css";
+
 export const MovieList = ({ movie }) => {
   return (
     <section>

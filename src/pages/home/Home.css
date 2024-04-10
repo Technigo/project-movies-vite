@@ -54,7 +54,7 @@
   color: rgba(128, 128, 128, 0.867);
 }
 
-.scoller {
+.scroller {
   background-color: rgba(128, 128, 128, 0.389);
   margin: 0 auto;
   max-width: 80%;
@@ -78,6 +78,10 @@
   align-items: center;
   gap: 1rem;
   animation: scroll 180s linear infinite;
+}
+
+.home-carousel-list li {
+  list-style-type: none;
 }
 
 @keyframes scroll {

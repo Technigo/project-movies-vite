@@ -66,4 +66,10 @@
   .movie-release-date {
     font-size: 0.8rem;
   }
+
+  .similar-movie {
+    margin-bottom: 1rem;
+    padding: 4px 18px;
+    font-size: 0.7rem;
+  }
 }

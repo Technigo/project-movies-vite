@@ -84,17 +84,33 @@
   .movie-details {
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    margin: 5px auto;
+  }
+
+  .movie-detail-img {
+    width: 150px;
+  }
+
+  .detail-text {
+    width: 70%;
+    text-align: center;
   }
 
   .movie-detail-title {
     font-size: 1rem;
-    margin-bottom: 0rem;
+    margin: 0 auto;
   }
+
+  .rating {
+    margin: 3px auto;
+  }
+
   .rating-score {
     font-size: 1rem;
   }
 
   .movie-overview {
-    margin-top: 10px;
+    margin: 3px auto;
   }
 }

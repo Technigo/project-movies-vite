@@ -106,8 +106,8 @@ export const Home = () => {
           <p className="loading-text">Loading...</p>
         ) : (
           <Link to="/movie/now_playing">
-            <div className="scoller">
-              <ul className="home-carousel-list scoller-inner">
+            <div className="scroller">
+              <ul className="home-carousel-list scroller-inner">
                 {movieHomeData.results.map((movie) => (
                   <li key={movie.id}>
                     <img
