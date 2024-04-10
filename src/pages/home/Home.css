@@ -1,6 +1,7 @@
 .search-movie-container {
   margin: 8rem auto 1.5rem;
 }
+
 .search-bar {
   display: flex;
   flex-direction: column;
@@ -87,6 +88,12 @@
 @keyframes scroll {
   to {
     transform: translateX(-100%);
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .search-movie-container {
+    margin: 6rem auto 1.5rem;
   }
 }
 
