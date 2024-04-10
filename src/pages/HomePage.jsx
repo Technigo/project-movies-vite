@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { FilmCard } from "../Components/FilmCard"
+import { FilmCard } from "../components/FilmCard"
 import "./HomePage.css"
 
 export const HomePage = () => {
