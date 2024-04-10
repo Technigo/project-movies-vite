@@ -37,12 +37,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
 }
 
 .poster-error {
-  position: relative;
-  margin-top: 25%;
+  margin: 25% auto 100%;
   font-size: 1.2rem;
   font-weight: 700;
   color: #808080dd;
