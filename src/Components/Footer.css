@@ -1,0 +1,17 @@
+.bottom-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background-color: #373a47;
+  color: white;
+}
+
+.bottom-footer p{
+  margin: 10px;
+}
+
+.logo {
+  height: 35px;
+}

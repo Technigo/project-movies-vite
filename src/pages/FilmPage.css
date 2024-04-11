@@ -1,0 +1,93 @@
+.film-page-container {
+  position: relative;
+}
+
+.link-film-page {
+  z-index: 10;
+  position: absolute;
+  text-decoration: none;
+  display: block;
+  top: 30px;
+  right: 30px;
+  border-radius: 30px;
+  height: 40px;
+  width: 100px;
+  color: white;
+  background-color: #373a47;
+  align-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.link-film-page:hover {
+  background-color: #a9000099;
+}
+
+.content {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 30px;
+  color: white;
+  border-radius: 10px;
+}
+
+.content-text {
+  max-width: 300px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.content-text h1,
+.content-text p:last-child {
+  margin: 0;
+}
+
+.film-page-container .film-img {
+  display: block;
+  max-width: 300px;
+  box-shadow: 5px 5px 10px black;
+  height: auto;
+  border-radius: 10px;
+  margin:10px;
+}
+
+.film-background-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -10;
+}
+
+.overlay {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent white background */
+}
+
+/* SCREENS MAX 744px  ----------------------------------------------------------------------*/
+@media (max-width: 744px) {
+  .content {
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 5px;
+  }
+
+  .content-text {
+    margin-top: 60px;
+  }
+}
