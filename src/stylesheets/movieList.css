@@ -4,10 +4,12 @@ main {
   margin: 0;
   padding: 0;
   width: 100%;
-  justify-content: center;
+  justify-content: space-between;
+  box-sizing: border-box;
 }
 /* to change the width in base of mediaquery */
 .cardsWrapper {
+  position: relative;
   width: 100%;
 }
 .cardsWrapper a {
@@ -38,22 +40,43 @@ main {
   justify-content: flex-end;
 }
 .cardsWrapper .info h2 {
+  font-size: 15px;
   margin-top: auto;
   margin-bottom: 0;
 }
-
+.cardsWrapper .info p {
+  font-size: 12px;
+}
 @media (min-width: 365px) and (max-width: 571px) {
   .cardsWrapper {
     width: 50%;
+  }
+  .cardsWrapper .info h2 {
+    font-size: 17px;
+  }
+  .cardsWrapper .info p {
+    font-size: 13px;
   }
 }
 @media (min-width: 572px) and (max-width: 818px) {
   .cardsWrapper {
     width: 30%;
   }
+  .cardsWrapper .info h2 {
+    font-size: 18px;
+  }
+  .cardsWrapper .info p {
+    font-size: 15px;
+  }
 }
 @media (min-width: 819px) {
   .cardsWrapper {
     width: 25%;
+  }
+  .cardsWrapper .info h2 {
+    font-size: 20px;
+  }
+  .cardsWrapper .info p {
+    font-size: 18px;
   }
 }

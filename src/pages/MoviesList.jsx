@@ -1,7 +1,7 @@
 const API_KEY = '29adee7b64b906cf77014bb38ac8dd58'
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { FormatDate } from '../utils/FormatDate'
+import { formatDate } from '../utils/formatDate'
 import { Hero } from '../components/Hero'
 import '../stylesheets/movieList.css'
 let linkUrl = ''
@@ -51,7 +51,7 @@ export const MovieList = () => {
                   <h2>{movie.title || movie.name}</h2>
                   <p>
                     Released on:{' '}
-                    {FormatDate(movie.release_date || movie.first_air_date)}
+                    {formatDate(movie.release_date || movie.first_air_date)}
                   </p>
                 </div>
               </Link>

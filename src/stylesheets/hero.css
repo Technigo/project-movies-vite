@@ -1,8 +1,12 @@
 header {
+  box-sizing: border-box;
+  position: relative;
   color: white;
   box-sizing: border-box;
   position: relative;
   width: 100%;
+  margin: 0;
+  padding: 0;
   height: 700px;
 }
 
@@ -10,6 +14,7 @@ header .summary {
   position: absolute;
   bottom: 0;
   width: 100%;
+
   padding: 20px;
   opacity: 1;
 }
@@ -25,6 +30,8 @@ header .logoImg {
   top: 0;
   right: 0;
   width: 20%;
+  max-width: 100%;
+  height: auto;
   padding: 10px;
 }
 header .comingSoonIcon {
@@ -51,7 +58,7 @@ header .comingSoonIcon {
   header img {
     width: 10%;
     right: 50%;
-    left: clalc(50%-36px);
+    left: calc(50%-36px);
   }
   header p {
     max-width: 600px;

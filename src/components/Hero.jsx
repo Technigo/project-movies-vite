@@ -1,6 +1,6 @@
 import '../stylesheets/hero.css'
 import { useEffect, useState } from 'react'
-import { FormatDate } from '../utils/FormatDate'
+import { formatDate } from '../utils/formatDate'
 const API_KEY = '29adee7b64b906cf77014bb38ac8dd58'
 // https://api.themoviedb.org/3/movie/upcoming
 export const Hero = () => {
@@ -20,7 +20,6 @@ export const Hero = () => {
       .then((data) => {
         setComingSoon(data.results)
         pickRandomMovie(data.results)
-        console.log(data)
       })
       .catch((error) => console.log(error))
   }, [])
@@ -50,11 +49,11 @@ export const Hero = () => {
           <div className="summary">
             <div className="comingSoonWrapper">
               <h2>Coming soon</h2>
-              <img src="coming-soon.png" className="comingSoonIcon" />
+              <img src="/coming-soon.png" className="comingSoonIcon" />
             </div>
 
             <h1>{randomMovie.title}</h1>
-            <span> First Release {FormatDate(randomMovie.release_date)}</span>
+            <span> First Release {formatDate(randomMovie.release_date)}</span>
             <p>{randomMovie.overview}</p>
             <span>⭐{randomMovie.vote_average.toFixed(1)}</span>
           </div>

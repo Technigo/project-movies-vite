@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FormatDate } from '../utils/FormatDate'
+import { formatDate } from '../utils/formatDate'
 // Maximum characters to display initially
 const MAX_LENGTH = 150
 
@@ -26,7 +26,7 @@ export const Reviews = ({ author, content, created_at }) => {
           {expanded ? 'Show Less' : 'Read More'}
         </button>
       )}
-      <h6>Date: {FormatDate(created_at)}</h6>
+      <h6>Date: {formatDate(created_at)}</h6>
     </div>
   )
 }
