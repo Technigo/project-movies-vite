@@ -14,6 +14,10 @@
   margin: 80px 30px;
 }
 
+.login-container p{
+ text-align: center;
+}
+
 h2 {
   margin-bottom: 20px;
   text-align: center;

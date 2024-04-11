@@ -30,7 +30,6 @@ export const FilmPage = () => {
       });
   }, [id]);
 
-  console.log(id)
   return (
     <div className="film-page-container">
       {FilmPage && (

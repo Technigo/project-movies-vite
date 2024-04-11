@@ -19,7 +19,7 @@
   cursor: pointer;
 }
 
-.link-film-page:hover{
+.link-film-page:hover {
   background-color: #a9000099;
 }
 
@@ -36,7 +36,7 @@
   border-radius: 10px;
 }
 
-.content-text{
+.content-text {
   max-width: 300px;
   background-color: rgba(0, 0, 0, 0.7);
   padding: 10px;
@@ -44,7 +44,7 @@
 }
 
 .content-text h1,
-.content-text p:last-child{
+.content-text p:last-child {
   margin: 0;
 }
 
@@ -67,7 +67,7 @@
   z-index: -10;
 }
 
-.overlay{
+.overlay {
   z-index: -1;
   position: absolute;
   top: 0;
@@ -87,7 +87,7 @@
     gap: 5px;
   }
 
-  .content-text{
+  .content-text {
     margin-top: 60px;
   }
 }

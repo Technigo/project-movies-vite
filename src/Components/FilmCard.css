@@ -1,12 +1,11 @@
-.film-card{
+.film-card {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   position: relative;
-  cursor: pointer;
 }
 
-.film-card:hover::after{
+.film-card:hover::after {
   z-index: 2;
   content: "";
   position: absolute;
@@ -17,7 +16,7 @@
   background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
-.title{
+.title {
   display: none;
   margin:0;
 }
@@ -26,17 +25,17 @@
   display: none;
 }
 
-.film-img{
+.film-img {
   height: 100%;
   width: 100%;
 }
 
-.film-card:hover .title{
+.film-card:hover .title {
   display: block;
   color: white;
 }
 
-.film-card:hover .overview{
+.film-card:hover .overview {
   display: -webkit-box;
   -webkit-line-clamp: 2; /* Number of lines to show */
   -webkit-box-orient: vertical;
@@ -45,7 +44,7 @@
   color: white;
 }
 
-.film-card-text-wrap{
+.film-card-text-wrap {
   display: flex;
   flex-direction: column;
   z-index: 3;
@@ -53,48 +52,52 @@
   padding: 10px;
 }
 
-.overview-container p{
+.overview-container p {
   display: none;
 }
 
-.link-film-card{
+.link-film-card {
   display: none;
 }
 
-.film-card:hover .link-film-card{
+.film-card:hover .link-film-card {
   display: flex;
   color: white;
 }
 
 /* in this link I found some help from Fd-Web-desingn on how to do the arrows animation
 https://www.youtube.com/watch?app=desktop&v=hubxcpovlC4 */
-.arrows{
+.arrows {
+  z-index: 10;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-bottom: 5px;
+  align-items: center;
+  background-color:rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+  height: 40px;
 }
 
 .link-film-card {
   position: relative;
   width:  20px;
   height: 20px;
-  border-bottom: 4px solid #fff;
-  border-right: 4px solid #fff;
+  border-bottom: 4px solid #000000;
+  border-right: 4px solid #000000;
   transform: rotate(-45deg);
   animation: arrow-load 3s ease infinite;
 }
 
-.link-film-card:nth-child(1){
+.link-film-card:nth-child(1) {
   left: 30px;
   animation-delay: -0.4s;
 }
 
-.link-film-card:nth-child(2){
+.link-film-card:nth-child(2) {
   animation-delay: -0.2s;
 }
 
-.link-film-card:nth-child(3){
+.link-film-card:nth-child(3) {
   right: 30px;
 }
 

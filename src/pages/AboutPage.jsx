@@ -4,8 +4,8 @@ import "./AboutPage.css"
 export const AboutPage = () => {
   return (
     <div className="first-about-container">
+      <h1>About</h1>
       <div className="about-container">
-        <h1>About</h1>
         <p>Welcome to this weeks Film Project!</p>
         <p>This project is dedicated to provide information about various movies fetched from The Movie Database (TMDb).</p>
         <p>Features of this project include:</p>

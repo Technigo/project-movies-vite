@@ -1,28 +1,37 @@
-.first-about-container{
+.first-about-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items:baseline;
+  align-items:center;
   height: 100vh;
   background-color: #f4f4f4;
 }
 
 .about-container {
   background-color: #fff;
-  padding: 20px;
+  padding: 15px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 80px 30px;
+  margin: 80px 20px;
+  
 }
 
-.about-container h1 {
+.first-about-container h1 {
   font-size: 2em;
-  margin: 0;
-  margin-bottom: 20px;
+  margin: 20px;
+  padding-top: 20px;
 }
 
 .about-container p {
   font-size: 1.1em;
-  margin-bottom: 15px;
+}
+
+.about-container p:first-child {
+  margin-top: 0px;
+}
+
+.about-container p:last-child {
+  margin-bottom: 0px;
 }
 
 .about-container ul {
@@ -34,6 +43,13 @@
 }
 
 /* SCREENS MAX 744px  ----------------------------------------------------------------------*/
+@media (max-width: 744px) {
+  .about-container h1 {
+    text-align: center;
+  }
+}
+
+/* SCREENS MIN 744px  ----------------------------------------------------------------------*/
 @media (max-width: 744px) {
   .about-container h1 {
     text-align: center;

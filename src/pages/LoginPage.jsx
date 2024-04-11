@@ -1,15 +1,15 @@
-import './LoginPage.css';
-import { useState, useEffect } from 'react';
+import './LoginPage.css'
+import { useState, useEffect } from 'react'
 
 export const LoginPage = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
   
   const handleLogin = () => {
     // Add your login logic here
-    console.log('Username:', username);
-    console.log('Password:', password);
-  };
+    console.log('Username:', username)
+    console.log('Password:', password)
+  }
 
   return (
     <div className="login-page">
@@ -20,15 +20,16 @@ export const LoginPage = () => {
           placeholder="Username"
           value={username}
           onChange={e => setUsername(e.target.value)}
-        />
+          />
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={e => setPassword(e.target.value)}
-        />
+          />
         <button onClick={handleLogin}>Login</button>
+          <p>🚧 No login functionality 🚧</p>
       </div>
     </div>
-  );
-};
+  )
+}
