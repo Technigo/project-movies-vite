@@ -1,0 +1,36 @@
+.movie-section {
+  margin: 0 auto;
+}
+
+.each-movie {
+  list-style-type: none;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.each-movie:visited,
+.each-movie:focus,
+.each-movie:active {
+  color: var(--text-color);
+}
+
+.each-movie {
+  position: relative;
+}
+
+.movie-list {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media screen and (max-width: 768px) {
+  .movie-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 425px) {
+  .movie-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
