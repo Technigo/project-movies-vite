@@ -1,0 +1,14 @@
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+}
+
+.animation {
+  width: 320px;
+}
+
+.text {
+  font-size: 16px;
+}

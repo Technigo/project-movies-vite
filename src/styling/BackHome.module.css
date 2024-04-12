@@ -1,0 +1,17 @@
+.back {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: gap 0.3s ease-out;
+  text-decoration: none;
+  color: #f4bebe;
+  font-weight: 500;
+}
+
+.back:hover {
+  gap: 15px;
+}
+
+.backIcon {
+  width: 50px;
+}

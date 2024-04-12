@@ -1,37 +1,23 @@
-<h1 align="center">
-  <a href="">
-    <img src="/src/assets/movies.svg" alt="Project Banner Image">
-  </a>
-</h1>
+<img src="/src/assets/finished-version.png" alt="Project thumbnail">
 
 # Movie Site Project
 
-Replace this readme with your own information about your project.
+This project is built around React Router and get utlise the useParams hook, Link and NavLink components. The website has 3 pages:
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+- Homepage: including movie list and each movie links to movie detail page;
+- Not Found Page;
+- Movie Detail Page
 
-## Getting Started with the Project
+Moreover I used query parameters to display clearly which list category and page the movie list is about. And then use the useSearchParams in other components.
 
-### Dependency Installation & Startup Development Server
+# The Problem
 
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
+- API call: Access Token is used in the header section instead of the query params to make API call more secure.
+- Nested Routes: By implementing nested routes and using outlet component to insert route, it makes the route relationship clearer.
+- Query Params and params: This project uses both query params and params for components/pages detecting URL changes and using the params in the component building.
+- NavLink, Link and useNavigate: This takes some time to differentiate in terms of when to use and what properties they have. NavLink is used in the category bar and pagination where the active class is needed for styling. Whereas Link is used in normal situation. Lastly, useNavigate hook is implemented on some onClick functions or divs.
+- Lazy Loading: LoadImage component does all the lazy loading for images. It observes the part of the viewport the user is on and render the images accordingly. It saves the loading work under the hood and enhances the performance.
 
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
+# View it live
 
-```bash
-npm i && code . && npm run dev
-```
-
-### The Problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
-
-### View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0de75402-1a29-48c8-988d-93e98f843d46/deploy-status)](https://app.netlify.com/sites/popcorn-movie-hub/deploys)
