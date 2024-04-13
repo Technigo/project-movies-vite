@@ -7,6 +7,7 @@
   position: absolute;
   flex-direction: column;
   justify-content: flex-end;
+  margin: 0;
 }
 
 .inner-shadow {
@@ -18,13 +19,11 @@
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
 }
 
-
-.posterImage{
+.poster-image{
   width: 200px;
   height: auto;
   border: 5px solid #fff;
 }
-
 
 @media (min-width:667px) and (max-width:1024px){
   .background{
@@ -33,10 +32,9 @@
     width: 100%;
   }
 
-  .posterImage{
+  .poster-image{
     width: 250px;
   }
-
 }
 
 @media (min-width:1025px){
@@ -45,8 +43,7 @@
     background-size: cover;
   }
 
-  .posterImage{
+  .poster-image{
     width: 352px;
   }
-  
 }

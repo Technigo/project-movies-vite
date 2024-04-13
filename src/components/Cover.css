@@ -1,11 +1,11 @@
-.coverContainer{
+.cover-container {
   width: 100%;
   margin: 0;
   display: flex;
   flex-wrap: wrap;
 }
 
-.movie:hover .movieInfo{
+.movie:hover .movie-info{
   opacity: 0.8;
 }
 
@@ -22,7 +22,7 @@ a img {
   display: flex;
 }
 
-a:hover .movieInfo {
+a:hover .movie-info {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -36,7 +36,7 @@ a:hover .movieInfo {
   object-fit: cover;
 }
 
-.movieInfo{
+.movie-info{
   position: absolute;
   top: 0;
   right: 0;

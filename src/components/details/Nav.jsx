@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom'
-import "./Nav.css"
+import './Nav.css'
 
-export const Nav=()=> {
+export const Nav = () => {
   return (
-    <Link to="/">
-      <h3 className='backHome'> ◄  Movie </h3>
-
+    <Link to = "/">
+      <h3 className = "back-home"> ◄  Movie </h3>
     </Link>
   )
 }

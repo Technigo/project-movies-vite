@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import "./Cover.css"
-import { Link} from "react-router-dom";
+import './Cover.css';
+import { Link} from 'react-router-dom';
 
 export const Cover = () => {
   const apiEnv = import.meta.env.VITE_OPENDB_KEY;
@@ -27,20 +27,15 @@ export const Cover = () => {
   }, [movieUrl]);
 
   return (
-    <div className='coverContainer'>
-
-
+    <div className = "cover-container">
       {movies.map((movie, index)=>(
         <Link key={movieIds[index]} to={`/movies/${movieIds[index]}`}>
           <img src={`https://image.tmdb.org/t/p/w1280${movie.poster_path}`} alt="poster" className='cover' />
-          <div className='movieInfo'>
-            <h1 className='movieTitle'>{movie.title}</h1>
-            <p className='movieDate'>Released {movie.release_date}</p>
+          <div className = "movie-info">
+            <h1 className = "movie-title">{movie.title}</h1>
+            <p className = "movie-date">Released {movie.release_date}</p>
           </div>
         </Link>
-
-
-
       ))}
     </div>
   );

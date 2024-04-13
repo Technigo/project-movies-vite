@@ -1,4 +1,4 @@
-.backHome{
+.back-home{
   position: absolute;
   display: inline-flex;
   color: #fff;
@@ -6,7 +6,8 @@
   font-weight: 700;
   text-decoration: none;
   left: 50px;
-  top: 10px;
+  top: 20px;
   filter: drop-shadow(2px 3px 4px rgb(0 0 0 / .5));
   min-width: 80px;
+  margin: 0;
 }

@@ -26,10 +26,10 @@ export const ShowMovie=()=> {
   }, [movieDetailUrl, params.id]);
 
   return (
-    <div className='detailPageContainer'>
+    <div className = "detailpage-container">
       <Background movieDetail={movieDetail} />
       <Nav />
-      <div className='summary'>
+      <div className = "summary">
         <FrontImage movieDetail={movieDetail} />
         <Description movieDetail={movieDetail} />
       </div>

@@ -2,12 +2,12 @@ import './Description.css'
 
 export const Description = ({movieDetail}) => {
   return (
-    <div className='descriptionContainer'>
-      <h1 className='titleContainer'>
-        <span className='detailTitle'>{movieDetail?.title}</span>
-        <span className='rate'>⭐{movieDetail?.vote_average.toFixed(1)}</span>
+    <div className = "description-container">
+      <h1 className = "title-container">
+        <span className = "detail-title">{movieDetail?.title}</span>
+        <span className = "rate">⭐{movieDetail?.vote_average.toFixed(1)}</span>
       </h1>
-      <p className='detailOverview'>{movieDetail?.overview}</p>
+      <p className = "detail-overview">{movieDetail?.overview}</p>
     </div>
   )
 }

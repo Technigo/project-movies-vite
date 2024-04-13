@@ -1,9 +1,9 @@
-.descriptionContainer{
+.description-container{
   display: flex;
   flex-direction: column;
 }
 
-.titleContainer{
+.title-container{
   flex-wrap: wrap;
   font-size: 1.5em;
   font-weight: bold;
@@ -22,7 +22,7 @@
   margin-left: 10px;
 }
 
-.detailOverview{
+.detail-overview{
   display: block;
   margin-block-start: 1em;
   margin-block-end: 1em;
@@ -30,14 +30,14 @@
 }
 
 @media (min-width:667px) and (max-width:1024px){
-  .descriptionContainer{
+  .description-container{
     position: relative;
     bottom: -160px;
   }
 }
 
 @media (min-width:1025px){
-  .descriptionContainer{
+  .description-container{
     position: relative;
     bottom: -320px;
   }
