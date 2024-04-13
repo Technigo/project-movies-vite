@@ -1,4 +1,3 @@
-import '../styling/FirstPage.css'
 import { useState, useEffect } from 'react'
 import { PopularList } from './PopularList.jsx'
 import { Loader } from './Loader'

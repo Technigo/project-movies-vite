@@ -8,11 +8,6 @@ export const DetailList = ({ detailData }) => {
 			{/* {detailData &&
 				detailData.results.map((detail) => ( */}
 			<div className="detail-wrapper">
-				<Link to={'/'}>
-					<div className="back-btn">
-						<button>Placeholder back icon</button>
-					</div>
-				</Link>
 				<div
 					className="detail-background"
 					style={{
@@ -22,6 +17,13 @@ export const DetailList = ({ detailData }) => {
 						minWidth: '100VW',
 					}}>
 					<div className="details-card">
+						<Link to={'/'}>
+							<div>
+								<button className="back-btn">
+									<p>Return to movies</p>
+								</button>
+							</div>
+						</Link>
 						<img
 							className="poster-image"
 							src={`https://image.tmdb.org/t/p/w342${detailData.poster_path}`}

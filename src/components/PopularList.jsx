@@ -6,12 +6,11 @@ export const PopularList = ({ movieData }) => {
 	console.log('moviedata popularLIst', movieData)
 
 	return (
-		<>
+			<div className="movie-wrapper">
+				<div className="movie-list">
 			{movieData &&
 				movieData.results.map((movie) => (
 					<Link key={movie.id} to={`/details/${movie.id}`}>
-						<div className="movie-wrapper">
-							<div className="movie-list">
 								<div className="movie-card" key={movie.id}>
 									<div className="hover-text">
 										<h1 className="title">{movie.title}</h1>
@@ -27,11 +26,10 @@ export const PopularList = ({ movieData }) => {
 										/>
 									</div>
 								</div>
-							</div>
-						</div>
 					</Link>
-				))}
-		</>
+					))}
+					</div>
+				</div>
 	)
 }
 
