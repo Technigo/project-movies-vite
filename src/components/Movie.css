@@ -1,0 +1,13 @@
+.return-button {
+    text-decoration: none;
+    background: goldenrod;
+    color: whitesmoke;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.background {
+    background-size: cover;
+    background-repeat: no-repeat;
+}

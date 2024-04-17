@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { useParams, useNavigate } from "react-router-dom"
+import "./Movie.css"
 
 export const Movie = () => {
   const [movie, setMovie] = useState([])
@@ -20,6 +21,7 @@ export const Movie = () => {
 
   return (
     <div
+      className="background"
       style={{
         backgroundImage: `url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path})`
       }}

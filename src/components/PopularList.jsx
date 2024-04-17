@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+import "./PopularList.css"
 
 export const PopularList = () => {
   const [data, setData] = useState([])
