@@ -25,22 +25,22 @@ export const Movie = () => {
         backgroundImage: `url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path})`
       }}
     >
-      <div className="movie-container">
-        <div>
-          <button className="return-button" onClick={returnButton}>
-          ⪡ Movies
-          </button>
-        </div>
-        <div className="movie-info">
-          <h2>{movie.title}</h2>
-          <h3>⭐️{Math.round(movie.vote_average * 10) / 10}</h3>
-          <p>{movie.overview}</p>
-        </div>
+      <div>
+        <button className="return-button" onClick={returnButton}>
+        ⪡ Movies
+        </button>
+      </div>
+      <div className="movie-container">  
         <img
           className="poster-image"
           src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
           alt={`${movie.title} Poster`}
         />
+        <div className="movie-info">
+          <h2>{movie.title}</h2>
+          <h3>⭐️{Math.round(movie.vote_average * 10) / 10}</h3>
+          <p>{movie.overview}</p>
+        </div>
       </div>
     </div>
   )
