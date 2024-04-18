@@ -1,0 +1,66 @@
+body {
+    color: whitesmoke;
+}
+
+.return-button {
+    background: transparent;
+    border: none;
+    color: whitesmoke;
+    font-size: 25px;
+    font-weight: bold;
+    display: absolute;
+    align-items: center;
+    position: absolute;
+    left: 2%;
+    top: 4%;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.return-button:hover {
+    box-shadow: inset 120px 0 0 0 lightcoral;
+}
+
+.background {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+    min-height: 100vh;
+}
+
+.movie-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+    max-width: 100%;
+}
+
+.movie-info {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.poster-image {
+    border: 5px solid whitesmoke;
+    margin: 10px;
+    width: 200px;
+    margin-top: 50px;
+}
+
+@media (min-width:667px) {
+    .poster-image {
+        width: 300px;
+    }
+
+    .movie-container {
+        flex-direction: row;
+    }
+
+    .movie-info {
+        margin-top: 50px;
+    }
+}
