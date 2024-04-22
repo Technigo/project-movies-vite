@@ -36,6 +36,7 @@ export const App = () => {
           }
         />
         <Route path="/movie/:id" element={<MovieCard />} />
+        <Route path="/notfound" element={<PageNotFound />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

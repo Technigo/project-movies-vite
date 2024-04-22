@@ -1,7 +1,6 @@
 import "./PageNotFound.css";
 
 export const PageNotFound = () => {
-  window.location.href = "*";
   return (
     <div className="page-not-found">
       <div className="text-box">
