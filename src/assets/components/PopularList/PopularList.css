@@ -1,0 +1,94 @@
+.popular-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.film-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  width: 100%;
+}
+
+.film-card:hover::after {
+  z-index: 2;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.title, .movie-release-date {
+  color: white;
+  margin: 0;
+  justify-content: left;
+  font-size: 35px;
+  text-align: left;
+  padding-left: 10px;
+  display: none;
+  margin: 0;
+}
+
+.film-card p {
+  display: none;
+  justify-content: center;
+  text-align: center;
+}
+
+.film-img {
+  height: 100%;
+  width: 100%;
+
+}
+
+.film-card:hover .title {
+  display: block;
+  color: white;
+}
+
+.film-card:hover .overview {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  color: white;
+}
+
+.film-card-text-wrap {
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+  position: absolute;
+  padding: 10px;
+}
+
+.title,
+.movie-release-date {
+  color: white;
+  margin: 0;
+  font-size: 20px; /* Adjust font size as needed */
+  text-align: left;
+  align-self: self-start;
+  padding-left: 10px;
+  display: none;
+}
+
+.film-card:hover .title,
+.film-card:hover .movie-release-date {
+  display: block;
+}
+
+.title {
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+
+.movie-release-date {
+  font-size: 15px;
+  margin-bottom: 15px;
+}
