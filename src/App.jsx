@@ -30,7 +30,7 @@ const App = () => {
   return (
     <Router>
       <Routes> 
-        <Route exact path="/" element={<PopularList movies={movies} />} />
+        <Route path="/" element={<PopularList movies={movies} />} />
         <Route path="/movies/:id" element={<MovieDetail />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
