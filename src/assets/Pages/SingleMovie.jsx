@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import "./Singlemovie.css";
+import "../Pages/SingleMovie.css";
 import { BackIcon } from "../components/Icon/BackIcon";
 import { Link } from 'react-router-dom';
 
