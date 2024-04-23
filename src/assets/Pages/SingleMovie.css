@@ -69,17 +69,16 @@
 .movie-info img {
   border: 5px solid #fff;
   margin-right: 20px;
-  width: 600px;
+  width: 500px;
   border: 5px solid white;
-  margin-bottom: 70px;
+
 
 }
 
 .movie-info-text {
   flex: 1;
   max-width: 1280px;
-  margin-left: 30px;
-  margin-bottom: 70px;
+
 }
 
 .movie-info-heading {
