@@ -149,6 +149,7 @@
     align-items: left;
     z-index: 1;
     position: absolute;
+    width: 96%;
     left: 4em;
     top: 18em;
     z-index: 2;
