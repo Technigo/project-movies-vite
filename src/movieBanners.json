@@ -1,0 +1,80 @@
+{
+    "movieBanners": [
+        {
+            "id": 693134,
+            "title": "Dune: Part Two",
+            "image": "/dune-banner.png",
+            "description": "Follow the mythic journey of Paul Atreides as he unites with Chani and the Fremen while on a path of revenge against the conspirators who destroyed his family. Facing a choice between the love of his life and the fate of the known universe, Paul endeavors to prevent a terrible future only he can foresee.",
+            "genres": [
+              {
+                  "id": 878,
+                  "name": "Science Fiction"
+              },
+              {
+                  "id": 12,
+                  "name": "Adventure"
+              }
+          ]
+          },
+          {
+            "id": 823464,
+            "title": "Godzilla x Kong: The New Empire",
+            "image": "/godzilla-kong.png",
+            "description": "Following their explosive showdown, Godzilla and Kong must reunite against a colossal undiscovered threat hidden within our world, challenging their very existence – and our own.",
+            "genres": [
+              {
+                  "id": 28,
+                  "name": "Action"
+              },
+              {
+                  "id": 878,
+                  "name": "Science Fiction"
+              },
+              {
+                  "id": 12,
+                  "name": "Adventure"
+              }
+          ]
+          },
+          {
+            "id": 763215,
+            "title": "Damsel",
+            "image": "/damsel.png",
+            "description": "A young woman's marriage to a charming prince turns into a fierce fight for survival when she's offered up as a sacrifice to a fire-breathing dragon.",
+            "genres": [
+              {
+                  "id": 14,
+                  "name": "Fantasy"
+              },
+              {
+                  "id": 28,
+                  "name": "Action"
+              },
+              {
+                  "id": 12,
+                  "name": "Adventure"
+              }
+          ]
+          },
+          {
+            "id": 1096197,
+            "title": "No Way Up",
+            "image": "/no-way-up.png",
+            "description": "Characters from different backgrounds are thrown together when the plane they're travelling on crashes into the Pacific Ocean. A nightmare fight for survival ensues with the air supply running out and dangers creeping in from all sides.",
+            "genres": [
+              {
+                  "id": 28,
+                  "name": "Action"
+              },
+              {
+                  "id": 27,
+                  "name": "Horror"
+              },
+              {
+                  "id": 53,
+                  "name": "Thriller"
+              }
+            ]      
+          }
+    ]
+}
