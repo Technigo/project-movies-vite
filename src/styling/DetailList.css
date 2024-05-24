@@ -1,41 +1,23 @@
 .detail-background {
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	/* align-items: center; */
-	min-height: 100vw;
 	margin: 0;
+	background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .details-card {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: flex-start;
   margin: 0 20px 50px 20px;
-}
+	}
 
-.back-btn{
-	margin-top: 10px;
+.back-btn {
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: pink;
-	width: 170px;
-	height: 30px;
-	border-radius: 10%;
+	align-self: flex-start;
 }
-
-.back-btn:hover{
-	background-color: rgb(252, 169, 183);
-}
-
-.back-btn p {
-	font-size: 18px;
-	font-weight: 700;
-	color: rgb(110, 72, 3);
-}
-
 
 .details-card h1 {
 	font-size: 20px;
@@ -47,15 +29,21 @@
 	border: 5px solid pink;
   height: 350px;
   margin: 10%;
-	
 }
 
 .poster-text {
 	margin-bottom: 5px;
   margin-left: 10%;
   margin-right: 15%;
-	color: #ffffff;
+	color: white;
 	font-size: 16px;
+	font-weight: 600;
+}
+
+.poster-text:hover {
+	background-color: pink;
+	opacity: 0.4;
+	color: black;
 }
 
 /*Media queries*/
@@ -64,63 +52,10 @@
 	.poster-image {
 		height: 500px;
 	}
-	/* .poster-image {
-		width: 250px;
-		margin-bottom: 0;
-	}
 
-	.poster-text {
-		margin-bottom: 50px;
-		color: #ffffff;
-		margin-left: 20px;
-	}
-
-	.back-btn{
-	margin-top: 10px;
-
-	background-color: pink;
-	width: 170px;
-	height: 30px;
-	border-radius: 10%;
-}
-
-.details-card {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
-  margin: 0 20px 50px 20px;
-} */
-}
 
 @media (min-width: 1025px) {
 	.poster-image {
 		height: 600px;
 	}
-	/* .poster-image {
-		display: flex;
-		justify-content: space-between;
-		max-height: 523px;
-		width: auto;
-	}
-
-	.details-card {
-	display: flex;
-	flex-direction: row;
-	align-items: flex-start;
-	padding: 0;
-  
-}
-.poster-text {
-	display: flex;
-	justify-content: space-evenly;
-	align-items: flex-end;
-	color: #ffffff;
-	font-size: 16px;
-	padding: none;
-}
-
-.poster-text h1{
-	justify-content: space-around;
-} */
-
 }

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import '../styling/DetailList.css'
+import { BackImage } from './BackImage'
 
 export const DetailList = ({ detailData }) => {
 	console.log('check data in DetailList', detailData)
@@ -18,11 +19,7 @@ export const DetailList = ({ detailData }) => {
 					}}>
 					<div className="details-card">
 						<Link to={'/'}>
-							<div>
-								<button className="back-btn">
-									<p>Return to movies</p>
-								</button>
-							</div>
+							<BackImage className="back-btn" />
 						</Link>
 						<img
 							className="poster-image"
