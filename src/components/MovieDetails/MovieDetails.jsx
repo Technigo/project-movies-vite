@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { fetchMovieDetails } from "../../api";
 import styles from "./MovieDetails.module.css";
 
@@ -48,9 +48,13 @@ export const MovieDetails = () => {
 
   return (
     <div className={styles.movieDetails}>
-      {/* 映画の詳細コンテンツ */}
+      <div className={styles.backButton}>
+        <Link to="/" className={styles.backLink}>
+          {" "}
+          Back{" "}
+        </Link>
+      </div>
       <div className={styles.detailsContainer}>
-        {/* ポスター画像 */}
         <img
           className={styles.poster}
           src={`https://image.tmdb.org/t/p/${imageSize}${movie.poster_path}`}
