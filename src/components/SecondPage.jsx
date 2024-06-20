@@ -1,9 +1,9 @@
-import '../styling/SecondPage.css'
-import { useState, useEffect } from 'react'
-import { Loader } from './Loader'
-import {NotFound} from './NotFound'
-import {Link, useParams} from 'react-router-dom'
-import { DetailList } from './DetailList'
+import "../styling/SecondPage.css"
+import { useState, useEffect } from "react"
+import { Loader } from "./Loader"
+import { NotFound } from "./NotFound"
+import { Link, useParams } from "react-router-dom"
+import { DetailList } from "./DetailList"
 
 export const Details = () => {
 	const [detailData, setDetailData] = useState(null)
@@ -11,10 +11,9 @@ export const Details = () => {
 
 	const params = useParams()
 	const movieId = params.slug
-	const API_KEY = '23ace2b0c27910f5cec13f5bdb014044'
+	const API_KEY = "23ace2b0c27910f5cec13f5bdb014044"
 
-	const listUrl =
-	`https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=en-US`
+	const listUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=en-US`
 
 	useEffect(() => {
 		fetch(listUrl)
@@ -35,7 +34,7 @@ export const Details = () => {
 	if (detailData.success === false) {
 		return <NotFound />
 	}
-	console.log('detailtdata secondpage', detailData)
+	console.log("detailtdata secondpage", detailData)
 	return (
 		<>
 			{isLoading && <Loader />}

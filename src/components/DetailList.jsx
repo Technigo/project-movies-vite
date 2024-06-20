@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom'
-import '../styling/DetailList.css'
-import { BackImage } from './BackImage'
+import { Link } from "react-router-dom"
+import "../styling/DetailList.css"
+import { BackImage } from "./BackImage"
 
 export const DetailList = ({ detailData }) => {
-	console.log('check data in DetailList', detailData)
+	console.log("check data in DetailList", detailData)
 	return (
 		<>
 			{/* {detailData &&
@@ -13,12 +13,12 @@ export const DetailList = ({ detailData }) => {
 					className="detail-background"
 					style={{
 						backgroundImage: `url(https://media.themoviedb.org/t/p/w780${detailData.backdrop_path})`,
-						backgroundRepeat: 'no-repeat',
-						backgroundSize: 'cover',
-						minWidth: '100VW',
+						backgroundRepeat: "no-repeat",
+						backgroundSize: "cover",
+						minWidth: "100VW",
 					}}>
 					<div className="details-card">
-						<Link to={'/'}>
+						<Link to={"/"}>
 							<BackImage className="back-btn" />
 						</Link>
 						<img
