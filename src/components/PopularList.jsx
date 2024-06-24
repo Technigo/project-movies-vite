@@ -3,7 +3,6 @@ import { Link } from "react-router-dom"
 
 //functional component
 export const PopularList = ({ movieData }) => {
-
 	return (
 		<div className="movie-wrapper">
 			<div className="movie-list">
