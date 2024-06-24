@@ -1,4 +1,3 @@
-/* global process */
 import { useState, useEffect } from "react";
 import { Oval } from "react-loader-spinner";
 import { MovieListCard } from "../components/MovieListCard/MovieListCard"; // Import the MovieListCard component
@@ -9,11 +8,13 @@ export const MovieList = () => {
   const [list, setList] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const api_key = "76e3c2b7ced1315dc3c5a14d30d8b12f";
+
   useEffect(() => {
     const fetchMovies = async () => {
       try {
         const response = await fetch(
-          `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_MOVIE_DB_API_KEY}&language=en-US&page=1`
+          `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
