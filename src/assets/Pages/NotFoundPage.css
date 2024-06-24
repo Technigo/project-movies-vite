@@ -1,0 +1,15 @@
+
+.not-found-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: black;
+  color: white;
+}
+
+.not-found-page a {
+  color: white;
+  margin-top: 20px;
+}
