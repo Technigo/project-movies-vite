@@ -1,0 +1,60 @@
+.detail-background {
+	display: flex;
+	margin: 0;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.details-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	margin: 0 20px 50px 20px;
+}
+
+.back-btn {
+	display: flex;
+	align-self: flex-start;
+}
+
+.details-card h1 {
+	font-size: 20px;
+}
+
+.poster-image {
+	display: flex;
+	align-items: center;
+	border: 5px solid pink;
+	height: 350px;
+	margin: 10%;
+}
+
+.poster-text {
+	margin-bottom: 5px;
+	margin-left: 10%;
+	margin-right: 15%;
+	color: white;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.poster-text:hover {
+	background-color: pink;
+	opacity: 0.4;
+	color: black;
+}
+
+/*Media queries*/
+@media (min-width: 668px) {
+	.poster-image {
+		height: 500px;
+	}
+
+	@media (min-width: 1025px) {
+		.poster-image {
+			height: 600px;
+		}
+	}
+}
