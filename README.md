@@ -1,37 +1,24 @@
 <h1 align="center">
   <a href="">
-    <img src="/src/assets/movies.svg" alt="Project Banner Image">
+    <img src="/src/assets/launch-page.png" alt="Project Banner Image">
+  </a>
+  <a href="">
+    <img src="/src/assets/preview.png" alt="Project Banner Image">
   </a>
 </h1>
 
 # Movie Site Project
 
-Replace this readme with your own information about your project.
+A movie website constructed using **React.js** offers users a seamless browsing experience through the implementation of **React Router** for efficient client-side routing. This feature enables effortless navigation across various pages and components of the website. The UI design is inspired by Filmstaden website.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+By leveraging The Movie Database (TMDb) API, the website fetches comprehensive movie data, encompassing essential details such as titles, posters, release dates, and descriptions. This integration ensures that users have access to up-to-date information about their favorite movies.
 
-## Getting Started with the Project
+Users can explore movie details through distinct sections like **On screen**, **Popular**, and **Top rated**. Each section provides curated lists of movies, facilitating quick access to relevant information. By selecting the **Similar Movie** button, users can access a list of recommended movies based on the selected film.
 
-### Dependency Installation & Startup Development Server
+Upon landing on the website, users encounter an engaging interface comprising **a slider** and **a search bar**. These interactive elements enhance user experience by offering dynamic content and facilitating efficient movie searches.
 
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
-
-### The Problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Overall, the website combines the power of React.js, React Router, and TMDb API to deliver a user-friendly platform for discovering and exploring movies.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/40529ee4-6a23-44bb-8cb7-77a33ec51c43/deploy-status)](https://app.netlify.com/sites/yifan-movie-website/deploys)
