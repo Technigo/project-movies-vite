@@ -1,0 +1,40 @@
+.movie-list-card {
+  width: 100%;
+  position: relative;
+}
+
+.movie-list-card img {
+  max-width: 100%;
+}
+
+.movie-list-card:hover img {
+  opacity: 0.3;
+}
+
+/* This pseudo-class targets an element that is currently being activated by the user, often by clicking or tapping. */
+.movie-list-card:active img {
+  opacity: 0.3;
+}
+
+
+.info-container {
+  padding: 1em 0;
+  margin-left: 1em;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap:1em;
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+}
+
+.info-container h1 {
+  font-size: calc(20px + 1vh);
+  line-height: normal;
+}
+
+.info-container p {
+  font-size: calc(16px + 0.1vh);
+  line-height: normal;
+}
