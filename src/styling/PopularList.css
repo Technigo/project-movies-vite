@@ -1,0 +1,66 @@
+.movie-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.hover-text {
+	display: none;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: 20px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	transition: opacity 0.3s ease;
+}
+
+.movie-card:hover .hover-text {
+	display: flex;
+}
+
+.title {
+	color: #ffc0cb;
+}
+
+.release-date {
+	color: #ffc0cb;
+}
+
+.movie-list {
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+.movie-card {
+	position: relative;
+}
+
+.poster {
+	width: 100%;
+}
+
+.movie-image {
+	width: 100%;
+}
+
+@media (min-width: 500px) {
+	.movie-list {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 690px) {
+	.movie-list {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media (min-width: 1025px) {
+	.movie-list {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
