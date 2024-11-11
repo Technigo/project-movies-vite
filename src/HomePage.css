@@ -1,0 +1,64 @@
+.HomePage {
+  display: flex;
+  flex-direction: column;
+}
+
+.HomePage-title {
+  color: white;
+}
+
+.HomePage-movies {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.HomePage-movie {
+  width: 50%;
+  position: relative;
+}
+
+@media (min-width: 500px) {
+  .HomePage-movie {
+    width: 33.3333%;
+  }
+}
+
+@media (min-width: 700px) {
+  .HomePage-movie {
+    width: 25%;
+  }
+}
+
+.HomePage-movie:hover .HomePage-movieInfo {
+  opacity: 1;
+}
+
+.HomePage-moviePoster {
+  width: 100%;
+}
+
+.HomePage-movieInfo {
+  opacity: 0;
+  transition: opacity 0.3s;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  justify-content: flex-end;
+  row-gap: 32px;
+}
+
+.HomePage-movieTitle {
+  font-size: 32px;
+  margin: 0;
+}
+
+.HomePage-movieReleaseDate {
+  font-size: 16px;
+  margin: 0;
+}
