@@ -8,7 +8,7 @@ function Home({ imageBaseUrl }) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('https://api.themoviedb.org/3/movie/popular?api_key=663174ddae0ba161daf7f8e43a1250ce&language=en-US&page=1')
+    fetch('https://api.themoviedb.org/3/movie/popular?api_key=601b98638927e2475c56c65de89c8c9c&language=en-US&page=1')
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
