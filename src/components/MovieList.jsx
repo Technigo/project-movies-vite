@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
 import fallbackPoster from "../assets/images/no-poster-found.jpg";
+import { Typography } from "./ui/Typography";
 
 const MovieList = ({ movies }) => {
   return (
-    <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+    <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
       {movies.map((movie) => {
         return (
           <div
             key={movie.id}
-            className="overflow-hidden rounded bg-white shadow"
+            className="overflow-hidden rounded-lg bg-white shadow"
           >
             <Link to={`/movie/${movie.id}`}>
               <img
@@ -18,10 +19,14 @@ const MovieList = ({ movies }) => {
                     : fallbackPoster
                 }
                 alt=""
+                width="500"
+                height="750"
                 className="h-auto w-full"
               />
               <div className="p-2">
-                <h2 className="text-lg font-bold">{movie.title}</h2>
+                <Typography element="h2" styledAs="h3">
+                  {movie.title}
+                </Typography>
               </div>
             </Link>
           </div>
