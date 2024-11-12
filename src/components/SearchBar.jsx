@@ -1,5 +1,6 @@
-// src/components/SearchBar.jsx
 import { useState, useEffect } from "react";
+import Button from "./ui/Button";
+import FormInput from "./ui/FormInput";
 
 const SearchBar = ({ onSearch, value }) => {
   const [query, setQuery] = useState(value || "");
@@ -17,16 +18,14 @@ const SearchBar = ({ onSearch, value }) => {
 
   return (
     <form onSubmit={handleSubmit} className="flex w-full items-center pr-4">
-      <input
-        type="text"
+      <FormInput
+        type="search"
+        name="search"
+        placeholder="Search movies..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        placeholder="Search movies..."
-        className="form-input w-full rounded-full border border-none pb-4 pl-8 pr-8 pt-4"
       />
-      <button type="submit" className="btn ml-2">
-        Search
-      </button>
+      <Button type="submit">Search</Button>
     </form>
   );
 };

@@ -1,4 +1,3 @@
-// src/hooks/useFetchMovies.js
 import { useState, useEffect } from "react";
 import { fetchMovies, searchMovies } from "../api/tmdb";
 

@@ -1,4 +1,3 @@
-// src/layouts/MainLayout.jsx
 import { Outlet, NavLink, Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import SearchBar from "../components/SearchBar";
@@ -19,7 +18,7 @@ const MainLayout = () => {
 
   return (
     <div className="flex min-h-screen gap-10 bg-gradient-to-r from-green-200 to-green-100 p-10">
-      <aside className="w-80 flex-shrink-0 rounded-lg bg-white p-6">
+      <aside className="h-sidebar-height sticky top-10 w-80 flex-shrink-0 rounded-lg bg-white p-6">
         <div className="flex justify-center p-6">
           <Link to="/">
             <Logo />
@@ -66,7 +65,7 @@ const MainLayout = () => {
       </aside>
 
       <div className="flex flex-1 flex-col">
-        <header className="justify-en flex rounded-full bg-white">
+        <header className="justify-en flex rounded-full bg-white has-[:focus]:shadow">
           <SearchBar onSearch={handleSearch} value={searchQuery} />
         </header>
 

@@ -22,7 +22,11 @@ export default {
       "green-900": "#323C27",
       "green-950": "#272C22",
     },
-    extend: {},
+    extend: {
+      height: {
+        "sidebar-height": "calc(100vh - 5rem)",
+      },
+    },
   },
   plugins: [
     require("@tailwindcss/forms"),
