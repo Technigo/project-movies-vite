@@ -1,0 +1,55 @@
+footer {
+	position: relative;
+	padding: 1rem;
+	width: 100%;
+	bottom: 0;
+	color: var(--font-color);
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.contact > *,
+.contact li {
+	padding: 0 1rem;
+}
+
+.contact span {
+	font-weight: 600;
+	font-size: 1.2rem;
+}
+
+.contact a {
+	display: block;
+	padding: 2px;
+}
+
+.contact span::after {
+	content: "•";
+	display: inline;
+	padding: 0 0.5rem;
+}
+
+.contact a::after {
+	content: " ›";
+	display: inline;
+}
+
+.disclaimer {
+	font-size: x-small;
+	width: 100%;
+	text-align: center;
+}
+
+@media all and (min-width: 668px) {
+	.contact a {
+		display: inline;
+	}
+
+	.contact > *,
+	.contact li {
+		display: inline-block;
+	}
+}
