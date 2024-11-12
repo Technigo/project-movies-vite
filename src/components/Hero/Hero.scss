@@ -1,0 +1,108 @@
+@keyframes blink {
+  0% {
+    border-color: white;
+  }
+  50% {
+    border-color: rgb(10, 10, 61);
+  }
+  100% {
+    border-color: white;
+  }
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 50px #656565;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100vh;
+    background-color: var(--opacity-light);
+    position: absolute;
+  }
+
+  .movieContainer {
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--general-padding);
+    z-index: 1;
+
+    h1.movieTitle {
+      text-align: center;
+      font-size: 2rem;
+      z-index: 1;
+    }
+    .movieBy,
+    .storyBy {
+      font-size: 0.8rem;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .genres {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      a {
+        z-index: 1;
+        font-size: 0.8rem;
+        border-radius: 10px;
+        padding: var(--general-mini-padding);
+        border: 1px solid #bdbdbd;
+        margin: 0.5em;
+        color: #fff;
+        transition: 0.1s ease-in-out;
+        // animation: blink 4s linear infinite;
+        &:hover {
+          font-weight: 600;
+        }
+      }
+    }
+
+    @media (min-width: 570px) {
+      h1.movieTitle {
+        font-size: 4rem;
+      }
+
+      .movieBy,
+      .storyBy {
+        font-size: 1.2rem;
+      }
+
+      .genres {
+        margin-top: 50px;
+        a {
+          margin: 1em;
+          font-size: 1rem;
+        }
+      }
+    }
+    @media (min-width: 870px) {
+      h1.movieTitle {
+        font-size: 5rem;
+      }
+    }
+  }
+  .no-movies {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    z-index: 1;
+    a {
+      border: 1px solid #fff;
+      margin-top: 30px;
+    }
+  }
+}
