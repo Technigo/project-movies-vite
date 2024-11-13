@@ -6,7 +6,7 @@ const SidebarNavLink = ({ slug = "/", onClick, children }) => {
     <NavLink
       to={slug}
       className={({ isActive }) =>
-        `flex w-full rounded px-4 py-3 hover:bg-green-100 ${isActive ? "bg-green-100" : "bg-transparent"}`
+        `flex w-full rounded px-4 py-3 text-green-950 hover:bg-green-100 ${isActive ? "bg-green-100" : "bg-transparent"}`
       }
       onClick={onClick}
     >

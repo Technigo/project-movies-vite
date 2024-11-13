@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
-import HomePage from "./pages/HomePage";
+import MovieListPage from "./pages/MovieListPage";
 import ErrorPage from "./pages/ErrorPage";
 import MovieDetails from "./pages/MovieDetails";
 
@@ -9,9 +9,9 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route index element={<HomePage />} />
-          <Route path="category/:categoryName" element={<HomePage />} />
-          <Route path="movie/:id" element={<MovieDetails />} />
+          <Route index element={<MovieListPage />} />
+          <Route path="movies/:categoryName" element={<MovieListPage />} />
+          <Route path="movie/:idSlug" element={<MovieDetails />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>

@@ -1,8 +1,7 @@
-import { Outlet, NavLink, Link, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import SearchBar from "../components/SearchBar";
-import Logo from "../assets/MovieHut-logo.svg?react";
-import SidebarNavLink from "../components/ui/SidebarNavLink";
+import Sidebar from "../components/Sidebar";
 
 const MainLayout = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -18,31 +17,14 @@ const MainLayout = () => {
   };
 
   return (
-    <div className="flex min-h-screen gap-10 bg-gradient-to-r from-green-200 to-green-100 p-10">
-      <aside className="h-sidebar-height sticky top-10 w-80 flex-shrink-0 rounded-lg bg-white p-6">
-        <div className="flex justify-center p-6">
-          <Link to="/">
-            <Logo />
-            <span className="sr-only">MovieHut</span>
-          </Link>
-        </div>
-        <nav className="mt-4">
-          <ul className="space-y-2">
-            <li>
-              <SidebarNavLink slug="/category/popular" onClick={clearSearch}>Popular movies</SidebarNavLink>
-            </li>
-            <li>
-              <SidebarNavLink slug="/category/upcoming" onClick={clearSearch}>Upcoming movies</SidebarNavLink>
-            </li>
-            <li>
-              <SidebarNavLink slug="/category/now_playing" onClick={clearSearch}>Now playing</SidebarNavLink>
-            </li>
-          </ul>
-        </nav>
-      </aside>
+    <div className="d:mp-6 flex min-h-screen flex-col gap-4 bg-gradient-to-r from-green-200 to-green-100 p-4 lg:flex-row lg:gap-8 2xl:gap-10 2xl:p-10">
+      <Sidebar
+        onClick={clearSearch}
+        className="lg:h-sidebar-height-lg 2xl:h-sidebar-height-2xl top-10 w-full flex-shrink-0 lg:sticky lg:w-80"
+      />
 
       <div className="flex flex-1 flex-col">
-        <header className="justify-en flex rounded-full bg-white has-[:focus]:shadow has-[:focus]:outline-none has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-0 has-[:focus-visible]:outline-green-950 has-[:focus-visible]:outline">
+        <header className="justify-en flex rounded-full bg-white has-[:focus]:shadow has-[:focus]:outline-none has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-0 has-[:focus-visible]:outline-green-950">
           <SearchBar onSearch={handleSearch} value={searchQuery} />
         </header>
 

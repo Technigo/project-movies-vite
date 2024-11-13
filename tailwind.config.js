@@ -19,12 +19,14 @@ export default {
       "green-100": "#E8EBDE",
       "green-200": "#E3E9D1",
       "green-600": "#B6D53A",
+      "green-800": "#595E53",
       "green-900": "#323C27",
       "green-950": "#272C22",
     },
     extend: {
       height: {
-        "sidebar-height": "calc(100vh - 5rem)",
+        "sidebar-height-2xl": "calc(100vh - 5rem)",
+        "sidebar-height-lg": "calc(100vh - 4rem)",
       },
     },
   },

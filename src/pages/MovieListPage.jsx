@@ -4,16 +4,20 @@ import MovieList from "../components/MovieList";
 import { formatCategoryName } from "../utils/formatCategoryName";
 import { Typography } from "../components/ui/Typography";
 
-const HomePage = () => {
+const MovieListPage = () => {
   const { searchQuery } = useOutletContext();
   const { categoryName } = useParams();
 
-  const category = categoryName || "top_rated";
-  const { movies, loading, error } = useFetchMovies(category, searchQuery);
+  // Convert hyphens to underscores for API usage
+  const apiCategory = categoryName
+    ? categoryName.replace(/-/g, "_")
+    : "top_rated";
+  const { movies, loading, error } = useFetchMovies(apiCategory, searchQuery);
 
+  // Format category name for display
   const pageTitle = searchQuery
     ? `Search: "${searchQuery}"`
-    : formatCategoryName(category);
+    : formatCategoryName(apiCategory);
 
   return (
     <div>
@@ -23,7 +27,7 @@ const HomePage = () => {
 
       {loading && <Typography element="h2">Loading movies...</Typography>}
 
-      {error && <div className="text-red-500">{error}</div>}
+      {error && <Typography element="h2">{error}</Typography>}
 
       {!loading && !error && movies.length === 0 && (
         <Typography element="h2">No movies found.</Typography>
@@ -34,4 +38,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default MovieListPage;
