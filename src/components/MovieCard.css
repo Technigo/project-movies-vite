@@ -1,6 +1,4 @@
 .movie-card {
-    height: 20px;
-    width: 100px;
-    background-color: green;
-    ;
+    background-color: grey;
+    min-width: 300px;
 }
