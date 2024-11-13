@@ -37,7 +37,6 @@
 }
 
 /* Hover effects */
-
 .card-container:hover .card-text-container {
     opacity: 1;
     z-index: 1;

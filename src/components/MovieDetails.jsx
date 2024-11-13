@@ -1,4 +1,14 @@
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { BodyText, HeaderTwo } from '../ui/Typography';
+
+const MovieDetailsStyles = styled.div`
+display: flex;
+flex-direction: column;
+background-color: #333333;
+width: 100%;
+padding: 10px;
+`
 
 export const MovieDetails = ({ movie }) => {
   console.log(movie);
@@ -7,11 +17,13 @@ export const MovieDetails = ({ movie }) => {
   const backgroundImage = `https://image.tmdb.org/t/p/w342/${backdrop_path}`;
 
   return (
-    <div>
+    <MovieDetailsStyles>
       <img src={backgroundImage} alt={overview} />
-      <h2>{title}</h2>
-      <p>{overview}</p>
-    </div>
+      <HeaderTwo>{title}</HeaderTwo>
+      <div>
+        <BodyText>{overview}</BodyText>
+      </div>
+    </MovieDetailsStyles>
   );
 };
 

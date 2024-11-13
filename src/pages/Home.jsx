@@ -6,7 +6,7 @@ import { MainContainer } from '../ui/MainContainer';
 import { HeaderOne } from '../ui/Typography';
 
 const HomeStyles = styled.div`
-background-color: black;
+background-color: #333333;
 padding: 10px;
 `
 

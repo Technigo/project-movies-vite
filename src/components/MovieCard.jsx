@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./MovieCard.css";
+import { HeaderTwo } from "../ui/Typography";
 
 export const MovieCard = ({ id, title, release_date, poster_path }) => {
   return (
     <Link to={`/movie/${id}`}>
       <div className="card-container">
         <div className="card-text-container">
-          <h3>{title}</h3>
+          <HeaderTwo>{title}</HeaderTwo>
           <p>{release_date}</p>
         </div>
         <div className="image-container">
