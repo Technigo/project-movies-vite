@@ -10,5 +10,3 @@ export const App = () => {
     </BrowserRouter>
   );
 };
-
-// API KEY : d2c54dff5b4be96d24e487a959629544
