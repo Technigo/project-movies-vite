@@ -34,14 +34,12 @@ const FlexImgDetails = styled.article `
     bottom: 0;
     left: 0;
     padding: 20px;
-    opacity: 0; /* Hide the text */
+    background-color: #000000bf;
+    opacity: 0; /* Hide the text/background */
     transition: opacity 0.3s ease;
-    transition: filter 0.3s ease; 
 
     &:hover {
         opacity: 1; /* Show the icons when hovering over the image */
-        cursor: pointer;
-        filter: brightness(50%); /* Darkens the image when hovered */
         cursor: pointer;
     }
 `;

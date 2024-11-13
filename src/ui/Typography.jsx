@@ -24,7 +24,7 @@ const TitleH2 = styled.h2 `
     font-style: normal;
 
     @media screen and (min-width: 768px) {
-        font-size: 2.4rem;
+        font-size: 2.6rem;
     }
 `;
 
@@ -43,16 +43,16 @@ const TitleH3 = styled.h3 `
 `;
 
 const BodyP = styled.p `
-    font-family: Poppins;
-    font-size: 0.prem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     line-height: normal;
     margin: 0;
     padding: 0;
 
     @media screen and (min-width: 768px) {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 `;
 
