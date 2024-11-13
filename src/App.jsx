@@ -1,3 +1,8 @@
+import React from "react";
+import { PopularMoviesList } from "./components/PopularMoviesList";
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  return (
+    <PopularMoviesList />
+  );
 };
