@@ -1,5 +1,7 @@
 import React from "react"; 
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "./PopularMoviesList.css";
 
 // API key - take this away?
 const API_KEY = "ff5630b14afe9dae44f59f03ba4182dc";
@@ -23,12 +25,17 @@ export const PopularMoviesList = () => {
     }, []);
 
   return (
-    <div>
+    <div className="movie-list-container">
       <ul>
         {popularMovies.map((movie) => (
-          <li key={movie.id}>{movie.title}</li>
+          <li key={movie.id}>
+            <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
+          </li>
         ))}
       </ul>
     </div>
   );
 }; 
+
+// Note to self, why can't I use this line of code instead since it's the homepage
+{/* <Link to="/"</Link> */}
