@@ -1,0 +1,93 @@
+.movie-poster {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.hover-menu {
+  position: absolute;
+  bottom: 0;
+  padding-left: 8%;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.hover-menu:hover {
+  background-color: #00000085;
+  opacity: 1;
+}
+
+.hover-menu-text {
+  width: 100%;
+  margin-top: 110%;
+}
+
+.movie-title {
+  font-size: 1.8rem;
+}
+
+.movie-release-date {
+  font-size: 1.2rem;
+}
+
+.poster-error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.poster-error {
+  margin: 25% auto 100%;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #808080dd;
+  text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .movie-title {
+    font-size: 1.5rem;
+  }
+
+  .movie-release-date {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .movie-title {
+    font-size: 1.3rem;
+  }
+
+  .movie-release-date {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 570px) {
+  .hover-menu-text {
+    margin-top: 90%;
+  }
+  .movie-title {
+    font-size: 1.2rem;
+  }
+
+  .movie-release-date {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 425px) {
+  .hover-menu {
+    padding-left: 4%;
+  }
+
+  .movie-title {
+    font-size: 1.2rem;
+  }
+
+  .movie-release-date {
+    font-size: 0.8rem;
+  }
+}
