@@ -16,6 +16,7 @@ export const PopularMoviesList = () => {
     fetch(MOVIES_URL)
       .then((response) => response.json())
       .then((data) => {
+        // REMOVE CONSOLE LOG LATER
         console.log("Fetched movies data:", data);
         setPopularMovies(data.results);
       })
