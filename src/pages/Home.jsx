@@ -8,7 +8,8 @@ function Home({ imageBaseUrl }) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('https://api.themoviedb.org/3/movie/popular?api_key=601b98638927e2475c56c65de89c8c9c&language=en-US&page=1')
+    const apiKey = import.meta.env.VITE_TMDB_API_KEY;    
+    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`)
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);

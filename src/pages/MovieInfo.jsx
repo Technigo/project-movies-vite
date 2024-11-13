@@ -9,7 +9,8 @@ function MovieInfo({ imageBaseUrl }) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/search/movie?api_key=601b98638927e2475c56c65de89c8c9c&language=en-US&query=${movieTitle.replace(/-/g, ' ')}&page=1`)
+    const apiKey = import.meta.env.VITE_TMDB_API_KEY;
+    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${movieTitle.replace(/-/g, ' ')}&page=1`)
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -19,7 +20,7 @@ function MovieInfo({ imageBaseUrl }) {
       .then(data => {
         if (data.results && data.results.length > 0) {
           const movieId = data.results[0].id;
-          return fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=601b98638927e2475c56c65de89c8c9c&language=en-US`);
+          return fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=en-US`);
         } else {
           throw new Error('Movie not found!');
         }
