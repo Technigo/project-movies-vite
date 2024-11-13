@@ -17,7 +17,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <Typography element="h1" className="mb-4">
+      <Typography element="h1" className="mb-8">
         {pageTitle}
       </Typography>
 
