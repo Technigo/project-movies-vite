@@ -1,0 +1,7 @@
+# netlify.toml - This configuration file for Netlify sets up redirects for a single-page application (SPA).
+# It ensures that all routes are redirected to `index.html`, allowing React Router to handle routing client-side.
+
+[[redirects]]
+  from = "/*"          # Matches all routes
+  to = "/index.html"    # Redirects all requests to index.html for SPA routing
+  status = 200          # Returns a 200 status, indicating a successful response
