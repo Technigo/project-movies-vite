@@ -11,6 +11,7 @@ const StyledMovieList = styled.div`
   width: 100%;
   overflow: hidden;
   box-sizing: border-box;
+  background-color: black;
 
   @media (min-width: 370px) {
     grid-template-columns: repeat(2, 1fr);
