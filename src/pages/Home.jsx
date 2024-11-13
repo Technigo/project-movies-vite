@@ -35,7 +35,6 @@ function Home({ imageBaseUrl }) {
 
   return (
     <div className="home-container">
-      <h1 className="home-heading">Popular Movies</h1>
       <ul className="home-container">
         {movies.map((movie, index) => (
           <li key={index} className="movie-item">
