@@ -1,0 +1,51 @@
+/* MOVIE POSTER GRID */
+
+.home-container {
+  background-color: #15121f;
+  min-height: 100vh;
+}
+
+.movie-boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.movie-box {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.movie-poster {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hover-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.movie-box:hover .hover-info {
+  opacity: 1;
+}
+
+.title {
+  color: white;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.release-date {
+  color: #ccc;
+  margin: 5px 0 0;
+  font-size: 0.875rem;
+}
