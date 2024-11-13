@@ -1,0 +1,87 @@
+.movie-list {
+  display: grid;
+  grid-template-columns: 100%;
+  flex-wrap: wrap;
+  background-color: #000;
+}
+
+.movie-list-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.movie-list-card:hover .movie-list-card-text-box {
+  display: flex;
+}
+
+.movie-list-card-text-box {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #fff;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.75);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 35px 25px;
+}
+.black-background {
+  background-color: #000;
+}
+
+.movie-list-title {
+  background-image: linear-gradient(to right, #eec784, #e2e2df, #eec784);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-align: center;
+  padding: 30px 0;
+  text-transform: uppercase;
+  width: 320px;
+}
+
+.movie-list-card-text-box h1 {
+  font-size: 32px;
+  padding: 15px 0;
+}
+
+.movie-list-card-text-box p {
+  font-size: 18px;
+}
+
+.rating-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rating-box p {
+  font-size: 20px;
+}
+
+.star-icon {
+  font-size: 20px;
+}
+
+/* --------------- //RESPONSIVE DESIGN // --------------- */
+
+@media (min-width: 576px) {
+  .movie-list {
+    grid-template-columns: repeat(2, 50%);
+  }
+}
+
+@media (min-width: 767px) {
+  .movie-list {
+    grid-template-columns: repeat(3, 33.35%);
+  }
+}
+
+@media (min-width: 992px) {
+  .movie-list {
+    grid-template-columns: repeat(4, 25%);
+  }
+}
