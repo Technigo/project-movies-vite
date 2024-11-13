@@ -1,10 +1,14 @@
 import { Home } from "./pages/Home";
-import { BrowserRouter } from "react-router-dom";
+import { MovieInfo } from "./pages/MovieInfo";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export const App = () => {
   return (
     <BrowserRouter>
-      <Home />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movie/:id" element={<MovieInfo />} />
+      </Routes>
     </BrowserRouter>
   )
 };

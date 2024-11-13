@@ -5,7 +5,7 @@ export const fetchMovies = async () => {
     `https://api.themoviedb.org/3/movie/popular?api_key=${apiEnv}&language=en-US&page=1`
   );
   if (!response.ok) {
-    throw new Error('Fehler beim Abrufen der Filme');
+    throw new Error('error');
   }
   return await response.json();
 }
