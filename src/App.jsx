@@ -1,3 +1,10 @@
+import React from "react";
+import MovieFlex from "./component/MovieFlex";
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  return (
+    <>
+      <MovieFlex />
+    </>
+  )
 };
