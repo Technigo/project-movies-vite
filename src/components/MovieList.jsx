@@ -1,8 +1,32 @@
+import PropTypes from "prop-types";
+import styled from "styled-components";
 import { MovieCard } from "./MovieCard";
 
+// Styled component for the movie list container
+const StyledMovieList = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  @media (min-width: 370px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+`;
 export const MovieList = ({ movies }) => {
   return (
-    <div className="movie-list">
+    <StyledMovieList>
       {movies.map(({ id, title, release_date, poster_path }) => (
         <MovieCard
           key={id}
@@ -12,6 +36,18 @@ export const MovieList = ({ movies }) => {
           poster_path={poster_path}
         />
       ))}
-    </div>
+    </StyledMovieList>
   );
+};
+
+// Add prop validation
+MovieList.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      release_date: PropTypes.string.isRequired,
+      poster_path: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
