@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const MovieDetails = ({ movie }) => {
   console.log(movie);
 
@@ -7,8 +9,16 @@ export const MovieDetails = ({ movie }) => {
   return (
     <div>
       <img src={backgroundImage} alt={overview} />
-      <h1>{title}</h1>
+      <h2>{title}</h2>
       <p>{overview}</p>
     </div>
   );
+};
+
+MovieDetails.propTypes = {
+  movie: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    backdrop_path: PropTypes.string.isRequired,
+    overview: PropTypes.string.isRequired,
+  }).isRequired,
 };
