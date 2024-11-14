@@ -26,19 +26,6 @@ export const App = () => {
 
 
 
-
-
-
-
-// https://api.themoviedb.org/3/movie/now_playing?api_key=e8d18651c3b4472854ab7f4e7befa4b1&region=SE   API now playing in Sweden
-// https://api.themoviedb.org/3/movie/now_playing?api_key=e8d18651c3b4472854ab7f4e7befa4b1&region=SE&page=1
-// https://api.themoviedb.org/3/movie/popular?api_key=e8d18651c3b4472854ab7f4e7befa4b1&region=SE API most popular in Sweden
-// https://api.themoviedb.org/3/movie/upcoming?api_key=e8d18651c3b4472854ab7f4e7befa4b1&language=en-SE&region=SE&page=1 Upcoming movies in Sweden
-// https://api.themoviedb.org/3/movie/popular?api_key=e8d18651c3b4472854ab7f4e7befa4b1&language=en-US&page=1
-// https://api.themoviedb.org/3/movie/now_playing?api_key=e8d18651c3b4472854ab7f4e7befa4b1&language=en-SE&page=1&region=SE API now playing in Sweden
-
-
-
 // /src
 //   /components
 //    /Header          //Header folder with navbar for Home, Upcoming Movies,

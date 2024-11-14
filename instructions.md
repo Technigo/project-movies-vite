@@ -50,7 +50,7 @@ That path to the image is incomplete - it needs a full URL.
 
 To get the full URL, we need to decide what size of the image we'd like, and the API has a bunch of options for that. You can find the full list of sizes by loading the API endpoint https://api.themoviedb.org/3/configuration?api_key={api_key} (don't forget to put your API key in place of {api_key}). That response looks something like this:
 
-<!-- e8d18651c3b4472854ab7f4e7befa4b1 -->  https://api.themoviedb.org/3/configuration?api_key=e8d18651c3b4472854ab7f4e7befa4b1
+https://api.themoviedb.org/3/configuration?api_key=
 
 ```json
 {

@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { PageTitle } from "../../ui/Typography";
 
 export const Navbar = () => {
   return (
@@ -7,7 +8,7 @@ export const Navbar = () => {
         {/* Home page link */}
         <li className="app-li">
           <NavLink to="/" end>
-            Home
+            <PageTitle>Home</PageTitle>
           </NavLink>
         </li>
 
@@ -21,7 +22,7 @@ export const Navbar = () => {
         {/* Upcoming movies link */}
         <li className="app-li">
           <NavLink to="/upcoming">
-            Upcoming
+            <PageTitle>Upcoming</PageTitle>
           </NavLink>
         </li>
       </ul>

@@ -16,26 +16,25 @@ export const MovieCard = ({ movie }) => {
 // Styled Components for MovieCard
 const MovieCardWrapper = styled.div`
   position: relative;
-  width: 400px; /* Fixed width */
-  height: 600px; /* Fixed height */
+  width: 100%;
   overflow: hidden;
   border-radius: 8px;
-  background-color: #f8f8f8;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.3s ease;
 
   &:hover {
     background: black ;
-    
+
   }
+
 `;
 
 const MoviePoster = styled.img`
   width: 100%; /* Make sure the image fills the container */
-  height: 100%; /* Make sure the image fills the container */
-  object-fit: cover; /* Ensure the aspect ratio is preserved */
-  transition: transform 0.3s ease; /* Smooth zoom-in effect */
+  height: auto; /* Make sure the image fills the container */
+  object-fit: cover; 
+  transition: transform 0.3s ease; 
 
 `;
 
