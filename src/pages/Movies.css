@@ -1,0 +1,33 @@
+/* Movies.css */
+
+body {
+    background-color: black;
+}
+
+.movie-grid {
+    display: grid;
+}
+
+.movie-grid {
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 480px) {
+    .movie-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .movie-grid {
+        grid-template-columns: repeat(4, 1fr);
+        /* 4 columns */
+    }
+}
+
+@media (min-width: 1024px) {
+    .movie-grid {
+        grid-template-columns: repeat(4, 1fr);
+        /* 4 columns */
+    }
+}
