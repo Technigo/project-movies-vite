@@ -24,9 +24,11 @@ export const MovieDetails = () => {
   if (!movieInfo) return <div>Loading...</div>;
 
   return (
-    <div>
+    <div className="movie-details-container">
       <h1>{movieInfo.title}</h1>
-      <p>Rating: {movieInfo.vote_average.toFixed(1)}</p>
+      <p>IMDb: {movieInfo.vote_average.toFixed(1)}</p>
+      <p>Release: {movieInfo.release_date}</p>
+      <p>Genres: {movieInfo.genres?.map(genre => genre.name).join(', ')}</p>
       <p>{movieInfo.overview}</p>
     </div>
   );
