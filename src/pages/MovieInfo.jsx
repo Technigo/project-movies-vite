@@ -52,17 +52,18 @@ function MovieInfo({ imageBaseUrl }) {
   const backdropUrl = `${imageBaseUrl}w1280${movie.backdrop_path}`;
 
   return (
-    <div className="movie-info-container">
-      <div className="movie-poster">
-        <img src={posterUrl} alt={`${movie.title} poster`} />
-      </div>
-      <div className="movie-details">
-        <h2>{movie.title}</h2>
-        <img className="movie-backdrop" src={backdropUrl} alt={`${movie.title} backdrop`} />
-        <p><strong>Release Date:</strong> {movie.release_date}</p>
-        <p><strong>Overview:</strong> {movie.overview}</p>
-        <p><strong>Runtime:</strong> {movie.runtime} minutes</p>
-        <p><strong>Rating:</strong> {movie.vote_average}/10</p>
+    <div className="movie-info-page" style={{ backgroundImage: `url(${backdropUrl})` }}>
+      <div className="movie-info-container">
+        <div className="movie-poster">
+          <img className="detail-poster" src={posterUrl} alt={`${movie.title} poster`} />
+        </div>
+        <div className="movie-details">
+          <h2>{movie.title}</h2>
+          <p><strong>Release Date:</strong> {movie.release_date}</p>
+          <p><strong>Overview:</strong> {movie.overview}</p>
+          <p><strong>Runtime:</strong> {movie.runtime} minutes</p>
+          <p><strong>Rating:</strong> {movie.vote_average}/10</p>
+        </div>
       </div>
     </div>
   );

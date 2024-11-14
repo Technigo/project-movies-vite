@@ -12,9 +12,3 @@ code {
     monospace;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  background-color: #000; /* Set to black or any desired background color */
-  overflow-x: hidden; /* Prevent horizontal scroll */
-}

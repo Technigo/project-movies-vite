@@ -1,29 +1,64 @@
-.movie-info-container {
+/* Full-page backdrop styling */
+.movie-info-page {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  align-items: center;
   justify-content: center;
-  margin: 20px;
+  padding: 20px;
+  color: white;
 }
 
-.movie-poster img {
+/* Dark overlay to improve text readability */
+.movie-info-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  z-index: -1;
 }
 
-.movie-details {
-  max-width: 800px;
-  margin-top: 20px;
+/* Main container for movie info */
+.movie-info-container {
+  position: fixed; /* Fixed position to stay at the lower-left corner */
+  bottom: 20px; /* Distance from the bottom of the viewport */
+  left: 20px; /* Distance from the left of the viewport */
+  background-color: rgba(0, 0, 0, 0.8); /* Darken background for readability */
+  padding: 15px; /* Reduced padding */
+  border-radius: 8px; /* Slightly smaller border radius */
+  max-width: 600px; /* Reduced max width */
+  max-height: 80vh; /* Limit height to 80% of viewport */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
   text-align: left;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Lighter shadow */
+  color: white;
 }
 
-.movie-backdrop {
-  width: 100%;
-  margin: 20px 0;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* Adjust text size to fit within smaller container */
+.movie-details h2 {
+  font-size: 1.5em; /* Slightly smaller font size */
+  margin-top: 0;
 }
 
+.movie-details p {
+  font-size: 1em; /* Reduced font size for paragraphs */
+  line-height: 1.4; /* Slightly tighter line height */
+}
+
+/* Specific styling for the movie poster on the detail page */
+.detail-poster {
+  border: 5px solid #fff;
+  width: 200px;
+}
+
+
+/* Movie details styling */
 .movie-details h2 {
   margin-top: 0;
   font-size: 2em;
