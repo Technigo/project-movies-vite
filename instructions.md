@@ -50,6 +50,8 @@ That path to the image is incomplete - it needs a full URL.
 
 To get the full URL, we need to decide what size of the image we'd like, and the API has a bunch of options for that. You can find the full list of sizes by loading the API endpoint https://api.themoviedb.org/3/configuration?api_key={api_key} (don't forget to put your API key in place of {api_key}). That response looks something like this:
 
+<!-- e8d18651c3b4472854ab7f4e7befa4b1 -->  https://api.themoviedb.org/3/configuration?api_key=e8d18651c3b4472854ab7f4e7befa4b1
+
 ```json
 {
   "images": {
@@ -72,7 +74,7 @@ For example, if we get this in a movie response
 
 and we want the backdrop at 1280px, we could build up a URL like this:
 
-`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`
+`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}` `https://image.tmdb.org/t/p/w1280${movie.poster_path}`
 
 The resulting URL would be https://image.tmdb.org/t/p/w1280/5myQbDzw3l8K9yofUXRJ4UTVgam.jpg
 
@@ -93,6 +95,7 @@ _Route: `/movies/:id`, component: `Detail`_
 This route expects a movie ID in the URL and is responsible for showing more details about a movie after you click on it. It uses `useParams` from `react-router-dom` to get the `id` from the URL and then passes that into an API call (within `useEffect`) to themoviedb.org to fetch details about a single movie, then puts the response into state using `useState` and finally renders it onto the page.
 
 ## Requirements
+
 - Your app should have at least two pages - one showing a list of movies and one showing details
 - You should follow the design from our example (but it's ok to change things - just try to make it look nice)
 - Make your app responsive (it should look good on devices from 320px width up to 1600px)
@@ -113,11 +116,6 @@ This route expects a movie ID in the URL and is responsible for showing more det
   - You could also investigate how to handle the loading of images - or show plain text by default and then use CSS to place the image over the text (using absolute positioning). This way, if the images take a long time to load, the user still sees something relevant.
 
 ### Advanced stretch goals
+
 - On the homepage where you list popular movies, you could add a dropdown to change the list. For example, you could toggle between popular, upcoming, and new releases.
 - When you load a movie, you get a lot of information in the API response, such as a collection it belongs to, genres it has, or the companies involved with producing the film. Each of these has an API endpoint that can be used to fetch more information about that entity. You could use this data to make links from your movie page to another page. Take a look through the documentation and be creative!
-
-
-
-
-
-
