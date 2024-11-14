@@ -9,9 +9,8 @@ export const MovieList = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const selectedGenreIds = [28, 12, 35, 18]; // Beispiel-IDs für Action, Abenteuer, Komödie und Drama
+  const selectedGenreIds = [28, 12, 35, 18];
 
-  // Fetch genres on mount
   useEffect(() => {
     const getGenres = async () => {
       try {
@@ -49,7 +48,7 @@ export const MovieList = () => {
     if (genres.length > 0) {
       getMoviesByGenre();
     }
-  }, [genres]); // Dependency array includes `genres`, which is correct
+  }, [genres]);
 
   if (loading) return <p>Loading genres...</p>;
   if (error) return <p>{error}</p>;

@@ -36,8 +36,6 @@ MovieCard.propTypes = {
   title: PropTypes.string.isRequired,
   release_date: PropTypes.string.isRequired,
   poster_path: PropTypes.string.isRequired,
-}
-MovieCard.propTypes = {
-  genreId: PropTypes.number.isRequired, // genreId muss übergeben werden
-  movies: PropTypes.array.isRequired,   // movies muss ein Array von Filmen sein
+  genreId: PropTypes.number.isRequired,
+  movies: PropTypes.array.isRequired,
 };
