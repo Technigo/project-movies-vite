@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import "../components/MovieDetails.css";
 
 // API key - take this away?
 const API_KEY = "ff5630b14afe9dae44f59f03ba4182dc";
@@ -29,17 +30,23 @@ export const MovieDetails = () => {
         <img 
         src={`https://image.tmdb.org/t/p/w1280${movieInfo.backdrop_path}`} 
         alt={`${movieInfo.title} Backdrop`} 
+        className="movie-backdrop"
       />
+      <div className="movie-content">
         {/* Poster image */}
         <img 
-        src={`https://image.tmdb.org/t/p/w500${movieInfo.poster_path}`} 
+        src={`https://image.tmdb.org/t/p/w342${movieInfo.poster_path}`} 
         alt={`${movieInfo.title} Poster`} 
+        className="movie-image"
         />
-      <h1>{movieInfo.title}</h1>
-      <p>IMDb: {movieInfo.vote_average.toFixed(1)}</p>
-      <p>Release: {movieInfo.release_date}</p>
-      <p>Genres: {movieInfo.genres?.map(genre => genre.name).join(', ')}</p>
-      <p>{movieInfo.overview}</p>
+        <div className="movie-info">
+          <h1>{movieInfo.title}</h1>
+            <p>IMDb: {movieInfo.vote_average.toFixed(1)}</p>
+            <p>Released: {movieInfo.release_date}</p>
+            <p>Genres: {movieInfo.genres?.map(genre => genre.name).join(', ')}</p>
+            <p>{movieInfo.overview}</p>
+        </div>
+      </div>
     </div>
   );
 };

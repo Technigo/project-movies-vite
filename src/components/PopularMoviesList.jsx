@@ -42,6 +42,3 @@ export const PopularMoviesList = () => {
     </div>
   );
 }; 
-
-// Note to self, why can't I use this line of code instead since it's the homepage
-{/* <Link to="/"</Link> */}

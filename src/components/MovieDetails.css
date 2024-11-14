@@ -1,3 +1,56 @@
 .movie-details-container {
-  display:flex;
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* Full viewport height */
+  margin: 0;
+  color: white;
+  overflow: hidden;
+}
+
+.movie-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0; 
+}
+
+.movie-content {
+  position: absolute; /* Position it absolutely within the container */
+  bottom: 20px; /* Adjust this for how close you want it to be to the bottom */
+  left: 20px; /* Adjust this for how close you want it to be to the left */
+  display: flex;
+  gap: 20px;
+  max-width: 1036px;
+  padding: 50px;
+  border-radius: 10px;
+  z-index: 1; /* Ensure it appears above the backdrop */
+}
+
+.movie-image {
+  width: 352px;
+  height: 523px;
+  object-fit: cover;
+  border: 5px solid white;
+}
+
+.movie-info {
+  width: 400px;
+  box-sizing: border-box;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: flex-start; /* Keep content aligned to the left */
+  justify-content: flex-end; /* Align content towards the bottom */
+  margin-top: auto; 
+  margin: 16px 0px;
+}
+
+.movie-info p {
+margin: 0;
+padding: 6px;
+font-weight: 500;
 }
