@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import backgroundImage from "../assets/background_sky.jpg"
 
 export const GlobalStyles = createGlobalStyle`
   /* CSS Reset */
@@ -21,10 +22,29 @@ code {
     monospace;
 }
 
-* {
-  background-color: black; 
-}
+html, body {
+    margin: 0;  /* Remove default margin */
+    padding: 0; /* Remove default padding */
+  }
 
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: url(${backgroundImage}) no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
 
+/* Specific rule to reset the 'ul' element styling */
+ul {
+    list-style-type: none;  /* Remove default bullet points */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+  }
 
 `

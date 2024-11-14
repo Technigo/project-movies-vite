@@ -7,7 +7,7 @@ const MovieGridContainer = styled.div`
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(4, 1fr);
-  padding: 10px;
+  padding: 20px;
 
 
   /* Media query for tablets (3 posters per row) */

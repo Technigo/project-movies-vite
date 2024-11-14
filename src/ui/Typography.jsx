@@ -25,14 +25,15 @@ export const PageTitle = styled.h2`
   color: #FFF;
 `;
 
-// Heading 3
-// export const h3 = styled.h3`
-//   font-family: ${primaryFont};
-//   font-size: 1.5rem;
-//   font-weight: 500;
-//   line-height: 1.4;
-//   margin-bottom: 0.5rem;
-// `;
+//Heading 3
+export const SubPageTitle = styled.h3`
+font-family: ${secondaryFont};
+font-size: 1.5rem;
+font-weight: 500;
+line-height: 1.4;
+margin-bottom: 0.5rem;
+color: #FFF;
+ `;
 
 // Paragraph text
 export const Text = styled.p`

@@ -16,6 +16,7 @@ export const MovieCard = ({ movie }) => {
 // Styled Components for MovieCard
 const MovieCardWrapper = styled.div`
   position: relative;
+  z-index: 10;  /* Ensures the content is on top of the background */
   width: 100%;
   overflow: hidden;
   border-radius: 8px;

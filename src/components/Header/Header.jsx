@@ -5,9 +5,9 @@ import { Title } from "../../ui/Typography"
 
 const HeaderFlex = styled.section`
     display: flex; 
-    flex-direction: column;
-    justify-content: left; 
-    align-items: left;  
+    flex-direction: row;
+    justify-content: center; 
+    /* align-items: center;   */
     gap: 16px;   
     overflow-x: hidden;
 
