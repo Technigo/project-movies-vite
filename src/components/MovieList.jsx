@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export const MovieCatalog = () => {
+export const MovieList = () => {
     const [movies, setMovies] = useState(null);
     const apiKey = 'bc5cd60f55c078094358844a2b84851f'; // Directly hardcoded API key
     const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`; // API endpoint for popular movies
@@ -52,4 +52,4 @@ export const MovieCatalog = () => {
     );
 };
 
-export default MovieCatalog;
+export default MovieList;

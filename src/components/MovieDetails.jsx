@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
 
 const apiKey = 'bc5cd60f55c078094358844a2b84851f';
 
-export const InfoPage = () => {
-    const { movieId } = useParams();
+export const MovieDetail = ({ movieId }) => {
     const [movieDetails, setMovieDetails] = useState(null);
 
     useEffect(() => {
@@ -28,14 +26,6 @@ export const InfoPage = () => {
 
     return (
         <div>
-            {/* Bouton Home en haut de la page */}
-            <Link to="/">
-                <button style={{ marginBottom: "20px", padding: "10px 20px", fontSize: "16px" }}>
-                    Home
-                </button>
-            </Link>
-
-            {/* Affichage des détails du film */}
             <h1>{movieDetails.title}</h1>
             <p>{movieDetails.overview}</p>
             <p>Release Date: {movieDetails.release_date}</p>
@@ -45,3 +35,6 @@ export const InfoPage = () => {
         </div>
     );
 };
+
+
+export default MovieDetails;

@@ -1,31 +1,11 @@
-import { BrowserRouter } from "react-router-dom";
-import { MovieCatalog } from "./components/MovieCatalog";
-import { MovieInfo } from "./components/MovieInfo";
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import { AppRoutes } from "./routes/Routes";
 
 export const App = () => {
   return (
-
-    <>
-      <BrowserRouter>
-
-
-        <MovieCatalog />
-        <MovieInfo />
-
-
-      </BrowserRouter>
-
-
-
-    </>
-
-
-
-
-
+    <Router>
+      <AppRoutes />
+    </Router>
   );
-
-
-
-
 };
