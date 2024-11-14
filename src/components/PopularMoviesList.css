@@ -16,9 +16,26 @@
   cursor: pointer; 
 }
 
-.movie-card:hover {
-  transform: scale(1.05); 
+/* .movie-card:hover .movie-poster {
+  transform: scale(1.05); /* Slight zoom effect */
+/* } */ 
+
+.movie-card::before {
+  content: ""; /* Required for the pseudo-element */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent; /* Start with transparent */
+  transition: background-color 0.3s ease-in-out; /* Transition the background color */
+  z-index: 1; 
 }
+
+.movie-card:hover::before {
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
+}
+
 
 .movie-title {
   position: absolute; /* Add this */
@@ -26,12 +43,14 @@
   left: 0; /* Add this */
   right: 0; /* Add this */
   color: white; /* Add this */
-  font-size: 1.2rem; /* Add this */
+  font-size: 1.6rem; /* Add this */
   text-align: center; /* Add this */
   margin: 0; /* Add this */
   opacity: 0;
-  padding: 10px;
+  padding: 1.25rem; 
+  /* 1.25px = 20px */
   transition: opacity 0.3s ease;
+  z-index: 2; /* Make sure the title is above the overlay */
 }
 
 .movie-card:hover .movie-title {

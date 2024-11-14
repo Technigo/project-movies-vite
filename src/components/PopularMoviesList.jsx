@@ -31,7 +31,7 @@ export const PopularMoviesList = () => {
           <Link to={`/movie/${movie.id}`}>
               {/* Poster Image */}
             <img
-              src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} // Adjust size as needed
+              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} // Adjust size as needed
               alt={`${movie.title} Poster`}
               className="movie-poster"
             />
