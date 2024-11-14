@@ -1,3 +1,31 @@
+import { BrowserRouter } from "react-router-dom";
+import { MovieCatalog } from "./components/MovieCatalog";
+import { MovieInfo } from "./components/MovieInfo";
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  return (
+
+    <>
+      <BrowserRouter>
+
+
+        <MovieCatalog />
+        <MovieInfo />
+
+
+      </BrowserRouter>
+
+
+
+    </>
+
+
+
+
+
+  );
+
+
+
+
 };
