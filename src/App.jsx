@@ -1,5 +1,5 @@
 import { Home } from "./pages/Home";
-import { MovieInfo } from "./pages/MovieInfo";
+// import { MovieInfo } from "./pages/MovieInfo";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export const App = () => {
@@ -7,7 +7,7 @@ export const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/movie/:id" element={<MovieInfo />} />
+        {/* <Route path="/movie/:id" element={<MovieInfo />} /> */}
       </Routes>
     </BrowserRouter>
   )

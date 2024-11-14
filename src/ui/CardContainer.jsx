@@ -1,8 +1,10 @@
 import styled from "styled-components"
 
-export const CardContainer = styled.div`
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(300px, 3fr));
-gap: 5px;
-justify-items: center;
+export const CardContainer = styled.section`
+display: flex;
+flex-direction: row;
+overflow-x: auto;
+gap: 0.5rem;
+white-space: nowrap;
+margin-bottom: 9.12rem;
 `

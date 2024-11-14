@@ -1,0 +1,25 @@
+/* .movie-list {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 0.5rem;
+    white-space: nowrap;
+    margin-bottom: 9.12rem;
+} */
+
+.movie-list {
+    display: flex;
+    flex-direction: column;
+    /* Ändere von row auf column */
+    gap: 1rem;
+    /* Optional: Abstand zwischen den Genre-Sektionen */
+    margin-bottom: 9.12rem;
+}
+
+.genre-section .movie-list {
+    display: flex;
+    flex-direction: row;
+    /* Damit Filme in einer Reihe angezeigt werden */
+    gap: 0.5rem;
+    white-space: nowrap;
+}
