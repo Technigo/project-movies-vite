@@ -28,7 +28,7 @@ const Overlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Minska till 0.5 för mer transparens */
+  background-color: rgba(0, 0, 0, 0.9); /* Minska till 0.5 för mer transparens */
   color: white;
   display: flex;
   flex-direction: column;
@@ -45,7 +45,6 @@ const Overlay = styled.div`
   h3{
   
     font-family: 'Montserrat', sans-serif;
-    color: white;
     font-size: 25px;
     padding-left: 10px;
     margin: 0;
