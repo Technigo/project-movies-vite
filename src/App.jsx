@@ -1,3 +1,11 @@
+import { BrowserRouter, Routes } from "react-router-dom";
+// import { routePaths } from 
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  <BrowserRouter>
+    <Routes>
+      {routePaths()}
+    </Routes>
+  
+  </BrowserRouter>
 };
