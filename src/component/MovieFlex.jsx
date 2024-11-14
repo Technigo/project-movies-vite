@@ -62,7 +62,7 @@ const MovieFlex = ({ moviesData }) => {
     return (
         <FlexMovies>
         {movies.map((movie) =>
-            <FlexA key={movie.id} href={`https://www.themoviedb.org/movie/${movie.id}`}>
+            <FlexA key={movie.id} href={url}>
                 <FlexImg src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
                 <FlexImgDetails>
                     <H2>{movie.title}</H2>
