@@ -7,10 +7,11 @@ export const MovieCard = ({ genreId, movies }) => {
   if (!movies || movies.length === 0) {
     return <p>No movies found for this genre.</p>;
   }
+  const filteredMovies = genreId ? movies.filter(movie => movie.genre_ids.includes(genreId)) : movies;
 
   return (
     <>
-      {movies.map((movie) => (
+      {filteredMovies.map((movie) => (
         <Link key={movie.id} to={`/movie/${movie.id}`}>
           <section className="card-container">
             <div className="card-text-container">
@@ -36,3 +37,7 @@ MovieCard.propTypes = {
   release_date: PropTypes.string.isRequired,
   poster_path: PropTypes.string.isRequired,
 }
+MovieCard.propTypes = {
+  genreId: PropTypes.number.isRequired, // genreId muss übergeben werden
+  movies: PropTypes.array.isRequired,   // movies muss ein Array von Filmen sein
+};
