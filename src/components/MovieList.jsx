@@ -1,3 +1,5 @@
+// MovieList.jsx
+
 import React, { useEffect, useState } from 'react';
 import { MovieCard } from './MovieCards';
 import styled from 'styled-components';
@@ -5,7 +7,12 @@ import styled from 'styled-components';
 
 const StyledMovieList = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 4fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  
+  @media (min-width: 800px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+ 
 
 `;
 
