@@ -26,13 +26,19 @@ export const PopularMoviesList = () => {
 
   return (
     <div className="movie-list-container">
-      <ul>
-        {popularMovies.map((movie) => (
-          <li key={movie.id}>
-            <Link to={`/movie/${movie.id}`}>{movie.title}</Link>
-          </li>
+      {popularMovies.map((movie) => (
+        <div key={movie.id} className="movie-card">
+          <Link to={`/movie/${movie.id}`}>
+              {/* Poster Image */}
+            <img
+              src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} // Adjust size as needed
+              alt={`${movie.title} Poster`}
+              className="movie-poster"
+            />
+            <h3 className="movie-title">{movie.title}</h3>
+          </Link>
+        </div>
         ))}
-      </ul>
     </div>
   );
 }; 

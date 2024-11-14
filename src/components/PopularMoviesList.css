@@ -1,4 +1,39 @@
 .movie-list-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+}
+
+.movie-poster {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.movie-card {
+  position: relative; 
+  overflow: hidden; /* Hide overflow content for the title */
+  cursor: pointer; 
+}
+
+.movie-card:hover {
+  transform: scale(1.05); 
+}
+
+.movie-title {
+  position: absolute; /* Add this */
+  bottom: 0; /* Add this */
+  left: 0; /* Add this */
+  right: 0; /* Add this */
+  color: white; /* Add this */
+  font-size: 1.2rem; /* Add this */
+  text-align: center; /* Add this */
+  margin: 0; /* Add this */
+  opacity: 0;
+  padding: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.movie-card:hover .movie-title {
+  opacity: 1; /* Show the title on hover */
 }

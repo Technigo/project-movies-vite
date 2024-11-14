@@ -25,6 +25,16 @@ export const MovieDetails = () => {
 
   return (
     <div className="movie-details-container">
+        {/* //Backdrop image */}
+        <img 
+        src={`https://image.tmdb.org/t/p/w1280${movieInfo.backdrop_path}`} 
+        alt={`${movieInfo.title} Backdrop`} 
+      />
+        {/* Poster image */}
+        <img 
+        src={`https://image.tmdb.org/t/p/w500${movieInfo.poster_path}`} 
+        alt={`${movieInfo.title} Poster`} 
+        />
       <h1>{movieInfo.title}</h1>
       <p>IMDb: {movieInfo.vote_average.toFixed(1)}</p>
       <p>Release: {movieInfo.release_date}</p>
