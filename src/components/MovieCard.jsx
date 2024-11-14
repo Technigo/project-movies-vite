@@ -31,11 +31,11 @@ export const MovieCard = ({ genreId, movies }) => {
   );
 };
 
-MovieCard.propTypes = {
-  id: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  release_date: PropTypes.string.isRequired,
-  poster_path: PropTypes.string.isRequired,
-  genreId: PropTypes.number.isRequired,
-  movies: PropTypes.array.isRequired,
-};
+// MovieCard.propTypes = {
+//   id: PropTypes.number.isRequired,
+//   title: PropTypes.string.isRequired,
+//   release_date: PropTypes.string.isRequired,
+//   poster_path: PropTypes.string.isRequired,
+//   genreId: PropTypes.number.isRequired,
+//   movies: PropTypes.array.isRequired,
+// };
