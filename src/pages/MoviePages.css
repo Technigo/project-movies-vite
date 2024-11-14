@@ -29,21 +29,15 @@
   gap: 0px;
   position: absolute;
 
-  
- 
   text-decoration: none;
   padding-left: 15px;
   padding-top: 15px;
- 
 }
 
 .home-button a {
   text-decoration: none;
   color: white;
 }
-
-
-
 
 /* MOVIE INFO */
 
@@ -79,13 +73,6 @@
   font-weight: normal;
 }
 
-
-
-
- 
-
-
-
 .movie-detail-container {
   min-height: 100vh;
   background-color: #15121f;
@@ -99,7 +86,7 @@
 }
 
 .backdrop::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -180,8 +167,6 @@
   color: white;
   text-decoration: none;
   font-size: 20px;
-  
- 
 }
 
 .back-arrow {
@@ -197,6 +182,7 @@
 }
 
 .content-wrapper {
+  top: 120px;
   position: relative;
   z-index: 2;
   min-height: 100vh;
@@ -220,7 +206,7 @@
 
 .movie-info {
   max-width: 50%;
-  margin-top: 60px;
+  /* margin-top: 30px; */
 }
 
 .rating {
