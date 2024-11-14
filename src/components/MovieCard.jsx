@@ -11,13 +11,13 @@ const ImageContainer = styled.div`
   &:hover {
     opacity: 1;
     }
-`
+  `
 
 const MoviePoster = styled.img`
-object-fit:cover;
-display:block;
-width: 100%;
-`
+  object-fit:cover;
+  display:block;
+  width: 100%;
+  `
 
 const MovieCardOverlay = styled.div`
   display: flex;

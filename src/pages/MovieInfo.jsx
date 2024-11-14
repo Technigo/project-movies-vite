@@ -38,7 +38,7 @@ const BackText = styled.p`
   margin: 0; // Remove the top margin
   color: white;
   font-size: 18px; // Adjust as needed
-   transition: transform 0.3s ease; // Smooth transition for the sliding effect
+  transition: transform 0.3s ease; // Smooth transition for the sliding effect
     &:hover {
       transform: translateX(5px); // Moves text 10px to the right
     }
@@ -79,7 +79,12 @@ export const MovieInfo = () => {
         <BackButton src={backIcon} alt="Back to movies" />
         <BackText>Movies</BackText>
       </StyledLink>
-      <MovieDetails />
+      <MovieDetails 
+        poster_path={movie.poster_path}
+        title={movie.title}
+        rating={movie.vote_average} 
+        overview={movie.overview}
+      />
 
     </BackdropImage>
   </MovieInfoContainer>

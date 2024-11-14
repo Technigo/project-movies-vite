@@ -6,8 +6,16 @@
   import { MovieCard } from "../components/MovieCard";
 
   const MoviesGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+
+  @media (min-width: 650px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
   `
 
   export const Home = () => {
