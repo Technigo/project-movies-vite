@@ -3,12 +3,13 @@
 import React, { useEffect, useState } from 'react';
 import { MovieCard } from './MovieCards';
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
 
 
 const StyledMovieList = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  
+
   @media (min-width: 800px) {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -32,6 +33,7 @@ export const MovieList = () => {
     <StyledMovieList>
       {movies.map((movie) => (
         <MovieCard key={movie.id} movie={movie} />
+
       ))}
     </StyledMovieList>
   );

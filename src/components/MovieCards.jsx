@@ -1,6 +1,6 @@
 // MovieCard.jsx
 
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledMovieCard = styled.div`
@@ -67,11 +67,13 @@ const Overlay = styled.div`
 export const MovieCard = ({ movie }) => {
   return (
     <StyledMovieCard>
-      <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt={movie.title} />
-      <Overlay>
-        <h3>{movie.title}</h3>
-        <p>Released: {movie.release_date}</p>
-      </Overlay>
+      <Link to={`/movies/${movie.id}`}>
+        <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt={movie.title} />
+        <Overlay>
+          <h3>{movie.title}</h3>
+          <p>Released: {movie.release_date}</p>
+        </Overlay>
+      </Link>
     </StyledMovieCard>
   );
 };
