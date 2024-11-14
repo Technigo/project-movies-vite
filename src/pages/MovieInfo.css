@@ -1,3 +1,8 @@
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
 /* Full-page backdrop styling */
 .movie-info-page {
   background-size: cover;

@@ -10,6 +10,8 @@ ul.home-container {
   margin: 0px;
 }
 
+
+
 @media (max-width: 1024px) {
   .home-container {
     grid-template-columns: repeat(3, 1fr);
