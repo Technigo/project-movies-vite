@@ -1,3 +1,22 @@
+import { BrowserRouter } from "react-router-dom";
+import { MovieList } from './components/MovieList';
+
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  return (
+
+
+    <>
+
+
+      <BrowserRouter>
+
+        <MovieList />
+
+      </BrowserRouter>
+
+
+    </>
+
+  )
 };
