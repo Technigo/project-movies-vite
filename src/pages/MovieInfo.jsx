@@ -6,8 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const MovieInfoStyles = styled.div`
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
   background-color: #1e1e1e;
   width: 100%;
 `;
@@ -26,30 +26,31 @@ const StyledLink = styled(Link)`
       margin-right: 1rem;
       font-size: 28px;
       transition: transform 0.2s ease-in-out;
-  }
+    }
 
-  & svg:hover {
-    transform: scale(1.2);
+    & svg:hover {
+      transform: scale(1.2);
+    }
   }
-}`
+`;
 
 export const MovieInfo = () => {
-  const { movies, isLoading, error } = useMovies();
   const { id } = useParams();
-  if (isLoading) return <p>Loading...</p>;
+  const { loading, error, getMovieById } = useMovies();
+
+  if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
 
-  const movie = movies.find((movie) => movie.id === parseInt(id))
+  const movie = getMovieById(parseInt(id));
   if (!movie) return <p>Film not found</p>;
+
   return (
-    <>
-      <MovieInfoStyles>
-        <StyledLink to="/">
-          <FontAwesomeIcon icon={faCircleArrowLeft} />
-          Home
-        </StyledLink>
-        <MovieDetails movie={movie} />
-      </MovieInfoStyles>
-    </>
+    <MovieInfoStyles>
+      <StyledLink to="/">
+        <FontAwesomeIcon icon={faCircleArrowLeft} />
+        Home
+      </StyledLink>
+      <MovieDetails movie={movie} />
+    </MovieInfoStyles>
   );
 };
