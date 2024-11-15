@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import PopularMoviesData from "./MovieData";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { H2, P} from "../ui/Typography";
+import { H2, P } from "../ui/Typography";
+import { PopularMoviesData } from "./MovieData";
 
 
 
@@ -10,7 +11,7 @@ const FlexMovies = styled.section `
     flex-wrap: wrap;
 `;
 
-const FlexA = styled.a `
+const FlexA = styled(Link)`
     width: 100%;
     position: relative;
     color: #fff;
@@ -39,14 +40,14 @@ const FlexImgDetails = styled.article `
     transition: opacity 0.3s ease;
 
     &:hover {
-        opacity: 1; /* Show the icons when hovering over the image */
+        opacity: 1; 
         cursor: pointer;
     }
 `;
 
 
 
-const MovieFlex = ({ moviesData }) => {
+const MovieFlex = () => {
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
@@ -58,23 +59,20 @@ const MovieFlex = ({ moviesData }) => {
         };
         getMovies();
     }, []);
-
+  
     return (
-        <FlexMovies>
-        {movies.map((movie) =>
-            <FlexA key={movie.id} href={url}>
-                <FlexImg src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
-                <FlexImgDetails>
-                    <H2>{movie.title}</H2>
-                    <P>{movie.release_date}</P>
-                </FlexImgDetails>
-            </FlexA>
-        )};
-        </FlexMovies>
-      );
-};
-/* {album.images?.[0]?.url} */
-
-
-
-export default MovieFlex;
+      <FlexMovies>
+        {movies.map((movie) => 
+          <FlexA key={movie.id} to={`/movie/${movie.id}`}>
+            <FlexImg src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+            <FlexImgDetails>
+                <H2>{movie.title}</H2>
+                <P>{movie.release_date}</P>
+            </FlexImgDetails>
+          </FlexA>
+        )}
+      </FlexMovies>
+    );
+  };
+  
+  export default MovieFlex;
