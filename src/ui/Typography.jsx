@@ -30,7 +30,7 @@ const TitleH2 = styled.h2 `
 
 const TitleH3 = styled.h3 `
     font-family: Poppins;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -38,7 +38,7 @@ const TitleH3 = styled.h3 `
     padding: 0;
 
     @media screen and (min-width: 768px) {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 `;
 
@@ -46,7 +46,7 @@ const BodyP = styled.p `
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     line-height: normal;
     margin: 0;
     padding: 0;

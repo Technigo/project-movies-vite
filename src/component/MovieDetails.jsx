@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import styled from "styled-components";
-import { fetchMovieById, PopularMoviesData } from "./MovieData";
+import { fetchMovieById } from "./MovieData";
+import { H2, P } from "../ui/Typography"
 
 const Background = styled.div`
   background-image: url(${(props) => props.bg});
@@ -9,8 +10,7 @@ const Background = styled.div`
   background-position: center;
   height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
   padding: 20px;
 `;
 
@@ -62,9 +62,9 @@ const MovieDetails = () => {
         <Content>
           <Poster src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />  
         <Details>
-          <h2>{movie.title}</h2>
+          <H2>{movie.title}</H2>
           <p>⭐ {movie.vote_average}</p>
-          <p>{movie.overview}</p>
+          <P>{movie.overview}</P>
         </Details>
       </Content>
     </Background>

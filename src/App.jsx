@@ -7,7 +7,6 @@ export const App = () => {
   return (
     <>
       <BrowserRouter>   
-        <MovieFlex />
 
         <Routes>
           <Route path="/" element={<MovieFlex />} />

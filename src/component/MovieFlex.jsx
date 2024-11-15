@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { H2, P } from "../ui/Typography";
+import { H3, H2 } from "../ui/Typography";
 import { PopularMoviesData } from "./MovieData";
 
 
@@ -19,7 +19,8 @@ const FlexA = styled(Link)`
     
 
     @media (min-width: 768px) {
-        width: 33%;
+        flex: 1 0 auto;
+        width: 350px;
     }
 `;
 
@@ -34,7 +35,7 @@ const FlexImgDetails = styled.article `
     right: 0;
     bottom: 0;
     left: 0;
-    padding: 20px;
+    padding: 2.5rem;
     background-color: #000000bf;
     opacity: 0; /* Hide the text/background */
     transition: opacity 0.3s ease;
@@ -67,7 +68,7 @@ const MovieFlex = () => {
             <FlexImg src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
             <FlexImgDetails>
                 <H2>{movie.title}</H2>
-                <P>{movie.release_date}</P>
+                <H3>Release: {movie.release_date}</H3>
             </FlexImgDetails>
           </FlexA>
         )}
