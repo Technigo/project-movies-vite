@@ -4,7 +4,6 @@
   min-height: 100vh; /* Full viewport height */
   margin: 0;
   color: white;
-  overflow: hidden;
 }
 
 .movie-backdrop {
@@ -15,6 +14,23 @@
   height: 100%;
   object-fit: cover;
   z-index: 0; 
+}
+
+/* Add this new class for the gradient overlay */
+.movie-details-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  z-index: 0;
 }
 
 .movie-content {
@@ -37,6 +53,7 @@
 }
 
 .movie-info {
+  position: relative;
   width: 400px;
   box-sizing: border-box;
   padding-left: 20px;
@@ -49,8 +66,63 @@
   margin: 16px 0px;
 }
 
+.movie-info h1 {
+  font-size: 24px;
+}
 .movie-info p {
 margin: 0;
 padding: 6px;
 font-weight: 500;
+}
+
+.rating-container {
+  border: 2px solid white; /* Adds a border around the arrow */
+  background-color: white;
+  color: black;
+  font-size: 24px;
+  border-radius: 4px;
+  margin: 16px;
+}
+
+.back-button-container {
+  position: fixed; /* Change to fixed instead of absolute */
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+  padding-left: 50px;
+  padding-bottom: 50px;
+}
+
+.back-button {
+  display: flex; /* Flexbox for horizontal alignment */
+  align-items: center; /* Centers arrow and text vertically */
+  /* display: inline-block; */
+  /* padding: 0px 20px; */
+  width: auto;
+  color: white;
+  text-decoration: none;
+  font-size: 1.25rem;
+  border-radius: 5px;
+  margin-top: 20px;
+  z-index: 10; 
+}
+
+.arrow-container {
+display: flex; /* Ensures the border wraps the arrow */
+align-items: center;
+justify-content: center;
+border: 2px solid white; /* Adds a border around the arrow */
+border-radius: 50%; /* Optional: makes the border circular */
+padding: 2px; /* Space between the arrow and the border */
+margin-right: 15px; /* Space between the arrow and text */
+background-color: white;
+}
+
+.arrow-icon {
+  width: 35px;
+  height: 35px;
+}
+
+.button-text {
+  font-weight: 600;
 }

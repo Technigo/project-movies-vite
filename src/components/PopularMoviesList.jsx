@@ -36,6 +36,7 @@ export const PopularMoviesList = () => {
               className="movie-poster"
             />
             <h3 className="movie-title">{movie.title}</h3>
+              <span className="movie-release-date">{movie.release_date}</span>
           </Link>
         </div>
         ))}
