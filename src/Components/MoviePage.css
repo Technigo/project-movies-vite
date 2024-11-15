@@ -1,0 +1,74 @@
+.movie-page {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 2rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .movie-info {
+    max-width: 600px;
+    margin-top: 5rem;
+    padding-top: 3rem;
+  }
+  
+  .movie-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .movie-details, .movie-rating, .movie-description {
+    font-size: 1.2rem;
+    color: #ddd;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .play-button,
+  .trailer-button,
+  .add-button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 36px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .play-button {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .trailer-button {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+  }
+  
+  .add-button {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .movie-extra-info {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    color: #bbb;
+  }
+  

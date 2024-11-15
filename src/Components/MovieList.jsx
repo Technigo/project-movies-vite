@@ -24,7 +24,14 @@ export const MovieList = () => {
   const featuredMovie = movies[0];
 
   return (
-    <div className="movie-list" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w1280${featuredMovie?.backdrop_path})` }}>
+    <div 
+      className="movie-list" 
+      style={{
+        backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, black 100%), url(https://image.tmdb.org/t/p/w1280${featuredMovie?.backdrop_path})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
       <NavBar />
       <div className="featured-movie">
         <h1 className="movie-title">{featuredMovie?.title}</h1>

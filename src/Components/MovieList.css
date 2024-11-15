@@ -1,4 +1,7 @@
 .movie-list {
+    background-image: 
+        linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, black 100%), 
+        url(https://image.tmdb.org/t/p/w1280${featuredMovie?.backdrop_path});
     background-size: cover;
     background-position: center;
     color: white;
@@ -65,17 +68,16 @@
   
   .watch-button:hover,
   .details-button:hover {
-    transform: translateY(-2px); /* Slight upward movement on hover */
+    transform: translateY(-2px); 
   }
   
-  /* Icon styling */
   .button-icon {
     width: 1rem;
     height: auto;
   }
   
   .details-button .button-icon {
-    transform: rotate(-90deg); /* Rotate arrow icon to face right */
+    transform: rotate(-90deg); 
   }
   
   .movie-thumbnails {
