@@ -2,12 +2,15 @@ import { useState, useEffect } from "react";
 import { MovieCard } from "../components/MovieCard";
 
 
-// API key
-const apiEnv = import.meta.env.VITE_API_KEY;
-const URL =  `https://api.themoviedb.org/3/movie/popular?api_key=${apiEnv}&language=en-US&page=1`
+
 
 // Fetches all popular movies
 export const MovieGallery = () => {
+
+    // API key
+  const apiEnv = import.meta.env.VITE_API_KEY;
+  const URL =  `https://api.themoviedb.org/3/movie/popular?api_key=${apiEnv}&language=en-US&page=1`
+
   const [ movies, setMovies] = useState([])
 
   useEffect(() => {
@@ -36,14 +39,17 @@ export const MovieGallery = () => {
     <div>
 
       {movies.map((movie) => (
-        <MovieCard key={movie.id}>
-          <h2>{movie.title}</h2>
-          <p>{movie.release_date}</p>
-          <img 
-            src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} 
-            alt={movie.title} 
+        <MovieCard 
+          key={movie.id}
+          id={movie.id}
+          title={movie.title}
+          release_date={movie.release_date}
+          poster_path={movie.poster_path}
+          // <img 
+          //   src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} 
+          //   alt={movie.title} 
           />
-        </MovieCard>
+        
       ))}
     </div>
   )

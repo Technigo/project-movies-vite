@@ -1,15 +1,15 @@
 import { BrowserRouter, Routes } from "react-router-dom";
-// import { routes } from "./routePaths"; 
+// import { MovieProfile } from "./pages/MovieProfile";
+import { routes } from "./routePaths"; 
 
-import { MovieGallery } from "./pages/MovieGallery";
+// import { MovieGallery } from "./pages/MovieGallery";
 
 export const App = () => {
   return (
     <>
     
     <BrowserRouter>
-    <MovieGallery/>
-      {/* <Routes>{routes}</Routes> */}
+      <Routes>{routes}</Routes>
     </BrowserRouter>
   </>
   )
