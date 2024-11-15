@@ -13,10 +13,11 @@ color: yellow;
 margin: 1rem;
 word-wrap: break-word;
 `
-export const HeaderThree = styled.h2`
+export const HeaderThree = styled.h3`
 color: white;
 margin: 1rem;
 word-wrap: break-word;
+font-size: 3rem;
 `
 export const BodyText = styled.p`
 color: white;

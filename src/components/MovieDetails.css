@@ -1,0 +1,31 @@
+.img-movie-details {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+.img-movie-details-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.text-movie-details-container {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    opacity: 1;
+    width: 100%;
+    background-color: black;
+    width: 60%;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+}

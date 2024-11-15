@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import { fetchMoviesByGenre, fetchGenres } from '../api';
-import { MovieCard } from './MovieCard';
-import { HeaderTwo } from '../ui/Typography';
-import "./MovieLists.css"
+import { useState, useEffect } from "react";
+import { fetchMoviesByGenre, fetchGenres } from "../api";
+import { MovieCard } from "./MovieCard";
+import { HeaderTwo } from "../ui/Typography";
+import "./MovieLists.css";
 
 export const MovieList = () => {
   const [moviesByGenres, setMoviesByGenres] = useState({});
@@ -16,14 +16,13 @@ export const MovieList = () => {
     const getGenres = async () => {
       try {
         const data = await fetchGenres();
-
         const filteredGenres = data.genres.filter(genre =>
           selectedGenreIds.includes(genre.id)
         );
         setGenres(filteredGenres);
       } catch (error) {
-        setError('error to get the genres');
-        console.error('error to get the genres:', error);
+        setError("error to get the genres");
+        console.error("error to get the genres:", error);
       } finally {
         setLoading(false);
       }
@@ -55,7 +54,7 @@ export const MovieList = () => {
   if (error) return <p>{error}</p>;
 
   return (
-    <div className='movie-list'>
+    <div className="movie-list">
       {genres.length > 0 ? (
         genres.map((genre) => (
           <section key={genre.id} className="genre-section">

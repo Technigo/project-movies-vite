@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import { MovieList } from '../components/MovieLists';
-import { HeaderOne } from '../ui/Typography';
-import { CardContainer } from '../ui/CardContainer';
+import styled from "styled-components";
+import { MovieList } from "../components/MovieLists";
+import { HeaderOne } from "../ui/Typography";
+import { CardContainer } from "../ui/CardContainer";
 
 const HomeStyles = styled.div`
   background-color: #1e1e1e;
@@ -13,7 +13,6 @@ const HomeStyles = styled.div`
 export const Home = () => {
   return (
     <>
-
       <HomeStyles>
         <HeaderOne>Movies</HeaderOne>
         <CardContainer>

@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { BodyText, HeaderTwo } from '../ui/Typography';
+import { BodyText, HeaderThree } from '../ui/Typography';
+import "./MovieDetails.css";
 
 const MovieDetailsStyles = styled.div`
 display: flex;
 flex-direction: column;
+justify-content: flex-end;
 background-color: #333333;
 width: 100%;
 padding: 10px;
@@ -14,13 +16,15 @@ export const MovieDetails = ({ movie }) => {
   console.log(movie);
 
   const { title, backdrop_path, overview } = movie;
-  const backgroundImage = `https://image.tmdb.org/t/p/w342/${backdrop_path}`;
+  const backgroundImage = `https://image.tmdb.org/t/p/w500/${backdrop_path}`;
 
   return (
     <MovieDetailsStyles>
-      <img src={backgroundImage} alt={overview} />
-      <HeaderTwo>{title}</HeaderTwo>
-      <div>
+      <div className='img-movie-details-container'>
+        <img src={backgroundImage} alt={overview} className="img-movie-details" />
+      </div>
+      <div className="text-movie-details-container">
+        <HeaderThree>{title}</HeaderThree>
         <BodyText>{overview}</BodyText>
       </div>
     </MovieDetailsStyles>
