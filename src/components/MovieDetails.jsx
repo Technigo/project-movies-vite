@@ -21,7 +21,7 @@ export const MovieDetails = ({ movie }) => {
             <div className="language">original language: {original_language}</div>
             <div className="rating">
               <div>⭐</div>
-              <div>{vote_average}</div></div>
+              <div>{vote_average.toFixed(1)}</div></div>
           </div>
           <BodyText>{overview}</BodyText>
         </div>
