@@ -66,3 +66,32 @@
 .movie-card:hover .movie-release-date {
   opacity: 1;
 }
+
+/* Media queries */
+/* Small phone */
+@media (min-width: 320px) and (max-width: 369px) {
+.movie-list-container {
+  grid-template-columns: 1fr;
+  }
+}
+
+/* Medium phone */
+@media (min-width: 370px) and (max-width: 569px) {
+  .movie-list-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large phone */
+@media (min-width: 570px) and (max-width: 819px) {
+  .movie-list-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablet and desktop */
+@media (min-width: 820px) and (max-width: 1600px) {
+  .movie-list-container {
+    grid-template-columns: repeat(4, 1fr); 
+  }
+}

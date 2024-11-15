@@ -46,7 +46,8 @@
 }
 
 .movie-image {
-  width: 352px;
+  width: 100%;
+  max-width: 352px;
   height: 523px;
   object-fit: cover;
   border: 5px solid white;
@@ -54,7 +55,8 @@
 
 .movie-info {
   position: relative;
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   box-sizing: border-box;
   padding-left: 20px;
   display: flex;
@@ -141,4 +143,115 @@ transition: margin 0.3s ease;
 
 .back-button:hover .button-text {
   margin-left: 5px; /* Increase the left margin of the button text on hover */
+}
+
+/* Media queries */
+/* Small phone */
+@media (min-width: 320px) and (max-width: 389px) {
+  .movie-content {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align for better visual appeal */
+    gap: 10px; /* Reduce the gap between elements */
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+  .movie-image {
+    max-width: 180px; /* Reduce the maximum width */
+    height: auto;
+  }
+
+  .movie-info {
+    max-width: 340px; /* Allow full width for the text content */
+    padding: 0 10px; /* Add some padding for better spacing */
+    text-align: center; /* Center-align the text */
+  }
+
+  .movie-info h1 {
+    font-size: 16px;
+  }
+
+  .rating-container {
+    font-size: 16px;
+    margin: 6px;
+  }
+
+  .movie-info p {
+    text-align: left;
+  }
+
+  .back-button {
+    font-size: 1rem;
+  }
+
+  .back-button-container {
+    padding-left: 20px;
+  }
+  
+  .arrow-icon {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* Medium phone */
+@media (min-width: 390px) and (max-width: 600px) {
+  .movie-content {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align for better visual appeal */
+    gap: 10px; /* Reduce the gap between elements */
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+  .movie-image {
+    max-width: 250px;
+    height: 370px;
+  }
+
+  .movie-info {
+    max-width: 340px; /* Allow full width for the text content */
+    padding: 0 10px; /* Add some padding for better spacing */
+    text-align: center; /* Center-align the text */
+  }
+
+  .movie-info h1 {
+    font-size: 18px;
+  }
+
+  .rating-container {
+    font-size: 18px;
+    margin: 8px;
+  }
+
+  .movie-info p {
+    text-align: left;
+  }
+
+  .back-button {
+    font-size: 1rem;
+  }
+
+  .back-button-container {
+    padding-left: 20px;
+  }
+
+  .arrow-icon {
+    width: 25px;
+    height: 25px;
+  }
+  
+
+}
+
+@media (min-width: 601px) and (max-width: 780px) {
+  .movie-image {
+    max-width: 250px;
+    height: 370px;
+  }
+
+  .movie-info h1 {
+    font-size: 18px;
+  }
+
+  .rating-container {
+    font-size: 18px;
+    margin: 8px;
+  }
 }
