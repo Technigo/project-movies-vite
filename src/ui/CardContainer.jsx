@@ -8,4 +8,5 @@ gap: 0.5rem;
 white-space: nowrap;
 margin-bottom: 6rem;
 width: 100%;
+padding: 1rem;
 `
