@@ -6,9 +6,11 @@
 
 # Movie Site Project
 
-Replace this readme with your own information about your project.
+Build a movie site 🍿
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This is my first multi-page React application and use a fun new API.
+
+The goal is to list popular movies by using themoviedb.org's API to fetch a list of movies and show details about them on a seperate page by using React and React Router.
 
 ## Getting Started with the Project
 
