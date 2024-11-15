@@ -1,4 +1,57 @@
 import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+
+const MovieContainer = styled.main`
+    padding: 20px;
+    background-color: #000;
+    color: white;
+    min-height: 100vh;
+`;
+
+const MovieTitle = styled.h1`
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+`;
+
+const MovieListStyled = styled.ul`
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+`;
+
+const MovieItem = styled.li`
+    background-color: #1c1c1e;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    &:focus-within {
+        outline: 2px solid #FFD700;
+        outline-offset: 4px;
+    }
+`;
+
+const MovieImage = styled.img`
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+`;
+
+const FallbackText = styled.p`
+    font-size: 14px;
+    color: #b0b0b0;
+`;
+
+const MovieHeading = styled.h2`
+    font-size: 18px;
+    margin: 10px 0;
+`;
 
 export const MovieList = () => {
     const [movies, setMovies] = useState(null);
@@ -13,7 +66,6 @@ export const MovieList = () => {
                     throw new Error('Error fetching movies');
                 }
                 const result = await response.json();
-                console.log(result); // Check if the data is coming in
                 setMovies(result.results);
             } catch (error) {
                 console.error("Error fetching movies:", error);
@@ -24,31 +76,30 @@ export const MovieList = () => {
     }, []);
 
     return (
-        <div>
-            <h1>Popular Movies</h1>
+        <MovieContainer>
+            <MovieTitle>Popular Movies</MovieTitle>
             {movies ? (
-                <ul>
+                <MovieListStyled role="list">
                     {movies.map((movie) => (
-                        <li key={movie.id}>
-                            <h2>{movie.title}</h2>
+                        <MovieItem key={movie.id} role="listitem">
+                            <MovieHeading>{movie.title}</MovieHeading>
                             <p>Release Date: {movie.release_date}</p>
-                            <p>Rating: {movie.vote_average}/10</p>
+                            <p>Rating: {movie.vote_average ? movie.vote_average.toFixed(1) : 'N/A'}/10</p>
                             {movie.poster_path ? (
-                                <img
+                                <MovieImage
                                     src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                                    alt={movie.title}
-                                    style={{ width: "200px" }}
+                                    alt={`Poster of the movie ${movie.title}`}
                                 />
                             ) : (
-                                <p>No image available</p>
+                                <FallbackText>No image available</FallbackText>
                             )}
-                        </li>
+                        </MovieItem>
                     ))}
-                </ul>
+                </MovieListStyled>
             ) : (
                 <p>Loading...</p>
             )}
-        </div>
+        </MovieContainer>
     );
 };
 

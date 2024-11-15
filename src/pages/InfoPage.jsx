@@ -1,16 +1,31 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import styled from "styled-components";
-import { FaStar } from "react-icons/fa"; // Import star icon
+import { FaStar } from "react-icons/fa";
 
 const apiKey = 'bc5cd60f55c078094358844a2b84851f';
 
-const Container = styled.div`
+const SkipLink = styled.a`
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #333;
+    color: white;
+    padding: 8px 15px;
+    z-index: 100;
+    text-decoration: none;
+
+    &:focus {
+        top: 0;
+    }
+`;
+
+const Container = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    background-color: #f0f0f0;
+    background-color: #000000;
     min-height: 100vh;
 `;
 
@@ -22,7 +37,17 @@ const HomeButton = styled.button`
     color: white;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
+    border: solid 3px;
+    font-weight: bold;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:focus {
+        outline: 2px solid #FFD700;
+        outline-offset: 4px;
+    }
 `;
 
 const Card = styled.div`
@@ -46,9 +71,10 @@ const InfoSection = styled.div`
 `;
 
 const Title = styled.h1`
-    font-size: 24px;
+    font-size: 28px;
     margin: 0;
     text-align: center;
+    line-height: 1.5;
 `;
 
 const Rating = styled.div`
@@ -63,18 +89,11 @@ const Rating = styled.div`
     }
 `;
 
-const ReleaseDate = styled.p`
-    font-size: 14px;
-    color: #b0b0b0;
-    margin: 5px 0;
-    text-align: center;
-`;
-
 const Overview = styled.p`
     font-size: 16px;
     line-height: 1.5;
     margin-top: 10px;
-    color: #d0d0d0;
+    color: #e0e0e0;
 `;
 
 export const InfoPage = () => {
@@ -101,22 +120,27 @@ export const InfoPage = () => {
     if (!movieDetails) return <p>Loading movie details...</p>;
 
     return (
-        <Container>
-            <Link to="/">
-                <HomeButton>Home</HomeButton>
-            </Link>
-            <Card>
-                <MovieImage src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`} alt={movieDetails.title} />
-                <InfoSection>
-                    <Title>{movieDetails.title}</Title>
-                    <Rating>
-                        <FaStar color="#FFD700" size={18} /> {/* Star icon for rating */}
-                        <span>{movieDetails.vote_average}</span>
-                    </Rating>
-                    <ReleaseDate>Release Date: {movieDetails.release_date}</ReleaseDate>
-                    <Overview>{movieDetails.overview}</Overview>
-                </InfoSection>
-            </Card>
-        </Container>
+        <>
+            <SkipLink href="#main-content">Skip to main content</SkipLink>
+            <Container id="main-content">
+                <Link to="/">
+                    <HomeButton aria-label="Go back to homepage">Home</HomeButton>
+                </Link>
+                <Card>
+                    <MovieImage
+                        src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
+                        alt={`Poster and description of movie ${movieDetails.title}`}
+                    />
+                    <InfoSection>
+                        <Title>{movieDetails.title}</Title>
+                        <Rating>
+                            <FaStar color="#FFD700" size={18} />
+                            <span>{movieDetails.vote_average ? movieDetails.vote_average.toFixed(1) : 'N/A'}</span>
+                        </Rating>
+                        <Overview>{movieDetails.overview}</Overview>
+                    </InfoSection>
+                </Card>
+            </Container>
+        </>
     );
 };

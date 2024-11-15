@@ -31,7 +31,7 @@ export const MovieDetail = ({ movieId }) => {
             <p>Release Date: {movieDetails.release_date}</p>
             <p>Runtime: {movieDetails.runtime} minutes</p>
             <p>Rating: {movieDetails.vote_average}/10</p>
-            <img src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`} alt={movieDetails.title} />
+            <img src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`} alt={`Poster and description of movie ${movieDetails.title}`} />
         </div>
     );
 };
