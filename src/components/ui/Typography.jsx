@@ -18,9 +18,10 @@ export const Typography = ({
   styledAs = Element,
   className,
   children,
+  ...rest
 }) => {
   return (
-    <Element className={classNames(baseStyles[styledAs], className)}>
+    <Element className={classNames(baseStyles[styledAs], className)} {...rest}>
       {children}
     </Element>
   );

@@ -21,7 +21,7 @@ const MovieListPage = () => {
 
   return (
     <div>
-      <Typography element="h1" className="mb-8">
+      <Typography element="h1" className="mb-8" aria-live="polite">
         {pageTitle}
       </Typography>
 

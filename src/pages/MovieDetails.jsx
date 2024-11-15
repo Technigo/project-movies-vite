@@ -3,6 +3,9 @@ import { useState, useEffect } from "react";
 import { fetchMovieDetails } from "../api/tmdb";
 import { Typography } from "../components/ui/Typography";
 import { slugify } from "../utils/slugify";
+import Button from "../components/ui/Button";
+import GoBackIcon from "../assets/icons/arrow_back.svg?react";
+import noBackDropFound from "../assets/images/no-backdrop-found.png";
 
 const MovieDetails = () => {
   const { idSlug } = useParams();
@@ -53,10 +56,26 @@ const MovieDetails = () => {
 
   return (
     <div>
-      <button onClick={() => navigate(-1)} className="btn mb-4">
-        Go back
-      </button>
-      <Typography element="h1">{movie.title}</Typography>
+      <Button
+        variant="secondary"
+        onClick={() => navigate(-1)}
+        className="mb-12"
+      >
+        <GoBackIcon /> Go back
+      </Button>
+      <header>
+        <img
+          src={
+            movie.poster_path
+              ? `https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`
+              : noBackDropFound
+          }
+          alt=""
+        />
+      </header>
+      <Typography element="h1" className="mb-4">
+        {movie.title}
+      </Typography>
       <Typography element="p" styledAs="bodyLarge">
         {movie.overview}
       </Typography>

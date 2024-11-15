@@ -22,6 +22,7 @@ const SearchBar = ({ onSearch, value }) => {
         type="search"
         name="search"
         placeholder="Search movies..."
+        aria-label="Search for movies"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />

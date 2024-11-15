@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useLayoutEffect } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/MovieHut-logo.svg?react";
 import HamburgerMenuButton from "./HamburgerMenuButton";
@@ -6,6 +6,12 @@ import MainNav from "./MainNav";
 
 const Sidebar = ({ onClick, className }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  useLayoutEffect(() => {
+    if (window.innerWidth >= 1024) {
+      setIsSidebarOpen(true);
+    }
+  }, []);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
