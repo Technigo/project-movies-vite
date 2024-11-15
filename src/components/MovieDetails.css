@@ -29,6 +29,23 @@
     color: white;
 }
 
+.movie-info {
+    display: flex;
+    align-items: center;
+
+}
+
+.rating {
+    color: white;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding: 5px;
+    width: 50px;
+    margin-left: 10px;
+}
+
 @media(min-width: 1024px) {
 
     .img-movie-details-container {

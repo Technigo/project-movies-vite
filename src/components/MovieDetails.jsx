@@ -5,7 +5,7 @@ import "./MovieDetails.css";
 export const MovieDetails = ({ movie }) => {
   console.log(movie);
 
-  const { title, backdrop_path, overview, original_language
+  const { title, backdrop_path, overview, original_language, vote_average
   } = movie;
   const backgroundImage = `https://image.tmdb.org/t/p/w500/${backdrop_path}`;
 
@@ -17,7 +17,12 @@ export const MovieDetails = ({ movie }) => {
         </div>
         <div className="text-movie-details-container">
           <HeaderThree>{title}</HeaderThree>
-          <div className="language">original language: {original_language}</div>
+          <div className="movie-info">
+            <div className="language">original language: {original_language}</div>
+            <div className="rating">
+              <div>⭐</div>
+              <div>{vote_average}</div></div>
+          </div>
           <BodyText>{overview}</BodyText>
         </div>
       </section>
@@ -27,9 +32,10 @@ export const MovieDetails = ({ movie }) => {
 
 MovieDetails.propTypes = {
   movie: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    backdrop_path: PropTypes.string.isRequired,
-    overview: PropTypes.string.isRequired,
-    original_language: PropTypes.string.isRequired,
+    title: PropTypes.string,
+    backdrop_path: PropTypes.string,
+    overview: PropTypes.string,
+    original_language: PropTypes.string,
+    vote_average: PropTypes.number,
   }).isRequired,
 };
