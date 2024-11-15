@@ -1,6 +1,8 @@
 body {
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+
 }
 
 /* Full-page backdrop styling */
@@ -15,9 +17,11 @@ body {
   justify-content: center;
   padding: 20px;
   color: white;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Dark overlay to improve text readability */
+/* Dark overlay for readability */
 .movie-info-page::before {
   content: "";
   position: absolute;
@@ -25,51 +29,112 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: -1;
 }
 
 /* Main container for movie info */
 .movie-info-container {
-  position: fixed; /* Fixed position to stay at the lower-left corner */
-  bottom: 20px; /* Distance from the bottom of the viewport */
-  left: 20px; /* Distance from the left of the viewport */
-  background-color: rgba(0, 0, 0, 0.8); /* Darken background for readability */
-  padding: 15px; /* Reduced padding */
-  border-radius: 8px; /* Slightly smaller border radius */
-  max-width: 600px; /* Reduced max width */
-  max-height: 80vh; /* Limit height to 80% of viewport */
-  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  display: flex;
+  flex-direction: row;
+  gap: 20px; /* Space between poster and details */
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  max-width: 800px;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling for the movie poster */
+.movie-poster img {
+  .movie-poster img {
+    width: 100%;
+    object-fit: cover;
+    }  
+}
+
+/* Movie details section */
+.movie-details {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   text-align: left;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Lighter shadow */
   color: white;
 }
 
-/* Adjust text size to fit within smaller container */
 .movie-details h2 {
-  font-size: 1.5em; /* Slightly smaller font size */
-  margin-top: 0;
-}
-
-.movie-details p {
-  font-size: 1em; /* Reduced font size for paragraphs */
-  line-height: 1.4; /* Slightly tighter line height */
-}
-
-/* Specific styling for the movie poster on the detail page */
-.detail-poster {
-  border: 5px solid #fff;
-  width: 200px;
-}
-
-
-/* Movie details styling */
-.movie-details h2 {
-  margin-top: 0;
   font-size: 2em;
+  margin-bottom: 10px;
 }
 
 .movie-details p {
-  font-size: 1.2em;
+  font-size: 1em;
   line-height: 1.6;
+  margin: 8px 0;
+}
+
+/* Error and loading message styling */
+.error-message, .loading-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 1.5em;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .movie-info-container {
+    flex-direction: column;
+    align-items: center;
+    max-width: 90vw;
+    padding: 15px;
+    height: auto; /* Ensure it fits within the screen */
+
+  }
+
+  .movie-details {
+    text-align: center;
+  }
+
+  .movie-poster img {
+    width: 150px;
+    margin-bottom: 10px;
+  }
+
+  .movie-details h2 {
+    font-size: 1.6em;
+  }
+
+  .movie-details p {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-info-container {
+    padding: 10px;
+    max-width: 100%;
+    height: auto; /* Prevent scrolling by adapting height */
+
+  }
+
+  .movie-poster img {
+    width: 120px;
+  }
+
+  .movie-details h2 {
+    font-size: 1.4em;
+  }
+
+  .movie-details p {
+    font-size: 0.85em;
+  }
 }

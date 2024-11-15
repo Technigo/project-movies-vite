@@ -41,15 +41,15 @@ function MovieInfo({ imageBaseUrl }) {
   }, [movieTitle]);
 
   if (error) {
-    return <p>{error}</p>;
+    return <div className="error-message"><p>{error}</p></div>;
   }
 
   if (!movie) {
-    return <p>Loading...</p>;
+    return <div className="loading-message"><p>Loading...</p></div>;
   }
 
-  const posterUrl = `${imageBaseUrl}w500${movie.poster_path}`;
-  const backdropUrl = `${imageBaseUrl}w1280${movie.backdrop_path}`;
+  const posterUrl = movie.poster_path ? `${imageBaseUrl}w500${movie.poster_path}` : '/placeholder-poster.png';
+  const backdropUrl = movie.backdrop_path ? `${imageBaseUrl}w1280${movie.backdrop_path}` : '/placeholder-backdrop.png';
 
   return (
     <div className="movie-info-page" style={{ backgroundImage: `url(${backdropUrl})` }}>
@@ -59,10 +59,10 @@ function MovieInfo({ imageBaseUrl }) {
         </div>
         <div className="movie-details">
           <h2>{movie.title}</h2>
-          <p><strong>Release Date:</strong> {movie.release_date}</p>
-          <p><strong>Overview:</strong> {movie.overview}</p>
-          <p><strong>Runtime:</strong> {movie.runtime} minutes</p>
-          <p><strong>Rating:</strong> {movie.vote_average}/10</p>
+          <p><strong>Release Date:</strong> {movie.release_date || 'N/A'}</p>
+          <p><strong>Overview:</strong> {movie.overview || 'No overview available.'}</p>
+          <p><strong>Runtime:</strong> {movie.runtime ? `${movie.runtime} minutes` : 'N/A'}</p>
+          <p><strong>Rating:</strong> {movie.vote_average ? `${movie.vote_average}/10` : 'N/A'}</p>
         </div>
       </div>
     </div>
