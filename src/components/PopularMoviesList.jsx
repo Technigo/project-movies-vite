@@ -25,7 +25,7 @@ export const PopularMoviesList = () => {
             {/* Poster Image */}
             <img
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-              alt={`${movie.title} Poster`}
+              alt={`${movie.title} Poster of a movie`}
               className="movie-poster"
             />
             <h3 className="movie-title">{movie.title}</h3>

@@ -27,7 +27,7 @@ export const MovieDetails = () => {
         {/* Backdrop image */}
         <img 
         src={`https://image.tmdb.org/t/p/w1280${movieInfo.backdrop_path}`} 
-        alt={`${movieInfo.title} Backdrop`} 
+        alt={`${movieInfo.title} Large image of a scene from the movie`} 
         className="movie-backdrop"
       />
         <div className="back-button-container">
@@ -44,7 +44,7 @@ export const MovieDetails = () => {
         {/* Poster image */}
         <img 
         src={`https://image.tmdb.org/t/p/w342${movieInfo.poster_path}`} 
-        alt={`${movieInfo.title} Poster`} 
+        alt={`${movieInfo.title} Poster of the movie`} 
         className="movie-image"
         />
         <div className="movie-info">
