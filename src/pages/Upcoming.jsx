@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { MovieGrid } from "../ui/MovieGrid"; // Use MovieGrid for displaying the movies in a grid
+import { PageTitle } from '../ui/Typography';
 
 export const Upcoming = () => {
   const [movies, setMovies] = useState([]);
@@ -38,7 +39,7 @@ export const Upcoming = () => {
   return (
     <div className="upcoming-movies">
       {error && <p>{error}</p>}
-
+      <PageTitle>Upcoming movies</PageTitle>
       {/* Pass the movies array to MovieGrid */}
       <MovieGrid movies={movies} />
     </div>

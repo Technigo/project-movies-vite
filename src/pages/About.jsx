@@ -1,12 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/jsx-no-comment-textnodes */
-import { SubPageTitle } from "../ui/Typography";
-import { Text } from "../ui/Typography";
+import { PageTitle, Text } from "../ui/Typography";
+
+
 
 export const About = () => {
   return (
     <div>
-      <SubPageTitle>About MovieZone</SubPageTitle>
+      <PageTitle>About MovieZone</PageTitle>
       <Text>Welcome to MovieZone, your ultimate destination for everything movies! Whether you're a casual viewer or a true cinephile, MovieZone offers a curated collection of the latest and greatest films. We provide real-time information on current blockbusters, upcoming releases, and classic favorites — ensuring you're always in the know about the movies that matter.
 
         Explore our Now Playing section to find out what’s showing in theaters today, or dive into the Upcoming Movies list to plan your next cinema trip. With MovieZone, you can discover new movies, track release dates, and keep up with the films that are making waves across the globe.

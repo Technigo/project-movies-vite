@@ -1,8 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { Header } from "./components/Header/Header"
+import { Navbar } from "./components/Navbar"
 import { Home } from "./pages/Home"
 import { About } from "./pages/About"
 import { Upcoming } from "./pages/Upcoming"
+import { MovieInfo } from "./pages/MovieInfo";
 import { GlobalStyles } from "./styles/GlobalStyles"
 
 
@@ -12,12 +13,13 @@ export const App = () => {
   return (
     <BrowserRouter>
       <GlobalStyles />
-      <Header />
+      <Navbar />
       <Routes>
         {/* Route for the home page */}
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/upcoming" element={<Upcoming />} />
+        <Route path="/movie/:id" element={<MovieInfo />} />
       </Routes>
     </BrowserRouter>
   );

@@ -10,9 +10,7 @@ export const GlobalStyles = createGlobalStyle`
 
 :root {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Poppins', sans-serif; /* Global font for text */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -28,8 +26,6 @@ html, body {
   }
 
 body {
-    margin: 0;
-    padding: 0;
     font-family: 'Poppins', sans-serif;
     background: url(${backgroundImage}) no-repeat center center fixed;
     background-size: cover;
@@ -38,6 +34,11 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
+  }
+
+  /* Apply specific font family for headings */
+  h1, h2, h3, p {
+    font-family: 'Anton', sans-serif; /* Set font for headings */
   }
 
 /* Specific rule to reset the 'ul' element styling */

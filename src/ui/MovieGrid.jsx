@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import styled from "styled-components"
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import { MovieCard } from "../components/MovieCard" // Import MovieCard component
 
 const MovieGridContainer = styled.div`
@@ -24,8 +25,10 @@ const MovieGridContainer = styled.div`
 export const MovieGrid = ({ movies }) => {
   return (
     <MovieGridContainer>
-      {movies.map(movie => (
-        <MovieCard key={movie.id} movie={movie} /> // Pass movie prop to MovieCard
+      {movies.map((movie) => (
+        <Link to={`/movie/${movie.id}`} key={movie.id} style={{ textDecoration: "none" }}>
+          <MovieCard movie={movie} /> {/* Pass movie prop to MovieCard */}
+        </Link>
       ))}
     </MovieGridContainer>
   );
