@@ -6,7 +6,7 @@ import StarIcon from "../assets/icons/star.svg?react";
 
 const MovieList = ({ movies }) => {
   return (
-    <div className="grid grid-cols-2 gap-3 md:grid-cols-2 md:gap-8 lg:grid-cols-3 2xl:grid-cols-4">
+    <div className="3xl:grid-cols-6 grid grid-cols-1 gap-3 sm:grid-cols-2 md:gap-8 lg:grid-cols-3 lg:gap-6 xl:grid-cols-4 2xl:grid-cols-5">
       {movies.map((movie) => {
         return (
           <div
@@ -34,7 +34,7 @@ const MovieList = ({ movies }) => {
                 </Typography>
                 <Typography
                   element="p"
-                  className="text-green-800 mb-1 inline-flex gap-1 font-semibold"
+                  className="mb-1 inline-flex gap-1 font-semibold text-green-800"
                 >
                   <StarIcon color="orange" /> {movie.vote_average.toFixed(1)} /
                   10

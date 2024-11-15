@@ -1,44 +1,31 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import SidebarNavLink from "./ui/SidebarNavLink";
 import Logo from "../assets/MovieHut-logo.svg?react";
-import HomeIcon from "../assets/icons/cottage.svg?react";
-import PopularIcon from "../assets/icons/chart_data.svg?react";
-import UpcomingIcon from "../assets/icons/chair.svg?react";
-import NowPlayingIcon from "../assets/icons/autoplay.svg?react";
+import HamburgerMenuButton from "./HamburgerMenuButton";
+import MainNav from "./MainNav";
 
 const Sidebar = ({ onClick, className }) => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
-    <aside className={`rounded-lg bg-white p-6 ${className}`}>
-      <div className="flex justify-center p-6">
+    <aside
+      className={`rounded-md bg-white bg-opacity-85 px-3 py-1 backdrop-blur-lg md:py-2 lg:rounded-lg lg:p-6 ${className}`}
+    >
+      <div className="flex items-center justify-between pl-3 lg:justify-center lg:p-6">
         <Link to="/">
-          <Logo />
+          <Logo className="h-4 w-auto md:h-5 lg:h-6" />
           <span className="sr-only">MovieHut</span>
         </Link>
+        <HamburgerMenuButton
+          toggleSidebar={toggleSidebar}
+          isSidebarOpen={isSidebarOpen}
+        />
       </div>
-      <nav className="mt-4">
-        <ul className="space-y-2">
-          <li>
-            <SidebarNavLink slug="/" onClick={onClick}>
-              <HomeIcon className="mr-4" /> Home
-            </SidebarNavLink>
-          </li>
-          <li>
-            <SidebarNavLink slug="/movies/popular" onClick={onClick}>
-              <PopularIcon className="mr-4" /> Popular movies
-            </SidebarNavLink>
-          </li>
-          <li>
-            <SidebarNavLink slug="/movies/upcoming" onClick={onClick}>
-              <UpcomingIcon className="mr-4" /> Upcoming movies
-            </SidebarNavLink>
-          </li>
-          <li>
-            <SidebarNavLink slug="/movies/now-playing" onClick={onClick}>
-              <NowPlayingIcon className="mr-4" /> Now playing
-            </SidebarNavLink>
-          </li>
-        </ul>
-      </nav>
+      <MainNav onClick={onClick} isSidebarOpen={isSidebarOpen} />
     </aside>
   );
 };

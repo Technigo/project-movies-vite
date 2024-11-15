@@ -23,10 +23,26 @@ export default {
       "green-900": "#323C27",
       "green-950": "#272C22",
     },
+    screens: {
+      xs: "375px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+      "3xl": "1920px",
+    },
     extend: {
       height: {
         "sidebar-height-2xl": "calc(100vh - 5rem)",
-        "sidebar-height-lg": "calc(100vh - 4rem)",
+        "sidebar-height-xl": "calc(100vh - 2rem)",
+      },
+      gridTemplateRows: {
+        "0fr": "0fr",
+        "1fr": "1fr",
+      },
+      transitionProperty: {
+        "grid-template-rows": "grid-template-rows",
       },
     },
   },
