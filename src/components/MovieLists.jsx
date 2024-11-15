@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { fetchMoviesByGenre, fetchGenres } from '../api';
 import { MovieCard } from './MovieCard';
+import { HeaderTwo } from '../ui/Typography';
 import "./MovieLists.css"
 
 export const MovieList = () => {
@@ -9,7 +10,7 @@ export const MovieList = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const selectedGenreIds = [28, 12, 35, 18];
+  const selectedGenreIds = [28, 878, 10751, 18, 14, 16];
 
   useEffect(() => {
     const getGenres = async () => {
@@ -21,8 +22,8 @@ export const MovieList = () => {
         );
         setGenres(filteredGenres);
       } catch (error) {
-        setError('Fehler beim Abrufen der Genres');
-        console.error('Fehler beim Abrufen der Genres:', error);
+        setError('error to get the genres');
+        console.error('error to get the genres:', error);
       } finally {
         setLoading(false);
       }
@@ -39,7 +40,7 @@ export const MovieList = () => {
           const data = await fetchMoviesByGenre(genre.id);
           movies[genre.id] = data.results;
         } catch (error) {
-          console.error(`Fehler beim Abrufen der Filme für Genre ${genre.name}:`, error);
+          console.error(`error to get the movie for the genre ${genre.name}:`, error);
         }
       }
       setMoviesByGenres(movies);
@@ -58,7 +59,7 @@ export const MovieList = () => {
       {genres.length > 0 ? (
         genres.map((genre) => (
           <section key={genre.id} className="genre-section">
-            <h2>{genre.name}</h2>
+            <HeaderTwo>{genre.name}</HeaderTwo>
             <div className="movie-list">
               <MovieCard genreId={genre.id} movies={moviesByGenres[genre.id]} />
             </div>

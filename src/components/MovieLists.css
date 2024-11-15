@@ -8,10 +8,10 @@
     scroll-snap-type: x mandatory;
 }
 
-.card-container {
+/* .card-container {
     min-width: 200px;
     scroll-snap-align: start;
-}
+} */
 
 .genre-section .movie-list {
     display: flex;

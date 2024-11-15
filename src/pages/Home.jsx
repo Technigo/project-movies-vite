@@ -4,15 +4,18 @@ import { HeaderOne } from '../ui/Typography';
 import { CardContainer } from '../ui/CardContainer';
 
 const HomeStyles = styled.div`
-  background-color: pink;
+  background-color: #1e1e1e;
   padding: 10px;
+  width: 100%;
+  border: 2px green solid;
 `;
 
 export const Home = () => {
   return (
     <>
-      <HeaderOne>Movies</HeaderOne>
+
       <HomeStyles>
+        <HeaderOne>Movies</HeaderOne>
         <CardContainer>
           <MovieList />
         </CardContainer>
