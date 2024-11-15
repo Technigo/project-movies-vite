@@ -71,8 +71,11 @@
 }
 .movie-info p {
 margin: 0;
-padding: 6px;
 font-weight: 500;
+}
+
+.genre-text {
+  padding-bottom: 16px;
 }
 
 .rating-container {
@@ -96,8 +99,6 @@ font-weight: 500;
 .back-button {
   display: flex; /* Flexbox for horizontal alignment */
   align-items: center; /* Centers arrow and text vertically */
-  /* display: inline-block; */
-  /* padding: 0px 20px; */
   width: auto;
   color: white;
   text-decoration: none;
@@ -105,6 +106,11 @@ font-weight: 500;
   border-radius: 5px;
   margin-top: 20px;
   z-index: 10; 
+  transition: margin 0.3s ease;
+}
+
+.back-button:hover {
+  margin-right: 20px; /* Increase the right margin on hover */
 }
 
 .arrow-container {
@@ -116,6 +122,11 @@ border-radius: 50%; /* Optional: makes the border circular */
 padding: 2px; /* Space between the arrow and the border */
 margin-right: 15px; /* Space between the arrow and text */
 background-color: white;
+transition: margin 0.3s ease;
+}
+
+.back-button:hover .arrow-container {
+  margin-right: 16px; /* Increase the right margin of the arrow container on hover */
 }
 
 .arrow-icon {
@@ -125,4 +136,9 @@ background-color: white;
 
 .button-text {
   font-weight: 600;
+  transition: margin 0.3s ease;
+}
+
+.back-button:hover .button-text {
+  margin-left: 5px; /* Increase the left margin of the button text on hover */
 }

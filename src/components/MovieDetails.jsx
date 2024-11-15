@@ -56,8 +56,7 @@ export const MovieDetails = () => {
             {movieInfo.title}
               <span className="rating-container">⭐ {movieInfo.vote_average.toFixed(1)}</span>
           </h1>
-            <p>Released: {movieInfo.release_date}</p>
-            <p>Genres: {movieInfo.genres?.map(genre => genre.name).join(', ')}</p>
+            <p className="genre-text">Genres: {movieInfo.genres?.map(genre => genre.name).join(', ')}</p>
             <p>{movieInfo.overview}</p>
         </div>
       </div>

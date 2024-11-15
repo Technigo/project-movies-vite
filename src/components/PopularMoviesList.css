@@ -34,7 +34,7 @@
 
 .movie-title {
   position: absolute;
-  bottom: 3rem; /* Increased to make room for release date */
+  bottom: 1.8rem; /* Increased to make room for release date */
   left: 0;
   right: 0;
   color: white;
