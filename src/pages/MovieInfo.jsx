@@ -2,8 +2,8 @@ import { useParams, Link } from "react-router-dom";
 import styled from "styled-components";
 import { MovieDetails } from "../components/MovieDetails";
 import { useMovies } from "../Hook";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const MovieInfoStyles = styled.div`
 display: flex;

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./MovieCard.css";
-import { HeaderThree, BodyText } from "../ui/Typography";
+import { HeaderTwo } from "../ui/Typography";
 
 export const MovieCard = ({ genreId, movies }) => {
   if (!movies || movies.length === 0) {
@@ -15,8 +15,7 @@ export const MovieCard = ({ genreId, movies }) => {
         <Link key={movie.id} to={`/movie/${movie.id}`}>
           <section className="card-container">
             <div className="card-text-container">
-              <HeaderThree>{movie.title}</HeaderThree>
-              <BodyText>release date {movie.release_date}</BodyText>
+              <HeaderTwo>{movie.title}</HeaderTwo>
             </div>
             <div className="image-container">
               <img
@@ -34,7 +33,6 @@ export const MovieCard = ({ genreId, movies }) => {
 MovieCard.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  release_date: PropTypes.string.isRequired,
   poster_path: PropTypes.string.isRequired,
   genreId: PropTypes.number.isRequired,
   movies: PropTypes.array.isRequired,

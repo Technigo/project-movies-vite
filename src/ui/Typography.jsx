@@ -9,9 +9,14 @@ font-size: 2rem;
 text-align: center;
 `
 export const HeaderTwo = styled.h2`
+color: white;
+margin: 1rem;
+`
+
+export const HeaderGenre = styled.h2`
 color: yellow;
 margin: 1rem;
-word-wrap: break-word;
+font-size: 1.5rem;
 `
 export const HeaderThree = styled.h3`
 color: white;

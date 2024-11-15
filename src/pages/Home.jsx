@@ -7,7 +7,6 @@ const HomeStyles = styled.div`
   background-color: #1e1e1e;
   padding: 10px;
   width: 100%;
-  border: 2px green solid;
 `;
 
 export const Home = () => {

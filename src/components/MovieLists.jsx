@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { fetchMoviesByGenre, fetchGenres } from "../api";
 import { MovieCard } from "./MovieCard";
-import { HeaderTwo } from "../ui/Typography";
+import { HeaderGenre } from "../ui/Typography";
 import "./MovieLists.css";
 
 export const MovieList = () => {
@@ -58,7 +58,7 @@ export const MovieList = () => {
       {genres.length > 0 ? (
         genres.map((genre) => (
           <section key={genre.id} className="genre-section">
-            <HeaderTwo>{genre.name}</HeaderTwo>
+            <HeaderGenre>{genre.name}</HeaderGenre>
             <div className="movie-list">
               <MovieCard genreId={genre.id} movies={moviesByGenres[genre.id]} />
             </div>
