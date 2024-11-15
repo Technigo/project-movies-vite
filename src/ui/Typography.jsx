@@ -37,4 +37,5 @@ color: white;
 margin: 0;
 padding: 0;
 line-height: 1.5;
+font-size: 1rem;
 `

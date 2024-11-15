@@ -6,7 +6,7 @@ import { CardContainer } from "../ui/CardContainer";
 const HomeStyles = styled.div`
   background-color: #1e1e1e;
   padding: 10px;
-  width: 100%;
+  max-width: 100%;
 `;
 
 export const Home = () => {
