@@ -16,7 +16,7 @@
   z-index: 0; 
 }
 
-/* Add this new class for the gradient overlay */
+/* Class for the gradient overlay */
 .movie-details-container::after {
   content: '';
   position: absolute;
@@ -34,15 +34,15 @@
 }
 
 .movie-content {
-  position: absolute; /* Position it absolutely within the container */
-  bottom: 20px; /* Adjust this for how close you want it to be to the bottom */
-  left: 20px; /* Adjust this for how close you want it to be to the left */
+  position: absolute; /* Absolute position within the container */
+  bottom: 20px; 
+  left: 20px; 
   display: flex;
   gap: 20px;
   max-width: 1036px;
   padding: 50px;
   border-radius: 10px;
-  z-index: 1; /* Ensure it appears above the backdrop */
+  z-index: 1; /* Appears above the backdrop */
 }
 
 .movie-image {
@@ -61,9 +61,8 @@
   padding-left: 20px;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  align-items: flex-start; /* Keep content aligned to the left */
-  justify-content: flex-end; /* Align content towards the bottom */
+  align-items: flex-start; 
+  justify-content: flex-end; 
   margin-top: auto; 
   margin: 16px 0px;
 }
@@ -81,7 +80,7 @@ font-weight: 500;
 }
 
 .rating-container {
-  border: 2px solid white; /* Adds a border around the arrow */
+  border: 2px solid white; 
   background-color: white;
   color: black;
   font-size: 24px;
@@ -90,7 +89,7 @@ font-weight: 500;
 }
 
 .back-button-container {
-  position: fixed; /* Change to fixed instead of absolute */
+  position: fixed; 
   top: 20px;
   left: 20px;
   z-index: 10;
@@ -99,8 +98,8 @@ font-weight: 500;
 }
 
 .back-button {
-  display: flex; /* Flexbox for horizontal alignment */
-  align-items: center; /* Centers arrow and text vertically */
+  display: flex; 
+  align-items: center;
   width: auto;
   color: white;
   text-decoration: none;
@@ -116,13 +115,13 @@ font-weight: 500;
 }
 
 .arrow-container {
-display: flex; /* Ensures the border wraps the arrow */
+display: flex; 
 align-items: center;
 justify-content: center;
-border: 2px solid white; /* Adds a border around the arrow */
-border-radius: 50%; /* Optional: makes the border circular */
-padding: 2px; /* Space between the arrow and the border */
-margin-right: 15px; /* Space between the arrow and text */
+border: 2px solid white; 
+border-radius: 50%; 
+padding: 2px; 
+margin-right: 15px; 
 background-color: white;
 transition: margin 0.3s ease;
 }
@@ -149,20 +148,20 @@ transition: margin 0.3s ease;
 /* Small phone */
 @media (min-width: 320px) and (max-width: 389px) {
   .movie-content {
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center align for better visual appeal */
-    gap: 10px; /* Reduce the gap between elements */
-    padding: 20px; /* Adjust padding for smaller screens */
+    flex-direction: column; 
+    align-items: center; 
+    gap: 10px; 
+    padding: 20px; 
   }
   .movie-image {
-    max-width: 180px; /* Reduce the maximum width */
+    max-width: 180px; 
     height: auto;
   }
 
   .movie-info {
-    max-width: 340px; /* Allow full width for the text content */
-    padding: 0 10px; /* Add some padding for better spacing */
-    text-align: center; /* Center-align the text */
+    max-width: 340px; 
+    padding: 0 10px; 
+    text-align: center; 
   }
 
   .movie-info h1 {
@@ -185,7 +184,7 @@ transition: margin 0.3s ease;
   .back-button-container {
     padding-left: 20px;
   }
-  
+
   .arrow-icon {
     width: 25px;
     height: 25px;
@@ -236,10 +235,9 @@ transition: margin 0.3s ease;
     width: 25px;
     height: 25px;
   }
-  
-
 }
 
+/* Large phone and tablet */
 @media (min-width: 601px) and (max-width: 780px) {
   .movie-image {
     max-width: 250px;

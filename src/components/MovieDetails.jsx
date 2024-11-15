@@ -5,9 +5,8 @@ import "../components/MovieDetails.css";
 import { Link } from "react-router-dom";
 import ArrowIcon from "../assets/ArrowIcon.svg";
 
-// API key - take this away?
+// API key
 const API_KEY = "ff5630b14afe9dae44f59f03ba4182dc";
-console.log("Using API Key:", API_KEY);
 
 export const MovieDetails = () => {
   const { id } = useParams(); // Get movie ID from URL
@@ -16,26 +15,23 @@ export const MovieDetails = () => {
   useEffect(() => {
     const movieURL = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`;
 
-    console.log("Fetch data from URL: Hello", movieURL); // Check constructed URL
-
     fetch(movieURL)
       .then(response => response.json())
       .then(data => setMovieInfo(data)) //store the movie data in state
   }, [id]); // Re-runs if id changes
 
-  //Look up if I need this?
   if (!movieInfo) return <div>Loading...</div>;
 
   return (
     <div className="movie-details-container">
-        {/* //Backdrop image */}
+        {/* Backdrop image */}
         <img 
         src={`https://image.tmdb.org/t/p/w1280${movieInfo.backdrop_path}`} 
         alt={`${movieInfo.title} Backdrop`} 
         className="movie-backdrop"
       />
         <div className="back-button-container">
-      {/* ADD BUTTON + ICON HERE? */}
+      {/* Button and Icon */}
         <Link to="/" className="back-button">
           <span className="arrow-container">
             <img src={ArrowIcon} alt="Black arrow pointing to the left" className="arrow-icon" />
