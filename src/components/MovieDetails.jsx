@@ -1,6 +1,5 @@
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { BodyText, HeaderThree } from '../ui/Typography';
+import PropTypes from "prop-types";
+import { BodyText, HeaderThree } from "../ui/Typography";
 import "./MovieDetails.css";
 
 export const MovieDetails = ({ movie }) => {
@@ -31,5 +30,6 @@ MovieDetails.propTypes = {
     title: PropTypes.string.isRequired,
     backdrop_path: PropTypes.string.isRequired,
     overview: PropTypes.string.isRequired,
+    original_language: PropTypes.string.isRequired,
   }).isRequired,
 };
