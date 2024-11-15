@@ -27,8 +27,8 @@ export const PopularMoviesList = () => {
   return (
     <div className="movie-list-container">
       {popularMovies.map((movie) => (
-        <div key={movie.id} className="movie-card">
-          <Link to={`/movie/${movie.id}`}>
+        <Link to={`/movie/${movie.id}`} key={movie.id} className="movie-card">
+          {/* <Link to={`/movie/${movie.id}`}> */}
               {/* Poster Image */}
             <img
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} // Adjust size as needed
@@ -38,7 +38,6 @@ export const PopularMoviesList = () => {
             <h3 className="movie-title">{movie.title}</h3>
               <span className="movie-release-date">{movie.release_date}</span>
           </Link>
-        </div>
         ))}
     </div>
   );
