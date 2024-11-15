@@ -1,4 +1,4 @@
-// import { BrowserRouter, Routes } from "react-router-dom";
+import { BrowserRouter, Routes } from "react-router-dom";
 // import { routes } from "./routePaths"; 
 
 import { MovieGallery } from "./pages/MovieGallery";
@@ -6,10 +6,11 @@ import { MovieGallery } from "./pages/MovieGallery";
 export const App = () => {
   return (
     <>
+    
+    <BrowserRouter>
     <MovieGallery/>
-    {/* <BrowserRouter>
-      <Routes>{routes}</Routes>
-    </BrowserRouter> */}
+      {/* <Routes>{routes}</Routes> */}
+    </BrowserRouter>
   </>
   )
 };

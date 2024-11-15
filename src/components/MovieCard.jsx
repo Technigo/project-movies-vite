@@ -8,7 +8,7 @@ export const MovieCard = ({ id, title, release_date, poster_path }) => {
       <article>
         <Link to={`/movie/${id}`}>
           <div>
-            <div
+            <img
               src={`https://image.tmdb.org/t/p/w300/${poster_path}`}
               alt={`Movie poster for ${title}`}
             />
