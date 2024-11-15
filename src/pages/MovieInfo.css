@@ -2,7 +2,16 @@ body {
   padding: 0;
   margin: 0;
   overflow-x: hidden; /* Prevent horizontal overflow */
+}
 
+.home-container {
+  padding: 0px;
+  
+}
+
+ul.home-container {
+  gap: 0px;
+  
 }
 
 /* Full-page backdrop styling */
@@ -11,20 +20,20 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh; /* Allow the page to grow with content */
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* Align to top to allow scrolling */
   justify-content: center;
   padding: 20px;
   color: white;
   position: relative;
-  overflow: hidden;
+  overflow: auto; /* Enable scrolling for the page */
 }
 
 /* Dark overlay for readability */
 .movie-info-page::before {
   content: "";
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -40,39 +49,44 @@ body {
   gap: 20px; /* Space between poster and details */
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 8px;
-  max-width: 800px;
-  max-height: 80vh;
-  overflow-y: auto;
+  max-width: 90vw;
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  align-items: flex-start;
+  width: 100%;
+  max-width: 800px;
 }
 
 /* Styling for the movie poster */
-.movie-poster img {
-  .movie-poster img {
-    width: 100%;
-    object-fit: cover;
-    }  
-}
+/* .movie-poster img {
+  width: 200px;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+} */
 
 /* Movie details section */
 .movie-details {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  gap: 10px;
   text-align: left;
   color: white;
+  flex: 1; /* Allow details to grow */
 }
 
 .movie-details h2 {
-  font-size: 2em;
-  margin-bottom: 10px;
+  font-size: 1.8em;
+  margin: 0;
 }
 
 .movie-details p {
   font-size: 1em;
   line-height: 1.6;
-  margin: 8px 0;
+  margin: 0;
+  white-space: normal; /* Allow text to wrap */
 }
 
 /* Error and loading message styling */
@@ -94,47 +108,44 @@ body {
   .movie-info-container {
     flex-direction: column;
     align-items: center;
-    max-width: 90vw;
     padding: 15px;
-    height: auto; /* Ensure it fits within the screen */
-
+    max-width: 100%; /* Prevent horizontal overflow */
   }
 
-  .movie-details {
-    text-align: center;
-  }
-
-  .movie-poster img {
+  /* .movie-poster img {
     width: 150px;
     margin-bottom: 10px;
-  }
+  } */
 
   .movie-details h2 {
     font-size: 1.6em;
+    text-align: center;
   }
 
   .movie-details p {
     font-size: 0.9em;
+    text-align: center;
   }
 }
 
 @media (max-width: 480px) {
   .movie-info-container {
     padding: 10px;
+    flex-direction: column;
     max-width: 100%;
-    height: auto; /* Prevent scrolling by adapting height */
-
   }
 
-  .movie-poster img {
+  /* .movie-poster img {
     width: 120px;
-  }
+  } */
 
   .movie-details h2 {
     font-size: 1.4em;
+    text-align: center;
   }
 
   .movie-details p {
     font-size: 0.85em;
+    text-align: center;
   }
 }
