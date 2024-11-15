@@ -3,31 +3,26 @@ import styled from 'styled-components';
 import { BodyText, HeaderThree } from '../ui/Typography';
 import "./MovieDetails.css";
 
-const MovieDetailsStyles = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: flex-end;
-background-color: #333333;
-width: 100%;
-padding: 10px;
-`
-
 export const MovieDetails = ({ movie }) => {
   console.log(movie);
 
-  const { title, backdrop_path, overview } = movie;
+  const { title, backdrop_path, overview, original_language
+  } = movie;
   const backgroundImage = `https://image.tmdb.org/t/p/w500/${backdrop_path}`;
 
   return (
-    <MovieDetailsStyles>
-      <div className='img-movie-details-container'>
-        <img src={backgroundImage} alt={overview} className="img-movie-details" />
-      </div>
-      <div className="text-movie-details-container">
-        <HeaderThree>{title}</HeaderThree>
-        <BodyText>{overview}</BodyText>
-      </div>
-    </MovieDetailsStyles>
+    <>
+      <section className="movie-detail-section-container">
+        <div className='img-movie-details-container'>
+          <img src={backgroundImage} alt={overview} className="img-movie-details" />
+        </div>
+        <div className="text-movie-details-container">
+          <HeaderThree>{title}</HeaderThree>
+          <div className="language">original language: {original_language}</div>
+          <BodyText>{overview}</BodyText>
+        </div>
+      </section>
+    </>
   );
 };
 
