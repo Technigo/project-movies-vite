@@ -15,7 +15,7 @@ To improve especially the design, it would be good to have more movies for the d
 
 ### View it live
 
-
+https://gittesmoviesite.netlify.app/
 
 ## Instructions
 
