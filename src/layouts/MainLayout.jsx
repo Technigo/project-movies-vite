@@ -23,7 +23,7 @@ const MainLayout = () => {
       <div className="d:mp-6 flex min-h-screen flex-col gap-4 bg-gradient-to-r from-green-200 to-green-100 p-4 lg:flex-row lg:gap-6 xl:gap-8 2xl:gap-10 2xl:p-10">
         <Sidebar
           onClick={clearSearch}
-          className="xl:h-sidebar-height-xl sticky top-4 w-full flex-shrink-0 shadow-sm lg:w-80 xl:top-0 2xl:top-10 2xl:h-sidebar-height-2xl"
+          className="sticky top-4 w-full flex-shrink-0 shadow-sm lg:w-80 xl:top-0 xl:h-sidebar-height-xl 2xl:top-10 2xl:h-sidebar-height-2xl"
         />
 
         <div className="flex flex-1 flex-col">
@@ -36,7 +36,13 @@ const MainLayout = () => {
           </main>
 
           <footer className="rounded-lg bg-white p-4 text-center">
-            &copy; {new Date().getFullYear()} MovieHut
+            &copy; {new Date().getFullYear()} MovieHut by{" "}
+            <a
+              aria-label="Helene Westrin on LinkedIn"
+              href="https://www.linkedin.com/in/helenewestrin/"
+            >
+              Helene Westrin
+            </a>
           </footer>
         </div>
       </div>

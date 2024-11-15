@@ -8,7 +8,7 @@ const baseStyles = {
   h4: "text-xl font-semibold",
   h5: "text-lg font-semibold",
   p: "text-base",
-  bodyLarge: "text-lg",
+  bodyLarge: "text-lg lg:text-2xl font-light",
   bodyDefault: "text-base",
   bodySmall: "text-sm",
 };

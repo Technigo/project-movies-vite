@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    @apply font-main;
+  }
+}
+
 @layer components {
   .hamburger svg {
     transform: translate(0);

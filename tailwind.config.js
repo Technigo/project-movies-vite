@@ -23,6 +23,9 @@ export default {
       "green-900": "#323C27",
       "green-950": "#272C22",
     },
+    fontFamily: {
+      main: ["Albert Sans", "sans-serif"],
+    },
     screens: {
       xs: "375px",
       sm: "640px",
@@ -31,6 +34,7 @@ export default {
       xl: "1280px",
       "2xl": "1536px",
       "3xl": "1920px",
+      "4xl": "2050px",
     },
     extend: {
       height: {

@@ -6,6 +6,7 @@ import { slugify } from "../utils/slugify";
 import Button from "../components/ui/Button";
 import GoBackIcon from "../assets/icons/arrow_back.svg?react";
 import noBackDropFound from "../assets/images/no-backdrop-found.png";
+import Badge from "../components/ui/Badge";
 
 const MovieDetails = () => {
   const { idSlug } = useParams();
@@ -63,22 +64,28 @@ const MovieDetails = () => {
       >
         <GoBackIcon /> Go back
       </Button>
-      <header>
-        <img
-          src={
-            movie.poster_path
-              ? `https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`
-              : noBackDropFound
-          }
-          alt=""
-        />
+      <header className="items grid grid-cols-12 gap-8">
+        <div className="col-span-12 lg:order-2 lg:col-span-6">
+          <img
+            src={
+              movie.poster_path
+                ? `https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`
+                : noBackDropFound
+            }
+            alt=""
+            className="rounded-lg"
+          />
+        </div>
+        <div className="col-span-12 lg:order-1 lg:col-span-5">
+          <Typography element="h1" className="mb-4">
+            {movie.title}
+          </Typography>
+          <Typography element="p" styledAs="bodyLarge">
+            {movie.overview}
+          </Typography>
+          <Badge>{movie.genres.map((genre) => genre.name)}</Badge>
+        </div>
       </header>
-      <Typography element="h1" className="mb-4">
-        {movie.title}
-      </Typography>
-      <Typography element="p" styledAs="bodyLarge">
-        {movie.overview}
-      </Typography>
     </div>
   );
 };
