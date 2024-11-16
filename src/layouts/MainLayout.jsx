@@ -31,7 +31,7 @@ const MainLayout = () => {
             <SearchBar onSearch={handleSearch} value={searchQuery} />
           </header>
 
-          <main className="flex-grow py-5 lg:py-10">
+          <main className="flex-grow py-3 lg:py-10">
             <Outlet context={{ searchQuery, clearSearch }} />
           </main>
 

@@ -1,71 +1,82 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { fetchMovieDetails } from "../api/tmdb";
+import { fetchMovieDetails, fetchMovieCredits } from "../api/tmdb";
 import { Typography } from "../components/ui/Typography";
 import { slugify } from "../utils/slugify";
 import Button from "../components/ui/Button";
 import GoBackIcon from "../assets/icons/arrow_back.svg?react";
 import noBackDropFound from "../assets/images/no-backdrop-found.png";
 import Badge from "../components/ui/Badge";
+import BadgeGroup from "../components/ui/BadgeGroup";
 
 const MovieDetails = () => {
   const { idSlug } = useParams();
   const navigate = useNavigate();
   const [movie, setMovie] = useState(null);
+  const [credits, setCredits] = useState(null);
 
   // Parse id and slug from idSlug
   const separatorIndex = idSlug.indexOf("-");
   if (separatorIndex === -1) {
-    // If no hyphen is found, the URL format is invalid
     navigate("/not-found", { replace: true });
     return null;
   }
 
-  // Extract 'id' and 'slug' from 'idSlug' based on the position of the hyphen
   const id = idSlug.substring(0, separatorIndex);
   const slug = idSlug.substring(separatorIndex + 1);
 
-  // Convert id to a number
   const idNumber = parseInt(id, 10);
   if (isNaN(idNumber)) {
-    // Handle Invalid ID
     navigate("/not-found", { replace: true });
     return null;
   }
 
   useEffect(() => {
-    const getMovieDetails = async () => {
-      const data = await fetchMovieDetails(id);
+    const getMovieData = async () => {
+      try {
+        const [movieData, creditsData] = await Promise.all([
+          fetchMovieDetails(id),
+          fetchMovieCredits(id),
+        ]);
 
-      if (data) {
-        setMovie(data);
+        if (movieData) {
+          setMovie(movieData);
+          const actualSlug = slugify(movieData.title);
 
-        const actualSlug = slugify(data.title);
-
-        if (actualSlug !== slug) {
-          // Redirect to the correct URL
-          navigate(`/movie/${id}-${actualSlug}`, { replace: true });
+          if (actualSlug !== slug) {
+            navigate(`/movie/${id}-${actualSlug}`, { replace: true });
+          }
+        } else {
+          navigate("/not-found");
         }
-      } else {
+
+        if (creditsData) {
+          setCredits(creditsData);
+        }
+      } catch (error) {
+        console.error("Error fetching movie data:", error);
         navigate("/not-found");
       }
     };
-    getMovieDetails();
+
+    getMovieData();
   }, [id, slug, navigate]);
 
   if (!movie) return <div>Loading movie...</div>;
+
+  const releaseYear = movie.release_date.split("-")[0];
 
   return (
     <div>
       <Button
         variant="secondary"
         onClick={() => navigate(-1)}
-        className="mb-12"
+        className="mb-6 lg:mb-12"
       >
         <GoBackIcon /> Go back
       </Button>
-      <header className="items grid grid-cols-12 gap-8">
-        <div className="col-span-12 lg:order-2 lg:col-span-6">
+      <header className="items grid grid-cols-2 items-center gap-8 md:grid-cols-8 md:gap-10 lg:grid-cols-12 lg:gap-14">
+        <div className="col-span-2 md:col-span-4 lg:order-2 lg:col-span-6">
           <img
             src={
               movie.poster_path
@@ -76,16 +87,50 @@ const MovieDetails = () => {
             className="rounded-lg"
           />
         </div>
-        <div className="col-span-12 lg:order-1 lg:col-span-5">
+        <div className="col-span-2 md:col-span-4 lg:order-1 lg:col-span-6">
           <Typography element="h1" className="mb-4">
-            {movie.title}
+            {movie.title} ({releaseYear})
           </Typography>
           <Typography element="p" styledAs="bodyLarge">
             {movie.overview}
           </Typography>
-          <Badge>{movie.genres.map((genre) => genre.name)}</Badge>
+          <BadgeGroup>
+            {movie.genres.map((genre) => (
+              <Badge key={genre.id}>{genre.name}</Badge>
+            ))}
+          </BadgeGroup>
         </div>
       </header>
+      <section>
+        {credits && (
+          <div className="mt-8">
+            <Typography element="h2" className="mb-4 mt-12">
+              Top cast
+            </Typography>
+            <ul className="grid grid-cols-1 gap-4 md:grid-cols-4">
+              {credits.cast.slice(0, 8).map((actor) => (
+                <li key={actor.id} className="flex items-center gap-4">
+                  <img
+                    src={
+                      actor.profile_path
+                        ? `https://image.tmdb.org/t/p/w185${actor.profile_path}`
+                        : noBackDropFound
+                    }
+                    alt=""
+                    className="h-auto w-20 rounded"
+                  />
+                  <div>
+                    <Typography element="h3" styledAs="h5">
+                      {actor.name}
+                    </Typography>
+                    <Typography element="p">{actor.character}</Typography>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </section>
     </div>
   );
 };

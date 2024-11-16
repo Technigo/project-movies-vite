@@ -6,7 +6,7 @@ import StarIcon from "../assets/icons/star.svg?react";
 
 const MovieList = ({ movies }) => {
   return (
-    <div className="4xl:grid-cols-6 grid grid-cols-1 gap-3 sm:grid-cols-2 md:gap-8 lg:grid-cols-3 lg:gap-6 xl:grid-cols-4">
+    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:gap-8 lg:grid-cols-3 lg:gap-6 xl:grid-cols-4 4xl:grid-cols-6">
       {movies.map((movie) => {
         return (
           <div
@@ -18,7 +18,7 @@ const MovieList = ({ movies }) => {
               className="group"
               aria-label={movie.title}
             >
-              <div class="overflow-hidden">
+              <div className="overflow-hidden">
                 <img
                   src={
                     movie.poster_path

@@ -40,6 +40,24 @@ export const fetchMovieDetails = async (id) => {
   }
 };
 
+export const fetchMovieCredits = async (id) => {
+  try {
+    const response = await axios.get(`${baseUrl}/movie/${id}/credits`, {
+      params: {
+        language: "en-US",
+      },
+      headers: {
+        accept: "application/json",
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching movie credits:", error);
+    return null;
+  }
+};
+
 export const searchMovies = async (query) => {
   try {
     const response = await axios.get(`${baseUrl}/search/movie`, {
