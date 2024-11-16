@@ -25,7 +25,7 @@ Fron the begining we had problem with one of the components but this quickly got
 
 
 ### View it live
-https://github.com/Technigo/project-movies-vite/pull/76
+https://lemaisoncinemaa.netlify.app/
 
 ## Instructions
 
