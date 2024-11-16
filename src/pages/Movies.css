@@ -1,0 +1,30 @@
+/* Movies.css */
+
+.movies-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  list-style-type: none;
+}
+
+.movie-item {
+  grid-column: span 1;
+}
+
+.movie-item img {
+  width: 100%;
+}
+
+/* for tablet and desktop */
+@media (min-width: 668px) {
+
+  .movies-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/*For small mobile screens*/
+@media (max-width: 380px) {
+  .movies-container {
+    grid-template-columns: 1fr;
+  }
+}

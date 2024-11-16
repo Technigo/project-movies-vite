@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { MovieCard } from "../components/MovieCard";
+import "./Movies.css";
 
 export const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -31,16 +32,18 @@ export const Movies = () => {
 
   return (
     <>
-      <h1>All Movies goes here!</h1>
-      <div className="movies-container">
+      <ul className="movies-container">
         {movies.map(movie => (
-          <MovieCard
-            key={movie.id}
-            id={movie.id}
-            poster={movie.poster_path}
-          />
+          <li key={movie.id} className="movie-item">
+            <MovieCard
+              id={movie.id}
+              poster={movie.poster_path}
+              title={movie.title}
+              releaseDate={movie.release_date}
+            />
+          </li>
         ))}
-      </div>
+      </ul>
     </>
   );
 };

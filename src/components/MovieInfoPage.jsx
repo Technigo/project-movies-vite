@@ -27,7 +27,7 @@ export const MovieInfoPage = ({
           <div className="movie-container">
             <img src={poster} alt={title} />
             <div className="movie-info">
-              <h1>{title}<span className="rating"><FontAwesomeIcon icon={faStar} className="star-icon" />{rating.toFixed(1)}</span></h1>
+              <h1><span className="title">{title}</span><span className="rating"><FontAwesomeIcon icon={faStar} className="star-icon" />{rating.toFixed(1)}</span></h1>
               <p>{overview}</p>
             </div>
           </div>

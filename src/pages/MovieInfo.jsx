@@ -35,7 +35,7 @@ export const MovieInfo = () => {
     <>
       <MovieInfoPage
         background={`https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}`}
-        poster={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`}
+        poster={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
         title={movie.title}
         rating={movie.vote_average}
         overview={movie.overview}
