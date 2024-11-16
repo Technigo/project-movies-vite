@@ -1,3 +1,4 @@
+import { AppRouter } from "./routes/AppRouter";
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  return <AppRouter />;
 };
