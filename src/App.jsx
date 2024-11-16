@@ -1,10 +1,9 @@
 import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom";
 import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 import { MovieList } from "./pages/MovieList";
 import { MovieCard } from "./pages/MovieCard";
 import { PageNotFound } from "./pages/PageNotFound";
-
-
 
 
 const DefaultLayout = () => {
@@ -12,6 +11,7 @@ const DefaultLayout = () => {
     <>
       <Header />
       <Outlet />
+      <Footer />
     </>
   );
 };
