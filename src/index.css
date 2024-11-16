@@ -1,15 +1,15 @@
-:root {
+/* :root {
   --primary-color: #ff276f;
   --primary-text: #f7f7f7;
   --secondary-color: #676080;
   --bg-dark: #15121f;
   --bg-light: #231f33;
-}
+} */
 
 body {
   background-color: var(--bg-dark);
   color: var(--primary-text);
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.25rem;
   line-height: 1.75;
   overflow-x: hidden;
@@ -42,7 +42,7 @@ a.active {
   border: 1px solid var(--button-border-color);
 }
 
-.not-found {
+/* .not-found {
   background-color: var(--bg-light);
   display: flex;
   flex-direction: column;
@@ -57,17 +57,17 @@ a.active {
   background-position: center;
   box-shadow: 0 0 50px #656565;
   background-image: url("./assets/placeholder.jpg");
-}
+} */
 
-.not-found::before {
-  content: '';
+/* .not-found::before {
+  content: "";
   width: 100%;
   height: 100vh;
   background: var(--opacity-light);
   position: absolute;
-}
+} */
 
-.not-found p {
+/* .not-found p {
   font-weight: 900;
   z-index: 10;
 }
@@ -107,9 +107,10 @@ a.active {
   letter-spacing: 2px;
   padding-left: 1rem;
   text-transform: uppercase;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
-
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+} */
+/* 
 .nav-logo:hover {
   opacity: 0.9;
 }
@@ -118,7 +119,7 @@ a.active {
   background-color: #15121f;
   min-height: 100vh;
   padding-top: 40px;
-}
+} */
 
 .movie-boxes {
   display: grid;
@@ -192,19 +193,11 @@ a.active {
     padding: 1rem;
   }
 
-  .navbar {
+  /* .navbar {
     padding: 1rem;
   }
 
   .nav-logo {
     font-size: 1.25rem;
-  }
-}
-
-.site-title {
-  color: white;
-  font-size: 2rem;
-  padding: 20px;
-  margin-top: 20px;
-  margin-left: 20px;
+  } */
 }

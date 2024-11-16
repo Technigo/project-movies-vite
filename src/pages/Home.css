@@ -49,3 +49,8 @@
   margin: 5px 0 0;
   font-size: 0.875rem;
 }
+
+.movie-header-title {
+  font-size: 4rem; /* Default size for larger screens */
+  margin: 0;
+}

@@ -76,7 +76,7 @@ button {
 }
 
 .placeholder {
-  background-image: url("./assets/placeholder.jpg");
+  /* background-image: url("./assets/placeholder.jpg"); */
   position: absolute;
   bottom: 0;
   top: 0;
@@ -93,7 +93,7 @@ button {
 
 /* NOT FOUND PAGE */
 .notFoundContainer {
-  background-image: url("./assets/placeholder.jpg") !important;
+  /* background-image: url("./assets/placeholder.jpg") !important; */
   background-color: var(--bg-light);
   display: flex;
   flex-direction: column;

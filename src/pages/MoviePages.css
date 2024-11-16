@@ -3,13 +3,13 @@
 .info-backdrop {
   width: 100%;
   min-height: 100%;
-  position: fixed;
+  position: absolute;
   margin: -10px;
   z-index: 1;
   object-fit: cover;
-  display: block;
+  /* display: block; */
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   background-position: center top;
   background-image: linear-gradient(
       to top,
@@ -17,7 +17,7 @@
       rgba(255, 255, 255, 0) 80%
     ),
     var(--img);
-  background-size: cover;
+  /* background-size: cover; */
 }
 
 /* HOME BUTTON FUNCTIONALITY */
@@ -182,14 +182,15 @@
 }
 
 .content-wrapper {
-  top: 120px;
+  /* top: 100px; */
   position: relative;
   z-index: 2;
   min-height: 100vh;
   display: flex;
-  padding: 120px 60px 60px;
+  padding: 100px 60px 60px;
   align-items: center;
-  gap: 40px;
+
+  /* gap: 40px; */
 }
 
 .poster-frame {
@@ -249,7 +250,7 @@
   }
 
   .overview {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
@@ -263,4 +264,12 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.movie-detail-page {
+  position: center;
+  min-height: 100vh;
+  background-color: #000;
+  overflow: hidden;
+  padding-top: 80px; /* Reserve space for the home button */
 }
