@@ -3,6 +3,7 @@
 
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { CardH1, P } from "../ui/Typography";
 
 const MovieCardContainer = styled.article`
 
@@ -48,8 +49,8 @@ export const MovieCard = ({ id, title, release_date, poster_path }) => {
               alt={`Movie poster for ${title}`}
             />
             <MovieCardText>
-              <h1>{title}</h1>
-              <p>Released {release_date}</p>
+              <CardH1>{title}</CardH1>
+              <P>Released {release_date}</P>
             </MovieCardText>
           </PosterContainer>
         </Link>
