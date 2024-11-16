@@ -1,6 +1,21 @@
+import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 import { MovieGrid } from "../ui/MovieGrid"; // Use MovieGrid for displaying the movies in a grid
 import { PageTitle } from '../ui/Typography';
+
+
+const StyledPageTitle = styled(PageTitle)`
+padding: 40px 0px 0px 25px; 
+text-align: center; 
+
+/* Media query for mobile */
+@media (max-width: 480px) {
+  font-size: 1.5rem; 
+ }
+
+`
+
+
 
 export const Upcoming = () => {
   const [movies, setMovies] = useState([]);
@@ -39,7 +54,7 @@ export const Upcoming = () => {
   return (
     <div className="upcoming-movies">
       {error && <p>{error}</p>}
-      <PageTitle>Upcoming movies</PageTitle>
+      <StyledPageTitle>Upcoming movies</StyledPageTitle>
       {/* Pass the movies array to MovieGrid */}
       <MovieGrid movies={movies} />
     </div>

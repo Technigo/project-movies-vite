@@ -3,12 +3,13 @@
 // It fetches movie data from an external API based on the movie ID provided in the URL.
 // The component includes a loading spinner and a back link to the main movies page.
 
+/* eslint-disable react/prop-types */
+// MovieInfo.jsx - This component displays detailed information about a specific movie.
 
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import styled from "styled-components";
 import { SubPageTitle, Text } from "../ui/Typography";
-
 
 const MovieInfoWrapper = styled.div`
   display: flex;
@@ -21,15 +22,15 @@ const MovieInfoWrapper = styled.div`
 const BackdropContainer = styled.div`
   width: 100%;
   position: relative;
-  height: 500px; /* Adjust the height as needed */
+  height: 700px; /* Adjust the height as needed */
   overflow: hidden;
   z-index: -1; /* Ensure it's behind content */
+  background-color: #000; /* Solid color to block global background */
 
   .movie-backdrop {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.35; 
   }
 `;
 
@@ -37,42 +38,77 @@ const ContentContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  margin: 20px;
+  justify-content: center;
+  margin-top: -100px; /* Pull content up to account for poster overlap */
   max-width: 1200px;
   gap: 20px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1300px) {
     flex-direction: column;
-    align-items: left;
+    align-items: center;
+    margin-top: -140px; /* Adjust for smaller screens */
   }
 `;
 
+// Add opacity directly to the backdrop image inside the BackdropContainer
+const BackdropImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.35; /* Adjust the opacity level as needed */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; /* Ensure it stays behind the text */
+`;
+
+
 const PosterContainer = styled.div`
   flex-shrink: 0;
-  
+  position: relative; /* Establishes the containing block for the absolute child */
 
   .movie-poster {
     width: 300px;
     border-radius: 10px;
-    position: absolute; /* Position over the backdrop */
-    top: 50%; /* Adjust based on where you want it to appear */
-    left: 40px; /* Position from the left */
+    position: absolute; /* Position relative to the container */
+    top: -150px; /* Adjust to overlap the backdrop */
+    right: 80px; /* Adjust horizontal alignment */
     z-index: 2; /* Ensure it's above the backdrop */
 
-    @media (max-width: 768px) {
-      width: 250px; 
-      top: 30%; 
+    @media (max-width: 1200px) {
+      width: 250px;
+      margin-left: -100px; 
+    }
   
+
+    @media (max-width: 768px) {
+      width: 250px;
+      top: -380px; /* Adjust for smaller screens */
+      right: -120px; 
+    }
   }
-}
+
+  @media (max-width: 480px) {
+      width: 250px;
+      top: -100px; /* Adjust for smaller screens */
+      right: 120px; 
+    }
 `;
 
 const DetailsContainer = styled.div`
   flex-grow: 1;
   z-index: 2; /* Ensure the details are above the backdrop */
   max-width: 600px; /* Control the max width of the details */
-`;
+  padding: 20px; 
 
+
+  @media (max-width: 480px) {
+      margin-top: -120px; /* Adjust for smaller screens */
+      margin-left: 20px; 
+      
+    }
+
+`;
 
 export const MovieInfo = () => {
   const { id } = useParams(); // Captures the movie ID from the URL
@@ -109,7 +145,7 @@ export const MovieInfo = () => {
   return (
     <MovieInfoWrapper>
       <BackdropContainer>
-        <img
+        <BackdropImage
           src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`}
           alt={movie.title}
           className="movie-backdrop"
@@ -138,8 +174,6 @@ export const MovieInfo = () => {
     </MovieInfoWrapper>
   );
 };
-
-
 
 
 
