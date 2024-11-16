@@ -11,3 +11,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.active {
+  color: red;
+}
+
+
+.movie-details {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.backdrop {
+  width: 100%;
+  height: 400px;
+  /* Justera höjden enligt behov */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.poster {
+  width: 200px;
+  /* Justera storlek på postern */
+  margin-top: 20px;
+}
