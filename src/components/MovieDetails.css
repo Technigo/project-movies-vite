@@ -1,0 +1,130 @@
+.movie-details-container {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    box-shadow: inset 0 -150px 120px rgba(0, 0, 0, 0.9);
+
+}
+
+.movie-image {
+    width: 370px;
+    height: 550px;
+    border: 4px solid white;
+    margin: 120px 20px 0px 50px;
+}
+
+.movie-details {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    margin-bottom: 50px;
+
+}
+
+.movie-title {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.movie-title-rating {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.movie-summary {
+    line-height: 1.6;
+    font-size: 1rem;
+    max-width: 500px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.movie-rating {
+    background-color: white;
+    color: black;
+    padding: 5px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+/* Mobile Styles (320px to 480px, covering all phones up to iPhone 15) */
+@media (max-width: 480px) {
+    .movie-details-container {
+        flex-direction: column;
+        /* Stack everything vertically */
+        align-items: center;
+        padding: 10px;
+    }
+
+    .movie-image {
+        width: 90%;
+        max-width: 300px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .movie-details {
+        align-items: center;
+        text-align: center;
+    }
+
+    .movie-title-rating {
+        flex-direction: column;
+        /* Stack title and rating */
+        gap: 10px;
+    }
+
+    .movie-summary {
+        max-width: 90%;
+        /* Make text take up more width */
+        font-size: 0.9rem;
+        /* Slightly smaller font size */
+        line-height: 1.5;
+    }
+
+    .movie-rating {
+        font-size: 1rem;
+        /* Adjust rating font size */
+    }
+}
+
+/* Tablet Styles (481px to 1024px) */
+@media (min-width: 481px) and (max-width: 1024px) {
+    .movie-details-container {
+        align-items: center;
+        padding: 20px;
+        box-shadow: inset 0 -300px 120px rgba(0, 0, 0, 0.9);
+
+    }
+
+    .movie-image {
+        width: 300px;
+        height: auto;
+        margin: 20px 0;
+        margin-top: auto;
+    }
+
+    .movie-details {
+        align-items: center;
+        text-align: center;
+        margin-top: auto;
+
+    }
+
+    .movie-title-rating {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .movie-summary {
+        max-width: 80%;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .movie-rating {
+        font-size: 1.2rem;
+    }
+}

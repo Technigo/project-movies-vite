@@ -1,27 +1,35 @@
-// MovieDetails.jsx
+// MovieDetails.jsx - This component displays detailed information for a specific movie, including its title, backdrop image, and overview.
+import './MovieDetails.css';
 
 export const MovieDetails = ({ movie }) => {
-    // Debugging: Confirm the movie prop is received
-    console.log("Movie Details:", movie);
+	console.log("Movie Details:", movie); // Log movie data for debugging purposes
 
-    // Ensure that movie is defined and contains the expected properties
-    if (!movie || !movie.poster_path || !movie.title || !movie.release_date || !movie.overview) {
-        return <div>No details available for this movie.</div>;
-    }
+	// Destructure relevant fields from the movie object
+	const { title, backdrop_path, poster_path, overview, vote_average } = movie;
 
-    return (
-        <div className="movie-details">
-            <img
-                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                alt={movie.title}
-                className="movie-details-poster"
-            />
-            <div className="movie-details-info">
-                <h2>{movie.title}</h2>
-                <p><strong>Release Date:</strong> {movie.release_date}</p>
-                <p><strong>Overview:</strong> {movie.overview}</p>
-                {/* Add additional movie details as needed */}
-            </div>
-        </div>
-    );
+	// Construct the URL for the movie's backdrop image
+	const backgroundImage = `https://image.tmdb.org/t/p/original${backdrop_path}`;
+	const posterImage = `https://image.tmdb.org/t/p/w500${poster_path}`;
+
+	return (
+		<div className="movie-details-container" style={{ backgroundImage: `url(${backgroundImage})` }}>
+			{/* Display the movie's poster image */}
+			<img
+				src={posterImage}
+				alt={title}
+				className="movie-image"
+			/>
+
+			<div className="movie-details">
+				{/* Movie title and rating */}
+				<div className="movie-title-rating">
+					<h1 className="movie-title">{title}</h1>
+					<span className="movie-rating">⭐ {vote_average.toFixed(1)}</span>
+				</div>
+
+				{/* Display the movie overview/description */}
+				<p className="movie-summary">{overview}</p>
+			</div>
+		</div>
+	);
 };

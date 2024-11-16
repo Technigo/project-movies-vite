@@ -2,6 +2,8 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { MovieDetails } from "../components/MovieDetails";
+import "./MovieInfo.css";
+
 
 export const MovieInfo = () => {
     const { id } = useParams();
@@ -40,7 +42,6 @@ export const MovieInfo = () => {
 
     return (
         <div>
-            <h1>{movie.title}</h1>
             <MovieDetails movie={movie} /> {/* Pass movie data to MovieDetails component */}
         </div>
     );
