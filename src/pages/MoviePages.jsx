@@ -1,75 +1,74 @@
-import { useParams, Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import './MoviePages.css';
+import { useParams, Link } from "react-router-dom"; // `useParams` to get route parameters, `Link` for navigation
+import { useState, useEffect } from "react";
+import { fetchMovieDetails } from "../api/movieApi";
+import "./MoviePages.css";
 
 export const MoviePages = () => {
+  // Get the `id` parameter from the URL using `useParams`
   const { id } = useParams();
+  // State to hold the fetched movie details
   const [movie, setMovie] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
 
+  // fetch the movie details when the component mounts or when `id` changes
   useEffect(() => {
-    const fetchMovie = async () => {
+    const loadMovie = async () => {
       try {
-        const response = await fetch(
-          `https://api.themoviedb.org/3/movie/${id}?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US`
-        );
-        const data = await response.json();
-        setMovie(data);
+        const movieData = await fetchMovieDetails(id);
+        // Update the state with the fetched movie details
+        setMovie(movieData);
       } catch (error) {
-        console.error('Error fetching movie:', error);
-      } finally {
-        setIsLoading(false);
+        console.error("Error loading movie:", error);
       }
     };
 
-    fetchMovie();
+    loadMovie();
   }, [id]);
 
-  if (isLoading) {
-    return <div className="loading">Loading...</div>;
+  // Render a fallback if no movie data is available
+  if (!movie) {
+    return (
+      <div className="error">
+        Failed to load movie details. Please try again later.
+      </div>
+    );
   }
 
   return (
     <div className="movie-detail-page">
       <div className="back-nav">
         <Link to="/" className="back-button">
-          <svg 
-            className="back-arrow"
-            //width="20" 
-            //height="20" 
-            //viewBox="0 0 24 24" 
-            fill="none" 
-            stroke="currentColor" 
-            //strokeWidth="2" 
-            //strokeLinecap="round" 
-            //strokeLinejoin="round"
-          >
+          <svg className="back-arrow" fill="none" stroke="currentColor">
+            {/* SVG path for the back arrow icon */}
             <path d="M19 12H5M5 12L12 19M5 12L12 5" />
           </svg>
           Home
         </Link>
       </div>
 
+      {/* Content wrapper for the poster and movie details */}
       <div className="content-wrapper">
         <div className="poster-frame">
-          <img 
-            src={`https://image.tmdb.org/t/p/w500${movie?.poster_path}`}
-            alt={movie?.title}
+          <img
+            src={`https://image.tmdb.org/t/p/w500${movie?.poster_path}`} // Dynamically generate the image URL
+            alt={movie?.title} // Use the movie title as `alt` text for accessibility
             className="movie-poster"
           />
         </div>
-        
+
         <div className="movie-info">
           <div className="rating">⭐ {movie?.vote_average.toFixed(1)}</div>
+          {/* Display the movie rating */}
           <h1>{movie?.title}</h1>
+          {/* Display the movie title */}
           <p className="overview">{movie?.overview}</p>
+          {/* Display the movie overview */}
         </div>
       </div>
 
-      <div 
+      <div
         className="backdrop"
         style={{
-          backgroundImage: `url(https://image.tmdb.org/t/p/original${movie?.backdrop_path})`
+          backgroundImage: `url(https://image.tmdb.org/t/p/original${movie?.backdrop_path})`, // Dynamically generate the background image URL
         }}
       />
     </div>
