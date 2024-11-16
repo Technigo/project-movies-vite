@@ -1,0 +1,39 @@
+footer .footer-text-box {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  color: #f1e3cb;
+  padding: 32px 16px;
+  width: 100%;
+
+  @media (min-width: 567px) {
+    flex-direction: row-reverse; 
+    justify-content: space-between;
+    padding: 32px 24px;    
+  }
+   
+  @media (min-width: 768px) {
+    padding: 32px 32px;
+  }
+  
+  @media (min-width: 1200px) {
+    padding: 32px 64px;
+  }
+}
+
+footer .MDTB-icon {
+  font-size: 2.85rem;
+  
+  @media (min-width: 768px) {
+    margin-left: 16px;
+  }  
+}
+
+footer .footer-text-content p {
+  font-family: "Poppins", serif, monospace;
+  font-size: 0.75rem;
+
+  @media (min-width: 992px) {
+    font-size: 0.9rem;
+  }
+}
