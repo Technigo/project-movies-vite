@@ -17,6 +17,7 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   /* color: inherit; */
   color: white;
+  padding: 20px;
 `;
 
 const BackButton = styled.img`

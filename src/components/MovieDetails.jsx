@@ -9,15 +9,25 @@ const DetailsContainer = styled.div `
   display: flex;
   flex-direction: column;
   padding: 50px;
+  padding-top: 10px;
   /* flex-direction: row;
   align-items: flex-end;
   padding: 50px; */
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: flex-end;
+  }
 `;
 
 const DetailsTextContainer = styled.div `
-  /* margin-left: 20px; */
+  
   max-width: 400px;
   color: white;
+
+  @media (min-width: 768px) {
+    margin-left: 20px;
+  }
 `;
 
 const Span = styled.span`
@@ -38,6 +48,10 @@ const Rating = styled.div `
 const MovieDetailsPoster = styled.img`
   border: 5px solid #fff;
   width: 200px;
+
+  @media (min-width: 768px) {
+    width: auto;
+  }
 `;
 
 export const MovieDetails = ({ title, poster_path, overview, rating }) => {
