@@ -20,6 +20,7 @@ if I had more time, I would like to try to re do it my self to get a deeper comp
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+My site: 
+https://moviesestefanny.netlify.app/movies/335983
 
 
