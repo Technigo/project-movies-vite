@@ -48,12 +48,12 @@
     font-weight: 600;
 }
 
-/* Mobile Styles (320px to 480px, covering all phones up to iPhone 15) */
 @media (max-width: 480px) {
     .movie-details-container {
         flex-direction: column;
         /* Stack everything vertically */
         align-items: center;
+        /* Center all child elements horizontally */
         padding: 10px;
     }
 
@@ -61,7 +61,8 @@
         width: 90%;
         max-width: 300px;
         height: auto;
-        margin-bottom: 20px;
+        margin: 0 auto 20px;
+        display: block;
     }
 
     .movie-details {
@@ -71,13 +72,14 @@
 
     .movie-title-rating {
         flex-direction: column;
-        /* Stack title and rating */
         gap: 10px;
+        margin-bottom: 10px;
+        ;
     }
 
     .movie-summary {
         max-width: 90%;
-        /* Make text take up more width */
+        /* Make the text take up more width */
         font-size: 0.9rem;
         /* Slightly smaller font size */
         line-height: 1.5;
@@ -85,7 +87,7 @@
 
     .movie-rating {
         font-size: 1rem;
-        /* Adjust rating font size */
+        /* Adjust the font size for smaller screens */
     }
 }
 
@@ -103,6 +105,8 @@
         height: auto;
         margin: 20px 0;
         margin-top: auto;
+        margin-bottom: 40px;
+        margin-left: 20px;
     }
 
     .movie-details {
