@@ -6,11 +6,11 @@ import { InfoPage } from "../pages/InfoPage";
 export const AppRoutes = () => {
     return (
         <Routes>
-            {/* Set HomePage as the homepage, displaying the list of movies */}
+            {/* Set HomePage as the homepage, to show the list of movies */}
             <Route path="/" element={<HomePage />} />
             {/* Route for movie details, with movieId as a URL parameter */}
             <Route path="/movie/:movieId" element={<InfoPage />} />
-            {/* Optional: Redirect any unknown paths to the homepage */}
+            {/* Redirect any unknown paths to the homepage */}
             <Route path="*" element={<HomePage />} />
         </Routes>
     );

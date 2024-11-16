@@ -1,5 +1,8 @@
+//This component fetch a list of of each movies from the website
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+
+//Styled components
 
 const MovieContainer = styled.main`
     padding: 20px;
@@ -16,7 +19,7 @@ const MovieTitle = styled.h1`
 
 const MovieListStyled = styled.ul`
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 20px;
     list-style: none;
     padding: 0;
@@ -53,10 +56,12 @@ const MovieHeading = styled.h2`
     margin: 10px 0;
 `;
 
+
+//MovieList API 
 export const MovieList = () => {
     const [movies, setMovies] = useState(null);
-    const apiKey = 'bc5cd60f55c078094358844a2b84851f'; // Directly hardcoded API key
-    const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`; // API endpoint for popular movies
+    const apiKey = 'bc5cd60f55c078094358844a2b84851f'; // API 
+    const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`; // API
 
     useEffect(() => {
         const fetchMovies = async () => {
@@ -76,6 +81,8 @@ export const MovieList = () => {
     }, []);
 
     return (
+
+
         <MovieContainer>
             <MovieTitle>Popular Movies</MovieTitle>
             {movies ? (
@@ -88,8 +95,7 @@ export const MovieList = () => {
                             {movie.poster_path ? (
                                 <MovieImage
                                     src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                                    alt={`Poster of the movie ${movie.title}`}
-                                />
+                                    alt={`Poster of the movie ${movie.title}`} />
                             ) : (
                                 <FallbackText>No image available</FallbackText>
                             )}

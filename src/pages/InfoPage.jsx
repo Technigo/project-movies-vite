@@ -3,7 +3,9 @@ import { useParams, Link } from "react-router-dom";
 import styled from "styled-components";
 import { FaStar } from "react-icons/fa";
 
-const apiKey = 'bc5cd60f55c078094358844a2b84851f';
+const apiKey = 'bc5cd60f55c078094358844a2b84851f'; // our API
+
+// Styled Component
 
 const SkipLink = styled.a`
     position: absolute;
@@ -45,7 +47,7 @@ const HomeButton = styled.button`
     }
 
     &:focus {
-        outline: 2px solid #FFD700;
+        outline: 2px solid #FFD700; //become yellow when pressed to make it more clear for the user
         outline-offset: 4px;
     }
 `;
