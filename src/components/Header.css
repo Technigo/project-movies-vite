@@ -24,7 +24,6 @@ header {
   }
 }
 
-
 /* Header icon and text  */
 header .header-text-box {
   @media (min-width: 992px) {
@@ -106,6 +105,7 @@ header h2 {
 }
 
 /* Dropdown menu on mobile screen */
+
 .dropdown-menu {
   display: inline-block;
   position: relative;
@@ -139,6 +139,15 @@ header h2 {
   transform: translate(-50%, -50%);
   top: 180px;
   border-radius: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.dropdown-menu-content.show {
+  display: block; 
+  opacity: 1;
+  visibility: visible;
 }
 
 .dropdown-menu-content a {
@@ -150,16 +159,13 @@ header h2 {
   font-family: "Poppins", serif;
 }
 
-.mobile-menu:hover .dropdown-menu-content {
-  display: block;
-}
-
 .dropdown-menu-content a:hover {
   background-color: #f1e3cb;
   color: #000;
 }
 
 /* Dropdown menu on laptop or desktop screen */
+
 .desktop-menu {
   display: none;
 

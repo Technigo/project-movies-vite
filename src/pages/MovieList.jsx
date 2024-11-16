@@ -4,12 +4,12 @@ import { useState, useEffect } from "react";
 import { IoStar } from "react-icons/io5";
 
 export const MovieList = ({movieCategory}) => {
+  const [movies, setMovies] = useState([]);
+  const location = useLocation();
+  
   const apiKey = import.meta.env.VITE_TMDB_API_KEY;
   const movieListURL = `https://api.themoviedb.org/3/movie/${movieCategory}?api_key=${apiKey}&language=en-US&page=1`;
   const imageSecureBaseURL = `https://image.tmdb.org/t/p/`;
-
-  const [movies, setMovies] = useState([]);
-  const location = useLocation();
 
   const fetchData = async () => {
     try {
@@ -21,7 +21,6 @@ export const MovieList = ({movieCategory}) => {
 
       const data = await res.json();
       setMovies(data.results);
-      console.log(data.results);
 
     } catch (error) {
       console.log("Error is ", error);
