@@ -1,37 +1,25 @@
-<h1 align="center">
-  <a href="">
-    <img src="/src/assets/movies.svg" alt="Project Banner Image">
-  </a>
-</h1>
+
 
 # Movie Site Project
 
-Replace this readme with your own information about your project.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+We had to use themoviedb.org's API to fetch a list of movies, display them on a page, and then link to a movie detail page when you click on the movie.
 
-## Getting Started with the Project
+we also had to follow the design but we were allow to improve as we thought it could be better. 
 
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+First problem was to make the API work, I believe that it was necesary for me to wait a bit after the API was generated because sudenly it started working after 20 min trying. 
+
+Second, I had to create an .env for good practice, security and as I saw as a suggestion in our chanel on Slack with one of the students. 
+
+I got a lot of help from this week material and the recording sesions, I had to watch it more than once to have a deeper understanding, and as usual I got a lot of help from chatgpt and stackoverflow.
+
+if I had more time, I would like to try to re do it my self to get a deeper comprehension and review what I did without getting a lot of help from chatgpt. 
 
 ### View it live
 
 Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
 
-## Instructions
 
-<a href="instructions.md">
-   See instructions of this project
-  </a>

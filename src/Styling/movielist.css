@@ -1,0 +1,172 @@
+body {
+    margin: 0;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    background-color: #121212;
+ }
+ 
+ /* Movie list container */
+ .home-page-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Always display 4 columns at max width */
+    gap: 20px; /* Space between movies */
+    padding: 20px;
+    justify-content: center;
+ }
+ 
+ /* Movie card */
+ .movie-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+ }
+ 
+ /* Movie poster: Maintain full visibility */
+ .movie-poster {
+    width: 100%;
+    aspect-ratio: 2 / 3; /* Keeps the aspect ratio consistent */
+    object-fit: cover; /* Ensures the full poster is displayed without cropping */
+    transition: filter 0.3s ease, transform 0.3s ease;
+ }
+ 
+ /* Hover effect for movie poster */
+ .movie-card:hover .movie-poster {
+    filter: brightness(50%);
+    transform: scale(1.05);
+ }
+ 
+ /* Overlay on hover */
+ .overplay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    padding: 20px;
+    transition: opacity 0.3s ease;
+ }
+ 
+ .movie-card:hover .overplay {
+    opacity: 1;
+ }
+ 
+ .overplay h1 {
+    font-size: 18px;
+    margin: 0;
+    color: white;
+ }
+ 
+ .overplay p {
+    font-size: 14px;
+    margin: 5px 0 0;
+    color: white;
+ }
+ 
+ /* Navbar */
+ .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #333;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+ }
+ 
+ .navbar .genres {
+    display: flex;
+    gap: 15px;
+ }
+ 
+ .navbar .genres a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+ }
+ 
+ .navbar .genres a:hover {
+    color: #1db954;
+ }
+ 
+ .navbar .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #222;
+    padding: 8px 15px;
+    border-radius: 20px;
+ }
+ 
+ .navbar .search-bar input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-size: 14px;
+    width: 200px;
+ }
+ 
+ .navbar .search-bar input::placeholder {
+    color: gray;
+ }
+ 
+ .navbar .search-bar img {
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+ }
+ 
+ .load-more {
+   margin: 20px auto;
+   display: block;
+   padding: 10px 20px;
+   background-color: #1db954;
+   color: white;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   font-size: 16px;
+ }
+ 
+ .load-more:hover {
+   background-color: #1aa34a;
+ }
+ 
+ /* Responsive adjustments */
+ @media (max-width: 1200px) {
+    .home-page-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
+    }
+ }
+ 
+ @media (max-width: 768px) {
+    .home-page-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for small screens */
+    }
+ }
+ 
+ @media (max-width: 480px) {
+    .home-page-container {
+        grid-template-columns: repeat(1, 1fr); /* 1 column for very small screens */
+    }
+ 
+    .overplay h1 {
+        font-size: 16px;
+    }
+ 
+    .overplay p {
+        font-size: 12px;
+    }
+ 
+    .navbar .search-bar input {
+        width: 150px;
+    }
+ }
