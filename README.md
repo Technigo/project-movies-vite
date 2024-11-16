@@ -1,37 +1,26 @@
-<h1 align="center">
-  <a href="">
-    <img src="/src/assets/movies.svg" alt="Project Banner Image">
-  </a>
-</h1>
-
 # Movie Site Project
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
-## Getting Started with the Project
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
+The Movie Site project is an application that fetches and displays movie data from The Movie Database (TMDb) API. It includes two primary pages: one for listing popular movies and another for showing detailed information about a selected movie.
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+This project required working with TMDb's API to dynamically fetch and display movie data. The goal was to create a functional, responsive, and accessible app with modular components and dynamic routes.
+
+### Approach
+
+- API Integration: Used fetch to request popular movies and movie details from TMDb API.
+- Routing: Implemented react-router-dom for dynamic navigation between the movie list and detail pages.
+- Responsive Design: Ensured the app works across devices from 320px to 1600px.
+- Accessibility: Followed accessibility guidelines, including adding alt attributes for images and ensuring proper color contrast.
+
+### Technologies Used
+
+- React: Component-based structure
+- React Router: Dynamic routing and linking
+- CSS: Styling and responsive design
+- TMDb API: Fetching movie data
+- Lighthouse: Accessibility and performance testing
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
+https://cine-time.netlify.app/
