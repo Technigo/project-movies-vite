@@ -12,25 +12,34 @@ This is my first multi-page React application and use a fun new API.
 
 The goal is to list popular movies by using themoviedb.org's API to fetch a list of movies and show details about them on a seperate page by using React and React Router.
 
-## Getting Started with the Project
+## Highlights:
 
-### Dependency Installation & Startup Development Server
+I try to fullfill all the requirements and add a PageNotFound page when users try to visit a movie detail page with an invalid movie ID.
 
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
+On the homepage where I list Now Playing movies and on mobile screen, I add a dropdown to change the list between popular, top rated and upcomning.
 
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
+### Future Improvements
 
-```bash
-npm i && code . && npm run dev
-```
+Here are several enhancements I’d like to implement with more time: 
 
-### The Problem
+  - Favoratie movie list:
+    I would like to add an fav-movie page in the MovieList and complete the stretch goals.
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+  - Light & Dark mode
 
+  - Search input:
+    that user could search for movies from the list
+  
+  - Play button
+
+  - Handle loading states: streth goals
+
+  - Work on with the style and try to use Styled components in React
+
+  
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://xingsmovie.netlify.app/
 
 ## Instructions
 
