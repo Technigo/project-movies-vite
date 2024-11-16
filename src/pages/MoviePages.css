@@ -256,14 +256,14 @@
   .content-wrapper {
     flex-direction: column;
     /* padding: 30px; */
-    align-items: left;
+    align-items: center;
   }
 
   .movie-info {
     padding-top: 20px;
-    text-align: left;
+    text-align: center;
     margin: 0px;
-    margin-left: -40px;
+    margin-left: -20px;
   }
 }
 
