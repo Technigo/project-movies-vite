@@ -1,4 +1,4 @@
-// import "./Header.css";
+import "./Header.css";
 import { NavLink } from "react-router-dom";
 import { BiSolidCameraMovie } from "react-icons/bi";
 
@@ -7,8 +7,10 @@ export const Header = () => {
     <header>
       <div className="navbar">
         <div className="header-text-box">
-          <BiSolidCameraMovie className="movie-icon"/>
-          <h1>Movie Collection</h1>
+          <div className="header-text">
+            <BiSolidCameraMovie className="movie-icon" />
+            <h1>Movie Collection</h1>
+          </div>
           <h2>Welcome to Xings Movie Site</h2>
         </div>
 
