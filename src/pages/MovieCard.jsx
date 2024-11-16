@@ -51,7 +51,7 @@ export const MovieCard = () => {
         <div className="movie-info-box">
           <div>
             <h1>{movieDetails.title}</h1>
-            <p>{movieDetails.genres && movieDetails.genres.map((genre) => genre.name).join("|")}</p>
+            <p>{movieDetails.genres && movieDetails.genres.map((genre) => genre.name).join(" | ")}</p>
           </div>
 
           <div className="rating-time-box">

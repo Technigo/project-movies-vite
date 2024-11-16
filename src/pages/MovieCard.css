@@ -1,0 +1,138 @@
+.movie-card {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Back to Home icon and text */
+
+.arrow-box {
+  display: flex;
+  gap: 10px;
+  align-self: flex-start;
+  align-items: center;
+  margin: 20px;
+}
+
+.arrow-box:hover {
+  gap: 15px;
+  cursor: pointer;
+}
+
+.arrow-box p {
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 15px rgba(26, 30, 35, 1);
+}
+
+.arrow-icon {
+  font-size: 2.5rem;
+  background-color: rgba(26, 30, 35, 0.3);
+  box-shadow: 2px 2px 15px rgba(26, 30, 35, 1);
+  border-radius: 100%;
+}
+
+/* Style of movie detail */
+
+.movie-content-box {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px;
+  background: linear-gradient(to top, rgba(26, 30, 35, 0.7), rgba(235, 235, 234, 0));
+  gap: 20px;
+
+  @media (min-width: 576px) {
+    background: linear-gradient(
+      to top,
+      rgba(26, 30, 35, 0.7),
+      rgba(26, 30, 35, 0.7),
+      rgba(26, 30, 35, 0.7),
+      rgba(26, 30, 35, 0.7),
+      rgba(235, 235, 234, 0)
+    );
+    padding: 10;    
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    background: linear-gradient(
+      to top, 
+      rgba(26, 30, 35, 0.7), 
+      rgba(235, 235, 234, 0)
+      );
+  }
+}
+
+.movie-content-box img {
+  border: 5px solid #da951f;
+  border-radius: 0 16px;
+  width: 220px;
+
+  @media (min-width: 576px) {
+    width: 300px;
+  } 
+
+  @media (min-width: 767px) {
+    width: 400px;
+  }    
+}
+
+.movie-info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  /* align-items: flex-start; */
+  text-align: left;
+
+
+  @media (min-width: 768px) {
+    justify-content: flex-end;
+  }   
+  
+  @media (min-width: 992px) {
+    width: 600px;
+  } 
+}
+
+.movie-info-box h1 {
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+.movie-info-box p {
+  font-size: 1rem;
+  line-height: 1.8rem;
+  font-family: "Poppins", serif, monospace;
+}
+
+/* Rating icon and text*/
+
+.rating-time-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 220px;
+}
+
+.rating-box {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  background-color: #fff;
+  padding: 5px 10px;
+}
+
+.rating-box p {
+  color: #000;
+  font-family: "Poppins", serif, monospace;
+  font-weight: 600;
+}
+
+.star-icon {
+  color: #e9ba20;
+}

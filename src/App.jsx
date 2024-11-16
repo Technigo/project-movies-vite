@@ -5,7 +5,6 @@ import { MovieList } from "./pages/MovieList";
 import { MovieCard } from "./pages/MovieCard";
 import { PageNotFound } from "./pages/PageNotFound";
 
-
 const DefaultLayout = () => {
   return (
     <>
