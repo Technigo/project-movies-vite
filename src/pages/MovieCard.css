@@ -116,21 +116,31 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 220px;
+  width: 230px;
 }
 
-.rating-box {
+.rating {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   align-items: center;
   background-color: #fff;
-  padding: 5px 10px;
+  padding: 5px 12px;
+  border-radius: 0 16px;
 }
 
-.rating-box p {
+.rating p {
   color: #000;
   font-family: "Poppins", serif, monospace;
   font-weight: 600;
+}
+
+.runtime {
+  color: #000;
+  font-family: "Poppins", serif, monospace;
+  font-weight: 600;
+  background-color: #fff;
+  padding: 5px 12px;
+  border-radius: 0 16px;  
 }
 
 .star-icon {
