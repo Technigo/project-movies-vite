@@ -5,7 +5,7 @@ export const Navbar = () => {
       <nav>
         <ul className="app-ul">
           <li className="app-li">
-            <NavLink to="/movies" activeClassName="active">
+            <NavLink to="/" activeClassName="active">
               Movies</NavLink>
           </li>
         </ul>

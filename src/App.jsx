@@ -10,7 +10,7 @@ export const App = () => {
         <Navbar />
         <main>
           <Routes>
-            <Route path="/movies" element={<Movies />} />
+            <Route path="/" element={<Movies />} />
 
             <Route path="/movie/:id" element={<MovieInfo />} />
           </Routes>
