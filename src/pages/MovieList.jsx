@@ -27,8 +27,6 @@ export const MovieList = ({movieCategory}) => {
       console.log("Error is ", error);
     }
   };
-
-
   
   useEffect(() => {
     fetchData()
@@ -45,7 +43,7 @@ export const MovieList = ({movieCategory}) => {
               <IoStar className="star-icon" />
               <p>{parseFloat(movie.vote_average).toFixed(1)}</p>
             </div>
-            <h1>{movie.title}</h1>
+            <h1 className="movie-list-title">{movie.title}</h1>
           </div>
         </Link>
        ))}
