@@ -1,13 +1,110 @@
 :root {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --tmdb-primary: #0d253f;
+  --tmdb-secondary: #01b4e4;
+  --tmdb-tertiary: #90cea1;
+  --background-black: #0d253f;
+  --text-blue: #01b4e4;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Estilos para el selector de categoría */
+.category-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.category-selector label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.category-selector select {
+  padding: 5px;
+  border: 1px solid var(--tmdb-primary);
+  background-color: white;
+  color: var(--tmdb-primary);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Página Principal (PopularList) */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  /* Eliminamos el espacio entre las imágenes */
+  padding: 0;
+}
+
+.movie-item {
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.movie-item:hover {
+  transform: scale(1.05);
+}
+
+.movie-item img {
+  width: 100%;
+  display: block;
+  border-radius: 5px;
+  /* Puedes ajustar el radio para darle un efecto */
+  margin: 0;
+  /* Eliminamos cualquier margen */
+}
+
+/* Página de detalles (MovieDetail) */
+.movie-detail-container {
+  background-color: var(--tmdb-secondary);
+  /* Fondo azul */
+  color: white;
+  /* Texto blanco para contraste */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.movie-detail-container img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.movie-detail-container h1,
+.movie-detail-container p {
+  margin: 0;
+  padding: 10px 0;
+}
+
+/* Ajuste de tipografía para encabezados */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--tmdb-tertiary);
 }
