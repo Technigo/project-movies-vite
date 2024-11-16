@@ -26,8 +26,8 @@ export const Header = () => {
             <NavLink to="/top-rated" className="mobile-menu-link">
               Top Rated
             </NavLink>
-            <NavLink to="/upcomning" className="mobile-menu-link">
-              Upcomning
+            <NavLink to="/upcoming" className="mobile-menu-link">
+              Upcoming
             </NavLink>
           </nav>
         </div>
@@ -43,8 +43,8 @@ export const Header = () => {
             <NavLink to="/top-rated" className="menu-link">
               Top Rated
             </NavLink>
-            <NavLink to="/upcomning" className="menu-link">
-              Upcomning
+            <NavLink to="/upcoming" className="menu-link">
+              Upcoming
             </NavLink>            
           </nav>
 

@@ -39,8 +39,8 @@ export const App = () => {
             element={<MovieList movieCategory="top_rated" />}
           />
           <Route
-            path="/upcomning"
-            element={<MovieList movieCategory="upcomning" />}
+            path="/upcoming"
+            element={<MovieList movieCategory="upcoming" />}
           />
         </Route>
 
@@ -55,4 +55,3 @@ export const App = () => {
 };
 
 
-// const apiKey = import.meta.env.VITE_TMDB_API_KEY
