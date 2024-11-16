@@ -18,7 +18,6 @@ export const DetailsH2 = styled.h2`
   letter-spacing: 0.03em;
 `;
 
-
 export const P = styled.p`
   //Mobile MovieGallery (styled in MovieCard)
   display: block;
@@ -29,12 +28,8 @@ export const P = styled.p`
   unicode-bidi: isolate;
   line-height: 1.4;
   letter-spacing: 0.03em;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `; 
-  
-  
-  // text-shadow: 1px 1px #4d4d4d;
-  // font-size: 1.5em;
-  // font-weight: bold;
-  // margin-block-start: 0.83em;
-  // margin-block-end: 0.83em;
-  // color: white;

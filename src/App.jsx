@@ -7,9 +7,6 @@ export const App = () => {
       <BrowserRouter>
         <Routes>{routes}</Routes>
       </BrowserRouter>
-  </>
-  )
+    </>
+  );
 };
-
-
-

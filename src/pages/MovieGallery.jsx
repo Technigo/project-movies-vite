@@ -13,25 +13,25 @@ const Gallery = styled.div `
     grid-template-columns: repeat(2, 1fr);
   }
 
-  //tablet small
+  //tablet
   @media (min-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  //desktop
   @media (min-width: 1024px) {
     grid-template-columns: repeat(4, 1fr);
   }
 
-    /* Prevent horizontal scrolling */
-    max-width: 100%;
+  /* Prevent horizontal scrolling */
+  /* max-width: 100%;
   overflow-x: hidden;
-  box-sizing: border-box;
+  box-sizing: border-box; */
 `;
 
 // Fetches all popular movies
 export const MovieGallery = () => {
-
-    // API key
+  // API key
   const apiEnv = import.meta.env.VITE_API_KEY;
   const URL =  `https://api.themoviedb.org/3/movie/popular?api_key=${apiEnv}&language=en-US&page=1`
 
@@ -64,13 +64,11 @@ export const MovieGallery = () => {
           title={movie.title}
           release_date={movie.release_date}
           poster_path={movie.poster_path}
-          // <img 
-          //   src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} 
-          //   alt={movie.title} 
         />
       ))}
     </Gallery>
-  )
-}
+  );
+};
+
 
 

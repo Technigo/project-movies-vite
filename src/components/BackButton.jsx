@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import backIcon from "../assets/back-icon.svg"; // Path to your SVG file
+import backIcon from "../assets/back-icon.svg";
 import styled from "styled-components";
 
 export const BackButtonWithText = ({ text }) => {
@@ -17,7 +17,7 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   /* color: inherit; */
   color: white;
-  padding: 20px;
+  padding: 20px;  
 `;
 
 const BackButton = styled.img`

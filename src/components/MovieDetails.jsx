@@ -1,18 +1,11 @@
 import styled from "styled-components"
 import { DetailsH2, P } from "../ui/Typography";
 
-const DetailsWrapper = styled.div`
-
-`;
-
 const DetailsContainer = styled.div `
   display: flex;
   flex-direction: column;
   padding: 50px;
   padding-top: 10px;
-  /* flex-direction: row;
-  align-items: flex-end;
-  padding: 50px; */
 
   @media (min-width: 768px) {
     flex-direction: row;
@@ -59,7 +52,7 @@ export const MovieDetails = ({ title, poster_path, overview, rating }) => {
 // const { title, poster_path, overview } = movie;
 
   return (
-    <DetailsWrapper>
+    <>
       <DetailsContainer>
         <MovieDetailsPoster
           src={`https://image.tmdb.org/t/p/w300/${poster_path}`}
@@ -75,6 +68,6 @@ export const MovieDetails = ({ title, poster_path, overview, rating }) => {
           </div>
           </DetailsTextContainer>
       </DetailsContainer>
-    </DetailsWrapper>
-  )
-}
+    </>
+  );
+};
