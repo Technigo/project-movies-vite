@@ -1,6 +1,5 @@
 import "./PageNotFound.css";
 
-
 export const PageNotFound = () => {
   return (
     <section className="page-not-found">
