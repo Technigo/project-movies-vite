@@ -6,7 +6,7 @@ import {MovieProfile} from './pages/MovieProfile';
 export const routes = (
   
     <>
-      <Route path="/movie" element={<MovieGallery/>}/>
+      <Route path="/" element={<MovieGallery/>}/>
       <Route path="/movie/:id" element={<MovieProfile/>}/>
     </>
   

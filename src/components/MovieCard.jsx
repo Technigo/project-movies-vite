@@ -13,7 +13,7 @@ export const MovieCard = ({ id, title, release_date, poster_path }) => {
               alt={`Movie poster for ${title}`}
             />
             <div>
-              <h2>{title}</h2>
+              <h1>{title}</h1>
               <p>Released {release_date}</p>
             </div>
           </div>

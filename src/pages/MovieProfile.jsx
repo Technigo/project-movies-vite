@@ -1,6 +1,21 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { MovieDetails } from "../components/MovieDetails";
+import { BackButtonWithText } from "../components/BackButton";
+import styled from 'styled-components';
+
+
+// Defining the styled component
+const BackdropImage = styled.div`
+  background-image: linear-gradient(rgba(0, 0, 0, 0) 70%, rgb(0, 0, 0) 100%), url(https://image.tmdb.org/t/p/w1280/${(props) => props.$backdrop});
+  min-height: 100vh;
+  display: flex;
+  background-size: cover;
+  flex-direction: column;
+  /* justify-content: flex-end; */
+  justify-content: space-between;
+  
+`;
 
 export const MovieProfile = () => {
 
@@ -39,25 +54,15 @@ export const MovieProfile = () => {
       return <div>Loading...</div>
     }
 
-
-    //backdrop_path
-    //poster_path={movie.poster_path}
-    //title=movie.title
-    //rating movie.vote_average
-    //movie.overview
-
     return (
-      <div>
-        <div className="backdrop">
-          <div className="styled-link"> 
-          </div>
-          <MovieDetails
-            poster_path={movie.poster_path}
-            title={movie.title} 
-            rating={movie.vote_average}
-            overview={movie.overview}
-         />
-        </div>
-      </div>
+      <BackdropImage $backdrop={movie.backdrop_path}>
+        <BackButtonWithText text="Movies"/> 
+        <MovieDetails
+          poster_path={movie.poster_path}
+          title={movie.title} 
+          rating={movie.vote_average}
+          overview={movie.overview}
+        />
+      </BackdropImage>
     )
 };
