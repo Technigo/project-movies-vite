@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { MovieCard } from "../components/MovieCard";
+import styled from "styled-components";
 
+const Gallery = styled.dic `
 
-
+`;
 
 // Fetches all popular movies
 export const MovieGallery = () => {
@@ -30,13 +32,9 @@ export const MovieGallery = () => {
 
     fetchMovies()
   }, [])
-  
-  //title
-  //release_date
-  //image poster_path
 
   return (
-    <div>
+    <Gallery>
 
       {movies.map((movie) => (
         <MovieCard 
@@ -51,7 +49,7 @@ export const MovieGallery = () => {
           />
         
       ))}
-    </div>
+    </Gallery>
   )
 }
 

@@ -26,7 +26,7 @@ const Rating = styled.div `
   display: inline-block;
 `;
 
-const MoviePoster = styled.img`
+const MovieDetailsPoster = styled.img`
   border: 5px solid #fff;
 `;
 
@@ -44,7 +44,7 @@ export const MovieDetails = ({ title, poster_path, overview, rating }) => {
   return (
     <DetailsWrapper>
       <DetailsContainer>
-        <MoviePoster
+        <MovieDetailsPoster
           src={`https://image.tmdb.org/t/p/w300/${poster_path}`}
           alt={`Movie poster for ${title}`}
         />
