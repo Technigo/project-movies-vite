@@ -19,7 +19,6 @@ const useGetMovies = () => {
     fetchMovies();
   }, []);
 
-  console.log(movies);
   return movies;
 };
 

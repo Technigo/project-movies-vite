@@ -1,5 +1,4 @@
 import styled from "styled-components";
-const imageSize = "w342";
 import { Link } from "react-router-dom";
 import { IMAGE_URL } from "../App";
 
@@ -38,7 +37,7 @@ const TextContainer = styled.div`
   justify-content: flex-end;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
-  
+
   h1,
   p {
     padding-left: 20px;
