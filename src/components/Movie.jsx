@@ -7,7 +7,6 @@ import StarIcon from "../assets/star.svg?react";
 
 const MovieContainer = styled.div`
   position: relative;
-  align-items: center;
   background-image: url(${({ backgroundImage }) => backgroundImage});
   background-size: cover;
   background-position: center;
