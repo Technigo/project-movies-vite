@@ -1,3 +1,4 @@
+// This is the homepage and it displays a header with a background image, a dropdown for selecting movie categories, and fetches movies from the API.
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { Header } from "../components/Header";

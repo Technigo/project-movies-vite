@@ -1,37 +1,17 @@
-<h1 align="center">
-  <a href="">
-    <img src="/src/assets/movies.svg" alt="Project Banner Image">
-  </a>
-</h1>
-
 # Movie Site Project
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
-## Getting Started with the Project
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
+This is an interactive movie guide built with React Router and the TMDb API. It allows users to browse movie categories and discover detailed information about a selected film.
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The project was first organized into key tasks: setting up routes, fetching data from the API, identifying and creating reusable components, and styling the site. Functionality was prioritized first, beginning with integrating and testing the API and ending with a custom Error page and a favicon for a more polished user experience.
+
+I became aware of an issue with securing API keys from a previous project, so this time I learned best practices for secure API key management by setting up an .env file and an apiConfig file.
+
+For navigation, I used React Router, while useState and useEffect managed state and data fetching. Error handling was implemented using try/catch blocks, with a custom Error page for invalid movie IDs and unmatched routes. I used styled-components for dynamic and reusable styles within individual components. For MovieCard and MovieDetails, I opted for separate CSS files to manage their specific styling requirements more efficiently, and a generic index.css file was used for global styles as well.
+
+If I had more time, I would implement more advanced filtering and sorting options for movies by genre, release year, or rating. I would also like to add a "Favorites" feature for users to save movies they like.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
+https://showtime-selector.netlify.app/

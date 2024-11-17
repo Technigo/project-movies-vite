@@ -1,3 +1,5 @@
+// This component renders responsive grid layout of MovieCard components.
+// It adjusts the number of columns based on screen size and accepts a list of movies as props.
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { MovieCard } from "./MovieCard";
@@ -25,6 +27,7 @@ const StyledMovieList = styled.div`
     grid-template-columns: repeat(4, 1fr);
   }
 `;
+
 export const MovieList = ({ movies }) => {
   return (
     <StyledMovieList>
@@ -41,7 +44,7 @@ export const MovieList = ({ movies }) => {
   );
 };
 
-// Add prop validation
+// Prop validation
 MovieList.propTypes = {
   movies: PropTypes.arrayOf(
     PropTypes.shape({

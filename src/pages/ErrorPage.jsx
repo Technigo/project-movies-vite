@@ -1,3 +1,4 @@
+// This component shows a styled Error page with a back link to navigate to the home page.
 import styled from "styled-components";
 import errorImage from "../assets/error-image.png";
 import { BackLink } from "../components/BackLink";
