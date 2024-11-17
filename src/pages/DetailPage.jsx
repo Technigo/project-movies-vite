@@ -1,16 +1,15 @@
 // This component displays detailed information about a particular movie
 import styled from "styled-components";
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { BASE_URL, API_KEY } from "../utils/apiConfig";
 import { MovieDetails } from "../components/MovieDetails";
-import backArrow from "../assets/back-arrow.svg";
+import { BackLink } from "../components/BackLink";
 
 // Styled components for the container and link
 const DetailsContainer = styled.div`
   position: relative;
   display: flex;
-  flex-direction: row;
   padding: 2rem;
   color: white;
   background-size: cover;
@@ -24,7 +23,7 @@ const DetailsContainer = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 0;
   }
 
@@ -33,40 +32,21 @@ const DetailsContainer = styled.div`
   }
 `;
 
-const BackLink = styled(Link)`
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  z-index: 2;
-  color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-
-  img {
-    margin-right: 0.5rem;
-    width: 24px;
-    height: 24px;
-  }
-`;
-
 const ContentWrapper = styled.div`
   z-index: 1;
   width: 100%;
-  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  padding-top: 1rem;
 
-  @media (min-width: 767) {
-    flex-direction: row;
+  @media (min-width: 768px) {
+    flex-direction: row; /* Switch to row layout for larger screens */
+    justify-content: flex-start;
+    align-items: flex-end;
+    align-self: flex-end;
+    height: 50%;
+    gap: 1.5rem;
   }
 `;
 
@@ -115,10 +95,7 @@ export const DetailPage = () => {
 
   return (
     <DetailsContainer style={{ backgroundImage: `url(${backgroundImage})` }}>
-      <BackLink to="/">
-        <img src={backArrow} alt="Back arrow" />
-        Back to Home
-      </BackLink>
+      <BackLink label="Back to Home" />
       <ContentWrapper>{movie && <MovieDetails movie={movie} />}</ContentWrapper>
     </DetailsContainer>
   );

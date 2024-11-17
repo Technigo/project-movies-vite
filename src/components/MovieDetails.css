@@ -18,8 +18,30 @@
 .rating {
   background-color: white;
   color: black;
-  padding: 0 0.5rem;
+  padding: 0.5rem;
 }
 .star-icon {
   width: 25px;
+}
+
+@media (min-width: 768px) {
+  .poster-image {
+    width: auto;
+  }
+
+  .movie-details-container {
+    width: 40%;
+  }
+
+  .title {
+    padding-right: 0.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .overview {
+    max-width: 400px;
+  }
 }

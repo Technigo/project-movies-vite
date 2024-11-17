@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import bgImage from "../assets/theater.png";
 
 // Styled components for the header
 const HeaderContainer = styled.header`
   position: relative;
   height: 30vh;
-  background-image: url(${({ bgImage }) => bgImage});
+  background-image: url(${bgImage});
   background-size: cover;
   background-position: center;
   display: flex;
@@ -32,17 +33,29 @@ const HeaderContent = styled.div`
 
 const Title = styled.h1`
   font-size: 2.5rem;
+  font-weight: 700;
   margin: 0;
+
+  @media (max-width: 360px) {
+    font-size: 2rem;
+  }
+  @media (min-width: 768px) {
+    font-size: 5rem;
+  }
 `;
 
 const Subtitle = styled.p`
   font-size: 1.2rem;
   margin: 0.5rem 0 0;
+
+  @media (min-width: 768px) {
+    font-size: 3rem;
+  }
 `;
 
-export const Header = ({ title, subtitle, bgImage }) => {
+export const Header = ({ title, subtitle }) => {
   return (
-    <HeaderContainer bgImage={bgImage}>
+    <HeaderContainer>
       <HeaderContent>
         <Title>{title}</Title>
         {subtitle && <Subtitle>{subtitle}</Subtitle>}

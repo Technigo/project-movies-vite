@@ -17,7 +17,7 @@ const DropdownWrapper = styled.div`
 const StyledLabel = styled.label`
   margin-bottom: 0.5rem;
   font-size: 1rem;
-  color: #333;
+  color: white;
 `;
 
 const StyledSelect = styled.select`
@@ -89,7 +89,7 @@ export const Home = () => {
       />
       {/* Dropdown for selecting an endpoint */}
       <DropdownWrapper>
-        <StyledLabel htmlFor="endpoint-select">Select Movies:</StyledLabel>
+        <StyledLabel htmlFor="endpoint-select">Select Category:</StyledLabel>
         <StyledSelect
           id="endpoint-select"
           value={selectedEndpoint}

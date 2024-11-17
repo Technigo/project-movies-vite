@@ -20,10 +20,10 @@ export const MovieDetails = ({ movie }) => {
           <span className="title">{title}</span>
           <span className="rating">
             <img src={starIcon} alt="Star" className="star-icon" />
-            {vote_average}
+            {vote_average.toFixed(1)}
           </span>
         </h1>
-        <p>{overview}</p>
+        <p className="overview">{overview}</p>
       </div>
     </>
   );
