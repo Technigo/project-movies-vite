@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Button from "./ui/Button";
 import FormInput from "./ui/FormInput";
+import SearchIcon from "../assets/icons/search.svg?react";
 
 const SearchBar = ({ onSearch, value }) => {
   const [query, setQuery] = useState(value || "");
@@ -17,7 +18,11 @@ const SearchBar = ({ onSearch, value }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex w-full items-center pr-2">
+    <form
+      onSubmit={handleSubmit}
+      className="flex w-full items-center pl-6 pr-2"
+    >
+      <SearchIcon />
       <FormInput
         type="search"
         name="search"

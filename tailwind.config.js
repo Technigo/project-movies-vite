@@ -37,6 +37,9 @@ export default {
       "4xl": "2050px",
     },
     extend: {
+      aspectRatio: {
+        "2/3": "2/3",
+      },
       height: {
         "sidebar-height-2xl": "calc(100vh - 5rem)",
         "sidebar-height-xl": "calc(100vh - 2rem)",

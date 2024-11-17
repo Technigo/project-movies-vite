@@ -2,12 +2,14 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { fetchMovieDetails, fetchMovieCredits } from "../api/tmdb";
 import { Typography } from "../components/ui/Typography";
-import { slugify } from "../utils/slugify";
 import Button from "../components/ui/Button";
-import GoBackIcon from "../assets/icons/arrow_back.svg?react";
-import noBackDropFound from "../assets/images/no-backdrop-found.png";
 import Badge from "../components/ui/Badge";
 import BadgeGroup from "../components/ui/BadgeGroup";
+import PageTitle from "../components/PageTitle";
+import { slugify } from "../utils/slugify";
+import GoBackIcon from "../assets/icons/arrow_back.svg?react";
+import StarIcon from "../assets/icons/star.svg?react";
+import noBackDropFound from "../assets/images/no-backdrop-found.png";
 
 const MovieDetails = () => {
   const { idSlug } = useParams();
@@ -15,39 +17,41 @@ const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
   const [credits, setCredits] = useState(null);
 
-  // Parse id and slug from idSlug
-  const separatorIndex = idSlug.indexOf("-");
-  if (separatorIndex === -1) {
-    navigate("/not-found", { replace: true });
-    return null;
-  }
-
-  const id = idSlug.substring(0, separatorIndex);
-  const slug = idSlug.substring(separatorIndex + 1);
-
-  const idNumber = parseInt(id, 10);
-  if (isNaN(idNumber)) {
-    navigate("/not-found", { replace: true });
-    return null;
-  }
-
   useEffect(() => {
+    // Parse id and slug from idSlug
+    const separatorIndex = idSlug.indexOf("-");
+    if (separatorIndex === -1) {
+      navigate("/not-found", { replace: true });
+      return;
+    }
+
+    const idStr = idSlug.substring(0, separatorIndex);
+    const slugStr = idSlug.substring(separatorIndex + 1);
+
+    const idNumber = parseInt(idStr, 10);
+    if (isNaN(idNumber)) {
+      navigate("/not-found", { replace: true });
+      return;
+    }
+
     const getMovieData = async () => {
       try {
         const [movieData, creditsData] = await Promise.all([
-          fetchMovieDetails(id),
-          fetchMovieCredits(id),
+          fetchMovieDetails(idNumber),
+          fetchMovieCredits(idNumber),
         ]);
 
         if (movieData) {
           setMovie(movieData);
           const actualSlug = slugify(movieData.title);
 
-          if (actualSlug !== slug) {
-            navigate(`/movie/${id}-${actualSlug}`, { replace: true });
+          if (actualSlug !== slugStr) {
+            navigate(`/movie/${idNumber}-${actualSlug}`, { replace: true });
+            return;
           }
         } else {
           navigate("/not-found");
+          return;
         }
 
         if (creditsData) {
@@ -60,7 +64,7 @@ const MovieDetails = () => {
     };
 
     getMovieData();
-  }, [id, slug, navigate]);
+  }, [idSlug, navigate]);
 
   if (!movie) return <div>Loading movie...</div>;
 
@@ -68,6 +72,7 @@ const MovieDetails = () => {
 
   return (
     <div>
+      <PageTitle title={`${movie.title} (${releaseYear}) – MovieHut`} />
       <Button
         variant="secondary"
         onClick={() => navigate(-1)}
@@ -88,15 +93,21 @@ const MovieDetails = () => {
           />
         </div>
         <div className="col-span-2 md:col-span-4 lg:order-1 lg:col-span-6">
+          <Badge variant="secondary" size="large" className="mb-8">
+            <StarIcon width="1.2em" height="1.2em" color="orange" />
+            {movie.vote_average.toFixed(1)} / 10
+          </Badge>
           <Typography element="h1" className="mb-4">
             {movie.title} ({releaseYear})
           </Typography>
           <Typography element="p" styledAs="bodyLarge">
             {movie.overview}
           </Typography>
-          <BadgeGroup>
+          <BadgeGroup className="mt-8">
             {movie.genres.map((genre) => (
-              <Badge key={genre.id}>{genre.name}</Badge>
+              <Badge variant="outline" key={genre.id}>
+                {genre.name}
+              </Badge>
             ))}
           </BadgeGroup>
         </div>
@@ -117,7 +128,7 @@ const MovieDetails = () => {
                         : noBackDropFound
                     }
                     alt=""
-                    className="h-auto w-20 rounded"
+                    className="aspect-2/3 h-auto w-20 rounded"
                   />
                   <div>
                     <Typography element="h3" styledAs="h5">

@@ -11,14 +11,16 @@ const Button = ({
 }) => {
   const variantClasses = {
     primary:
-      "flex gap-2 bg-green-600 text-green-950 hover:bg-green-900 hover:text-green-100",
+      "bg-green-600 text-green-950 hover:bg-green-900 hover:text-green-100",
     secondary:
-      "flex gap-2 border-2 border-solid border-green-950 text-green-950 hover:bg-green-950 hover:text-green-100",
+      "border-2 border-solid border-green-950 text-green-950 hover:bg-green-950 hover:text-green-100",
   };
+
   // Shared classes
-  const classes = `rounded-full px-5 py-2 font-semibold transition duration-300 ease-in-out ${
+  const classes = `flex gap-2 rounded-full px-5 py-2 font-semibold transition duration-300 ease-in-out ${
     variantClasses[variant]
   } ${className}`;
+
   // Determine the component type
   const Component = href ? "a" : "button";
 

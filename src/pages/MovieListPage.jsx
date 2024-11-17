@@ -1,18 +1,26 @@
+import { useMemo } from "react";
 import { useOutletContext, useParams } from "react-router-dom";
 import useFetchMovies from "../hooks/useFetchMovies";
-import MovieList from "../components/MovieList";
-import { formatCategoryName } from "../utils/formatCategoryName";
 import { Typography } from "../components/ui/Typography";
+import MovieList from "../components/MovieList";
+import PageTitle from "../components/PageTitle";
+import { formatCategoryName } from "../utils/formatCategoryName";
 
 const MovieListPage = () => {
   const { searchQuery } = useOutletContext();
   const { categoryName } = useParams();
 
   // Convert hyphens to underscores for API usage
-  const apiCategory = categoryName
-    ? categoryName.replace(/-/g, "_")
-    : "top_rated";
-  const { movies, loading, error } = useFetchMovies(apiCategory, searchQuery);
+  const apiCategory = useMemo(() => {
+    return categoryName ? categoryName.replace(/-/g, "_") : "top_rated";
+  }, [categoryName]);
+
+  const stableSearchQuery = searchQuery || "";
+
+  const { movies, loading, error } = useFetchMovies(
+    apiCategory,
+    stableSearchQuery,
+  );
 
   // Format category name for display
   const pageTitle = searchQuery
@@ -21,11 +29,10 @@ const MovieListPage = () => {
 
   return (
     <div>
+      <PageTitle title={`${pageTitle} – MovieHut`} />
       <Typography element="h1" className="mb-4 lg:mb-8" aria-live="polite">
         {pageTitle}
       </Typography>
-
-      {loading && <Typography element="h2">Loading movies...</Typography>}
 
       {error && <Typography element="h2">{error}</Typography>}
 
@@ -33,7 +40,7 @@ const MovieListPage = () => {
         <Typography element="h2">No movies found.</Typography>
       )}
 
-      {!loading && !error && <MovieList movies={movies} />}
+      <MovieList movies={movies} loading={loading} />
     </div>
   );
 };
