@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const TitleH1 = styled.h1 `
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     font-weight: 700;
     line-height: normal;
     font-style: normal;
@@ -12,7 +12,7 @@ const TitleH1 = styled.h1 `
     padding: 0;
 
     @media screen and (min-width: 768px) {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 `;
 
@@ -31,7 +31,7 @@ const TitleH2 = styled.h2 `
 
 const TitleH3 = styled.h3 `
     font-family: Poppins;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -42,21 +42,21 @@ const TitleH3 = styled.h3 `
     margin: 0 0 1rem;
 
     @media screen and (min-width: 768px) {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 `;
 
 const BodyP = styled.p `
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     line-height: normal;
     margin: 0 0 1rem;
     padding: 0;
 
     @media screen and (min-width: 768px) {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
 `;
 

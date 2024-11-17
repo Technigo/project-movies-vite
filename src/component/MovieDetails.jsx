@@ -21,11 +21,12 @@ const Content = styled.div`
   padding: 20px;
   border-radius: 10px;
   width: 100%;
-  margin: 2rem;
+  margin: 4rem 2rem 2rem;
 
   @media (min-width: 768px) {
         width: 70%;
         flex-wrap: nowrap;
+        margin: 2rem;
     }
 `;
 

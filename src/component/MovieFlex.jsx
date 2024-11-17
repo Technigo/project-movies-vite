@@ -20,7 +20,7 @@ const FlexA = styled(Link)`
 
     @media (min-width: 768px) {
         flex: 1 0 auto;
-        width: 350px;
+        width: 300px;
     }
 `;
 
@@ -35,7 +35,7 @@ const FlexImgDetails = styled.article `
     right: 0;
     bottom: 0;
     left: 0;
-    padding: 2.5rem;
+    padding: 2rem;
     background-color: #000000bf;
     opacity: 0; /* Hide the text/background */
     transition: opacity 0.3s ease;
