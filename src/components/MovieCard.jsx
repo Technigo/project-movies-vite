@@ -19,7 +19,14 @@ export const MovieCard = ({ genreId, movies }) => {
             </div>
             <div className="image-container">
               <img
-                src={`https://image.tmdb.org/t/p/w185/${movie.poster_path}`}
+                // src={`https://image.tmdb.org/t/p/w185/${movie.poster_path}`}
+                // alt={movie.title}
+                srcSet={`
+                  https://image.tmdb.org/t/p/w185/${movie.poster_path} 185w,
+                  https://image.tmdb.org/t/p/w342/${movie.poster_path} 342w,
+                `}
+                sizes="(max-width: 1023px) 185px, (min-width: 1024px) 342px"
+                src={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`} // Fallback for browsers without srcset support
                 alt={movie.title}
               />
             </div>
