@@ -50,6 +50,7 @@ export const MovieInfo = () => {
             wrapperClass=""
             colors={["#306cce", "#72a1ed", "#77e2ec", "#abc4ef", "#723096"]}
           />
+          <h3>Un momento, por favor!</h3>
         </div>
       ) : (
         <MovieDetails movie={movie} />
