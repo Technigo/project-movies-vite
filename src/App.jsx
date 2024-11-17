@@ -1,21 +1,18 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { MovieList } from './components/MovieList';
 import { MovieDetails } from "./components/MovieDetails";
-// import { Link } from "react-router-dom";
+
 
 export const App = () => {
   return (
 
-
     <>
-
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MovieList />} />
           <Route path="/movies/:id" element={<MovieDetails />} />
         </Routes>
       </BrowserRouter>
-
 
     </>
 

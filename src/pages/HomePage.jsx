@@ -1,2 +1,0 @@
-// Export HomePage = () =>
-//   return

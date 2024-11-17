@@ -19,6 +19,7 @@ const Background = styled.div`
   z-index: -1; 
 `;
 
+
 const StyledMovieDetails = styled.div`
   display: flex;
   flex-direction: column;
@@ -29,20 +30,45 @@ const StyledMovieDetails = styled.div`
   img {
     border: 5px solid #fff;
     width: 200px;
-}
+  }
+
+
+  @media (min-width: 1024px) {
+    display: flex; /* Gör ParentContainer till flex-container */
+    flex-direction: row; /* Layout för desktop */
+    margin-top: 200px;
+    align-items: end;
+    gap: 20px;
+    justify-content: end;
+  }
 `;
 
 const StyledTextSection = styled.div`
   display: flex;
   flex-direction: column;
   color: white;
-`;
 
+
+  @media (min-width: 1024px) {
+    margin-right: 40%;
+  }
+  
+h1 {
+  font-size: 24px;
+}
+
+`;
 
 const StyledIcon = styled(VscArrowCircleLeft)`
   font-size: 40px; 
   color: #ffffff;
+  padding-left: 40px;
+
+  @media (min-width: 1024px) {
+    padding-left: 40px;
+  }
 `;
+
 
 export const MovieDetails = () => {
   const { id } = useParams();
@@ -62,27 +88,31 @@ export const MovieDetails = () => {
 
   return (
     <>
+
       {movieDetails && (
         <>
-          {/* Bakgrundsbild */}
-          <Background backdropPath={movieDetails.backdrop_path} />
 
-          {/* Innehåll */}
+
+
+          <Background backdropPath={movieDetails.backdrop_path} />
+          <p>
+            <Link to="/">
+              <StyledIcon />
+            </Link>
+          </p>
+
           <StyledMovieDetails>
-            <p>
-              <Link to="/">
-                <StyledIcon />
-              </Link>
-            </p>
-            <img src={`https://image.tmdb.org/t/p/w300${movieDetails.poster_path}`} alt={movieDetails.title} />
+            <img src={`https://image.tmdb.org/t/p/w780${movieDetails.poster_path}`} alt={movieDetails.title || "Movie poster"} />
             <StyledTextSection>
-              <h1>{movieDetails.title}</h1>
-              <p>⭐ {movieDetails.vote_average}</p>
+              <h1>{movieDetails.title} ⭐ {movieDetails.vote_average}</h1>
               <p>{movieDetails.overview}</p>
             </StyledTextSection>
           </StyledMovieDetails>
+
         </>
-      )}
+
+      )
+      }
     </>
   );
 };

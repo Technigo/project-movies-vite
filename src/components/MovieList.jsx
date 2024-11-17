@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { MovieCard } from './MovieCards';
 import styled from 'styled-components';
-import { Link } from "react-router-dom";
+
 
 
 const StyledMovieList = styled.div`
@@ -12,6 +12,7 @@ const StyledMovieList = styled.div`
 
   @media (min-width: 800px) {
     grid-template-columns: repeat(4, 1fr);
+
   }
  
 
@@ -20,6 +21,7 @@ const StyledMovieList = styled.div`
 export const MovieList = () => {
 
   const [movies, setMovies] = useState([]);
+  const apiKey = import.meta.env.VITE_TMDB_API_KEY;
 
   useEffect(() => {
     fetch('https://api.themoviedb.org/3/movie/popular?api_key=a9688995501f820a9db8ba62f99394af&language=en-US&page=1')
