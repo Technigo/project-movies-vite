@@ -5,7 +5,6 @@ export const MovieDetails = ({ movie }) => {
   const { title, backdrop_path, overview, poster_path, vote_average } = movie;
 
   const imageBaseUrl = 'https://image.tmdb.org/t/p/';
-
   const backdropSize = 'w1280';
   const posterSize = 'w342';
 
@@ -13,26 +12,29 @@ export const MovieDetails = ({ movie }) => {
   const posterImage = `${imageBaseUrl}${posterSize}${poster_path}`;
 
   return (
-    <main className="movie-details">
+    <>
       <div
         className="backdrop"
         style={{ backgroundImage: `url(${backgroundImage})` }}
+        aria-label={`Backdrop for movie: ${title}`}
       ></div>
 
-      <img
-        src={posterImage}
-        alt={title}
-        className="poster"
-      />
+      <div className="movie-details">
+        <img
+          src={posterImage}
+          alt={`Poster of the movie ${title}`}
+          className="poster"
+        />
 
-      <h1>{title}</h1>
-
-      <p>{overview}</p>
-
-      <div className="rating">
-        <span>⭐ {vote_average.toFixed(1)}</span>
+        <div className="movie-info">
+          <h1>{title}</h1>
+          <p>{overview}</p>
+          <div className="rating">
+            <span>⭐ {vote_average.toFixed(1)}</span>
+          </div>
+        </div>
       </div>
-    </main>
+    </>
   );
 };
 

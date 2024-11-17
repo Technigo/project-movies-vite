@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { MovieDetails } from "../components/MovieDetails";
 import { ColorRing } from "react-loader-spinner";
+import { Navbar } from "../components/Navbar";
 
 export const MovieInfo = () => {
   const [movie, setMovie] = useState(null);
@@ -36,16 +37,20 @@ export const MovieInfo = () => {
 
   return (
     <>
+      <Navbar />
+
       {isLoading ? (
-        <ColorRing
-          visible={true}
-          height="80"
-          width="80"
-          ariaLabel="hourglass-loading"
-          wrapperStyle={{}}
-          wrapperClass=""
-          colors={["#306cce", "#72a1ed"]}
-        />
+        <div className="loader-container">
+          <ColorRing
+            visible={true}
+            height="80"
+            width="80"
+            ariaLabel="hourglass-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+            colors={["#306cce", "#72a1ed"]}
+          />
+        </div>
       ) : (
         <MovieDetails movie={movie} />
       )}

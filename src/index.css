@@ -1,3 +1,4 @@
+/* Global Styles */
 :root {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -8,32 +9,194 @@
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-.active {
-  color: red;
-}
-
-
-.movie-details {
-  position: relative;
-  width: 100%;
+body,
+html {
+  margin: 0;
+  padding: 0;
   height: 100%;
+  overflow-x: hidden;
+  background: #000000;
 }
 
 .backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 400px;
-  /* Justera höjden enligt behov */
+  height: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.movie-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px 60px;
+  color: white;
+  z-index: 1;
 }
 
 .poster {
-  width: 200px;
-  /* Justera storlek på postern */
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
   margin-top: 20px;
+}
+
+.movie-info {
+  flex-grow: 1;
+  margin-left: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  height: fit-content;
+  border-radius: 12px;
+  margin: auto 12px;
+}
+
+h1 {
+  font-size: 40px;
+  margin: 0;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.rating {
+  font-size: 24px;
+  margin-right: 20px;
+  text-align: right;
+}
+
+@media (max-width: 1024px) {
+  .movie-details {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+
+  }
+
+  .poster {
+    margin: 0 auto;
+  }
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie-card {
+  display: inline-block;
+  width: 23%;
+  margin: 10px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+}
+
+.card-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.movie-card:hover .card-text {
+  opacity: 1;
+  visibility: visible;
+}
+
+.card-text h2,
+.card-text p {
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .movie-card {
+    width: 30%;
+  }
+}
+
+@media (max-width: 768px) {
+  .movie-card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-card {
+    width: 100%;
+  }
+}
+
+
+nav {
+  margin-top: 24px;
+  z-index: 2;
+  text-align: center;
+}
+
+.app-ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.app-li {
+  display: inline-block;
+}
+
+.app-li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 22px;
+  background: #666;
+  padding: 6px 12px;
+  border-radius: 12px;
+  border: #484848 solid 2px;
+}
+
+.app-li a:hover {
+  background: #fff;
+  color: black;
+}
+
+.app-li a:focus {
+  outline: none;
+  box-shadow: 0 0 5px 2px rgba(255, 87, 34, 0.8);
+}
+
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(130, 239, 244, 0.7);
+  z-index: 1000;
 }

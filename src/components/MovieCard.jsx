@@ -5,13 +5,15 @@ export const MovieCard = ({ id, title, release_date, poster_path }) => {
   const posterUrl = `https://image.tmdb.org/t/p/w342/${poster_path}`;
 
   return (
-    <div>
+    <div className="movie-card">
       <Link to={`/movie/${id}`}>
         <img src={posterUrl} alt={title} />
       </Link>
 
-      <h2>{title}</h2>
-      <p>Release Date: {release_date}</p>
+      <div className="card-text">
+        <h2>{title}</h2>
+        <p>Release Date: {release_date}</p>
+      </div>
     </div>
   );
 };

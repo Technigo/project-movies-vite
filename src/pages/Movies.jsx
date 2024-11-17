@@ -34,22 +34,19 @@ export const Movies = () => {
 
   return (
     <>
-      <div>
-        <h1>New Movie Releases</h1>
-        {movies.map((movie) => (
-          <MovieCard
-            key={movie.id}
-            id={movie.id}
-            title={
-              movie.title.length > 20
-                ? `${movie.title.slice(0, 20)}...`
-                : movie.title
-            }
-            release_date={movie.release_date}
-            poster_path={movie.poster_path}
-          />
-        ))}
-      </div>
+      {movies.map((movie) => (
+        <MovieCard
+          key={movie.id}
+          id={movie.id}
+          title={
+            movie.title.length > 20
+              ? `${movie.title.slice(0, 20)}...`
+              : movie.title
+          }
+          release_date={movie.release_date}
+          poster_path={movie.poster_path}
+        />
+      ))}
     </>
   );
 };
