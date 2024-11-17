@@ -45,10 +45,10 @@ export const MovieInfo = () => {
             visible={true}
             height="80"
             width="80"
-            ariaLabel="hourglass-loading"
+            ariaLabel="circle-loading"
             wrapperStyle={{}}
             wrapperClass=""
-            colors={["#306cce", "#72a1ed"]}
+            colors={["#306cce", "#72a1ed", "#77e2ec", "#abc4ef", "#723096"]}
           />
         </div>
       ) : (
