@@ -6,29 +6,17 @@
 
 # Movie Site Project
 
-Replace this readme with your own information about your project.
+This project involved building a responsive movie site using TMDB's API. It featured a homepage displaying a list of movies and a detail page for individual movies, accessed via React Router. The focus was on clean code, accessibility (95+ Lighthouse score), and dynamic API integration for movie data and images.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
 
-## Getting Started with the Project
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I struggled with styling, particularly for desktop layouts, as changes didn’t apply correctly. Eventually, I discovered the issue was a syntax error. Since styling consumed much of my time, I couldn’t structure the project as effectively as planned. The goal was to make the code more reusable by creating components like Homepage, ListPage, and a RouterPage to handle linking. If I had more time, I would have focused on structuring the project this way.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://movie-release-2024.netlify.app/
 
 ## Instructions
 
