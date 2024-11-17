@@ -3,17 +3,17 @@ import PropTypes from "prop-types";
 const Button = ({
   type = "button",
   variant = "primary",
-  children,
   className = "",
+  isSelected = false,
   href,
   onClick,
+  children,
   ...rest
 }) => {
   const variantClasses = {
     primary:
       "bg-green-600 text-green-950 hover:bg-green-950 hover:text-green-100",
-    secondary:
-      "border-2 border-solid border-green-950 text-green-950 hover:bg-green-950 hover:text-green-100",
+    secondary: `border-2 border-solid border-green-950 text-green-950 hover:bg-green-950 hover:text-green-100 disabled:cursor-not-allowed ${isSelected ? "disabled:bg-green-950 disabled:border-green-950 disabled:text-green-100 disabled:hover:text-green-100" : " disabled:hover:bg-transparent disabled:hover:text-green-950 disabled:opacity-55"}`,
   };
 
   // Shared classes

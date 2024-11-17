@@ -45,22 +45,21 @@ const MovieDetails = () => {
         <GoBackIcon /> Go back
       </Button>
       <header className="grid grid-cols-2 items-center gap-8 md:grid-cols-8 md:gap-10 lg:grid-cols-12 lg:gap-14">
-        {/* Image Section */}
-        <div className="col-span-2 md:col-span-4 lg:col-span-12 xl:order-2 xl:col-span-6">
-          {loading ? (
+        {loading ? (
+          <div className="col-span-2 md:col-span-4 lg:col-span-12 xl:order-2 xl:col-span-6">
             <Skeleton height={400} className="rounded-lg" />
-          ) : (
-            <img
-              src={
-                movie.backdrop_path
-                  ? `https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`
-                  : noBackDropFound
-              }
-              alt={movie.title}
-              className="rounded-lg"
-            />
-          )}
-        </div>
+          </div>
+        ) : (
+          movie.backdrop_path && (
+            <div className="col-span-2 md:col-span-4 lg:col-span-12 xl:order-2 xl:col-span-6">
+              <img
+                src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`}
+                alt={movie.title}
+                className="rounded-lg"
+              />
+            </div>
+          )
+        )}
         {/* Details Section */}
         <div className="col-span-2 md:col-span-4 lg:col-span-12 xl:order-1 xl:col-span-6">
           {loading ? (
@@ -134,7 +133,7 @@ const MovieDetails = () => {
                           : noBackDropFound
                       }
                       alt={actor.name}
-                      className="aspect-2/3 h-auto w-20 rounded"
+                      className="aspect-2/3 h-auto w-20 rounded bg-green-900"
                     />
                     <div>
                       <Typography element="h3" styledAs="h5">

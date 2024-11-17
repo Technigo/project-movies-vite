@@ -1,6 +1,14 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import PageTitle from "../components/PageTitle";
 
 const ErrorPage = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate("/not-found", { replace: true });
+  }, []);
+
   return (
     <>
       <PageTitle title="Page not found – MovieHut" />

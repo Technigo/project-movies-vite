@@ -3,12 +3,12 @@ import axios from "axios";
 const accessToken = import.meta.env.VITE_TMDB_API_READ_ACCESS_TOKEN;
 const baseUrl = "https://api.themoviedb.org/3";
 
-export const fetchMovies = async (category) => {
+export const fetchMovies = async (category, page = 1) => {
   try {
     const response = await axios.get(`${baseUrl}/movie/${category}`, {
       params: {
         language: "en-US",
-        page: 1,
+        page,
       },
       headers: {
         accept: "application/json",
@@ -18,7 +18,7 @@ export const fetchMovies = async (category) => {
     return response.data;
   } catch (error) {
     console.error("Error fetching movies:", error);
-    return { results: [] };
+    return { results: [], total_pages: 1 };
   }
 };
 
@@ -58,13 +58,13 @@ export const fetchMovieCredits = async (id) => {
   }
 };
 
-export const searchMovies = async (query) => {
+export const searchMovies = async (query, page = 1) => {
   try {
     const response = await axios.get(`${baseUrl}/search/movie`, {
       params: {
         language: "en-US",
         query,
-        page: 1,
+        page,
         include_adult: false,
       },
       headers: {
@@ -75,6 +75,6 @@ export const searchMovies = async (query) => {
     return response.data;
   } catch (error) {
     console.error("Error searching movies:", error);
-    return { results: [] };
+    return { results: [], total_pages: 1 };
   }
 };

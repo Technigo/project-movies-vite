@@ -21,7 +21,7 @@ export default {
       "green-300": "#CFD5BD",
       "green-600": "#B6D53A",
       "green-800": "#595E53",
-      "green-900": "#§§§§",
+      "green-900": "#323C27",
       "green-950": "#272C22",
     },
     fontFamily: {
