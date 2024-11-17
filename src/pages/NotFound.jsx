@@ -3,7 +3,7 @@
 
 import { Link } from "react-router-dom"; // Import Link component for navigation back to home
 
-export const NotFoundPage = () => {
+export const NotFound = () => {
   return (
     <div>
       {/* Error message indicating the page is not found */}

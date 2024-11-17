@@ -74,17 +74,12 @@ const ContentContainer = styled.div`
   gap: 20px;
   position: relative; /* Keeps the content over the backdrop */
 
-  @media (max-width: 1300px) {
+  @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
-    margin-top: -800px;
-  }
-
-  @media (max-width: 768px) {
     margin-top: -900px;
     padding: 0 20px;
   }
-
 `;
 
 const PosterContainer = styled.div`
@@ -97,8 +92,9 @@ const PosterContainer = styled.div`
     position: relative; /* Keeps it positioned properly within its container */
     z-index: 2; /* Ensures poster is above backdrop */
 
-    @media (max-width: 1300px) {
+    @media (min-width: 769px) and (max-width: 1300px) {
       width: 300px;
+      margin-left: 20px;
     }
 
     @media (max-width: 768px) {
@@ -121,13 +117,13 @@ const DetailsContainer = styled.div`
 `;
 
 const RatingContainer = styled.div`
-  display: flex;
+  display: inline-block;
   align-items: center;
   background-color: white;
-  padding: 0px 7px 0px 7px;
+  padding: 0 5px;
   width: fit-content;
-  font-size: 16px;
-  font-weight: lighter;
+  font-size: 20px;
+  font-weight: bold;
 
   span.star {
     color: gold;
@@ -195,17 +191,13 @@ export const MovieInfo = () => {
         </PosterContainer>
         <DetailsContainer>
           <SubPageTitle>{movie.title}</SubPageTitle>
+          <RatingContainer>
+            <span className="star">★</span>
+            <span className="rating">{movie.vote_average.toFixed(1)}</span>
+          </RatingContainer>
           <Text>{movie.overview}</Text>
           <p>
             <Text>Release Date:</Text> {movie.release_date}
-          </p>
-          <p>
-            <Text>Rating:</Text>
-            {/* Add the Rating Container with the rating from the API */}
-            <RatingContainer>
-              <span className="star">★</span>
-              <span className="rating">{movie.vote_average}</span>
-            </RatingContainer>
           </p>
         </DetailsContainer>
       </ContentContainer>

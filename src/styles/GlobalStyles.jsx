@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 import backgroundImage from "../assets/background_sky.jpg"
 
 export const GlobalStyles = createGlobalStyle`

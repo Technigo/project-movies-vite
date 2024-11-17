@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import styled from 'styled-components';
+import styled from "styled-components";
 
 // Font families (e.g., primary for headings, secondary for paragraphs)
 export const primaryFont = "Anton";
@@ -28,8 +28,8 @@ export const PageTitle = styled.h2`
 //Heading 3
 export const SubPageTitle = styled.h3`
 font-family: ${primaryFont};
-font-size: 1.1rem;
-font-weight: 500;
+font-size: 1.3rem;
+font-weight: 400;
 line-height: 1.4;
 margin-bottom: 0.5rem;
 color: #FFF;

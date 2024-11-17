@@ -2,12 +2,12 @@
 import { styled } from "styled-components";
 
 export const MovieCard = ({ movie }) => {
+  const posterUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+  const altText = movie.title ? `Poster of ${movie.title}` : "Movie poster";
+
   return (
     <MovieCardWrapper>
-      <MoviePoster
-        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-        alt={movie.title}
-      />
+      <MoviePoster src={posterUrl} alt={altText} />
       <MovieTitle>{movie.title}</MovieTitle>
     </MovieCardWrapper>
   );
@@ -32,7 +32,7 @@ const MovieCardWrapper = styled.div`
 
 const MoviePoster = styled.img`
   width: 100%; /* Make sure the image fills the container */
-  height: auto; /* Make sure the image fills the container */
+  height: auto; 
   object-fit: cover; 
   transition: transform 0.3s ease; 
 

@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 import { useEffect, useState } from 'react';
 import { MovieGrid } from "../ui/MovieGrid"; // Use MovieGrid for displaying the movies in a grid
-import { PageTitle } from '../ui/Typography';
+import { PageTitle } from "../ui/Typography";
 
 
 const StyledPageTitle = styled(PageTitle)`
@@ -44,7 +44,6 @@ export const Upcoming = () => {
         setError('Failed to fetch upcoming movies');
       }
     };
-
 
     fetchUpcomingMovies();
   }, []);

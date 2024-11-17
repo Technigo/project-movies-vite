@@ -13,7 +13,7 @@ const Nav = styled.nav`
 
   /* Media query for mobile */
   @media (max-width: 480px) {
-    height: 3rem;
+    height: 3.5rem;
   }
 `;
 

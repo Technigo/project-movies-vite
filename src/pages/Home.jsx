@@ -17,16 +17,15 @@ const StyledTitle = styled(Title)`
   
   /* Media query for mobile */
   @media (max-width: 480px) {
-    font-size: 1.5rem; 
+    font-size: 1.8rem; 
    }
-
 `
 
 const NowPlayingTitle = styled(PageTitle)`
 padding-left: 20px; 
 
 @media (max-width: 480px) {
-    font-size: 1rem; 
+    font-size: 1.4rem; 
    }
 `;
 
@@ -36,9 +35,7 @@ export const Home = () => {
       <CenteredWrapper>
         <StyledTitle>Welcome to MovieZone</StyledTitle>
       </CenteredWrapper>
-
       <NowPlayingTitle>Now Playing</NowPlayingTitle>
-
       <NowPlaying />
     </div>
   );
