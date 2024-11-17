@@ -13,14 +13,17 @@ export const MovieDetails = ({ movie }) => {
     <>
       <section className="movie-detail-section-container">
         <div className='img-movie-details-container'>
-          <img src={backgroundImage} alt={overview} className="img-movie-details" />
+          <img
+            src={backgroundImage}
+            alt={`Backdrop of the movie: ${title}`}
+            className="img-movie-details" />
         </div>
         <div className="text-movie-details-container">
           <HeaderThree>{title}</HeaderThree>
           <div className="movie-info">
             <div className="language">original language: {original_language}</div>
             <div className="rating">
-              <div>⭐</div>
+              <div aria-label="star rating">⭐</div>
               <div>{vote_average.toFixed(1)}</div></div>
           </div>
           <BodyText>{overview}</BodyText>

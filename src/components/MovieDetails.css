@@ -70,5 +70,6 @@
         background-color: #1e1e1e;
         width: 60%;
         background: linear-gradient(to top right, rgba(10, 10, 10, 1) 40%, rgba(10, 10, 10, 0) 100%);
+        padding-bottom: 4rem;
     }
 }
