@@ -1,31 +1,28 @@
-/* Movies.css */
-
-
-
 .movie-grid {
-    display: grid;
+  display: grid;
 }
 
 .movie-grid {
-    grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
 }
 
+/*Responsive design for mobile */
 @media (min-width: 480px) {
-    .movie-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
+
+/*Responsive design for tablet*/
 
 @media (min-width: 768px) {
-    .movie-grid {
-        grid-template-columns: repeat(4, 1fr);
-        /* 4 columns */
-    }
+  .movie-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 @media (min-width: 1024px) {
-    .movie-grid {
-        grid-template-columns: repeat(4, 1fr);
-        /* 4 columns */
-    }
+  .movie-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

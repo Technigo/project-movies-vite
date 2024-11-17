@@ -1,0 +1,18 @@
+/* Back Button Styling */
+.back-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 500;
+}
+
+.arrow-icon {
+    width: 24px;
+    height: 24px;
+}
