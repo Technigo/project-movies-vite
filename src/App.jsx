@@ -19,6 +19,11 @@ const App = () => {
           }
         >
           <Route index element={<MovieListPage />} />
+          <Route path="page/:pageNumber" element={<MovieListPage />} />
+          <Route
+            path="movies/:categoryName/:pageNumber"
+            element={<MovieListPage />}
+          />
           <Route path="movies/:categoryName" element={<MovieListPage />} />
           <Route path="movie/:idSlug" element={<MovieDetails />} />
           <Route path="*" element={<ErrorPage />} />
