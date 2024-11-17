@@ -28,6 +28,11 @@ const MovieDetails = () => {
     return <div>Error: {error}</div>;
   }
 
+  useEffect(() => {
+    // Scroll to the top when the MovieDetails component mounts
+    window.scrollTo(0, 0);
+  }, []);
+
   const releaseYear = movie ? movie.release_date.split("-")[0] : "";
 
   return (

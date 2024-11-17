@@ -33,6 +33,7 @@ const Sidebar = ({ onClick, className, handleSearch, searchQuery }) => {
       </div>
       <MainNav
         onClick={onClick}
+        toggleSidebar={toggleSidebar}
         isSidebarOpen={isSidebarOpen}
         handleSearch={handleSearch}
         searchQuery={searchQuery}

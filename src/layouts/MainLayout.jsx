@@ -20,12 +20,12 @@ const MainLayout = () => {
   return (
     <>
       <ScrollClasses />
-      <div className="d:mp-6 flex min-h-screen flex-col gap-4 bg-gradient-to-r from-green-200 to-green-100 p-4 lg:flex-row lg:gap-6 xl:gap-8 2xl:gap-10 2xl:p-10">
+      <div className="flex min-h-screen flex-col gap-4 bg-gradient-to-r from-green-200 to-green-100 p-4 pt-16 lg:flex-row lg:gap-6 lg:pt-4 xl:gap-8 2xl:gap-10 2xl:p-10">
         <Sidebar
           onClick={clearSearch}
           handleSearch={handleSearch}
           searchQuery={searchQuery}
-          className="sticky top-4 w-full flex-shrink-0 shadow-sm lg:w-80 xl:top-0 xl:h-sidebar-height-xl 2xl:top-10 2xl:h-sidebar-height-2xl"
+          className="fixed left-2 top-2 w-[calc(100%-1rem)] flex-shrink-0 shadow-sm lg:sticky lg:left-0 lg:top-4 lg:h-sidebar-height-xl lg:w-80 2xl:top-10 2xl:h-sidebar-height-2xl"
         />
 
         <div className="flex flex-1 flex-col">

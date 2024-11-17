@@ -4,6 +4,7 @@ import PopularIcon from "../assets/icons/chart_data.svg?react";
 import UpcomingIcon from "../assets/icons/chair.svg?react";
 import NowPlayingIcon from "../assets/icons/autoplay.svg?react";
 import SearchBar from "./SearchBar";
+import { useEffect } from "react";
 
 const navItems = [
   {
@@ -28,7 +29,31 @@ const navItems = [
   },
 ];
 
-const MainNav = ({ isSidebarOpen, onClick, handleSearch, searchQuery }) => {
+const MainNav = ({
+  toggleSidebar,
+  isSidebarOpen,
+  onClick,
+  handleSearch,
+  searchQuery,
+}) => {
+  const onNavLinkClick = () => {
+    if (onClick) {
+      onClick();
+    }
+    if (toggleSidebar) {
+      toggleSidebar();
+    }
+  };
+
+  const onSearch = (searchQuery) => {
+    if (handleSearch) {
+      handleSearch(searchQuery);
+    }
+    if (toggleSidebar) {
+      toggleSidebar();
+    }
+  };
+
   return (
     <nav
       id="main-nav"
@@ -41,7 +66,7 @@ const MainNav = ({ isSidebarOpen, onClick, handleSearch, searchQuery }) => {
           <li key={item.slug} className={index === 0 ? "mt-2" : ""}>
             <SidebarNavLink
               slug={item.slug}
-              onClick={onClick}
+              onClick={onNavLinkClick}
               tabIndex={isSidebarOpen ? -1 : 0}
             >
               <item.icon className="mr-4" /> {item.label}
@@ -50,7 +75,7 @@ const MainNav = ({ isSidebarOpen, onClick, handleSearch, searchQuery }) => {
         ))}
         <li className="pb-2 lg:hidden">
           <div className="border-green-300 rounded-full border bg-green-100 has-[:focus]:shadow has-[:focus]:outline-none has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-0 has-[:focus-visible]:outline-green-950">
-            <SearchBar onSearch={handleSearch} value={searchQuery} />
+            <SearchBar onSearch={onSearch} value={searchQuery} />
           </div>
         </li>
       </ul>
