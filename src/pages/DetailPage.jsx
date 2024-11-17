@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { BASE_URL, API_KEY } from "../utils/apiConfig";
 import { MovieDetails } from "../components/MovieDetails";
 import { BackLink } from "../components/BackLink";
+import { Navigate } from "react-router-dom";
 
 // Styled components for the container and link
 const DetailsContainer = styled.div`
@@ -71,11 +72,15 @@ export const DetailPage = () => {
           `${BASE_URL}/movie/${id}?api_key=${API_KEY}&language=en-US`
         );
         if (!response.ok) {
-          throw new Error("Failed to fetch movie details");
+          if (response.status === 404) {
+            setError("404");
+          } else {
+            throw new Error("Failed to fetch movie details");
+          }
+        } else {
+          const data = await response.json();
+          setMovie(data);
         }
-
-        const data = await response.json();
-        setMovie(data);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -86,6 +91,7 @@ export const DetailPage = () => {
     fetchMovieDetails();
   }, [id]);
 
+  if (error === "404") return <Navigate to="/not-found" replace />;
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
 

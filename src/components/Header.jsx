@@ -36,6 +36,8 @@ const Title = styled.h1`
   font-weight: 700;
   margin: 0;
 
+  text-shadow: 0 0 5px #ff9900, 0 0 10px #ff9900, 0 0 20px #ff003c;
+
   @media (max-width: 360px) {
     font-size: 2rem;
   }
@@ -47,6 +49,8 @@ const Title = styled.h1`
 const Subtitle = styled.p`
   font-size: 1.2rem;
   margin: 0.5rem 0 0;
+
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.9);
 
   @media (min-width: 768px) {
     font-size: 3rem;

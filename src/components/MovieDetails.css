@@ -15,11 +15,16 @@
   display: inline-block;
 }
 
+.title {
+  text-shadow: 1px 1px #4d4d4d;
+}
+
 .rating {
   background-color: white;
   color: black;
   padding: 0.5rem;
 }
+
 .star-icon {
   width: 25px;
 }
