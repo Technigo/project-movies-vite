@@ -20,6 +20,13 @@ const MovieContainer = styled.div`
   color: white;
   padding: 20px;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 140vh;
+  }
 `;
 
 const Poster = styled.img`
@@ -32,6 +39,12 @@ const TextContainer = styled.div`
   flex-direction: column;
   margin-left: 20px;
   max-width: 500px;
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    margin-top: 20px;
+    max-width: 300px;
+  }
 `;
 
 const ButtonWrapper = styled.div`
@@ -39,6 +52,10 @@ const ButtonWrapper = styled.div`
   display: flex;
   align-self: flex-start;
   justify-self: flex-start;
+
+  @media (max-width: 768px) {
+    position: relative;
+  }
 `;
 
 const Button = styled(BackButton)`
@@ -47,6 +64,11 @@ const Button = styled(BackButton)`
   height: 24px;
   filter: invert(1);
   margin: 10px;
+
+  @media (max-width: 768px) {
+    width: 48px;
+    height: 48px;
+  }
 `;
 
 const TitleContainer = styled.div`
