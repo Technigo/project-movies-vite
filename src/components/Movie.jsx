@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { IMAGE_URL } from "../App";
 import { Link } from "react-router-dom";
-import BackButton from "../assets/back-button.svg";
+import BackButton from "../assets/back-button.svg?react";
 import StarIcon from "../assets/star.svg?react";
 
 const MovieContainer = styled.div`
@@ -41,7 +41,7 @@ const ButtonWrapper = styled.div`
   justify-self: flex-start;
 `;
 
-const Button = styled.img`
+const Button = styled(BackButton)`
   padding: inherit;
   width: 24px;
   height: 24px;
@@ -78,7 +78,7 @@ export const Movie = ({ movies }) => {
     >
       <ButtonWrapper>
         <Link to="/">
-          <Button src={BackButton} alt="Back" />
+          <Button alt="Back" />
         </Link>
       </ButtonWrapper>
       <Poster src={`${IMAGE_URL}${movie.poster_path}`} alt={movie.title} />
