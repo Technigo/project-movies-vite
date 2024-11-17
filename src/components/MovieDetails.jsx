@@ -7,7 +7,19 @@ export const MovieDetails = ({ movie }) => {
 
   const { title, backdrop_path, overview, original_language, vote_average
   } = movie;
-  const backgroundImage = `https://image.tmdb.org/t/p/w500/${backdrop_path}`;
+
+  const getBackgroundImage = () => {
+    const screenWidth = window.innerWidth;
+    let imageSize = "w500";
+    if (screenWidth >= 1024) {
+      imageSize = "w780";
+    }
+    if (screenWidth >= 1280) {
+      imageSize = "w1280";
+    }
+    return `https://image.tmdb.org/t/p/${imageSize}/${backdrop_path}`;
+  };
+  const backgroundImage = getBackgroundImage();
 
   return (
     <>
