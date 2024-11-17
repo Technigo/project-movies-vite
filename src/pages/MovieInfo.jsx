@@ -6,6 +6,7 @@ import { Navbar } from "../components/Navbar";
 
 export const MovieInfo = () => {
   const [movie, setMovie] = useState(null);
+
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
 
@@ -30,7 +31,7 @@ export const MovieInfo = () => {
 
     const delay = setTimeout(() => {
       fetchMovies();
-    }, 2000);
+    }, 0);
 
     return () => clearTimeout(delay);
   }, [id]);
@@ -50,7 +51,6 @@ export const MovieInfo = () => {
             wrapperClass=""
             colors={["#306cce", "#72a1ed", "#77e2ec", "#abc4ef", "#723096"]}
           />
-          <h3>Un momento, por favor!</h3>
         </div>
       ) : (
         <MovieDetails movie={movie} />

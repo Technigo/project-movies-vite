@@ -1,15 +1,9 @@
 /* Global Styles */
 :root {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Lora", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 body,
@@ -39,17 +33,18 @@ nav {
 
 .app-li a {
   text-decoration: none;
-  color: #fff;
+  background: #fff;
+  color: black;
+  font-family: monospace;
   font-size: 22px;
-  background: #666;
   padding: 6px 12px;
   border-radius: 12px;
-  border: #484848 solid 2px;
+  border: #000000 solid 2px;
 }
 
 .app-li a:hover {
-  background: #fff;
-  color: black;
+  background: #1a1a1a;
+  color: #fff;
 }
 
 .app-li a:focus {
@@ -85,7 +80,8 @@ nav {
   max-width: 300px;
   height: auto;
   object-fit: cover;
-  border-radius: 10px;
+  border: 4px solid transparent;
+  border-image: linear-gradient(to right, #837b7b, #404646, #000) 1;
 }
 
 .movie-info {
@@ -101,12 +97,12 @@ nav {
 h1 {
   font-size: 40px;
   margin: 0;
+  font-family: "Baumans", system-ui;
 }
 
-h3 {
-  font-size: 28px;
+h2 {
   margin: 0;
-  color: azure;
+  font-family: "Baumans", system-ui;
 }
 
 p {
@@ -115,6 +111,7 @@ p {
 }
 
 .rating {
+  font-family: "Baumans", system-ui;
   font-size: 24px;
   margin-right: 20px;
   text-align: right;
@@ -205,6 +202,6 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(90deg, #82eff4, #ff6347, #ffd700);
+  background: linear-gradient(90deg, #222020, #91827f, #433c12);
   z-index: 1000;
 }

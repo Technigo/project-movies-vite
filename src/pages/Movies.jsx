@@ -32,6 +32,8 @@ export const Movies = () => {
     fetchMovies();
   }, []);
 
+
+
   return (
     <>
       {movies.map((movie) => (
