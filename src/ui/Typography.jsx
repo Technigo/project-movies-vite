@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 
 const TitleH1 = styled.h1 `
-    font-family: Urbanist;
-    font-size: 2.5;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.5rem;
     font-weight: 700;
     line-height: normal;
     font-style: normal;
@@ -22,6 +22,7 @@ const TitleH2 = styled.h2 `
     font-weight: 700;
     line-height: normal;
     font-style: normal;
+    margin: 0 0 1rem;
 
     @media screen and (min-width: 768px) {
         font-size: 2.6rem;
@@ -30,15 +31,18 @@ const TitleH2 = styled.h2 `
 
 const TitleH3 = styled.h3 `
     font-family: Poppins;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     margin: 0;
-    padding: 0;
+    padding: 0.3rem 0.8rem;
+    background: #000;
+    width: fit-content;
+    margin: 0 0 1rem;
 
     @media screen and (min-width: 768px) {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 `;
 
@@ -48,11 +52,11 @@ const BodyP = styled.p `
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    margin: 0;
+    margin: 0 0 1rem;
     padding: 0;
 
     @media screen and (min-width: 768px) {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 `;
 

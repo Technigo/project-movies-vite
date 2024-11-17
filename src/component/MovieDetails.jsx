@@ -2,30 +2,40 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import styled from "styled-components";
 import { fetchMovieById } from "./MovieData";
-import { H2, P } from "../ui/Typography"
+import { H2, H3, P } from "../ui/Typography"
 
 const Background = styled.div`
   background-image: url(${(props) => props.bg});
   background-size: cover;
-  background-position: center;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: flex-end;
-  padding: 20px;
 `;
 
 const Content = styled.div`
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  align-items: flex-end;
   gap: 30px;
   background: rgba(0, 0, 0, 0.6);
   padding: 20px;
   border-radius: 10px;
+  width: 100%;
+  margin: 2rem;
+
+  @media (min-width: 768px) {
+        width: 70%;
+        flex-wrap: nowrap;
+    }
 `;
 
 const Poster = styled.img`
-  width: 300px;
+  width: 100%;
   border-radius: 10px;
+
+  @media (min-width: 590px) {
+      width: 300px;
+    }
 `;
 
 const Details = styled.div`
@@ -63,7 +73,7 @@ const MovieDetails = () => {
           <Poster src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />  
         <Details>
           <H2>{movie.title}</H2>
-          <p>⭐ {movie.vote_average}</p>
+          <H3>⭐ {movie.vote_average.toFixed(1)}</H3>
           <P>{movie.overview}</P>
         </Details>
       </Content>

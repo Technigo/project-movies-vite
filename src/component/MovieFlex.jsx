@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { H3, H2 } from "../ui/Typography";
+import { H1, P } from "../ui/Typography";
 import { PopularMoviesData } from "./MovieData";
 
 
@@ -67,8 +67,8 @@ const MovieFlex = () => {
           <FlexA key={movie.id} to={`/movie/${movie.id}`}>
             <FlexImg src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
             <FlexImgDetails>
-                <H2>{movie.title}</H2>
-                <H3>Release: {movie.release_date}</H3>
+                <H1 heading={movie.title}/>
+                <P>Release: {movie.release_date}</P>
             </FlexImgDetails>
           </FlexA>
         )}
