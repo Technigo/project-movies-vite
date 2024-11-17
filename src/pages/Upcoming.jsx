@@ -15,8 +15,6 @@ text-align: center;
 
 `
 
-
-
 export const Upcoming = () => {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);

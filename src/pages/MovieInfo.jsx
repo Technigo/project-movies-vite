@@ -127,11 +127,11 @@ const RatingContainer = styled.div`
   padding: 0px 7px 0px 7px;
   width: fit-content;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: lighter;
 
   span.star {
     color: gold;
-    margin-right: 10px;
+    margin-right: 8px;
     font-size: 24px; /* Adjust the size of the star */
   }
 

@@ -19,7 +19,6 @@ const MovieCardWrapper = styled.div`
   z-index: 10;  /* Ensures the content is on top of the background */
   width: 100%;
   overflow: hidden;
-  border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.3s ease;
