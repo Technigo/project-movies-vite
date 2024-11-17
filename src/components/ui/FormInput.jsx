@@ -16,7 +16,7 @@ const FormInput = ({
         value={value}
         placeholder={placeholder}
         onChange={onChange}
-        className="form-input w-full rounded-full border border-none px-4 py-4 focus:border-0 focus:shadow-none focus:outline-none focus:ring-0 focus:ring-offset-0"
+        className="form-input w-full rounded-full border border-none bg-transparent px-4 py-4 focus:border-0 focus:shadow-none focus:outline-none focus:ring-0 focus:ring-offset-0"
         {...rest}
       />
     </>

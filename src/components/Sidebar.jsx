@@ -4,7 +4,7 @@ import Logo from "../assets/MovieHut-logo.svg?react";
 import HamburgerMenuButton from "./HamburgerMenuButton";
 import MainNav from "./MainNav";
 
-const Sidebar = ({ onClick, className }) => {
+const Sidebar = ({ onClick, className, handleSearch, searchQuery }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useLayoutEffect(() => {
@@ -31,7 +31,12 @@ const Sidebar = ({ onClick, className }) => {
           isSidebarOpen={isSidebarOpen}
         />
       </div>
-      <MainNav onClick={onClick} isSidebarOpen={isSidebarOpen} />
+      <MainNav
+        onClick={onClick}
+        isSidebarOpen={isSidebarOpen}
+        handleSearch={handleSearch}
+        searchQuery={searchQuery}
+      />
     </aside>
   );
 };

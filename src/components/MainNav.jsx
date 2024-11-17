@@ -3,6 +3,7 @@ import HomeIcon from "../assets/icons/cottage.svg?react";
 import PopularIcon from "../assets/icons/chart_data.svg?react";
 import UpcomingIcon from "../assets/icons/chair.svg?react";
 import NowPlayingIcon from "../assets/icons/autoplay.svg?react";
+import SearchBar from "./SearchBar";
 
 const navItems = [
   {
@@ -27,7 +28,7 @@ const navItems = [
   },
 ];
 
-const MainNav = ({ isSidebarOpen, onClick }) => {
+const MainNav = ({ isSidebarOpen, onClick, handleSearch, searchQuery }) => {
   return (
     <nav
       id="main-nav"
@@ -47,6 +48,11 @@ const MainNav = ({ isSidebarOpen, onClick }) => {
             </SidebarNavLink>
           </li>
         ))}
+        <li className="pb-2 lg:hidden">
+          <div className="border-green-300 rounded-full border bg-green-100 has-[:focus]:shadow has-[:focus]:outline-none has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-0 has-[:focus-visible]:outline-green-950">
+            <SearchBar onSearch={handleSearch} value={searchQuery} />
+          </div>
+        </li>
       </ul>
     </nav>
   );
