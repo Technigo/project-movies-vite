@@ -3,13 +3,11 @@
 // It fetches movie data from an external API based on the movie ID provided in the URL.
 // The component includes a loading spinner and a back link to the main movies page.
 
-/* eslint-disable react/prop-types */
-// MovieInfo.jsx - This component displays detailed information about a specific movie.
-
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import styled from "styled-components";
 import { SubPageTitle, Text } from "../ui/Typography";
+import arrow from "/arrow.svg";
 
 const MovieInfoWrapper = styled.div`
   display: flex;
@@ -22,10 +20,10 @@ const MovieInfoWrapper = styled.div`
 const BackdropContainer = styled.div`
   width: 100%;
   position: relative;
-  height: 700px; /* Adjust the height as needed */
+  height: 1000px; /* Adjust the height as needed */
   overflow: hidden;
   z-index: -1; /* Ensure it's behind content */
-  background-color: #000; /* Solid color to block global background */
+  background-color: #000;
 
   .movie-backdrop {
     width: 100%;
@@ -34,84 +32,116 @@ const BackdropContainer = styled.div`
   }
 `;
 
+const BackdropImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.35;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+`;
+
+const BackButton = styled(Link)`
+  position: absolute;
+  top: 80px;
+  left: 40px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+
+  img {
+    margin-right: 5px;
+    width: 24px;
+    height: 24px;
+  }
+
+  &:hover {
+    color: #ccc;
+  }
+`;
+
 const ContentContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  margin-top: -100px; /* Pull content up to account for poster overlap */
-  max-width: 1200px;
+  margin-top: -600px; /* Overlap content with backdrop */
   gap: 20px;
+  position: relative; /* Keeps the content over the backdrop */
 
   @media (max-width: 1300px) {
     flex-direction: column;
     align-items: center;
-    margin-top: -140px; /* Adjust for smaller screens */
+    margin-top: -800px;
   }
-`;
 
-// Add opacity directly to the backdrop image inside the BackdropContainer
-const BackdropImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.35; /* Adjust the opacity level as needed */
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1; /* Ensure it stays behind the text */
-`;
+  @media (max-width: 768px) {
+    margin-top: -900px;
+    padding: 0 20px;
+  }
 
+`;
 
 const PosterContainer = styled.div`
   flex-shrink: 0;
-  position: relative; /* Establishes the containing block for the absolute child */
+  position: relative;
 
   .movie-poster {
     width: 300px;
-    border-radius: 10px;
-    position: absolute; /* Position relative to the container */
-    top: -150px; /* Adjust to overlap the backdrop */
-    right: 80px; /* Adjust horizontal alignment */
-    z-index: 2; /* Ensure it's above the backdrop */
+    border: solid white; 
+    position: relative; /* Keeps it positioned properly within its container */
+    z-index: 2; /* Ensures poster is above backdrop */
 
-    @media (max-width: 1200px) {
-      width: 250px;
-      margin-left: -100px; 
+    @media (max-width: 1300px) {
+      width: 300px;
     }
-  
 
     @media (max-width: 768px) {
       width: 250px;
-      top: -380px; /* Adjust for smaller screens */
-      right: -120px; 
     }
   }
-
-  @media (max-width: 480px) {
-      width: 250px;
-      top: -100px; /* Adjust for smaller screens */
-      right: 120px; 
-    }
 `;
 
 const DetailsContainer = styled.div`
   flex-grow: 1;
-  z-index: 2; /* Ensure the details are above the backdrop */
-  max-width: 600px; /* Control the max width of the details */
-  padding: 20px; 
+  z-index: 2;
+  max-width: 600px;
+  padding: 20px;
+  color: #fff;
 
+  @media (max-width: 768px) {
+    text-align: left;
+    padding: 10px;
+  }
+`;
 
-  @media (max-width: 480px) {
-      margin-top: -120px; /* Adjust for smaller screens */
-      margin-left: 20px; 
-      
-    }
+const RatingContainer = styled.div`
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 0px 7px 0px 7px;
+  width: fit-content;
+  font-size: 16px;
+  font-weight: bold;
 
+  span.star {
+    color: gold;
+    margin-right: 10px;
+    font-size: 24px; /* Adjust the size of the star */
+  }
+
+  span.rating {
+    color: black;
+  }
 `;
 
 export const MovieInfo = () => {
-  const { id } = useParams(); // Captures the movie ID from the URL
+  const { id } = useParams();
   const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -132,14 +162,14 @@ export const MovieInfo = () => {
     };
 
     fetchMovieDetails();
-  }, [id]); // Runs when the movie ID changes
+  }, [id]);
 
   if (loading) {
-    return <div>Loading...</div>; // Show a spinner or loading text
+    return <div>Loading...</div>;
   }
 
   if (!movie) {
-    return <div>Movie not found</div>; // Error handling if the movie doesn't exist
+    return <div>Movie not found</div>;
   }
 
   return (
@@ -151,6 +181,10 @@ export const MovieInfo = () => {
           className="movie-backdrop"
         />
       </BackdropContainer>
+      <BackButton to="/">
+        <img src={arrow} alt="Go back to home" />
+        <SubPageTitle>Movies</SubPageTitle>
+      </BackButton>
       <ContentContainer>
         <PosterContainer>
           <img
@@ -166,15 +200,18 @@ export const MovieInfo = () => {
             <Text>Release Date:</Text> {movie.release_date}
           </p>
           <p>
-            <Text>Rating:</Text> {movie.vote_average} / 10
+            <Text>Rating:</Text>
+            {/* Add the Rating Container with the rating from the API */}
+            <RatingContainer>
+              <span className="star">★</span>
+              <span className="rating">{movie.vote_average}</span>
+            </RatingContainer>
           </p>
-          <Link to="/">Back to Home</Link>
         </DetailsContainer>
       </ContentContainer>
     </MovieInfoWrapper>
   );
 };
-
 
 
 
