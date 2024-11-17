@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { IMAGE_URL } from "../App";
 import { Link } from "react-router-dom";
 import BackButton from "../assets/back-button.svg";
+import StarIcon from "../assets/star.svg?react";
 
 const MovieContainer = styled.div`
   position: relative;
@@ -50,19 +51,20 @@ const Button = styled.img`
 
 const TitleContainer = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
 `;
 
-const VoteAverage = styled.p`
+const VoteAverage = styled.span`
   margin-left: 10px;
   margin-top: 0;
-  background-color: white;
-  padding: 5px;
-  height: fit-content;
-  font-size: 1.2rem;
-  color: black;
   font-weight: bold;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  padding: 5px;
+  color: white;
+  gap: 4px;
 `;
 
 export const Movie = ({ movies }) => {
@@ -83,7 +85,11 @@ export const Movie = ({ movies }) => {
       <TextContainer>
         <TitleContainer>
           <h2>{movie.title}</h2>
-          <VoteAverage>{movie.vote_average.toFixed(1)} </VoteAverage>
+
+          <VoteAverage>
+            <StarIcon size={24} />
+            {movie.vote_average.toFixed(1)}
+          </VoteAverage>
         </TitleContainer>
         <p>{movie.overview}</p>
       </TextContainer>

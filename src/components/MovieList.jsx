@@ -38,9 +38,7 @@ const TextContainer = styled.div`
   justify-content: flex-end;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
-  word-wrap: break-word;
-  margin-bottom: 10px;
-
+  
   h1,
   p {
     padding-left: 20px;
