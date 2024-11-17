@@ -1,24 +1,31 @@
 // This component displays detailed information about a selected movie, including title, backgroud image, a description, and average rating.
-
 import PropTypes from "prop-types";
+import starIcon from "../assets/star.svg";
+import "./MovieDetails.css";
 
 export const MovieDetails = ({ movie }) => {
   // Destructure these fields from the movie object
-  const { title, backdrop_path, overview, vote_average } = movie;
-
-  // Construct the URL for the movie's backdrop image
-  const backgroundImage = `https://image.tmdb.org/t/p/w342/${backdrop_path}`;
+  const { title, poster_path, overview, vote_average } = movie;
 
   return (
-    <div>
-      <img src={backgroundImage} alt={overview} />
+    <>
+      <img
+        className="poster-image"
+        src={`https://image.tmdb.org/t/p/w300/${poster_path}`}
+        alt={title}
+      />
 
-      <h1>{title}</h1>
-
-      <p>{vote_average}</p>
-
-      <p>{overview}</p>
-    </div>
+      <div className="movie-details-container">
+        <h1>
+          <span className="title">{title}</span>
+          <span className="rating">
+            <img src={starIcon} alt="Star" className="star-icon" />
+            {vote_average}
+          </span>
+        </h1>
+        <p>{overview}</p>
+      </div>
+    </>
   );
 };
 
@@ -26,6 +33,7 @@ export const MovieDetails = ({ movie }) => {
 MovieDetails.propTypes = {
   movie: PropTypes.shape({
     title: PropTypes.string.isRequired,
+    poster_path: PropTypes.string.isRequired,
     backdrop_path: PropTypes.string.isRequired,
     overview: PropTypes.string.isRequired,
     vote_average: PropTypes.number.isRequired,
