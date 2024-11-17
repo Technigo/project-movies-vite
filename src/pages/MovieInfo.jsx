@@ -21,7 +21,7 @@ export const MovieInfo = () => {
 
       setMovie(data);
     } catch (error) {
-      cpnsole.error("Error fetching movie details:", error);
+      console.error("Error fetching movie details:", error);
     }
   };
 
