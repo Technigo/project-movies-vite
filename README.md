@@ -5,10 +5,10 @@
 </h1>
 
 # Movie Site Project
+This project is a responsive movie site that showcases popular films and detailed information about them. It utilizes React hooks like useState and useEffect to manage state and fetch data dynamically from a movie API. Users can explore movies by category, search for specific titles, and view individual movie details in an engaging, interactive interface. The project demonstrates skills in handling asynchronous data fetching, component-based architecture, and responsive design.
 
-Replace this readme with your own information about your project.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+https://popumovies.netlify.app/
 
 ## Getting Started with the Project
 
