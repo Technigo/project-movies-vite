@@ -32,7 +32,6 @@ The main challenge was to dynamically fetch and display movie data from the API 
 #### 4. Future Improvements:
 
 - Adding loading spinners to handle slower networks.
-- Implementing error handling for invalid movie IDs with a "Not Found" page.
 - Expanding the app to include features like filtering by genres or displaying upcoming releases.
 
 ### View it live
