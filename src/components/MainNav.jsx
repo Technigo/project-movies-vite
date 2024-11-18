@@ -73,7 +73,7 @@ const MainNav = ({
           </li>
         ))}
         <li className="pb-2 lg:hidden">
-          <div className="rounded-full border border-green-300 bg-green-100 has-[:focus]:shadow has-[:focus]:outline-none has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-0 has-[:focus-visible]:outline-green-950">
+          <div className="rounded-full border border-green-300 bg-green-100 has-[:focus]:shadow has-[:focus]:outline-none has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-[-2px] has-[:focus-visible]:outline-green-950">
             <SearchBar onSearch={onSearch} value={searchQuery} />
           </div>
         </li>

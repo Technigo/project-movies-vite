@@ -38,7 +38,7 @@ const MainLayout = () => {
         />
 
         <div className="flex flex-1 flex-col">
-          <header className="justify-en hidden rounded-full bg-white has-[:focus]:shadow has-[:focus]:outline-none has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-0 has-[:focus-visible]:outline-green-950 lg:flex">
+          <header className="justify-en hidden rounded-full bg-white has-[:focus]:shadow has-[:focus]:outline-none has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-[-2px] has-[:focus-visible]:outline-green-950 lg:flex">
             <SearchBar onSearch={handleSearch} value={searchQuery} />
           </header>
 

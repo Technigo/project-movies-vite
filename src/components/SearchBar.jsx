@@ -20,7 +20,7 @@ const SearchBar = ({ onSearch, value }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex w-full items-center pl-6 pr-2"
+      className="flex w-full items-center pl-4 pr-2 md:pl-6"
     >
       <SearchIcon />
       <FormInput
