@@ -28,8 +28,8 @@ const DetailsContainer = styled.div`
     z-index: 0;
   }
 
-  @media (min-width: 360px) {
-    height: 100vh;
+  @media (min-width: 375px) {
+    min-height: 100vh;
   }
 `;
 
@@ -39,7 +39,7 @@ const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding-top: 1rem;
+  padding-top: 1.5rem;
 
   @media (min-width: 768px) {
     flex-direction: row; /* Switch to row layout for larger screens */

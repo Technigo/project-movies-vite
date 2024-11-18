@@ -10,6 +10,14 @@
   gap: 1rem;
 }
 
+.title-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 1rem;
+  align-items: center;
+}
+
 .title,
 .rating {
   display: inline-block;
@@ -23,6 +31,8 @@
   background-color: white;
   color: black;
   padding: 0.5rem;
+  font-size: 1.5rem;
+  border-radius: 5px;
 }
 
 .star-icon {
@@ -43,7 +53,7 @@
   }
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
   }
 
   .overview {

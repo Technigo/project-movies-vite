@@ -16,7 +16,7 @@ export const MovieDetails = ({ movie }) => {
       />
 
       <div className="movie-details-container">
-        <h1>
+        <h1 className="title-container">
           <span className="title">{title}</span>
           <span className="rating">
             <img src={starIcon} alt="Star" className="star-icon" />
