@@ -4,7 +4,6 @@ import PopularIcon from "../assets/icons/chart_data.svg?react";
 import UpcomingIcon from "../assets/icons/chair.svg?react";
 import NowPlayingIcon from "../assets/icons/autoplay.svg?react";
 import SearchBar from "./SearchBar";
-import { useEffect } from "react";
 
 const navItems = [
   {
@@ -45,9 +44,9 @@ const MainNav = ({
     }
   };
 
-  const onSearch = (searchQuery) => {
+  const onSearch = (query) => {
     if (handleSearch) {
-      handleSearch(searchQuery);
+      handleSearch(query);
     }
     if (toggleSidebar) {
       toggleSidebar();
@@ -74,7 +73,7 @@ const MainNav = ({
           </li>
         ))}
         <li className="pb-2 lg:hidden">
-          <div className="border-green-300 rounded-full border bg-green-100 has-[:focus]:shadow has-[:focus]:outline-none has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-0 has-[:focus-visible]:outline-green-950">
+          <div className="rounded-full border border-green-300 bg-green-100 has-[:focus]:shadow has-[:focus]:outline-none has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-0 has-[:focus-visible]:outline-green-950">
             <SearchBar onSearch={onSearch} value={searchQuery} />
           </div>
         </li>

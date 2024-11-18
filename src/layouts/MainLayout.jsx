@@ -9,12 +9,21 @@ const MainLayout = () => {
   const navigate = useNavigate();
 
   const handleSearch = (query) => {
-    setSearchQuery(query);
-    navigate("/");
+    const trimmedQuery = query.trim();
+    setSearchQuery(trimmedQuery);
+
+    if (trimmedQuery) {
+      // Navigate to the home page with the search query as a query parameter
+      navigate(`/?q=${encodeURIComponent(trimmedQuery)}`);
+    } else {
+      // If the search query is empty, navigate to the home page without query parameters
+      navigate(`/`);
+    }
   };
 
   const clearSearch = () => {
     setSearchQuery("");
+    navigate(`/`);
   };
 
   return (

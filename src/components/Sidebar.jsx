@@ -22,7 +22,7 @@ const Sidebar = ({ onClick, className, handleSearch, searchQuery }) => {
       className={`z-10 overflow-y-auto rounded-md bg-white bg-opacity-85 px-3 py-1 backdrop-blur-lg md:py-2 lg:rounded-lg lg:p-6 ${className}`}
     >
       <div className="flex items-center justify-between pl-3 lg:justify-center lg:p-6">
-        <Link to="/">
+        <Link to="/" onClick={onClick}>
           <Logo className="h-4 w-auto md:h-5 lg:h-6" />
           <span className="sr-only">MovieHut</span>
         </Link>
