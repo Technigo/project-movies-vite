@@ -62,7 +62,7 @@ export const MovieDetails = ({ poster_path, title, rating, overview }) => {
     <MovieDetailsWrapper>
       <DetailsContainer>
         <DetailsImage
-          src={`https://image.tmdb.org/t/p/w300/${poster_path}`}
+          src={`https://image.tmdb.org/t/p/w780/${poster_path}`}
           alt={`Movie poster for ${title}`}
         />
         <DetailsTextContainer>

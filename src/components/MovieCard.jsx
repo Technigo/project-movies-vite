@@ -40,7 +40,7 @@ export const MovieCard = ({ id, title, release_date, poster_path }) => {
       <Link to={`/movie/${id}`}>
         <ImageContainer>
           <MoviePoster
-            src={`https://image.tmdb.org/t/p/w300/${poster_path}`}
+            src={`https://image.tmdb.org/t/p/w780/${poster_path}`}
             alt={`Movie poster for ${title}`}
           />
           <MovieCardOverlay>
