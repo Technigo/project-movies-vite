@@ -12,7 +12,7 @@ const MovieList = ({ movies = [], loading }) => {
 
   return (
     <SkeletonTheme baseColor="#272C22" highlightColor="#323C27">
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:gap-8 lg:grid-cols-3 lg:gap-6 xl:grid-cols-4 4xl:grid-cols-6">
+      <div className="grid grid-cols-1 gap-3 xs:grid-cols-2 sm:grid-cols-2 md:gap-8 lg:grid-cols-3 lg:gap-6 xl:grid-cols-4 4xl:grid-cols-6">
         {loading
           ? skeletonCards.map((_, index) => (
               <div
@@ -22,7 +22,7 @@ const MovieList = ({ movies = [], loading }) => {
                 <div className="overflow-hidden">
                   <Skeleton
                     width="500px"
-                    className="aspect-2/3 block w-full max-w-full"
+                    className="block aspect-2/3 w-full max-w-full"
                     containerClassName="flex-1"
                   />
                 </div>
@@ -68,13 +68,21 @@ const MovieList = ({ movies = [], loading }) => {
                     <Typography element="h2" styledAs="h5" className="mb-1">
                       {movie.title}
                     </Typography>
-                    <Badge size="small" className="mt-2">
-                      <StarIcon width="1.2em" height="1.2em" color="orange" />
-                      {movie.vote_average.toFixed(1)} / 10
-                    </Badge>
-                    <Typography element="p" className="sr-only">
-                      {`Rating: ${movie.vote_average.toFixed(1)} out of 10`}
-                    </Typography>
+                    {movie.vote_average && (
+                      <>
+                        <Badge size="small" className="mt-2" aria-hidden="true">
+                          <StarIcon
+                            width="1.2em"
+                            height="1.2em"
+                            color="orange"
+                          />
+                          {movie.vote_average.toFixed(1)} / 10
+                        </Badge>
+                        <Typography element="p" className="sr-only">
+                          {`Rating: ${movie.vote_average.toFixed(1)} out of 10`}
+                        </Typography>
+                      </>
+                    )}
                   </div>
                 </Link>
               </div>

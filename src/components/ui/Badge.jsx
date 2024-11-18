@@ -11,9 +11,9 @@ const Badge = ({
   };
 
   const sizeClasses = {
-    small: "text-sm px-2 py-1",
-    default: "text-md px-2",
-    large: "text-lg px-3 py-1",
+    small: "text-xs lg:text-sm px-2 py-1",
+    default: "text-sm lg:text-md px-2",
+    large: "text-md lg:text-lg px-3 py-1",
   };
 
   const classes = `inline-flex gap-1 font-semibold items-center rounded-full ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
