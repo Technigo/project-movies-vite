@@ -125,7 +125,7 @@ const RatingContainer = styled.div`
   width: fit-content;
   font-size: 20px;
   font-weight: bold;
-  margin-top: 5px;
+  margin: 5px 0px;
 
   span.star {
     color: gold;
