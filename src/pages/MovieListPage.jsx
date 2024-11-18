@@ -1,4 +1,4 @@
-import { useMemo, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import useFetchMovies from "../hooks/useFetchMovies";
 import { Typography } from "../components/ui/Typography";
@@ -14,21 +14,18 @@ const MovieListPage = () => {
 
   // Extract query params
   const queryParams = new URLSearchParams(location.search);
-  const q = queryParams.get("q") || "";
-  const searchTerm = q.trim();
-
-  // Update searchQuery from query params
-  const stableSearchQuery = searchTerm || "";
+  const searchTerm = (queryParams.get("q") || "").trim();
 
   // Convert hyphens to underscores for API usage
-  const apiCategory = useMemo(() => {
-    return categoryName ? categoryName.replace(/-/g, "_") : "top_rated";
-  }, [categoryName]);
+  const apiCategory = categoryName
+    ? categoryName.replace(/-/g, "_")
+    : "top_rated";
 
   // Parse and sanitize the page number from the URL
   const initialPage = pageNumber ? parseInt(pageNumber, 10) : 1;
   const sanitizedPage = isNaN(initialPage) || initialPage < 1 ? 1 : initialPage;
 
+  // State for current page
   const [currentPage, setCurrentPage] = useState(sanitizedPage);
 
   // Update currentPage when URL parameter changes
@@ -38,38 +35,38 @@ const MovieListPage = () => {
 
   const { movies, totalPages, loading, error } = useFetchMovies(
     apiCategory,
-    stableSearchQuery,
+    searchTerm,
     currentPage,
   );
 
-  // Format category name for display
-  const pageTitle = stableSearchQuery
-    ? `Search: "${stableSearchQuery}"`
+  // Page title
+  const pageTitle = searchTerm
+    ? `Search: "${searchTerm}"`
     : formatCategoryName(apiCategory);
 
   // Handle page change and update the URL
   const handlePageChange = (newPage) => {
-    // Prepare query parameters
     const params = new URLSearchParams();
 
-    if (stableSearchQuery) {
-      params.set("q", stableSearchQuery);
+    // Ensure query params are correctly set if there is a search term
+    if (searchTerm) {
+      params.set("q", searchTerm);
     }
 
-    // Determine the new pathname based on category and page number
-    let newPath = "/";
-    if (categoryName) {
+    let newPath;
+
+    // Home page (top rated movies)
+    if (!categoryName) {
+      newPath = newPage > 1 ? `/page/${newPage}` : `/`; // Home without category defaults to page 1
+    } else {
+      // Movies with category (e.g., top-rated, popular)
       newPath = `/movies/${categoryName}`;
       if (newPage > 1) {
         newPath += `/${newPage}`;
       }
-    } else {
-      if (newPage > 1) {
-        newPath = `/page/${newPage}`;
-      }
     }
 
-    // Append query parameters if present
+    // Append search parameters if present
     const search = params.toString() ? `?${params.toString()}` : "";
 
     navigate({
@@ -80,15 +77,27 @@ const MovieListPage = () => {
 
   return (
     <div>
-      <PageTitle title={`${pageTitle} – MovieHut`} />
+      <PageTitle
+        title={
+          categoryName
+            ? `${pageTitle} – MovieHut`
+            : "MovieHut — Your movie shelter"
+        }
+      />
       <Typography element="h1" className="mb-4 lg:mb-8" aria-live="polite">
         {pageTitle}
       </Typography>
 
-      {error && <Typography element="h2">{error}</Typography>}
+      {/* Errors during the request */}
+      {error && (
+        <Typography element="p" role="alert">
+          {error}
+        </Typography>
+      )}
 
+      {/* No movies found, for when you search for instance */}
       {!loading && !error && movies.length === 0 && (
-        <Typography element="h2">No movies found.</Typography>
+        <Typography element="p">No movies found.</Typography>
       )}
 
       <MovieList movies={movies} loading={loading} />

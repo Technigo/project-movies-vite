@@ -52,7 +52,7 @@ const MovieDetails = () => {
       <header className="grid grid-cols-2 items-center gap-8 md:grid-cols-8 md:gap-10 lg:grid-cols-12 lg:gap-14">
         {loading ? (
           <div className="col-span-2 md:col-span-4 lg:col-span-12 xl:order-2 xl:col-span-6">
-            <Skeleton height={400} className="rounded-lg" />
+            <Skeleton className="aspect-video rounded-lg" />
           </div>
         ) : (
           movie.backdrop_path && (
