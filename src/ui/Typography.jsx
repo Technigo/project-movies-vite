@@ -31,8 +31,8 @@ font-family: ${primaryFont};
 font-size: 1.3rem;
 font-weight: 400;
 line-height: 1.4;
-margin-bottom: 0.5rem;
 color: #FFF;
+margin: 0; 
  `;
 
 // Paragraph text
@@ -44,4 +44,3 @@ export const Text = styled.p`
   margin-bottom: 1rem;
   color: #FFF;
 `;
-

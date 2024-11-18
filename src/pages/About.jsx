@@ -15,7 +15,7 @@ padding: 0 20px;
 `
 
 const BoldText = styled(Text)`
-font-weight: bold; 
+font-weight: 500; 
 color: red;
 
 `

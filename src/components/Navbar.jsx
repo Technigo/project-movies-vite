@@ -20,7 +20,7 @@ const Nav = styled.nav`
 const StyledNavLink = styled(NavLink)`
   text-decoration: none; /* Remove underline */
   color: white; /* Set link color */
-  margin: 0 1rem; /* Add spacing between links */
+  margin: 1rem 1rem; /* Add spacing between links */
 
   &.active {
     font-weight: bold; /* Highlight active link */

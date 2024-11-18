@@ -71,7 +71,7 @@ const ContentContainer = styled.div`
   align-items: flex-start;
   justify-content: center;
   margin-top: -600px; /* Overlap content with backdrop */
-  gap: 20px;
+  gap: 5px;
   position: relative; /* Keeps the content over the backdrop */
 
   @media (max-width: 768px) {
@@ -116,6 +116,7 @@ const DetailsContainer = styled.div`
   }
 `;
 
+
 const RatingContainer = styled.div`
   display: inline-block;
   align-items: center;
@@ -124,6 +125,7 @@ const RatingContainer = styled.div`
   width: fit-content;
   font-size: 20px;
   font-weight: bold;
+  margin-top: 5px;
 
   span.star {
     color: gold;
@@ -204,6 +206,9 @@ export const MovieInfo = () => {
     </MovieInfoWrapper>
   );
 };
+
+
+
 
 
 
