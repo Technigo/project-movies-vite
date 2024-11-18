@@ -47,7 +47,7 @@ const MovieDetails = () => {
         onClick={() => navigate(-1)}
         className="mb-6 lg:mb-12"
       >
-        <GoBackIcon /> Go back
+        <GoBackIcon width="1.5em" height="1.5em" /> Go back
       </Button>
       <header className="grid grid-cols-2 items-center gap-8 md:grid-cols-8 md:gap-10 lg:grid-cols-12 lg:gap-14">
         {loading ? (

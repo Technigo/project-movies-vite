@@ -17,7 +17,7 @@ const Button = ({
   };
 
   // Shared classes
-  const classes = `flex gap-2 text-sm md:text-md rounded-full px-4 py-1 md:px-5 md:py-2 font-semibold transition duration-300 ease-in-out ${
+  const classes = `flex items-center gap-2 text-sm md:text-md lg:text-base rounded-full px-4 py-1 md:px-5 md:py-2 font-semibold transition duration-300 ease-in-out ${
     variantClasses[variant]
   } ${className}`;
 
