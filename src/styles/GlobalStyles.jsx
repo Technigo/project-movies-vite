@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-import backgroundImage from "../assets/background_sky.jpg"
+import backgroundImage from "/background_sky.jpg";
+
 
 export const GlobalStyles = createGlobalStyle`
   /* CSS Reset */
