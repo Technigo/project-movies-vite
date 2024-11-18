@@ -1,0 +1,62 @@
+.poster-image {
+  border: 5px solid white;
+  width: 200px;
+}
+
+.movie-details-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.title-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 1rem;
+  align-items: center;
+}
+
+.title,
+.rating {
+  display: inline-block;
+}
+
+.title {
+  text-shadow: 1px 1px #4d4d4d;
+}
+
+.rating {
+  background-color: white;
+  color: black;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  border-radius: 5px;
+}
+
+.star-icon {
+  width: 25px;
+}
+
+@media (min-width: 768px) {
+  .poster-image {
+    width: auto;
+  }
+
+  .movie-details-container {
+    width: 40%;
+  }
+
+  .title {
+    padding-right: 0.5rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .overview {
+    max-width: 400px;
+  }
+}
