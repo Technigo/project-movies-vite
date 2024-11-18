@@ -92,9 +92,10 @@ const PosterContainer = styled.div`
     position: relative; /* Keeps it positioned properly within its container */
     z-index: 2; /* Ensures poster is above backdrop */
 
-    @media (min-width: 769px) and (max-width: 1300px) {
+    @media (min-width: 769px) {
       width: 300px;
       margin-left: 20px;
+      margin-top: -250px;
     }
 
     @media (max-width: 768px) {
@@ -112,8 +113,11 @@ const DetailsContainer = styled.div`
 
   @media (max-width: 768px) {
     text-align: left;
-    padding: 10px;
   }
+
+  @media (min-width: 769px) {
+      margin-top: -40px;
+    }
 `;
 
 
