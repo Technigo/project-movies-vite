@@ -16,13 +16,14 @@ const BackdropImage = styled.div`
 export const MovieProfile = () => {
   const [ movie, setMovie] = useState(null); //state for storing fetched movie data, initialized as null
 
-  // Extract the is param(eter) from the URL (movie id)
+  // Extract the id param(eter) from the URL (movie id)
   const { id } = useParams();
   console.log("Movie ID:", id); // Log to verify if the ID is correct
 
   useEffect(() => {
     const apiEnv = import.meta.env.VITE_API_KEY;
-    console.log("API Key:", apiEnv); // Log the API key
+    // Log the API key
+    // console.log("API Key:", apiEnv); 
     const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiEnv}&language=en-US`;
     console.log("fetching data from:", url)
 

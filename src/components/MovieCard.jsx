@@ -1,6 +1,3 @@
-// MovieCard.jsx - This component represents a single movie card for use in a movie list or gallery.
-// It displays the movie's poster, title, and release date, with a link to a detailed movie information page.
-
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { CardH1, P } from "../ui/Typography";

@@ -10,7 +10,7 @@ This project was all about practicing RouterBrowser. My goal was to mainly under
 
 ### The Problem
 
-I used provided code and chatGPT as my main sources to tackle the challenges I came across, like error messages. The solutions were often simple but the difficult part was to find where the problems were sitting.
+I used the classcode that was provded as a frame and chatGPT as my main sources to tackle the challenges I came across, like error messages. The solutions were often simple but the difficult part was to find where the problems were sitting.
 
 I divided the project into different components, then started working from app.jsx and down. But I ended up jumping around between components and pages, finsing it a little bit diffucult to focus on one. I belive it woulve been easier, like ive done previously, to start with the reusable components, then the sections (in this case pages) and thereafter divide/connect everything with routerbrowser.
 

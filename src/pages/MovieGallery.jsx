@@ -22,11 +22,6 @@ const Gallery = styled.div `
   @media (min-width: 1024px) {
     grid-template-columns: repeat(4, 1fr);
   }
-
-  /* Prevent horizontal scrolling */
-  /* max-width: 100%;
-  overflow-x: hidden;
-  box-sizing: border-box; */
 `;
 
 // Fetches all popular movies

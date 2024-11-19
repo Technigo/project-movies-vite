@@ -48,8 +48,6 @@ const MovieDetailsPoster = styled.img`
 `;
 
 export const MovieDetails = ({ title, poster_path, overview, rating }) => {
-//   console.log(movie)
-// const { title, poster_path, overview } = movie;
 
   return (
     <>
