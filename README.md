@@ -6,25 +6,17 @@
 
 # Movie Site Project
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
-## Getting Started with the Project
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
+This project was all about practicing RouterBrowser. My goal was to mainly understand how it works and to wrap my head around how all the components are linked. To help me with that I did my best to draw a visial representaion of how I understand it.
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I used provided code and chatGPT as my main sources to tackle the challenges I came across, like error messages. The solutions were often simple but the difficult part was to find where the problems were sitting.
+
+I divided the project into different components, then started working from app.jsx and down. But I ended up jumping around between components and pages, finsing it a little bit diffucult to focus on one. I belive it woulve been easier, like ive done previously, to start with the reusable components, then the sections (in this case pages) and thereafter divide/connect everything with routerbrowser.
+
+If i'd have more time I woul've divided things into even smaller components. Especially looking at the pages that have the fecthing and hooks nested in there. I'd like all of that separate for easier maintanance and reusability.
+
+I would also have like to create my own thing, different design, and to have time to just play around and try things out.
 
 ### View it live
 
