@@ -6,17 +6,29 @@
 
 # Movie Site Project
 
-This project was all about practicing RouterBrowser. My goal was to mainly understand how it works and to wrap my head around how all the components are linked. To help me with that I did my best to draw a visial representaion of how I understand it.
+This project focused on practicing React Router. My primary goal was to deepen my understanding of how it works and to map out how all the components are interconnected. To aid my learning, I created a visual representation of how I understood the structure and flow of the application.
 
 ### The Problem
 
-I used the classcode that was provded as a frame and chatGPT as my main sources to tackle the challenges I came across, like error messages. The solutions were often simple but the difficult part was to find where the problems were sitting.
+Challenges and Solutions
+I used the class code provided as a framework and relied on ChatGPT as my main resource to troubleshoot issues like error messages. While the solutions to the problems I faced were often straightforward, the most challenging part was pinpointing exactly where the issues originated within the codebase.
 
-I divided the project into different components, then started working from app.jsx and down. But I ended up jumping around between components and pages, finsing it a little bit diffucult to focus on one. I belive it woulve been easier, like ive done previously, to start with the reusable components, then the sections (in this case pages) and thereafter divide/connect everything with routerbrowser.
+To tackle the project, I divided it into separate components and began working from App.jsx downwards. However, I found myself jumping back and forth between components and pages, which made it harder to focus on one task at a time. In hindsight, I believe it would have been more effective to follow the approach I've used in previous projects:
 
-If i'd have more time I woul've divided things into even smaller components. Especially looking at the pages that have the fecthing and hooks nested in there. I'd like all of that separate for easier maintanance and reusability.
+Start by building reusable components.
+Create sections (or pages, in this case).
+Then connect everything with React Router.
+Styling Process
+For styling, I began by experimenting to ensure everything worked correctly and to identify where styles should be applied. Afterward, I adopted a mobile-first approach, progressively enhancing the design to suit desktop views. This workflow helped me ensure responsive design throughout the project.
 
-I would also have like to create my own thing, different design, and to have time to just play around and try things out.
+Reflections and Future Improvements
+If I had more time, I would have:
+
+Broken down the code into smaller components, especially on the pages where fetching data and hooks are currently nested. Separating these concerns would improve maintainability and reusability.
+Created a more personalized design. While the project used the provided framework, I would have enjoyed having more time to experiment with a unique layout and design choices.
+Dedicated additional time to explore and try out new ideas or features, enhancing both the functionality and user experience of the site.
+Key Takeaways
+This project was a valuable learning experience in understanding React Router and managing a project with interconnected components. While I faced challenges with debugging and structuring my work, I’ve gained confidence in identifying issues and planning a more efficient workflow for future projects.
 
 ### View it live
 
