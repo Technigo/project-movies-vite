@@ -6,9 +6,9 @@ import { Title, PageTitle } from "../ui/Typography";
 
 const CenteredWrapper = styled.div`
     display: flex;
-    justify-content: center; /* Horizontally center */
-    align-items: center;     /* Vertically center (if needed) */
-    text-align: center;      /* Center the text within the container */
+    justify-content: center; 
+    align-items: center;     
+    text-align: center;      
   `;
 
 const StyledTitle = styled(Title)`

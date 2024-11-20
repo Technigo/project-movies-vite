@@ -12,9 +12,8 @@ const AboutSection = styled.section`
   padding: 0 20px;
 `;
 
-// Add margin-bottom for Text and BoldText to ensure gap between paragraphs
 const TextWithSpacing = styled(Text)`
-  margin-bottom: 20px; /* Adjust as needed for spacing */
+  margin-bottom: 20px; 
 `;
 
 const BoldText = styled(Text)`

@@ -185,7 +185,7 @@ export const MovieInfo = () => {
       </BackdropContainer>
       <BackButton to="/">
         <img src={arrow} alt="Go back to home" />
-        <SubPageTitle>Movies</SubPageTitle>
+        <SubPageTitle>Home</SubPageTitle>
       </BackButton>
       <ContentContainer>
         <PosterContainer>
