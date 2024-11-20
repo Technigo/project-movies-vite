@@ -1,0 +1,23 @@
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+    >
+      <path
+        d="M4 6H16"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        transform-origin="10px 6px"
+      ></path>
+      <path
+        d="M4 14H16"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        transform-origin="10px 14px"
+      ></path>
+    </svg>

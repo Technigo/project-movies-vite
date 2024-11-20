@@ -1,37 +1,25 @@
-<h1 align="center">
-  <a href="">
-    <img src="/src/assets/movies.svg" alt="Project Banner Image">
-  </a>
-</h1>
+# MovieHut by Helene Westrin
 
-# Movie Site Project
+## The Project
 
-Replace this readme with your own information about your project.
+In this project I was tasked with creating a multi-page website using React Router. The site had to use The Movie Database (TMDB) API to fetch movies or series and each link to a separate page for each movie.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+_I started with planning how I wanted the URL structure to be:_
 
-## Getting Started with the Project
+- / (Home page)
+- /movies/:category (For whatever categories I wanted to display)
+- /movie/:movie-name (For each individual movie)
+- /not-found (For all invalid url´s)
 
-### Dependency Installation & Startup Development Server
+Fetching the data was easy enough, but I quickly realized it wasn't so straight forward with getting the movie name as the slug for each movie. Since the data didn't provide a slug I had to construct it out of the movie name; make it all lowercase, replace spaces and underscore with dashes, etc. I also realized some movies may have the same name - so in order to keep all slugs unique I also had to have the movie ID in the slug.
 
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
+_Some other features include:_
 
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
+- Search bar
+- Updating the page title accordingly
+- Skeleton loaders
+- Pagination for movie lists
 
-```bash
-npm i && code . && npm run dev
-```
+## View it live
 
-### The Problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
-
-### View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
+[https://moviehut-by-helene.netlify.app](https://moviehut-by-helene.netlify.app/)
