@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 // MovieInfo.jsx - This component displays detailed information about a specific movie.
 // It fetches movie data from an external API based on the movie ID provided in the URL.
-// The component includes a loading spinner and a back link to the main movies page.
+// The component includes a loading spinner and a dynamic back link to the now playing movies page or upcoming movies.
 
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useLocation, Link } from "react-router-dom";
 import styled from "styled-components";
 import { SubPageTitle, Text } from "../ui/Typography";
 import arrow from "/arrow.svg";
@@ -20,7 +20,7 @@ const MovieInfoWrapper = styled.div`
 const BackdropContainer = styled.div`
   width: 100%;
   position: relative;
-  height: 1000px; /* Adjust the height as needed */
+  height: 1000px; 
   overflow: hidden;
   z-index: -1; /* Ensure it's behind content */
   background-color: #000;
@@ -134,7 +134,7 @@ const RatingContainer = styled.div`
   span.star {
     color: gold;
     margin-right: 8px;
-    font-size: 24px; /* Adjust the size of the star */
+    font-size: 24px; 
   }
 
   span.rating {
@@ -144,6 +144,8 @@ const RatingContainer = styled.div`
 
 export const MovieInfo = () => {
   const { id } = useParams();
+  const location = useLocation();
+  const from = location.state?.from || "/"; // Default to home if no state
   const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -183,9 +185,10 @@ export const MovieInfo = () => {
           className="movie-backdrop"
         />
       </BackdropContainer>
-      <BackButton to="/">
-        <img src={arrow} alt="Go back to home" />
-        <SubPageTitle>Home</SubPageTitle>
+      {/* Dynamic BackButton */}
+      <BackButton to={from === "now-playing" ? "/" : "/upcoming"}>
+        <img src={arrow} alt={`Go back to ${from === "now-playing" ? "Now Playing" : "Upcoming"}`} />
+        <SubPageTitle>Go Back</SubPageTitle>
       </BackButton>
       <ContentContainer>
         <PosterContainer>
@@ -210,12 +213,6 @@ export const MovieInfo = () => {
     </MovieInfoWrapper>
   );
 };
-
-
-
-
-
-
 
 
 

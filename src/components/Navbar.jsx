@@ -70,7 +70,7 @@ export const Navbar = () => {
 
         <NavListItem>
           <StyledNavLink to="/upcoming" aria-label="Go to Upcoming Movies page">
-            <StyledSubPageTitle>Upcoming movies</StyledSubPageTitle>
+            <StyledSubPageTitle>Upcoming Movies</StyledSubPageTitle>
           </StyledNavLink>
         </NavListItem>
       </NavList>

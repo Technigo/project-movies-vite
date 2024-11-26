@@ -22,12 +22,17 @@ const MovieGridContainer = styled.div`
   }
 `;
 
-export const MovieGrid = ({ movies }) => {
+export const MovieGrid = ({ movies, origin }) => {
   return (
     <MovieGridContainer>
       {movies.map((movie) => (
-        <Link to={`/movie/${movie.id}`} key={movie.id} style={{ textDecoration: "none" }}>
-          <MovieCard movie={movie} /> {/* Pass movie prop to MovieCard */}
+        <Link
+          to={`/movie/${movie.id}`}
+          key={movie.id}
+          style={{ textDecoration: "none" }}
+          state={{ from: origin }} // Pass the origin dynamically
+        >
+          <MovieCard movie={movie} />
         </Link>
       ))}
     </MovieGridContainer>

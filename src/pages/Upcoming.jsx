@@ -16,7 +16,7 @@ text-align: center;
 `
 
 export const Upcoming = () => {
-  const [movies, setMovies] = useState([]);
+  const [upcomingMovies, setMovies] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -36,7 +36,6 @@ export const Upcoming = () => {
       try {
         const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiEnv}&language=se-SE&page=1&region=SE&release_date.gte=${startDate}&release_date.lte=${maxDate}`);
         const data = await response.json();
-        console.log("Upcoming Movies API Response:", data);
         // Filter out movies with no poster image
         const filteredMovies = data.results.filter(movie => movie.poster_path && movie.poster_path !== '');
         setMovies(filteredMovies);
@@ -51,9 +50,9 @@ export const Upcoming = () => {
   return (
     <div className="upcoming-movies">
       {error && <p>{error}</p>}
-      <StyledPageTitle>Upcoming movies</StyledPageTitle>
+      <StyledPageTitle>Upcoming Movies</StyledPageTitle>
       {/* Pass the movies array to MovieGrid */}
-      <MovieGrid movies={movies} />
+      <MovieGrid movies={upcomingMovies} origin="upcoming" />
     </div>
   );
 };

@@ -14,7 +14,7 @@ I started off by structuring the app into different components and pages and tho
 
 My primary challenge was integrating dynamic API data with a responsive and accessible design. It took me a long time to style it so it became responsive.
 
-The tools and tequniques that I have used is React for the user interface, React Router for dynamic routing, Fetch API to retrieve movie data and styled components for the CSS. If I hade more time I would include a loading image and create a dynamic path for the "Back" button so it behaves differently depending on whether the user is viewing a Now Playing Movie or an Upcoming Movie.
+The tools and tequniques that I have used is React for the user interface, React Router for dynamic routing, Fetch API to retrieve movie data and styled components for the CSS.
 
 ### View it live
 
