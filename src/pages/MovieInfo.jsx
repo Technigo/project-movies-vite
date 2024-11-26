@@ -145,7 +145,7 @@ const RatingContainer = styled.div`
 export const MovieInfo = () => {
   const { id } = useParams();
   const location = useLocation();
-  const from = location.state?.from || "/"; // Default to home if no state
+  const from = location.state?.from || "/"; // Default to home if no state, If someone navigates directly to /movie/:id without using the Link in MovieGrid, the state won't be set. The from fallback ensures a default redirection path.
   const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(true);
 

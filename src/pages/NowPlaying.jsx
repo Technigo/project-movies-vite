@@ -27,7 +27,7 @@ export const NowPlaying = () => {
       {isLoading && <h1>Loading...</h1>} {/* Show loading message while data is being fetched */}
       {!isLoading && (
         <div className="movie-list">
-          <MovieGrid movies={nowPlayingMovies} origin="now-playing" />
+          <MovieGrid movies={nowPlayingMovies} origin="now-playing" /> {/*Passes the movies to display and specifies the type of movies ("now-playing") for dynamic behavior in MovieGrid*/}
         </div>
       )}
     </div>

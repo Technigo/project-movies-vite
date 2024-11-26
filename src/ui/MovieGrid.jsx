@@ -30,7 +30,7 @@ export const MovieGrid = ({ movies, origin }) => {
           to={`/movie/${movie.id}`}
           key={movie.id}
           style={{ textDecoration: "none" }}
-          state={{ from: origin }} // Pass the origin dynamically
+          state={{ from: origin }} // The origin prop allows the MovieGrid to remain generic and reusable for both "Now Playing" and "Upcoming."
         >
           <MovieCard movie={movie} />
         </Link>

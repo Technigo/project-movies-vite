@@ -53,6 +53,7 @@ export const Upcoming = () => {
       <StyledPageTitle>Upcoming Movies</StyledPageTitle>
       {/* Pass the movies array to MovieGrid */}
       <MovieGrid movies={upcomingMovies} origin="upcoming" />
+      {/*Passes the movies to display and specifies the type of movies ("upcoming") for dynamic behavior in MovieGrid*/}
     </div>
   );
 };
