@@ -6,32 +6,16 @@
 
 # Movie Site Project
 
-Replace this readme with your own information about your project.
+This project focuses on building a movie site using the themoviedb.org API. Users can browse movies now playing and upcoming movies and click on a movie to view details, and navigate seamlessly across pages thanks to dynamic routing and responsive design.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
-## Getting Started with the Project
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
+I started off by structuring the app into different components and pages and thought about what could be reusable. The app is structured into modular components like Navbar, MovieCard, and reusable UI elements such as Moviegrid and Typography. Pages include Home, NowPlaying, Upcoming, and Movieinfo, each fetching data from the API. Routing is managed through App.jsx, with a custom NotFound page for unmatched routes.
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+My primary challenge was integrating dynamic API data with a responsive and accessible design. It took me a long time to style it so it became responsive.
+
+The tools and tequniques that I have used is React for the user interface, React Router for dynamic routing, Fetch API to retrieve movie data and styled components for the CSS.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
+https://swedishmoviezone.netlify.app/
