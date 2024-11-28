@@ -1,0 +1,17 @@
+.movie-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+}
+
+@media (min-width: 745px) and (max-width: 1049px) {
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1050px) {
+  .movie-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
