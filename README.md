@@ -1,37 +1,23 @@
-<h1 align="center">
-  <a href="">
-    <img src="/src/assets/movies.svg" alt="Project Banner Image">
-  </a>
-</h1>
-
 # Movie Site Project
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The movie project with React Router is a web application built using the React framework and React Router library. It allows users to browse and explore information about various movies. The project utilizes React Router for client-side routing, enabling seamless navigation between different pages without the need for full-page reloads.
 
 ## Getting Started with the Project
 
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
-
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+In the movie project, the main challenge was to create a responsive and visually appealing user interface using React and React Router. This involved implementing features such as displaying a list of movies, providing movie details on click, and allowing users to navigate between different pages seamlessly.
+
+Some specific challenges included:
+
+1. Implementing a hamburger menu for navigation on smaller screens while ensuring it remains visible and accessible.
+2. Styling the movie cards and ensuring they display correctly across various screen sizes.
+3. Managing state and handling user interactions, such as selecting different movie options.
+4. Aligning and styling elements dynamically, such as positioning the movie details under the poster and ensuring proper padding and layout.
+5. Handling transitions and animations, such as moving text slightly when hovering over a button.
+
+Overall, the project required a combination of React skills, CSS styling, and problem-solving to create a functional and visually appealing movie application.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
+https://popularmovies-bmm.netlify.app/
