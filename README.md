@@ -1,37 +1,15 @@
-<h1 align="center">
-  <a href="">
-    <img src="/src/assets/movies.svg" alt="Project Banner Image">
-  </a>
-</h1>
+### Movie Site Project
 
-# Movie Site Project
+The task was to create a website that lists movies from an API.
 
-Replace this readme with your own information about your project.
+### Problems
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Since we were using two different API:s it was quite difficult not to mix them up. Also I have never worked with Routing, so I hade to put a lot of effort in understanding it and using it right.
 
-## Getting Started with the Project
+### The result
 
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
-
-### The Problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+With instructions from Diego, chat GPT and help from classmates I solved it, even though it all felt like a mess from the beginning. Although if I had more time I would like to pay more attention to the design.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
+<https://project-movies-amber.vercel.app/>
