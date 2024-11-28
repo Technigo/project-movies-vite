@@ -1,0 +1,178 @@
+.movie-component {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+
+#backdrop {
+  z-index: 0;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.movie-gradient {
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(to top, black, transparent);
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.movie-information {
+  color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  position: absolute;
+}
+
+#poster {
+  border: 4px solid white;
+  width: 60%;
+  height: auto;
+  margin-top: 72px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  padding: 0 2em;
+  width: 80%;
+  margin: 2em 0;
+  text-align: justify;
+  justify-content: flex-end;
+}
+
+.movie-title {
+  font-size: 20px;
+  letter-spacing: 0.02em;
+  word-wrap: break-word;
+  margin-right: 8px;
+}
+
+.movie-heading {
+  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie-rating {
+  font-weight: 400;
+  font-size: 16px;
+  color: black;
+  align-self: center;
+}
+.movie-rating span {
+  background-color: rgb(255, 254, 243);
+  border-radius: 10px;
+  padding: 2px 4px 2px 2px;
+  display: inline-flex;
+  width: min-content;
+  align-items: center;
+}
+.movie-star {
+  width: 14px;
+  height: auto;
+  margin: 0 4px;
+}
+
+.genres {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.genres h3 {
+  background-color: #ffffff8c;
+  color: black;
+  font-size: 16px;
+  margin-right: 0.5em;
+  padding: 0.3em;
+  border-radius: 10px;
+  border: none;
+}
+
+.back-button {
+  position: absolute;
+  z-index: 3;
+  top: 1em;
+  left: 1em;
+  display: flex;
+  transition: transform 250ms;
+
+}
+.back-button:hover {
+  cursor: pointer;
+}
+
+.back-button h4 {
+  font-weight: 800;
+  font-size: 18px;
+  margin: 0.1em 0 0 0.3em;
+  text-shadow: rgb(0, 0, 0) 3px 3px 10px;
+  transition: transform 250ms;
+  color: white;
+}
+
+
+#go-back {
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+
+}
+.back-button:hover{
+    transform: translateX(-3px);
+  }
+
+
+@media screen and (min-width: 768px) {
+  #poster {
+    width: 50%;
+  }
+  .back-button {
+    top: 2em;
+    left: 2em;
+}
+
+@media screen and (min-width: 1200px) {
+  .movie-information {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: left;
+    z-index: 1;
+    position: absolute;
+    width: 96%;
+    left: 4em;
+    top: 18em;
+    z-index: 2;
+  }
+  #poster {
+    width: 325px;
+  }
+
+  .details {
+    width: 400px;
+    margin: 18em 0 0 0;
+  }
+
+  #first-info {
+    width: 350px;
+    padding: 1em;
+  }
+  .movie-rating {
+    font-weight: 400;
+    font-size: 16px;
+  }
+  .movie-star {
+    width: 18px;
+  }
+}
+}
