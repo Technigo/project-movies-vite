@@ -1,0 +1,7 @@
+.loader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* Added so that the loader covers the full viewport height*/
+}
