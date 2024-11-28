@@ -1,0 +1,39 @@
+.back-arrow {
+    width: 3dvw;
+}
+
+.back-to-movies {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1dvw;
+    padding: 2dvh 3dvh;
+    margin: 2dvh;
+}
+
+.back-to-movies:hover {
+    animation: gap-maker 0.5s ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes gap-maker {
+    from {gap: 1dvw}
+    to {gap: 2dvw}
+}
+
+@media (min-width: 600px) {
+    .back-to-movies {
+        font-size: 2rem;
+    }
+}
+@media (min-width: 1000px) {
+    .back-to-movies {
+        font-size: 2.5rem;
+    }
+    .back-arrow {
+        width: 3.5dvw;
+    }
+}
