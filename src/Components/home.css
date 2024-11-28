@@ -1,0 +1,58 @@
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+li {
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden; 
+    flex: 0 0 calc(25% - 20px);
+}
+
+@media screen and (min-width:744px) and (max-width: 1279px) {
+    li {
+        flex: 0 0 calc(33.33% - 20px); 
+    }
+}
+
+@media screen and (max-width: 743px) {
+li {
+    flex: 0 0 calc(100% - 20px); 
+}
+}
+
+img {
+    width: 100%;
+    height: auto;
+    cursor: pointer; 
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.movie-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    display: none;
+    color: white;
+}
+
+.movie-info h3 {
+    font-size: 40px;
+}
+
+li:hover img {
+    transform: scale(1.05);
+    filter: brightness(0.7);
+}
+
+li:hover .movie-info {
+    display: block;
+}
+
