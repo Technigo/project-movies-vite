@@ -1,0 +1,60 @@
+.movie-container {
+  padding: 0px;
+  color: white;
+}
+
+/* The background styling */
+.content-overlay {
+  padding: 20px;
+  border-radius: 5px;
+}
+
+/* The back to movies-button */
+.button {
+  background-color: white;
+  color: #333;
+  border: 4px solid rgba(146, 245, 255, 0.6);
+  border-radius: 0.313rem;
+  font-size: 1.2rem;
+}
+
+/* The box that contains the info about the movie */
+.selected-movie-info {
+  background-color: rgba(146, 245, 255, 0.6);
+  border-radius: 0.313rem;
+  /* margin: 2%; */
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 90%;
+  color: #333;
+  padding: 0.938rem;
+  box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* The styling of the different info parts in the box */
+.selected-movie-title {
+  font-size: 1.8rem;
+}
+
+.rating {
+  background-color: white;
+  border: 3px solid #ffc3c3;
+  width: 5rem;
+  padding: 0.1rem;
+  border-radius: 0.313rem;
+  font-size: 0.8rem;
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+
+.poster {
+  border: 3px solid #ffc3c3;
+  width: 50%;
+}
+
+.overview {
+  font-size: 1.3rem;
+}
