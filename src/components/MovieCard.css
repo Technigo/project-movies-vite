@@ -1,0 +1,76 @@
+.movie-card-container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.movie-card {
+  position: relative;
+  background-color: blue;
+  width: 100%;
+  overflow: hidden;
+}
+
+.movie-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.3s ease;
+}
+
+.movie-card:hover::before {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.movie-card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.movie-card:hover .movie-card-info {
+  display: flex;
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.movie-card-info h2,
+.movie-card-info p {
+  margin: 0;
+}
+
+/* Media Queries for tablet */
+@media screen and (min-width: 667px) {
+  .movie-card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Media Queries for desktop */
+@media screen and (min-width: 1024px) {
+  .movie-card-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Media Queries for deskto - large screens */
+@media screen and (min-width: 1800px) {
+  .movie-card-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

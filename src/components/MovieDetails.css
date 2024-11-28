@@ -1,0 +1,120 @@
+.backdrop {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  object-fit: cover;
+}
+
+.movie-details-content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 20px;
+  width: 90%;
+  max-width: 300px;
+}
+
+.poster {
+  max-width: 130px;
+  margin: 0px 0 10px 0;
+}
+
+.movie-genre-list ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 5px 5px 20px 0;
+}
+
+.movie-genre-list li {
+  list-style-type: none;
+  font-size: small;
+}
+
+.release-date {
+  font-size: small;
+  margin: 20px 0 0px 0;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.read-more-button {
+  padding: 6px 11px;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+}
+
+.read-more-button:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.back-button {
+  order: -1;
+}
+
+.back-button img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.back-button:hover img {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Media Queries for tablet */
+@media screen and (min-width: 667px) {
+  .rating {
+    margin: 5px 0px 10px 0;
+  }
+  .movie-details-content {
+    padding: 20px 20px 20px 20px;
+    max-width: 500px;
+  }
+
+  .movie-genre-list ul {
+    margin: 10px 5px 20px 0;
+  }
+}
+
+/* Media Queries for desktop */
+@media screen and (min-width: 1024px) {
+  .movie-details-content {
+    display: flex;
+    flex-direction: row;
+    max-width: 700px;
+  }
+
+  .poster {
+    height: 100%;
+    margin: 0 0 0 0;
+  }
+
+  .movie-details-text {
+    padding-left: 20px;
+  }
+
+  .rating {
+    margin: 0px 0px 10px 0;
+  }
+}
+
+/* Media Queries for deskto - large screens */
+@media screen and (min-width: 1800px) {
+  .movie-details-content {
+    width: 60%;
+  }
+}
