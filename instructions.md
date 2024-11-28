@@ -6,7 +6,7 @@ This time, rather than following designs from a set of images, we'd like you to 
 
 ### Context:
 
- <img src="/src/assets/finished-version.png" alt="Project Example">
+ <img src="/finished-version.png" alt="Project Example">
 
    <a href="https://technigo-movies-project.netlify.app/">
     Click here to view sample of this project
@@ -24,7 +24,7 @@ When signing up for an API key, it asks a bunch of questions about what the appl
 - Go to https://www.themoviedb.org/settings/api/request
 - Select 'developer' & accept the terms
 - Fill in the form requesting an API. You need to select 'Website' in the dropdown and say the use is for Technigo. Like this:
-  <img src="/src/assets/api-form-sample.png" alt="Form Example">
+  <img src="/api-form-sample.png" alt="Form Example">
 - Fill in your personal details.
 - Submit the form and you should be approved automatically. Copy the v3 API key from the following page.
 
