@@ -1,0 +1,7 @@
+.back-arrow {
+  content: url(../assets/arrow.svg);
+  text-decoration: none;
+  margin: 20px;
+
+  filter: drop-shadow(2px 3px 4px rgb(0 0 0/0.5));
+}
