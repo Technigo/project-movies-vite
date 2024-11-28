@@ -1,0 +1,72 @@
+.homepage {
+  background-image: url("/popcorn.jpg");
+  background-position: left; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  background-attachment: fixed;
+  font-family: var(--main-font);
+  height: 100vh;
+}
+
+.homepage h1 {
+  color: var(--red);
+}
+
+.title-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+}
+
+.title-wrapper h1 {
+  font-size: 45px;
+  margin-top: 10px;
+}
+
+.link-to-movies {
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  font-weight: 600;
+  background-color: var(--red);
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+@media (min-width: 668px) {
+  .title-wrapper {
+    gap: 20px;
+  }
+
+  .title-wrapper h1 {
+    font-size: 50px;
+    margin-top: 15px;
+    text-shadow: 2px 2px 8px whitesmoke;
+  }
+  
+  .link-to-movies {
+    font-size: 20px;
+    
+  }
+}
+
+@media (min-width: 1024px) {
+  .title-wrapper {
+    gap: 25px;
+  }
+
+  .title-wrapper h1 {
+    font-size: 80px;
+    margin-top: 28px;
+    text-shadow: 4px 4px 10px whitesmoke;
+  }
+  
+  .link-to-movies {
+    font-size: 25px;
+    
+  }
+}

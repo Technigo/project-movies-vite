@@ -1,5 +1,9 @@
+
 :root {
   margin: 0;
+  --main-font: "Montserrat", sans-serif;
+  --red: #631e16;
+  --green: #165b63;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
