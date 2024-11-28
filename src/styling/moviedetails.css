@@ -1,0 +1,106 @@
+/* --------Background image--------- */
+.single-movie-background {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+/* ---------Card part with image and movie info---------- */
+.single-movie-card {
+    position: absolute;
+    bottom: 5%;
+    z-index: 10;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    gap: 3%;
+    margin: 0 30% 1% 3%;
+    color: aliceblue;
+
+}
+
+/* ------Image part------- */
+.single-movie-card img {
+    border-radius: 10px;
+    border: 2px solid white;
+    box-shadow: 7px 7px 7px rgb(24, 23, 23), 15px 15px 15px grey;
+}
+
+/* ----------Info part-------- */
+.single-movie-info h2 {
+    text-shadow: black 2px 0 15px, whitesmoke 3px 0 17px;
+    line-height: 1.8;
+}
+
+.single-movie-info span {
+    background-color: whitesmoke;
+    color: black;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(175, 172, 172);
+    margin: 0 10px;
+    padding: 5px 10px 5px 0;
+}
+
+.single-movie-info p {
+    text-shadow: black 2px 0 7px;
+    text-align: justify;
+    word-break: break-all;
+}
+
+/* --------Darker gradient at bottom page for contrast----- */
+.bottom-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    height: 100vh;
+    width: auto;
+    background-image: linear-gradient(rgba(0, 0, 0, 0) 70%, rgb(0, 0, 0) 100%);
+}
+
+/* --------Responsiveness--------- */
+
+@media screen and (min-width: 667px) and (max-width: 1023px) {
+
+    /* Jsx does not work in css... */
+    /* .single-movie-card img {
+        background-image: url(`https://image.tmdb.org/t/p/w185/${poster_path}`)
+    } */
+
+    .single-movie-card {
+        margin: 0 3% 1% 3%;
+    }
+}
+
+@media screen and (max-width:666px) {
+    .single-movie-card {
+        flex-direction: column;
+        gap: 1%;
+        margin: 3%;
+        bottom: 0;
+    }
+
+    .single-movie-card img {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+}
+
+@media and (max-width:450px) {
+    .single-movie-card {
+        margin: 0;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+
+    .single-movie-card img {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    .single-movie-info span {
+        padding: 0 10px 0 0;
+    }
+}
